@@ -118,7 +118,6 @@ button,input,select{font:inherit}button{cursor:pointer;color:inherit;background:
 .about-poem .creator-wrap{text-align:center;margin-top:16px}
 .btn-creator{display:inline-block;padding:10px 24px;background:rgba(255,255,255,.08);color:var(--text);text-decoration:none;border-radius:12px;font-family:inherit;font-size:14px;font-weight:800;transition:.3s;cursor:pointer;border:1px solid rgba(255,255,255,.25)}
 .btn-creator:hover{background:rgba(255,255,255,.15);transform:translateY(-1px)}
-/* ===== دکمه‌های ارسال و نصب در صفحه درباره ===== */
 .about-actions{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap;justify-content:center}
 .btn-share-app,.btn-install-app{padding:10px 20px;border-radius:12px;font-family:inherit;font-size:14px;font-weight:800;cursor:pointer;display:inline-flex;align-items:center;gap:6px;transition:.3s;text-decoration:none;border:none}
 .btn-share-app{background:linear-gradient(135deg,rgba(45,212,161,.25),rgba(57,198,255,.2));border:1px solid rgba(45,212,161,.5);color:#7fffd4}
@@ -226,6 +225,13 @@ button,input,select{font:inherit}button{cursor:pointer;color:inherit;background:
 .fun-joke-box .fj-text{font-size:16px;line-height:2;color:#fff;font-weight:700}
 .fun-joke-box .fj-btn{margin-top:12px;padding:8px 20px;background:rgba(255,209,102,.2);border:1px solid rgba(255,209,102,.4);border-radius:10px;color:#ffd166;font-weight:800;cursor:pointer}
 .fun-joke-box .fj-btn:hover{background:rgba(255,209,102,.3)}
+/* ===== کادر معما با جواب مخفی ===== */
+.fun-puzzle-box{padding:18px;border-radius:16px;background:linear-gradient(135deg,rgba(177,151,252,.15),rgba(236,72,153,.08));border:2px solid rgba(177,151,252,.3);text-align:center}
+.fun-puzzle-box .fp-question{font-size:16px;line-height:2;color:#fff;font-weight:700;margin-bottom:14px;white-space:pre-line}
+.fun-puzzle-box .fp-reveal{padding:11px 24px;background:linear-gradient(135deg,rgba(177,151,252,.35),rgba(236,72,153,.25));border:1px solid rgba(177,151,252,.6);border-radius:10px;color:#e8ddff;font-weight:900;cursor:pointer;transition:.3s;font-size:14px;font-family:inherit}
+.fun-puzzle-box .fp-reveal:hover{background:linear-gradient(135deg,rgba(177,151,252,.5),rgba(236,72,153,.4));transform:translateY(-2px);box-shadow:0 8px 20px rgba(177,151,252,.35)}
+.fun-puzzle-box .fp-answer{margin-top:14px;padding:12px 16px;background:rgba(45,212,161,.15);border:1px solid rgba(45,212,161,.4);border-radius:10px;color:#d4f5e8;font-size:15px;line-height:1.9;animation:fadeIn .3s ease-out}
+.fun-puzzle-box .fp-answer b{color:#7fffd4;font-size:17px}
 .chat-fab{position:fixed;bottom:16px;left:16px;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#8b5cf6,#ec4899);color:#fff;font-size:26px;display:grid;place-items:center;z-index:9996}
 .chat-panel{position:fixed;bottom:84px;left:12px;width:min(360px,calc(100vw - 24px));height:min(480px,68vh);background:#131a2e;border:1px solid #2a3654;border-radius:20px;z-index:9996;display:none;flex-direction:column;overflow:hidden}
 .chat-panel.show{display:flex}
@@ -276,13 +282,15 @@ button,input,select{font:inherit}button{cursor:pointer;color:inherit;background:
 .install-btn{display:block;width:100%;margin-top:16px;padding:15px;background:linear-gradient(135deg,#39c6ff,#4f7cff);color:#fff;border:none;border-radius:14px;font-size:17px;font-weight:900;cursor:pointer;box-shadow:0 6px 20px rgba(57,198,255,.4);transition:.3s;position:relative}
 .install-btn:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(57,198,255,.6)}
 .install-btn:active{transform:translateY(0)}
-/* ===== دکمه‌های ارسال و نصب در مودال اول ===== */
 .install-actions{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
 .install-share-btn,.install-pwa-btn{flex:1 1 140px;padding:13px 12px;border-radius:12px;font-size:14px;font-weight:900;cursor:pointer;border:none;display:inline-flex;align-items:center;justify-content:center;gap:6px;transition:.3s;color:#04101d}
 .install-share-btn{background:linear-gradient(135deg,#2dd4a3,#39c6ff);box-shadow:0 6px 18px rgba(45,212,161,.35)}
 .install-share-btn:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(45,212,161,.55)}
 .install-pwa-btn{background:linear-gradient(135deg,#ffd166,#ff8c42);box-shadow:0 6px 18px rgba(255,209,102,.35)}
 .install-pwa-btn:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(255,209,102,.55)}
+/* ===== کادر حجم کم در مودال ===== */
+.install-size-note{margin-top:14px;padding:14px 18px;border-radius:12px;background:linear-gradient(135deg,rgba(45,212,161,.14),rgba(57,198,255,.08));border:1px solid rgba(45,212,161,.35);font-size:13px;line-height:2;color:#d4f5e8;text-align:right}
+.install-size-note .isn-head{font-weight:900;color:#7fffd4;font-size:14px;display:block;margin-bottom:4px}
 footer{text-align:center;color:var(--muted);font-size:11px;line-height:2;padding:25px 0 35px}
 .muted{color:var(--muted);font-size:13px}
 @media(max-width:900px){.scene{grid-template-columns:1fr}.sport-grid{grid-template-columns:repeat(3,1fr)}}
@@ -314,10 +322,13 @@ footer{text-align:center;color:var(--muted);font-size:11px;line-height:2;padding
         <li>اسم را تأیید کنید و <b>Add</b> را بزنید.</li>
       </ol>
     </div>
-    <!-- ===== دکمه‌های ارسال و نصب در مودال ===== -->
     <div class="install-actions">
       <button class="install-share-btn" id="shareAppModal">📤 ارسال برنامه</button>
-      <button class="install-pwa-btn" id="installAppModal" style="display:none">📲 نصب برنامه</button>
+      <button class="install-pwa-btn" id="installAppModal">📲 نصب برنامه</button>
+    </div>
+    <div class="install-size-note">
+      <span class="isn-head">💾 حجم بسیار کم، بدون اشغال فضای گوشی.</span>
+      از آنجا که این برنامه تحت وب است، تنها چند مگابایت از حافظه گوشی شما را اشغال می‌کند؛ یعنی حتی کمتر از حجم یک عکس.
     </div>
     <button class="install-btn" id="installOk">✓ متوجه شدم</button>
   </div>
@@ -352,13 +363,12 @@ footer{text-align:center;color:var(--muted);font-size:11px;line-height:2;padding
         هر صفحه، پنجره‌ای‌ست رو به جهان پیرامون تو و آینه‌ای از شهری که در آن نفس می‌کشی. مجلهٔ آسمان، روایت لحظه‌هایی‌ست که شاید ساده از کنارشان بگذریم، اما ارزش دیدن، شنیدن و به یاد سپردن دارند.
         <div class="signature">
           <span class="sig-line1">با سپاس</span>
-          <span class="sig-line2">م. حسینی _ 👨‍🦼 معلول آسیب نخاعی</span>
+          <span class="sig-line2">م. حسینی _ 🧑‍🦽 معلول آسیب نخاعی</span>
         </div>
         <div class="creator-wrap"><a href="https://eitaa.com/hossini_96" target="_blank" rel="noopener" class="btn-creator">ارتباط با سازنده</a></div>
-        <!-- ===== دکمه‌های ارسال و نصب در صفحه درباره ===== -->
         <div class="about-actions">
           <button class="btn-share-app" id="shareAppAbout">📤 ارسال برنامه به دوستان</button>
-          <button class="btn-install-app" id="installAppAbout" style="display:none">📲 نصب برنامه</button>
+          <button class="btn-install-app" id="installAppAbout">📲 نصب برنامه</button>
         </div>
       </div>
       <div class="about-help" style="margin-top:20px">
@@ -368,7 +378,7 @@ footer{text-align:center;color:var(--muted);font-size:11px;line-height:2;padding
         <div class="ah-sec"><div class="ah-h c2">⚽ ورزشی</div><ul><li>فوتبال (۴ گروه کشویی)، فوتسال، بسکتبال، والیبال، فوتبال ساحلی، هندبال، المپیک.</li></ul></div>
         <div class="ah-sec"><div class="ah-h c3">🧬 سلامت</div><ul><li>همهٔ شاخص‌ها بر اساس شهر انتخابی شما در آب‌وهوا.</li></ul></div>
         <div class="ah-sec"><div class="ah-h c5">🔭 علم</div><ul><li>۴ دانستنی علمی که هر ۲ ساعت به‌روزرسانی می‌شوند.</li><li>فاز ماه، روشنایی روز، رویدادهای آسمانی.</li></ul></div>
-        <div class="ah-sec"><div class="ah-h c7">🎉 سرگرمی</div><ul><li>جوک تصادفی، دانستنی سرگرمی و معما برای اوقات فراغت.</li></ul></div>
+        <div class="ah-sec"><div class="ah-h c7">🎉 سرگرمی</div><ul><li>جوک تصادفی، دانستنی سرگرمی و معما برای اوقات فراغت — به‌روزرسانی هر ۶۰ دقیقه.</li></ul></div>
       </div>
     </section>
   </section>
@@ -601,7 +611,7 @@ footer{text-align:center;color:var(--muted);font-size:11px;line-height:2;padding
           </div>
         </div>
         <div class="fun-acc-group" data-facc="puzzle">
-          <div class="fun-acc-h puzzle"><span>🧩 معما</span><span class="arrow-r">⌄</span></div>
+          <div class="fun-acc-h puzzle"><span>🧩 معما (با دکمهٔ نمایش جواب)</span><span class="arrow-r">⌄</span></div>
           <div class="fun-acc-body">
             <div id="funPuzzleArea" class="sec-content">--</div>
           </div>
@@ -645,22 +655,12 @@ setTimeout(showInstallModal,100);
 /* ===== PWA: مدیریت نصب و ارسال برنامه ===== */
 var deferredInstallPrompt=null;
 function isStandalone(){try{return (window.matchMedia&&window.matchMedia("(display-mode:standalone)").matches)||window.navigator.standalone===true;}catch(e){return false;}}
-function updateInstallButtonsVisibility(){
-  var already=isStandalone();
-  var b1=document.getElementById("installAppModal");
-  var b2=document.getElementById("installAppAbout");
-  var showPwa = (deferredInstallPrompt!==null) && !already;
-  if(b1)b1.style.display = showPwa ? "inline-flex" : "none";
-  if(b2)b2.style.display = showPwa ? "inline-flex" : "none";
-}
 window.addEventListener("beforeinstallprompt",function(e){
   e.preventDefault();
   deferredInstallPrompt=e;
-  updateInstallButtonsVisibility();
 });
 window.addEventListener("appinstalled",function(){
   deferredInstallPrompt=null;
-  updateInstallButtonsVisibility();
   if(typeof show==="function")show("🎉 برنامه با موفقیت نصب شد!","ok");
 });
 
@@ -713,6 +713,12 @@ function shareApp(){
   });
 }
 function installApp(){
+  /* اگر قبلاً نصب شده */
+  if(isStandalone()){
+    alert("✅ شما این برنامه را نصب دارید.");
+    return;
+  }
+  /* اگر مرورگر از نصب خودکار پشتیبانی می‌کند */
   if(deferredInstallPrompt){
     deferredInstallPrompt.prompt();
     deferredInstallPrompt.userChoice.then(function(choice){
@@ -720,16 +726,16 @@ function installApp(){
         if(typeof show==="function")show("✅ نصب برنامه شروع شد","ok");
       }
       deferredInstallPrompt=null;
-      updateInstallButtonsVisibility();
     }).catch(function(){
       deferredInstallPrompt=null;
-      updateInstallButtonsVisibility();
     });
     return;
   }
+  /* راهنمای دستی برای سایر مرورگرها */
   var msg="📲 برای نصب مجله آسمان:\n\n"+
           "🤖 اندروید (Chrome):\nمنوی ⋮ ← «نصب برنامه» یا «افزودن به صفحه اصلی»\n\n"+
           "🍎 iPhone (Safari):\nدکمهٔ Share ← Add to Home Screen\n\n"+
+          "💻 کامپیوتر (Chrome/Edge):\nآیکون ⊕ در نوار آدرس ← Install\n\n"+
           "💡 اگر برنامه قبلاً نصب شده، روی آیکون آن در هوم‌اسکرین بزنید.";
   alert(msg);
 }
@@ -742,9 +748,8 @@ function bindInstallShareButtons(){
   if(b2)b2.addEventListener("click",shareApp);
   if(b3)b3.addEventListener("click",installApp);
   if(b4)b4.addEventListener("click",installApp);
-  updateInstallButtonsVisibility();
 }
-/* ===== پایان PWA: نصب و ارسال ===== */
+/* ===== پایان PWA ===== */
 
 var API={weather:"https://api.open-meteo.com/v1/forecast",geo:"https://geocoding-api.open-meteo.com/v1/search",air:"https://air-quality-api.open-meteo.com/v1/air-quality",prayer:"https://api.aladhan.com/v1/timings",archive:"https://archive-api.open-meteo.com/v1/archive",hforecast:"https://historical-forecast-api.open-meteo.com/v1/forecast",ensemble:"https://ensemble-api.open-meteo.com/v1/ensemble",elevation:"https://api.open-meteo.com/v1/elevation",yr:"https://api.met.no/weatherapi/locationforecast/2.0/compact",nom:"https://nominatim.openstreetmap.org/search",sports:"https://www.thesportsdb.com/api/v1/json/123"};
 var city={id:"arak",name:"اراک",country:"ایران",admin1:"مرکزی",county:"اراک",type:"city",latitude:34.0917,longitude:49.6892};
@@ -785,10 +790,10 @@ function isLatin(s){return /[a-zA-Z]/.test(s);}
 function normName(s){return String(s||"").replace(/\s+/g," ").trim();}
 function haversine(a,b,c,d){var R=6371,ra=function(x){return x*Math.PI/180;};var dLat=ra(c-a),dLon=ra(d-b);var s=Math.sin(dLat/2)*Math.sin(dLat/2)+Math.cos(ra(a))*Math.cos(ra(c))*Math.sin(dLon/2)*Math.sin(dLon/2);return R*2*Math.atan2(Math.sqrt(s),Math.sqrt(1-s));}
 function ensureAudio(){if(!audioCtx){try{audioCtx=new(window.AudioContext||window.webkitAudioContext)();}catch(e){return false;}}if(audioCtx.state==="suspended")audioCtx.resume();return true;}
-function clickSound(){if(!ensureAudio())return;var o=audioCtx.createOscillator(),g=audioCtx.createGain();o.type="sine";o.frequency.value=600;g.gain.setValueAtTime(0,audioCtx.currentTime);g.gain.linearRampToValueAtTime(.35,audioCtx.currentTime+.01);g.gain.exponentialRampToValueAtTime(.001,audioCtx.currentTime+.1);o.connect(g).connect(audioCtx.destination);o.start(audioCtx.currentTime);o.stop(audioCtx.currentTime+.12);}
+function clickSound(){if(!ensureAudio())return;var o=audioCtx.createOscillator(),g=audioCtx.createGain();o.type="sine";o.frequency.value=600;g.gain.setValueAtTime(0,audioCtx.currentTime);g.gain.linearRampToValueAtTime(.75,audioCtx.currentTime+.01);g.gain.exponentialRampToValueAtTime(.001,audioCtx.currentTime+.13);o.connect(g).connect(audioCtx.destination);o.start(audioCtx.currentTime);o.stop(audioCtx.currentTime+.15);}
 document.addEventListener("click",function(e){
   if(e.target&&e.target.closest){
-    var clickable=e.target.closest("button, .btn, .select, .detail-btn, .day-tab, .pin-small, .pinchip, .arrow, .chat-sug, .chat-send, .day, .mag-tab, .sport-card, .sport-link, .culture-card, .sport-acc-h, .travel-acc-h, .culture-acc-h, .fun-acc-h, .btn-creator, .install-btn, .fj-btn");
+    var clickable=e.target.closest("button, .btn, .select, .detail-btn, .day-tab, .pin-small, .pinchip, .arrow, .chat-sug, .chat-send, .day, .mag-tab, .sport-card, .sport-link, .culture-card, .sport-acc-h, .travel-acc-h, .culture-acc-h, .fun-acc-h, .btn-creator, .install-btn, .fj-btn, .fp-reveal, .btn-share-app, .btn-install-app, .install-share-btn, .install-pwa-btn");
     if(clickable)clickSound();
   }
 });
@@ -1183,6 +1188,7 @@ function renderScienceFacts(){
   }
   el.innerHTML=html;
 }
+/* ===== صفحه سرگرمی: جوک + دانستنی + معما (به‌روزرسانی هر ۶۰ دقیقه) ===== */
 var FUN_JOKES=[
   "چرا کامپیوتر به دکتر رفت؟ چون ویروس گرفته بود! 😄",
   "چرا ماهی‌ها در مدرسه باهوشند؟ چون همیشه در مدرسه هستند! 🐟",
@@ -1203,24 +1209,49 @@ var FUN_FACTS=[
   "💡 می‌دانستید؟ قلب انسان در طول عمر حدود ۲٫۵ میلیارد بار می‌زند!",
   "💡 می‌دانستید؟ برخی از درختان بیش از ۵۰۰۰ سال عمر می‌کنند!",
   "💡 می‌دانستید؟ نور خورشید ۸ دقیقه طول می‌کشد تا به زمین برسد!",
-  "💡 می‌دانستید؟ در یک قاشق چای‌خوری از ستاره نوترونی، میلیاردها تن وزن است!"
+  "💡 می‌دانستید؟ در یک قاشق چای‌خوری از ستاره نوترونی، میلیاردها تن وزن است!",
+  "💡 می‌دانستید؟ فیل‌ها تنها حیواناتی هستند که نمی‌توانند بپرند!",
+  "💡 می‌دانستید؟ گوش انسان می‌تواند بیش از ۳۴۰٬۰۰۰ صدای مختلف را تشخیص دهد!"
 ];
 var FUN_PUZZLES=[
-  "🧩 معما: آن چیست که هر چه بیشتر از آن بردارید، بزرگ‌تر می‌شود؟\n(جواب: چاله!)",
-  "🧩 معما: آن چیست که وقتی می‌شکنید، بهتر می‌شود؟\n(جواب: رکورد!)",
-  "🧩 معما: آن چیست که متعلق به شماست اما دیگران بیشتر از شما از آن استفاده می‌کنند؟\n(جواب: اسم شما!)",
-  "🧩 معما: آن چیست که بالا می‌رود اما هرگز پایین نمی‌آید؟\n(جواب: سن!)",
-  "🧩 معما: آن چیست که سوراخ‌های زیادی دارد اما آب را نگه می‌دارد؟\n(جواب: اسفنج!)",
-  "🧩 معما: آن چیست که همه‌جا هست اما دیده نمی‌شود؟\n(جواب: هوا!)"
+  {q:"🧩 معما: آن چیست که هر چه بیشتر از آن بردارید، بزرگ‌تر می‌شود؟", a:"چاله"},
+  {q:"🧩 معما: آن چیست که وقتی می‌شکنید، بهتر می‌شود؟", a:"رکورد"},
+  {q:"🧩 معما: آن چیست که متعلق به شماست اما دیگران بیشتر از شما از آن استفاده می‌کنند؟", a:"اسم شما"},
+  {q:"🧩 معما: آن چیست که بالا می‌رود اما هرگز پایین نمی‌آید؟", a:"سن"},
+  {q:"🧩 معما: آن چیست که سوراخ‌های زیادی دارد اما آب را نگه می‌دارد؟", a:"اسفنج"},
+  {q:"🧩 معما: آن چیست که همه‌جا هست اما دیده نمی‌شود؟", a:"هوا"},
+  {q:"🧩 معما: آن چیست که هر چه از آن بگیری، کوچک‌تر نمی‌شود؟", a:"سایه"},
+  {q:"🧩 معما: آن چیست که وقتی به آن نگاه می‌کنی، تو را می‌بیند اما تو نمی‌توانی ببینی‌اش؟", a:"آینه"},
+  {q:"🧩 معما: هر چه بزرگ‌تر شود، دیدنی‌تر نیست؛ هر چه کوچک‌تر شود، دیدنی‌تر است. چیست؟", a:"تاریکی"}
 ];
-var funJokeIdx=0,funFactIdx=0,funPuzzleIdx=0;
+var funJokeIdx=null,funFactIdx=null,funPuzzleIdx=null;
+function initFunIndices(force){
+  if(force||funJokeIdx===null)funJokeIdx=Math.floor(Math.random()*FUN_JOKES.length);
+  if(force||funFactIdx===null)funFactIdx=Math.floor(Math.random()*FUN_FACTS.length);
+  if(force||funPuzzleIdx===null)funPuzzleIdx=Math.floor(Math.random()*FUN_PUZZLES.length);
+}
+function renderFunPuzzle(p){
+  var el=document.getElementById("funPuzzleArea");
+  if(!el)return;
+  el.innerHTML='<div class="fun-puzzle-box">'+
+    '<div class="fp-question">'+safe(p.q)+'</div>'+
+    '<button class="fp-reveal" id="fpRevealBtn">🔍 نمایش جواب</button>'+
+    '<div class="fp-answer" id="fpAnswer" style="display:none">💡 جواب: <b>'+safe(p.a)+'</b></div>'+
+    '</div>';
+  var btn=document.getElementById("fpRevealBtn");
+  if(btn)btn.addEventListener("click",function(){
+    var ans=document.getElementById("fpAnswer");
+    if(ans)ans.style.display="block";
+    btn.style.display="none";
+  });
+}
 function renderFunPage(){
+  initFunIndices(false);
   var jokeEl=document.getElementById("funJokeText");
   if(jokeEl)jokeEl.textContent=FUN_JOKES[funJokeIdx%FUN_JOKES.length];
   var factEl=document.getElementById("funFactArea");
   if(factEl)factEl.textContent=FUN_FACTS[funFactIdx%FUN_FACTS.length];
-  var puzzleEl=document.getElementById("funPuzzleArea");
-  if(puzzleEl)puzzleEl.textContent=FUN_PUZZLES[funPuzzleIdx%FUN_PUZZLES.length];
+  renderFunPuzzle(FUN_PUZZLES[funPuzzleIdx%FUN_PUZZLES.length]);
 }
 var funJokeBtn=document.getElementById("funJokeBtn");
 if(funJokeBtn)funJokeBtn.addEventListener("click",function(){
@@ -1228,6 +1259,12 @@ if(funJokeBtn)funJokeBtn.addEventListener("click",function(){
   var jokeEl=document.getElementById("funJokeText");
   if(jokeEl)jokeEl.textContent=FUN_JOKES[funJokeIdx%FUN_JOKES.length];
 });
+/* هر ۶۰ دقیقه محتوای سرگرمی عوض می‌شود */
+setInterval(function(){
+  initFunIndices(true);
+  if(currentPage==="fun")renderFunPage();
+},60*60*1000);
+/* ===== پایان صفحه سرگرمی ===== */
 function dayOfYear(){var n=new Date();var st=new Date(n.getFullYear(),0,0);return Math.floor((n-st)/86400000);}
 function renderHealthPage(){
   var s=getDayStats(0),an=getAirNow()||airFallback(),m=new Date().getMonth()+1;
@@ -1268,7 +1305,7 @@ function bindAccordions(){
   }
 }
 var magLoaded={};
-function showPage(p){currentPage=p;var pages=document.querySelectorAll(".mag-page");for(var i=0;i<pages.length;i++)pages[i].hidden=(pages[i].id!=="page-"+p);var tabs=document.querySelectorAll(".mag-tab");for(var j=0;j<tabs.length;j++)tabs[j].classList.toggle("active",tabs[j].getAttribute("data-page")===p);var ci=document.getElementById("chatInput");if(ci)ci.placeholder=pageContext().hint;if(!magLoaded[p]){magLoaded[p]=true;if(p==="sport"){renderSportGrid();renderSportContent();}else if(p==="health")renderHealthPage();else if(p==="culture"){renderCulturePage();bindAccordions();}else if(p==="science")renderSciencePage();else if(p==="travel"){renderTravelPage();bindAccordions();}else if(p==="fun"){renderFunPage();bindAccordions();}}renderSuggestions();window.scrollTo({top:0,behavior:"smooth"});}
+function showPage(p){currentPage=p;var pages=document.querySelectorAll(".mag-page");for(var i=0;i<pages.length;i++)pages[i].hidden=(pages[i].id!=="page-"+p);var tabs=document.querySelectorAll(".mag-tab");for(var j=0;j<tabs.length;j++)tabs[j].classList.toggle("active",tabs[j].getAttribute("data-page")===p);var ci=document.getElementById("chatInput");if(ci)ci.placeholder=pageContext().hint;if(!magLoaded[p]){magLoaded[p]=true;if(p==="sport"){renderSportGrid();renderSportContent();}else if(p==="health")renderHealthPage();else if(p==="culture"){renderCulturePage();bindAccordions();}else if(p==="science")renderSciencePage();else if(p==="travel"){renderTravelPage();bindAccordions();}else if(p==="fun"){initFunIndices(true);renderFunPage();bindAccordions();}}renderSuggestions();window.scrollTo({top:0,behavior:"smooth"});}
 var magNav=document.getElementById("magNav");
 if(magNav)magNav.addEventListener("click",function(e){var t=e.target.closest(".mag-tab");if(t)showPage(t.getAttribute("data-page"));});
 function pageContext(){switch(currentPage){case "sport":return{hint:"⚽ ورزشی — ساعت/نتیجه/جدول بپرسید"};case "culture":return{hint:"🎭 فرهنگ — شعر، سینما، جاذبه"};case "science":return{hint:"🔭 علم — ماه و آسمان بپرسید"};case "travel":return{hint:"🧳 سفر — پنجره و چک‌لیست"};case "about":return{hint:"📖 دربارهٔ مجله"};case "health":return{hint:"🧬 سلامت — هوا، خواب، تغذیه"};case "fun":return{hint:"🎉 سرگرمی — جوک و معما"};default:return{hint:"🏠 آب‌وهوا — هر سوالی دربارهٔ هوا"};}}
@@ -1305,6 +1342,8 @@ function chatRespond(q0){var q=normalizeQ(q0);
  if(/(تور مجازی|ایرانگردی|سه بعدی|360)/.test(q)){addChatMsg("🌐 تورهای مجازی (در ۳ دسته کشویی):\n\n🕌 زیارتی:\n• مسجدالنبی و قبور بقیع\n\n🏙️ شهرها:\n• دزفول، دالیخانی، تهران، رفسنجان، کاشان، شیراز، اصفهان، چهارمحال، بم، ممقان، گیلان، قزوین، استان مرکزی و سایر\n\n🎓 دانشگاهی:\n• دانشگاه صنعتی شریف",false);addQuickReplies(SUG_MAP[currentPage]||SUG_MAP.home);return;}
  if(/(جاذبه|گردشگری|ویزیت|دیدنی)/.test(q)){addChatMsg("🗺️ منابع جاذبه‌ها:\n• visitiran.ir\n• ebook.visitiran.ir\n• chtn.ir (میراث آریا)\n\n(لینک‌ها در صفحهٔ سفر)",false);addQuickReplies(SUG_MAP[currentPage]||SUG_MAP.home);return;}
  if(/(جوک|لطیفه|معما|سرگرمی)/.test(q)){if(currentPage!=="fun")showPage("fun");else{funJokeIdx++;renderFunPage();}addChatMsg("😂 به صفحهٔ سرگرمی رفتم!",false);addQuickReplies(SUG_MAP.fun);return;}
+ if(/(نصب|اینستال|دانلود برنامه)/.test(q)){addChatMsg("📲 برای نصب برنامه، از دکمهٔ «📲 نصب برنامه» در صفحهٔ درباره یا مودال اول استفاده کنید.",false);addQuickReplies(SUG_MAP[currentPage]||SUG_MAP.home);return;}
+ if(/(ارسال|اشتراک|share|بلوتوث)/.test(q)){addChatMsg("📤 برای ارسال برنامه به دوستان، از دکمهٔ «📤 ارسال برنامه» استفاده کنید.",false);addQuickReplies(SUG_MAP[currentPage]||SUG_MAP.home);return;}
  if(/(فرهنگ|هنر|شعر|حافظ|سعدی|سینما|تئاتر|فیلم|بیت|شاعر|موسیقی|گنجور|فیدیبو|طاقچه|مولانا|فردوسی|خیام)/.test(q)){if(currentPage!=="culture")showPage("culture");addChatMsg("🎭 به صفحهٔ فرهنگ رفتم.",false);addQuickReplies(SUG_MAP.culture);return;}
  if(/(ورزش|المپیک|فوتبال|بسکتبال|والیبال|فوتسال|ساحلی|هندبال)/.test(q)){if(currentPage!=="sport")showPage("sport");addChatMsg("⚽ به صفحهٔ ورزشی رفتم.",false);addQuickReplies(SUG_MAP.sport);return;}
  if(/(سلامت|بهداشت|پزشکی)/.test(q)){if(currentPage!=="health")showPage("health");addChatMsg("🧬 به صفحهٔ سلامت رفتم.",false);addQuickReplies(SUG_MAP.health);return;}
