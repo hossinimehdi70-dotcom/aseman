@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="35%" r="80%">
+      <stop offset="0%" stop-color="#0d2540"/>
+      <stop offset="60%" stop-color="#0a1828"/>
+      <stop offset="100%" stop-color="#07111f"/>
+    </radialGradient>
+    <radialGradient id="moonGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffd166" stop-opacity="0.55"/>
+      <stop offset="60%" stop-color="#ffd166" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#ffd166" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="moonG" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff9c4"/>
+      <stop offset="55%" stop-color="#ffd166"/>
+      <stop offset="100%" stop-color="#ff8c42"/>
+    </linearGradient>
+    <linearGradient id="cloudG" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#5fd4ff"/>
+      <stop offset="100%" stop-color="#2aa7e8"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="512" height="512" rx="112" ry="112" fill="url(#bg)"/>
+
+  <circle cx="336" cy="200" r="140" fill="url(#moonGlow)"/>
+
+  <g>
+    <circle cx="336" cy="200" r="68" fill="url(#moonG)"/>
+    <circle cx="308" cy="180" r="58" fill="#0a1828" opacity="0.92"/>
+  </g>
+
+  <g fill="#f8fbff">
+    <circle cx="128" cy="120" r="3.2"/>
+    <circle cx="200" cy="88"  r="2.2"/>
+    <circle cx="88"  cy="200" r="2.6"/>
+    <circle cx="160" cy="260" r="2.0"/>
+    <circle cx="240" cy="150" r="2.4"/>
+    <circle cx="110" cy="300" r="2.2"/>
+    <circle cx="430" cy="120" r="2.6"/>
+    <circle cx="460" cy="300" r="2.2"/>
+    <circle cx="400" cy="340" r="2.0"/>
+    <circle cx="270" cy="60"  r="2.0"/>
+  </g>
+
+  <g stroke="#5fd4ff" stroke-width="2.5" stroke-linecap="round" opacity="0.85">
+    <path d="M128 108 v24 M116 120 h24"/>
+    <path d="M430 108 v24 M418 120 h24"/>
+  </g>
+
+  <g opacity="0.9">
+    <ellipse cx="256" cy="430" rx="260" ry="70" fill="url(#cloudG)" opacity="0.18"/>
+    <ellipse cx="180" cy="415" rx="120" ry="42" fill="url(#cloudG)" opacity="0.35"/>
+    <ellipse cx="340" cy="425" rx="140" ry="48" fill="url(#cloudG)" opacity="0.28"/>
+  </g>
+
+  <circle cx="256" cy="256" r="200" fill="none" stroke="#39c6ff" stroke-width="2" opacity="0.18"/>
+</svg>
