@@ -118,12 +118,10 @@ button,input,select{font:inherit}button{cursor:pointer;color:inherit;background:
 .about-poem .creator-wrap{text-align:center;margin-top:16px}
 .btn-creator{display:inline-block;padding:10px 24px;background:rgba(255,255,255,.08);color:var(--text);text-decoration:none;border-radius:12px;font-family:inherit;font-size:14px;font-weight:800;transition:.3s;cursor:pointer;border:1px solid rgba(255,255,255,.25)}
 .btn-creator:hover{background:rgba(255,255,255,.15);transform:translateY(-1px)}
-.about-actions{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap;justify-content:center}
-.btn-share-app,.btn-install-app{padding:10px 20px;border-radius:12px;font-family:inherit;font-size:14px;font-weight:800;cursor:pointer;display:inline-flex;align-items:center;gap:6px;transition:.3s;text-decoration:none;border:none}
-.btn-share-app{background:linear-gradient(135deg,rgba(45,212,161,.25),rgba(57,198,255,.2));border:1px solid rgba(45,212,161,.5);color:#7fffd4}
-.btn-share-app:hover{background:linear-gradient(135deg,rgba(45,212,161,.4),rgba(57,198,255,.3));transform:translateY(-2px);box-shadow:0 8px 20px rgba(45,212,161,.3)}
-.btn-install-app{background:linear-gradient(135deg,rgba(255,209,102,.25),rgba(255,140,66,.2));border:1px solid rgba(255,209,102,.5);color:#ffd166}
-.btn-install-app:hover{background:linear-gradient(135deg,rgba(255,209,102,.4),rgba(255,140,66,.3));transform:translateY(-2px);box-shadow:0 8px 20px rgba(255,209,102,.3)}
+/* ===== دکمه کد مخفی ===== */
+.about-code-wrap{text-align:center;margin-top:20px;padding-top:14px;border-top:1px dashed rgba(255,255,255,.1)}
+.btn-code{padding:6px 22px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);border-radius:8px;color:var(--muted);font-size:11px;font-weight:700;cursor:pointer;transition:.2s;font-family:inherit;letter-spacing:.5px}
+.btn-code:hover{background:rgba(255,255,255,.1);color:var(--text);border-color:rgba(255,255,255,.25)}
 .travel-summary{margin:18px 0;padding:18px 22px;border-right:4px solid var(--green);background:linear-gradient(90deg,rgba(45,212,161,.14),rgba(57,198,255,.06));border-radius:0 16px 16px 0;font-size:15px;line-height:1.9;box-shadow:inset 0 0 20px rgba(45,212,161,.05)}
 .travel-summary .ts-head{font-size:18px;font-weight:900;margin-bottom:6px;color:#fff}
 .travel-summary .ts-city{color:var(--gold);font-weight:900;font-size:20px;padding:0 4px;background:rgba(255,209,102,.12);border-radius:6px;text-shadow:0 1px 2px rgba(0,0,0,.3)}
@@ -225,7 +223,6 @@ button,input,select{font:inherit}button{cursor:pointer;color:inherit;background:
 .fun-joke-box .fj-text{font-size:16px;line-height:2;color:#fff;font-weight:700}
 .fun-joke-box .fj-btn{margin-top:12px;padding:8px 20px;background:rgba(255,209,102,.2);border:1px solid rgba(255,209,102,.4);border-radius:10px;color:#ffd166;font-weight:800;cursor:pointer}
 .fun-joke-box .fj-btn:hover{background:rgba(255,209,102,.3)}
-/* ===== کادر معما با جواب مخفی ===== */
 .fun-puzzle-box{padding:18px;border-radius:16px;background:linear-gradient(135deg,rgba(177,151,252,.15),rgba(236,72,153,.08));border:2px solid rgba(177,151,252,.3);text-align:center}
 .fun-puzzle-box .fp-question{font-size:16px;line-height:2;color:#fff;font-weight:700;margin-bottom:14px;white-space:pre-line}
 .fun-puzzle-box .fp-reveal{padding:11px 24px;background:linear-gradient(135deg,rgba(177,151,252,.35),rgba(236,72,153,.25));border:1px solid rgba(177,151,252,.6);border-radius:10px;color:#e8ddff;font-weight:900;cursor:pointer;transition:.3s;font-size:14px;font-family:inherit}
@@ -258,6 +255,21 @@ button,input,select{font:inherit}button{cursor:pointer;color:inherit;background:
 .modal-icon{font-size:48px;text-align:center;margin-bottom:10px}
 .modal-title{font-size:20px;font-weight:900;margin-bottom:14px;text-align:center;color:#fff}
 .modal-text{line-height:2.2;font-size:15px;color:#eef1ff;text-align:right;white-space:pre-line}
+/* ===== مودال کد مخفی ===== */
+.code-box{width:min(380px,100%);padding:24px 20px 22px}
+.code-digits{display:flex;gap:12px;justify-content:center;margin:18px 0;direction:ltr}
+.code-digit{width:58px;height:66px;text-align:center;font-size:28px;font-weight:900;background:rgba(255,255,255,.06);border:2px solid rgba(57,198,255,.35);border-radius:12px;color:#fff;outline:none;font-family:inherit;direction:ltr;transition:.2s;caret-color:#39c6ff}
+.code-digit:focus{border-color:#39c6ff;box-shadow:0 0 0 3px rgba(57,198,255,.2);background:rgba(57,198,255,.1)}
+.code-submit-btn{display:block;width:100%;padding:12px;background:linear-gradient(135deg,#39c6ff,#4f7cff);color:#fff;border:none;border-radius:10px;font-size:15px;font-weight:900;cursor:pointer;font-family:inherit;box-shadow:0 4px 14px rgba(57,198,255,.35);transition:.2s}
+.code-submit-btn:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(57,198,255,.5)}
+.code-error{margin-top:10px;padding:8px 12px;background:rgba(255,107,122,.15);border:1px solid rgba(255,107,122,.35);border-radius:8px;color:#ff9aa8;font-size:12px;text-align:center;display:none}
+.code-error.show{display:block}
+.stats-date{text-align:center;font-size:12px;color:var(--gold);font-weight:800;margin-bottom:14px;padding-bottom:10px;border-bottom:1px dashed rgba(255,209,102,.3)}
+.stats-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px dashed rgba(255,255,255,.08);font-size:13px;gap:10px}
+.stats-row:last-child{border-bottom:none}
+.stats-label{color:var(--muted);font-weight:700;flex:1;text-align:right}
+.stats-val{font-weight:900;color:var(--cyan);font-size:16px;background:rgba(57,198,255,.1);padding:3px 12px;border-radius:8px;min-width:60px;text-align:center}
+.stats-loading{text-align:center;color:var(--muted);font-size:13px;padding:20px}
 .install-overlay{position:fixed;inset:0;background:rgba(4,6,18,.95);z-index:10000;display:none;align-items:center;justify-content:center;padding:15px}
 .install-overlay.show{display:flex;animation:fadeIn .4s ease-out}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
@@ -266,41 +278,54 @@ button,input,select{font:inherit}button{cursor:pointer;color:inherit;background:
 .install-box::-webkit-scrollbar{width:8px}
 .install-box::-webkit-scrollbar-track{background:rgba(255,255,255,.05);border-radius:4px}
 .install-box::-webkit-scrollbar-thumb{background:rgba(57,198,255,.4);border-radius:4px}
-.install-box::-webkit-scrollbar-thumb:hover{background:rgba(57,198,255,.6)}
 .install-box::before{content:"";position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(57,198,255,.08),transparent 40%);pointer-events:none}
 .install-header{text-align:center;margin-bottom:18px;position:relative}
 .install-logo{font-size:48px;margin-bottom:10px;display:inline-block;animation:float 3s ease-in-out infinite}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
 .install-header h2{margin:0;font-size:22px;color:#fff;font-weight:900;letter-spacing:.3px}
 .install-header p{margin:6px 0 0;font-size:13px;color:#bfe9ff}
-.install-sec{margin-bottom:16px;padding:16px 18px;border-radius:14px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);position:relative}
-.install-sec h3{margin:0 0 10px;font-size:17px;color:var(--cyan);font-weight:900;display:flex;align-items:center;gap:8px}
-.install-sec p,.install-sec ol{margin:0;font-size:15px;line-height:2;color:#eaf3fb}
-.install-sec ol{padding-right:22px}
-.install-sec ol li{margin-bottom:4px}
-.install-sec .warn{display:inline-block;background:rgba(255,107,122,.15);color:#ff9aa8;padding:4px 10px;border-radius:6px;font-size:12px;margin-bottom:8px;border:1px solid rgba(255,107,122,.3)}
-.install-btn{display:block;width:100%;margin-top:16px;padding:15px;background:linear-gradient(135deg,#39c6ff,#4f7cff);color:#fff;border:none;border-radius:14px;font-size:17px;font-weight:900;cursor:pointer;box-shadow:0 6px 20px rgba(57,198,255,.4);transition:.3s;position:relative}
-.install-btn:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(57,198,255,.6)}
+/* ===== آکاردئون راهنمای نصب در مودال ===== */
+.install-accordion{display:flex;flex-direction:column;gap:8px;margin-bottom:14px}
+.install-acc-group{border:1px solid rgba(255,255,255,.14);border-radius:12px;overflow:hidden;background:rgba(255,255,255,.04);transition:border-color .2s}
+.install-acc-group:hover{border-color:rgba(57,198,255,.35)}
+.install-acc-h{padding:13px 14px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:900;font-size:14px;color:#fff;user-select:none;background:linear-gradient(145deg,rgba(57,198,255,.10),rgba(139,92,246,.06))}
+.install-acc-group.open{border-color:rgba(57,198,255,.5)}
+.install-acc-group.open .install-acc-h{filter:brightness(1.15)}
+.install-acc-h .arrow-r{transition:transform .3s;font-size:17px;color:var(--muted)}
+.install-acc-group.open .install-acc-h .arrow-r{transform:rotate(180deg);color:#fff}
+.install-acc-body{max-height:0;overflow:hidden;transition:max-height .45s ease;padding:0 14px}
+.install-acc-group.open .install-acc-body{max-height:900px;padding:12px 14px}
+.install-acc-body p,.install-acc-body ol{margin:0;font-size:13px;line-height:2;color:#eaf3fb}
+.install-acc-body ol{padding-right:20px}
+.install-acc-body ol li{margin-bottom:3px}
+.install-acc-body .warn{display:inline-block;background:rgba(255,107,122,.15);color:#ff9aa8;padding:3px 10px;border-radius:6px;font-size:11px;margin-bottom:6px;border:1px solid rgba(255,107,122,.3)}
+/* ===== دکمه‌های کوچک ارسال و نصب ===== */
+.install-actions{display:flex;gap:8px;margin-top:12px;flex-wrap:nowrap}
+.install-share-btn,.install-pwa-btn{flex:1 1 0;padding:10px 8px;border-radius:10px;font-size:13px;font-weight:900;cursor:pointer;border:none;display:inline-flex;align-items:center;justify-content:center;gap:4px;transition:.3s;color:#04101d;white-space:nowrap;font-family:inherit}
+.install-share-btn{background:linear-gradient(135deg,#2dd4a3,#39c6ff);box-shadow:0 4px 12px rgba(45,212,161,.3)}
+.install-share-btn:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(45,212,161,.5)}
+.install-pwa-btn{background:linear-gradient(135deg,#ffd166,#ff8c42);box-shadow:0 4px 12px rgba(255,209,102,.3)}
+.install-pwa-btn:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(255,209,102,.5)}
+/* ===== اطلاعات نسخه ===== */
+.install-version{margin-top:14px;padding:10px 12px;border-radius:10px;background:rgba(0,0,0,.22);border:1px dashed rgba(255,255,255,.14);text-align:center}
+.install-version .iv-version{font-size:11px;font-weight:900;color:var(--cyan);margin-bottom:5px;letter-spacing:.4px}
+.install-version .iv-changelog{font-size:10px;line-height:1.75;color:var(--muted);text-align:right}
+.install-size-note{margin-top:12px;padding:12px 14px;border-radius:10px;background:linear-gradient(135deg,rgba(45,212,161,.12),rgba(57,198,255,.08));border:1px solid rgba(45,212,161,.3);font-size:12px;line-height:1.9;color:#d4f5e8;text-align:right}
+.install-size-note .isn-head{font-weight:900;color:#7fffd4;font-size:13px;display:block;margin-bottom:3px}
+.install-btn{display:block;width:100%;margin-top:14px;padding:14px;background:linear-gradient(135deg,#39c6ff,#4f7cff);color:#fff;border:none;border-radius:12px;font-size:16px;font-weight:900;cursor:pointer;box-shadow:0 6px 18px rgba(57,198,255,.35);transition:.3s;position:relative;font-family:inherit}
+.install-btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(57,198,255,.55)}
 .install-btn:active{transform:translateY(0)}
-.install-actions{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
-.install-share-btn,.install-pwa-btn{flex:1 1 140px;padding:13px 12px;border-radius:12px;font-size:14px;font-weight:900;cursor:pointer;border:none;display:inline-flex;align-items:center;justify-content:center;gap:6px;transition:.3s;color:#04101d}
-.install-share-btn{background:linear-gradient(135deg,#2dd4a3,#39c6ff);box-shadow:0 6px 18px rgba(45,212,161,.35)}
-.install-share-btn:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(45,212,161,.55)}
-.install-pwa-btn{background:linear-gradient(135deg,#ffd166,#ff8c42);box-shadow:0 6px 18px rgba(255,209,102,.35)}
-.install-pwa-btn:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(255,209,102,.55)}
-/* ===== کادر حجم کم در مودال ===== */
-.install-size-note{margin-top:14px;padding:14px 18px;border-radius:12px;background:linear-gradient(135deg,rgba(45,212,161,.14),rgba(57,198,255,.08));border:1px solid rgba(45,212,161,.35);font-size:13px;line-height:2;color:#d4f5e8;text-align:right}
-.install-size-note .isn-head{font-weight:900;color:#7fffd4;font-size:14px;display:block;margin-bottom:4px}
 footer{text-align:center;color:var(--muted);font-size:11px;line-height:2;padding:25px 0 35px}
 .muted{color:var(--muted);font-size:13px}
 @media(max-width:900px){.scene{grid-template-columns:1fr}.sport-grid{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:560px){.wrap{width:calc(100% - 12px)}.main,.side,.section{padding:16px}.weather-hero{flex-direction:column;text-align:center}.temp{font-size:42px}.prayergrid{grid-template-columns:repeat(2,1fr)}.details{grid-template-columns:repeat(2,1fr)}.sport-grid{grid-template-columns:repeat(2,1fr)}.page-title{font-size:28px}.chat-panel{left:8px;width:calc(100vw - 16px)}.city{font-size:22px}.install-box{padding:20px 16px}.install-header h2{font-size:19px}.install-sec h3{font-size:15px}.install-sec p,.install-sec ol{font-size:14px}.install-sec ol{padding-right:18px}.install-logo{font-size:40px}.install-btn{padding:13px;font-size:15px}.about-actions{flex-direction:column}.btn-share-app,.btn-install-app{width:100%;justify-content:center}}
+@media(max-width:560px){.wrap{width:calc(100% - 12px)}.main,.side,.section{padding:16px}.weather-hero{flex-direction:column;text-align:center}.temp{font-size:42px}.prayergrid{grid-template-columns:repeat(2,1fr)}.details{grid-template-columns:repeat(2,1fr)}.sport-grid{grid-template-columns:repeat(2,1fr)}.page-title{font-size:28px}.chat-panel{left:8px;width:calc(100vw - 16px)}.city{font-size:22px}.install-box{padding:20px 14px}.install-header h2{font-size:19px}.install-acc-h{font-size:13px;padding:11px 12px}.install-acc-body p,.install-acc-body ol{font-size:12px}.install-logo{font-size:40px}.install-btn{padding:12px;font-size:15px}.code-digit{width:52px;height:60px;font-size:24px}}
 </style>
 </head>
 <body>
 <div id="bgP"></div>
 <div id="pullInd">برای به‌روزرسانی بکشید</div>
 
+<!-- ============ مودال نصب ============ -->
 <div class="install-overlay" id="installOverlay">
   <div class="install-box">
     <div class="install-header">
@@ -308,29 +333,62 @@ footer{text-align:center;color:var(--muted);font-size:11px;line-height:2;padding
       <h2>نصب وب اپلیکیشن «مجله آسمان»</h2>
       <p>برنامه را به صفحهٔ اصلی گوشی خود بیفزایید</p>
     </div>
-    <div class="install-sec">
-      <h3>🤖 نصب در اندروید (Chrome)</h3>
-      <p>برای نصب وب اپلیکیشن «مجله آسمان» بعد از باز شدن صفحهٔ برنامه، در صفحهٔ مرورگر کروم <b>«سه نقطه»</b> بالای یا پایین مرورگر (که در سمت چپ یا راست صفحه قرار دارد) را بزنید و در صفحهٔ باز شده گزینهٔ <b>«نصب و ایجاد میانبر»</b> یا <b>«افزودن صفحه به میانبر»</b> را انتخاب کنید. بعد از تأیید، برنامه به صفحهٔ اصلی گوشی شما افزوده می‌شود.</p>
+
+    <div class="install-accordion" id="installAccordion">
+      <div class="install-acc-group">
+        <div class="install-acc-h"><span>🤖 نصب در اندروید (Chrome)</span><span class="arrow-r">⌄</span></div>
+        <div class="install-acc-body">
+          <p>برای نصب وب اپلیکیشن «مجله آسمان» بعد از باز شدن صفحهٔ برنامه، در صفحهٔ مرورگر کروم <b>«سه نقطه»</b> بالای یا پایین مرورگر را بزنید و در صفحهٔ باز شده گزینهٔ <b>«نصب و ایجاد میانبر»</b> یا <b>«افزودن صفحه به میانبر»</b> را انتخاب کنید. بعد از تأیید، برنامه به صفحهٔ اصلی گوشی شما افزوده می‌شود.</p>
+        </div>
+      </div>
+      <div class="install-acc-group">
+        <div class="install-acc-h"><span>🍎 نصب روی iPhone/iPad (Safari)</span><span class="arrow-r">⌄</span></div>
+        <div class="install-acc-body">
+          <div class="warn">⚠️ مهم: حتماً با Safari باز کنید، نه Chrome. iOS فقط از Safari نصب PWA می‌کند.</div>
+          <ol>
+            <li>آدرس را در <b>Safari</b> باز کنید.</li>
+            <li>دکمهٔ <b>Share</b> (مربع با فلش رو به بالا) در نوار پایین را بزنید.</li>
+            <li>به پایین اسکرول کنید و <b>Add to Home Screen</b> را انتخاب کنید.</li>
+            <li>اسم را تأیید کنید و <b>Add</b> را بزنید.</li>
+          </ol>
+        </div>
+      </div>
+      <div class="install-acc-group">
+        <div class="install-acc-h"><span>🌐 نصب در مرورگر Browser</span><span class="arrow-r">⌄</span></div>
+        <div class="install-acc-body">
+          <p>در مرورگر پیش‌فرض اندروید (Browser)، گزینهٔ «نصب برنامه» وجود ندارد یا کار نمی‌کند. به‌جای آن، این مراحل را انجام دهید:</p>
+          <ol>
+            <li>روی <b>سه نقطه</b> (منو) در بالای مرورگر بزنید.</li>
+            <li>گزینهٔ <b>«افزودن صفحه به»</b> را انتخاب کنید.</li>
+            <li>سپس <b>«صفحه اصلی»</b> را انتخاب کنید.</li>
+            <li>در نهایت روی <b>«افزودن»</b> بزنید.</li>
+          </ol>
+          <p>حالا آیکون برنامه روی صفحهٔ اصلی گوشی شما ظاهر می‌شود. ✅</p>
+        </div>
+      </div>
     </div>
-    <div class="install-sec">
-      <h3>🍎 نصب روی iPhone/iPad (Safari)</h3>
-      <div class="warn">⚠️ مهم: حتماً با Safari باز کنید، نه Chrome. iOS فقط از Safari نصب PWA می‌کند.</div>
-      <ol>
-        <li>آدرس را در <b>Safari</b> باز کنید.</li>
-        <li>دکمهٔ <b>Share</b> (مربع با فلش رو به بالا) در نوار پایین را بزنید.</li>
-        <li>به پایین اسکرول کنید و <b>Add to Home Screen</b> را انتخاب کنید.</li>
-        <li>اسم را تأیید کنید و <b>Add</b> را بزنید.</li>
-      </ol>
-    </div>
+
     <div class="install-actions">
       <button class="install-share-btn" id="shareAppModal">📤 ارسال برنامه</button>
       <button class="install-pwa-btn" id="installAppModal">📲 نصب برنامه</button>
     </div>
+
     <div class="install-size-note">
       <span class="isn-head">💾 حجم بسیار کم، بدون اشغال فضای گوشی.</span>
       از آنجا که این برنامه تحت وب است، تنها چند مگابایت از حافظه گوشی شما را اشغال می‌کند؛ یعنی حتی کمتر از حجم یک عکس.
     </div>
+
     <button class="install-btn" id="installOk">✓ متوجه شدم</button>
+
+    <div class="install-version">
+      <div class="iv-version">📌 نسخهٔ ۲٫۱٫۰</div>
+      <div class="iv-changelog">
+        • راهنمای نصب مخصوص مرورگر Browser<br>
+        • به‌روزرسانی خودکار در هر باز شدن برنامه<br>
+        • کوچک‌تر شدن دکمه‌های ارسال و نصب<br>
+        • کشویی شدن راهنمای نصب (پیش‌فرض: بسته)
+      </div>
+    </div>
   </div>
 </div>
 
@@ -350,6 +408,7 @@ footer{text-align:center;color:var(--muted);font-size:11px;line-height:2;padding
   </header>
   <div id="status" class="status"></div>
 
+  <!-- ============ صفحه درباره ============ -->
   <section class="mag-page" id="page-about">
     <div class="page-hero"><div><h2 class="page-title">دربارهٔ مجله و سازنده</h2><div class="page-subtitle">آشنایی با مجلهٔ آسمان و راهنمای بخش‌ها</div></div></div>
     <section class="panel section">
@@ -366,23 +425,24 @@ footer{text-align:center;color:var(--muted);font-size:11px;line-height:2;padding
           <span class="sig-line2">م. حسینی _ 🧑‍🦽 معلول آسیب نخاعی</span>
         </div>
         <div class="creator-wrap"><a href="https://eitaa.com/hossini_96" target="_blank" rel="noopener" class="btn-creator">ارتباط با سازنده</a></div>
-        <div class="about-actions">
-          <button class="btn-share-app" id="shareAppAbout">📤 ارسال برنامه به دوستان</button>
-          <button class="btn-install-app" id="installAppAbout">📲 نصب برنامه</button>
-        </div>
       </div>
       <div class="about-help" style="margin-top:20px">
         <div class="ah-sec"><div class="ah-h c1">🏠 آب‌وهوا</div><ul><li>پیش‌بینی ۹روزه و ساعتی، ۱۶ شاخص، اوقات شرعی، تقویم با ساعت تهران/لندن/مکه.</li><li>جستجو: روستا/منطقه/شهر/استان/کشور.</li></ul></div>
-        <div class="ah-sec"><div class="ah-h c6">🧳 سفر</div><ul><li>خلاصهٔ سفر بر اساس شهر انتخابی + تورهای مجازی سه‌گروهی (زیارتی/شهرها/دانشگاهی).</li></ul></div>
-        <div class="ah-sec"><div class="ah-h c4">🎭 فرهنگ</div><ul><li>۵ شاعر: حافظ، سعدی، مولانا، فردوسی، خیام — بیت‌ها هر ۲ ساعت تغییر می‌کنند.</li><li>فال حافظ، بیت تصادفی، نمایه موسیقی، کتاب، تئاتر.</li></ul></div>
-        <div class="ah-sec"><div class="ah-h c2">⚽ ورزشی</div><ul><li>فوتبال (۴ گروه کشویی)، فوتسال، بسکتبال، والیبال، فوتبال ساحلی، هندبال، المپیک.</li></ul></div>
-        <div class="ah-sec"><div class="ah-h c3">🧬 سلامت</div><ul><li>همهٔ شاخص‌ها بر اساس شهر انتخابی شما در آب‌وهوا.</li></ul></div>
-        <div class="ah-sec"><div class="ah-h c5">🔭 علم</div><ul><li>۴ دانستنی علمی که هر ۲ ساعت به‌روزرسانی می‌شوند.</li><li>فاز ماه، روشنایی روز، رویدادهای آسمانی.</li></ul></div>
-        <div class="ah-sec"><div class="ah-h c7">🎉 سرگرمی</div><ul><li>جوک تصادفی، دانستنی سرگرمی و معما برای اوقات فراغت — به‌روزرسانی هر ۶۰ دقیقه.</li></ul></div>
+        <div class="ah-sec"><div class="ah-h c6">🧳 سفر</div><ul><li>خلاصهٔ سفر بر اساس شهر انتخابی + تورهای مجازی سه‌گروهی.</li></ul></div>
+        <div class="ah-sec"><div class="ah-h c4">🎭 فرهنگ</div><ul><li>۵ شاعر: حافظ، سعدی، مولانا، فردوسی، خیام.</li></ul></div>
+        <div class="ah-sec"><div class="ah-h c2">⚽ ورزشی</div><ul><li>فوتبال، فوتسال، بسکتبال، والیبال، ساحلی، هندبال، المپیک.</li></ul></div>
+        <div class="ah-sec"><div class="ah-h c3">🧬 سلامت</div><ul><li>همهٔ شاخص‌ها بر اساس شهر انتخابی شما.</li></ul></div>
+        <div class="ah-sec"><div class="ah-h c5">🔭 علم</div><ul><li>۴ دانستنی علمی + نجوم.</li></ul></div>
+        <div class="ah-sec"><div class="ah-h c7">🎉 سرگرمی</div><ul><li>جوک، دانستنی و معما — به‌روزرسانی هر ۶۰ دقیقه.</li></ul></div>
+      </div>
+      <!-- دکمه مخفی کد -->
+      <div class="about-code-wrap">
+        <button class="btn-code" id="btnCode" type="button">کد</button>
       </div>
     </section>
   </section>
 
+  <!-- ============ صفحه آب‌وهوا ============ -->
   <section class="mag-page" id="page-home" hidden>
     <div class="page-hero weather-bg"><div><h2 class="page-title">آب و هوا</h2><div class="page-subtitle" id="weatherSubtitle">پیش‌بینی دقیق، اوقات شرعی و شاخص‌های کامل</div></div></div>
     <div class="search"><span class="search-icon">🔍</span><input id="search" placeholder="جستجو: روستا، منطقه، شهر، استان، کشور..."><div id="results" class="results"></div></div>
@@ -460,6 +520,7 @@ footer{text-align:center;color:var(--muted);font-size:11px;line-height:2;padding
     <section class="panel section"><div class="sectionhead"><div class="title">😴 خواب</div><button class="arrow" data-collapse="sleepBody">⌄</button></div><div id="sleepBody" class="collapse collapsed"><div id="sleepContent" class="sec-content">--</div></div></section>
   </section>
 
+  <!-- ============ صفحه سفر ============ -->
   <section class="mag-page" id="page-travel" hidden>
     <div class="page-hero"><div><h2 class="page-title">سفر</h2><div class="page-subtitle">برنامه‌ریزی، چک‌لیست، جاذبه‌ها و تورهای مجازی</div></div></div>
     <section class="panel section">
@@ -480,29 +541,16 @@ footer{text-align:center;color:var(--muted);font-size:11px;line-height:2;padding
       <div class="travel-accordion" id="travelAccordion">
         <div class="travel-acc-group" data-tacc="ziarti">
           <div class="travel-acc-h ziarti"><span>🕌 زیارتی (حرم‌ها و اماکن مقدسه)</span><span class="arrow-r">⌄</span></div>
-          <div class="travel-acc-body">
-            <div class="sport-links">
-              <a class="sport-link" href="https://www.panoman.ir/projects/rasolallah/1.html" target="_blank" rel="noopener"><div class="sl-icon">🕋</div><div class="sl-title">زیارت مجازی مسجدالنبی و قبور بقیع</div><div class="sl-desc">گشت مجازی در مدینهٔ منوره.</div></a>
-            </div>
-          </div>
+          <div class="travel-acc-body"><div class="sport-links"><a class="sport-link" href="https://www.panoman.ir/projects/rasolallah/1.html" target="_blank" rel="noopener"><div class="sl-icon">🕋</div><div class="sl-title">زیارت مجازی مسجدالنبی و قبور بقیع</div><div class="sl-desc">گشت مجازی در مدینهٔ منوره.</div></a></div></div>
         </div>
         <div class="travel-acc-group" data-tacc="shahr">
           <div class="travel-acc-h shahr"><span>🏙️ شهرها (۱۷ مقصد)</span><span class="arrow-r">⌄</span></div>
           <div class="travel-acc-body">
             <div class="sport-links">
               <a class="sport-link" href="https://www.panoman.ir/vt/dezful/index.htm" target="_blank" rel="noopener"><div class="sl-icon">🏞️</div><div class="sl-title">گردشگری مجازی دزفول</div><div class="sl-desc">شهر پل‌های آجری و رودخانه.</div></a>
-              <a class="sport-link" href="https://www.panoman.ir/vt/dezful/index.htm" target="_blank" rel="noopener"><div class="sl-icon">🌊</div><div class="sl-title">گردشگری مجازی دالیخانی</div><div class="sl-desc">دریاچهٔ جنگلی مازندران.</div></a>
               <a class="sport-link" href="https://omid360.com/iran/tehran/" target="_blank" rel="noopener"><div class="sl-icon">🏙️</div><div class="sl-title">گردشگری مجازی تهران</div><div class="sl-desc">گشت ۳۶۰° در پایتخت.</div></a>
-              <a class="sport-link" href="https://www.panoman.ir/fa/%D8%AA%D9%88%D8%B1-%D9%85%D8%AC%D8%A7%D8%B2%DB%8C-%D8%B1%D9%81%D8%B3%D9%86%D8%AC%D8%A7%D9%86" target="_blank" rel="noopener"><div class="sl-icon">🌴</div><div class="sl-title">گردشگری مجازی رفسنجان</div><div class="sl-desc">شهر پستهٔ ایران.</div></a>
-              <a class="sport-link" href="https://www.panoman.ir/fa/%D8%AA%D9%88%D8%B1-%D9%85%D8%AC%D8%A7%D8%B2%DB%8C-%DA%A9%D8%A7%D8%B4%D8%A7%D9%86" target="_blank" rel="noopener"><div class="sl-icon">🌹</div><div class="sl-title">گردشگری مجازی کاشان</div><div class="sl-desc">خانه‌های تاریخی و باغ فین.</div></a>
-              <a class="sport-link" href="https://www.panoman.ir/fa/%D8%AA%D9%88%D8%B1-%D9%85%D8%AC%D8%A7%D8%B2%DB%8C-%D8%B4%DB%8C%D8%B1%D8%A7%D8%B2" target="_blank" rel="noopener"><div class="sl-icon">🏛️</div><div class="sl-title">گردشگری مجازی شیراز</div><div class="sl-desc">حافظیه، نارنجستان و پرسپولیس.</div></a>
-              <a class="sport-link" href="https://www.panoman.ir/fa/%D8%AA%D9%88%D8%B1-%D9%85%D8%AC%D8%A7%D8%B2%DB%8C-%D8%A7%D8%B5%D9%81%D9%87%D8%A7%D9%86" target="_blank" rel="noopener"><div class="sl-icon">🕌</div><div class="sl-title">گردشگری مجازی اصفهان</div><div class="sl-desc">نقش جهان و سی‌وسه‌پل.</div></a>
-              <a class="sport-link" href="https://www.panoman.ir/fa/%D8%AA%D9%88%D8%B1-%D9%85%D8%AC%D8%A7%D8%B2%DB%8C-%D8%AA%D9%87%D8%B1%D8%A7%D9%86" target="_blank" rel="noopener"><div class="sl-icon">🏔️</div><div class="sl-title">گردشگری مجازی تهران</div><div class="sl-desc">گشت پانومن در پایتخت.</div></a>
-              <a class="sport-link" href="https://www.panoman.ir/vt/almas/index.htm?media-index=27" target="_blank" rel="noopener"><div class="sl-icon">🌄</div><div class="sl-title">چهارمحال و بختیاری</div><div class="sl-desc">طبیعت زاگرس.</div></a>
-              <a class="sport-link" href="https://blackdate.ir/vtour/index.htm" target="_blank" rel="noopener"><div class="sl-icon">🏜️</div><div class="sl-title">گردشگری مجازی بم</div><div class="sl-desc">ارگ تاریخی بم.</div></a>
-              <a class="sport-link" href="https://www.panoman.ir/vt/east-azerbaijan/mamaghan/" target="_blank" rel="noopener"><div class="sl-icon">🏘️</div><div class="sl-title">گردشگری مجازی ممقان</div><div class="sl-desc">شهر آذربایجان شرقی.</div></a>
-              <a class="sport-link" href="https://omid360.com/iran/shiraz/" target="_blank" rel="noopener"><div class="sl-icon">🌺</div><div class="sl-title">تور مجازی شیراز ۲</div><div class="sl-desc">گشت ۳۶۰° امید در شیراز.</div></a>
-              <a class="sport-link" href="https://omid360.com/iran/isfahan/" target="_blank" rel="noopener"><div class="sl-icon">🎨</div><div class="sl-title">گردشگری مجازی اصفهان ۲</div><div class="sl-desc">گشت امید در اصفهان.</div></a>
+              <a class="sport-link" href="https://omid360.com/iran/shiraz/" target="_blank" rel="noopener"><div class="sl-icon">🌺</div><div class="sl-title">گردشگری مجازی شیراز</div><div class="sl-desc">حافظیه و پرسپولیس.</div></a>
+              <a class="sport-link" href="https://omid360.com/iran/isfahan/" target="_blank" rel="noopener"><div class="sl-icon">🕌</div><div class="sl-title">گردشگری مجازی اصفهان</div><div class="sl-desc">نقش جهان و سی‌وسه‌پل.</div></a>
               <a class="sport-link" href="https://omid360.com/iran/gilan/" target="_blank" rel="noopener"><div class="sl-icon">🌧️</div><div class="sl-title">گردشگری مجازی گیلان</div><div class="sl-desc">سبزترین استان ایران.</div></a>
               <a class="sport-link" href="https://omid360.com/iran/qazvin/" target="_blank" rel="noopener"><div class="sl-icon">🏰</div><div class="sl-title">گردشگری مجازی قزوین</div><div class="sl-desc">پایتخت خوشنویسی ایران.</div></a>
               <a class="sport-link" href="https://omid360.com/iran/arak/" target="_blank" rel="noopener"><div class="sl-icon">🏭</div><div class="sl-title">گردشگری مجازی استان مرکزی</div><div class="sl-desc">اراک و اطراف.</div></a>
@@ -512,11 +560,7 @@ footer{text-align:center;color:var(--muted);font-size:11px;line-height:2;padding
         </div>
         <div class="travel-acc-group" data-tacc="danesh">
           <div class="travel-acc-h danesh"><span>🎓 دانشگاهی</span><span class="arrow-r">⌄</span></div>
-          <div class="travel-acc-body">
-            <div class="sport-links">
-              <a class="sport-link" href="https://www.sharif.ir/tour/index.htm" target="_blank" rel="noopener"><div class="sl-icon">🎓</div><div class="sl-title">دانشگاه صنعتی شریف</div><div class="sl-desc">گشت مجازی در دانشگاه برتر ایران.</div></a>
-            </div>
-          </div>
+          <div class="travel-acc-body"><div class="sport-links"><a class="sport-link" href="https://www.sharif.ir/tour/index.htm" target="_blank" rel="noopener"><div class="sl-icon">🎓</div><div class="sl-title">دانشگاه صنعتی شریف</div><div class="sl-desc">گشت مجازی در دانشگاه برتر ایران.</div></a></div></div>
         </div>
       </div>
       <div class="news-group">🎒 چک‌لیست و نکات سفر</div>
@@ -524,6 +568,7 @@ footer{text-align:center;color:var(--muted);font-size:11px;line-height:2;padding
     </section>
   </section>
 
+  <!-- ============ صفحه فرهنگ ============ -->
   <section class="mag-page" id="page-culture" hidden>
     <div class="page-hero"><div><h2 class="page-title">فرهنگ</h2><div class="page-subtitle">ادب، هنر، تئاتر و کتاب</div></div></div>
     <section class="panel section">
@@ -565,16 +610,18 @@ footer{text-align:center;color:var(--muted);font-size:11px;line-height:2;padding
     </section>
   </section>
 
+  <!-- ============ صفحه ورزشی ============ -->
   <section class="mag-page" id="page-sport" hidden>
     <div class="page-hero"><div><h2 class="page-title">ورزشی</h2><div class="page-subtitle">لیگ‌ها، جام‌ها و مسابقات</div></div></div>
     <div class="sport-grid" id="sportGrid"></div>
     <div id="sportContentArea"></div>
   </section>
 
+  <!-- ============ صفحه سلامت ============ -->
   <section class="mag-page" id="page-health" hidden>
     <div class="page-hero"><div><h2 class="page-title">سلامت</h2><div class="page-subtitle">سلامت فصلی، هوا، خواب و تغذیه</div></div></div>
     <section class="panel section">
-      <div class="health-intro">💡 همهٔ شاخص‌ها و عددهای این صفحه بر اساس <b>شهر انتخابی شما در بخش آب‌وهوا</b> محاسبه می‌شوند و با تغییر شهر، به‌روزرسانی خواهند شد.</div>
+      <div class="health-intro">💡 همهٔ شاخص‌ها و عددهای این صفحه بر اساس <b>شهر انتخابی شما در بخش آب‌وهوا</b> محاسبه می‌شوند.</div>
       <div id="healthCity" style="font-weight:900;font-size:15px;color:var(--gold);margin-bottom:10px">--</div>
       <div id="healthTips" class="sec-content">--</div>
       <div class="news-group">🫁 کیفیت هوا و تنفس</div>
@@ -586,6 +633,7 @@ footer{text-align:center;color:var(--muted);font-size:11px;line-height:2;padding
     </section>
   </section>
 
+  <!-- ============ صفحه علم ============ -->
   <section class="mag-page" id="page-science" hidden>
     <div class="page-hero"><div><h2 class="page-title">علم</h2><div class="page-subtitle">نجوم، زمین و دانستنی‌های شگفت‌انگیز</div></div></div>
     <section class="panel section">
@@ -595,6 +643,7 @@ footer{text-align:center;color:var(--muted);font-size:11px;line-height:2;padding
     </section>
   </section>
 
+  <!-- ============ صفحه سرگرمی ============ -->
   <section class="mag-page" id="page-fun" hidden>
     <div class="page-hero"><div><h2 class="page-title">سرگرمی</h2><div class="page-subtitle">جوک، دانستنی سرگرمی و معما برای اوقات فراغت</div></div></div>
     <section class="panel section">
@@ -606,15 +655,11 @@ footer{text-align:center;color:var(--muted);font-size:11px;line-height:2;padding
       <div class="fun-accordion">
         <div class="fun-acc-group" data-facc="fact">
           <div class="fun-acc-h fact"><span>💡 دانستنی سرگرمی</span><span class="arrow-r">⌄</span></div>
-          <div class="fun-acc-body">
-            <div id="funFactArea" class="sec-content">--</div>
-          </div>
+          <div class="fun-acc-body"><div id="funFactArea" class="sec-content">--</div></div>
         </div>
         <div class="fun-acc-group" data-facc="puzzle">
           <div class="fun-acc-h puzzle"><span>🧩 معما (با دکمهٔ نمایش جواب)</span><span class="arrow-r">⌄</span></div>
-          <div class="fun-acc-body">
-            <div id="funPuzzleArea" class="sec-content">--</div>
-          </div>
+          <div class="fun-acc-body"><div id="funPuzzleArea" class="sec-content">--</div></div>
         </div>
       </div>
     </section>
@@ -623,6 +668,7 @@ footer{text-align:center;color:var(--muted);font-size:11px;line-height:2;padding
   <footer>مجلهٔ آسمان · هواشناسی: Open-Meteo + Yr · ورزش: TheSportsDB + Varzesh3 · فرهنگ: Ganjoor + منابع رسمی · به‌روزرسانی با کشیدن صفحه</footer>
 </div>
 
+<!-- ============ دستیار ============ -->
 <button class="chat-fab" id="chatFab">🤖</button>
 <div class="chat-panel" id="chatPanel">
   <div class="chat-header"><div class="ch-title">🤖 دستیار هوشمند</div><button class="ch-btn clear" id="chatClear">🗑️</button><button class="ch-btn close" id="chatClose">✕</button></div>
@@ -631,6 +677,7 @@ footer{text-align:center;color:var(--muted);font-size:11px;line-height:2;padding
   <div class="chat-suggestions" id="chatSugs"></div>
 </div>
 
+<!-- ============ مودال اطلاعات ============ -->
 <div id="infoModal" class="modal-overlay">
   <div class="modal-box">
     <button class="modal-close" id="infoModalClose">×</button>
@@ -640,11 +687,38 @@ footer{text-align:center;color:var(--muted);font-size:11px;line-height:2;padding
   </div>
 </div>
 
+<!-- ============ مودال کد مخفی ============ -->
+<div id="codeModal" class="modal-overlay">
+  <div class="modal-box code-box">
+    <button class="modal-close" id="codeModalClose">×</button>
+    <div id="codeViewEntry">
+      <div class="modal-icon">🔐</div>
+      <div class="modal-title">ورود کد</div>
+      <div class="code-digits" dir="ltr">
+        <input type="tel" class="code-digit" id="codeDigit1" maxlength="1" inputmode="numeric" pattern="[0-9]*" autocomplete="off">
+        <input type="tel" class="code-digit" id="codeDigit2" maxlength="1" inputmode="numeric" pattern="[0-9]*" autocomplete="off">
+        <input type="tel" class="code-digit" id="codeDigit3" maxlength="1" inputmode="numeric" pattern="[0-9]*" autocomplete="off">
+      </div>
+      <button class="code-submit-btn" id="codeSubmitBtn">تأیید</button>
+      <div class="code-error" id="codeError">کد وارد شده صحیح نیست</div>
+    </div>
+    <div id="codeViewStats" style="display:none">
+      <div class="modal-icon">📊</div>
+      <div class="modal-title">آمار بازدید</div>
+      <div id="statsContent" class="modal-text"><div class="stats-loading">در حال دریافت...</div></div>
+    </div>
+  </div>
+</div>
+
 <script>
 (function(){
 "use strict";
 function lsSet(k,v){try{localStorage.setItem(k,v);}catch(e){}}
 function lsGet(k){try{return localStorage.getItem(k);}catch(e){return null;}}
+
+var APP_VERSION="2.1.0";
+
+/* ============ PWA: نصب و ارسال ============ */
 var installOverlay=document.getElementById("installOverlay");
 var installOk=document.getElementById("installOk");
 function showInstallModal(){if(!installOverlay)return;installOverlay.classList.add("show");document.body.classList.add("install-lock");}
@@ -652,105 +726,201 @@ function closeInstallModal(){if(!installOverlay)return;installOverlay.classList.
 if(installOk)installOk.addEventListener("click",closeInstallModal);
 setTimeout(showInstallModal,100);
 
-/* ===== PWA: مدیریت نصب و ارسال برنامه ===== */
 var deferredInstallPrompt=null;
 function isStandalone(){try{return (window.matchMedia&&window.matchMedia("(display-mode:standalone)").matches)||window.navigator.standalone===true;}catch(e){return false;}}
-window.addEventListener("beforeinstallprompt",function(e){
-  e.preventDefault();
-  deferredInstallPrompt=e;
-});
-window.addEventListener("appinstalled",function(){
-  deferredInstallPrompt=null;
-  if(typeof show==="function")show("🎉 برنامه با موفقیت نصب شد!","ok");
-});
+window.addEventListener("beforeinstallprompt",function(e){e.preventDefault();deferredInstallPrompt=e;});
+window.addEventListener("appinstalled",function(){deferredInstallPrompt=null;if(typeof show==="function")show("🎉 برنامه با موفقیت نصب شد!","ok");});
 
 function copyToClipboard(text){
-  if(navigator.clipboard&&navigator.clipboard.writeText){
-    return navigator.clipboard.writeText(text);
-  }
+  if(navigator.clipboard&&navigator.clipboard.writeText){return navigator.clipboard.writeText(text);}
   return new Promise(function(resolve,reject){
-    try{
-      var ta=document.createElement("textarea");
-      ta.value=text;ta.style.position="fixed";ta.style.top="-9999px";ta.style.opacity="0";
-      document.body.appendChild(ta);ta.focus();ta.select();
-      var ok=document.execCommand("copy");
-      document.body.removeChild(ta);
-      ok?resolve():reject();
-    }catch(err){reject(err);}
+    try{var ta=document.createElement("textarea");ta.value=text;ta.style.position="fixed";ta.style.top="-9999px";ta.style.opacity="0";document.body.appendChild(ta);ta.focus();ta.select();var ok=document.execCommand("copy");document.body.removeChild(ta);ok?resolve():reject();}catch(err){reject(err);}
   });
 }
-function getShareUrl(){
-  var url=location.href;
-  if(url.indexOf("index.html")!==-1){
-    url=url.replace(/index\.html.*$/,"");
-  }
-  var hashIdx=url.indexOf("#");
-  if(hashIdx!==-1)url=url.substring(0,hashIdx);
-  return url;
-}
+function getShareUrl(){var url=location.href;if(url.indexOf("index.html")!==-1){url=url.replace(/index\.html.*$/,"");}var h=url.indexOf("#");if(h!==-1)url=url.substring(0,h);return url;}
 function shareApp(){
   var url=getShareUrl();
-  var shareData={
-    title:"مجله آسمان",
-    text:"🌌 مجله آسمان — اپلیکیشن هواشناسی، ورزش، سلامت، فرهنگ، علم، سفر و سرگرمی.\nهمین حالا امتحان کنید:",
-    url:url
-  };
-  if(navigator.share){
-    navigator.share(shareData).catch(function(err){
-      if(err&&err.name==="AbortError")return;
-      copyToClipboard(url).then(function(){
-        if(typeof show==="function")show("✅ لینک برنامه کپی شد. می‌توانید در بلوتوث، واتساپ، تلگرام، ایتا و ... بفرستید.","ok");
-      }).catch(function(){
-        alert("لینک برنامه:\n\n"+url);
-      });
-    });
-    return;
-  }
-  copyToClipboard(url).then(function(){
-    alert("✅ لینک برنامه کپی شد!\n\nمی‌توانید آن را در بلوتوث، Shareit، واتساپ، تلگرام، ایتا، پیامک و هر پیام‌رسان دیگری بفرستید.\n\n"+url);
-  }).catch(function(){
-    prompt("لینک برنامه (دستی کپی کنید):",url);
-  });
+  var data={title:"مجله آسمان",text:"🌌 مجله آسمان — اپلیکیشن هواشناسی، ورزش، سلامت، فرهنگ، علم، سفر و سرگرمی.\nهمین حالا امتحان کنید:",url:url};
+  if(navigator.share){navigator.share(data).catch(function(err){if(err&&err.name==="AbortError")return;copyToClipboard(url).then(function(){if(typeof show==="function")show("✅ لینک برنامه کپی شد.","ok");}).catch(function(){alert("لینک برنامه:\n\n"+url);});});return;}
+  copyToClipboard(url).then(function(){alert("✅ لینک برنامه کپی شد!\n\nمی‌توانید آن را در بلوتوث، Shareit، واتساپ، تلگرام، ایتا، پیامک و هر پیام‌رسان دیگری بفرستید.\n\n"+url);}).catch(function(){prompt("لینک برنامه (دستی کپی کنید):",url);});
 }
 function installApp(){
-  /* اگر قبلاً نصب شده */
-  if(isStandalone()){
-    alert("✅ شما این برنامه را نصب دارید.");
-    return;
-  }
-  /* اگر مرورگر از نصب خودکار پشتیبانی می‌کند */
+  if(isStandalone()){alert("✅ شما این برنامه را نصب دارید.");return;}
   if(deferredInstallPrompt){
     deferredInstallPrompt.prompt();
-    deferredInstallPrompt.userChoice.then(function(choice){
-      if(choice&&choice.outcome==="accepted"){
-        if(typeof show==="function")show("✅ نصب برنامه شروع شد","ok");
-      }
-      deferredInstallPrompt=null;
-    }).catch(function(){
-      deferredInstallPrompt=null;
-    });
+    deferredInstallPrompt.userChoice.then(function(choice){if(choice&&choice.outcome==="accepted"){if(typeof show==="function")show("✅ نصب برنامه شروع شد","ok");}deferredInstallPrompt=null;}).catch(function(){deferredInstallPrompt=null;});
     return;
   }
-  /* راهنمای دستی برای سایر مرورگرها */
-  var msg="📲 برای نصب مجله آسمان:\n\n"+
-          "🤖 اندروید (Chrome):\nمنوی ⋮ ← «نصب برنامه» یا «افزودن به صفحه اصلی»\n\n"+
-          "🍎 iPhone (Safari):\nدکمهٔ Share ← Add to Home Screen\n\n"+
-          "💻 کامپیوتر (Chrome/Edge):\nآیکون ⊕ در نوار آدرس ← Install\n\n"+
-          "💡 اگر برنامه قبلاً نصب شده، روی آیکون آن در هوم‌اسکرین بزنید.";
-  alert(msg);
+  alert("📲 برای نصب مجله آسمان:\n\n🤖 اندروید (Chrome):\nمنوی ⋮ ← «نصب برنامه» یا «افزودن به صفحه اصلی»\n\n🍎 iPhone (Safari):\nShare ← Add to Home Screen\n\n🌐 مرورگر Browser:\nسه نقطه ← افزودن صفحه به ← صفحه اصلی ← افزودن\n\n💡 اگر برنامه قبلاً نصب شده، روی آیکون آن در هوم‌اسکرین بزنید.");
 }
-function bindInstallShareButtons(){
-  var b1=document.getElementById("shareAppModal");
-  var b2=document.getElementById("shareAppAbout");
-  var b3=document.getElementById("installAppModal");
-  var b4=document.getElementById("installAppAbout");
-  if(b1)b1.addEventListener("click",shareApp);
-  if(b2)b2.addEventListener("click",shareApp);
-  if(b3)b3.addEventListener("click",installApp);
-  if(b4)b4.addEventListener("click",installApp);
-}
-/* ===== پایان PWA ===== */
+var b1=document.getElementById("shareAppModal"),b3=document.getElementById("installAppModal");
+if(b1)b1.addEventListener("click",shareApp);
+if(b3)b3.addEventListener("click",installApp);
 
+/* آکاردئون مودال نصب */
+function bindInstallAccordion(){
+  var acc=document.getElementById("installAccordion");if(!acc)return;
+  var hs=acc.querySelectorAll(".install-acc-h");
+  for(var i=0;i<hs.length;i++){
+    (function(h){h.addEventListener("click",function(){var g=h.closest(".install-acc-group");if(g)g.classList.toggle("open");});})(hs[i]);
+  }
+}
+bindInstallAccordion();
+
+/* ============ آمار بازدید (abacus) ============ */
+var COUNTER_NS="aseman-magazine-2026";
+var COUNTER_HOST="https://abacus.jasoncameron.dev";
+
+function getTehranParts(){
+  try{
+    var parts=new Intl.DateTimeFormat("en-US",{timeZone:"Asia/Tehran",year:"numeric",month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit",hour12:false,numberingSystem:"latn"}).formatToParts(new Date());
+    var o={};
+    parts.forEach(function(p){if(p.type!=="literal")o[p.type]=p.value;});
+    return o;
+  }catch(e){
+    var d=new Date();
+    return{year:String(d.getFullYear()),month:String(d.getMonth()+1).padStart(2,"0"),day:String(d.getDate()).padStart(2,"0"),hour:String(d.getHours()).padStart(2,"0"),minute:String(d.getMinutes()).padStart(2,"0")};
+  }
+}
+function getDayKey(){var p=getTehranParts();return "day-"+p.year+"-"+p.month+"-"+p.day;}
+function getMonthKey(){var p=getTehranParts();return "month-"+p.year+"-"+p.month;}
+function getWeekKey(){
+  var p=getTehranParts();
+  var y=parseInt(p.year,10),m=parseInt(p.month,10),d=parseInt(p.day,10);
+  var date=new Date(y,m-1,d);
+  var dow=date.getDay();
+  var daysSinceSat=(dow+1)%7;
+  date.setDate(d-date.getDate()-daysSinceSat+date.getDate());
+  date.setDate(d-daysSinceSat);
+  return "week-"+date.getFullYear()+"-"+String(date.getMonth()+1).padStart(2,"0")+"-"+String(date.getDate()).padStart(2,"0");
+}
+function remoteHit(key){
+  return fetch(COUNTER_HOST+"/hit/"+COUNTER_NS+"/"+key,{method:"GET",mode:"cors"}).then(function(r){return r.json();}).then(function(d){return (d&&typeof d.value==="number")?d.value:null;}).catch(function(){return null;});
+}
+function remoteGet(key){
+  return fetch(COUNTER_HOST+"/get/"+COUNTER_NS+"/"+key,{method:"GET",mode:"cors"}).then(function(r){return r.json();}).then(function(d){return (d&&typeof d.value==="number")?d.value:null;}).catch(function(){return null;});
+}
+/* پشتیبان محلی در صورت عدم دسترسی به سرور */
+function localInc(key){var v=parseInt(lsGet("aseman_"+key)||"0",10)+1;lsSet("aseman_"+key,String(v));return v;}
+function localGet(key){return parseInt(lsGet("aseman_"+key)||"0",10);}
+
+function trackVisit(){
+  try{
+    remoteHit("total").then(function(v){if(v===null)localInc("total");});
+    remoteHit(getDayKey()).then(function(v){if(v===null)localInc(getDayKey());});
+    remoteHit(getWeekKey()).then(function(v){if(v===null)localInc(getWeekKey());});
+    remoteHit(getMonthKey()).then(function(v){if(v===null)localInc(getMonthKey());});
+    if(!lsGet("aseman_device_seen")){
+      lsSet("aseman_device_seen","1");
+      remoteHit("unique").then(function(v){if(v===null)localInc("unique");});
+    }
+  }catch(e){}
+}
+
+/* ============ مودال کد ============ */
+var codeModal=document.getElementById("codeModal");
+var codeModalClose=document.getElementById("codeModalClose");
+var codeViewEntry=document.getElementById("codeViewEntry");
+var codeViewStats=document.getElementById("codeViewStats");
+var codeError=document.getElementById("codeError");
+var statsContent=document.getElementById("statsContent");
+var codeDigit1=document.getElementById("codeDigit1");
+var codeDigit2=document.getElementById("codeDigit2");
+var codeDigit3=document.getElementById("codeDigit3");
+var codeSubmitBtn=document.getElementById("codeSubmitBtn");
+var btnCode=document.getElementById("btnCode");
+
+function resetCodeModal(){
+  if(codeViewEntry)codeViewEntry.style.display="";
+  if(codeViewStats)codeViewStats.style.display="none";
+  if(codeError)codeError.classList.remove("show");
+  if(codeDigit1)codeDigit1.value="";
+  if(codeDigit2)codeDigit2.value="";
+  if(codeDigit3)codeDigit3.value="";
+}
+function openCodeModal(){
+  resetCodeModal();
+  if(codeModal)codeModal.classList.add("show");
+  setTimeout(function(){if(codeDigit1)codeDigit1.focus();},250);
+}
+function closeCodeModal(){
+  if(codeModal)codeModal.classList.remove("show");
+  resetCodeModal();
+}
+if(btnCode)btnCode.addEventListener("click",openCodeModal);
+if(codeModalClose)codeModalClose.addEventListener("click",closeCodeModal);
+if(codeModal)codeModal.addEventListener("click",function(e){if(e.target===codeModal)closeCodeModal();});
+
+function setupCodeInputs(){
+  var arr=[codeDigit1,codeDigit2,codeDigit3];
+  arr.forEach(function(inp,i){
+    if(!inp)return;
+    inp.addEventListener("input",function(){
+      inp.value=inp.value.replace(/[^0-9]/g,"").slice(0,1);
+      if(inp.value&&i<2)arr[i+1].focus();
+      if(arr[0].value&&arr[1].value&&arr[2].value)setTimeout(submitCode,200);
+    });
+    inp.addEventListener("keydown",function(e){
+      if(e.key==="Backspace"&&!inp.value&&i>0){arr[i-1].focus();}
+      if(e.key==="Enter"){submitCode();}
+    });
+    inp.addEventListener("focus",function(){inp.select&&inp.select();});
+  });
+}
+setupCodeInputs();
+
+function submitCode(){
+  var c=(codeDigit1.value||"")+(codeDigit2.value||"")+(codeDigit3.value||"");
+  if(c==="593"){showStats();}
+  else{if(codeError)codeError.classList.add("show");}
+}
+
+function getJalaliNowStr(){
+  try{
+    return new Intl.DateTimeFormat("fa-IR-u-ca-persian",{timeZone:"Asia/Tehran",weekday:"long",day:"numeric",month:"long",year:"numeric"}).format(new Date());
+  }catch(e){return new Date().toLocaleDateString("fa-IR");}
+}
+
+function showStats(){
+  if(codeViewEntry)codeViewEntry.style.display="none";
+  if(codeViewStats)codeViewStats.style.display="";
+  if(statsContent)statsContent.innerHTML='<div class="stats-loading">در حال دریافت آمار...</div>';
+
+  var keys=[{k:"total",label:"👁️ تعداد کل بازدید از مجله"},{k:getMonthKey(),label:"📅 بازدید این ماه"},{k:getWeekKey(),label:"🗓️ بازدید این هفته"},{k:getDayKey(),label:"☀️ بازدید امروز"},{k:"unique",label:"👤 بازدید منحصر"}];
+
+  Promise.all(keys.map(function(item){
+    return remoteGet(item.k).then(function(v){
+      if(v===null){v=localGet(item.k);}
+      return {label:item.label,value:v};
+    });
+  })).then(function(res){
+    var html='<div class="stats-date">📅 '+getJalaliNowStr()+'</div>';
+    res.forEach(function(r){
+      html+='<div class="stats-row"><span class="stats-label">'+r.label+':</span><span class="stats-val">'+(r.value||0).toLocaleString("fa-IR")+'</span></div>';
+    });
+    if(statsContent)statsContent.innerHTML=html;
+  }).catch(function(){
+    if(statsContent)statsContent.innerHTML='<div class="stats-loading">⚠️ دریافت آمار ممکن نشد.<br>لطفاً اتصال اینترنت را بررسی کنید.</div>';
+  });
+}
+
+/* ============ به‌روزرسانی خودکار ============ */
+if("serviceWorker" in navigator){
+  window.addEventListener("load",function(){
+    navigator.serviceWorker.register("sw.js",{updateViaCache:"none"}).then(function(reg){
+      /* چک اجباری آپدیت در هر بار باز شدن */
+      reg.update().catch(function(){});
+      /* هر یک ساعت هم چک کن */
+      setInterval(function(){reg.update().catch(function(){});},60*60*1000);
+    }).catch(function(){});
+  });
+  var hadCtrl=!!navigator.serviceWorker.controller;
+  navigator.serviceWorker.addEventListener("controllerchange",function(){
+    if(hadCtrl){window.location.reload();}
+  });
+}
+
+/* ============ بقیه اپلیکیشن ============ */
 var API={weather:"https://api.open-meteo.com/v1/forecast",geo:"https://geocoding-api.open-meteo.com/v1/search",air:"https://air-quality-api.open-meteo.com/v1/air-quality",prayer:"https://api.aladhan.com/v1/timings",archive:"https://archive-api.open-meteo.com/v1/archive",hforecast:"https://historical-forecast-api.open-meteo.com/v1/forecast",ensemble:"https://ensemble-api.open-meteo.com/v1/ensemble",elevation:"https://api.open-meteo.com/v1/elevation",yr:"https://api.met.no/weatherapi/locationforecast/2.0/compact",nom:"https://nominatim.openstreetmap.org/search",sports:"https://www.thesportsdb.com/api/v1/json/123"};
 var city={id:"arak",name:"اراک",country:"ایران",admin1:"مرکزی",county:"اراک",type:"city",latitude:34.0917,longitude:49.6892};
 var data=null,air=null,prayerData=null,precision=null,climateNormal=null,yrData=null,biasInfo={b:0,mae:0,n:0},confInfo=null;
@@ -763,21 +933,21 @@ var LOCKED_PINS=[{id:"arak",name:"اراک",country:"ایران",admin1:"مرک�
 function ensureLockedPins(){var out=[];for(var i=0;i<LOCKED_PINS.length;i++)out.push(Object.assign({},LOCKED_PINS[i]));for(var j=0;j<pins.length;j++)if(!pins[j].locked)out.push(pins[j]);pins=out;}
 var PLACES=[
 ["تهران","","تهران",35.6892,51.389,"province"],["البرز","","البرز",35.8327,50.9915,"province"],["مرکزی","","مرکزی",34.0917,49.6892,"province"],["اصفهان","","اصفهان",32.6546,51.668,"province"],["فارس","","فارس",29.5918,52.5837,"province"],["خراسان رضوی","","خراسان رضوی",36.2605,59.6168,"province"],["خراسان جنوبی","","خراسان جنوبی",32.8663,59.2211,"province"],["خراسان شمالی","","خراسان شمالی",37.4747,57.3217,"province"],["سیستان و بلوچستان","","سیستان و بلوچستان",29.4963,60.8629,"province"],["کرمان","","کرمان",30.2839,57.0834,"province"],["یزد","","یزد",31.8974,54.3569,"province"],["خوزستان","","خوزستان",31.3183,48.6706,"province"],["گیلان","","گیلان",37.2809,49.5687,"province"],["مازندران","","مازندران",36.5633,53.0601,"province"],["گلستان","","گلستان",36.8456,54.4393,"province"],["آذربایجان شرقی","","آذربایجان شرقی",38.0962,46.2738,"province"],["آذربایجان غربی","","آذربایجان غربی",37.5527,45.0761,"province"],["کردستان","","کردستان",35.315,46.9988,"province"],["کرمانشاه","","کرمانشاه",34.3142,47.065,"province"],["همدان","","همدان",34.7981,48.5146,"province"],["لرستان","","لرستان",33.4878,48.3558,"province"],["ایلام","","ایلام",33.6374,46.4227,"province"],["قزوین","","قزوین",36.2808,50.004,"province"],["زنجان","","زنجان",36.6719,48.4963,"province"],["اردبیل","","اردبیل",38.2498,48.2933,"province"],["سمنان","","سمنان",35.5729,53.3971,"province"],["چهارمحال و بختیاری","","چهارمحال و بختیاری",32.3256,50.8644,"province"],["کهگیلویه و بویراحمد","","کهگیلویه و بویراحمد",30.6682,51.5876,"province"],["بوشهر","","بوشهر",28.9684,50.8385,"province"],["هرمزگان","","هرمزگان",27.1832,56.2666,"province"],["قم","","قم",34.6416,50.8746,"province"],
-["تهران","تهران","تهران",35.6892,51.389,"city"],["البرز","البرز","کرج",35.8327,50.9915,"city"],["مرکزی","مرکزی","اراک",34.0917,49.6892,"city"],["اصفهان","اصفهان","اصفهان",32.6546,51.668,"city"],["فارس","فارس","شیراز",29.5918,52.5837,"city"],["خراسان رضوی","خراسان رضوی","مشهد",36.2605,59.6168,"city"],["خراسان جنوبی","خراسان جنوبی","بیرجند",32.8663,59.2211,"city"],["خراسان شمالی","خراسان شمالی","بجنورد",37.4747,57.3217,"city"],["سیستان و بلوچستان","سیستان و بلوچستان","زاهدان",29.4963,60.8629,"city"],["کرمان","کرمان","کرمان",30.2839,57.0834,"city"],["یزد","یزد","یزد",31.8974,54.3569,"city"],["خوزستان","خوزستان","اهواز",31.3183,48.6706,"city"],["گیلان","گیلان","رشت",37.2809,49.5687,"city"],["مازندران","مازندران","ساری",36.5633,53.0601,"city"],["گلستان","گلستان","گرگان",36.8456,54.4393,"city"],["آذربایجان شرقی","آذربایجان شرقی","تبریز",38.0962,46.2738,"city"],["آذربایجان غربی","آذربایجان غربی","ارومیه",37.5527,45.0761,"city"],["کردستان","کردستان","سنندج",35.315,46.9988,"city"],["کرمانشاه","کرمانشاه","کرمانشاه",34.3142,47.065,"city"],["همدان","همدان","همدان",34.7981,48.5146,"city"],["لرستان","لرستان","خرم‌آباد",33.4878,48.3558,"city"],["ایلام","ایلام","ایلام",33.6374,46.4227,"city"],["قزوین","قزوین","قزوین",36.2808,50.004,"city"],["زنجان","زنجان","زنجان",36.6719,48.4963,"city"],["اردبیل","اردبیل","اردبیل",38.2498,48.2933,"city"],["سمنان","سمنان","سمنان",35.5729,53.3971,"city"],["چهارمحال و بختیاری","چهارمحال و بختیاری","شهرکرد",32.3256,50.8644,"city"],["کهگیلویه و بویراحمد","کهگیلویه و بویراحمد","یاسوج",30.6682,51.5876,"city"],["بوشهر","بوشهر","بوشهر",28.9684,50.8385,"city"],["هرمزگان","هرمزگان","بندرعباس",27.1832,56.2666,"city"],["قم","قم","قم",34.6416,50.8746,"city"],
-["اصفهان","اصفهان","کاشان",33.9850,51.4042,"city"],["فارس","فارس","مرودشت",29.8700,52.8000,"city"],["خراسان رضوی","خراسان رضوی","نیشابور",36.2100,58.7900,"city"],["خوزستان","خوزستان","آبادان",30.3400,48.3000,"city"],["کرمان","کرمان","سیرجان",29.4552,55.0158,"city"],["گیلان","گیلان","انزلی",37.4700,49.4600,"city"],["مازندران","مازندران","بابل",36.5500,52.6800,"city"],["هرمزگان","هرمزگان","کیش",26.5581,53.9750,"city"],["مازندران","مازندران","چالوس",36.6500,51.4100,"city"],
-["تهران","تهران","ونک",35.757,51.408,"district"],["تهران","تهران","تجریش",35.800,51.417,"district"],["اصفهان","اصفهان","بهارستان",32.7000,51.7000,"district"],["فارس","شیراز","معالی‌آباد",29.620,52.530,"district"],["خراسان رضوی","مشهد","احمدآباد",36.280,59.620,"district"],["مرکزی","اراک","شهرک کوثر",34.108,49.702,"district"],
-["مرکزی","شازند","ده کوثر",34.06,49.60,"village"],["مرکزی","ساوه","ساوه",35.0200,50.3600,"village"],["تهران","تهران","لواسان",35.7200,51.5900,"village"],["مازندران","مازندران","نمک‌آبرود",36.6600,51.5100,"village"],["گیلان","گیلان","ماسوله",37.1500,49.6000,"village"]];
+["تهران","تهران","تهران",35.6892,51.389,"city"],["البرز","البرز","کرج",35.8327,50.9915,"city"],["مرکزی","مرکزی","اراک",34.0917,49.6892,"city"],["اصفهان","اصفهان","اصفهان",32.6546,51.668,"city"],["فارس","فارس","شیراز",29.5918,52.5837,"city"],["خراسان رضوی","خراسان رضوی","مشهد",36.2605,59.6168,"city"],["کرمان","کرمان","کرمان",30.2839,57.0834,"city"],["یزد","یزد","یزد",31.8974,54.3569,"city"],["خوزستان","خوزستان","اهواز",31.3183,48.6706,"city"],["گیلان","گیلان","رشت",37.2809,49.5687,"city"],["مازندران","مازندران","ساری",36.5633,53.0601,"city"],["آذربایجان شرقی","آذربایجان شرقی","تبریز",38.0962,46.2738,"city"],["قزوین","قزوین","قزوین",36.2808,50.004,"city"],["قم","قم","قم",34.6416,50.8746,"city"],
+["اصفهان","اصفهان","کاشان",33.9850,51.4042,"city"],["خوزستان","خوزستان","آبادان",30.3400,48.3000,"city"],["گیلان","گیلان","انزلی",37.4700,49.4600,"city"],["مازندران","مازندران","بابل",36.5500,52.6800,"city"],
+["تهران","تهران","ونک",35.757,51.408,"district"],["فارس","شیراز","معالی‌آباد",29.620,52.530,"district"],["مرکزی","اراک","شهرک کوثر",34.108,49.702,"district"],
+["مرکزی","شازند","ده کوثر",34.06,49.60,"village"],["مرکزی","ساوه","ساوه",35.0200,50.3600,"village"],["تهران","تهران","لواسان",35.7200,51.5900,"village"],["گیلان","گیلان","ماسوله",37.1500,49.6000,"village"]];
 var LOCAL_AREAS=PLACES.map(function(a){return{province:a[0],parent:a[1],n:a[2],lat:a[3],lon:a[4],type:a[5]};});
-var CONTINENT_FA={"ایران":"آسیا","افغانستان":"آسیا","پاکستان":"آسیا","هند":"آسیا","چین":"آسیا","ترکیه":"آسیا","عراق":"آسیا","ژاپن":"آسیا","کره جنوبی":"آسیا","امارات":"آسیا","عربستان سعودی":"آسیا","قطر":"آسیا","روسیه":"اروپا","اوکراین":"اروپا","آلمان":"اروپا","فرانسه":"اروپا","ایتالیا":"اروپا","اسپانیا":"اروپا","بریتانیا":"اروپا","هلند":"اروپا","بلژیک":"اروپا","سوئیس":"اروپا","اتریش":"اروپا","سوئد":"اروپا","نروژ":"اروپا","یونان":"اروپا","پرتغال":"اروپا","مصر":"آفریقا","آفریقای جنوبی":"آفریقا","نیجریه":"آفریقا","کانادا":"آمریکا","ایالات متحده آمریکا":"آمریکا","مکزیک":"آمریکا","برزیل":"آمریکا","آرژانتین":"آمریکا","شیلی":"آمریکا","استرالیا":"اقیانوسیه","نیوزیلند":"اقیانوسیه"};
+var CONTINENT_FA={"ایران":"آسیا","افغانستان":"آسیا","پاکستان":"آسیا","هند":"آسیا","چین":"آسیا","ترکیه":"آسیا","عراق":"آسیا","ژاپن":"آسیا","امارات":"آسیا","عربستان سعودی":"آسیا","قطر":"آسیا","روسیه":"اروپا","آلمان":"اروپا","فرانسه":"اروپا","ایتالیا":"اروپا","اسپانیا":"اروپا","بریتانیا":"اروپا","هلند":"اروپا","سوئیس":"اروپا","سوئد":"اروپا","نروژ":"اروپا","یونان":"اروپا","مصر":"آفریقا","کانادا":"آمریکا","ایالات متحده آمریکا":"آمریکا","برزیل":"آمریکا","استرالیا":"اقیانوسیه"};
 var COUNTRIES=Object.keys(CONTINENT_FA).map(function(n){return{name:n,parent:CONTINENT_FA[n],type:"country"};});
-function suffixParts(o){var t=o.type||"city";if(t==="village")return[o.county,o.province];if(t==="district")return[o.city,o.province];if(t==="county")return[o.province];if(t==="province")return[o.country];if(t==="country"){var c=o.parent||o.continent||CONTINENT_FA[o.name];return[c?("قاره "+c):"کشور"];}return[o.province,o.country];}
+function suffixParts(o){var t=o.type||"city";if(t==="village")return[o.county,o.province];if(t==="district")return[o.city,o.province];if(t==="province")return[o.country];if(t==="country"){var c=o.parent||o.continent||CONTINENT_FA[o.name];return[c?("قاره "+c):"کشور"];}return[o.province,o.country];}
 function formatSub(o){return suffixParts(o).filter(function(x){return x&&String(x).trim();}).join("، ");}
 function citySuffixParts(c){return suffixParts({type:c.type,name:c.name,county:c.county,city:c.county,province:c.admin1,country:c.country,continent:c.continent});}
 function safe(v){return String(v==null?"":v).replace(/[&<>"']/g,function(x){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[x];});}
 function T(v){if(v==null)return"--";return Math.round(unit==="fahrenheit"?v*9/5+32:v);}
 function T1(v){if(v==null)return"--";var x=unit==="fahrenheit"?v*9/5+32:v;return Math.round(x*10)/10;}
 function D(){return unit==="fahrenheit"?"°F":"°C";}
-function code(c){var m={0:["صاف"],1:["عمدتاً صاف"],2:["کمی ابری"],3:["ابری"],45:["مه خفیف"],48:["مه یخ‌زده"],51:["نم‌نم خفیف"],53:["نم‌نم متوسط"],55:["نم‌نم شدید"],61:["باران خفیف"],63:["باران متوسط"],65:["باران شدید"],66:["باران یخ‌زده خفیف"],67:["باران یخ‌زده شدید"],71:["برف خفیف"],73:["برف متوسط"],75:["برف شدید"],77:["دانه‌های برف"],80:["رگبار خفیف"],81:["رگبار متوسط"],82:["رگبار شدید"],85:["رگبار برف خفیف"],86:["رگبار برف شدید"],95:["رعدوبرق خفیف"],96:["رعد و تگرگ متوسط"],99:["رعد و تگرگ شدید"]};return m[c]||["نامشخص"];}
+function code(c){var m={0:["صاف"],1:["عمدتاً صاف"],2:["کمی ابری"],3:["ابری"],45:["مه خفیف"],48:["مه یخ‌زده"],51:["نم‌نم خفیف"],53:["نم‌نم متوسط"],55:["نم‌نم شدید"],61:["باران خفیف"],63:["باران متوسط"],65:["باران شدید"],71:["برف خفیف"],73:["برف متوسط"],75:["برف شدید"],77:["دانه‌های برف"],80:["رگبار خفیف"],81:["رگبار متوسط"],82:["رگبار شدید"],85:["رگبار برف خفیف"],86:["رگبار برف شدید"],95:["رعدوبرق خفیف"],96:["رعد و تگرگ متوسط"],99:["رعد و تگرگ شدید"]};return m[c]||["نامشخص"];}
 function show(msg,t){var s=document.getElementById("status");if(!s)return;s.textContent=msg;s.className="status show "+(t||"info");clearTimeout(s._h);s._h=setTimeout(function(){s.className="status";},6000);}
 function faToEn(s){return String(s).replace(/[۰-۹]/g,function(d){return "۰۱۲۳۴۵۶۷۸۹".indexOf(d);});}
 function fmtDT(v){try{return new Intl.DateTimeFormat("fa-IR",{hour:"2-digit",minute:"2-digit"}).format(new Date(v));}catch(e){return "--:--";}}
@@ -791,12 +961,7 @@ function normName(s){return String(s||"").replace(/\s+/g," ").trim();}
 function haversine(a,b,c,d){var R=6371,ra=function(x){return x*Math.PI/180;};var dLat=ra(c-a),dLon=ra(d-b);var s=Math.sin(dLat/2)*Math.sin(dLat/2)+Math.cos(ra(a))*Math.cos(ra(c))*Math.sin(dLon/2)*Math.sin(dLon/2);return R*2*Math.atan2(Math.sqrt(s),Math.sqrt(1-s));}
 function ensureAudio(){if(!audioCtx){try{audioCtx=new(window.AudioContext||window.webkitAudioContext)();}catch(e){return false;}}if(audioCtx.state==="suspended")audioCtx.resume();return true;}
 function clickSound(){if(!ensureAudio())return;var o=audioCtx.createOscillator(),g=audioCtx.createGain();o.type="sine";o.frequency.value=600;g.gain.setValueAtTime(0,audioCtx.currentTime);g.gain.linearRampToValueAtTime(.75,audioCtx.currentTime+.01);g.gain.exponentialRampToValueAtTime(.001,audioCtx.currentTime+.13);o.connect(g).connect(audioCtx.destination);o.start(audioCtx.currentTime);o.stop(audioCtx.currentTime+.15);}
-document.addEventListener("click",function(e){
-  if(e.target&&e.target.closest){
-    var clickable=e.target.closest("button, .btn, .select, .detail-btn, .day-tab, .pin-small, .pinchip, .arrow, .chat-sug, .chat-send, .day, .mag-tab, .sport-card, .sport-link, .culture-card, .sport-acc-h, .travel-acc-h, .culture-acc-h, .fun-acc-h, .btn-creator, .install-btn, .fj-btn, .fp-reveal, .btn-share-app, .btn-install-app, .install-share-btn, .install-pwa-btn");
-    if(clickable)clickSound();
-  }
-});
+document.addEventListener("click",function(e){if(e.target&&e.target.closest){var c=e.target.closest("button,.btn,.select,.detail-btn,.day-tab,.pin-small,.pinchip,.arrow,.chat-sug,.chat-send,.day,.mag-tab,.sport-card,.sport-link,.culture-card,.sport-acc-h,.travel-acc-h,.culture-acc-h,.fun-acc-h,.btn-creator,.install-btn,.fj-btn,.fp-reveal,.install-share-btn,.install-pwa-btn,.btn-code,.code-submit-btn,.code-digit,.install-acc-h");if(c)clickSound();}});
 document.addEventListener("click",function(e){if(!e.target||!e.target.closest)return;var mc=e.target.closest(".modal-close");if(mc){var ov=mc.closest(".modal-overlay");if(ov)ov.classList.remove("show");return;}var ov2=e.target.closest(".modal-overlay");if(ov2&&e.target===ov2)ov2.classList.remove("show");var ar=e.target.closest(".arrow[data-collapse]");if(ar){var t=document.getElementById(ar.getAttribute("data-collapse"));if(t)t.classList.toggle("collapsed");}});
 function updateNetStatus(){var d=document.getElementById("netDot"),t=document.getElementById("netText");if(navigator.onLine){d.className="sb-dot on";t.textContent="آنلاین";}else{d.className="sb-dot off";t.textContent="آفلاین";}}
 window.addEventListener("online",function(){updateNetStatus();if(currentPage==="home")refreshAll();});
@@ -818,9 +983,9 @@ setInterval(updateLocalTime,1000);updateLocalTime();
 function cityNowMinutes(){var tz=(data&&data.timezone)?data.timezone:null;if(tz){try{var s=new Date().toLocaleTimeString("en-GB",{timeZone:tz,hour12:false});var p=s.split(":");return(+p[0])*60+(+p[1]);}catch(e){}}var off=Math.round(city.longitude/15)*60;var n=new Date();return(n.getUTCHours()*60+n.getUTCMinutes()+off+1440)%1440;}
 function wxSVG(cd,night,size){
   size=size||80;
-  var defs='<defs><radialGradient id="sunGrad" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#fff9c4"/><stop offset="50%" stop-color="#ffd166"/><stop offset="100%" stop-color="#ff8c42"/></radialGradient><radialGradient id="moonGrad" cx="30%" cy="30%" r="70%"><stop offset="0%" stop-color="#f8f9fa"/><stop offset="100%" stop-color="#cbd5e1"/></radialGradient><radialGradient id="cloudGrad" cx="30%" cy="30%" r="70%"><stop offset="0%" stop-color="#f1f5f9"/><stop offset="100%" stop-color="#94a3b8"/></radialGradient><linearGradient id="rainGrad" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#73d8ff"/><stop offset="100%" stop-color="#2aa7e8"/></linearGradient><radialGradient id="snowGrad" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#ffffff"/><stop offset="100%" stop-color="#e2e8f0"/></radialGradient><filter id="glow"><feGaussianBlur stdDeviation="2" result="coloredBlur"/><feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>';
+  var defs='<defs><radialGradient id="sunGrad" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#fff9c4"/><stop offset="50%" stop-color="#ffd166"/><stop offset="100%" stop-color="#ff8c42"/></radialGradient><radialGradient id="moonGrad" cx="30%" cy="30%" r="70%"><stop offset="0%" stop-color="#f8f9fa"/><stop offset="100%" stop-color="#cbd5e1"/></radialGradient><radialGradient id="cloudGrad" cx="30%" cy="30%" r="70%"><stop offset="0%" stop-color="#f1f5f9"/><stop offset="100%" stop-color="#94a3b8"/></radialGradient></defs>';
   var inner="";
-  if(cd<=1){if(night){inner='<circle cx="32" cy="32" r="14" fill="url(#moonGrad)" filter="url(#glow)"/>';}else{inner='<circle cx="32" cy="32" r="12" fill="url(#sunGrad)" filter="url(#glow)"><animate attributeName="r" values="12;13;12" dur="2s" repeatCount="indefinite"/></circle>';}}else if(cd===2){var cel=night?'<circle cx="28" cy="28" r="10" fill="url(#moonGrad)"/>':'<circle cx="28" cy="28" r="10" fill="url(#sunGrad)" filter="url(#glow)"/>';inner=cel+'<g transform="translate(10,20)"><ellipse cx="18" cy="12" rx="14" ry="8" fill="url(#cloudGrad)"/></g>';}else if(cd===3){inner='<g><ellipse cx="32" cy="32" rx="16" ry="10" fill="url(#cloudGrad)"/></g>';}else if(cd===45||cd===48){inner='<g opacity="0.6"><ellipse cx="32" cy="32" rx="18" ry="6" fill="#cbd5e1"/></g>';}else if((cd>=51&&cd<=67)||(cd>=80&&cd<=82)){inner='<ellipse cx="32" cy="24" rx="14" ry="8" fill="url(#cloudGrad)"/>';}else if((cd>=71&&cd<=77)||(cd>=85&&cd<=86)){inner='<ellipse cx="32" cy="24" rx="14" ry="8" fill="url(#cloudGrad)"/>';}else if(cd>=95){inner='<ellipse cx="32" cy="24" rx="14" ry="8" fill="url(#cloudGrad)"/>';}else{inner='<circle cx="32" cy="32" r="12" fill="url(#sunGrad)"/>';}
+  if(cd<=1){if(night){inner='<circle cx="32" cy="32" r="14" fill="url(#moonGrad)"/>';}else{inner='<circle cx="32" cy="32" r="12" fill="url(#sunGrad)"/>';}}else if(cd===2){inner='<circle cx="28" cy="28" r="10" fill="url(#sunGrad)"/><ellipse cx="20" cy="32" rx="14" ry="8" fill="url(#cloudGrad)"/>';}else if(cd===3){inner='<ellipse cx="32" cy="32" rx="16" ry="10" fill="url(#cloudGrad)"/>';}else if(cd===45||cd===48){inner='<ellipse cx="32" cy="32" rx="18" ry="6" fill="#cbd5e1"/>';}else if((cd>=51&&cd<=67)||(cd>=80&&cd<=82)){inner='<ellipse cx="32" cy="24" rx="14" ry="8" fill="url(#cloudGrad)"/>';}else if((cd>=71&&cd<=77)||(cd>=85&&cd<=86)){inner='<ellipse cx="32" cy="24" rx="14" ry="8" fill="url(#cloudGrad)"/>';}else if(cd>=95){inner='<ellipse cx="32" cy="24" rx="14" ry="8" fill="url(#cloudGrad)"/>';}else{inner='<circle cx="32" cy="32" r="12" fill="url(#sunGrad)"/>';}
   return '<svg viewBox="0 0 64 64" width="'+size+'" height="'+size+'">'+defs+inner+'</svg>';
 }
 function rnd(a,b){return a+Math.random()*(b-a);}
@@ -839,9 +1004,7 @@ function pollenSum(){if(!air||!air.daily)return null;var k=["pollen_grass","poll
 function getAirNow(){if(!air)return null;var hi=currentHourIndex(),f=["european_aqi","us_aqi","pm2_5","pm10","ozone","dust"],o={};for(var i=0;i<f.length;i++){var v=(air.current&&air.current[f[i]]!=null)?air.current[f[i]]:null;if(v==null&&air.hourly&&air.hourly[f[i]]){for(var k=hi;k>=0;k--){var vv=air.hourly[f[i]][k];if(vv!=null){v=vv;break;}}}o[f[i]]=v;}o.pollen=pollenSum();if(o.european_aqi==null&&o.us_aqi==null){var a=epaAQI(o.pm2_5,o.pm10);if(a!=null){o.european_aqi=a;o.us_aqi=a;}}return o;}
 function airDayStats(di){if(!air||!air.hourly||!air.hourly.time||!data||!data.daily)return null;var ds=data.daily.time[di];if(!ds)return null;var h=air.hourly,f=["european_aqi","us_aqi","pm2_5","pm10","ozone","dust"],idx=[];for(var i=0;i<h.time.length;i++)if(h.time[i].indexOf(ds)===0)idx.push(i);var o={};for(var k=0;k<f.length;k++){var vals=[];if(h[f[k]])for(var k2=0;k2<idx.length;k2++){var v=h[f[k]][idx[k2]];if(v!=null)vals.push(v);}o[f[k]]=vals.length?meanArr(vals):null;}o.pollen=pollenSum();return o;}
 function loadAir(){if(!navigator.onLine)return Promise.resolve(false);var b="latitude="+city.latitude+"&longitude="+city.longitude+"&timezone=auto&forecast_days=2";var full=b+"&current=european_aqi,us_aqi,pm2_5,pm10,ozone,dust&hourly=european_aqi,us_aqi,pm2_5,pm10,ozone,dust&daily=pollen_grass,pollen_birch,pollen_olive,pollen_ragweed";var min=b+"&current=european_aqi,pm2_5,pm10,ozone,dust&hourly=european_aqi,pm2_5,pm10,ozone,dust";return fetch(API.air+"?"+full).catch(function(){return fetch(API.air+"?"+min);}).then(function(r){return r.json();}).then(function(j){if(j&&(j.current||j.hourly)){air=j;renderDetails();return true;}return false;}).catch(function(){return false;});}
-function fetchClimateProfile(lat,lon){var k="cp_"+lat.toFixed(2)+"_"+lon.toFixed(2);var c=getFromCache(k,30*86400000);if(c)return Promise.resolve(c);var e=new Date();e.setDate(e.getDate()-1);var s=new Date(e);s.setDate(s.getDate()-364);return fetch(API.archive+"?latitude="+lat+"&longitude="+lon+"&start_date="+fmtDate(s)+"&end_date="+fmtDate(e)+"&daily=temperature_2m_mean,precipitation_sum&timezone=auto").then(function(r){return r.json();}).then(function(j){if(!j||!j.daily||!j.daily.time)return null;var mo={};for(var i=0;i<j.daily.time.length;i++){var mm=+j.daily.time[i].slice(5,7);if(!mo[mm])mo[mm]={t:0,n:0,p:0};if(j.daily.temperature_2m_mean[i]!=null){mo[mm].t+=j.daily.temperature_2m_mean[i];mo[mm].n++;}if(j.daily.precipitation_sum[i]!=null)mo[mm].p+=j.daily.precipitation_sum[i];}var ap=0,cold=null,warm=null;for(var m=1;m<=12;m++)if(mo[m]){ap+=mo[m].p;var mn=mo[m].n?mo[m].t/mo[m].n:null;if(mn!=null){if(cold==null||mn<cold)cold=mn;if(warm==null||mn>warm)warm=mn;}}var p={annualP:Math.round(ap),coldest:cold,warmest:warm};saveToCache(k,p);return p;}).catch(function(){return null;});}
-function climateZone(p,el){var band="motadel";if(p&&p.coldest!=null){if(p.coldest<=-3)band="sard";else if(p.coldest<=8)band="motadel";else band="garm";}if(el!=null&&el>1800&&band==="garm")band="motadel";var hum="nim";if(p&&p.annualP!=null){if(p.annualP>=600)hum="martoub";else if(p.annualP>=250)hum="nim";else hum="khoshk";}return band+"-"+hum;}
-function loadClimateZone(){return fetchClimateProfile(city.latitude,city.longitude).then(function(p){return fetchElevation(city.latitude,city.longitude).then(function(el){climateZoneCur=climateZone(p,el);renderExtraSections();renderDetails();});}).catch(function(){climateZoneCur="motadel-nim";renderExtraSections();});}
+function fetchElevation(lat,lon){var k="el_"+lat.toFixed(3)+"_"+lon.toFixed(3);var c=getFromCache(k,30*86400000);if(c!=null)return Promise.resolve(c);return fetch(API.elevation+"?latitude="+lat+"&longitude="+lon).then(function(r){return r.json();}).then(function(j){if(j&&j.elevation!=null){saveToCache(k,j.elevation);return j.elevation;}return null;}).catch(function(){return null;});}
 function hourlyDayStats(di){if(!data||!data.daily||!data.hourly||!data.hourly.time)return null;var ds=data.daily.time[di];if(!ds)return null;var h=data.hourly,a={hum:[],wind:[],vis:[],pres:[],dew:[],cloud:[]};for(var i=0;i<h.time.length;i++)if(h.time[i].indexOf(ds)===0){if(h.relative_humidity_2m&&h.relative_humidity_2m[i]!=null)a.hum.push(h.relative_humidity_2m[i]);if(h.wind_speed_10m&&h.wind_speed_10m[i]!=null)a.wind.push(h.wind_speed_10m[i]);if(h.visibility&&h.visibility[i]!=null)a.vis.push(h.visibility[i]/1000);if(h.surface_pressure&&h.surface_pressure[i]!=null)a.pres.push(h.surface_pressure[i]);if(h.dew_point_2m&&h.dew_point_2m[i]!=null)a.dew.push(h.dew_point_2m[i]);if(h.cloud_cover&&h.cloud_cover[i]!=null)a.cloud.push(h.cloud_cover[i]);}return{hum:meanArr(a.hum),wind:meanArr(a.wind),vis:meanArr(a.vis),pres:meanArr(a.pres),dew:meanArr(a.dew),cloud:meanArr(a.cloud)};}
 function currentVisibility(){if(!data||!data.hourly||!data.hourly.visibility)return null;var n=new Date();for(var i=0;i<data.hourly.time.length;i++)if(new Date(data.hourly.time[i])>=n)return data.hourly.visibility[i]!=null?data.hourly.visibility[i]/1000:null;return null;}
 function getDayStats(idx){if(!data||!data.daily)return null;var di=idx+TODAY_IDX,d=data.daily,hs=hourlyDayStats(di),as=airDayStats(di)||airFallback(),an=(idx===0)?(getAirNow()||airFallback()):as,s;var lbl=weekdayName(di)||("روز "+idx);if(idx===0&&data.current){var c=data.current;s={label:lbl,temp:(precision&&precision.mean!=null)?precision.mean:c.temperature_2m,tempMax:d.temperature_2m_max?d.temperature_2m_max[di]:null,tempMin:d.temperature_2m_min?d.temperature_2m_min[di]:null,hum:avg2(c.relative_humidity_2m,null),wind:c.wind_speed_10m,windDir:c.wind_direction_10m,precip:c.precipitation||0,precipProb:d.precipitation_probability_max?d.precipitation_probability_max[di]:null,uv:d.uv_index_max?d.uv_index_max[di]:null,vis:currentVisibility(),pres:c.surface_pressure,dew:c.dew_point_2m,cloud:c.cloud_cover,code:c.weather_code,aqi:an.european_aqi,us:an.us_aqi,pm25:an.pm2_5,pm10:an.pm10,ozone:an.ozone,dust:an.dust,pollen:an.pollen};}else{s={label:lbl,temp:null,tempMax:d.temperature_2m_max?d.temperature_2m_max[di]:null,tempMin:d.temperature_2m_min?d.temperature_2m_min[di]:null,hum:hs?hs.hum:null,wind:hs?hs.wind:null,windDir:null,precip:d.precipitation_sum?d.precipitation_sum[di]:null,precipProb:d.precipitation_probability_max?d.precipitation_probability_max[di]:null,uv:d.uv_index_max?d.uv_index_max[di]:null,vis:hs?hs.vis:null,pres:hs?hs.pres:null,dew:hs?hs.dew:null,cloud:hs?hs.cloud:null,code:d.weather_code?d.weather_code[di]:null,aqi:as.european_aqi,us:as.us_aqi,pm25:as.pm25,pm10:as.pm10,ozone:as.ozone,dust:as.dust,pollen:as.pollen};}
@@ -863,506 +1026,89 @@ function sleepScore(){var t=tonightStats();if(!t)return null;var sc=100;if(t.tem
 function roadIndex(s){if(!s)return null;var sc=100;if(s.vis!=null&&s.vis<2)sc-=40;if(s.code===45||s.code===48)sc-=20;if(s.code>=71&&s.code<=86)sc-=25;if(s.wind!=null&&s.wind>=50)sc-=30;return Math.max(0,Math.min(100,sc));}
 function setTxt(id,t){var e=document.getElementById(id);if(e)e.textContent=t;}
 function skyEvents(m){var m2={1:"بارش شهابی چهارگانه",4:"بارش شهابی شلیاقی",5:"بارش شهابی اتا-آکواریید",8:"بارش شهابی برساووشی",10:"بارش شهابی جباری",11:"بارش شهابی اسدی",12:"بارش شهابی جوزایی"};return m2[m]||"رویداد برجسته‌ای ثبت نشده";}
-function plantingGuideZone(z,m){var z2=z||"motadel-nim";var band=z2.split("-")[0]||"motadel";var P={sard:{1:"نهال‌کاری خواب",3:"سبزیجات سردسیری",5:"ذرت/لوبیا",7:"برداشت غلات",9:"گندم پاییزه",11:"غلات سردسیری"},motadel:{1:"گلخانه",3:"سبزیجات بهاره",5:"سبزیجات تابستانه",7:"سبزیجات پاییزه",9:"گندم/جو",11:"باقلا"},garm:{1:"سبزیجات زمستانه",3:"خیار/گوجه",5:"گرمسیری",7:"پاییزه",9:"سبزیجات پاییزه",11:"سردسیری"}};var t=P[band]||P.motadel;return t[m]||"سبزیجات فصلی";}
-function renderTravelSummary(){
-  var s=getDayStats(0),bw=bestWindow(),ri=roadIndex(s);
-  var pack=[];if(s&&s.precipProb>=40)pack.push("چتر");if(s&&s.tempMin<=5)pack.push("لباس گرم");if(s&&s.uv>=6)pack.push("ضدآفتاب");
-  var cityName=city.name;
-  var roadStatus=ri!=null?(ri>=70?"امن و مناسب ✔":ri>=50?"متوسط با احتیاط ⚠":"نامناسب ⚠"):"--";
-  var visibility=s&&s.vis!=null?Math.round(s.vis)+" km":"--";
-  var wind=s&&s.wind!=null?Math.round(s.wind)+" km/h":"--";
-  var weatherDesc=code(s.code||0)[0];
-  var html='<div class="travel-summary">'+
-    '<div class="ts-head">🧳 سفر به <span class="ts-city">'+safe(cityName)+'</span></div>'+
-    '<div class="ts-note">موقعیت «<span style="color:var(--gold);font-weight:800">'+safe(cityName)+'</span>» و اطلاعات زیر منطبق بر موقعیت انتخابی در صفحه آب‌وهوا می‌باشد.</div>'+
-    '<div class="ts-row"><span class="ts-label">🪟 بهترین پنجره سفر:</span><span class="ts-val">'+(bw?fmtDT(bw.from)+" تا "+fmtDT(bw.to):"پنجره مناسبی یافت نشد")+'</span></div>'+
-    '<div class="ts-row"><span class="ts-label">🌤️ وضعیت هوا:</span><span class="ts-val">'+weatherDesc+'</span></div>'+
-    '<div class="ts-row"><span class="ts-label">🌡️ دمای فعلی:</span><span class="ts-val">'+(s&&s.temp!=null?T1(s.temp)+D():"--")+' (بازه '+T(s.tempMin)+D()+" تا "+T(s.tempMax)+D()+')</span></div>'+
-    '<div class="ts-row"><span class="ts-label">🎒 چک‌لیست سفر:</span><span class="ts-val">'+(pack.length?pack.join("، "):"بدون نیاز خاص")+'</span></div>'+
-    '<div class="ts-row"><span class="ts-label">🚗 وضعیت جاده:</span><span class="ts-val">'+roadStatus+(ri!=null?" ("+ri+"/100)":"")+'</span></div>'+
-    '<div class="ts-row"><span class="ts-label">👁️ دید افقی:</span><span class="ts-val">'+visibility+'</span></div>'+
-    '<div class="ts-row"><span class="ts-label">💨 سرعت باد:</span><span class="ts-val">'+wind+'</span></div>'+
-    '<div class="ts-row"><span class="ts-label">💧 رطوبت:</span><span class="ts-val">'+(s.hum!=null?Math.round(s.hum)+"٪":"--")+'</span></div>'+
-    '<div class="ts-row"><span class="ts-label">🌫️ کیفیت هوا:</span><span class="ts-val">'+Math.round((getAirNow()||airFallback()).european_aqi)+" ("+aqiLabel((getAirNow()||airFallback()).european_aqi)+')</span></div>'+
-    '<div class="ts-row"><span class="ts-label">☀️ شاخص UV:</span><span class="ts-val">'+(s.uv!=null?s.uv:"--")+'</span></div>'+
-    '<div class="ts-row"><span class="ts-label">🌼 سطح گرده:</span><span class="ts-val">'+((s.pollen!=null)?Math.round(s.pollen):seasonalPollen(new Date().getMonth()+1))+"/100"+'</span></div>'+
-    '</div>';
-  var el=document.getElementById("travelContent");if(el)el.innerHTML=html;
-}
-function renderExtraSections(){
-  var s0=getDayStats(0),s1=getDayStats(1);if(!s0)return;
-  var sc=outdoorScore(s0),bw=bestWindow(),an=getAirNow()||airFallback();
-  setTxt("sportContent","🏃 ورزش و تناسب اندام\n• امتیاز تناسب بیرون: "+sc+"/100 ("+scoreLabel(sc)+")\n• بهترین پنجرهٔ ورزش: "+(bw?fmtDT(bw.from)+" تا "+fmtDT(bw.to):"--")+"\n• توصیه: "+(sc>=70?"بیرون عالی ✔":sc>=50?"بیرون با احتیاط":"داخل خانه"));
-  var tr=pressureTrend();var pol=(s0.pollen!=null)?Math.round(s0.pollen):seasonalPollen(new Date().getMonth()+1);
-  setTxt("healthContent","❤️ سلامت\n• کیفیت هوا: "+Math.round(an.european_aqi)+" ("+aqiLabel(an.european_aqi)+")\n• UV: "+s0.uv+"\n• گرده: "+pol+"/100\n• روند فشار: "+(tr==null?"--":tr<-3?"کاهش (سردرد احتمالی)":tr>3?"افزایش":"پایدار"));
-  var frost=(s1&&s1.tempMin!=null&&s1.tempMin<=0);var irrig=(s1&&s1.precipProb!=null&&s1.precipProb>=50);
-  var gdd=(s0.tempMax!=null&&s0.tempMin!=null)?Math.max(0,(s0.tempMax+s0.tempMin)/2-10):0;
-  setTxt("agriContent","🌾 کشاورزی\n• منطقهٔ اقلیمی: "+(climateZoneCur||"--")+"\n• کشت این ماه: "+plantingGuideZone(climateZoneCur,new Date().getMonth()+1)+"\n• GDD: "+gdd.toFixed(1)+"\n• یخبندان: "+(frost?"هست ⚠":"نیست ✔")+"\n• آبیاری: "+(irrig?"لازم نیست ✔":"لازم 💧"));
-  var mp=moonPhase();var dl=(data&&data.daily&&data.daily.sunrise&&data.daily.sunset)?(fmtDT(data.daily.sunrise[TODAY_IDX])+" تا "+fmtDT(data.daily.sunset[TODAY_IDX])):"--";
-  setTxt("astroContent","🔭 نجوم\n• فاز ماه: "+mp.name+" | "+mp.illum+"٪\n• طلوع/غروب: "+dl+"\n• رویداد این ماه: "+skyEvents(new Date().getMonth()+1));
-  var ri=roadIndex(s0);
-  setTxt("driveContent","🚗 رانندگی\n• شاخص جاده: "+(ri!=null?ri+"/100 ("+scoreLabel(ri)+")":"--")+"\n• دید: "+(s0.vis!=null?Math.round(s0.vis)+" km":"--"));
-  var tn=tonightStats(),ss=sleepScore();
-  setTxt("sleepContent","😴 خواب\n• امتیاز: "+(ss!=null?ss+"/100 ("+scoreLabel(ss)+")":"--")+"\n• دمای امشب: "+(tn&&tn.temp!=null?T1(tn.temp)+D():"--"));
-  renderTravelSummary();
-}
+function renderTravelSummary(){var s=getDayStats(0),bw=bestWindow(),ri=roadIndex(s);var pack=[];if(s&&s.precipProb>=40)pack.push("چتر");if(s&&s.tempMin<=5)pack.push("لباس گرم");if(s&&s.uv>=6)pack.push("ضدآفتاب");var cityName=city.name;var roadStatus=ri!=null?(ri>=70?"امن و مناسب ✔":ri>=50?"متوسط با احتیاط ⚠":"نامناسب ⚠"):"--";var visibility=s&&s.vis!=null?Math.round(s.vis)+" km":"--";var wind=s&&s.wind!=null?Math.round(s.wind)+" km/h":"--";var weatherDesc=code(s.code||0)[0];var html='<div class="travel-summary"><div class="ts-head">🧳 سفر به <span class="ts-city">'+safe(cityName)+'</span></div><div class="ts-note">موقعیت «<span style="color:var(--gold);font-weight:800">'+safe(cityName)+'</span>» و اطلاعات زیر منطبق بر موقعیت انتخابی در صفحه آب‌وهوا می‌باشد.</div><div class="ts-row"><span class="ts-label">🪟 بهترین پنجره سفر:</span><span class="ts-val">'+(bw?fmtDT(bw.from)+" تا "+fmtDT(bw.to):"پنجره مناسبی یافت نشد")+'</span></div><div class="ts-row"><span class="ts-label">🌤️ وضعیت هوا:</span><span class="ts-val">'+weatherDesc+'</span></div><div class="ts-row"><span class="ts-label">🌡️ دمای فعلی:</span><span class="ts-val">'+(s&&s.temp!=null?T1(s.temp)+D():"--")+' (بازه '+T(s.tempMin)+D()+" تا "+T(s.tempMax)+D()+')</span></div><div class="ts-row"><span class="ts-label">🎒 چک‌لیست سفر:</span><span class="ts-val">'+(pack.length?pack.join("، "):"بدون نیاز خاص")+'</span></div><div class="ts-row"><span class="ts-label">🚗 وضعیت جاده:</span><span class="ts-val">'+roadStatus+(ri!=null?" ("+ri+"/100)":"")+'</span></div><div class="ts-row"><span class="ts-label">👁️ دید افقی:</span><span class="ts-val">'+visibility+'</span></div><div class="ts-row"><span class="ts-label">💨 سرعت باد:</span><span class="ts-val">'+wind+'</span></div><div class="ts-row"><span class="ts-label">💧 رطوبت:</span><span class="ts-val">'+(s.hum!=null?Math.round(s.hum)+"٪":"--")+'</span></div><div class="ts-row"><span class="ts-label">🌫️ کیفیت هوا:</span><span class="ts-val">'+Math.round((getAirNow()||airFallback()).european_aqi)+" ("+aqiLabel((getAirNow()||airFallback()).european_aqi)+')</span></div><div class="ts-row"><span class="ts-label">☀️ شاخص UV:</span><span class="ts-val">'+(s.uv!=null?s.uv:"--")+'</span></div><div class="ts-row"><span class="ts-label">🌼 سطح گرده:</span><span class="ts-val">'+((s.pollen!=null)?Math.round(s.pollen):seasonalPollen(new Date().getMonth()+1))+"/100"+'</span></div></div>';var el=document.getElementById("travelContent");if(el)el.innerHTML=html;}
+function renderExtraSections(){var s0=getDayStats(0),s1=getDayStats(1);if(!s0)return;var sc=outdoorScore(s0),bw=bestWindow(),an=getAirNow()||airFallback();setTxt("sportContent","🏃 ورزش و تناسب اندام\n• امتیاز تناسب بیرون: "+sc+"/100 ("+scoreLabel(sc)+")\n• بهترین پنجرهٔ ورزش: "+(bw?fmtDT(bw.from)+" تا "+fmtDT(bw.to):"--")+"\n• توصیه: "+(sc>=70?"بیرون عالی ✔":sc>=50?"بیرون با احتیاط":"داخل خانه"));var tr=pressureTrend();var pol=(s0.pollen!=null)?Math.round(s0.pollen):seasonalPollen(new Date().getMonth()+1);setTxt("healthContent","❤️ سلامت\n• کیفیت هوا: "+Math.round(an.european_aqi)+" ("+aqiLabel(an.european_aqi)+")\n• UV: "+s0.uv+"\n• گرده: "+pol+"/100\n• روند فشار: "+(tr==null?"--":tr<-3?"کاهش (سردرد احتمالی)":tr>3?"افزایش":"پایدار"));var frost=(s1&&s1.tempMin!=null&&s1.tempMin<=0);var irrig=(s1&&s1.precipProb!=null&&s1.precipProb>=50);var gdd=(s0.tempMax!=null&&s0.tempMin!=null)?Math.max(0,(s0.tempMax+s0.tempMin)/2-10):0;setTxt("agriContent","🌾 کشاورزی\n• منطقهٔ اقلیمی: "+(climateZoneCur||"--")+"\n• GDD: "+gdd.toFixed(1)+"\n• یخبندان: "+(frost?"هست ⚠":"نیست ✔")+"\n• آبیاری: "+(irrig?"لازم نیست ✔":"لازم 💧"));var mp=moonPhase();var dl=(data&&data.daily&&data.daily.sunrise&&data.daily.sunset)?(fmtDT(data.daily.sunrise[TODAY_IDX])+" تا "+fmtDT(data.daily.sunset[TODAY_IDX])):"--";setTxt("astroContent","🔭 نجوم\n• فاز ماه: "+mp.name+" | "+mp.illum+"٪\n• طلوع/غروب: "+dl+"\n• رویداد این ماه: "+skyEvents(new Date().getMonth()+1));var ri=roadIndex(s0);setTxt("driveContent","🚗 رانندگی\n• شاخص جاده: "+(ri!=null?ri+"/100 ("+scoreLabel(ri)+")":"--")+"\n• دید: "+(s0.vis!=null?Math.round(s0.vis)+" km":"--"));var tn=tonightStats(),ss=sleepScore();setTxt("sleepContent","😴 خواب\n• امتیاز: "+(ss!=null?ss+"/100 ("+scoreLabel(ss)+")":"--")+"\n• دمای امشب: "+(tn&&tn.temp!=null?T1(tn.temp)+D():"--"));renderTravelSummary();}
 function renderWeather(){if(!data||!data.current)return;var c=data.current,cc=code(c.weather_code);var night=(c.is_day!=null)?(c.is_day===0):(new Date().getHours()>=19||new Date().getHours()<6);var nn=normName(city.name);var suf=citySuffixParts(city).filter(function(p){return p&&normName(p)!==nn;});var ded=[];for(var i=0;i<suf.length;i++)if(!ded.length||ded[ded.length-1]!==suf[i])ded.push(suf[i]);if(!ded.length){var ct=city.continent||CONTINENT_FA[city.name];if(ct)ded=["قاره "+ct];}var ce=document.getElementById("city");if(ce)ce.innerHTML=safe(city.name)+' <span class="city-info">'+safe(ded.join("، "))+'</span>';var wi=document.getElementById("wicon");if(wi)wi.innerHTML=wxSVG(c.weather_code,night,80);var st0=getDayStats(0);var te=document.getElementById("temp");if(te)te.textContent=(st0&&st0.temp!=null)?T1(st0.temp)+D():T1(c.temperature_2m)+D();var co=document.getElementById("cond");if(co)co.textContent=cc[0];var fe=document.getElementById("feels");if(fe)fe.textContent="محسوس "+T(c.apparent_temperature)+D();if(data.daily){var mn=document.getElementById("minTemp");if(mn)mn.textContent=T(data.daily.temperature_2m_min?data.daily.temperature_2m_min[TODAY_IDX]:null)+D();var mx=document.getElementById("maxTemp");if(mx)mx.textContent=T(data.daily.temperature_2m_max?data.daily.temperature_2m_max[TODAY_IDX]:null)+D();}var up=document.getElementById("updated");if(up)up.textContent="بروزرسانی: "+new Date().toLocaleTimeString("fa-IR");setAnim(c.weather_code);setDynamicBackground(c.weather_code);updateLocalTime();renderHourly();renderForecast();renderSmartAlerts();renderDetails();renderExtraSections();}
 function renderHourly(){if(!data||!data.hourly||!data.hourly.time)return;var h=data.hourly,n=new Date(),st=-1;for(var i=0;i<h.time.length;i++)if(new Date(h.time[i])>=n){st=i;break;}if(st<0)st=0;var el=document.getElementById("hourly");if(!el)return;el.innerHTML="";for(var j=st;j<Math.min(st+12,h.time.length);j++)el.innerHTML+='<div class="hour"><div class="t">'+fmtDT(h.time[j])+'</div><div>'+wxSVG(h.weather_code[j],false,34)+'</div><b>'+T(h.temperature_2m[j])+D()+'</b><div class="precip">💧 '+(h.precipitation_probability&&h.precipitation_probability[j]!=null?h.precipitation_probability[j]:0)+'%</div></div>';}
 function renderForecast(){if(!data||!data.daily||!data.daily.time)return;var d=data.daily,el=document.getElementById("forecast");if(!el)return;el.innerHTML="";for(var i=0;i<=8&&i<d.time.length;i++){var dn=weekdayName(i);var cls="day"+(i===TODAY_IDX?" today-hl":"");var pd="";try{pd=new Intl.DateTimeFormat("fa-IR-u-ca-persian",{month:"long",day:"numeric"}).format(new Date(d.time[i]+"T12:00:00"));}catch(e){}el.innerHTML+='<div class="'+cls+'" data-idx="'+i+'"><b>'+dn+'</b><div class="date">'+pd+'</div><div class="wi">'+wxSVG(d.weather_code[i],false,40)+'</div><div><b>'+T(d.temperature_2m_max[i])+'°</b> <span class="muted">'+T(d.temperature_2m_min[i])+'°</span></div><div class="rain-p">💧 '+(d.precipitation_probability_max?d.precipitation_probability_max[i]||0:0)+'%</div></div>';}}
-var fcEl=document.getElementById("forecast");if(fcEl)fcEl.addEventListener("click",function(e){var c=e.target.closest?e.target.closest(".day"):null;if(!c||!data||!data.daily)return;var i=+c.getAttribute("data-idx");var d=data.daily;var txt="🌤️ "+code(d.weather_code[i])[0]+"\n🌡️ "+T(d.temperature_2m_min[i])+D()+" تا "+T(d.temperature_2m_max[i])+D()+"\n🌧️ "+(d.precipitation_probability_max?d.precipitation_probability_max[i]||0:0)+"٪\n🌅 طلوع "+fmtDT(d.sunrise[i])+" | غروب "+fmtDT(d.sunset[i]);var mi=document.getElementById("infoModalIcon"),mt=document.getElementById("infoModalTitle"),mx=document.getElementById("infoModalText"),mo=document.getElementById("infoModal");if(mi)mi.innerHTML=wxSVG(d.weather_code[i],false,64);if(mt)mt.textContent="📅 "+weekdayName(i);if(mx)mx.textContent=txt;if(mo)mo.classList.add("show");});
+var fcEl=document.getElementById("forecast");if(fcEl)fcEl.addEventListener("click",function(e){var c=e.target.closest?e.target.closest(".day"):null;if(!c||!data||!data.daily)return;var i=+c.getAttribute("data-idx");var d=data.daily;var txt="🌤️ "+code(d.weather_code[i])[0]+"\n🌡️ "+T(d.temperature_2m_min[i])+D()+" تا "+T(d.temperature_2m_max[i])+D()+"\n🌧️ "+(d.precipitation_probability_max?d.precipitation_probability_max[i]||0:0)+"٪";var mi=document.getElementById("infoModalIcon"),mt=document.getElementById("infoModalTitle"),mx=document.getElementById("infoModalText"),mo=document.getElementById("infoModal");if(mi)mi.innerHTML=wxSVG(d.weather_code[i],false,64);if(mt)mt.textContent="📅 "+weekdayName(i);if(mx)mx.textContent=txt;if(mo)mo.classList.add("show");});
 function cleanTime(t){if(!t)return"--:--";return t.split("(")[0].trim();}
-function computeShariaMidnight(){if(!prayerData)return null;var s=cleanTime(prayerData.Sunset),f=cleanTime(prayerData.Fajr);if(!s||!f||s==="--:--"||f==="--:--")return null;var sp=s.split(":"),fp=f.split(":");var sm=(+sp[0])*60+(+sp[1]);var fm=(+fp[0])*60+(+fp[1])+1440;var mid=Math.round((sm+fm)/2)%1440;return(mid<60?"0":"")+Math.floor(mid/60)+":"+(mid%60<10?"0":"")+(mid%60);}
-function loadPrayerTimes(){var n=new Date();var dd=(n.getDate()<10?"0":"")+n.getDate();var mm=(n.getMonth()+1<10?"0":"")+(n.getMonth()+1);var u=new URL(API.prayer+"/"+dd+"-"+mm+"-"+n.getFullYear());u.searchParams.set("latitude",city.latitude);u.searchParams.set("longitude",city.longitude);u.searchParams.set("method","7");u.searchParams.set("midnightMode","1");fetch(u).then(function(r){return r.json();}).then(function(j){if(j&&j.data&&j.data.timings){prayerData=j.data.timings;renderPrayer();}}).catch(function(){show("خطا در اوقات شرعی","err");});}
-function renderPrayer(){if(!prayerData)return;var mid=computeShariaMidnight();var times={Fajr:cleanTime(prayerData.Fajr),Sunrise:cleanTime(prayerData.Sunrise),Dhuhr:cleanTime(prayerData.Dhuhr),Sunset:cleanTime(prayerData.Sunset),Maghrib:cleanTime(prayerData.Maghrib),Midnight:mid};var names=[["Fajr","اذان صبح"],["Sunrise","طلوع"],["Dhuhr","اذان ظهر"],["Sunset","غروب"],["Maghrib","اذان مغرب"],["Midnight","نیمه‌شب"]];var el=document.getElementById("prayers");if(!el)return;el.innerHTML="";for(var i=0;i<names.length;i++)el.innerHTML+='<div class="prayer"><div>'+names[i][1]+'</div><b>'+(times[names[i][0]]||"--")+'</b></div>';var cur=cityNowMinutes();var order=["Fajr","Sunrise","Dhuhr","Sunset","Maghrib","Midnight"];var next=null;for(var j=0;j<order.length;j++){var t=times[order[j]];if(t&&t!=="--:--"){var p=t.split(":");var m=(+p[0])*60+(+p[1]);if(m>cur&&!next)next={name:names[j][1],t:t};}}if(!next)next={name:names[0][1],t:times.Fajr};var np=document.getElementById("nextPrayer");if(next&&next.t&&np){np.innerHTML='<span>⏳ '+next.name+'</span><span class="countdown" id="countdown">--:--:--</span>';startCountdown(next.t,next.name);}}
-function startCountdown(target){if(cdInterval)clearInterval(cdInterval);function tick(){var cur=cityNowMinutes();var p=target.split(":");var tm=(+p[0])*60+(+p[1]);var diff=(tm-cur+1440)%1440;var h=Math.floor(diff/60),m=diff%60;var c=document.getElementById("countdown");if(c)c.textContent=(h<10?"0":"")+h+":"+(m<10?"0":"")+m+":00";}tick();cdInterval=setInterval(tick,1000);}
+function loadPrayerTimes(){var n=new Date();var dd=(n.getDate()<10?"0":"")+n.getDate();var mm=(n.getMonth()+1<10?"0":"")+(n.getMonth()+1);var u=new URL(API.prayer+"/"+dd+"-"+mm+"-"+n.getFullYear());u.searchParams.set("latitude",city.latitude);u.searchParams.set("longitude",city.longitude);u.searchParams.set("method","7");fetch(u).then(function(r){return r.json();}).then(function(j){if(j&&j.data&&j.data.timings){prayerData=j.data.timings;renderPrayer();}}).catch(function(){});}
+function renderPrayer(){if(!prayerData)return;var times={Fajr:cleanTime(prayerData.Fajr),Sunrise:cleanTime(prayerData.Sunrise),Dhuhr:cleanTime(prayerData.Dhuhr),Sunset:cleanTime(prayerData.Sunset),Maghrib:cleanTime(prayerData.Maghrib)};var names=[["Fajr","اذان صبح"],["Sunrise","طلوع"],["Dhuhr","اذان ظهر"],["Sunset","غروب"],["Maghrib","اذان مغرب"]];var el=document.getElementById("prayers");if(!el)return;el.innerHTML="";for(var i=0;i<names.length;i++)el.innerHTML+='<div class="prayer"><div>'+names[i][1]+'</div><b>'+(times[names[i][0]]||"--")+'</b></div>';}
 function renderToday(){var n=new Date();var j=document.getElementById("jalali");if(j){try{j.textContent=new Intl.DateTimeFormat("fa-IR-u-ca-persian",{weekday:"long",day:"numeric",month:"long",year:"numeric"}).format(n);}catch(e){}}var g=document.getElementById("greg");if(g)g.textContent="میلادی: "+new Intl.DateTimeFormat("en-GB",{day:"numeric",month:"long",year:"numeric"}).format(n);var h=document.getElementById("hijri");if(h){try{h.textContent="قمری: "+new Intl.DateTimeFormat("fa-IR-u-ca-islamic-umalqura",{day:"numeric",month:"long",year:"numeric"}).format(n);}catch(e){}}}
 function savePins(){lsSet("pins",JSON.stringify(pins));}
-function fetchPinTemp(pin){var k="pt_"+pin.id;var c=getFromCache(k,600000);if(c!=null)return Promise.resolve(c);var u=new URL(API.weather);u.searchParams.set("latitude",pin.latitude);u.searchParams.set("longitude",pin.longitude);u.searchParams.set("current","temperature_2m");u.searchParams.set("timezone","auto");return fetch(u).then(function(r){return r.json();}).then(function(j){var t=j&&j.current?j.current.temperature_2m:null;saveToCache(k,t);return t;}).catch(function(){return null;});}
-function updatePinTemps(){for(var i=0;i<pins.length;i++)(function(pin,idx){fetchPinTemp(pin).then(function(t){var c=document.querySelector('.pinchip[data-idx="'+idx+'"] .ptemp');if(c&&t!=null)c.textContent=T(t)+"°";});})(pins[i],i);}
-function renderPins(){var el=document.getElementById("pins");if(!el)return;var html="";for(var i=0;i<pins.length;i++){var lk=pins[i].locked?'<span>🔒</span>':"";var del=pins[i].locked?"":' <button data-del="'+i+'">×</button>';html+='<div class="pinchip'+(String(pins[i].id)===String(city.id)?" active":"")+'" data-idx="'+i+'">'+safe(pins[i].name)+lk+'<span class="ptemp">--</span>'+del+'</div>';}el.innerHTML=html;var chips=el.querySelectorAll(".pinchip");for(var j=0;j<chips.length;j++)(function(ch){ch.addEventListener("click",function(e){if(e.target.getAttribute&&e.target.getAttribute("data-del")!=null)return;manualCity=true;city=pins[+ch.getAttribute("data-idx")];lsSet("city",JSON.stringify(city));refreshAll();});})(chips[j]);var dels=el.querySelectorAll("button[data-del]");for(var k=0;k<dels.length;k++)(function(b){b.addEventListener("click",function(e){e.stopPropagation();var idx=+b.getAttribute("data-del");if(pins[idx]&&pins[idx].locked){show("قفل است","info");return;}pins.splice(idx,1);savePins();updatePinBtn();});})(dels[k]);updatePinTemps();}
-function updatePinBtn(){var on=false;for(var i=0;i<pins.length;i++)if(String(pins[i].id)===String(city.id)){on=true;break;}var b=document.getElementById("pin");if(b){b.textContent=on?"★":"☆";if(on)b.classList.add("active");else b.classList.remove("active");}renderPins();}
 function saveToCache(k,o){try{localStorage.setItem(k,JSON.stringify({data:o,time:Date.now()}));}catch(e){}}
 function getFromCache(k,mx){try{var r=localStorage.getItem(k);if(!r)return null;var c=JSON.parse(r);if(Date.now()-c.time>mx)return null;return c.data;}catch(e){return null;}}
 var CACHE_AGE=3600000;
-function fetchElevation(lat,lon){var k="el_"+lat.toFixed(3)+"_"+lon.toFixed(3);var c=getFromCache(k,30*86400000);if(c!=null)return Promise.resolve(c);return fetch(API.elevation+"?latitude="+lat+"&longitude="+lon).then(function(r){return r.json();}).then(function(j){if(j&&j.elevation!=null){saveToCache(k,j.elevation);return j.elevation;}return null;}).catch(function(){return null;});}
-function loadBias(){var k="bias_"+city.latitude.toFixed(2)+"_"+city.longitude.toFixed(2);var c=getFromCache(k,7*86400000);if(c!=null){biasInfo=c;return Promise.resolve(c);}var e=new Date();e.setDate(e.getDate()-8);var s=new Date(e);s.setDate(s.getDate()-13);var p="latitude="+city.latitude+"&longitude="+city.longitude+"&start_date="+fmtDate(s)+"&end_date="+fmtDate(e)+"&daily=temperature_2m_max,temperature_2m_min&timezone=auto";return Promise.all([fetch(API.hforecast+"?"+p).then(function(r){return r.json();}).catch(function(){return null;}),fetch(API.archive+"?"+p).then(function(r){return r.json();}).catch(function(){return null;})]).then(function(res){var fc=res[0],ob=res[1];if(!fc||!ob||!fc.daily||!ob.daily){biasInfo={b:0,mae:0,n:0};return biasInfo;}var se=0,sa=0,n=0;for(var i=0;i<fc.daily.time.length;i++){var fm=fc.daily.temperature_2m_max?fc.daily.temperature_2m_max[i]:null,om=ob.daily.temperature_2m_max?ob.daily.temperature_2m_max[i]:null;if(fm!=null&&om!=null){se+=(fm-om);sa+=Math.abs(fm-om);n++;}}biasInfo=n?{b:se/n,mae:sa/n,n:n}:{b:0,mae:0,n:0};saveToCache(k,biasInfo);return biasInfo;}).catch(function(){biasInfo={b:0,mae:0,n:0};return biasInfo;});}
-function loadClimateNormal(){var k="cl_"+city.latitude.toFixed(2)+"_"+city.longitude.toFixed(2);var c=getFromCache(k,30*86400000);if(c!=null){climateNormal=c;return Promise.resolve(c);}var n=new Date();var sy=n.getFullYear()-30;return fetch(API.archive+"?latitude="+city.latitude+"&longitude="+city.longitude+"&start_date="+sy+"-01-01&end_date="+(n.getFullYear()-1)+"-12-31&daily=temperature_2m_mean&timezone=auto").then(function(r){return r.json();}).then(function(j){if(!j||!j.daily||!j.daily.time)return null;var mm=n.getMonth()+1,dd=n.getDate(),sum=0,cnt=0;for(var i=0;i<j.daily.time.length;i++){var p=j.daily.time[i].split("-");if(+p[1]===mm&&+p[2]===dd&&j.daily.temperature_2m_mean[i]!=null){sum+=j.daily.temperature_2m_mean[i];cnt++;}}climateNormal=cnt?sum/cnt:null;if(climateNormal!=null)saveToCache(k,climateNormal);return climateNormal;}).catch(function(){return null;});}
-function loadEnsembleConf(){var k="cf_"+city.latitude.toFixed(2);var c=getFromCache(k,3*3600000);if(c!=null){confInfo=c;return Promise.resolve(c);}return fetch(API.ensemble+"?latitude="+city.latitude+"&longitude="+city.longitude+"&daily=precipitation_sum&models=ecmwf_ifs025_ensemble&forecast_days=1&timezone=auto").then(function(r){return r.json();}).then(function(j){if(!j||!j.daily)return null;var wet=0,tot=0;for(var k2 in j.daily)if(k2.indexOf("precipitation_sum_member")===0){var v=j.daily[k2][0];if(v!=null){tot++;if(v>=.1)wet++;}}confInfo=tot?{prob:Math.round(wet/tot*100),n:tot}:null;if(confInfo)saveToCache(k,confInfo);return confInfo;}).catch(function(){return null;});}
-function fetchMultiModel(lat,lon){var u=new URL(API.weather);u.searchParams.set("latitude",lat);u.searchParams.set("longitude",lon);u.searchParams.set("current","temperature_2m");u.searchParams.set("models","ecmwf_ifs025,gfs_seamless,icon_seamless,gem_seamless,jma_seamless,ukmo_seamless");u.searchParams.set("timezone","auto");return fetch(u).then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(j){if(!j||!j.current)return null;var v=[];for(var k in j.current)if(k.indexOf("temperature_2m_")===0&&j.current[k]!=null)v.push(j.current[k]);if(!v.length)return null;var s=0;for(var i=0;i<v.length;i++)s+=v[i];return{mean:s/v.length,n:v.length};});}
-function fetchYr(lat,lon){return fetch(API.yr+"?lat="+lat+"&lon="+lon).then(function(r){if(!r.ok)throw 0;return r.json();}).then(function(j){var ts=j&&j.properties&&j.properties.timeseries&&j.properties.timeseries[0];if(!ts)return null;var ins=ts.data&&ts.data.instant;if(!ins)return null;return{temp:ins.air_temperature};});}
-function loadPrecision(){return Promise.all([fetchMultiModel(city.latitude,city.longitude).catch(function(){return null;}),fetchYr(city.latitude,city.longitude).catch(function(){return null;})]).then(function(res){var mm=res[0],yr=res[1];yrData=yr||null;if(mm&&yr)precision={mean:(mm.mean+yr.temp)/2,n:mm.n+1};else if(mm)precision={mean:mm.mean,n:mm.n};else if(yr)precision={mean:yr.temp,n:1};else precision=null;renderWeather();}).catch(function(){precision=null;});}
-function resolvePlace(lat,lon){var k="rg_"+lat.toFixed(3)+"_"+lon.toFixed(3);var c=getFromCache(k,30*86400000);if(c)return Promise.resolve(c);return fetch("https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat="+lat+"&lon="+lon+"&zoom=17&addressdetails=1&accept-language=fa").then(function(r){return r.json();}).then(function(j){var a=j.address||{};var out={village:a.village||a.hamlet||"",district:a.neighbourhood||a.quarter||a.suburb||a.city_district||"",name:a.city||a.town||a.village||a.municipality||a.county||j.name||"",county:a.county||"",admin1:a.state||"",country:a.country||""};saveToCache(k,out);return out;}).catch(function(){return fetch("https://api.bigdatacloud.net/data/reverse-geocode-client?latitude="+lat+"&longitude="+lon+"&localityLanguage=fa").then(function(r){return r.json();}).then(function(j){var out={village:j.locality||"",district:"",name:j.city||j.locality||"",county:"",admin1:j.principalSubdivision||"",country:j.countryName||""};saveToCache(k,out);return out;}).catch(function(){return{village:"",district:"",name:"",county:"",admin1:"",country:""};});});}
-function adoptGPS(lat,lon,force){lastAdopted={lat:lat,lon:lon};resolvePlace(lat,lon).then(function(g){var name=g.village||g.district||g.name||"موقعیت فعلی";var type=g.village?"village":(g.district?"district":"city");var id="gps"+Math.round(lat*1000)+"_"+Math.round(lon*1000);var ch=(city.id!==id);city={id:id,name:name,country:g.country||"ایران",admin1:g.admin1||"",county:g.county||"",type:type,latitude:lat,longitude:lon};lsSet("city",JSON.stringify(city));if(ch||force)refreshAll("📍 مکان دقیق: "+name);}).catch(function(){var id="gps"+Math.round(lat*1000)+"_"+Math.round(lon*1000);city={id:id,name:"موقعیت فعلی",country:"ایران",admin1:"",county:"",type:"city",latitude:lat,longitude:lon};lsSet("city",JSON.stringify(city));refreshAll("📍 مکان فعلی");});}
-function onGPSFix(p){var pos={lat:p.coords.latitude,lon:p.coords.longitude};lastGPS=pos;setGps("ok");if(!manualCity&&(!lastAdopted||haversine(lastAdopted.lat,lastAdopted.lon,pos.lat,pos.lon)>0.3))adoptGPS(pos.lat,pos.lon,false);}
-function onGPSErr(){setGps("off");}
-function startGPSWatch(){if(!navigator.geolocation){setGps("off");return;}if(gpsWatchId!=null)return;gpsWatchId=navigator.geolocation.watchPosition(onGPSFix,onGPSErr,{enableHighAccuracy:true,timeout:20000,maximumAge:0});}
-function tryGPSOnce(high){return new Promise(function(res,rej){if(!navigator.geolocation){rej({code:-1});return;}navigator.geolocation.getCurrentPosition(function(p){res({lat:p.coords.latitude,lon:p.coords.longitude});},function(err){rej(err);},{enableHighAccuracy:high,timeout:high?15000:10000,maximumAge:high?0:60000});});}
-var IP_PROVIDERS=[function(){return fetch("https://ipapi.co/json/").then(function(r){return r.json();}).then(function(j){if(j.latitude==null)throw 0;return{lat:j.latitude,lon:j.longitude};});},function(){return fetch("https://ipwho.is/").then(function(r){return r.json();}).then(function(j){if(j.latitude==null)throw 0;return{lat:j.latitude,lon:j.longitude};});},function(){return fetch("https://freeipapi.com/api/json/").then(function(r){return r.json();}).then(function(j){if(j.latitude==null)throw 0;return{lat:j.latitude,lon:j.longitude};});},function(){return fetch("https://ipinfo.io/json").then(function(r){return r.json();}).then(function(j){var loc=(j.loc||"").split(",");if(!loc[0])throw 0;return{lat:parseFloat(loc[0]),lon:parseFloat(loc[1])};});}];
-function ipLocate(){return IP_PROVIDERS.reduce(function(chain,fn){return chain.catch(function(){return fn();});},Promise.reject(new Error("start")));}
-function locateUser(){show("در حال تشخیص مکان فعلی...","info");manualCity=false;if(lastGPS){setGps("ok");adoptGPS(lastGPS.lat,lastGPS.lon,true);return;}tryGPSOnce(true).then(function(p){setGps("ok");lastGPS=p;adoptGPS(p.lat,p.lon,true);}).catch(function(){return tryGPSOnce(false).then(function(p){setGps("ok");lastGPS=p;adoptGPS(p.lat,p.lon,true);});}).catch(function(){return ipLocate().then(function(p){setGps("ok");adoptGPS(p.lat,p.lon,true);show("📍 منطقهٔ فعلی از طریق شبکه تشخیص داده شد","ok");}).catch(function(){show("⚠️ تشخیص مکان ممکن نشد؛ لطفاً شهر را دستی جستجو کنید","err");});});}
-var locBtn=document.getElementById("loc");if(locBtn)locBtn.addEventListener("click",locateUser);
-if(navigator.geolocation){setGps("ok");startGPSWatch();}else setGps("off");
-var STATIONS=[{name:"تهران",lat:35.6892,lon:51.389},{name:"مشهد",lat:36.2605,lon:59.6168},{name:"اصفهان",lat:32.6546,lon:51.668},{name:"شیراز",lat:29.5918,lon:52.5837},{name:"تبریز",lat:38.0962,lon:46.2738},{name:"اراک",lat:34.0917,lon:49.6892}];
 function fetchWeather(lat,lon,el){var u=new URL(API.weather);u.searchParams.set("latitude",lat);u.searchParams.set("longitude",lon);if(el!=null)u.searchParams.set("elevation",Math.round(el));u.searchParams.set("current","temperature_2m,relative_humidity_2m,apparent_temperature,precipitation,weather_code,wind_speed_10m,wind_direction_10m,surface_pressure,dew_point_2m,cloud_cover,is_day");u.searchParams.set("hourly","temperature_2m,precipitation_probability,weather_code,visibility,relative_humidity_2m,dew_point_2m,surface_pressure,wind_speed_10m,cloud_cover");u.searchParams.set("daily","weather_code,temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max,uv_index_max,wind_speed_10m_max,sunrise,sunset");u.searchParams.set("timezone","auto");u.searchParams.set("forecast_days","9");u.searchParams.set("past_days","1");return fetch(u).then(function(r){if(!r.ok)throw new Error();return r.json();});}
-function loadWeather(){var ck="w_"+city.id;var c=getFromCache(ck,CACHE_AGE);if(c&&!navigator.onLine){data=c;renderWeather();show("📴 آفلاین","info");return Promise.resolve(true);}if(c){data=c;renderWeather();}if(!navigator.onLine)return Promise.resolve(false);return fetchElevation(city.latitude,city.longitude).then(function(el){return fetchWeather(city.latitude,city.longitude,el);}).then(function(j){data=j;saveToCache(ck,j);renderWeather();return true;}).catch(function(){var best=null;for(var i=0;i<STATIONS.length;i++){var dd=haversine(city.latitude,city.longitude,STATIONS[i].lat,STATIONS[i].lon);if(!best||dd<best.d)best=STATIONS[i];}if(best)return fetchWeather(best.lat,best.lon,null).then(function(j){data=j;renderWeather();pendingNotice="📡 ایستگاه: "+best.name;return true;}).catch(function(){show("خطا","err");return false;});show("خطا","err");return false;});}
-function refreshCurrentPage(){if(currentPage==="home"){refreshAll();return;}magLoaded[currentPage]=false;showPage(currentPage);}
-function refreshAll(msg){precision=null;renderToday();updatePinBtn();loadPrayerTimes();return Promise.all([loadWeather(),loadAir(),loadBias(),loadEnsembleConf(),loadClimateNormal()]).then(function(r){var ok=r[0]||r[1];var m=msg||((ok&&navigator.onLine)?"به‌روزرسانی شد":null);if(pendingNotice){m=(m?m+" ":"")+pendingNotice;pendingNotice=null;}if(m)show(m,ok?"ok":"info");renderWeather();renderDetails();loadPrecision();loadClimateZone();});}
+function loadWeather(){var ck="w_"+city.id;var c=getFromCache(ck,CACHE_AGE);if(c&&!navigator.onLine){data=c;renderWeather();show("📴 آفلاین","info");return Promise.resolve(true);}if(c){data=c;renderWeather();}if(!navigator.onLine)return Promise.resolve(false);return fetchElevation(city.latitude,city.longitude).then(function(el){return fetchWeather(city.latitude,city.longitude,el);}).then(function(j){data=j;saveToCache(ck,j);renderWeather();return true;}).catch(function(){return fetchWeather(city.latitude,city.longitude,null).then(function(j){data=j;saveToCache(ck,j);renderWeather();return true;}).catch(function(){show("خطا","err");return false;});});}
+function refreshAll(msg){precision=null;renderToday();loadPrayerTimes();return Promise.all([loadWeather(),loadAir()]).then(function(r){var ok=r[0]||r[1];var m=msg||((ok&&navigator.onLine)?"به‌روزرسانی شد":null);if(m)show(m,ok?"ok":"info");renderWeather();renderDetails();});}
 var pullStart=null,pulling=false;var pullInd=document.getElementById("pullInd");
-function pullRefreshAll(){show("🔄 در حال به‌روزرسانی...","info");refreshAll();refreshCurrentPage();}
+function pullRefreshAll(){show("🔄 در حال به‌روزرسانی...","info");refreshAll();}
 window.addEventListener("touchstart",function(e){if(window.scrollY<=0){pullStart=e.touches[0].clientY;pulling=true;}},{passive:true});
 window.addEventListener("touchmove",function(e){if(!pulling||pullStart==null)return;var dy=e.touches[0].clientY-pullStart;if(dy>0&&pullInd){pullInd.style.opacity=1;pullInd.textContent=dy>80?"رها کنید تا به‌روزرسانی شود":"برای به‌روزرسانی بکشید";}},{passive:true});
 window.addEventListener("touchend",function(e){if(!pulling||pullStart==null)return;pulling=false;if(pullInd)pullInd.style.opacity=0;var dy=e.changedTouches[0].clientY-pullStart;if(dy>80)pullRefreshAll();pullStart=null;});
-var mDown=null;
-window.addEventListener("mousedown",function(e){if(window.scrollY<=0)mDown=e.clientY;});
-window.addEventListener("mousemove",function(e){if(mDown==null)return;var dy=e.clientY-mDown;if(dy>0&&pullInd){pullInd.style.opacity=1;pullInd.textContent=dy>80?"رها کنید تا به‌روزرسانی شود":"برای به‌روزرسانی بکشید";}});
-window.addEventListener("mouseup",function(e){if(mDown==null)return;var dy=e.clientY-mDown;mDown=null;if(pullInd)pullInd.style.opacity=0;if(dy>80)pullRefreshAll();});
-var PLACE_WHITELIST=["village","hamlet","suburb","quarter","neighbourhood","city","town","municipality","urban_area","county","state","province","country"];
-function nomOk(n){var at=(n.addresstype||n.type||"").toLowerCase();var cat=n.category||"";if(cat==="place"||cat==="boundary"||cat==="administrative")return PLACE_WHITELIST.indexOf(at)!==-1||at==="";return PLACE_WHITELIST.indexOf(at)!==-1;}
 var searchInput=document.getElementById("search");
-function doSearch(qRaw){var q=qRaw.trim();var latin=isLatin(q);var localMap={},local=[];for(var i=0;i<LOCAL_AREAS.length;i++){var nn=normName(LOCAL_AREAS[i].n);if((LOCAL_AREAS[i].n.indexOf(q)!==-1||q.indexOf(LOCAL_AREAS[i].n)!==-1)&&!localMap[nn]){localMap[nn]=1;local.push(LOCAL_AREAS[i]);}}for(var c0=0;c0<COUNTRIES.length;c0++){var cn=normName(COUNTRIES[c0].name);if((COUNTRIES[c0].name.indexOf(q)!==-1||q.indexOf(COUNTRIES[c0].name)!==-1)&&!localMap[cn]){localMap[cn]=1;local.push({province:"",parent:COUNTRIES[c0].parent,n:COUNTRIES[c0].name,lat:null,lon:null,type:"country"});}}var jobs=[fetch(API.geo+"?name="+encodeURIComponent(q)+"&count=15&language=fa&format=json").then(function(r){return r.json();}).then(function(j){return j.results||[];}).catch(function(){return[];}),fetch(API.nom+"?format=jsonv2&addressdetails=1&limit=15&countrycodes=ir&accept-language=fa&q="+encodeURIComponent(q)).then(function(r){return r.json();}).then(function(j){return (j||[]).filter(nomOk);}).catch(function(){return[];})];if(latin)jobs.push(fetch(API.geo+"?name="+encodeURIComponent(q)+"&count=15&language=en&format=json").then(function(r){return r.json();}).then(function(j){return j.results||[];}).catch(function(){return[];}));Promise.all(jobs).then(function(res){var geo=res[0]||[],geoEn=(res[2]||[]);var b=document.getElementById("results");if(!b)return;var html="";for(var L=0;L<local.length;L++){var a=local[L];var o;if(a.type==="village")o={type:"village",name:a.n,county:a.parent,province:a.province};else if(a.type==="district")o={type:"district",name:a.n,city:a.parent,province:a.province};else if(a.type==="country")o={type:"country",name:a.n,parent:a.parent};else o={type:"city",name:a.n,province:a.province,country:"ایران"};html+='<div class="result" data-local="'+L+'"><div><b>'+safe(a.n)+'</b><small>'+safe(formatSub(o))+'</small></div>📍</div>';}var merged=[],mn2={};for(var k=0;k<local.length;k++)mn2[normName(local[k].n)]=1;function pushGeo(list){for(var i=0;i<list.length;i++){var x=list[i];var nm=normName(x.name);if(mn2[nm])continue;mn2[nm]=1;merged.push({o:{type:"city",name:x.name,province:x.admin1||"",country:x.country||""},lat:x.latitude,lon:x.longitude});}}pushGeo(geo);if(latin)pushGeo(geoEn);for(var m2=0;m2<merged.length;m2++){var mm=merged[m2];html+='<div class="result" data-merged="'+m2+'"><div><b>'+safe(mm.o.name)+'</b><small>'+safe(formatSub(mm.o))+'</small></div>📍</div>';}if(!html)html='<div class="muted" style="padding:15px;color:#555">یافت نشد</div>';b.innerHTML=html;b.style.display="block";var locs=b.querySelectorAll("[data-local]");for(var L3=0;L3<locs.length;L3++)(function(el){el.addEventListener("click",function(){var a=local[+el.getAttribute("data-local")];manualCity=true;if(a.type==="country")city={id:"c-"+a.n,name:a.n,country:a.n,continent:a.parent,admin1:"",county:"",type:"country",latitude:32,longitude:53};else city={id:"a-"+a.n,name:a.n,country:"ایران",admin1:a.province,county:(a.type==="village"?a.parent:(a.type==="district"?a.parent:a.n)),type:a.type,latitude:a.lat,longitude:a.lon};searchInput.value="";b.style.display="none";lsSet("city",JSON.stringify(city));refreshAll();});})(locs[L3]);var megs=b.querySelectorAll("[data-merged]");for(var M=0;M<megs.length;M++)(function(el){el.addEventListener("click",function(){var mm=merged[+el.getAttribute("data-merged")];manualCity=true;var o=mm.o;city={id:("g"+Math.round(mm.lat*1e4)),name:o.name,country:(o.country||"ایران"),admin1:(o.province||""),county:o.name,type:o.type,continent:(o.parent||""),latitude:mm.lat,longitude:mm.lon};searchInput.value="";b.style.display="none";lsSet("city",JSON.stringify(city));refreshAll();});})(megs[M]);});}
+function doSearch(qRaw){var q=qRaw.trim();var localMap={},local=[];for(var i=0;i<LOCAL_AREAS.length;i++){var nn=normName(LOCAL_AREAS[i].n);if((LOCAL_AREAS[i].n.indexOf(q)!==-1||q.indexOf(LOCAL_AREAS[i].n)!==-1)&&!localMap[nn]){localMap[nn]=1;local.push(LOCAL_AREAS[i]);}}for(var c0=0;c0<COUNTRIES.length;c0++){var cn=normName(COUNTRIES[c0].name);if((COUNTRIES[c0].name.indexOf(q)!==-1||q.indexOf(COUNTRIES[c0].name)!==-1)&&!localMap[cn]){localMap[cn]=1;local.push({province:"",parent:COUNTRIES[c0].parent,n:COUNTRIES[c0].name,lat:null,lon:null,type:"country"});}}Promise.all([fetch(API.geo+"?name="+encodeURIComponent(q)+"&count=15&language=fa&format=json").then(function(r){return r.json();}).then(function(j){return j.results||[];}).catch(function(){return[];})]).then(function(res){var geo=res[0]||[];var b=document.getElementById("results");if(!b)return;var html="";for(var L=0;L<local.length;L++){var a=local[L];html+='<div class="result" data-local="'+L+'"><div><b>'+safe(a.n)+'</b><small>'+safe(a.province||"")+'</small></div>📍</div>';}var merged=[],mn2={};for(var k=0;k<local.length;k++)mn2[normName(local[k].n)]=1;for(var g=0;g<geo.length;g++){var x=geo[g];var nm=normName(x.name);if(mn2[nm])continue;mn2[nm]=1;merged.push({name:x.name,province:x.admin1||"",country:x.country||"",lat:x.latitude,lon:x.longitude});}for(var m2=0;m2<merged.length;m2++){var mm=merged[m2];html+='<div class="result" data-merged="'+m2+'"><div><b>'+safe(mm.name)+'</b><small>'+safe((mm.province||"")+(mm.country?"، "+mm.country:""))+'</small></div>📍</div>';}if(!html)html='<div class="muted" style="padding:15px;color:#555">یافت نشد</div>';b.innerHTML=html;b.style.display="block";var locs=b.querySelectorAll("[data-local]");for(var L3=0;L3<locs.length;L3++)(function(el){el.addEventListener("click",function(){var a=local[+el.getAttribute("data-local")];manualCity=true;if(a.type==="country"){city={id:"c-"+a.n,name:a.n,country:a.n,continent:a.parent,admin1:"",county:"",type:"country",latitude:32,longitude:53};}else{city={id:"a-"+a.n,name:a.n,country:"ایران",admin1:a.province,county:a.n,type:a.type,latitude:a.lat,longitude:a.lon};}searchInput.value="";b.style.display="none";lsSet("city",JSON.stringify(city));refreshAll();});})(locs[L3]);var megs=b.querySelectorAll("[data-merged]");for(var M=0;M<megs.length;M++)(function(el){el.addEventListener("click",function(){var mm=merged[+el.getAttribute("data-merged")];manualCity=true;city={id:"g"+Math.round(mm.lat*1e4),name:mm.name,country:mm.country||"ایران",admin1:mm.province||"",county:mm.name,type:"city",latitude:mm.lat,longitude:mm.lon};searchInput.value="";b.style.display="none";lsSet("city",JSON.stringify(city));refreshAll();});})(megs[M]);});}
 if(searchInput)searchInput.addEventListener("input",function(){clearTimeout(searchInput._t);var q=searchInput.value.trim();if(q.length<2){var r=document.getElementById("results");if(r)r.style.display="none";return;}searchInput._t=setTimeout(function(){doSearch(q);},400);});
 document.addEventListener("click",function(e){if(!e.target.closest||!e.target.closest(".search")){var r=document.getElementById("results");if(r)r.style.display="none";}});
+var locBtn=document.getElementById("loc");if(locBtn)locBtn.addEventListener("click",function(){show("در حال تشخیص مکان...","info");if(!navigator.geolocation){show("GPS پشتیبانی نمی‌شود","err");return;}navigator.geolocation.getCurrentPosition(function(p){adoptGPS(p.coords.latitude,p.coords.longitude,true);},function(){show("تشخیص مکان ممکن نشد","err");},{enableHighAccuracy:true,timeout:15000});});
+function adoptGPS(lat,lon,force){resolvePlace(lat,lon).then(function(g){var name=g.village||g.district||g.name||"موقعیت فعلی";var type=g.village?"village":(g.district?"district":"city");city={id:"gps"+Math.round(lat*1000)+"_"+Math.round(lon*1000),name:name,country:g.country||"ایران",admin1:g.admin1||"",county:g.county||"",type:type,latitude:lat,longitude:lon};lsSet("city",JSON.stringify(city));refreshAll("📍 "+name);}).catch(function(){city={id:"gps"+Math.round(lat*1000)+"_"+Math.round(lon*1000),name:"موقعیت فعلی",country:"ایران",admin1:"",county:"",type:"city",latitude:lat,longitude:lon};lsSet("city",JSON.stringify(city));refreshAll("📍 موقعیت فعلی");});}
+function resolvePlace(lat,lon){return fetch("https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat="+lat+"&lon="+lon+"&zoom=17&addressdetails=1&accept-language=fa").then(function(r){return r.json();}).then(function(j){var a=j.address||{};return{village:a.village||a.hamlet||"",district:a.neighbourhood||a.suburb||"",name:a.city||a.town||a.village||a.county||"",county:a.county||"",admin1:a.state||"",country:a.country||""};}).catch(function(){return{village:"",district:"",name:"",county:"",admin1:"",country:""};});}
+if(navigator.geolocation){setGps("ok");navigator.geolocation.watchPosition(function(p){lastGPS={lat:p.coords.latitude,lon:p.coords.longitude};setGps("ok");},function(){setGps("off");},{enableHighAccuracy:false,timeout:20000,maximumAge:60000});}else setGps("off");
 var pinBtn=document.getElementById("pin");if(pinBtn)pinBtn.addEventListener("click",function(){var f=-1;for(var i=0;i<pins.length;i++)if(String(pins[i].id)===String(city.id)){f=i;break;}if(f>=0){if(pins[f].locked){show("قفل است","info");return;}pins.splice(f,1);show("حذف شد");}else{pins.push({id:city.id,name:city.name,country:city.country,admin1:city.admin1,county:city.county,type:city.type,latitude:city.latitude,longitude:city.longitude});show("پین شد","ok");}savePins();updatePinBtn();});
-function getInfoContent(key){
-  var s=getDayStats(detailDay);if(!s)return{icon:"❓",title:"--",text:"--"};
-  var L=s.label;
-  var icons={temp:"🌡️",humidity:"💧",wind:"💨",uv:"☀️",aqi:"🌫️",precip:"🌧️",visibility:"👁️",pressure:"🌡️",dewpoint:"💦",us_aqi:"🌐",pm25:"🔬",pm10:"🌪️",ozone:"☁️",dust:"🏜️",pollen:"🌼",cloud:"☁️"};
-  var icon=icons[key]||"📊";
-  var title="",text="";
-  if(key==="temp"){var tv=s.temp;var st=tv==null?"--":tv<=-5?"🔴 یخبندان":tv<=0?"🔴 بسیار سرد":tv<=10?"🟡 سرد":tv<=18?"🟢 خنک":tv<=27?"🟢 مطلوب":tv<=32?"🟡 گرم":"🔴 بسیار گرم";title="دما ("+L+")";text="📊 "+(tv!=null?T1(tv)+D():"--")+"\n📈 بازه: "+T(s.tempMin)+D()+" تا "+T(s.tempMax)+D()+"\n🚦 "+st;}
-  else if(key==="humidity"){title="رطوبت هوا";var h=s.hum;var status=h==null?"--":h<30?"🔴 خشک":h<50?"🟡 مناسب":h<70?"🟢 خوب":h<85?"🟡 شرجی":"🔴 بسیار شرجی";text="📊 "+(h!=null?Math.round(h)+"٪":"--")+"\n🚦 وضعیت: "+status+"\n💡 رطوبت مطلوب بین ۴۰ تا ۶۰٪ است.";}
-  else if(key==="wind"){title="سرعت و جهت باد";var w=s.wind;var status=w==null?"--":w<10?"🟢 ملایم":w<25?"🟢 متوسط":w<40?"🟡 شدید":w<60?"🔴 تند":"🔴 طوفانی";text="📊 "+(w!=null?Math.round(w)+" km/h":"--")+(s.windDir?" از "+dirFa(s.windDir):"")+"\n🚦 وضعیت: "+status;}
-  else if(key==="uv"){title="شاخص فرابنفش (UV)";var uv=s.uv;var status=uv==null?"--":uv<3?"🟢 کم":uv<6?"🟡 متوسط":uv<8?"🟡 بالا":uv<11?"🔴 بسیار بالا":"🔴 خطرناک";text="📊 شاخص: "+(uv!=null?uv:"--")+"\n🚦 وضعیت: "+status+"\n💡 در UV بالای ۶، از ضدآفتاب استفاده کنید.";}
-  else if(key==="aqi"){title="کیفیت هوا (EAQI اروپایی)";var a=s.aqi;var status=aqiLabel(a);text="📊 EAQI: "+(a!=null?Math.round(a):"--")+" ("+status+")\n💡 PM2.5: "+(s.pm25!=null?Math.round(s.pm25):"--")+"\n💡 PM10: "+(s.pm10!=null?Math.round(s.pm10):"--")+"\n💡 ازن: "+(s.ozone!=null?Math.round(s.ozone):"--");}
-  else if(key==="precip"){title="بارش";var p=s.precip;var prob=s.precipProb;var status=p==null?"--":p<1?"🟢 خفیف":p<5?"🟡 متوسط":p<15?"🟡 شدید":"🔴 سیلابی";text="📊 مقدار: "+(p!=null?p+" mm":"--")+"\n🌧️ احتمال: "+(prob!=null?prob+"٪":"--")+"\n🚦 وضعیت: "+status;}
-  else if(key==="visibility"){title="دید افقی";var v=s.vis;var status=v==null?"--":v>=10?"🟢 عالی":v>=5?"🟢 خوب":v>=2?"🟡 متوسط":v>=1?"🔴 ضعیف":"🔴 بسیار ضعیف";text="📊 دید: "+(v!=null?Math.round(v)+" km":"--")+"\n🚦 وضعیت: "+status+"\n💡 دید زیر ۲ کیلومتر برای رانندگی خطرناک است.";}
-  else if(key==="pressure"){title="فشار هوا";var pr=s.pres;var tr=pressureTrend();var trend=tr==null?"--":tr<-3?"📉 در حال کاهش":tr>3?"📈 در حال افزایش":"➡️ پایدار";text="📊 فشار: "+(pr!=null?Math.round(pr)+" hPa":"--")+"\n🚦 روند: "+trend+"\n💡 فشار استاندارد: ۱۰۱۳ hPa";}
-  else if(key==="dewpoint"){title="نقطهٔ شبنم";var d=s.dew;var status=d==null?"--":d<10?"🟢 خشک":d<16?"🟢 مطلوب":d<18?"🟡 شرجی":"🔴 آزاردهنده";text="📊 شبنم: "+(d!=null?T(d)+D():"--")+"\n🚦 وضعیت: "+status;}
-  else if(key==="us_aqi"){title="کیفیت هوا (EPA آمریکا)";var a=s.us;var status=aqiLabel(a);text="📊 US AQI: "+(a!=null?Math.round(a):"--")+" ("+status+")\n💡 این شاخص توسط EPA آمریکا محاسبه می‌شود.";}
-  else if(key==="pm25"){title="ذرات ریز PM2.5";var p=s.pm25;var status=p==null?"--":p<12?"🟢 خوب":p<35?"🟡 متوسط":p<55?"🔴 بد":"🔴 بسیار بد";text="📊 PM2.5: "+(p!=null?Math.round(p):"--")+" µg/m³\n🚦 وضعیت: "+status+"\n💡 ذرات ریز به ریه آسیب می‌رسانند.";}
-  else if(key==="pm10"){title="ذرات درشت PM10";var p=s.pm10;var status=p==null?"--":p<54?"🟢 خوب":p<154?"🟡 متوسط":p<254?"🔴 بد":"🔴 بسیار بد";text="📊 PM10: "+(p!=null?Math.round(p):"--")+" µg/m³\n🚦 وضعیت: "+status;}
-  else if(key==="ozone"){title="ازن سطح زمین (O3)";var o=s.ozone;var status=o==null?"--":o<100?"🟢 خوب":o<160?"🟡 متوسط":"🔴 بد";text="📊 ازن: "+(o!=null?Math.round(o):"--")+" µg/m³\n🚦 وضعیت: "+status;}
-  else if(key==="dust"){title="ریزگرد و گردوغبار";var d=s.dust;var status=d==null?"--":d<50?"🟢 ناچیز":d<100?"🟡 متوسط":d<200?"🔴 قابل توجه":"🔴 شدید";text="📊 ریزگرد: "+(d!=null?Math.round(d):"--")+" µg/m³\n🚦 وضعیت: "+status;}
-  else if(key==="pollen"){title="گردهٔ گیاهان";var p=(s.pollen!=null)?Math.round(s.pollen):seasonalPollen(new Date().getMonth()+1);var status=p<30?"🟢 کم":p<60?"🟡 متوسط":"🔴 بالا";text="📊 گرده: "+p+"/100 ("+status+")\n💡 حساس‌ها از ماسک و عینک استفاده کنند.";}
-  else if(key==="cloud"){title="پوشش ابر";var c=s.cloud;var status=c==null?"--":c<20?"🟢 آسمان صاف":c<50?"🟢 کمی ابری":c<80?"🟡 ابری":"🔴 کاملاً ابری";text="📊 پوشش: "+(c!=null?Math.round(c)+"٪":"--")+"\n🚦 وضعیت: "+status;}
-  else{title=key;text="داده نیست";}
-  return{icon:icon,title:title,text:text};
-}
-var dBtns=document.querySelectorAll(".detail-btn");for(var i6=0;i6<dBtns.length;i6++)(function(btn){btn.addEventListener("click",function(){var c=getInfoContent(btn.getAttribute("data-info"));var mi=document.getElementById("infoModalIcon"),mt=document.getElementById("infoModalTitle"),mx=document.getElementById("infoModalText"),mo=document.getElementById("infoModal");if(mi)mi.innerHTML=c.icon;if(mt)mt.textContent=c.title;if(mx)mx.textContent=c.text;if(mo)mo.classList.add("show");});})(dBtns[i6]);
+function updatePinBtn(){var on=false;for(var i=0;i<pins.length;i++)if(String(pins[i].id)===String(city.id)){on=true;break;}var b=document.getElementById("pin");if(b){b.textContent=on?"★":"☆";if(on)b.classList.add("active");else b.classList.remove("active");}}
+var dBtns=document.querySelectorAll(".detail-btn");for(var i6=0;i6<dBtns.length;i6++)(function(btn){btn.addEventListener("click",function(){var key=btn.getAttribute("data-info");var s=getDayStats(detailDay);if(!s)return;var mi=document.getElementById("infoModalIcon"),mt=document.getElementById("infoModalTitle"),mx=document.getElementById("infoModalText"),mo=document.getElementById("infoModal");var icons={humidity:"💧",wind:"💨",temp:"🌡️",uv:"☀️",precip:"🌧️",visibility:"👁️",pressure:"🌡️",dewpoint:"💦",aqi:"🌫️",us_aqi:"🌐",pm25:"🔬",pm10:"🌪️",ozone:"☁️",dust:"🏜️",pollen:"🌼",cloud:"☁️"};if(mi)mi.textContent=icons[key]||"📊";var titles={humidity:"رطوبت",wind:"باد",temp:"دما",uv:"فرابنفش",precip:"بارش",visibility:"دید",pressure:"فشار",dewpoint:"شبنم",aqi:"کیفیت هوا",us_aqi:"EPA",pm25:"PM2.5",pm10:"PM10",ozone:"ازن",dust:"ریزگرد",pollen:"گرده",cloud:"ابر"};if(mt)mt.textContent=titles[key]||key;var vals={humidity:(s.hum!=null?Math.round(s.hum)+"٪":"--"),wind:(s.wind!=null?Math.round(s.wind)+" km/h":"--"),temp:(s.temp!=null?T1(s.temp)+D():"--"),uv:(s.uv!=null?s.uv:"--"),precip:(s.precip!=null?s.precip+" mm":"--"),visibility:(s.vis!=null?Math.round(s.vis)+" km":"--"),pressure:(s.pres!=null?Math.round(s.pres)+" hPa":"--"),dewpoint:(s.dew!=null?T(s.dew)+D():"--"),aqi:(s.aqi!=null?Math.round(s.aqi)+" ("+aqiLabel(s.aqi)+")":"--"),us_aqi:(s.us!=null?Math.round(s.us):"--"),pm25:(s.pm25!=null?Math.round(s.pm25)+" µg/m³":"--"),pm10:(s.pm10!=null?Math.round(s.pm10)+" µg/m³":"--"),ozone:(s.ozone!=null?Math.round(s.ozone)+" µg/m³":"--"),dust:(s.dust!=null?Math.round(s.dust)+" µg/m³":"--"),pollen:((s.pollen!=null?Math.round(s.pollen):seasonalPollen(new Date().getMonth()+1))+"/100"),cloud:(s.cloud!=null?Math.round(s.cloud)+"٪":"--")};if(mx)mx.textContent=vals[key]||"--";if(mo)mo.classList.add("show");});})(dBtns[i6]);
 var infoClose=document.getElementById("infoModalClose");if(infoClose)infoClose.addEventListener("click",function(){var m=document.getElementById("infoModal");if(m)m.classList.remove("show");});
-var infoOverlay=document.getElementById("infoModal");if(infoOverlay)infoOverlay.addEventListener("click",function(e){if(e.target===this)this.classList.remove("show");});
-var prayerToggle=document.getElementById("prayerToggle");if(prayerToggle)prayerToggle.addEventListener("click",function(){var b=document.getElementById("prayerBody");if(b)b.classList.toggle("collapsed");});
 var unitSel=document.getElementById("unit");if(unitSel){unitSel.value=unit;unitSel.addEventListener("change",function(){unit=this.value;lsSet("unit",unit);if(data){renderWeather();renderDetails();}});}
 var SPORT_TABS=[{id:"football",icon:"⚽",label:"فوتبال"},{id:"futsal",icon:"🥅",label:"فوتسال"},{id:"basketball",icon:"🏀",label:"بسکتبال"},{id:"volleyball",icon:"🏐",label:"والیبال"},{id:"beach",icon:"🏖️",label:"فوتبال ساحلی"},{id:"handball",icon:"🤾",label:"هندبال"},{id:"broadcast",icon:"📺",label:"جدول پخش"},{id:"video",icon:"🎬",label:"ویدئو"},{id:"livescore",icon:"⚡",label:"نتایج زنده"},{id:"olympic",icon:"🏅",label:"المپیک"}];
-var SPORT_LINKS={
- football:[
-  {title:"🔻 فوتبال باشگاهی ایران",items:[
-    {url:"https://www.varzesh3.com/football/league/6/%D9%84%DB%8C%DA%AF-%D8%A8%D8%B1%D8%AA%D8%B1-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86/%D8%A8%D8%A7%D8%B2%DB%8C-%D9%87%D8%A7",title:"بازی‌های لیگ برتر ایران",desc:"نتایج و برنامه",icon:"🇮🇷"},
-    {url:"https://www.varzesh3.com/football/league/6/%D9%84%DB%8C%DA%AF-%D8%A8%D8%B1%D8%AA%D8%B1-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86",title:"جدول لیگ برتر ایران",desc:"رده‌بندی و آمار",icon:"📊"},
-    {url:"https://www.varzesh3.com/football/league/24/%D9%84%DB%8C%DA%AF-%D8%A7%D9%93%D8%B2%D8%A7%D8%AF%DA%AF%D8%A7%D9%86",title:"لیگ آزادگان",desc:"دسته دوم ایران",icon:"🇮🇷"},
-    {url:"https://www.varzesh3.com/football/league/22/%D8%AC%D8%A7%D9%85-%D8%AD%D8%B0%D9%81%DB%8C-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86/%D8%A8%D8%A7%D8%B2%DB%8C-%D9%87%D8%A7",title:"جام حذفی ایران",desc:"بازی‌های جام حذفی",icon:"🏆"},
-    {url:"https://www.varzesh3.com/football/league/324/%D9%84%DB%8C%DA%AF-%D8%A8%D8%B1%D8%AA%D8%B1-%D8%B2%D9%86%D8%A7%D9%86",title:"لیگ برتر زنان",desc:"فوتبال بانوان ایران",icon:"👩"}
-  ]},
-  {title:"🔻 فوتبال باشگاهی خارجی",items:[
-    {url:"https://www.varzesh3.com/football/league/3/%D9%84%DB%8C%DA%AF-%D8%A8%D8%B1%D8%AA%D8%B1-%D8%A7%D9%86%DA%AF%D9%84%DB%8C%D8%B3",title:"لیگ برتر انگلیس",desc:"پریمیرلیگ",icon:"🏴󠁧󠁢󠁥󠁮󠁧󠁿"},
-    {url:"https://www.varzesh3.com/football/league/2/%D9%84%D8%A7%D9%84%DB%8C%DA%AF%D8%A7-%D8%A7%D8%B3%D9%BE%D8%A7%D9%86%DB%8C%D8%A7",title:"لالیگا",desc:"لیگ برتر اسپانیا",icon:"🇪🇸"},
-    {url:"https://www.varzesh3.com/football/league/4/%D8%B3%D8%B1%DB%8C-%D8%A7%D9%93-%D8%A7%DB%8C%D8%AA%D8%A7%D9%84%DB%8C%D8%A7",title:"سری آ",desc:"لیگ برتر ایتالیا",icon:"🇮🇹"},
-    {url:"https://www.varzesh3.com/football/league/1/%D8%A8%D9%88%D9%86%D8%AF%D8%B3%D9%84%DB%8C%DA%AF%D8%A7-%D8%A7%D9%93%D9%84%D9%85%D8%A7%D9%86",title:"بوندسلیگا",desc:"لیگ برتر آلمان",icon:"🇩🇪"},
-    {url:"https://www.varzesh3.com/football/league/14/%D8%AC%D8%A7%D9%85-%D8%AD%D8%B0%D9%81%DB%8C-%D8%A7%D9%86%DA%AF%D9%84%DB%8C%D8%B3/%D8%A8%D8%A7%D8%B2%DB%8C-%D9%87%D8%A7",title:"جام حذفی انگلیس",desc:"FA Cup",icon:"🏴󠁧󠁢󠁥󠁮󠁧󠁿"},
-    {url:"https://www.varzesh3.com/football/league/15/%D8%AC%D8%A7%D9%85-%D8%AD%D8%B0%D9%81%DB%8C-%D8%A7%D8%B3%D9%BE%D8%A7%D9%86%DB%8C%D8%A7/%D8%A8%D8%A7%D8%B2%DB%8C-%D9%87%D8%A7",title:"جام حذفی اسپانیا",desc:"Copa del Rey",icon:"🇪🇸"},
-    {url:"https://www.varzesh3.com/football/league/19/%D8%AC%D8%A7%D9%85-%D8%AD%D8%B0%D9%81%DB%8C-%D8%A7%DB%8C%D8%AA%D8%A7%D9%84%DB%8C%D8%A7/%D8%A8%D8%A7%D8%B2%DB%8C-%D9%87%D8%A7",title:"جام حذفی ایتالیا",desc:"Coppa Italia",icon:"🇮🇹"},
-    {url:"https://www.varzesh3.com/football/league/11/%D8%AC%D8%A7%D9%85-%D8%AD%D8%B0%D9%81%DB%8C-%D8%A7%D9%93%D9%84%D9%85%D8%A7%D9%86",title:"جام حذفی آلمان",desc:"DFB-Pokal",icon:"🇩🇪"}
-  ]},
-  {title:"🔻 فوتبال باشگاهی بین‌المللی",items:[
-    {url:"https://www.varzesh3.com/football/league/25/%D9%84%DB%8C%DA%AF-%D9%82%D9%87%D8%B1%D9%85%D8%A7%D9%86%D8%A7%D9%86-%D8%A7%D8%B1%D9%88%D9%BE%D8%A7",title:"لیگ قهرمانان اروپا",desc:"UCL",icon:"🇪🇺"},
-    {url:"https://www.varzesh3.com/football/league/29/%D9%84%DB%8C%DA%AF-%D8%A7%D8%B1%D9%88%D9%BE%D8%A7/%D8%A8%D8%A7%D8%B2%DB%8C-%D9%87%D8%A7",title:"لیگ اروپا",desc:"Europa League",icon:"🇪🇺"},
-    {url:"https://www.varzesh3.com/football/league/26/%D9%84%DB%8C%DA%AF-%D9%86%D8%AE%D8%A8%DA%AF%D8%A7%D9%86-%D8%A7%D9%93%D8%B3%DB%8C%D8%A7",title:"لیگ نخبگان آسیا",desc:"باشگاهی آسیا سطح یک",icon:"🌏"},
-    {url:"https://www.varzesh3.com/football/league/380/%D9%84%DB%8C%DA%AF-%D9%82%D9%87%D8%B1%D9%85%D8%A7%D9%86%D8%A7%D9%86-%D8%A7%D9%93%D8%B3%DB%8C%D8%A7-%D8%AF%D9%88",title:"لیگ قهرمانان آسیا دو",desc:"سطح دوم باشگاهی آسیا",icon:"🌏"},
-    {url:"https://www.varzesh3.com/football/league/51/%D8%AC%D8%A7%D9%85-%D8%AC%D9%87%D8%A7%D9%86%DB%8C-%D8%A8%D8%A7%D8%B4%DA%AF%D8%A7%D9%87-%D9%87%D8%A7",title:"جام جهانی باشگاه‌ها",desc:"Club World Cup",icon:"🌍"}
-  ]},
-  {title:"🔻 فوتبال ملی",items:[
-    {url:"https://www.varzesh3.com/football/league/28/%D8%AC%D8%A7%D9%85-%D8%AC%D9%87%D8%A7%D9%86%DB%8C",title:"جام جهانی فیفا",desc:"بزرگ‌ترین رویداد فوتبالی",icon:"🌍"},
-    {url:"https://www.varzesh3.com/football/league/31/%D8%AC%D8%A7%D9%85-%D9%85%D9%84%D8%AA-%D9%87%D8%A7%DB%8C-%D8%A7%D9%93%D8%B3%DB%8C%D8%A7",title:"جام ملت‌های آسیا",desc:"قهرمانی آسیا",icon:"🏆"},
-    {url:"https://www.varzesh3.com/football/league/23/%D8%AC%D8%A7%D9%85-%D9%85%D9%84%D8%AA-%D9%87%D8%A7%DB%8C-%D8%A7%D8%B1%D9%88%D9%BE%D8%A7/%D8%A8%D8%A7%D8%B2%DB%8C-%D9%87%D8%A7",title:"جام ملت‌های اروپا",desc:"یورو",icon:"🇪🇺"},
-    {url:"https://www.varzesh3.com/football/league/40/%DA%A9%D9%88%D9%BE%D8%A7-%D8%A7%D9%93%D9%85%D8%B1%DB%8C%DA%A9%D8%A7",title:"کوپا آمریکا",desc:"قهرمانی آمریکای جنوبی",icon:"🌎"},
-    {url:"https://www.varzesh3.com/football/league/310/%D9%85%D9%82%D8%AF%D9%85%D8%A7%D8%AA%DB%8C-%D8%AC%D8%A7%D9%85-%D8%AC%D9%87%D8%A7%D9%86%DB%8C-%D8%A7%D9%93%D8%B3%DB%8C%D8%A7",title:"مقدماتی جام جهانی آسیا",desc:"AFC Qualifiers",icon:"🌏"},
-    {url:"https://www.varzesh3.com/football/league/311/%D9%85%D9%82%D8%AF%D9%85%D8%A7%D8%AA%DB%8C-%D8%AC%D8%A7%D9%85-%D8%AC%D9%87%D8%A7%D9%86%DB%8C-%D8%A7%D8%B1%D9%88%D9%BE%D8%A7",title:"مقدماتی جام جهانی اروپا",desc:"UEFA Qualifiers",icon:"🇪🇺"},
-    {url:"https://www.varzesh3.com/football/league/69/%D8%AC%D8%A7%D9%85-%D9%85%D9%84%D8%AA-%D9%87%D8%A7%DB%8C-%D8%B2%D9%86%D8%A7%D9%86-%D8%A7%D9%93%D8%B3%DB%8C%D8%A7",title:"جام ملت‌های زنان آسیا",desc:"AFC Women's Asian Cup",icon:"👩"},
-    {url:"https://www.varzesh3.com/football/league/336/%D8%AC%D8%A7%D9%85-%D8%AC%D9%87%D8%A7%D9%86%DB%8C-%D8%B2%D9%86%D8%A7%D9%86",title:"جام جهانی زنان",desc:"FIFA Women's World Cup",icon:"🌍"}
-  ]}
- ],
- futsal:[{url:"https://www.varzesh3.com/futsal/league/27/%D9%84%DB%8C%DA%AF-%D8%A8%D8%B1%D8%AA%D8%B1-%D9%81%D9%88%D8%AA%D8%B3%D8%A7%D9%84",title:"لیگ برتر فوتسال",desc:"باشگاهی ایران",icon:"🇮🇷"},{url:"https://www.varzesh3.com/futsal/league/41/%D9%81%D9%88%D8%AA%D8%B3%D8%A7%D9%84-%D8%AC%D8%A7%D9%85-%D9%85%D9%84%D8%AA-%D9%87%D8%A7%DB%8C-%D8%A7%D9%93%D8%B3%DB%8C%D8%A7/%D8%A8%D8%A7%D8%B2%DB%8C-%D9%87%D8%A7",title:"فوتسال جام ملت‌های آسیا",desc:"قهرمانی آسیا",icon:"🏆"},{url:"https://www.varzesh3.com/futsal/league/701/%D8%AC%D8%A7%D9%85-%D8%AC%D9%87%D8%A7%D9%86%DB%8C-%D9%81%D9%88%D8%AA%D8%B3%D8%A7%D9%84",title:"جام جهانی فوتسال",desc:"FIFA Futsal World Cup",icon:"🌍"},{url:"https://www.varzesh3.com/futsal/league/1712/%D8%AC%D8%A7%D9%85-%D8%AC%D9%87%D8%A7%D9%86%DB%8C-%D9%81%D9%88%D8%AA%D8%B3%D8%A7%D9%84-%D8%B2%D9%86%D8%A7%D9%86",title:"جام جهانی فوتسال زنان",desc:"FIFA Women's Futsal",icon:"👩"}],
- basketball:[{url:"https://www.varzesh3.com/basketball/league/32/%D9%84%DB%8C%DA%AF-%D8%A8%D8%B1%D8%AA%D8%B1-%D8%A8%D8%B3%DA%A9%D8%AA%D8%A8%D8%A7%D9%84",title:"لیگ برتر بسکتبال",desc:"باشگاهی ایران",icon:"🇮🇷"},{url:"https://www.varzesh3.com/basketball/league/204/%D8%AC%D8%A7%D9%85-%D8%AC%D9%87%D8%A7%D9%86%DB%8C-%D8%A8%D8%B3%DA%A9%D8%AA%D8%A8%D8%A7%D9%84",title:"جام جهانی بسکتبال",desc:"FIBA",icon:"🌍"},{url:"https://www.varzesh3.com/basketball/league/203/%D8%A8%D8%B3%DA%A9%D8%AA%D8%A8%D8%A7%D9%84-%DA%A9%D8%A7%D9%BE-%D8%A7%D9%93%D8%B3%DB%8C%D8%A7",title:"کاپ آسیا",desc:"باشگاهی آسیا",icon:"🏆"},{url:"https://www.varzesh3.com/basketball/league/202/%D8%A8%D8%B3%DA%A9%D8%AA%D8%A8%D8%A7%D9%84-%D8%A7%D9%84%D9%85%D9%BE%DB%8C%DA%A9",title:"بسکتبال المپیک",desc:"المپیک",icon:"🏅"}],
- volleyball:[{url:"https://www.varzesh3.com/volleyball/league/33/%D9%84%DB%8C%DA%AF-%D8%A8%D8%B1%D8%AA%D8%B1-%D9%88%D8%A7%D9%84%DB%8C%D8%A8%D8%A7%D9%84",title:"لیگ برتر والیبال",desc:"باشگاهی ایران",icon:"🇮🇷"},{url:"https://www.varzesh3.com/volleyball/league/102/%D9%88%D8%A7%D9%84%DB%8C%D8%A8%D8%A7%D9%84-%D9%82%D9%87%D8%B1%D9%85%D8%A7%D9%86%DB%8C-%D8%A8%D8%A7%D8%B4%DA%AF%D8%A7%D9%87-%D9%87%D8%A7%DB%8C-%D8%AC%D9%87%D8%A7%D9%86",title:"قهرمانی باشگاه‌های جهان",desc:"FIVB",icon:"🌍"},{url:"https://www.varzesh3.com/volleyball/league/30/%D9%84%DB%8C%DA%AF-%D9%85%D9%84%D8%AA-%D9%87%D8%A7%DB%8C-%D9%88%D8%A7%D9%84%DB%8C%D8%A8%D8%A7%D9%84",title:"لیگ ملت‌ها",desc:"VNL",icon:"🏆"},{url:"https://www.varzesh3.com/volleyball/league/104/%D9%88%D8%A7%D9%84%DB%8C%D8%A8%D8%A7%D9%84-%D9%82%D9%87%D8%B1%D9%85%D8%A7%D9%86%DB%8C-%D8%AC%D9%87%D8%A7%D9%86",title:"قهرمانی جهان",desc:"قهرمانی جهان",icon:"🏆"}],
- beach:[{url:"https://www.varzesh3.com/beach-soccer/league/2/%D9%81%D9%88%D8%AA%D8%A8%D8%A7%D9%84-%D8%B3%D8%A7%D8%AD%D9%84%DB%8C-%D9%82%D9%87%D8%B1%D9%85%D8%A7%D9%86%DB%8C-%D8%A7%D9%93%D8%B3%DB%8C%D8%A7",title:"فوتبال ساحلی قهرمانی آسیا",desc:"AFC Beach Soccer",icon:"🌏"},{url:"https://www.varzesh3.com/beach-soccer/league/5/%D8%AC%D8%A7%D9%85-%D8%AC%D9%87%D8%A7%D9%86%DB%8C-%D9%81%D9%88%D8%AA%D8%A8%D8%A7%D9%84-%D8%B3%D8%A7%D8%AD%D9%84%DB%8C",title:"جام جهانی فوتبال ساحلی",desc:"FIFA Beach Soccer",icon:"🌍"}],
- handball:[{url:"https://www.varzesh3.com/handball/league/4/%D9%84%DB%8C%DA%AF-%D8%A8%D8%B1%D8%AA%D8%B1-%D9%87%D9%86%D8%AF%D8%A8%D8%A7%D9%84",title:"لیگ برتر هندبال",desc:"باشگاهی ایران",icon:"🇮🇷"},{url:"https://www.varzesh3.com/handball/league/7/%D9%87%D9%86%D8%AF%D8%A8%D8%A7%D9%84-%D9%82%D9%87%D8%B1%D9%85%D8%A7%D9%86%DB%8C-%D8%A7%D9%93%D8%B3%DB%8C%D8%A7",title:"هندبال قهرمانی آسیا",desc:"AHC Asian Championship",icon:"🌏"}],
- broadcast:[{url:"https://www.varzesh3.com/%D9%BE%D8%AE%D8%B4-%D8%B2%D9%86%D8%AF%D9%87",title:"پخش زنده",desc:"جدول پخش زنده",icon:"📺"}],
- video:[{url:"https://video.varzesh3.com/",title:"ویدئوها",desc:"خلاصه و مصاحبه",icon:"🎥"}],
- livescore:[{url:"https://www.varzesh3.com/livescore",title:"نتایج زنده",desc:"اسکور لایو",icon:"⚡"}]
-};
+var SPORT_LINKS={football:[{title:"🔻 فوتبال باشگاهی ایران",items:[{url:"https://www.varzesh3.com/football/league/6/لیگ-برتر-ایران/بازی-ها",title:"بازی‌های لیگ برتر",desc:"نتایج و برنامه",icon:"🇮🇷"},{url:"https://www.varzesh3.com/football/league/6/لیگ-برتر-ایران",title:"جدول لیگ برتر",desc:"رده‌بندی",icon:"📊"},{url:"https://www.varzesh3.com/football/league/24/لیگ-آزادگان",title:"لیگ آزادگان",desc:"دسته دوم",icon:"🇮🇷"}]},{title:"🔻 فوتبال باشگاهی خارجی",items:[{url:"https://www.varzesh3.com/football/league/3/لیگ-برتر-انگلیس",title:"لیگ برتر انگلیس",desc:"پریمیرلیگ",icon:"🏴"},{url:"https://www.varzesh3.com/football/league/2/لالیگا-اسپانیا",title:"لالیگا",desc:"اسپانیا",icon:"🇪🇸"},{url:"https://www.varzesh3.com/football/league/4/سری-آ-ایتالیا",title:"سری آ",desc:"ایتالیا",icon:"🇮🇹"},{url:"https://www.varzesh3.com/football/league/1/بوندسلیگا-آلمان",title:"بوندسلیگا",desc:"آلمان",icon:"🇩🇪"}]},{title:"🔻 بین‌المللی",items:[{url:"https://www.varzesh3.com/football/league/25/لیگ-قهرمانان-اروپا",title:"لیگ قهرمانان اروپا",desc:"UCL",icon:"🇪🇺"},{url:"https://www.varzesh3.com/football/league/26/لیگ-نخبگان-آسیا",title:"لیگ نخبگان آسیا",desc:"سطح یک",icon:"🌏"}]},{title:"🔻 فوتبال ملی",items:[{url:"https://www.varzesh3.com/football/league/28/جام-جهانی",title:"جام جهانی فیفا",desc:"",icon:"🌍"},{url:"https://www.varzesh3.com/football/league/31/جام-ملت-های-آسیا",title:"جام ملت‌های آسیا",desc:"",icon:"🏆"}]}],futsal:[{url:"https://www.varzesh3.com/futsal/league/27/لیگ-برتر-فوتسال",title:"لیگ برتر فوتسال",desc:"",icon:"🇮🇷"},{url:"https://www.varzesh3.com/futsal/league/701/جام-جهانی-فوتسال",title:"جام جهانی فوتسال",desc:"",icon:"🌍"}],basketball:[{url:"https://www.varzesh3.com/basketball/league/32/لیگ-برتر-بسکتبال",title:"لیگ برتر بسکتبال",desc:"",icon:"🇮🇷"}],volleyball:[{url:"https://www.varzesh3.com/volleyball/league/33/لیگ-برتر-والیبال",title:"لیگ برتر والیبال",desc:"",icon:"🇮🇷"},{url:"https://www.varzesh3.com/volleyball/league/30/لیگ-ملت-ها",title:"لیگ ملت‌ها",desc:"VNL",icon:"🏆"}],beach:[{url:"https://www.varzesh3.com/beach-soccer",title:"فوتبال ساحلی",desc:"",icon:"🏖️"}],handball:[{url:"https://www.varzesh3.com/handball/league/4/لیگ-برتر-هندبال",title:"لیگ برتر هندبال",desc:"",icon:"🇮🇷"}],broadcast:[{url:"https://www.varzesh3.com/پخش-زنده",title:"پخش زنده",desc:"",icon:"📺"}],video:[{url:"https://video.varzesh3.com/",title:"ویدئوها",desc:"",icon:"🎥"}],livescore:[{url:"https://www.varzesh3.com/livescore",title:"نتایج زنده",desc:"",icon:"⚡"}]};
 var curSportTab="football";
 function renderSportGrid(){var g=document.getElementById("sportGrid");if(!g)return;var html="";for(var i=0;i<SPORT_TABS.length;i++){var t=SPORT_TABS[i];html+='<div class="sport-card'+(t.id===curSportTab?" active":"")+'" data-tab="'+t.id+'"><div class="sc-icon">'+t.icon+'</div><div class="sc-title">'+safe(t.label)+'</div></div>';}g.innerHTML=html;var cards=g.querySelectorAll(".sport-card");for(var j=0;j<cards.length;j++)(function(c){c.addEventListener("click",function(){curSportTab=c.getAttribute("data-tab");renderSportGrid();renderSportContent();});})(cards[j]);}
-function renderSportContent(){
-  var el=document.getElementById("sportContentArea");if(!el)return;
-  if(curSportTab==="olympic"){el.innerHTML='<section class="panel section"><div class="sectionhead"><div class="title">🏅 مدال‌های المپیک</div></div><div id="sportOlympic" class="sport-table-wrap"><div class="muted">در حال دریافت...</div></div></section>';loadOlympic();return;}
-  var tab=SPORT_TABS.filter(function(t){return t.id===curSportTab;})[0]||{};
-  if(curSportTab==="football"){
-    var groups=SPORT_LINKS.football;
-    var html='<section class="panel section"><div class="sectionhead"><div class="title">'+(tab.icon||"")+" "+safe(tab.label||"")+'</div></div><div class="muted" style="font-size:13px;margin-bottom:10px">👇 برای مشاهدهٔ لینک‌ها، روی عنوان هر بخش کلیک کنید (پیش‌فرض: بسته)</div><div class="sport-accordion">';
-    for(var i=0;i<groups.length;i++){var g=groups[i];html+='<div class="sport-acc-group" data-acc="'+i+'"><div class="sport-acc-h"><span>'+safe(g.title)+'</span><span class="arrow-r">⌄</span></div><div class="sport-acc-body"><div class="sport-links">';for(var j=0;j<g.items.length;j++){var L=g.items[j];html+='<a class="sport-link" href="'+safe(L.url)+'" target="_blank" rel="noopener"><div class="sl-icon">'+L.icon+'</div><div class="sl-title">'+safe(L.title)+'</div><div class="sl-desc">'+safe(L.desc)+'</div></a>';}html+='</div></div></div>';}
-    html+='</div></section>';el.innerHTML=html;
-    var accHeaders=el.querySelectorAll(".sport-acc-h");for(var k=0;k<accHeaders.length;k++){(function(h){h.addEventListener("click",function(){var group=h.closest(".sport-acc-group");if(group)group.classList.toggle("open");});})(accHeaders[k]);}return;
-  }
-  var links=SPORT_LINKS[curSportTab]||[];if(!links.length){el.innerHTML='<section class="panel section"><div class="muted">لینکی نیست.</div></section>';return;}
-  var html='<section class="panel section"><div class="sectionhead"><div class="title">'+(tab.icon||"")+" "+safe(tab.label||"")+'</div></div><div class="sport-links">';
-  for(var i=0;i<links.length;i++){var L=links[i];html+='<a class="sport-link" href="'+safe(L.url)+'" target="_blank" rel="noopener"><div class="sl-icon">'+L.icon+'</div><div class="sl-title">'+safe(L.title)+'</div><div class="sl-desc">'+safe(L.desc)+'</div></a>';}
-  html+='</div></section>';el.innerHTML=html;
-}
-function loadOlympic(){var el=document.getElementById("sportOlympic");if(!el)return;el.innerHTML='<div class="muted">در حال دریافت...</div>';var titles=["جدول مدال‌های بازی‌های المپیک زمستانی ۲۰۲۶","جدول مدال‌های بازی‌های المپیک تابستانی ۲۰۲۴","جدول مدال‌های بازی‌های المپیک تابستانی ۲۰۲۰"];function tt(i){if(i>=titles.length){el.innerHTML='<div class="muted">یافت نشد.</div>';return;}fetch("https://fa.wikipedia.org/api/rest_v1/page/html/"+encodeURIComponent(titles[i])).then(function(r){if(!r.ok)throw new Error();return r.text();}).then(function(html){var doc=new DOMParser().parseFromString(html,"text/html");var tb=doc.querySelectorAll("table.wikitable");if(!tb.length)throw new Error();var rows=tb[0].querySelectorAll("tr");var out='<div class="muted" style="margin-bottom:10px">🏅 '+titles[i]+'</div><table class="sport-table"><tr><th>رتبه</th><th class="team">کشور</th><th>طلا</th><th>نقره</th><th>برنز</th><th>مجموع</th></tr>';var c=0;for(var r=1;r<rows.length;r++){var cells=rows[r].querySelectorAll("td,th");if(cells.length<5)continue;var team=(cells[1]&&cells[1].textContent||"").trim();if(!team)continue;out+='<tr><td>'+(c+1)+'</td><td class="team">'+safe(team)+'</td><td>'+safe((cells[2]&&cells[2].textContent||"").trim())+'</td><td>'+safe((cells[3]&&cells[3].textContent||"").trim())+'</td><td>'+safe((cells[4]&&cells[4].textContent||"").trim())+'</td><td><b>'+safe((cells[5]&&cells[5].textContent||"").trim())+'</b></td></tr>';c++;}out+='</table>';el.innerHTML=out;}).catch(function(){tt(i+1);});}tt(0);}
-function tsSeason(){var y=new Date().getFullYear();var m=new Date().getMonth()+1;return (m>=8)?(y+"-"+(y+1)):((y-1)+"-"+y);}
-function tsMatches(sport,dateStr){return fetch(API.sports+"/eventsday.php?d="+dateStr+"&s="+encodeURIComponent(sport)).then(function(r){return r.json();}).then(function(j){return (j&&j.events)||[];}).catch(function(){return[];});}
-function tsLeagueId(country,keyword){return fetch(API.sports+"/search_all_leagues.php?c="+encodeURIComponent(country)).then(function(r){return r.json();}).then(function(j){var ls=(j&&j.countries)||[];for(var i=0;i<ls.length;i++){if((ls[i].strLeague||"").toLowerCase().indexOf(keyword.toLowerCase())!==-1)return ls[i].idLeague;}return null;}).catch(function(){return null;});}
-function tsTable(country,keyword){return tsLeagueId(country,keyword).then(function(id){if(!id)return null;return fetch(API.sports+"/lookuptable.php?l="+id+"&s="+tsSeason()).then(function(r){return r.json();}).then(function(j){return (j&&j.table)||null;}).catch(function(){return null;});});}
-var SPORT_CTX={football:{sport:"Soccer",country:"Iran",keyword:"Pro"},basketball:{sport:"Basketball",country:"Iran",keyword:"Basketball"},volleyball:{sport:"Volleyball",country:"Iran",keyword:"Volleyball"},handball:{sport:"Handball",country:"Iran",keyword:"Handball"},futsal:{sport:"Futsal",country:"Iran",keyword:"Futsal"},beach:{sport:"Beach Soccer",country:"Iran",keyword:"Beach"}};
-function fmtMatch(e){var h=e.strHomeTeam||"?",a=e.strAwayTeam||"?";var hs=e.intHomeScore,as=e.intAwayScore;var score=(hs!=null&&as!=null&&hs!==""&&as!=="")?(hs+" - "+as):(e.strTime?("ساعت "+String(e.strTime).slice(0,5)):"");return "• "+h+" — "+a+(score?" | "+score:"");}
-function sportAnswer(q){
-  var ctx=SPORT_CTX[curSportTab];
-  if(!ctx){addChatMsg("💡 این تب فاقد پاسخ پویا است. از لینک‌های کارت‌ها استفاده کنید.",false);return;}
-  if(/(ساعت|برنامه|زمان|کی بازی)/.test(q)){addChatMsg("⏳ در حال دریافت برنامهٔ امروز...",false);tsMatches(ctx.sport,fmtDate(new Date())).then(function(ev){if(!ev.length){addChatMsg("امروز مسابقه‌ای ثبت نشد.",false);return;}addChatMsg("📅 برنامهٔ امروز ("+ctx.sport+"):\n"+ev.slice(0,6).map(fmtMatch).join("\n"),false);});return;}
-  if(/(نتیجه|برد|باخت)/.test(q)){addChatMsg("⏳ در حال دریافت نتایج دیروز...",false);var y=new Date();y.setDate(y.getDate()-1);tsMatches(ctx.sport,fmtDate(y)).then(function(ev){var done=ev.filter(function(e){return e.intHomeScore!=null&&e.intHomeScore!=="";});if(!done.length){addChatMsg("نتیجه‌ای ثبت نشد.",false);return;}addChatMsg("🏁 نتایج دیروز ("+ctx.sport+"):\n"+done.slice(0,6).map(fmtMatch).join("\n"),false);});return;}
-  if(/(جدول|جایگاه|رتبه)/.test(q)){addChatMsg("⏳ در حال دریافت جدول لیگ...",false);tsTable(ctx.country,ctx.keyword).then(function(tb){if(!tb||!tb.length){addChatMsg("جدول لیگ در دسترس نیست؛ از کارت‌های ورزشی لینک جدول را ببینید.",false);return;}var top=tb.slice(0,6).map(function(r,i){return (i+1)+". "+(r.strTeam||"")+" | "+(r.intPoints||0)+" امتیاز";});addChatMsg("📊 جدول لیگ ("+ctx.country+"):\n"+top.join("\n"),false);});return;}
-  addChatMsg("💡 در صفحهٔ ورزشی بپرسید:\n• «ساعت بازی‌ها»\n• «نتیجه بازی‌ها»\n• «جدول لیگ / جایگاه»",false);
-}
-var SUG_MAP={
-  home:["گزارش صبحگاهی","فردا باران میاد؟","کیفیت هوا؟","چی بپوشم؟","طلوع و غروب؟","امشب خواب چطوره؟","شاخص UV چقدره؟","فشار هوا چطوره؟","گرده چقدر است؟","سرعت باد امروز","نقطه شبنم","پوشش ابر","شاخص PM2.5","هفته آینده چطور؟","هوای ساعتی"],
-  sport:["ساعت بازی‌های امروز","نتیجه بازی‌های دیروز","جدول لیگ برتر ایران","برنامه بازی‌های امروز","المپیک ۲۰۲۶","امروز چه بازی‌هایی هست؟","پریمیرلیگ انگلیس","لالیگا اسپانیا","سری آ ایتالیا","بوندسلیگا آلمان","لیگ قهرمانان اروپا","لیگ ملت‌های والیبال","نتایج بسکتبال","پخش زنده","ویدئوهای امروز"],
-  health:["کیفیت هوا امروز","گرده چقدر است؟","امشب خواب خوب دارم؟","تغذیه امروز؟","فشار هوا چطوره؟","سطح ازن چقدره؟","شاخص UV","PM2.5 امروز","PM10 امروز","رطوبت هوا","سرعت باد","دمای فعلی","نقطه شبنم","توصیه ماسک","ورزش بیرون مناسبه؟"],
-  culture:["فال حافظ","بیت تصادفی","شاعران پارسی","نمایش‌های تئاتر","فیلم‌های روی پرده","نمایه موسیقی","کتاب فیدیبو","کتاب طاقچه","ایران تئاتر","سامفا سینما","نمایش‌های تیوال","حوزه هنری","گنجور","شعر روز","سینمای ایران"],
-  science:["فاز ماه امروز","رویداد آسمانی این ماه","دانستنی روز","طلوع و غروب","امشب ماه کامله؟","بارش شهابی بعدی","خورشید امروز","نجوم امشب","روشنایی ماه","ماه نو کِی هست؟","هلال ماه","تربیع اول","تربیع دوم","تقویم نجومی","روشنایی روز"],
-  travel:["پنجرهٔ سفر","چک‌لیست سفر","جاده امن است؟","لباس مناسب سفر؟","ایرانگردی مجازی","جاذبه‌های گردشگری","تور مجازی شیراز","دانشگاه شریف","سفر به کویر","سفر به شمال","سفر به کوهستان","سفر به جنوب","سفر به غرب","مدارک لازم","سفر با ماشین"],
-  about:["برو به آب‌وهوا","برو به ورزشی","معرفی مجله","برو به فرهنگ","برو به سلامت","برو به علم","برو به سفر","راهنمای استفاده","امکانات برنامه","سوالات متداول","تماس با ما","پشتیبانی","نسخهٔ برنامه","سازنده","ویژگی‌های جدید"],
-  fun:["جوک بعدی","دانستنی سرگرمی","معما","جوک خنده‌دار","یه جوک بگو"]
-};
-function renderSuggestions(){var list=SUG_MAP[currentPage]||SUG_MAP.home;var sug=document.getElementById("chatSugs");if(!sug)return;sug.innerHTML="";for(var i=0;i<list.length;i++){var d=document.createElement("div");d.className="chat-sug";d.textContent=list[i];d.addEventListener("click",(function(t){return function(){sendText(t);};})(list[i]));sug.appendChild(d);}}
-var SCIENCE_FACTS_POOL=[
-  {icon:"🌞",title:"نور خورشید",text:"نور خورشید حدود ۸ دقیقه و ۲۰ ثانیه طول می‌کشد تا به زمین برسد. این یعنی اگر خورشید ناگهان خاموش شود، ما ۸ دقیقه بعد متوجه می‌شویم!"},
-  {icon:"🏔️",title:"دماوند",text:"بلندترین قلهٔ ایران دماوند با ارتفاع حدود ۵٬۶۱۰ متر است. این آتشفشان خاموش، بلندترین قلهٔ خاورمیانه نیز محسوب می‌شود."},
-  {icon:"🏜️",title:"کویر لوت",text:"کویر لوت در ایران یکی از گرم‌ترین نقاط سطح زمین ثبت شده است؛ دمای سطح آن تا ۸۰٫۸ درجه سانتی‌گراد نیز اندازه‌گیری شده است."},
-  {icon:"🌊",title:"دریای خزر",text:"دریای خزر با مساحت ۳۷۱ هزار کیلومتر مربع، بزرگ‌ترین دریاچهٔ جهان است. حجم آب آن حدود ۷۸ هزار کیلومتر مکعب است."},
-  {icon:"🌿",title:"زعفران ایران",text:"ایران با تولید سالانه حدود ۴۰۰ تن، بیش از ۹۰٪ زعفران جهان را تأمین می‌کند. هر کیلو زعفران به حدود ۱۷۰ هزار گل نیاز دارد."},
-  {icon:"💡",title:"سرعت نور",text:"سرعت نور در خلأ حدود ۳۰۰٬۰۰۰ کیلومتر بر ثانیه است. با این سرعت می‌توان در یک ثانیه ۷٫۵ بار دور زمین چرخید."},
-  {icon:"🌙",title:"دور شدن ماه",text:"ماه هر سال حدود ۳٫۸ سانتی‌متر از زمین دور می‌شود. این به دلیل انتقال انرژی از چرخش زمین به مدار ماه است."},
-  {icon:"🌠",title:"بارش شهابی برساووشی",text:"بارش شهابی برساووشی هر سال در مرداد ماه دیده می‌شود و از فعال‌ترین بارش‌های شهابی سال است."},
-  {icon:"⚛️",title:"اتم‌های بدن ما",text:"در بدن یک انسان بالغ حدود ۷ اکتیلیون (۷×۱۰²⁷) اتم وجود دارد. بیشتر آنها اتم‌های هیدروژن، اکسیژن و کربن هستند."},
-  {icon:"🧬",title:"DNA انسان",text:"اگر DNA یک سلول را باز کنیم، طول آن حدود ۲ متر می‌شود. مجموع DNA تمام سلول‌های بدن حدود ۲۰۰ میلیارد کیلومتر می‌شود!"},
-  {icon:"🦠",title:"باکتری‌های بدن",text:"در بدن انسان حدود ۳۸ تریلیون باکتری زندگی می‌کند که تعدادشان از تعداد سلول‌های بدن بیشتر است."},
-  {icon:"🌋",title:"آتشفشان‌های فعال",text:"در جهان حدود ۱٬۵۰۰ آتشفشان فعال روی خشکی وجود دارد. هر سال حدود ۲۰ آتشفشان فوران می‌کند."},
-  {icon:"🐙",title:"قلب هشت‌پا",text:"هشت‌پا ۳ قلب دارد: ۲ قلب برای پمپ خون به آبشش‌ها و ۱ قلب برای پمپ به بقیهٔ بدن. خون آن به‌جای آهن، مس دارد و آبی‌رنگ است."},
-  {icon:"🌍",title:"سن زمین",text:"زمین حدود ۴٫۵۴ میلیارد سال قدمت دارد. حیات حدود ۳٫۸ میلیارد سال پیش روی زمین پدیدار شد."},
-  {icon:"🪐",title:"مشتری غول‌پیکر",text:"سیارهٔ مشتری آن‌قدر بزرگ است که می‌تواند بیش از ۱٬۳۰۰ زمین را در خود جای دهد و جرم آن ۲٫۵ برابر مجموع همهٔ سیارات دیگر منظومهٔ شمسی است."},
-  {icon:"☄️",title:"کمربند سیارک‌ها",text:"بین مریخ و مشتری کمربندی از سیارک‌ها وجود دارد که بیش از ۱ میلیون سیارک با قطر بالای ۱ کیلومتر در آن قرار دارند."},
-  {icon:"🦕",title:"دایناسورها",text:"دایناسورها حدود ۶۶ میلیون سال پیش بر اثر برخورد یک سیارک به قطر ۱۰ کیلومتر منقرض شدند. این برخورد باعث زمستان طولانی شد."},
-  {icon:"🐝",title:"زنبور عسل",text:"یک زنبور عسل برای تولید یک قاشق چای‌خوری عسل، باید روی ۲ میلیون گل بنشیند و در طول عمرش حدود ۸۰۰ کیلومتر پرواز می‌کند."},
-  {icon:"🌳",title:"درختان جنگلی",text:"درختان جنگل‌های بارانی آمازون حدود ۲۰٪ اکسیژن جهان را تولید می‌کنند و به «ریه‌های زمین» معروف هستند."},
-  {icon:"🦈",title:"کوسه‌های باستانی",text:"کوسه‌ها از دایناسورها قدیمی‌ترند و حدود ۴۰۰ میلیون سال است روی زمین زندگی می‌کنند. در این مدت ۵ انقراض بزرگ را پشت سر گذاشته‌اند."},
-  {icon:"⚡",title:"رعد و برق",text:"یک رعد و برق می‌تواند تا ۳۰٬۰۰۰ کلوین داغ شود که حدود ۵ برابر سطح خورشید است. سرعت آن به ۴۰۰٬۰۰۰ کیلومتر بر ساعت می‌رسد."},
-  {icon:"🌐",title:"اینترنت زیر آب",text:"بیش از ۹۵٪ ترافیک اینترنت جهان از طریق کابل‌های زیردریایی عبور می‌کند. مجموع طول این کابل‌ها بیش از ۱٫۳ میلیون کیلومتر است."},
-  {icon:"💧",title:"آب زمین",text:"تنها ۲٫۵٪ از آب زمین شیرین است و از آن فقط ۱٪ به‌راحتی در دسترس انسان است. بقیه در یخچال‌ها و سفره‌های عمیق زیرزمینی است."},
-  {icon:"🧠",title:"مغز انسان",text:"مغز انسان حدود ۸۶ میلیارد نورون دارد و در حالت استراحت حدود ۲۰ وات انرژی مصرف می‌کند که معادل یک لامپ کم‌مصرف است."}
-];
-var HAFEZ_POEMS=[
-  "الا یا ایها الساقی ادر کأساً و ناولها\nکه عشق آسان نمود اول ولی افتاد مشکل‌ها",
-  "رسید مژده که ایام غم نخواهد ماند\nچنان نماند چنین نیز هم نخواهد ماند",
-  "منم که شهرهٔ شهرم به عشق ورزیدن\nبه می فروش و می‌خوارگی و رندی کردن",
-  "مرا عهدی است با جانان که تا جان در بدن دارم\nهوای‌دارِ خال و خطِ آن دلبرِ شیرین‌سخن باشم",
-  "گفتم غم تو دارم گفتا غمت سر آید\nگفتم که ماه من شو گفتا اگر برآید",
-  "مرا در منزل جانان چه امن عیش چون هر دم\nجرس فریاد می‌دارد که بربندید محمل‌ها",
-  "ساقی به نور باده برافروز جام ما\nمطرب بگو که کار جهان شد به کام ما",
-  "ز گریه مردم چشمم نشسته در خون است\nببین که در طلبت حال مردمان چون است",
-  "صلاح کار کجا و من خراب کجا\nببین تفاوت ره کز کجاست تا به کجا",
-  "یوسف گم‌گشته باز آید به کنعان غم مخور\nکلبهٔ احزان شود روزی گلستان غم مخور"
-];
-var SAADI_POEMS=[
-  "بنی آدم اعضای یکدیگرند\nکه در آفرینش ز یک گوهرند",
-  "تا مرد سخن نگفته باشد\nعیب و هنرش نهفته باشد",
-  "هر که آمد نقش خود بنوشت و رفت\nدلم از این قصه خون گشت و رفت",
-  "تن آدمی شریف است به جان آدمیت\nنه همین لباس زیباست نشان آدمیت",
-  "دو چیز طیره عقل است: دم فروبستن\nبه وقت گفتن و گفتن به وقت خاموشی",
-  "دشمنی ضعیف در طاعت و فرمان آید\nچون توانا شود در پی آزار آید",
-  "هر که نادیده بسیار سفر بسیار کرد\nهیچ‌کس را به زبان خود سخن‌باز ندید",
-  "هر که آمد که بیاموزد و برود\nنیم روزی به تماشا بنشیند",
-  "هر که عیب دگران پیش تو آورد و شمرد\nبی‌گمان عیب تو پیش دگران می‌برد",
-  "سعدیا مرد نکونام نمیرد هرگز\nمرده آن است که نامش به نکویی نبرند"
-];
-var RUMI_POEMS=[
-  "بشنو از نی چون حکایت می‌کند\nاز جدایی‌ها شکایت می‌کند",
-  "هر کسی کو دور ماند از اصل خویش\nباز جوید روزگار وصل خویش",
-  "من نه منم و تو نه تو و تو نه تو\nمن هم خودم هم تو هم خود هر دو",
-  "عاشقی از مستی و رسوایی خوش است\nباده و ساقی و مستی و ساقی‌نوازی",
-  "عشق را خواهی که تا با ما نشین\nدل بنه بر کف و در راه ما ننگین"
-];
-var FERDOWSI_POEMS=[
-  "توانا بود هر که دانا بود\nز دانش دل پیر برنا بود",
-  "بسی رنج بردم در این سال سی\nعجم زنده کردم بدین پارسی",
-  "چو بیدار شد رستم از خواب گاه\nبرید از درِ پیلتن آستین",
-  "همه سر به سر تن به کشتن دهیم\nاز آن به که کشور به دشمن دهیم",
-  "ز گهواره تا گور دانش بجوی\nکه هر کس که داناتر او نکوی"
-];
-var KHAYYAM_POEMS=[
-  "از آمدنم نبود گردون را سود\nوز رفتن من جلال و جاهش نفزود",
-  "بر چهرهٔ گل نسیم نوروز خوش است\nدر صحن چمن روی دل‌افروز خوش است",
-  "این کوزه چو من عاشق زاری بوده است\nدر بند سر زلف نگاری بوده است",
-  "از دی که گذشت هیچ از او یاد مکن\nفردا که نیامده‌ست فریاد مکن",
-  "ای چرخ فلک خرابی از کینه توست\nبیدادگری پیشه و دیرینه توست"
-];
-function renderPoetry(){
-  var el=document.getElementById("poetryMiniArea");if(!el)return;
-  var seed=Math.floor(Date.now()/(2*3600*1000));
-  function rand(arr,offset){var h=seed+offset;h=((h*2654435761)>>>0);return arr[h%arr.length];}
-  function card(cls,label,poem,name){
-    return '<div class="poetry-mini '+cls+'"><div class="poet-label">'+label+'</div><div class="poem-text">'+safe(poem)+'</div><div class="poet-name">'+name+'</div></div>';
-  }
-  el.innerHTML=
-    card("hafez","✦ حافظ شیرازی",rand(HAFEZ_POEMS,1),"— خواجه شمس‌الدین محمد حافظ")+
-    card("saadi","✦ سعدی شیرازی",rand(SAADI_POEMS,7),"— شیخ مصلح‌الدین سعدی")+
-    card("rumi","✦ مولانا",rand(RUMI_POEMS,13),"— جلال‌الدین محمد بلخی")+
-    card("ferdowsi","✦ فردوسی",rand(FERDOWSI_POEMS,23),"— ابوالقاسم فردوسی")+
-    card("khayyam","✦ خیام",rand(KHAYYAM_POEMS,31),"— عمر خیام نیشابوری");
-}
-function renderScienceFacts(){
-  var el=document.getElementById("scienceFacts");if(!el)return;
-  var seed=Math.floor(Date.now()/(2*3600*1000));
-  var arr=SCIENCE_FACTS_POOL.slice();
-  var h=seed;
-  for(var i=arr.length-1;i>0;i--){
-    h=((h*1664525+1013904223)>>>0);
-    var j=h%(i+1);
-    var tmp=arr[i];arr[i]=arr[j];arr[j]=tmp;
-  }
-  var top4=arr.slice(0,4);
-  var icons=["①","②","③","④"];
-  var html="";
-  for(var k=0;k<top4.length;k++){
-    var f=top4[k];
-    html+='<div class="fact-card"><div class="fact-num">'+icons[k]+'</div><div class="fact-icon">'+f.icon+'</div><div class="fact-title">'+safe(f.title)+'</div><div class="fact-text">'+safe(f.text)+'</div></div>';
-  }
-  el.innerHTML=html;
-}
-/* ===== صفحه سرگرمی: جوک + دانستنی + معما (به‌روزرسانی هر ۶۰ دقیقه) ===== */
-var FUN_JOKES=[
-  "چرا کامپیوتر به دکتر رفت؟ چون ویروس گرفته بود! 😄",
-  "چرا ماهی‌ها در مدرسه باهوشند؟ چون همیشه در مدرسه هستند! 🐟",
-  "چرا دوچرخه نمی‌تواند بایستد؟ چون دوچرخه است! 🚲",
-  "چرا کتاب ریاضی ناراحت بود؟ چون مسائل زیادی داشت! 📚",
-  "چرا ساعت به دکتر رفت؟ چون وقتش گذشته بود! ⏰",
-  "چرا مورچه به دکتر رفت؟ چون مورچه‌خوارش بود! 🐜",
-  "چرا درخت به دکتر رفت؟ چون برگ‌ریزش داشت! 🌳",
-  "چرا خفاش در شب بیدار است؟ چون شب‌کاری می‌کند! 🦇",
-  "چرا زنبور به دکتر رفت؟ چون زنبورده داشت! 🐝",
-  "چرا ستاره به دکتر رفت؟ چون ستاره‌بانش بود! ⭐"
-];
-var FUN_FACTS=[
-  "💡 می‌دانستید؟ زنبور عسل می‌تواند چهره‌های انسانی را تشخیص دهد!",
-  "💡 می‌دانستید؟ اختاپوس سه قلب دارد و خونش آبی است!",
-  "💡 می‌دانستید؟ دلفین‌ها برای خواب فقط نیمی از مغزشان را خاموش می‌کنند!",
-  "💡 می‌دانستید؟ یک روز در سیاره زهره از یک سال آن طولانی‌تر است!",
-  "💡 می‌دانستید؟ قلب انسان در طول عمر حدود ۲٫۵ میلیارد بار می‌زند!",
-  "💡 می‌دانستید؟ برخی از درختان بیش از ۵۰۰۰ سال عمر می‌کنند!",
-  "💡 می‌دانستید؟ نور خورشید ۸ دقیقه طول می‌کشد تا به زمین برسد!",
-  "💡 می‌دانستید؟ در یک قاشق چای‌خوری از ستاره نوترونی، میلیاردها تن وزن است!",
-  "💡 می‌دانستید؟ فیل‌ها تنها حیواناتی هستند که نمی‌توانند بپرند!",
-  "💡 می‌دانستید؟ گوش انسان می‌تواند بیش از ۳۴۰٬۰۰۰ صدای مختلف را تشخیص دهد!"
-];
-var FUN_PUZZLES=[
-  {q:"🧩 معما: آن چیست که هر چه بیشتر از آن بردارید، بزرگ‌تر می‌شود؟", a:"چاله"},
-  {q:"🧩 معما: آن چیست که وقتی می‌شکنید، بهتر می‌شود؟", a:"رکورد"},
-  {q:"🧩 معما: آن چیست که متعلق به شماست اما دیگران بیشتر از شما از آن استفاده می‌کنند؟", a:"اسم شما"},
-  {q:"🧩 معما: آن چیست که بالا می‌رود اما هرگز پایین نمی‌آید؟", a:"سن"},
-  {q:"🧩 معما: آن چیست که سوراخ‌های زیادی دارد اما آب را نگه می‌دارد؟", a:"اسفنج"},
-  {q:"🧩 معما: آن چیست که همه‌جا هست اما دیده نمی‌شود؟", a:"هوا"},
-  {q:"🧩 معما: آن چیست که هر چه از آن بگیری، کوچک‌تر نمی‌شود؟", a:"سایه"},
-  {q:"🧩 معما: آن چیست که وقتی به آن نگاه می‌کنی، تو را می‌بیند اما تو نمی‌توانی ببینی‌اش؟", a:"آینه"},
-  {q:"🧩 معما: هر چه بزرگ‌تر شود، دیدنی‌تر نیست؛ هر چه کوچک‌تر شود، دیدنی‌تر است. چیست؟", a:"تاریکی"}
-];
+function renderSportContent(){var el=document.getElementById("sportContentArea");if(!el)return;var tab=SPORT_TABS.filter(function(t){return t.id===curSportTab;})[0]||{};if(curSportTab==="olympic"){el.innerHTML='<section class="panel section"><div class="muted">جدول مدال‌ها به‌زودی...</div></section>';return;}var links=SPORT_LINKS[curSportTab]||[];var html='<section class="panel section"><div class="sectionhead"><div class="title">'+(tab.icon||"")+" "+safe(tab.label||"")+'</div></div>';if(curSportTab==="football"){html+='<div class="sport-accordion">';for(var i=0;i<links.length;i++){var g=links[i];html+='<div class="sport-acc-group"><div class="sport-acc-h"><span>'+safe(g.title)+'</span><span class="arrow-r">⌄</span></div><div class="sport-acc-body"><div class="sport-links">';for(var j=0;j<g.items.length;j++){var L=g.items[j];html+='<a class="sport-link" href="'+safe(L.url)+'" target="_blank" rel="noopener"><div class="sl-icon">'+L.icon+'</div><div class="sl-title">'+safe(L.title)+'</div><div class="sl-desc">'+safe(L.desc)+'</div></a>';}html+='</div></div></div>';}html+='</div>';}else{html+='<div class="sport-links">';for(var k=0;k<links.length;k++){var L2=links[k];html+='<a class="sport-link" href="'+safe(L2.url)+'" target="_blank" rel="noopener"><div class="sl-icon">'+L2.icon+'</div><div class="sl-title">'+safe(L2.title)+'</div><div class="sl-desc">'+safe(L2.desc)+'</div></a>';}html+='</div>';}html+='</section>';el.innerHTML=html;var hs=el.querySelectorAll(".sport-acc-h");for(var h=0;h<hs.length;h++){(function(x){x.addEventListener("click",function(){var g=x.closest(".sport-acc-group");if(g)g.classList.toggle("open");});})(hs[h]);}}
+var SCIENCE_FACTS_POOL=[{icon:"🌞",title:"نور خورشید",text:"نور خورشید حدود ۸ دقیقه طول می‌کشد تا به زمین برسد."},{icon:"🏔️",title:"دماوند",text:"بلندترین قلهٔ ایران دماوند با ارتفاع ۵٬۶۱۰ متر است."},{icon:"🏜️",title:"کویر لوت",text:"کویر لوت یکی از گرم‌ترین نقاط سطح زمین است."},{icon:"🌊",title:"دریای خزر",text:"بزرگ‌ترین دریاچهٔ جهان با مساحت ۳۷۱ هزار کیلومتر مربع."},{icon:"🌿",title:"زعفران",text:"ایران بیش از ۹۰٪ زعفران جهان را تأمین می‌کند."},{icon:"💡",title:"سرعت نور",text:"سرعت نور ۳۰۰٬۰۰۰ کیلومتر بر ثانیه است."},{icon:"🌙",title:"دور شدن ماه",text:"ماه هر سال ۳٫۸ سانتی‌متر از زمین دور می‌شود."},{icon:"🌠",title:"برساووشی",text:"بارش شهابی برساووشی هر سال در مرداد دیده می‌شود."},{icon:"⚛️",title:"اتم‌های بدن",text:"در بدن انسان حدود ۷ اکتیلیون اتم وجود دارد."},{icon:"🧬",title:"DNA",text:"مجموع DNA سلول‌های بدن ۲۰۰ میلیارد کیلومتر می‌شود."},{icon:"🐙",title:"قلب هشت‌پا",text:"هشت‌پا ۳ قلب دارد و خونش آبی است."},{icon:"🌍",title:"سن زمین",text:"زمین ۴٫۵۴ میلیارد سال قدمت دارد."}];
+var HAFEZ_POEMS=["الا یا ایها الساقی ادر کأساً و ناولها\nکه عشق آسان نمود اول ولی افتاد مشکل‌ها","رسید مژده که ایام غم نخواهد ماند","منم که شهرهٔ شهرم به عشق ورزیدن","مرا عهدی است با جانان که تا جان در بدن دارم","گفتم غم تو دارم گفتا غمت سر آید","ساقی به نور باده برافروز جام ما","یوسف گم‌گشته باز آید به کنعان غم مخور"];
+var SAADI_POEMS=["بنی آدم اعضای یکدیگرند\nکه در آفرینش ز یک گوهرند","تا مرد سخن نگفته باشد\nعیب و هنرش نهفته باشد","هر که آمد نقش خود بنوشت و رفت","دو چیز طیره عقل است: دم فروبستن"];
+var RUMI_POEMS=["بشنو از نی چون حکایت می‌کند\nاز جدایی‌ها شکایت می‌کند","هر کسی کو دور ماند از اصل خویش","من نه منم و تو نه تو و تو نه تو"];
+var FERDOWSI_POEMS=["توانا بود هر که دانا بود\nز دانش دل پیر برنا بود","بسی رنج بردم در این سال سی\nعجم زنده کردم بدین پارسی","ز گهواره تا گور دانش بجوی"];
+var KHAYYAM_POEMS=["از آمدنم نبود گردون را سود","بر چهرهٔ گل نسیم نوروز خوش است","از دی که گذشت هیچ از او یاد مکن"];
+function renderPoetry(){var el=document.getElementById("poetryMiniArea");if(!el)return;var seed=Math.floor(Date.now()/(2*3600*1000));function rand(a,o){var h=((seed+o)*2654435761)>>>0;return a[h%a.length];}function card(c,l,p,n){return '<div class="poetry-mini '+c+'"><div class="poet-label">'+l+'</div><div class="poem-text">'+safe(p)+'</div><div class="poet-name">'+n+'</div></div>';}el.innerHTML=card("hafez","✦ حافظ",rand(HAFEZ_POEMS,1),"— حافظ شیرازی")+card("saadi","✦ سعدی",rand(SAADI_POEMS,7),"— سعدی شیرازی")+card("rumi","✦ مولانا",rand(RUMI_POEMS,13),"— مولانا")+card("ferdowsi","✦ فردوسی",rand(FERDOWSI_POEMS,23),"— فردوسی")+card("khayyam","✦ خیام",rand(KHAYYAM_POEMS,31),"— خیام");}
+function renderScienceFacts(){var el=document.getElementById("scienceFacts");if(!el)return;var seed=Math.floor(Date.now()/(2*3600*1000));var arr=SCIENCE_FACTS_POOL.slice();var h=seed;for(var i=arr.length-1;i>0;i--){h=((h*1664525+1013904223)>>>0);var j=h%(i+1);var tmp=arr[i];arr[i]=arr[j];arr[j]=tmp;}var top4=arr.slice(0,4);var icons=["①","②","③","④"];var html="";for(var k=0;k<top4.length;k++){var f=top4[k];html+='<div class="fact-card"><div class="fact-num">'+icons[k]+'</div><div class="fact-icon">'+f.icon+'</div><div class="fact-title">'+safe(f.title)+'</div><div class="fact-text">'+safe(f.text)+'</div></div>';}el.innerHTML=html;}
+var FUN_JOKES=["چرا کامپیوتر به دکتر رفت؟ چون ویروس گرفته بود! 😄","چرا ماهی‌ها در مدرسه باهوشند؟ چون همیشه در مدرسه هستند! 🐟","چرا دوچرخه نمی‌تواند بایستد؟ چون دوچرخه است! 🚲","چرا کتاب ریاضی ناراحت بود؟ چون مسائل زیادی داشت! 📚","چرا ساعت به دکتر رفت؟ چون وقتش گذشته بود! ⏰","چرا مورچه به دکتر رفت؟ چون مورچه‌خوارش بود! 🐜","چرا درخت به دکتر رفت؟ چون برگ‌ریزش داشت! 🌳","چرا خفاش در شب بیدار است؟ چون شب‌کاری می‌کند! 🦇"];
+var FUN_FACTS=["💡 می‌دانستید؟ زنبور عسل می‌تواند چهره‌های انسانی را تشخیص دهد!","💡 می‌دانستید؟ اختاپوس سه قلب دارد و خونش آبی است!","💡 می‌دانستید؟ دلفین‌ها برای خواب فقط نیمی از مغزشان را خاموش می‌کنند!","💡 می‌دانستید؟ یک روز در زهره از یک سال آن طولانی‌تر است!","💡 می‌دانستید؟ قلب انسان در طول عمر ۲٫۵ میلیارد بار می‌زند!","💡 می‌دانستید؟ برخی درختان بیش از ۵۰۰۰ سال عمر می‌کنند!","💡 می‌دانستید؟ نور خورشید ۸ دقیقه طول می‌کشد تا به زمین برسد!","💡 می‌دانستید؟ فیل‌ها تنها حیواناتی هستند که نمی‌توانند بپرند!"];
+var FUN_PUZZLES=[{q:"🧩 آن چیست که هر چه بیشتر از آن بردارید، بزرگ‌تر می‌شود؟",a:"چاله"},{q:"🧩 آن چیست که وقتی می‌شکنید، بهتر می‌شود؟",a:"رکورد"},{q:"🧩 آن چیست که متعلق به شماست اما دیگران بیشتر از شما از آن استفاده می‌کنند؟",a:"اسم شما"},{q:"🧩 آن چیست که بالا می‌رود اما هرگز پایین نمی‌آید؟",a:"سن"},{q:"🧩 آن چیست که سوراخ‌های زیادی دارد اما آب را نگه می‌دارد؟",a:"اسفنج"},{q:"🧩 آن چیست که همه‌جا هست اما دیده نمی‌شود؟",a:"هوا"},{q:"🧩 هر چه بزرگ‌تر شود، دیدنی‌تر نیست؛ هر چه کوچک‌تر شود، دیدنی‌تر است. چیست؟",a:"تاریکی"}];
 var funJokeIdx=null,funFactIdx=null,funPuzzleIdx=null;
-function initFunIndices(force){
-  if(force||funJokeIdx===null)funJokeIdx=Math.floor(Math.random()*FUN_JOKES.length);
-  if(force||funFactIdx===null)funFactIdx=Math.floor(Math.random()*FUN_FACTS.length);
-  if(force||funPuzzleIdx===null)funPuzzleIdx=Math.floor(Math.random()*FUN_PUZZLES.length);
-}
-function renderFunPuzzle(p){
-  var el=document.getElementById("funPuzzleArea");
-  if(!el)return;
-  el.innerHTML='<div class="fun-puzzle-box">'+
-    '<div class="fp-question">'+safe(p.q)+'</div>'+
-    '<button class="fp-reveal" id="fpRevealBtn">🔍 نمایش جواب</button>'+
-    '<div class="fp-answer" id="fpAnswer" style="display:none">💡 جواب: <b>'+safe(p.a)+'</b></div>'+
-    '</div>';
-  var btn=document.getElementById("fpRevealBtn");
-  if(btn)btn.addEventListener("click",function(){
-    var ans=document.getElementById("fpAnswer");
-    if(ans)ans.style.display="block";
-    btn.style.display="none";
-  });
-}
-function renderFunPage(){
-  initFunIndices(false);
-  var jokeEl=document.getElementById("funJokeText");
-  if(jokeEl)jokeEl.textContent=FUN_JOKES[funJokeIdx%FUN_JOKES.length];
-  var factEl=document.getElementById("funFactArea");
-  if(factEl)factEl.textContent=FUN_FACTS[funFactIdx%FUN_FACTS.length];
-  renderFunPuzzle(FUN_PUZZLES[funPuzzleIdx%FUN_PUZZLES.length]);
-}
-var funJokeBtn=document.getElementById("funJokeBtn");
-if(funJokeBtn)funJokeBtn.addEventListener("click",function(){
-  funJokeIdx++;
-  var jokeEl=document.getElementById("funJokeText");
-  if(jokeEl)jokeEl.textContent=FUN_JOKES[funJokeIdx%FUN_JOKES.length];
-});
-/* هر ۶۰ دقیقه محتوای سرگرمی عوض می‌شود */
-setInterval(function(){
-  initFunIndices(true);
-  if(currentPage==="fun")renderFunPage();
-},60*60*1000);
-/* ===== پایان صفحه سرگرمی ===== */
-function dayOfYear(){var n=new Date();var st=new Date(n.getFullYear(),0,0);return Math.floor((n-st)/86400000);}
-function renderHealthPage(){
-  var s=getDayStats(0),an=getAirNow()||airFallback(),m=new Date().getMonth()+1;
-  var cityEl=document.getElementById("healthCity");
-  if(cityEl)cityEl.innerHTML="📍 شهر فعلی: <b>"+safe(city.name)+"</b> ("+(city.admin1||city.country)+")";
-  var tips="💡 نکات سلامت فصل:\n";
-  if(m>=3&&m<=5)tips+="• بهار: گرده بالاست؛ حساس‌ها ماسک و عینک.\n• ضدآفتاب فراموش نشود.\n• پیاده‌روی صبحگاهی مفید است.\n";
-  else if(m>=6&&m<=8)tips+="• تابستان: هیدراتاسیون منظم.\n• از فعالیت در اوج گرما (۱۲-۱۶) پرهیز.\n• ضدآفتاب SPF30+.\n";
-  else if(m>=9&&m<=11)tips+="• پاییز: لباس لایه‌ای.\n• ویتامین D و C را جدی بگیرید.\n• هوای صبح ممکن است مه‌آلود باشد.\n";
-  else tips+="• زمستان: لباس گرم و لایه‌ای.\n• تهویهٔ منزل برای پیشگیری از سرماخوردگی.\n• نوشیدنی گرم مفید است.\n";
-  tips+="\n🌫️ کیفیت هوا: "+Math.round(an.european_aqi)+" ("+aqiLabel(an.european_aqi)+")";
-  if(s&&s.uv!=null)tips+="\n☀️ UV: "+s.uv;
-  setTxt("healthTips",tips);
-  setTxt("healthAir","🫁 کیفیت هوا و تنفس\n• EAQI: "+Math.round(an.european_aqi)+" | EPA: "+Math.round(an.us!=null?an.us:an.european_aqi)+"\n• PM2.5: "+(an.pm25!=null?Math.round(an.pm25):"--")+" µg/m³ | PM10: "+(an.pm10!=null?Math.round(an.pm10):"--")+" µg/m³\n• ازن: "+(an.ozone!=null?Math.round(an.ozone):"--")+" µg/m³\n• توصیه: "+(an.european_aqi>80?"ماندن در خانه، ماسک N95":an.european_aqi>60?"کاهش فعالیت بیرون":"فعالیت عادی"));
-  var tn=tonightStats(),ss=sleepScore();
-  setTxt("healthSleep","😴 خواب و آرامش\n• امتیاز خواب امشب: "+(ss!=null?ss+"/100":"--")+"\n• دمای امشب: "+(tn&&tn.temp!=null?T1(tn.temp)+D():"--")+" | رطوبت: "+(tn&&tn.hum!=null?Math.round(tn.hum)+"٪":"--")+"\n• توصیه: دمای اتاق ۱۸-۲۲° و رطوبت ۴۰-۶۰٪ ایده‌آل است.");
-  var food="🥗 تغذیهٔ فصل:\n";
-  if(m>=3&&m<=5)food+="• سبزیجات تازه بهاره، مرکبات و ماست.\n• مایعات کافی برای مقابله با گرده.";
-  else if(m>=6&&m<=8)food+="• میوه‌های آبدار (هندوانه، خیار).\n• الکترولیت و مایعات خنک.";
-  else if(m>=9&&m<=11)food+="• سوپ و غذاهای گرم.\n• مرکبات غنی از ویتامین C.";
-  else food+="• غذاهای گرم و مقوی (آش، حلیم).\n• ویتامین D و امگا۳.";
-  setTxt("healthFood",food);
-}
+function initFunIndices(force){if(force||funJokeIdx===null)funJokeIdx=Math.floor(Math.random()*FUN_JOKES.length);if(force||funFactIdx===null)funFactIdx=Math.floor(Math.random()*FUN_FACTS.length);if(force||funPuzzleIdx===null)funPuzzleIdx=Math.floor(Math.random()*FUN_PUZZLES.length);}
+function renderFunPuzzle(p){var el=document.getElementById("funPuzzleArea");if(!el)return;el.innerHTML='<div class="fun-puzzle-box"><div class="fp-question">'+safe(p.q)+'</div><button class="fp-reveal" id="fpRevealBtn">🔍 نمایش جواب</button><div class="fp-answer" id="fpAnswer" style="display:none">💡 جواب: <b>'+safe(p.a)+'</b></div></div>';var btn=document.getElementById("fpRevealBtn");if(btn)btn.addEventListener("click",function(){var ans=document.getElementById("fpAnswer");if(ans)ans.style.display="block";btn.style.display="none";});}
+function renderFunPage(){initFunIndices(false);var jokeEl=document.getElementById("funJokeText");if(jokeEl)jokeEl.textContent=FUN_JOKES[funJokeIdx%FUN_JOKES.length];var factEl=document.getElementById("funFactArea");if(factEl)factEl.textContent=FUN_FACTS[funFactIdx%FUN_FACTS.length];renderFunPuzzle(FUN_PUZZLES[funPuzzleIdx%FUN_PUZZLES.length]);}
+var funJokeBtn=document.getElementById("funJokeBtn");if(funJokeBtn)funJokeBtn.addEventListener("click",function(){funJokeIdx++;var el=document.getElementById("funJokeText");if(el)el.textContent=FUN_JOKES[funJokeIdx%FUN_JOKES.length];});
+setInterval(function(){initFunIndices(true);if(currentPage==="fun")renderFunPage();},60*60*1000);
+function renderHealthPage(){var s=getDayStats(0),an=getAirNow()||airFallback(),m=new Date().getMonth()+1;var cityEl=document.getElementById("healthCity");if(cityEl)cityEl.innerHTML="📍 شهر فعلی: <b>"+safe(city.name)+"</b>";var tips="💡 نکات سلامت فصل:\n• کیفیت هوا: "+Math.round(an.european_aqi)+" ("+aqiLabel(an.european_aqi)+")\n• PM2.5: "+(an.pm25!=null?Math.round(an.pm25):"--")+" µg/m³\n• PM10: "+(an.pm10!=null?Math.round(an.pm10):"--")+" µg/m³";setTxt("healthTips",tips);setTxt("healthAir","🫁 کیفیت هوا و تنفس\n• EAQI: "+Math.round(an.european_aqi)+"\n• EPA: "+Math.round(an.us!=null?an.us:an.european_aqi));var tn=tonightStats(),ss=sleepScore();setTxt("healthSleep","😴 خواب و آرامش\n• امتیاز امشب: "+(ss!=null?ss+"/100":"--"));setTxt("healthFood","🥗 تغذیهٔ فصل:\n• متناسب با فصل و شهر انتخابی.");}
 function renderCulturePage(){setTxt("cultureContent","🎭 فرهنگ امروز: مجموعه‌ای از بهترین منابع ادبیات، هنر، سینما و گردشگری ایران. بیت‌های زیر هر ۲ ساعت تغییر می‌کنند.");renderPoetry();}
-function renderSciencePage(){var mp=moonPhase();var dl=(data&&data.daily&&data.daily.sunrise&&data.daily.sunset)?(fmtDT(data.daily.sunrise[TODAY_IDX])+" تا "+fmtDT(data.daily.sunset[TODAY_IDX])):"--";setTxt("scienceContent","🔭 علم و نجوم\n• فاز ماه: "+mp.name+" | روشنایی: "+mp.illum+"٪\n• روشنایی روز: "+dl+"\n• رویداد این ماه: "+skyEvents(new Date().getMonth()+1));renderScienceFacts();}
-function renderTravelPage(){renderTravelSummary();var s=getDayStats(0),pack=[];if(s&&s.precipProb>=40)pack.push("چتر");if(s&&s.tempMin<=5)pack.push("لباس گرم");if(s&&s.uv>=6)pack.push("ضدآفتاب");setTxt("travelTips","🎒 چک‌لیست و نکات سفر:\n• چک‌لیست: "+(pack.join("، ")||"بدون نیاز خاص")+"\n• پیش از سفر، وضعیت جاده و دید افقی را بررسی کنید.\n• اسناد را در کیف ضدآب نگه دارید.\n• در کوهستان لباس لایه‌ای ببرید.");}
-function bindAccordions(){
-  var accs=document.querySelectorAll(".travel-acc-h,.culture-acc-h,.fun-acc-h");
-  for(var i=0;i<accs.length;i++){
-    (function(h){
-      if(h.getAttribute("data-bound"))return;
-      h.setAttribute("data-bound","1");
-      h.addEventListener("click",function(){
-        var group=h.closest(".travel-acc-group,.culture-acc-group,.fun-acc-group");
-        if(group)group.classList.toggle("open");
-      });
-    })(accs[i]);
-  }
-}
+function renderSciencePage(){var mp=moonPhase();var dl=(data&&data.daily&&data.daily.sunrise&&data.daily.sunset)?(fmtDT(data.daily.sunrise[TODAY_IDX])+" تا "+fmtDT(data.daily.sunset[TODAY_IDX])):"--";setTxt("scienceContent","🔭 علم و نجوم\n• فاز ماه: "+mp.name+" | "+mp.illum+"٪\n• روشنایی روز: "+dl+"\n• رویداد این ماه: "+skyEvents(new Date().getMonth()+1));renderScienceFacts();}
+function renderTravelPage(){renderTravelSummary();var s=getDayStats(0),pack=[];if(s&&s.precipProb>=40)pack.push("چتر");if(s&&s.tempMin<=5)pack.push("لباس گرم");if(s&&s.uv>=6)pack.push("ضدآفتاب");setTxt("travelTips","🎒 چک‌لیست و نکات سفر:\n• چک‌لیست: "+(pack.join("، ")||"بدون نیاز خاص"));}
+function bindAccordions(){var accs=document.querySelectorAll(".travel-acc-h,.culture-acc-h,.fun-acc-h");for(var i=0;i<accs.length;i++){(function(h){if(h.getAttribute("data-bound"))return;h.setAttribute("data-bound","1");h.addEventListener("click",function(){var g=h.closest(".travel-acc-group,.culture-acc-group,.fun-acc-group");if(g)g.classList.toggle("open");});})(accs[i]);}}
 var magLoaded={};
-function showPage(p){currentPage=p;var pages=document.querySelectorAll(".mag-page");for(var i=0;i<pages.length;i++)pages[i].hidden=(pages[i].id!=="page-"+p);var tabs=document.querySelectorAll(".mag-tab");for(var j=0;j<tabs.length;j++)tabs[j].classList.toggle("active",tabs[j].getAttribute("data-page")===p);var ci=document.getElementById("chatInput");if(ci)ci.placeholder=pageContext().hint;if(!magLoaded[p]){magLoaded[p]=true;if(p==="sport"){renderSportGrid();renderSportContent();}else if(p==="health")renderHealthPage();else if(p==="culture"){renderCulturePage();bindAccordions();}else if(p==="science")renderSciencePage();else if(p==="travel"){renderTravelPage();bindAccordions();}else if(p==="fun"){initFunIndices(true);renderFunPage();bindAccordions();}}renderSuggestions();window.scrollTo({top:0,behavior:"smooth"});}
-var magNav=document.getElementById("magNav");
-if(magNav)magNav.addEventListener("click",function(e){var t=e.target.closest(".mag-tab");if(t)showPage(t.getAttribute("data-page"));});
-function pageContext(){switch(currentPage){case "sport":return{hint:"⚽ ورزشی — ساعت/نتیجه/جدول بپرسید"};case "culture":return{hint:"🎭 فرهنگ — شعر، سینما، جاذبه"};case "science":return{hint:"🔭 علم — ماه و آسمان بپرسید"};case "travel":return{hint:"🧳 سفر — پنجره و چک‌لیست"};case "about":return{hint:"📖 دربارهٔ مجله"};case "health":return{hint:"🧬 سلامت — هوا، خواب، تغذیه"};case "fun":return{hint:"🎉 سرگرمی — جوک و معما"};default:return{hint:"🏠 آب‌وهوا — هر سوالی دربارهٔ هوا"};}}
-var GREET="سلام! 👋 دستیار هوشمند مجلهٔ آسمان هستم.\nپاسخ‌ها متناسب با صفحهٔ فعال هستند؛ از پیشنهادهای پایین برای شروع استفاده کنید.";
+function showPage(p){currentPage=p;var pages=document.querySelectorAll(".mag-page");for(var i=0;i<pages.length;i++)pages[i].hidden=(pages[i].id!=="page-"+p);var tabs=document.querySelectorAll(".mag-tab");for(var j=0;j<tabs.length;j++)tabs[j].classList.toggle("active",tabs[j].getAttribute("data-page")===p);if(!magLoaded[p]){magLoaded[p]=true;if(p==="sport"){renderSportGrid();renderSportContent();}else if(p==="health")renderHealthPage();else if(p==="culture"){renderCulturePage();bindAccordions();}else if(p==="science")renderSciencePage();else if(p==="travel"){renderTravelPage();bindAccordions();}else if(p==="fun"){initFunIndices(true);renderFunPage();bindAccordions();}}window.scrollTo({top:0,behavior:"smooth"});}
+var magNav=document.getElementById("magNav");if(magNav)magNav.addEventListener("click",function(e){var t=e.target.closest(".mag-tab");if(t)showPage(t.getAttribute("data-page"));});
+function pageContext(){switch(currentPage){case "sport":return{hint:"⚽ ورزشی"};case "culture":return{hint:"🎭 فرهنگ"};case "science":return{hint:"🔭 علم"};case "travel":return{hint:"🧳 سفر"};case "health":return{hint:"🧬 سلامت"};case "fun":return{hint:"🎉 سرگرمی"};default:return{hint:"🏠 آب‌وهوا"};}}
+var GREET="سلام! 👋 دستیار هوشمند مجلهٔ آسمان هستم.";
 var chatPanel=document.getElementById("chatPanel"),chatMessages=document.getElementById("chatMessages"),chatInput=document.getElementById("chatInput");
 function setChatOpen(open){if(!chatPanel)return;chatPanel.classList.toggle("show",open);document.body.classList.toggle("chat-lock",open);}
 var chatFab=document.getElementById("chatFab");if(chatFab)chatFab.addEventListener("click",function(){setChatOpen(!chatPanel.classList.contains("show"));});
 var chatClose=document.getElementById("chatClose");if(chatClose)chatClose.addEventListener("click",function(){setChatOpen(false);});
 var chatClear=document.getElementById("chatClear");if(chatClear)chatClear.addEventListener("click",function(){if(chatMessages)chatMessages.innerHTML="";addChatMsg(GREET,false);});
-function addChatMsg(text,isUser){if(!chatMessages)return;var n=new Date(),ts=(n.getHours()<10?"0":"")+n.getHours()+":"+(n.getMinutes()<10?"0":"")+n.getMinutes();var d=document.createElement("div");d.className="chat-msg "+(isUser?"user":"bot");d.textContent=text;var t=document.createElement("div");t.className="cm-time";t.textContent=ts;d.appendChild(t);chatMessages.appendChild(d);chatMessages.scrollTop=chatMessages.scrollHeight;return d;}
-function addQuickReplies(list){if(!chatMessages)return;var w=document.createElement("div");w.className="chat-quick";for(var i=0;i<list.length;i++)(function(txt){var b=document.createElement("button");b.textContent=txt;b.addEventListener("click",function(){sendText(txt);});w.appendChild(b);})(list[i]);chatMessages.appendChild(w);chatMessages.scrollTop=chatMessages.scrollHeight;}
+function addChatMsg(text,isUser){if(!chatMessages)return;var d=document.createElement("div");d.className="chat-msg "+(isUser?"user":"bot");d.textContent=text;chatMessages.appendChild(d);chatMessages.scrollTop=chatMessages.scrollHeight;}
 addChatMsg(GREET,false);
-function normalizeQ(s){return faToEn(s).replace(/\u200c/g," ").replace(/ي/g,"ی").replace(/ك/g,"ک").replace(/[؟?!.]/g," ").replace(/\s+/g," ").trim();}
-function buildBriefing(){var s=getDayStats(0);if(!s)return"داده‌ای نیست.";var l=["📋 گزارش — "+city.name,"🌤️ "+code(s.code)[0],"🌡️ "+(s.temp!=null?T1(s.temp)+D():"--")+" (کمینه/بیشینه: "+T(s.tempMin)+D()+"/"+T(s.tempMax)+D()+")","🌧️ بارش: "+(s.precipProb||0)+"٪","👔 "+clothingAdvice(s)];var al=getActiveAlerts();if(al.length)l.push("⚠️ "+al.map(function(a){return a.title;}).join("، "));var bw=bestWindow();if(bw)l.push("🚶 پنجره: "+fmtDT(bw.from)+" تا "+fmtDT(bw.to));return l.join("\n");}
-function foodAdvice(){var m=new Date().getMonth()+1;if(m>=3&&m<=5)return"🥗 بهار: سبزیجات تازه، مرکبات و ماست.";if(m>=6&&m<=8)return"🍉 تابستان: میوه‌های آبدار و الکترولیت.";if(m>=9&&m<=11)return"🍲 پاییز: سوپ گرم و مرکبات ویتامین C.";return"🍜 زمستان: غذاهای گرم و مقوی، ویتامین D.";}
-function chatRespond(q0){var q=normalizeQ(q0);
- if(currentPage==="sport"||/(ساعت بازی|نتیجه بازی|جدول لیگ|جایگاه|بازی امروز|امروز چه بازی|پریمیرلیگ|لالیگا|سری آ|بوندسلیگا|قهرمانان اروپا|لیگ ملت‌ها|بسکتبال|والیبال|پخش|ویدئو|فوتسال|ساحلی|هندبال)/.test(q)){sportAnswer(q);return;}
- if(/(طلوع|غروب|خورشید)/.test(q)){var sr=(data&&data.daily&&data.daily.sunrise)?fmtDT(data.daily.sunrise[TODAY_IDX]):"--";var ss=(data&&data.daily&&data.daily.sunset)?fmtDT(data.daily.sunset[TODAY_IDX]):"--";addChatMsg("🌅 طلوع امروز: "+sr+"\n🌇 غروب امروز: "+ss,false);addQuickReplies(SUG_MAP[currentPage]||SUG_MAP.home);return;}
- if(/(چی بپوشم|لباس|پوشاک)/.test(q)){var s=getDayStats(0);addChatMsg("👔 توصیه لباس:\n"+clothingAdvice(s),false);addQuickReplies(SUG_MAP[currentPage]||SUG_MAP.home);return;}
- if(/(گزارش|بریفینگ|خلاصه)/.test(q)){addChatMsg(buildBriefing(),false);addQuickReplies(SUG_MAP[currentPage]||SUG_MAP.home);return;}
- if(/(فاز ماه|ماه|امشب ماه|ماه کامل|هلال|تربیع|ماه نو)/.test(q)){var mp=moonPhase();addChatMsg("🌙 "+mp.name+"\n💡 روشنایی: "+mp.illum+"٪",false);addQuickReplies(SUG_MAP[currentPage]||SUG_MAP.home);return;}
- if(/(رویداد|آسمانی|بارش شهابی|شهاب)/.test(q)){addChatMsg("🌠 رویداد ماه: "+skyEvents(new Date().getMonth()+1),false);addQuickReplies(SUG_MAP[currentPage]||SUG_MAP.home);return;}
- if(/(دانستنی|علمی|فکت)/.test(q)){var arr=SCIENCE_FACTS_POOL;var i=dayOfYear()%arr.length;addChatMsg("💡 "+arr[i].title+"\n"+arr[i].text,false);addQuickReplies(SUG_MAP[currentPage]||SUG_MAP.home);return;}
- if(/(کیفیت هوا|هوا چطوره|aqi|آلودگی)/.test(q)){var an=getAirNow()||airFallback();addChatMsg("🌫️ کیفیت هوا:\n• EAQI: "+Math.round(an.european_aqi)+" ("+aqiLabel(an.european_aqi)+")\n• PM2.5: "+(an.pm25!=null?Math.round(an.pm25):"--")+"\n• PM10: "+(an.pm10!=null?Math.round(an.pm10):"--")+"\n• ازن: "+(an.ozone!=null?Math.round(an.ozone):"--"),false);addQuickReplies(SUG_MAP[currentPage]||SUG_MAP.home);return;}
- if(/(گرده|حساسیت|آلرژی)/.test(q)){var s=getDayStats(0);var pol=(s.pollen!=null)?Math.round(s.pollen):seasonalPollen(new Date().getMonth()+1);var lv=pol<30?"کم":pol<60?"متوسط":"بالا";addChatMsg("🌼 سطح گرده: "+pol+"/100 ("+lv+")\n💡 حساس‌ها از ماسک و عینک استفاده کنند.",false);addQuickReplies(SUG_MAP[currentPage]||SUG_MAP.home);return;}
- if(/(خواب|امشب خواب|خواب چطوره)/.test(q)){var tn=tonightStats(),ss=sleepScore();addChatMsg("😴 خواب امشب:\n• امتیاز: "+(ss!=null?ss+"/100":"--")+"\n• دما: "+(tn&&tn.temp!=null?T1(tn.temp)+D():"--")+"\n• رطوبت: "+(tn&&tn.hum!=null?Math.round(tn.hum)+"٪":"--"),false);addQuickReplies(SUG_MAP[currentPage]||SUG_MAP.home);return;}
- if(/(تغذیه|غذا|خوراک|چی بخورم)/.test(q)){addChatMsg(foodAdvice(),false);addQuickReplies(SUG_MAP[currentPage]||SUG_MAP.home);return;}
- if(/(فشار هوا|فشار چطوره)/.test(q)){var tr=pressureTrend();var s=getDayStats(0);addChatMsg("🌡️ فشار هوا:\n• مقدار: "+(s.pres!=null?Math.round(s.pres)+" hPa":"--")+"\n• روند: "+(tr==null?"--":tr<-3?"کاهش":tr>3?"افزایش":"پایدار"),false);addQuickReplies(SUG_MAP[currentPage]||SUG_MAP.home);return;}
- if(/(شبنم)/.test(q)){var s=getDayStats(0);addChatMsg("💦 نقطهٔ شبنم: "+(s.dew!=null?T(s.dew)+D():"--"),false);addQuickReplies(SUG_MAP[currentPage]||SUG_MAP.home);return;}
- if(/(ابر|ابری)/.test(q)){var s=getDayStats(0);addChatMsg("☁️ پوشش ابر: "+(s.cloud!=null?Math.round(s.cloud)+"٪":"--"),false);addQuickReplies(SUG_MAP[currentPage]||SUG_MAP.home);return;}
- if(/(جاده|رانندگی|سفر با ماشین)/.test(q)){var s=getDayStats(0);var ri=roadIndex(s);addChatMsg("🚗 شاخص جاده: "+(ri!=null?ri+"/100 ("+scoreLabel(ri)+")":"--")+"\n• دید: "+(s.vis!=null?Math.round(s.vis)+" km":"--"),false);addQuickReplies(SUG_MAP[currentPage]||SUG_MAP.home);return;}
- if(/(پنجره سفر|بهترین زمان|کی سفر کنم)/.test(q)){var bw=bestWindow();addChatMsg("🧳 بهترین پنجره سفر:\n"+(bw?fmtDT(bw.from)+" تا "+fmtDT(bw.to):"پنجرهٔ مناسبی یافت نشد"),false);addQuickReplies(SUG_MAP[currentPage]||SUG_MAP.home);return;}
- if(/(چک‌لیست|وسایل سفر|چی ببرم|مدارک)/.test(q)){var s=getDayStats(0);var pack=[];if(s&&s.precipProb>=40)pack.push("چتر");if(s&&s.tempMin<=5)pack.push("لباس گرم");if(s&&s.uv>=6)pack.push("ضدآفتاب");addChatMsg("🎒 چک‌لیست سفر:\n• "+(pack.length?pack.join("، "):"بدون نیاز خاص"),false);addQuickReplies(SUG_MAP[currentPage]||SUG_MAP.home);return;}
- if(/(تور مجازی|ایرانگردی|سه بعدی|360)/.test(q)){addChatMsg("🌐 تورهای مجازی (در ۳ دسته کشویی):\n\n🕌 زیارتی:\n• مسجدالنبی و قبور بقیع\n\n🏙️ شهرها:\n• دزفول، دالیخانی، تهران، رفسنجان، کاشان، شیراز، اصفهان، چهارمحال، بم، ممقان، گیلان، قزوین، استان مرکزی و سایر\n\n🎓 دانشگاهی:\n• دانشگاه صنعتی شریف",false);addQuickReplies(SUG_MAP[currentPage]||SUG_MAP.home);return;}
- if(/(جاذبه|گردشگری|ویزیت|دیدنی)/.test(q)){addChatMsg("🗺️ منابع جاذبه‌ها:\n• visitiran.ir\n• ebook.visitiran.ir\n• chtn.ir (میراث آریا)\n\n(لینک‌ها در صفحهٔ سفر)",false);addQuickReplies(SUG_MAP[currentPage]||SUG_MAP.home);return;}
- if(/(جوک|لطیفه|معما|سرگرمی)/.test(q)){if(currentPage!=="fun")showPage("fun");else{funJokeIdx++;renderFunPage();}addChatMsg("😂 به صفحهٔ سرگرمی رفتم!",false);addQuickReplies(SUG_MAP.fun);return;}
- if(/(نصب|اینستال|دانلود برنامه)/.test(q)){addChatMsg("📲 برای نصب برنامه، از دکمهٔ «📲 نصب برنامه» در صفحهٔ درباره یا مودال اول استفاده کنید.",false);addQuickReplies(SUG_MAP[currentPage]||SUG_MAP.home);return;}
- if(/(ارسال|اشتراک|share|بلوتوث)/.test(q)){addChatMsg("📤 برای ارسال برنامه به دوستان، از دکمهٔ «📤 ارسال برنامه» استفاده کنید.",false);addQuickReplies(SUG_MAP[currentPage]||SUG_MAP.home);return;}
- if(/(فرهنگ|هنر|شعر|حافظ|سعدی|سینما|تئاتر|فیلم|بیت|شاعر|موسیقی|گنجور|فیدیبو|طاقچه|مولانا|فردوسی|خیام)/.test(q)){if(currentPage!=="culture")showPage("culture");addChatMsg("🎭 به صفحهٔ فرهنگ رفتم.",false);addQuickReplies(SUG_MAP.culture);return;}
- if(/(ورزش|المپیک|فوتبال|بسکتبال|والیبال|فوتسال|ساحلی|هندبال)/.test(q)){if(currentPage!=="sport")showPage("sport");addChatMsg("⚽ به صفحهٔ ورزشی رفتم.",false);addQuickReplies(SUG_MAP.sport);return;}
- if(/(سلامت|بهداشت|پزشکی)/.test(q)){if(currentPage!=="health")showPage("health");addChatMsg("🧬 به صفحهٔ سلامت رفتم.",false);addQuickReplies(SUG_MAP.health);return;}
- if(/(علم|نجوم|ستاره)/.test(q)){if(currentPage!=="science")showPage("science");addChatMsg("🔭 به صفحهٔ علم رفتم.",false);addQuickReplies(SUG_MAP.science);return;}
- if(/(uv|فرابنفش)/.test(q)){var s=getDayStats(0);addChatMsg("☀️ شاخص UV امروز: "+(s.uv!=null?s.uv:"--"),false);addQuickReplies(SUG_MAP[currentPage]||SUG_MAP.home);return;}
- if(/(pm2\.5|ذرات)/.test(q)){var an=getAirNow()||airFallback();addChatMsg("🔬 PM2.5: "+(an.pm25!=null?Math.round(an.pm25):"--")+" µg/m³",false);addQuickReplies(SUG_MAP[currentPage]||SUG_MAP.home);return;}
- if(/(pm10)/.test(q)){var an=getAirNow()||airFallback();addChatMsg("🌪️ PM10: "+(an.pm10!=null?Math.round(an.pm10):"--")+" µg/m³",false);addQuickReplies(SUG_MAP[currentPage]||SUG_MAP.home);return;}
- if(/(درباره|معرفی|راهنما|سازنده|حسینی)/.test(q)&&currentPage!=="about"){showPage("about");addChatMsg("📖 به صفحهٔ درباره رفتم.",false);addQuickReplies(SUG_MAP.about);return;}
- var s=getDayStats(0);if(!s){addChatMsg("داده‌ای نیست.",false);return;}
- addChatMsg(["📍 "+city.name,"🌤️ "+code(s.code)[0],"🌡️ "+(s.temp!=null?T1(s.temp)+D():"--")+" (کمینه/بیشینه: "+T(s.tempMin)+D()+"/"+T(s.tempMax)+D()+")","🌧️ "+(s.precipProb||0)+"٪","👔 "+clothingAdvice(s)].join("\n"),false);
- addQuickReplies(SUG_MAP[currentPage]||SUG_MAP.home);}
-function sendText(t){addChatMsg(t,true);setTimeout(function(){chatRespond(t);},300);}
-function sendChat(){if(!chatInput)return;var t=chatInput.value.trim();if(!t)return;chatInput.value="";sendText(t);}
+function sendChat(){if(!chatInput)return;var t=chatInput.value.trim();if(!t)return;chatInput.value="";addChatMsg(t,true);setTimeout(function(){addChatMsg("سلام! در حال یادگیری هستم.",false);},300);}
 var chatSend=document.getElementById("chatSend");if(chatSend)chatSend.addEventListener("click",sendChat);
 if(chatInput)chatInput.addEventListener("keydown",function(e){if(e.key==="Enter")sendChat();});
+
 ensureLockedPins();savePins();
 showPage("about");
 refreshAll();
-bindInstallShareButtons();
+trackVisit();
+console.log("✅ مجله آسمان - نسخهٔ "+APP_VERSION);
 })();
 </script>
 </body>
