@@ -290,425 +290,408 @@ footer{text-align:center;color:var(--muted);font-size:11px;line-height:2;padding
 <body>
 <div id="bgP"></div>
 <div id="pullInd">برای به‌روزرسانی بکشید</div>
-
 <!-- مودال نصب -->
 <div class="install-overlay" id="installOverlay">
-  <div class="install-box">
-    <div class="install-header">
-      <div class="install-logo">📲</div>
-      <h2>نصب وب اپلیکیشن «مجله آسمان»</h2>
-      <p>برنامه را به صفحهٔ اصلی گوشی خود بیفزایید</p>
-    </div>
-    <div class="install-accordion" id="installAccordion">
-      <div class="install-acc-group" data-browser="chrome">
-        <div class="install-acc-h"><span>🤖 نصب در اندروید (Chrome)</span><span class="arrow-r">⌄</span></div>
-        <div class="install-acc-body"><p>در مرورگر کروم، روی <b>«سه نقطه»</b> بالای یا پایین مرورگر بزنید و گزینهٔ <b>«نصب و ایجاد میانبر»</b> یا <b>«افزودن صفحه به میانبر»</b> را انتخاب کنید. بعد از تأیید، برنامه به صفحهٔ اصلی گوشی شما افزوده می‌شود.</p></div>
-      </div>
-      <div class="install-acc-group" data-browser="ios">
-        <div class="install-acc-h"><span>🍎 نصب روی iPhone/iPad (Safari)</span><span class="arrow-r">⌄</span></div>
-        <div class="install-acc-body">
-          <div class="warn">⚠️ مهم: حتماً با Safari باز کنید، نه Chrome.</div>
-          <ol><li>آدرس را در <b>Safari</b> باز کنید.</li><li>دکمهٔ <b>Share</b> (مربع با فلش رو به بالا) را بزنید.</li><li><b>Add to Home Screen</b> را انتخاب کنید.</li><li>اسم را تأیید کنید و <b>Add</b> را بزنید.</li></ol>
-        </div>
-      </div>
-      <div class="install-acc-group" data-browser="generic">
-        <div class="install-acc-h"><span>🌐 نصب در مرورگر Browser</span><span class="arrow-r">⌄</span></div>
-        <div class="install-acc-body">
-          <p>در مرورگر پیش‌فرض اندروید (Browser)، گزینهٔ «نصب برنامه» وجود ندارد یا کار نمی‌کند. به‌جای آن:</p>
-          <ol><li>روی <b>سه نقطه</b> (منو) در بالای مرورگر بزنید.</li><li>گزینهٔ <b>«افزودن صفحه به»</b> را انتخاب کنید.</li><li>سپس <b>«صفحه اصلی»</b> را انتخاب کنید.</li><li>در نهایت روی <b>«افزودن»</b> بزنید.</li></ol>
-          <p>حالا آیکون برنامه روی صفحهٔ اصلی گوشی شما ظاهر می‌شود. ✅</p>
-        </div>
-      </div>
-    </div>
-    <div class="install-actions">
-      <button class="install-share-btn" id="shareAppModal">📤 ارسال برنامه</button>
-      <button class="install-pwa-btn" id="installAppModal">📲 نصب برنامه</button>
-    </div>
-    <div class="install-size-note"><span class="isn-head">💾 حجم بسیار کم، بدون اشغال فضای گوشی.</span>از آنجا که این برنامه تحت وب است، تنها چند مگابایت از حافظه گوشی شما را اشغال می‌کند؛ یعنی حتی کمتر از حجم یک عکس.</div>
-    <button class="install-btn" id="installOk">✓ متوجه شدم</button>
-    <div class="install-version">
-      <div class="iv-version">📌 نسخهٔ ۲٫۳٫۱</div>
-      <div class="iv-changelog">
-        • توقف کامل درخواست‌های شبکه تا تأیید مودال اول<br>
-        • شروع GPS فقط پس از تأیید کاربر<br>
-        • رفع نشتی درخواست پین‌ها قبل از تأیید<br>
-        • پایدارسازی کامل رفتار برنامه
-      </div>
-    </div>
-  </div>
+<div class="install-box">
+<div class="install-header">
+<div class="install-logo">📲</div>
+<h2>نصب وب اپلیکیشن «مجله آسمان»</h2>
+<p>برنامه را به صفحهٔ اصلی گوشی خود بیفزایید</p>
 </div>
-
+<div class="install-accordion" id="installAccordion">
+<div class="install-acc-group" data-browser="chrome">
+<div class="install-acc-h"><span>🤖 نصب در اندروید (Chrome)</span><span class="arrow-r">⌄</span></div>
+<div class="install-acc-body"><p>در مرورگر کروم، روی <b>«سه نقطه»</b> بالای یا پایین مرورگر بزنید و گزینهٔ <b>«نصب و ایجاد میانبر»</b> یا <b>«افزودن صفحه به میانبر»</b> را انتخاب کنید. بعد از تأیید، برنامه به صفحهٔ اصلی گوشی شما افزوده می‌شود.</p></div>
+</div>
+<div class="install-acc-group" data-browser="ios">
+<div class="install-acc-h"><span>🍎 نصب روی iPhone/iPad (Safari)</span><span class="arrow-r">⌄</span></div>
+<div class="install-acc-body">
+<div class="warn">⚠️ مهم: حتماً با Safari باز کنید، نه Chrome.</div>
+<ol><li>آدرس را در <b>Safari</b> باز کنید.</li><li>دکمهٔ <b>Share</b> (مربع با فلش رو به بالا) را بزنید.</li><li><b>Add to Home Screen</b> را انتخاب کنید.</li><li>اسم را تأیید کنید و <b>Add</b> را بزنید.</li></ol>
+</div>
+</div>
+<div class="install-acc-group" data-browser="generic">
+<div class="install-acc-h"><span>🌐 نصب در مرورگر Browser</span><span class="arrow-r">⌄</span></div>
+<div class="install-acc-body">
+<p>در مرورگر پیش‌فرض اندروید (Browser)، گزینهٔ «نصب برنامه» وجود ندارد یا کار نمی‌کند. به‌جای آن:</p>
+<ol><li>روی <b>سه نقطه</b> (منو) در بالای مرورگر بزنید.</li><li>گزینهٔ <b>«افزودن صفحه به»</b> را انتخاب کنید.</li><li>سپس <b>«صفحه اصلی»</b> را انتخاب کنید.</li><li>در نهایت روی <b>«افزودن»</b> بزنید.</li></ol>
+<p>حالا آیکون برنامه روی صفحهٔ اصلی گوشی شما ظاهر می‌شود. ✅</p>
+</div>
+</div>
+</div>
+<div class="install-actions">
+<button class="install-share-btn" id="shareAppModal">📤 ارسال برنامه</button>
+<button class="install-pwa-btn" id="installAppModal">📲 نصب برنامه</button>
+</div>
+<div class="install-size-note"><span class="isn-head">💾 حجم بسیار کم، بدون اشغال فضای گوشی.</span>از آنجا که این برنامه تحت وب است، تنها چند مگابایت از حافظه گوشی شما را اشغال می‌کند؛ یعنی حتی کمتر از حجم یک عکس.</div>
+<button class="install-btn" id="installOk">✓ متوجه شدم</button>
+<div class="install-version">
+<div class="iv-version">📌 نسخهٔ ۲٫۳٫۲</div>
+<div class="iv-changelog">
+• رفع باگ عدم بارگذاری داده‌ها<br>
+• اضافه شدن متغیر gpsEnabled<br>
+• رفع تکرار تابع bootApp<br>
+• پایدارسازی کامل رفتار برنامه
+</div>
+</div>
+</div>
+</div>
 <div class="wrap">
-  <header class="top">
-    <div class="brand"><div class="logo">🌌</div><div class="brand-text"><h1>مجله آسمان</h1></div></div>
-    <nav class="mag-nav" id="magNav">
-      <button class="mag-tab" data-page="about">📖 دربارهٔ مجله</button>
-      <button class="mag-tab" data-page="home">🏠 آب‌وهوا</button>
-      <button class="mag-tab" data-page="travel">🧳 سفر</button>
-      <button class="mag-tab" data-page="culture">🎭 فرهنگ</button>
-      <button class="mag-tab" data-page="sport">⚽ ورزشی</button>
-      <button class="mag-tab" data-page="health">🧬 سلامت</button>
-      <button class="mag-tab" data-page="science">🔭 علم</button>
-      <button class="mag-tab" data-page="fun">🎉 سرگرمی</button>
-    </nav>
-  </header>
-  <div id="status" class="status"></div>
-
-  <section class="mag-page" id="page-about">
-    <div class="page-hero"><div><h2 class="page-title">دربارهٔ مجله و سازنده</h2><div class="page-subtitle">آشنایی با مجلهٔ آسمان و راهنمای بخش‌ها</div></div></div>
-    <section class="panel section">
-      <div class="about-intro">مجلهٔ آسمان یک اپلیکیشن وب چندبخشی است؛ همهٔ پردازش‌ها سمت مرورگر شماست. برای به‌روزرسانی، صفحه را از بالا به پایین بکشید و رها کنید.</div>
-      <div class="about-poem">
-        مجلهٔ آسمان، همسفر خاموش لحظه‌های توست؛ همراهی آرام که از روشنای صبح آغاز می‌شود و تا سکوت شب ادامه می‌یابد.<br>
-        از نسیم صبحگاهی که از پنجره‌ات می‌گذرد، تا سکوت شبی که ماه را به خواب می‌برد، از هیاهوی خیابان‌ها و عطر باران، تا قصه‌های آدم‌هایی که در همین شهر زندگی می‌کنند.<br>
-        هر صفحه، پنجره‌ای‌ست رو به جهان پیرامون تو و آینه‌ای از شهری که در آن نفس می‌کشی.
-        <div class="signature">
-          <span class="sig-line1">با سپاس</span>
-          <span class="sig-line2">م. حسینی _ 🧑‍🦽 معلول آسیب نخاعی</span>
-        </div>
-        <div class="creator-wrap"><a href="https://eitaa.com/hossini_96" target="_blank" rel="noopener" class="btn-creator">ارتباط با سازنده</a></div>
-      </div>
-      <div class="about-help" style="margin-top:20px">
-        <div class="ah-sec"><div class="ah-h c1">🏠 آب‌وهوا</div><ul><li>پیش‌بینی ۹روزه و ساعتی، ۱۶ شاخص، اوقات شرعی، تقویم با ساعت تهران/لندن/مکه.</li><li>جستجو: روستا/منطقه/شهر/استان/کشور.</li></ul></div>
-        <div class="ah-sec"><div class="ah-h c6">🧳 سفر</div><ul><li>خلاصهٔ سفر + تورهای مجازی سه‌گروهی.</li></ul></div>
-        <div class="ah-sec"><div class="ah-h c4">🎭 فرهنگ</div><ul><li>۵ شاعر با بیت کامل: حافظ، سعدی، مولانا، فردوسی، خیام.</li></ul></div>
-        <div class="ah-sec"><div class="ah-h c2">⚽ ورزشی</div><ul><li>فوتبال، فوتسال، بسکتبال، والیبال، ساحلی، هندبال، المپیک.</li></ul></div>
-        <div class="ah-sec"><div class="ah-h c3">🧬 سلامت</div><ul><li>کیفیت هوا، خواب، تغذیه، نکات فصلی.</li></ul></div>
-        <div class="ah-sec"><div class="ah-h c5">🔭 علم</div><ul><li>۴ دانستنی علمی + نجوم.</li></ul></div>
-        <div class="ah-sec"><div class="ah-h c7">🎉 سرگرمی</div><ul><li>جوک، دانستنی و معما — هر ۶۰ دقیقه.</li></ul></div>
-      </div>
-      <div class="about-code-wrap"><button class="btn-code" id="btnCode" type="button">کد</button></div>
-    </section>
-  </section>
-
-  <section class="mag-page" id="page-home" hidden>
-    <div class="page-hero weather-bg"><div><h2 class="page-title">آب و هوا</h2><div class="page-subtitle" id="weatherSubtitle">پیش‌بینی دقیق، اوقات شرعی و شاخص‌های کامل</div></div></div>
-    <div class="search"><span class="search-icon">🔍</span><input id="search" placeholder="جستجو: روستا، منطقه، شهر، استان، کشور..."><div id="results" class="results"></div></div>
-    <div class="status-bar" id="statusBar">
-      <button class="btn" id="loc">📍 مکان فعلی</button>
-      <div class="sb-item"><span class="sb-dot on" id="netDot"></span><span id="netText">آنلاین</span></div>
-      <div class="sb-item"><span class="sb-dot on" id="gpsDot"></span><span id="gpsText">GPS متصل</span></div>
-      <select class="select" id="unit"><option value="celsius">°C</option><option value="fahrenheit">°F</option></select>
-    </div>
-    <div id="pins" class="pins"></div>
-    <div class="scene">
-      <section class="panel main">
-        <div class="citybar">
-          <div class="city-line"><button id="pin" class="pin-small">☆</button><div id="city" class="city">اراک <span id="cityInfo" class="city-info"></span></div></div>
-          <button id="localTime" class="localtime-btn">ساعت: <span class="lt-clock">--:--</span></button>
-        </div>
-        <div class="weather-hero">
-          <div class="weather-anim" id="weatherAnim"><div class="layer" id="lyRain"></div><div class="layer" id="lySnow"></div><div class="layer" id="lyCloud"></div><span id="wicon" style="display:flex;justify-content:center"></span></div>
-          <div>
-            <div id="temp" class="temp">--°</div>
-            <div id="cond" class="cond">در حال دریافت...</div>
-            <div id="feels" class="feels"></div>
-            <div class="minmax"><span class="min">▼ <span id="minTemp">--</span></span><span class="max">▲ <span id="maxTemp">--</span></span></div>
-          </div>
-        </div>
-        <div class="mini-title">🕒 ساعتی</div>
-        <div class="scroll"><div id="hourly" class="hourly"></div></div>
-        <div class="mini-title">📅 پیش‌بینی ۹ روزه</div>
-        <div class="scroll"><div id="forecast" class="forecast"></div></div>
-        <div class="smart-alerts" id="smartAlerts"></div>
-        <div class="day-tabs">
-          <button class="day-tab active" id="tabToday" data-tab="today">🌤️ هوای امروز</button>
-          <button class="day-tab" id="tabTomorrow" data-tab="tomorrow">🌦️ هوای فردا</button>
-        </div>
-        <div class="sectionhead"><div class="weather-section-title">📊 شاخص <span id="detailsDayLabel">امروز</span></div><button id="detailsToggle" class="arrow">⌄</button></div>
-        <div id="detailsBody" class="collapse collapsed">
-          <div class="details" id="detailsGrid">
-            <button class="detail-btn" data-info="humidity"><span>💧 رطوبت</span><span class="val" id="hum">--</span></button>
-            <button class="detail-btn" data-info="wind"><span>💨 باد</span><span class="val" id="wind">--</span></button>
-            <button class="detail-btn" data-info="temp"><span>🌡️ دما</span><span class="val" id="tempVal">--</span></button>
-            <button class="detail-btn" data-info="uv"><span>☀️ فرابنفش</span><span class="val" id="uvVal">--</span></button>
-            <button class="detail-btn" data-info="precip"><span>🌧️ بارش</span><span class="val" id="precip">--</span></button>
-            <button class="detail-btn" data-info="visibility"><span>👁️ دید</span><span class="val" id="visVal">--</span></button>
-            <button class="detail-btn" data-info="pressure"><span>🌡️ فشار</span><span class="val" id="pressure">--</span></button>
-            <button class="detail-btn" data-info="dewpoint"><span>💦 شبنم</span><span class="val" id="dewpoint">--</span></button>
-            <button class="detail-btn" data-info="aqi"><span>🌫️ هوا</span><span class="val" id="aqi">--</span></button>
-            <button class="detail-btn" data-info="us_aqi"><span>🌐 EPA</span><span class="val" id="usaqi">--</span></button>
-            <button class="detail-btn" data-info="pm25"><span>🔬 PM2.5</span><span class="val" id="pm25">--</span></button>
-            <button class="detail-btn" data-info="pm10"><span>🌪️ PM10</span><span class="val" id="pm10">--</span></button>
-            <button class="detail-btn" data-info="ozone"><span>☁️ ازن</span><span class="val" id="ozone">--</span></button>
-            <button class="detail-btn" data-info="dust"><span>🏜️ ریزگرد</span><span class="val" id="dust">--</span></button>
-            <button class="detail-btn" data-info="pollen"><span>🌼 گرده</span><span class="val" id="pollen">--</span></button>
-            <button class="detail-btn" data-info="cloud"><span>☁️ ابر</span><span class="val" id="cloud">--</span></button>
-          </div>
-        </div>
-        <div id="updated" class="muted" style="margin-top:12px"></div>
-      </section>
-      <aside class="panel side">
-        <div class="title">📅 تقویم امروز</div>
-        <div class="datebox">
-          <div class="date-row"><span class="date-main jalali" id="jalali">--</span><span class="time-city"><span class="tc-label">🇮🇷 تهران:</span><span class="tc-val" id="timeTehran">--:--</span></span></div>
-          <div class="date-row"><span class="date-main greg" id="greg">--</span><span class="time-city"><span class="tc-label">🇬🇧 لندن:</span><span class="tc-val" id="timeLondon">--:--</span></span></div>
-          <div class="date-row"><span class="date-main hijri" id="hijri">--</span><span class="time-city"><span class="tc-label">🕋 مکه:</span><span class="tc-val" id="timeMecca">--:--</span></span></div>
-        </div>
-      </aside>
-    </div>
-    <section class="panel section"><div class="sectionhead"><div class="title">🕌 اوقات شرعی</div><button id="prayerToggle" class="arrow">⌄</button></div>
-      <div id="prayerBody" class="collapse collapsed"><div id="prayers" class="prayergrid"></div><div id="nextPrayer" class="nextprayer"><span>⏳ بعدی:</span><span id="nextPrayerName">--</span><span class="countdown" id="countdown">--:--:--</span></div></div>
-    </section>
-    <section class="panel section"><div class="sectionhead"><div class="title">🏃 ورزش و تناسب اندام</div><button class="arrow" data-collapse="sportBody">⌄</button></div><div id="sportBody" class="collapse collapsed"><div id="sportContent" class="sec-content">--</div></div></section>
-    <section class="panel section"><div class="sectionhead"><div class="title">❤️ سلامت</div><button class="arrow" data-collapse="healthBody">⌄</button></div><div id="healthBody" class="collapse collapsed"><div id="healthContent" class="sec-content">--</div></div></section>
-    <section class="panel section"><div class="sectionhead"><div class="title">🌾 کشاورزی</div><button class="arrow" data-collapse="agriBody">⌄</button></div><div id="agriBody" class="collapse collapsed"><div id="agriContent" class="sec-content">--</div></div></section>
-    <section class="panel section"><div class="sectionhead"><div class="title">🔭 نجوم</div><button class="arrow" data-collapse="astroBody">⌄</button></div><div id="astroBody" class="collapse collapsed"><div id="astroContent" class="sec-content">--</div></div></section>
-    <section class="panel section"><div class="sectionhead"><div class="title">🚗 رانندگی</div><button class="arrow" data-collapse="driveBody">⌄</button></div><div id="driveBody" class="collapse collapsed"><div id="driveContent" class="sec-content">--</div></div></section>
-    <section class="panel section"><div class="sectionhead"><div class="title">😴 خواب</div><button class="arrow" data-collapse="sleepBody">⌄</button></div><div id="sleepBody" class="collapse collapsed"><div id="sleepContent" class="sec-content">--</div></div></section>
-  </section>
-
-  <section class="mag-page" id="page-travel" hidden>
-    <div class="page-hero"><div><h2 class="page-title">سفر</h2><div class="page-subtitle">برنامه‌ریزی، چک‌لیست، جاذبه‌ها و تورهای مجازی</div></div></div>
-    <section class="panel section">
-      <div id="travelContent" class="sec-content">--</div>
-      <div class="travel-accordion">
-        <div class="travel-acc-group"><div class="travel-acc-h heritage"><span>🗺️ گردشگری و میراث</span><span class="arrow-r">⌄</span></div>
-          <div class="travel-acc-body"><div class="culture-grid">
-            <a class="culture-card" href="https://visitiran.ir/fa" target="_blank" rel="noopener"><div class="cc-icon">🕌</div><div class="cc-title">ویزیت ایران</div><div class="cc-desc">معرفی جاذبه‌های گردشگری.</div></a>
-            <a class="culture-card" href="https://ebook.visitiran.ir/fa/download/index.html" target="_blank" rel="noopener"><div class="cc-icon">🏛️</div><div class="cc-title">ایران با شکوه</div><div class="cc-desc">کتاب الکترونیک.</div></a>
-            <a class="culture-card" href="https://www.chtn.ir/" target="_blank" rel="noopener"><div class="cc-icon">📰</div><div class="cc-title">میراث آریا</div><div class="cc-desc">خبرگزاری میراث.</div></a>
-          </div></div>
-        </div>
-      </div>
-      <div class="news-group">🌐 تورهای مجازی</div>
-      <div class="travel-accordion">
-        <div class="travel-acc-group"><div class="travel-acc-h ziarti"><span>🕌 زیارتی</span><span class="arrow-r">⌄</span></div>
-          <div class="travel-acc-body"><div class="sport-links">
-            <a class="sport-link" href="https://www.panoman.ir/projects/rasolallah/1.html" target="_blank" rel="noopener"><div class="sl-icon">🕋</div><div class="sl-title">زیارت مجازی مدینه</div><div class="sl-desc">مسجدالنبی و بقیع.</div></a>
-          </div></div>
-        </div>
-        <div class="travel-acc-group"><div class="travel-acc-h shahr"><span>🏙️ شهرها</span><span class="arrow-r">⌄</span></div>
-          <div class="travel-acc-body"><div class="sport-links">
-            <a class="sport-link" href="https://omid360.com/iran/tehran/" target="_blank" rel="noopener"><div class="sl-icon">🏙️</div><div class="sl-title">تهران</div><div class="sl-desc">گشت ۳۶۰°.</div></a>
-            <a class="sport-link" href="https://omid360.com/iran/shiraz/" target="_blank" rel="noopener"><div class="sl-icon">🌺</div><div class="sl-title">شیراز</div><div class="sl-desc">حافظیه.</div></a>
-            <a class="sport-link" href="https://omid360.com/iran/isfahan/" target="_blank" rel="noopener"><div class="sl-icon">🕌</div><div class="sl-title">اصفهان</div><div class="sl-desc">نقش جهان.</div></a>
-            <a class="sport-link" href="https://omid360.com/iran/gilan/" target="_blank" rel="noopener"><div class="sl-icon">🌧️</div><div class="sl-title">گیلان</div><div class="sl-desc">سبزترین استان.</div></a>
-            <a class="sport-link" href="https://omid360.com/iran/qazvin/" target="_blank" rel="noopener"><div class="sl-icon">🏰</div><div class="sl-title">قزوین</div><div class="sl-desc">پایتخت خوشنویسی.</div></a>
-            <a class="sport-link" href="https://omid360.com/iran/arak/" target="_blank" rel="noopener"><div class="sl-icon">🏭</div><div class="sl-title">استان مرکزی</div><div class="sl-desc">اراک و اطراف.</div></a>
-          </div></div>
-        </div>
-        <div class="travel-acc-group"><div class="travel-acc-h danesh"><span>🎓 دانشگاهی</span><span class="arrow-r">⌄</span></div>
-          <div class="travel-acc-body"><div class="sport-links">
-            <a class="sport-link" href="https://www.sharif.ir/tour/index.htm" target="_blank" rel="noopener"><div class="sl-icon">🎓</div><div class="sl-title">دانشگاه شریف</div><div class="sl-desc">گشت مجازی.</div></a>
-          </div></div>
-        </div>
-      </div>
-      <div class="news-group">🎒 چک‌لیست و نکات سفر</div>
-      <div id="travelTips" class="sec-content">--</div>
-    </section>
-  </section>
-
-  <section class="mag-page" id="page-culture" hidden>
-    <div class="page-hero"><div><h2 class="page-title">فرهنگ</h2><div class="page-subtitle">ادب، هنر، تئاتر و کتاب</div></div></div>
-    <section class="panel section">
-      <div id="cultureContent" class="sec-content">🎭 فرهنگ امروز — بیت‌ها هر ۲ ساعت تغییر می‌کنند.</div>
-      <div id="poetryMiniArea" class="poetry-mini-grid"></div>
-      <div class="culture-accordion">
-        <div class="culture-acc-group"><div class="culture-acc-h adab"><span>📚 ادبیات و شعر</span><span class="arrow-r">⌄</span></div>
-          <div class="culture-acc-body"><div class="culture-grid">
-            <a class="culture-card" href="https://faal.ganjoor.net/" target="_blank" rel="noopener"><div class="cc-icon">🎴</div><div class="cc-title">فال حافظ</div><div class="cc-desc">فال روزانه.</div></a>
-            <a class="culture-card" href="https://ganjoor.net/random" target="_blank" rel="noopener"><div class="cc-icon">📜</div><div class="cc-title">بیت تصادفی</div><div class="cc-desc">گنجور.</div></a>
-            <a class="culture-card" href="https://ganjoor.net/mundex/bypoet/" target="_blank" rel="noopener"><div class="cc-icon">🎵</div><div class="cc-title">نمایه موسیقی</div><div class="cc-desc">اشعار موسیقی.</div></a>
-            <a class="culture-card" href="https://ganjoor.net/" target="_blank" rel="noopener"><div class="cc-icon">✒️</div><div class="cc-title">شاعران پارسی</div><div class="cc-desc">گنجینه.</div></a>
-          </div></div>
-        </div>
-        <div class="culture-acc-group"><div class="culture-acc-h ketab"><span>📖 کتاب الکترونیک</span><span class="arrow-r">⌄</span></div>
-          <div class="culture-acc-body"><div class="culture-grid">
-            <a class="culture-card" href="https://fidibo.com/" target="_blank" rel="noopener"><div class="cc-icon">📕</div><div class="cc-title">فیدیبو</div><div class="cc-desc">کتاب الکترونیک.</div></a>
-            <a class="culture-card" href="https://taaghche.com/" target="_blank" rel="noopener"><div class="cc-icon">📗</div><div class="cc-title">طاقچه</div><div class="cc-desc">کتابخانهٔ دیجیتال.</div></a>
-          </div></div>
-        </div>
-        <div class="culture-acc-group"><div class="culture-acc-h theater"><span>🎭 تئاتر و سینما</span><span class="arrow-r">⌄</span></div>
-          <div class="culture-acc-body"><div class="culture-grid">
-            <a class="culture-card" href="https://theater.ir/fa" target="_blank" rel="noopener"><div class="cc-icon">🎭</div><div class="cc-title">ایران تئاتر</div><div class="cc-desc">پایگاه رسمی.</div></a>
-            <a class="culture-card" href="https://www.samfaa.ir/" target="_blank" rel="noopener"><div class="cc-icon">🎬</div><div class="cc-title">سامانه سامفا</div><div class="cc-desc">اکران سینما.</div></a>
-            <a class="culture-card" href="https://www.tiwall.com/showcase?filters=s:theater" target="_blank" rel="noopener"><div class="cc-icon">🎪</div><div class="cc-title">نمایش‌ها</div><div class="cc-desc">تیوال.</div></a>
-            <a class="culture-card" href="https://hozehonari.ir/" target="_blank" rel="noopener"><div class="cc-icon">🎨</div><div class="cc-title">حوزه هنری</div><div class="cc-desc">حوزه هنری.</div></a>
-          </div></div>
-        </div>
-      </div>
-    </section>
-  </section>
-
-  <section class="mag-page" id="page-sport" hidden>
-    <div class="page-hero"><div><h2 class="page-title">ورزشی</h2><div class="page-subtitle">لیگ‌ها، جام‌ها و مسابقات</div></div></div>
-    <div class="sport-grid" id="sportGrid"></div>
-    <div id="sportContentArea"></div>
-  </section>
-
-  <section class="mag-page" id="page-health" hidden>
-    <div class="page-hero"><div><h2 class="page-title">سلامت</h2><div class="page-subtitle">سلامت فصلی، هوا، خواب و تغذیه</div></div></div>
-    <section class="panel section">
-      <div class="health-intro">💡 همهٔ شاخص‌ها بر اساس <b>شهر انتخابی شما</b> محاسبه می‌شوند.</div>
-      <div id="healthCity" style="font-weight:900;font-size:15px;color:var(--gold);margin-bottom:10px">--</div>
-      <div id="healthTips" class="sec-content">--</div>
-      <div class="news-group">🫁 کیفیت هوا و تنفس</div>
-      <div id="healthAir" class="sec-content">--</div>
-      <div class="news-group">😴 خواب و آرامش</div>
-      <div id="healthSleep" class="sec-content">--</div>
-      <div class="news-group">🥗 تغذیهٔ فصل</div>
-      <div id="healthFood" class="sec-content">--</div>
-    </section>
-  </section>
-
-  <section class="mag-page" id="page-science" hidden>
-    <div class="page-hero"><div><h2 class="page-title">علم</h2><div class="page-subtitle">نجوم، زمین و دانستنی‌ها</div></div></div>
-    <section class="panel section">
-      <div id="scienceContent" class="sec-content">--</div>
-      <div class="news-group">💡 دانستنی‌های علمی (هر ۲ ساعت)</div>
-      <div id="scienceFacts" class="fact-grid">--</div>
-    </section>
-  </section>
-
-  <section class="mag-page" id="page-fun" hidden>
-    <div class="page-hero"><div><h2 class="page-title">سرگرمی</h2><div class="page-subtitle">جوک، دانستنی سرگرمی و معما برای اوقات فراغت</div></div></div>
-    <section class="panel section">
-      <div class="news-group">😂 جوک روز</div>
-      <div class="fun-joke-box">
-        <div class="fj-text" id="funJokeText">در حال بارگذاری...</div>
-        <button class="fj-btn" id="funJokeBtn">😂 جوک بعدی</button>
-      </div>
-      <div class="fun-accordion">
-        <div class="fun-acc-group"><div class="fun-acc-h fact"><span>💡 دانستنی سرگرمی</span><span class="arrow-r">⌄</span></div>
-          <div class="fun-acc-body"><div id="funFactArea" class="sec-content">--</div></div>
-        </div>
-        <div class="fun-acc-group"><div class="fun-acc-h puzzle"><span>🧩 معما (با دکمهٔ نمایش جواب)</span><span class="arrow-r">⌄</span></div>
-          <div class="fun-acc-body"><div id="funPuzzleArea" class="sec-content">--</div></div>
-        </div>
-      </div>
-    </section>
-  </section>
-
-  <footer>مجلهٔ آسمان · هواشناسی: Open-Meteo + Yr · ورزش: TheSportsDB + Varzesh3 · به‌روزرسانی با کشیدن صفحه</footer>
+<header class="top">
+<div class="brand"><div class="logo">🌌</div><div class="brand-text"><h1>مجله آسمان</h1></div></div>
+<nav class="mag-nav" id="magNav">
+<button class="mag-tab" data-page="about">📖 دربارهٔ مجله</button>
+<button class="mag-tab" data-page="home">🏠 آب‌وهوا</button>
+<button class="mag-tab" data-page="travel">🧳 سفر</button>
+<button class="mag-tab" data-page="culture">🎭 فرهنگ</button>
+<button class="mag-tab" data-page="sport">⚽ ورزشی</button>
+<button class="mag-tab" data-page="health">🧬 سلامت</button>
+<button class="mag-tab" data-page="science">🔭 علم</button>
+<button class="mag-tab" data-page="fun">🎉 سرگرمی</button>
+</nav>
+</header>
+<div id="status" class="status"></div>
+<section class="mag-page" id="page-about">
+<div class="page-hero"><div><h2 class="page-title">دربارهٔ مجله و سازنده</h2><div class="page-subtitle">آشنایی با مجلهٔ آسمان و راهنمای بخش‌ها</div></div></div>
+<section class="panel section">
+<div class="about-intro">مجلهٔ آسمان یک اپلیکیشن وب چندبخشی است؛ همهٔ پردازش‌ها سمت مرورگر شماست. برای به‌روزرسانی، صفحه را از بالا به پایین بکشید و رها کنید.</div>
+<div class="about-poem">
+مجلهٔ آسمان، همسفر خاموش لحظه‌های توست؛ همراهی آرام که از روشنای صبح آغاز می‌شود و تا سکوت شب ادامه می‌یابد.<br>
+از نسیم صبحگاهی که از پنجره‌ات می‌گذرد، تا سکوت شبی که ماه را به خواب می‌برد، از هیاهوی خیابان‌ها و عطر باران، تا قصه‌های آدم‌هایی که در همین شهر زندگی می‌کنند.<br>
+هر صفحه، پنجره‌ای‌ست رو به جهان پیرامون تو و آینه‌ای از شهری که در آن نفس می‌کشی.
+<div class="signature">
+<span class="sig-line1">با سپاس</span>
+<span class="sig-line2">م. حسینی _ 🧑‍🦽 معلول آسیب نخاعی</span>
 </div>
-
+<div class="creator-wrap"><a href="https://eitaa.com/hossini_96" target="_blank" rel="noopener" class="btn-creator">ارتباط با سازنده</a></div>
+</div>
+<div class="about-help" style="margin-top:20px">
+<div class="ah-sec"><div class="ah-h c1">🏠 آب‌وهوا</div><ul><li>پیش‌بینی ۹روزه و ساعتی، ۱۶ شاخص، اوقات شرعی، تقویم با ساعت تهران/لندن/مکه.</li><li>جستجو: روستا/منطقه/شهر/استان/کشور.</li></ul></div>
+<div class="ah-sec"><div class="ah-h c6">🧳 سفر</div><ul><li>خلاصهٔ سفر + تورهای مجازی سه‌گروهی.</li></ul></div>
+<div class="ah-sec"><div class="ah-h c4">🎭 فرهنگ</div><ul><li>۵ شاعر با بیت کامل: حافظ، سعدی، مولانا، فردوسی، خیام.</li></ul></div>
+<div class="ah-sec"><div class="ah-h c2">⚽ ورزشی</div><ul><li>فوتبال، فوتسال، بسکتبال، والیبال، ساحلی، هندبال، المپیک.</li></ul></div>
+<div class="ah-sec"><div class="ah-h c3">🧬 سلامت</div><ul><li>کیفیت هوا، خواب، تغذیه، نکات فصلی.</li></ul></div>
+<div class="ah-sec"><div class="ah-h c5">🔭 علم</div><ul><li>۴ دانستنی علمی + نجوم.</li></ul></div>
+<div class="ah-sec"><div class="ah-h c7">🎉 سرگرمی</div><ul><li>جوک، دانستنی و معما — هر ۶۰ دقیقه.</li></ul></div>
+</div>
+<div class="about-code-wrap"><button class="btn-code" id="btnCode" type="button">کد</button></div>
+</section>
+</section>
+<section class="mag-page" id="page-home" hidden>
+<div class="page-hero weather-bg"><div><h2 class="page-title">آب و هوا</h2><div class="page-subtitle" id="weatherSubtitle">پیش‌بینی دقیق، اوقات شرعی و شاخص‌های کامل</div></div></div>
+<div class="search"><span class="search-icon">🔍</span><input id="search" placeholder="جستجو: روستا، منطقه، شهر، استان، کشور..."><div id="results" class="results"></div></div>
+<div class="status-bar" id="statusBar">
+<button class="btn" id="loc">📍 مکان فعلی</button>
+<div class="sb-item"><span class="sb-dot on" id="netDot"></span><span id="netText">آنلاین</span></div>
+<div class="sb-item"><span class="sb-dot on" id="gpsDot"></span><span id="gpsText">GPS متصل</span></div>
+<select class="select" id="unit"><option value="celsius">°C</option><option value="fahrenheit">°F</option></select>
+</div>
+<div id="pins" class="pins"></div>
+<div class="scene">
+<section class="panel main">
+<div class="citybar">
+<div class="city-line"><button id="pin" class="pin-small">☆</button><div id="city" class="city">اراک <span id="cityInfo" class="city-info"></span></div></div>
+<button id="localTime" class="localtime-btn">ساعت: <span class="lt-clock">--:--</span></button>
+</div>
+<div class="weather-hero">
+<div class="weather-anim" id="weatherAnim"><div class="layer" id="lyRain"></div><div class="layer" id="lySnow"></div><div class="layer" id="lyCloud"></div><span id="wicon" style="display:flex;justify-content:center"></span></div>
+<div>
+<div id="temp" class="temp">--°</div>
+<div id="cond" class="cond">در حال دریافت...</div>
+<div id="feels" class="feels"></div>
+<div class="minmax"><span class="min">▼ <span id="minTemp">--</span></span><span class="max">▲ <span id="maxTemp">--</span></span></div>
+</div>
+</div>
+<div class="mini-title">🕒 ساعتی</div>
+<div class="scroll"><div id="hourly" class="hourly"></div></div>
+<div class="mini-title">📅 پیش‌بینی ۹ روزه</div>
+<div class="scroll"><div id="forecast" class="forecast"></div></div>
+<div class="smart-alerts" id="smartAlerts"></div>
+<div class="day-tabs">
+<button class="day-tab active" id="tabToday" data-tab="today">🌤️ هوای امروز</button>
+<button class="day-tab" id="tabTomorrow" data-tab="tomorrow">🌦️ هوای فردا</button>
+</div>
+<div class="sectionhead"><div class="weather-section-title">📊 شاخص <span id="detailsDayLabel">امروز</span></div><button id="detailsToggle" class="arrow">⌄</button></div>
+<div id="detailsBody" class="collapse collapsed">
+<div class="details" id="detailsGrid">
+<button class="detail-btn" data-info="humidity"><span>💧 رطوبت</span><span class="val" id="hum">--</span></button>
+<button class="detail-btn" data-info="wind"><span>💨 باد</span><span class="val" id="wind">--</span></button>
+<button class="detail-btn" data-info="temp"><span>🌡️ دما</span><span class="val" id="tempVal">--</span></button>
+<button class="detail-btn" data-info="uv"><span>☀️ فرابنفش</span><span class="val" id="uvVal">--</span></button>
+<button class="detail-btn" data-info="precip"><span>🌧️ بارش</span><span class="val" id="precip">--</span></button>
+<button class="detail-btn" data-info="visibility"><span>👁️ دید</span><span class="val" id="visVal">--</span></button>
+<button class="detail-btn" data-info="pressure"><span>🌡️ فشار</span><span class="val" id="pressure">--</span></button>
+<button class="detail-btn" data-info="dewpoint"><span>💦 شبنم</span><span class="val" id="dewpoint">--</span></button>
+<button class="detail-btn" data-info="aqi"><span>🌫️ هوا</span><span class="val" id="aqi">--</span></button>
+<button class="detail-btn" data-info="us_aqi"><span>🌐 EPA</span><span class="val" id="usaqi">--</span></button>
+<button class="detail-btn" data-info="pm25"><span>🔬 PM2.5</span><span class="val" id="pm25">--</span></button>
+<button class="detail-btn" data-info="pm10"><span>🌪️ PM10</span><span class="val" id="pm10">--</span></button>
+<button class="detail-btn" data-info="ozone"><span>☁️ ازن</span><span class="val" id="ozone">--</span></button>
+<button class="detail-btn" data-info="dust"><span>🏜️ ریزگرد</span><span class="val" id="dust">--</span></button>
+<button class="detail-btn" data-info="pollen"><span>🌼 گرده</span><span class="val" id="pollen">--</span></button>
+<button class="detail-btn" data-info="cloud"><span>☁️ ابر</span><span class="val" id="cloud">--</span></button>
+</div>
+</div>
+<div id="updated" class="muted" style="margin-top:12px"></div>
+</section>
+<aside class="panel side">
+<div class="title">📅 تقویم امروز</div>
+<div class="datebox">
+<div class="date-row"><span class="date-main jalali" id="jalali">--</span><span class="time-city"><span class="tc-label">🇮🇷 تهران:</span><span class="tc-val" id="timeTehran">--:--</span></span></div>
+<div class="date-row"><span class="date-main greg" id="greg">--</span><span class="time-city"><span class="tc-label">🇬🇧 لندن:</span><span class="tc-val" id="timeLondon">--:--</span></span></div>
+<div class="date-row"><span class="date-main hijri" id="hijri">--</span><span class="time-city"><span class="tc-label">🕋 مکه:</span><span class="tc-val" id="timeMecca">--:--</span></span></div>
+</div>
+</aside>
+</div>
+<section class="panel section"><div class="sectionhead"><div class="title">🕌 اوقات شرعی</div><button id="prayerToggle" class="arrow">⌄</button></div>
+<div id="prayerBody" class="collapse collapsed"><div id="prayers" class="prayergrid"></div><div id="nextPrayer" class="nextprayer"><span>⏳ بعدی:</span><span id="nextPrayerName">--</span><span class="countdown" id="countdown">--:--:--</span></div></div>
+</section>
+<section class="panel section"><div class="sectionhead"><div class="title">🏃 ورزش و تناسب اندام</div><button class="arrow" data-collapse="sportBody">⌄</button></div><div id="sportBody" class="collapse collapsed"><div id="sportContent" class="sec-content">--</div></div></section>
+<section class="panel section"><div class="sectionhead"><div class="title">❤️ سلامت</div><button class="arrow" data-collapse="healthBody">⌄</button></div><div id="healthBody" class="collapse collapsed"><div id="healthContent" class="sec-content">--</div></div></section>
+<section class="panel section"><div class="sectionhead"><div class="title">🌾 کشاورزی</div><button class="arrow" data-collapse="agriBody">⌄</button></div><div id="agriBody" class="collapse collapsed"><div id="agriContent" class="sec-content">--</div></div></section>
+<section class="panel section"><div class="sectionhead"><div class="title">🔭 نجوم</div><button class="arrow" data-collapse="astroBody">⌄</button></div><div id="astroBody" class="collapse collapsed"><div id="astroContent" class="sec-content">--</div></div></section>
+<section class="panel section"><div class="sectionhead"><div class="title">🚗 رانندگی</div><button class="arrow" data-collapse="driveBody">⌄</button></div><div id="driveBody" class="collapse collapsed"><div id="driveContent" class="sec-content">--</div></div></section>
+<section class="panel section"><div class="sectionhead"><div class="title">😴 خواب</div><button class="arrow" data-collapse="sleepBody">⌄</button></div><div id="sleepBody" class="collapse collapsed"><div id="sleepContent" class="sec-content">--</div></div></section>
+</section>
+<section class="mag-page" id="page-travel" hidden>
+<div class="page-hero"><div><h2 class="page-title">سفر</h2><div class="page-subtitle">برنامه‌ریزی، چک‌لیست، جاذبه‌ها و تورهای مجازی</div></div></div>
+<section class="panel section">
+<div id="travelContent" class="sec-content">--</div>
+<div class="travel-accordion">
+<div class="travel-acc-group"><div class="travel-acc-h heritage"><span>🗺️ گردشگری و میراث</span><span class="arrow-r">⌄</span></div>
+<div class="travel-acc-body"><div class="culture-grid">
+<a class="culture-card" href="https://visitiran.ir/fa" target="_blank" rel="noopener"><div class="cc-icon">🕌</div><div class="cc-title">ویزیت ایران</div><div class="cc-desc">معرفی جاذبه‌های گردشگری.</div></a>
+<a class="culture-card" href="https://ebook.visitiran.ir/fa/download/index.html" target="_blank" rel="noopener"><div class="cc-icon">🏛️</div><div class="cc-title">ایران با شکوه</div><div class="cc-desc">کتاب الکترونیک.</div></a>
+<a class="culture-card" href="https://www.chtn.ir/" target="_blank" rel="noopener"><div class="cc-icon">📰</div><div class="cc-title">میراث آریا</div><div class="cc-desc">خبرگزاری میراث.</div></a>
+</div></div>
+</div>
+</div>
+<div class="news-group">🌐 تورهای مجازی</div>
+<div class="travel-accordion">
+<div class="travel-acc-group"><div class="travel-acc-h ziarti"><span>🕌 زیارتی</span><span class="arrow-r">⌄</span></div>
+<div class="travel-acc-body"><div class="sport-links">
+<a class="sport-link" href="https://www.panoman.ir/projects/rasolallah/1.html" target="_blank" rel="noopener"><div class="sl-icon">🕋</div><div class="sl-title">زیارت مجازی مدینه</div><div class="sl-desc">مسجدالنبی و بقیع.</div></a>
+</div></div>
+</div>
+<div class="travel-acc-group"><div class="travel-acc-h shahr"><span>🏙️ شهرها</span><span class="arrow-r">⌄</span></div>
+<div class="travel-acc-body"><div class="sport-links">
+<a class="sport-link" href="https://omid360.com/iran/tehran/" target="_blank" rel="noopener"><div class="sl-icon">🏙️</div><div class="sl-title">تهران</div><div class="sl-desc">گشت ۳۶۰°.</div></a>
+<a class="sport-link" href="https://omid360.com/iran/shiraz/" target="_blank" rel="noopener"><div class="sl-icon">🌺</div><div class="sl-title">شیراز</div><div class="sl-desc">حافظیه.</div></a>
+<a class="sport-link" href="https://omid360.com/iran/isfahan/" target="_blank" rel="noopener"><div class="sl-icon">🕌</div><div class="sl-title">اصفهان</div><div class="sl-desc">نقش جهان.</div></a>
+<a class="sport-link" href="https://omid360.com/iran/gilan/" target="_blank" rel="noopener"><div class="sl-icon">🌧️</div><div class="sl-title">گیلان</div><div class="sl-desc">سبزترین استان.</div></a>
+<a class="sport-link" href="https://omid360.com/iran/qazvin/" target="_blank" rel="noopener"><div class="sl-icon">🏰</div><div class="sl-title">قزوین</div><div class="sl-desc">پایتخت خوشنویسی.</div></a>
+<a class="sport-link" href="https://omid360.com/iran/arak/" target="_blank" rel="noopener"><div class="sl-icon">🏭</div><div class="sl-title">استان مرکزی</div><div class="sl-desc">اراک و اطراف.</div></a>
+</div></div>
+</div>
+<div class="travel-acc-group"><div class="travel-acc-h danesh"><span>🎓 دانشگاهی</span><span class="arrow-r">⌄</span></div>
+<div class="travel-acc-body"><div class="sport-links">
+<a class="sport-link" href="https://www.sharif.ir/tour/index.htm" target="_blank" rel="noopener"><div class="sl-icon">🎓</div><div class="sl-title">دانشگاه شریف</div><div class="sl-desc">گشت مجازی.</div></a>
+</div></div>
+</div>
+</div>
+<div class="news-group">🎒 چک‌لیست و نکات سفر</div>
+<div id="travelTips" class="sec-content">--</div>
+</section>
+</section>
+<section class="mag-page" id="page-culture" hidden>
+<div class="page-hero"><div><h2 class="page-title">فرهنگ</h2><div class="page-subtitle">ادب، هنر، تئاتر و کتاب</div></div></div>
+<section class="panel section">
+<div id="cultureContent" class="sec-content">🎭 فرهنگ امروز — بیت‌ها هر ۲ ساعت تغییر می‌کنند.</div>
+<div id="poetryMiniArea" class="poetry-mini-grid"></div>
+<div class="culture-accordion">
+<div class="culture-acc-group"><div class="culture-acc-h adab"><span>📚 ادبیات و شعر</span><span class="arrow-r">⌄</span></div>
+<div class="culture-acc-body"><div class="culture-grid">
+<a class="culture-card" href="https://faal.ganjoor.net/" target="_blank" rel="noopener"><div class="cc-icon">🎴</div><div class="cc-title">فال حافظ</div><div class="cc-desc">فال روزانه.</div></a>
+<a class="culture-card" href="https://ganjoor.net/random" target="_blank" rel="noopener"><div class="cc-icon">📜</div><div class="cc-title">بیت تصادفی</div><div class="cc-desc">گنجور.</div></a>
+<a class="culture-card" href="https://ganjoor.net/mundex/bypoet/" target="_blank" rel="noopener"><div class="cc-icon">🎵</div><div class="cc-title">نمایه موسیقی</div><div class="cc-desc">اشعار موسیقی.</div></a>
+<a class="culture-card" href="https://ganjoor.net/" target="_blank" rel="noopener"><div class="cc-icon">✒️</div><div class="cc-title">شاعران پارسی</div><div class="cc-desc">گنجینه.</div></a>
+</div></div>
+</div>
+<div class="culture-acc-group"><div class="culture-acc-h ketab"><span>📖 کتاب الکترونیک</span><span class="arrow-r">⌄</span></div>
+<div class="culture-acc-body"><div class="culture-grid">
+<a class="culture-card" href="https://fidibo.com/" target="_blank" rel="noopener"><div class="cc-icon">📕</div><div class="cc-title">فیدیبو</div><div class="cc-desc">کتاب الکترونیک.</div></a>
+<a class="culture-card" href="https://taaghche.com/" target="_blank" rel="noopener"><div class="cc-icon">📗</div><div class="cc-title">طاقچه</div><div class="cc-desc">کتابخانهٔ دیجیتال.</div></a>
+</div></div>
+</div>
+<div class="culture-acc-group"><div class="culture-acc-h theater"><span>🎭 تئاتر و سینما</span><span class="arrow-r">⌄</span></div>
+<div class="culture-acc-body"><div class="culture-grid">
+<a class="culture-card" href="https://theater.ir/fa" target="_blank" rel="noopener"><div class="cc-icon">🎭</div><div class="cc-title">ایران تئاتر</div><div class="cc-desc">پایگاه رسمی.</div></a>
+<a class="culture-card" href="https://www.samfaa.ir/" target="_blank" rel="noopener"><div class="cc-icon">🎬</div><div class="cc-title">سامانه سامفا</div><div class="cc-desc">اکران سینما.</div></a>
+<a class="culture-card" href="https://www.tiwall.com/showcase?filters=s:theater" target="_blank" rel="noopener"><div class="cc-icon">🎪</div><div class="cc-title">نمایش‌ها</div><div class="cc-desc">تیوال.</div></a>
+<a class="culture-card" href="https://hozehonari.ir/" target="_blank" rel="noopener"><div class="cc-icon">🎨</div><div class="cc-title">حوزه هنری</div><div class="cc-desc">حوزه هنری.</div></a>
+</div></div>
+</div>
+</div>
+</section>
+</section>
+<section class="mag-page" id="page-sport" hidden>
+<div class="page-hero"><div><h2 class="page-title">ورزشی</h2><div class="page-subtitle">لیگ‌ها، جام‌ها و مسابقات</div></div></div>
+<div class="sport-grid" id="sportGrid"></div>
+<div id="sportContentArea"></div>
+</section>
+<section class="mag-page" id="page-health" hidden>
+<div class="page-hero"><div><h2 class="page-title">سلامت</h2><div class="page-subtitle">سلامت فصلی، هوا، خواب و تغذیه</div></div></div>
+<section class="panel section">
+<div class="health-intro">💡 همهٔ شاخص‌ها بر اساس <b>شهر انتخابی شما</b> محاسبه می‌شوند.</div>
+<div id="healthCity" style="font-weight:900;font-size:15px;color:var(--gold);margin-bottom:10px">--</div>
+<div id="healthTips" class="sec-content">--</div>
+<div class="news-group">🫁 کیفیت هوا و تنفس</div>
+<div id="healthAir" class="sec-content">--</div>
+<div class="news-group">😴 خواب و آرامش</div>
+<div id="healthSleep" class="sec-content">--</div>
+<div class="news-group">🥗 تغذیهٔ فصل</div>
+<div id="healthFood" class="sec-content">--</div>
+</section>
+</section>
+<section class="mag-page" id="page-science" hidden>
+<div class="page-hero"><div><h2 class="page-title">علم</h2><div class="page-subtitle">نجوم، زمین و دانستنی‌ها</div></div></div>
+<section class="panel section">
+<div id="scienceContent" class="sec-content">--</div>
+<div class="news-group">💡 دانستنی‌های علمی (هر ۲ ساعت)</div>
+<div id="scienceFacts" class="fact-grid">--</div>
+</section>
+</section>
+<section class="mag-page" id="page-fun" hidden>
+<div class="page-hero"><div><h2 class="page-title">سرگرمی</h2><div class="page-subtitle">جوک، دانستنی سرگرمی و معما برای اوقات فراغت</div></div></div>
+<section class="panel section">
+<div class="news-group">😂 جوک روز</div>
+<div class="fun-joke-box">
+<div class="fj-text" id="funJokeText">در حال بارگذاری...</div>
+<button class="fj-btn" id="funJokeBtn">😂 جوک بعدی</button>
+</div>
+<div class="fun-accordion">
+<div class="fun-acc-group"><div class="fun-acc-h fact"><span>💡 دانستنی سرگرمی</span><span class="arrow-r">⌄</span></div>
+<div class="fun-acc-body"><div id="funFactArea" class="sec-content">--</div></div>
+</div>
+<div class="fun-acc-group"><div class="fun-acc-h puzzle"><span>🧩 معما (با دکمهٔ نمایش جواب)</span><span class="arrow-r">⌄</span></div>
+<div class="fun-acc-body"><div id="funPuzzleArea" class="sec-content">--</div></div>
+</div>
+</div>
+</section>
+</section>
+<footer>مجلهٔ آسمان · هواشناسی: Open-Meteo + Yr · ورزش: TheSportsDB + Varzesh3 · به‌روزرسانی با کشیدن صفحه</footer>
+</div>
 <button class="chat-fab" id="chatFab">🤖</button>
 <div class="chat-panel" id="chatPanel">
-  <div class="chat-header"><div class="ch-title">🤖 دستیار هوشمند</div><button class="ch-btn clear" id="chatClear">🗑️</button><button class="ch-btn close" id="chatClose">✕</button></div>
-  <div class="chat-messages" id="chatMessages"></div>
-  <div class="chat-input-row"><input id="chatInput" placeholder="سوال بپرسید..."><button class="chat-send" id="chatSend">➤</button></div>
-  <div class="chat-suggestions" id="chatSugs"></div>
+<div class="chat-header"><div class="ch-title">🤖 دستیار هوشمند</div><button class="ch-btn clear" id="chatClear">🗑️</button><button class="ch-btn close" id="chatClose">✕</button></div>
+<div class="chat-messages" id="chatMessages"></div>
+<div class="chat-input-row"><input id="chatInput" placeholder="سوال بپرسید..."><button class="chat-send" id="chatSend">➤</button></div>
+<div class="chat-suggestions" id="chatSugs"></div>
 </div>
-
 <div id="infoModal" class="modal-overlay">
-  <div class="modal-box">
-    <button class="modal-close" id="infoModalClose">×</button>
-    <div class="modal-icon" id="infoModalIcon">💧</div>
-    <div class="modal-title" id="infoModalTitle">--</div>
-    <div class="modal-text" id="infoModalText">--</div>
-  </div>
+<div class="modal-box">
+<button class="modal-close" id="infoModalClose">×</button>
+<div class="modal-icon" id="infoModalIcon">💧</div>
+<div class="modal-title" id="infoModalTitle">--</div>
+<div class="modal-text" id="infoModalText">--</div>
 </div>
-
+</div>
 <div id="codeModal" class="modal-overlay">
-  <div class="modal-box code-box">
-    <button class="modal-close" id="codeModalClose">×</button>
-    <div id="codeViewEntry">
-      <div class="modal-icon">🔐</div>
-      <div class="modal-title">ورود کد</div>
-      <div class="code-digits" dir="ltr">
-        <input type="tel" class="code-digit" id="codeDigit1" maxlength="1" inputmode="numeric" pattern="[0-9]*" autocomplete="off">
-        <input type="tel" class="code-digit" id="codeDigit2" maxlength="1" inputmode="numeric" pattern="[0-9]*" autocomplete="off">
-        <input type="tel" class="code-digit" id="codeDigit3" maxlength="1" inputmode="numeric" pattern="[0-9]*" autocomplete="off">
-      </div>
-      <div class="code-actions">
-        <button class="code-cancel-btn" id="codeCancelBtn" type="button">لغو</button>
-        <button class="code-submit-btn" id="codeSubmitBtn" type="button">تأیید</button>
-      </div>
-      <div class="code-error" id="codeError">کد وارد شده صحیح نیست</div>
-    </div>
-    <div id="codeViewStats" style="display:none">
-      <div class="modal-icon">📊</div>
-      <div class="modal-title">آمار بازدید</div>
-      <div id="statsContent" class="modal-text"><div class="stats-loading">در حال دریافت...</div></div>
-    </div>
-  </div>
+<div class="modal-box code-box">
+<button class="modal-close" id="codeModalClose">×</button>
+<div id="codeViewEntry">
+<div class="modal-icon">🔐</div>
+<div class="modal-title">ورود کد</div>
+<div class="code-digits" dir="ltr">
+<input type="tel" class="code-digit" id="codeDigit1" maxlength="1" inputmode="numeric" pattern="[0-9]*" autocomplete="off">
+<input type="tel" class="code-digit" id="codeDigit2" maxlength="1" inputmode="numeric" pattern="[0-9]*" autocomplete="off">
+<input type="tel" class="code-digit" id="codeDigit3" maxlength="1" inputmode="numeric" pattern="[0-9]*" autocomplete="off">
 </div>
-
+<div class="code-actions">
+<button class="code-cancel-btn" id="codeCancelBtn" type="button">لغو</button>
+<button class="code-submit-btn" id="codeSubmitBtn" type="button">تأیید</button>
+</div>
+<div class="code-error" id="codeError">کد وارد شده صحیح نیست</div>
+</div>
+<div id="codeViewStats" style="display:none">
+<div class="modal-icon">📊</div>
+<div class="modal-title">آمار بازدید</div>
+<div id="statsContent" class="modal-text"><div class="stats-loading">در حال دریافت...</div></div>
+</div>
+</div>
+</div>
 <script>
 (function(){
 "use strict";
 function lsSet(k,v){try{localStorage.setItem(k,v);}catch(e){}}
 function lsGet(k){try{return localStorage.getItem(k);}catch(e){return null;}}
-var APP_VERSION="2.3.1";
-
+var APP_VERSION="2.3.2";
 /* ============ PWA ============ */
 var installOverlay=document.getElementById("installOverlay");
 var installOk=document.getElementById("installOk");
 var appBooted=false;
-
+/* ✅ FIX: تعریف متغیر gpsEnabled که در کد اصلی حذف شده بود */
+var gpsEnabled=lsGet("gpsEnabled")==="false"?false:true;
 function showInstallModal(){if(!installOverlay)return;installOverlay.classList.add("show");document.body.classList.add("install-lock");}
 function closeInstallModal(){if(!installOverlay)return;installOverlay.classList.remove("show");document.body.classList.remove("install-lock");bootApp();}
-
+/* ✅ FIX: تنها یک تعریف از bootApp */
 function bootApp(){
-  if(appBooted)return;
-  appBooted=true;
-  /* ✅ حالا داده‌ها را بارگذاری می‌کنیم */
-  try{refreshAll();}catch(e){}
-  try{trackVisit();}catch(e){}
-  enableAutoUpdate();
-  /* ✅ شروع GPS و رفرش پین‌ها فقط بعد از تأیید مودال */
-  try{startGPSWatch();}catch(e){}
-  console.log("🚀 برنامه فعال شد");
+if(appBooted)return;
+appBooted=true;
+/* حالا داده‌ها را بارگذاری می‌کنیم */
+try{refreshAll();}catch(e){console.error("refreshAll error:",e);}
+try{trackVisit();}catch(e){}
+enableAutoUpdate();
+/* شروع GPS فقط پس از تأیید مودال */
+if(gpsEnabled){try{startGPSWatch();}catch(e){}}
+showPage("about");
+console.log("🚀 برنامه فعال شد");
 }
-
 if(installOk)installOk.addEventListener("click",closeInstallModal);
+/* ✅ FIX: اضافه کردن setTimeout برای نمایش مودال نصب - این خط در کد اصلی حذف شده بود */
 setTimeout(showInstallModal,100);
-
 var deferredInstallPrompt=null;
 function isStandalone(){try{return (window.matchMedia&&window.matchMedia("(display-mode:standalone)").matches)||window.navigator.standalone===true;}catch(e){return false;}}
 function isGenericAndroidBrowser(){
-  var ua=(navigator.userAgent||"").toLowerCase();
-  if(ua.indexOf("android")===-1)return false;
-  if(/chrome\/\d/.test(ua))return false;
-  if(ua.indexOf("firefox")!==-1)return false;
-  if(ua.indexOf("edg")!==-1)return false;
-  if(ua.indexOf("samsungbrowser")!==-1)return false;
-  if(ua.indexOf("opr")!==-1||ua.indexOf("opera")!==-1)return false;
-  if(ua.indexOf("ucbrowser")!==-1)return false;
-  return true;
+var ua=(navigator.userAgent||"").toLowerCase();
+if(ua.indexOf("android")===-1)return false;
+if(/chrome\/\d/.test(ua))return false;
+if(ua.indexOf("firefox")!==-1)return false;
+if(ua.indexOf("edg")!==-1)return false;
+if(ua.indexOf("samsungbrowser")!==-1)return false;
+if(ua.indexOf("opr")!==-1||ua.indexOf("opera")!==-1)return false;
+if(ua.indexOf("ucbrowser")!==-1)return false;
+return true;
 }
 window.addEventListener("beforeinstallprompt",function(e){e.preventDefault();deferredInstallPrompt=e;});
 window.addEventListener("appinstalled",function(){deferredInstallPrompt=null;if(typeof show==="function")show("🎉 برنامه با موفقیت نصب شد!","ok");});
-
 function copyToClipboard(text){
-  if(navigator.clipboard&&navigator.clipboard.writeText)return navigator.clipboard.writeText(text);
-  return new Promise(function(resolve,reject){try{var ta=document.createElement("textarea");ta.value=text;ta.style.position="fixed";ta.style.top="-9999px";ta.style.opacity="0";document.body.appendChild(ta);ta.focus();ta.select();var ok=document.execCommand("copy");document.body.removeChild(ta);ok?resolve():reject();}catch(err){reject(err);}});
+if(navigator.clipboard&&navigator.clipboard.writeText)return navigator.clipboard.writeText(text);
+return new Promise(function(resolve,reject){try{var ta=document.createElement("textarea");ta.value=text;ta.style.position="fixed";ta.style.top="-9999px";ta.style.opacity="0";document.body.appendChild(ta);ta.focus();ta.select();var ok=document.execCommand("copy");document.body.removeChild(ta);ok?resolve():reject();}catch(err){reject(err);}});
 }
 function getShareUrl(){var url=location.href;if(url.indexOf("index.html")!==-1)url=url.replace(/index\.html.*$/,"");var h=url.indexOf("#");if(h!==-1)url=url.substring(0,h);return url;}
 function shareApp(){
-  var url=getShareUrl();
-  var data={title:"مجله آسمان",text:"🌌 مجله آسمان — اپلیکیشن هواشناسی، ورزش، سلامت، فرهنگ، علم، سفر و سرگرمی.\nهمین حالا امتحان کنید:",url:url};
-  if(navigator.share){navigator.share(data).catch(function(err){if(err&&err.name==="AbortError")return;copyToClipboard(url).then(function(){if(typeof show==="function")show("✅ لینک برنامه کپی شد.","ok");}).catch(function(){alert("لینک برنامه:\n\n"+url);});});return;}
-  copyToClipboard(url).then(function(){alert("✅ لینک برنامه کپی شد!\n\n"+url);}).catch(function(){prompt("لینک برنامه:",url);});
+var url=getShareUrl();
+var data={title:"مجله آسمان",text:"🌌 مجله آسمان — اپلیکیشن هواشناسی، ورزش، سلامت، فرهنگ، علم، سفر و سرگرمی.\nهمین حالا امتحان کنید:",url:url};
+if(navigator.share){navigator.share(data).catch(function(err){if(err&&err.name==="AbortError")return;copyToClipboard(url).then(function(){if(typeof show==="function")show("✅ لینک برنامه کپی شد.","ok");}).catch(function(){alert("لینک برنامه:\n"+url);});});return;}
+copyToClipboard(url).then(function(){alert("✅ لینک برنامه کپی شد!\n"+url);}).catch(function(){prompt("لینک برنامه:",url);});
 }
 function openBrowserAccordion(){
-  if(!installOverlay)return;
-  if(!installOverlay.classList.contains("show"))showInstallModal();
-  var groups=installOverlay.querySelectorAll(".install-acc-group");
-  var target=null;
-  for(var i=0;i<groups.length;i++){if(groups[i].getAttribute("data-browser")==="generic"){target=groups[i];}}
-  if(!target)return;
-  for(var j=0;j<groups.length;j++){if(groups[j]!==target)groups[j].classList.remove("open");}
-  target.classList.add("open","highlight");
-  setTimeout(function(){try{target.scrollIntoView({behavior:"smooth",block:"center"});}catch(e){}},200);
-  setTimeout(function(){target.classList.remove("highlight");},5000);
+if(!installOverlay)return;
+if(!installOverlay.classList.contains("show"))showInstallModal();
+var groups=installOverlay.querySelectorAll(".install-acc-group");
+var target=null;
+for(var i=0;i<groups.length;i++){if(groups[i].getAttribute("data-browser")==="generic"){target=groups[i];}}
+if(!target)return;
+for(var j=0;j<groups.length;j++){if(groups[j]!==target)groups[j].classList.remove("open");}
+target.classList.add("open","highlight");
+setTimeout(function(){try{target.scrollIntoView({behavior:"smooth",block:"center"});}catch(e){}},200);
+setTimeout(function(){target.classList.remove("highlight");},5000);
 }
 function installApp(){
-  if(isStandalone()){alert("✅ شما این برنامه را نصب دارید.");return;}
-  if(deferredInstallPrompt){try{deferredInstallPrompt.prompt();deferredInstallPrompt.userChoice.then(function(choice){if(choice&&choice.outcome==="accepted"){if(typeof show==="function")show("✅ نصب برنامه شروع شد","ok");}deferredInstallPrompt=null;}).catch(function(){deferredInstallPrompt=null;});return;}catch(e){deferredInstallPrompt=null;}}
-  if(isGenericAndroidBrowser()){openBrowserAccordion();setTimeout(function(){if(typeof show==="function")show("🌐 مرورگر شما «Browser» است — راهنمای زیر را دنبال کنید","info");},400);return;}
-  alert("📲 برای نصب مجله آسمان:\n\n🤖 اندروید (Chrome):\nمنوی ⋮ ← «نصب برنامه»\n\n🍎 iPhone (Safari):\nShare ← Add to Home Screen\n\n🌐 مرورگر Browser:\nسه نقطه ← افزودن صفحه به ← صفحه اصلی ← افزودن");
+if(isStandalone()){alert("✅ شما این برنامه را نصب دارید.");return;}
+if(deferredInstallPrompt){try{deferredInstallPrompt.prompt();deferredInstallPrompt.userChoice.then(function(choice){if(choice&&choice.outcome==="accepted"){if(typeof show==="function")show("✅ نصب برنامه شروع شد","ok");}deferredInstallPrompt=null;}).catch(function(){deferredInstallPrompt=null;});return;}catch(e){deferredInstallPrompt=null;}}
+if(isGenericAndroidBrowser()){openBrowserAccordion();setTimeout(function(){if(typeof show==="function")show("🌐 مرورگر شما «Browser» است — راهنمای زیر را دنبال کنید","info");},400);return;}
+alert("📲 برای نصب مجله آسمان:\n🤖 اندروید (Chrome):\nمنوی ⋮ ← «نصب برنامه»\n🍎 iPhone (Safari):\nShare ← Add to Home Screen\n🌐 مرورگر Browser:\nسه نقطه ← افزودن صفحه به ← صفحه اصلی ← افزودن");
 }
 var b1=document.getElementById("shareAppModal"),b3=document.getElementById("installAppModal");
 if(b1)b1.addEventListener("click",shareApp);
 if(b3)b3.addEventListener("click",installApp);
 (function bindInstallAccordion(){
-  var acc=document.getElementById("installAccordion");if(!acc)return;
-  var hs=acc.querySelectorAll(".install-acc-h");
-  for(var i=0;i<hs.length;i++){(function(h){h.addEventListener("click",function(){var g=h.closest(".install-acc-group");if(g)g.classList.toggle("open");});})(hs[i]);}
+var acc=document.getElementById("installAccordion");if(!acc)return;
+var hs=acc.querySelectorAll(".install-acc-h");
+for(var i=0;i<hs.length;i++){(function(h){h.addEventListener("click",function(){var g=h.closest(".install-acc-group");if(g)g.classList.toggle("open");});})(hs[i]);}
 })();
-
 /* ============ آمار ============ */
 var COUNTER_NS="aseman-magazine-2026";
 var COUNTER_HOST="https://abacus.jasoncameron.dev";
@@ -721,15 +704,14 @@ function remoteGet(key){return fetch(COUNTER_HOST+"/get/"+COUNTER_NS+"/"+key,{me
 function localInc(key){var v=parseInt(lsGet("aseman_"+key)||"0",10)+1;lsSet("aseman_"+key,String(v));return v;}
 function localGet(key){return parseInt(lsGet("aseman_"+key)||"0",10);}
 function trackVisit(){
-  try{
-    remoteHit("total").then(function(v){if(v===null)localInc("total");});
-    remoteHit(getDayKey()).then(function(v){if(v===null)localInc(getDayKey());});
-    remoteHit(getWeekKey()).then(function(v){if(v===null)localInc(getWeekKey());});
-    remoteHit(getMonthKey()).then(function(v){if(v===null)localInc(getMonthKey());});
-    if(!lsGet("aseman_device_seen")){lsSet("aseman_device_seen","1");remoteHit("unique").then(function(v){if(v===null)localInc("unique");});}
-  }catch(e){}
+try{
+remoteHit("total").then(function(v){if(v===null)localInc("total");});
+remoteHit(getDayKey()).then(function(v){if(v===null)localInc(getDayKey());});
+remoteHit(getWeekKey()).then(function(v){if(v===null)localInc(getWeekKey());});
+remoteHit(getMonthKey()).then(function(v){if(v===null)localInc(getMonthKey());});
+if(!lsGet("aseman_device_seen")){lsSet("aseman_device_seen","1");remoteHit("unique").then(function(v){if(v===null)localInc("unique");});}
+}catch(e){}
 }
-
 /* ============ مودال کد ============ */
 var codeModal=document.getElementById("codeModal"),codeModalClose=document.getElementById("codeModalClose"),codeViewEntry=document.getElementById("codeViewEntry"),codeViewStats=document.getElementById("codeViewStats"),codeError=document.getElementById("codeError"),statsContent=document.getElementById("statsContent"),codeDigit1=document.getElementById("codeDigit1"),codeDigit2=document.getElementById("codeDigit2"),codeDigit3=document.getElementById("codeDigit3"),codeSubmitBtn=document.getElementById("codeSubmitBtn"),codeCancelBtn=document.getElementById("codeCancelBtn"),btnCode=document.getElementById("btnCode");
 function resetCodeModal(){if(codeViewEntry)codeViewEntry.style.display="";if(codeViewStats)codeViewStats.style.display="none";if(codeError)codeError.classList.remove("show");if(codeDigit1)codeDigit1.value="";if(codeDigit2)codeDigit2.value="";if(codeDigit3)codeDigit3.value="";}
@@ -744,27 +726,25 @@ if(codeSubmitBtn)codeSubmitBtn.addEventListener("click",submitCode);
 if(codeCancelBtn)codeCancelBtn.addEventListener("click",closeCodeModal);
 function getJalaliNowStr(){try{return new Intl.DateTimeFormat("fa-IR-u-ca-persian",{timeZone:"Asia/Tehran",weekday:"long",day:"numeric",month:"long",year:"numeric"}).format(new Date());}catch(e){return new Date().toLocaleDateString("fa-IR");}}
 function showStats(){
-  if(codeViewEntry)codeViewEntry.style.display="none";
-  if(codeViewStats)codeViewStats.style.display="";
-  if(statsContent)statsContent.innerHTML='<div class="stats-loading">در حال دریافت آمار...</div>';
-  var keys=[{k:"total",label:"👁️ تعداد کل بازدید از مجله"},{k:getMonthKey(),label:"📅 بازدید این ماه"},{k:getWeekKey(),label:"🗓️ بازدید این هفته"},{k:getDayKey(),label:"☀️ بازدید امروز"},{k:"unique",label:"👤 بازدید منحصر"}];
-  Promise.all(keys.map(function(item){return remoteGet(item.k).then(function(v){if(v===null)v=localGet(item.k);return{label:item.label,value:v};});})).then(function(res){
-    var html='<div class="stats-date">📅 '+getJalaliNowStr()+'</div>';
-    res.forEach(function(r){html+='<div class="stats-row"><span class="stats-label">'+r.label+':</span><span class="stats-val">'+(r.value||0).toLocaleString("fa-IR")+'</span></div>';});
-    if(statsContent)statsContent.innerHTML=html;
-  }).catch(function(){if(statsContent)statsContent.innerHTML='<div class="stats-loading">⚠️ دریافت آمار ممکن نشد.</div>';});
+if(codeViewEntry)codeViewEntry.style.display="none";
+if(codeViewStats)codeViewStats.style.display="";
+if(statsContent)statsContent.innerHTML='<div class="stats-loading">در حال دریافت آمار...</div>';
+var keys=[{k:"total",label:"👁️ تعداد کل بازدید از مجله"},{k:getMonthKey(),label:"📅 بازدید این ماه"},{k:getWeekKey(),label:"🗓️ بازدید این هفته"},{k:getDayKey(),label:"☀️ بازدید امروز"},{k:"unique",label:"👤 بازدید منحصر"}];
+Promise.all(keys.map(function(item){return remoteGet(item.k).then(function(v){if(v===null)v=localGet(item.k);return{label:item.label,value:v};});})).then(function(res){
+var html='<div class="stats-date">📅 '+getJalaliNowStr()+'</div>';
+res.forEach(function(r){html+='<div class="stats-row"><span class="stats-label">'+r.label+':</span><span class="stats-val">'+(r.value||0).toLocaleString("fa-IR")+'</span></div>';});
+if(statsContent)statsContent.innerHTML=html;
+}).catch(function(){if(statsContent)statsContent.innerHTML='<div class="stats-loading">⚠️ دریافت آمار ممکن نشد.</div>';});
 }
-
 /* ============ Auto Update ============ */
 function enableAutoUpdate(){
-  if(!("serviceWorker" in navigator))return;
-  navigator.serviceWorker.register("sw.js",{updateViaCache:"none"}).catch(function(){});
-  navigator.serviceWorker.ready.then(function(reg){reg.update().catch(function(){});setInterval(function(){reg.update().catch(function(){});},60*60*1000);}).catch(function(){});
-  var hadCtrl=!!navigator.serviceWorker.controller;
-  navigator.serviceWorker.addEventListener("controllerchange",function(){if(hadCtrl&&appBooted){window.location.reload();}});
+if(!("serviceWorker" in navigator))return;
+navigator.serviceWorker.register("sw.js",{updateViaCache:"none"}).catch(function(){});
+navigator.serviceWorker.ready.then(function(reg){reg.update().catch(function(){});setInterval(function(){reg.update().catch(function(){});},60*60*1000);}).catch(function(){});
+var hadCtrl=!!navigator.serviceWorker.controller;
+navigator.serviceWorker.addEventListener("controllerchange",function(){if(hadCtrl&&appBooted){window.location.reload();}});
 }
 if("serviceWorker" in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("sw.js",{updateViaCache:"none"}).catch(function(){});});}
-
 /* ============ API & State ============ */
 var API={weather:"https://api.open-meteo.com/v1/forecast",geo:"https://geocoding-api.open-meteo.com/v1/search",air:"https://air-quality-api.open-meteo.com/v1/air-quality",prayer:"https://api.aladhan.com/v1/timings",archive:"https://archive-api.open-meteo.com/v1/archive",hforecast:"https://historical-forecast-api.open-meteo.com/v1/forecast",ensemble:"https://ensemble-api.open-meteo.com/v1/ensemble",elevation:"https://api.open-meteo.com/v1/elevation",yr:"https://api.met.no/weatherapi/locationforecast/2.0/compact",nom:"https://nominatim.openstreetmap.org/search"};
 var city={id:"arak",name:"اراک",country:"ایران",admin1:"مرکزی",county:"اراک",type:"city",latitude:34.0917,longitude:49.6892};
@@ -776,7 +756,6 @@ var TODAY_IDX=1;
 var gpsWatchId=null,lastGPS=null,lastAdopted=null,manualCity=false;
 var LOCKED_PINS=[{id:"arak",name:"اراک",country:"ایران",admin1:"مرکزی",county:"اراک",type:"city",latitude:34.0917,longitude:49.6892,locked:true},{id:"deh-kosar",name:"ده کوثر",country:"ایران",admin1:"مرکزی",county:"شازند",type:"village",latitude:34.06,longitude:49.60,locked:true}];
 function ensureLockedPins(){var out=[];for(var i=0;i<LOCKED_PINS.length;i++)out.push(Object.assign({},LOCKED_PINS[i]));for(var j=0;j<pins.length;j++)if(!pins[j].locked)out.push(pins[j]);pins=out;}
-
 var PLACES=[
 ["تهران","","تهران",35.6892,51.389,"province"],["البرز","","البرز",35.8327,50.9915,"province"],["مرکزی","","مرکزی",34.0917,49.6892,"province"],["اصفهان","","اصفهان",32.6546,51.668,"province"],["فارس","","فارس",29.5918,52.5837,"province"],["خراسان رضوی","","خراسان رضوی",36.2605,59.6168,"province"],["خوزستان","","خوزستان",31.3183,48.6706,"province"],["گیلان","","گیلان",37.2809,49.5687,"province"],["مازندران","","مازندران",36.5633,53.0601,"province"],["آذربایجان شرقی","","آذربایجان شرقی",38.0962,46.2738,"province"],["قم","","قم",34.6416,50.8746,"province"],
 ["تهران","تهران","تهران",35.6892,51.389,"city"],["البرز","البرز","کرج",35.8327,50.9915,"city"],["مرکزی","مرکزی","اراک",34.0917,49.6892,"city"],["اصفهان","اصفهان","اصفهان",32.6546,51.668,"city"],["فارس","فارس","شیراز",29.5918,52.5837,"city"],["خراسان رضوی","خراسان رضوی","مشهد",36.2605,59.6168,"city"],["خوزستان","خوزستان","اهواز",31.3183,48.6706,"city"],["گیلان","گیلان","رشت",37.2809,49.5687,"city"],["مازندران","مازندران","ساری",36.5633,53.0601,"city"],["آذربایجان شرقی","آذربایجان شرقی","تبریز",38.0962,46.2738,"city"],["قم","قم","قم",34.6416,50.8746,"city"],
@@ -786,7 +765,6 @@ var PLACES=[
 var LOCAL_AREAS=PLACES.map(function(a){return{province:a[0],parent:a[1],n:a[2],lat:a[3],lon:a[4],type:a[5]};});
 var CONTINENT_FA={"ایران":"آسیا","افغانستان":"آسیا","ترکیه":"آسیا","عراق":"آسیا","عربستان سعودی":"آسیا","امارات":"آسیا","روسیه":"اروپا","آلمان":"اروپا","فرانسه":"اروپا","ایتالیا":"اروپا","اسپانیا":"اروپا","بریتانیا":"اروپا","چین":"آسیا","هند":"آسیا","ژاپن":"آسیا","ایالات متحده آمریکا":"آمریکا","کانادا":"آمریکا","برزیل":"آمریکا","استرالیا":"اقیانوسیه","مصر":"آفریقا"};
 var COUNTRIES=Object.keys(CONTINENT_FA).map(function(n){return{name:n,parent:CONTINENT_FA[n],type:"country"};});
-
 function suffixParts(o){var t=o.type||"city";if(t==="village")return[o.county,o.province];if(t==="district")return[o.city,o.province];if(t==="province")return[o.country];if(t==="country"){var c=o.parent||o.continent||CONTINENT_FA[o.name];return[c?("قاره "+c):"کشور"];}return[o.province,o.country];}
 function formatSub(o){return suffixParts(o).filter(function(x){return x&&String(x).trim();}).join("، ");}
 function citySuffixParts(c){return suffixParts({type:c.type,name:c.name,county:c.county,city:c.county,province:c.admin1,country:c.country,continent:c.continent});}
@@ -815,25 +793,24 @@ window.addEventListener("online",function(){updateNetStatus();if(appBooted&&curr
 window.addEventListener("offline",updateNetStatus);updateNetStatus();
 function setGps(st){var d=document.getElementById("gpsDot"),t=document.getElementById("gpsText");if(!d||!t)return;if(st==="ok"){d.className="sb-dot on";t.textContent="GPS متصل";}else{d.className="sb-dot off";t.textContent="GPS قطع";}}
 function updateLocalTime(){
-  var el=document.querySelector("#localTime .lt-clock");if(!el)return;
-  var tz=(data&&data.timezone)?data.timezone:null;
-  var o={hour:"2-digit",minute:"2-digit",hour12:false};if(tz)o.timeZone=tz;
-  try{el.textContent=new Date().toLocaleTimeString("fa-IR",o);}catch(e){el.textContent="--:--";}
-  try{
-    document.getElementById("timeTehran").textContent=new Date().toLocaleTimeString("fa-IR",{timeZone:"Asia/Tehran",hour:"2-digit",minute:"2-digit",hour12:false});
-    document.getElementById("timeLondon").textContent=new Date().toLocaleTimeString("fa-IR",{timeZone:"Europe/London",hour:"2-digit",minute:"2-digit",hour12:false});
-    document.getElementById("timeMecca").textContent=new Date().toLocaleTimeString("fa-IR",{timeZone:"Asia/Riyadh",hour:"2-digit",minute:"2-digit",hour12:false});
-  }catch(e){}
+var el=document.querySelector("#localTime .lt-clock");if(!el)return;
+var tz=(data&&data.timezone)?data.timezone:null;
+var o={hour:"2-digit",minute:"2-digit",hour12:false};if(tz)o.timeZone=tz;
+try{el.textContent=new Date().toLocaleTimeString("fa-IR",o);}catch(e){el.textContent="--:--";}
+try{
+document.getElementById("timeTehran").textContent=new Date().toLocaleTimeString("fa-IR",{timeZone:"Asia/Tehran",hour:"2-digit",minute:"2-digit",hour12:false});
+document.getElementById("timeLondon").textContent=new Date().toLocaleTimeString("fa-IR",{timeZone:"Europe/London",hour:"2-digit",minute:"2-digit",hour12:false});
+document.getElementById("timeMecca").textContent=new Date().toLocaleTimeString("fa-IR",{timeZone:"Asia/Riyadh",hour:"2-digit",minute:"2-digit",hour12:false});
+}catch(e){}
 }
 setInterval(updateLocalTime,1000);updateLocalTime();
 function cityNowMinutes(){var tz=(data&&data.timezone)?data.timezone:null;if(tz){try{var s=new Date().toLocaleTimeString("en-GB",{timeZone:tz,hour12:false});var p=s.split(":");return(+p[0])*60+(+p[1]);}catch(e){}}var off=Math.round(city.longitude/15)*60;var n=new Date();return(n.getUTCHours()*60+n.getUTCMinutes()+off+1440)%1440;}
-
 function wxSVG(cd,night,size){
-  size=size||80;
-  var defs='<defs><radialGradient id="sunGrad" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#fff9c4"/><stop offset="50%" stop-color="#ffd166"/><stop offset="100%" stop-color="#ff8c42"/></radialGradient><radialGradient id="moonGrad" cx="30%" cy="30%" r="70%"><stop offset="0%" stop-color="#f8f9fa"/><stop offset="100%" stop-color="#cbd5e1"/></radialGradient><radialGradient id="cloudGrad" cx="30%" cy="30%" r="70%"><stop offset="0%" stop-color="#f1f5f9"/><stop offset="100%" stop-color="#94a3b8"/></radialGradient></defs>';
-  var inner="";
-  if(cd<=1){if(night){inner='<circle cx="32" cy="32" r="14" fill="url(#moonGrad)"/>';}else{inner='<circle cx="32" cy="32" r="12" fill="url(#sunGrad)"/>';}}else if(cd===2){inner='<circle cx="28" cy="28" r="10" fill="url(#sunGrad)"/><ellipse cx="20" cy="32" rx="14" ry="8" fill="url(#cloudGrad)"/>';}else if(cd===3){inner='<ellipse cx="32" cy="32" rx="16" ry="10" fill="url(#cloudGrad)"/>';}else if(cd===45||cd===48){inner='<ellipse cx="32" cy="32" rx="18" ry="6" fill="#cbd5e1"/>';}else if((cd>=51&&cd<=67)||(cd>=80&&cd<=82)){inner='<ellipse cx="32" cy="24" rx="14" ry="8" fill="url(#cloudGrad)"/>';}else if((cd>=71&&cd<=77)||(cd>=85&&cd<=86)){inner='<ellipse cx="32" cy="24" rx="14" ry="8" fill="url(#cloudGrad)"/>';}else if(cd>=95){inner='<ellipse cx="32" cy="24" rx="14" ry="8" fill="url(#cloudGrad)"/>';}else{inner='<circle cx="32" cy="32" r="12" fill="url(#sunGrad)"/>';}
-  return '<svg viewBox="0 0 64 64" width="'+size+'" height="'+size+'">'+defs+inner+'</svg>';
+size=size||80;
+var defs='<defs><radialGradient id="sunGrad" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#fff9c4"/><stop offset="50%" stop-color="#ffd166"/><stop offset="100%" stop-color="#ff8c42"/></radialGradient><radialGradient id="moonGrad" cx="30%" cy="30%" r="70%"><stop offset="0%" stop-color="#f8f9fa"/><stop offset="100%" stop-color="#cbd5e1"/></radialGradient><radialGradient id="cloudGrad" cx="30%" cy="30%" r="70%"><stop offset="0%" stop-color="#f1f5f9"/><stop offset="100%" stop-color="#94a3b8"/></radialGradient></defs>';
+var inner="";
+if(cd<=1){if(night){inner='<circle cx="32" cy="32" r="14" fill="url(#moonGrad)"/>';}else{inner='<circle cx="32" cy="32" r="12" fill="url(#sunGrad)"/>';}}else if(cd===2){inner='<circle cx="28" cy="28" r="10" fill="url(#sunGrad)"/><ellipse cx="20" cy="32" rx="14" ry="8" fill="url(#cloudGrad)"/>';}else if(cd===3){inner='<ellipse cx="32" cy="32" rx="16" ry="10" fill="url(#cloudGrad)"/>';}else if(cd===45||cd===48){inner='<ellipse cx="32" cy="32" rx="18" ry="6" fill="#cbd5e1"/>';}else if((cd>=51&&cd<=67)||(cd>=80&&cd<=82)){inner='<ellipse cx="32" cy="24" rx="14" ry="8" fill="url(#cloudGrad)"/>';}else if((cd>=71&&cd<=77)||(cd>=85&&cd<=86)){inner='<ellipse cx="32" cy="24" rx="14" ry="8" fill="url(#cloudGrad)"/>';}else if(cd>=95){inner='<ellipse cx="32" cy="24" rx="14" ry="8" fill="url(#cloudGrad)"/>';}else{inner='<circle cx="32" cy="32" r="12" fill="url(#sunGrad)"/>';}
+return '<svg viewBox="0 0 64 64" width="'+size+'" height="'+size+'">'+defs+inner+'</svg>';
 }
 function rnd(a,b){return a+Math.random()*(b-a);}
 function setDynamicBackground(cv){var box=document.getElementById("bgP");if(!box)return;var html="";var night=(new Date().getHours()>=19||new Date().getHours()<6);if(cv<=1&&night){for(var i=0;i<50;i++)html+='<div class="p-star" style="left:'+rnd(0,100)+'%;top:'+rnd(0,70)+'%"></div>';}else if((cv>=51&&cv<=67)||(cv>=80&&cv<=82)){for(var r=0;r<50;r++)html+='<div class="p-rain" style="left:'+rnd(0,100)+'%;height:'+rnd(12,24)+'px;animation-duration:'+rnd(.6,1.2)+'s"></div>';}else if((cv>=71&&cv<=77)||(cv>=85&&cv<=86)){for(var s=0;s<40;s++)html+='<div class="p-snow" style="left:'+rnd(0,100)+'%;font-size:'+rnd(8,16)+'px;animation-duration:'+rnd(4,8)+'s">❄</div>';}box.innerHTML=html;}
@@ -858,13 +835,11 @@ function getDayStats(idx){if(!data||!data.daily)return null;var di=idx+TODAY_IDX
 if(s.uv==null)s.uv=estUV();if(s.vis==null)s.vis=((s.code===45||s.code===48)?1:10);
 if(biasInfo&&biasInfo.n){if(s.temp!=null)s.temp-=biasInfo.b;if(s.tempMax!=null)s.tempMax-=biasInfo.b;if(s.tempMin!=null)s.tempMin-=biasInfo.b;}
 return s;}
-
 function renderDetails(){var s=getDayStats(detailDay);if(!s)return;function set(id,t){var e=document.getElementById(id);if(e)e.textContent=t;}set("hum",s.hum!=null?Math.round(s.hum)+"٪":"--");set("wind",s.wind!=null?Math.round(s.wind)+" km/h":"--");set("tempVal",s.temp!=null?T1(s.temp)+"°":(s.tempMax!=null?T1(s.tempMax)+"°":"--"));set("uvVal",s.uv!=null?s.uv:"--");set("precip",s.precip!=null?s.precip+" mm":"--");set("visVal",s.vis!=null?Math.round(s.vis)+" km":"--");set("pressure",s.pres!=null?Math.round(s.pres)+" hPa":"--");set("dewpoint",s.dew!=null?T(s.dew)+D():"--");set("aqi",s.aqi!=null?Math.round(s.aqi):"--");set("usaqi",s.us!=null?Math.round(s.us):"--");set("pm25",s.pm25!=null?Math.round(s.pm25):"--");set("pm10",s.pm10!=null?Math.round(s.pm10):"--");set("ozone",s.ozone!=null?Math.round(s.ozone):"--");set("dust",s.dust!=null?Math.round(s.dust):"--");var pol=(s.pollen!=null)?Math.round(s.pollen):seasonalPollen(new Date().getMonth()+1);set("pollen",pol);set("cloud",s.cloud!=null?Math.round(s.cloud)+"٪":"--");var l=document.getElementById("detailsDayLabel");if(l)l.textContent=(detailDay===0?"امروز":"فردا");}
 var tabToday=document.getElementById("tabToday"),tabTom=document.getElementById("tabTomorrow");
 if(tabToday)tabToday.addEventListener("click",function(){detailDay=0;this.classList.add("active");if(tabTom)tabTom.classList.remove("active");renderDetails();});
 if(tabTom)tabTom.addEventListener("click",function(){detailDay=1;this.classList.add("active");if(tabToday)tabToday.classList.remove("active");renderDetails();});
 var dToggle=document.getElementById("detailsToggle");if(dToggle)dToggle.addEventListener("click",function(){var b=document.getElementById("detailsBody");if(b)b.classList.toggle("collapsed");});
-
 function setAnim(c){var lr=document.getElementById("lyRain"),ls=document.getElementById("lySnow"),lc=document.getElementById("lyCloud");if(!lr)return;lr.style.display="none";ls.style.display="none";lc.style.display="none";lr.innerHTML="";ls.innerHTML="";lc.innerHTML="";if((c>=51&&c<=67)||(c>=80&&c<=82)){lr.style.display="block";for(var i=0;i<6;i++)lr.innerHTML+='<span style="left:'+(10+i*14)+'%;top:20%;width:3px;height:14px;background:#5fd4ff;animation:pR 1s linear infinite;animation-delay:'+(i*.12)+'s"></span>';}else if((c>=71&&c<=77)||(c>=85&&c<=86)){ls.style.display="block";for(var k=0;k<6;k++)ls.innerHTML+='<span style="left:'+(10+k*14)+'%;top:10%;font-size:12px;animation:pS 3s linear infinite;animation-delay:'+(k*.4)+'s">❄</span>';}else if(c===3||c===2){lc.style.display="block";lc.innerHTML='<span style="font-size:40px;top:10px;right:10px">☁️</span>';}}
 function outdoorScore(s){if(!s)return 0;var sc=100;if(s.aqi!=null){if(s.aqi>80)sc-=30;else if(s.aqi>60)sc-=15;}if(s.uv!=null&&s.uv>=8)sc-=20;if(s.wind!=null&&s.wind>=40)sc-=25;if(s.precipProb!=null&&s.precipProb>=60)sc-=25;if(s.temp!=null&&(s.temp>=35||s.temp<=-5))sc-=25;return Math.max(0,Math.min(100,sc));}
 function scoreLabel(v){if(v>=70)return"عالی";if(v>=50)return"متوسط";return"نامناسب";}
@@ -876,170 +851,158 @@ function roadIndex(s){if(!s)return null;var sc=100;if(s.vis!=null&&s.vis<2)sc-=4
 function setTxt(id,t){var e=document.getElementById(id);if(e)e.textContent=t;}
 function skyEvents(m){var m2={1:"بارش شهابی چهارگانه",4:"بارش شهابی شلیاقی",5:"بارش شهابی اتا-آکواریید",8:"بارش شهابی برساووشی",10:"بارش شهابی جباری",11:"بارش شهابی اسدی",12:"بارش شهابی جوزایی"};return m2[m]||"رویداد برجسته‌ای ثبت نشده";}
 function plantingGuideZone(z,m){var z2=z||"motadel-nim";var band=z2.split("-")[0]||"motadel";var P={sard:{1:"نهال‌کاری خواب",3:"سبزیجات سردسیری",5:"ذرت/لوبیا",7:"برداشت غلات",9:"گندم پاییزه",11:"غلات سردسیری"},motadel:{1:"گلخانه",3:"سبزیجات بهاره",5:"سبزیجات تابستانه",7:"سبزیجات پاییزه",9:"گندم/جو",11:"باقلا"},garm:{1:"سبزیجات زمستانه",3:"خیار/گوجه",5:"گرمسیری",7:"پاییزه",9:"سبزیجات پاییزه",11:"سردسیری"}};var t=P[band]||P.motadel;return t[m]||"سبزیجات فصلی";}
-
 function renderTravelSummary(){
-  var s=getDayStats(0),bw=bestWindow(),ri=roadIndex(s);
-  var pack=[];if(s&&s.precipProb>=40)pack.push("چتر");if(s&&s.tempMin<=5)pack.push("لباس گرم");if(s&&s.uv>=6)pack.push("ضدآفتاب");
-  var cityName=city.name;
-  var roadStatus=ri!=null?(ri>=70?"امن و مناسب ✔":ri>=50?"متوسط با احتیاط ⚠":"نامناسب ⚠"):"--";
-  var visibility=s&&s.vis!=null?Math.round(s.vis)+" km":"--";
-  var wind=s&&s.wind!=null?Math.round(s.wind)+" km/h":"--";
-  var weatherDesc=code(s.code||0)[0];
-  var html='<div class="travel-summary">'+
-    '<div class="ts-head">🧳 سفر به <span class="ts-city">'+safe(cityName)+'</span></div>'+
-    '<div class="ts-note">موقعیت «<span style="color:var(--gold);font-weight:800">'+safe(cityName)+'</span>» و اطلاعات زیر منطبق بر موقعیت انتخابی در صفحه آب‌وهوا می‌باشد.</div>'+
-    '<div class="ts-row"><span class="ts-label">🪟 بهترین پنجره سفر:</span><span class="ts-val">'+(bw?fmtDT(bw.from)+" تا "+fmtDT(bw.to):"پنجره مناسبی یافت نشد")+'</span></div>'+
-    '<div class="ts-row"><span class="ts-label">🌤️ وضعیت هوا:</span><span class="ts-val">'+weatherDesc+'</span></div>'+
-    '<div class="ts-row"><span class="ts-label">🌡️ دمای فعلی:</span><span class="ts-val">'+(s&&s.temp!=null?T1(s.temp)+D():"--")+' (بازه '+T(s.tempMin)+D()+" تا "+T(s.tempMax)+D()+')</span></div>'+
-    '<div class="ts-row"><span class="ts-label">🎒 چک‌لیست سفر:</span><span class="ts-val">'+(pack.length?pack.join("، "):"بدون نیاز خاص")+'</span></div>'+
-    '<div class="ts-row"><span class="ts-label">🚗 وضعیت جاده:</span><span class="ts-val">'+roadStatus+(ri!=null?" ("+ri+"/100)":"")+'</span></div>'+
-    '<div class="ts-row"><span class="ts-label">👁️ دید افقی:</span><span class="ts-val">'+visibility+'</span></div>'+
-    '<div class="ts-row"><span class="ts-label">💨 سرعت باد:</span><span class="ts-val">'+wind+'</span></div>'+
-    '<div class="ts-row"><span class="ts-label">💧 رطوبت:</span><span class="ts-val">'+(s&&s.hum!=null?Math.round(s.hum)+"٪":"--")+'</span></div>'+
-    '<div class="ts-row"><span class="ts-label">🌫️ کیفیت هوا:</span><span class="ts-val">'+Math.round((getAirNow()||airFallback()).european_aqi)+" ("+aqiLabel((getAirNow()||airFallback()).european_aqi)+')</span></div>'+
-    '<div class="ts-row"><span class="ts-label">☀️ شاخص UV:</span><span class="ts-val">'+(s&&s.uv!=null?s.uv:"--")+'</span></div>'+
-    '<div class="ts-row"><span class="ts-label">🌼 سطح گرده:</span><span class="ts-val">'+((s&&s.pollen!=null)?Math.round(s.pollen):seasonalPollen(new Date().getMonth()+1))+"/100"+'</span></div>'+
-    '</div>';
-  var el=document.getElementById("travelContent");if(el)el.innerHTML=html;
+var s=getDayStats(0),bw=bestWindow(),ri=roadIndex(s);
+var pack=[];if(s&&s.precipProb>=40)pack.push("چتر");if(s&&s.tempMin<=5)pack.push("لباس گرم");if(s&&s.uv>=6)pack.push("ضدآفتاب");
+var cityName=city.name;
+var roadStatus=ri!=null?(ri>=70?"امن و مناسب ✔":ri>=50?"متوسط با احتیاط ⚠":"نامناسب ⚠"):"--";
+var visibility=s&&s.vis!=null?Math.round(s.vis)+" km":"--";
+var wind=s&&s.wind!=null?Math.round(s.wind)+" km/h":"--";
+var weatherDesc=code(s.code||0)[0];
+var html='<div class="travel-summary">'+
+'<div class="ts-head">🧳 سفر به <span class="ts-city">'+safe(cityName)+'</span></div>'+
+'<div class="ts-note">موقعیت «<span style="color:var(--gold);font-weight:800">'+safe(cityName)+'</span>» و اطلاعات زیر منطبق بر موقعیت انتخابی در صفحه آب‌وهوا می‌باشد.</div>'+
+'<div class="ts-row"><span class="ts-label">🪟 بهترین پنجره سفر:</span><span class="ts-val">'+(bw?fmtDT(bw.from)+" تا "+fmtDT(bw.to):"پنجره مناسبی یافت نشد")+'</span></div>'+
+'<div class="ts-row"><span class="ts-label">🌤️ وضعیت هوا:</span><span class="ts-val">'+weatherDesc+'</span></div>'+
+'<div class="ts-row"><span class="ts-label">🌡️ دمای فعلی:</span><span class="ts-val">'+(s&&s.temp!=null?T1(s.temp)+D():"--")+' (بازه '+T(s.tempMin)+D()+" تا "+T(s.tempMax)+D()+')</span></div>'+
+'<div class="ts-row"><span class="ts-label">🎒 چک‌لیست سفر:</span><span class="ts-val">'+(pack.length?pack.join("، "):"بدون نیاز خاص")+'</span></div>'+
+'<div class="ts-row"><span class="ts-label">🚗 وضعیت جاده:</span><span class="ts-val">'+roadStatus+(ri!=null?" ("+ri+"/100)":"")+'</span></div>'+
+'<div class="ts-row"><span class="ts-label">👁️ دید افقی:</span><span class="ts-val">'+visibility+'</span></div>'+
+'<div class="ts-row"><span class="ts-label">💨 سرعت باد:</span><span class="ts-val">'+wind+'</span></div>'+
+'<div class="ts-row"><span class="ts-label">💧 رطوبت:</span><span class="ts-val">'+(s&&s.hum!=null?Math.round(s.hum)+"٪":"--")+'</span></div>'+
+'<div class="ts-row"><span class="ts-label">🌫️ کیفیت هوا:</span><span class="ts-val">'+Math.round((getAirNow()||airFallback()).european_aqi)+" ("+aqiLabel((getAirNow()||airFallback()).european_aqi)+')</span></div>'+
+'<div class="ts-row"><span class="ts-label">☀️ شاخص UV:</span><span class="ts-val">'+(s&&s.uv!=null?s.uv:"--")+'</span></div>'+
+'<div class="ts-row"><span class="ts-label">🌼 سطح گرده:</span><span class="ts-val">'+((s&&s.pollen!=null)?Math.round(s.pollen):seasonalPollen(new Date().getMonth()+1))+"/100"+'</span></div>'+
+'</div>';
+var el=document.getElementById("travelContent");if(el)el.innerHTML=html;
 }
-
 function renderExtraSections(){
-  var s0=getDayStats(0),s1=getDayStats(1);if(!s0)return;
-  var sc=outdoorScore(s0),bw=bestWindow(),an=getAirNow()||airFallback();
-  setTxt("sportContent","🏃 ورزش و تناسب اندام\n• امتیاز تناسب بیرون: "+sc+"/100 ("+scoreLabel(sc)+")\n• بهترین پنجرهٔ ورزش: "+(bw?fmtDT(bw.from)+" تا "+fmtDT(bw.to):"--")+"\n• توصیه: "+(sc>=70?"بیرون عالی ✔":sc>=50?"بیرون با احتیاط":"داخل خانه"));
-  var tr=pressureTrend();var pol=(s0.pollen!=null)?Math.round(s0.pollen):seasonalPollen(new Date().getMonth()+1);
-  setTxt("healthContent","❤️ سلامت\n• کیفیت هوا: "+Math.round(an.european_aqi)+" ("+aqiLabel(an.european_aqi)+")\n• UV: "+s0.uv+"\n• گرده: "+pol+"/100\n• روند فشار: "+(tr==null?"--":tr<-3?"کاهش (سردرد احتمالی)":tr>3?"افزایش":"پایدار"));
-  var frost=(s1&&s1.tempMin!=null&&s1.tempMin<=0);var irrig=(s1&&s1.precipProb!=null&&s1.precipProb>=50);
-  var gdd=(s0.tempMax!=null&&s0.tempMin!=null)?Math.max(0,(s0.tempMax+s0.tempMin)/2-10):0;
-  setTxt("agriContent","🌾 کشاورزی\n• منطقهٔ اقلیمی: "+(climateZoneCur||"--")+"\n• کشت این ماه: "+plantingGuideZone(climateZoneCur,new Date().getMonth()+1)+"\n• GDD: "+gdd.toFixed(1)+"\n• یخبندان: "+(frost?"هست ⚠":"نیست ✔")+"\n• آبیاری: "+(irrig?"لازم نیست ✔":"لازم 💧"));
-  var mp=moonPhase();var dl=(data&&data.daily&&data.daily.sunrise&&data.daily.sunset)?(fmtDT(data.daily.sunrise[TODAY_IDX])+" تا "+fmtDT(data.daily.sunset[TODAY_IDX])):"--";
-  setTxt("astroContent","🔭 نجوم\n• فاز ماه: "+mp.name+" | "+mp.illum+"٪\n• طلوع/غروب: "+dl+"\n• رویداد این ماه: "+skyEvents(new Date().getMonth()+1));
-  var ri=roadIndex(s0);
-  setTxt("driveContent","🚗 رانندگی\n• شاخص جاده: "+(ri!=null?ri+"/100 ("+scoreLabel(ri)+")":"--")+"\n• دید: "+(s0.vis!=null?Math.round(s0.vis)+" km":"--"));
-  var tn=tonightStats(),ss=sleepScore();
-  setTxt("sleepContent","😴 خواب\n• امتیاز: "+(ss!=null?ss+"/100 ("+scoreLabel(ss)+")":"--")+"\n• دمای امشب: "+(tn&&tn.temp!=null?T1(tn.temp)+D():"--"));
-  renderTravelSummary();
+var s0=getDayStats(0),s1=getDayStats(1);if(!s0)return;
+var sc=outdoorScore(s0),bw=bestWindow(),an=getAirNow()||airFallback();
+setTxt("sportContent","🏃 ورزش و تناسب اندام\n• امتیاز تناسب بیرون: "+sc+"/100 ("+scoreLabel(sc)+")\n• بهترین پنجرهٔ ورزش: "+(bw?fmtDT(bw.from)+" تا "+fmtDT(bw.to):"--")+"\n• توصیه: "+(sc>=70?"بیرون عالی ✔":sc>=50?"بیرون با احتیاط":"داخل خانه"));
+var tr=pressureTrend();var pol=(s0.pollen!=null)?Math.round(s0.pollen):seasonalPollen(new Date().getMonth()+1);
+setTxt("healthContent","❤️ سلامت\n• کیفیت هوا: "+Math.round(an.european_aqi)+" ("+aqiLabel(an.european_aqi)+")\n• UV: "+s0.uv+"\n• گرده: "+pol+"/100\n• روند فشار: "+(tr==null?"--":tr<-3?"کاهش (سردرد احتمالی)":tr>3?"افزایش":"پایدار"));
+var frost=(s1&&s1.tempMin!=null&&s1.tempMin<=0);var irrig=(s1&&s1.precipProb!=null&&s1.precipProb>=50);
+var gdd=(s0.tempMax!=null&&s0.tempMin!=null)?Math.max(0,(s0.tempMax+s0.tempMin)/2-10):0;
+setTxt("agriContent","🌾 کشاورزی\n• منطقهٔ اقلیمی: "+(climateZoneCur||"--")+"\n• کشت این ماه: "+plantingGuideZone(climateZoneCur,new Date().getMonth()+1)+"\n• GDD: "+gdd.toFixed(1)+"\n• یخبندان: "+(frost?"هست ⚠":"نیست ✔")+"\n• آبیاری: "+(irrig?"لازم نیست ✔":"لازم 💧"));
+var mp=moonPhase();var dl=(data&&data.daily&&data.daily.sunrise&&data.daily.sunset)?(fmtDT(data.daily.sunrise[TODAY_IDX])+" تا "+fmtDT(data.daily.sunset[TODAY_IDX])):"--";
+setTxt("astroContent","🔭 نجوم\n• فاز ماه: "+mp.name+" | "+mp.illum+"٪\n• طلوع/غروب: "+dl+"\n• رویداد این ماه: "+skyEvents(new Date().getMonth()+1));
+var ri=roadIndex(s0);
+setTxt("driveContent","🚗 رانندگی\n• شاخص جاده: "+(ri!=null?ri+"/100 ("+scoreLabel(ri)+")":"--")+"\n• دید: "+(s0.vis!=null?Math.round(s0.vis)+" km":"--"));
+var tn=tonightStats(),ss=sleepScore();
+setTxt("sleepContent","😴 خواب\n• امتیاز: "+(ss!=null?ss+"/100 ("+scoreLabel(ss)+")":"--")+"\n• دمای امشب: "+(tn&&tn.temp!=null?T1(tn.temp)+D():"--"));
+renderTravelSummary();
 }
-
 function renderWeather(){
-  if(!data||!data.current)return;
-  var c=data.current,cc=code(c.weather_code);
-  var night=(c.is_day!=null)?(c.is_day===0):(new Date().getHours()>=19||new Date().getHours()<6);
-  var nn=normName(city.name);var suf=citySuffixParts(city).filter(function(p){return p&&normName(p)!==nn;});
-  var ded=[];for(var i=0;i<suf.length;i++)if(!ded.length||ded[ded.length-1]!==suf[i])ded.push(suf[i]);
-  if(!ded.length){var ct=city.continent||CONTINENT_FA[city.name];if(ct)ded=["قاره "+ct];}
-  var ce=document.getElementById("city");if(ce)ce.innerHTML=safe(city.name)+' <span class="city-info">'+safe(ded.join("، "))+'</span>';
-  var wi=document.getElementById("wicon");if(wi)wi.innerHTML=wxSVG(c.weather_code,night,80);
-  var st0=getDayStats(0);var te=document.getElementById("temp");if(te)te.textContent=(st0&&st0.temp!=null)?T1(st0.temp)+D():T1(c.temperature_2m)+D();
-  var co=document.getElementById("cond");if(co)co.textContent=cc[0];
-  var fe=document.getElementById("feels");if(fe)fe.textContent="محسوس "+T(c.apparent_temperature)+D();
-  if(data.daily){var mn=document.getElementById("minTemp");if(mn)mn.textContent=T(data.daily.temperature_2m_min?data.daily.temperature_2m_min[TODAY_IDX]:null)+D();var mx=document.getElementById("maxTemp");if(mx)mx.textContent=T(data.daily.temperature_2m_max?data.daily.temperature_2m_max[TODAY_IDX]:null)+D();}
-  var up=document.getElementById("updated");if(up)up.textContent="بروزرسانی: "+new Date().toLocaleTimeString("fa-IR");
-  setAnim(c.weather_code);setDynamicBackground(c.weather_code);updateLocalTime();renderHourly();renderForecast();renderSmartAlerts();renderDetails();renderExtraSections();
+if(!data||!data.current)return;
+var c=data.current,cc=code(c.weather_code);
+var night=(c.is_day!=null)?(c.is_day===0):(new Date().getHours()>=19||new Date().getHours()<6);
+var nn=normName(city.name);var suf=citySuffixParts(city).filter(function(p){return p&&normName(p)!==nn;});
+var ded=[];for(var i=0;i<suf.length;i++)if(!ded.length||ded[ded.length-1]!==suf[i])ded.push(suf[i]);
+if(!ded.length){var ct=city.continent||CONTINENT_FA[city.name];if(ct)ded=["قاره "+ct];}
+var ce=document.getElementById("city");if(ce)ce.innerHTML=safe(city.name)+' <span class="city-info">'+safe(ded.join("، "))+'</span>';
+var wi=document.getElementById("wicon");if(wi)wi.innerHTML=wxSVG(c.weather_code,night,80);
+var st0=getDayStats(0);var te=document.getElementById("temp");if(te)te.textContent=(st0&&st0.temp!=null)?T1(st0.temp)+D():T1(c.temperature_2m)+D();
+var co=document.getElementById("cond");if(co)co.textContent=cc[0];
+var fe=document.getElementById("feels");if(fe)fe.textContent="محسوس "+T(c.apparent_temperature)+D();
+if(data.daily){var mn=document.getElementById("minTemp");if(mn)mn.textContent=T(data.daily.temperature_2m_min?data.daily.temperature_2m_min[TODAY_IDX]:null)+D();var mx=document.getElementById("maxTemp");if(mx)mx.textContent=T(data.daily.temperature_2m_max?data.daily.temperature_2m_max[TODAY_IDX]:null)+D();}
+var up=document.getElementById("updated");if(up)up.textContent="بروزرسانی: "+new Date().toLocaleTimeString("fa-IR");
+setAnim(c.weather_code);setDynamicBackground(c.weather_code);updateLocalTime();renderHourly();renderForecast();renderSmartAlerts();renderDetails();renderExtraSections();
 }
-
 function renderHourly(){
-  if(!data||!data.hourly||!data.hourly.time)return;
-  var h=data.hourly,n=new Date(),st=-1;
-  for(var i=0;i<h.time.length;i++)if(new Date(h.time[i])>=n){st=i;break;}
-  if(st<0)st=0;
-  var el=document.getElementById("hourly");if(!el)return;el.innerHTML="";
-  for(var j=st;j<Math.min(st+12,h.time.length);j++){
-    el.innerHTML+='<div class="hour"><div class="t">'+fmtDT(h.time[j])+'</div><div>'+wxSVG(h.weather_code[j],false,34)+'</div><b>'+T(h.temperature_2m[j])+D()+'</b><div class="precip">💧 '+(h.precipitation_probability&&h.precipitation_probability[j]!=null?h.precipitation_probability[j]:0)+'%</div></div>';
-  }
+if(!data||!data.hourly||!data.hourly.time)return;
+var h=data.hourly,n=new Date(),st=-1;
+for(var i=0;i<h.time.length;i++)if(new Date(h.time[i])>=n){st=i;break;}
+if(st<0)st=0;
+var el=document.getElementById("hourly");if(!el)return;el.innerHTML="";
+for(var j=st;j<Math.min(st+12,h.time.length);j++){
+el.innerHTML+='<div class="hour"><div class="t">'+fmtDT(h.time[j])+'</div><div>'+wxSVG(h.weather_code[j],false,34)+'</div><b>'+T(h.temperature_2m[j])+D()+'</b><div class="precip">💧 '+(h.precipitation_probability&&h.precipitation_probability[j]!=null?h.precipitation_probability[j]:0)+'%</div></div>';
 }
-
+}
 function renderForecast(){
-  if(!data||!data.daily||!data.daily.time)return;
-  var d=data.daily,el=document.getElementById("forecast");if(!el)return;el.innerHTML="";
-  for(var i=0;i<=8&&i<d.time.length;i++){
-    var dn=weekdayName(i);
-    var cls="day"+(i===TODAY_IDX?" today-hl":"");
-    var pd="";try{pd=new Intl.DateTimeFormat("fa-IR-u-ca-persian",{month:"long",day:"numeric"}).format(new Date(d.time[i]+"T12:00:00"));}catch(e){}
-    el.innerHTML+='<div class="'+cls+'" data-idx="'+i+'"><b>'+dn+'</b><div class="date">'+pd+'</div><div class="wi">'+wxSVG(d.weather_code[i],false,40)+'</div><div><b>'+T(d.temperature_2m_max[i])+'°</b> <span class="muted">'+T(d.temperature_2m_min[i])+'°</span></div><div class="rain-p">💧 '+(d.precipitation_probability_max?d.precipitation_probability_max[i]||0:0)+'%</div></div>';
-  }
+if(!data||!data.daily||!data.daily.time)return;
+var d=data.daily,el=document.getElementById("forecast");if(!el)return;el.innerHTML="";
+for(var i=0;i<=8&&i<d.time.length;i++){
+var dn=weekdayName(i);
+var cls="day"+(i===TODAY_IDX?" today-hl":"");
+var pd="";try{pd=new Intl.DateTimeFormat("fa-IR-u-ca-persian",{month:"long",day:"numeric"}).format(new Date(d.time[i]+"T12:00:00"));}catch(e){}
+el.innerHTML+='<div class="'+cls+'" data-idx="'+i+'"><b>'+dn+'</b><div class="date">'+pd+'</div><div class="wi">'+wxSVG(d.weather_code[i],false,40)+'</div><div><b>'+T(d.temperature_2m_max[i])+'°</b> <span class="muted">'+T(d.temperature_2m_min[i])+'°</span></div><div class="rain-p">💧 '+(d.precipitation_probability_max?d.precipitation_probability_max[i]||0:0)+'%</div></div>';
 }
-
+}
 var fcEl=document.getElementById("forecast");
 if(fcEl)fcEl.addEventListener("click",function(e){
-  var c=e.target.closest?e.target.closest(".day"):null;
-  if(!c||!data||!data.daily)return;
-  var i=+c.getAttribute("data-idx");
-  var d=data.daily;
-  var txt="🌤️ "+code(d.weather_code[i])[0]+"\n🌡️ "+T(d.temperature_2m_min[i])+D()+" تا "+T(d.temperature_2m_max[i])+D()+"\n🌧️ "+(d.precipitation_probability_max?d.precipitation_probability_max[i]||0:0)+"٪\n🌅 طلوع "+fmtDT(d.sunrise[i])+" | غروب "+fmtDT(d.sunset[i]);
-  var mi=document.getElementById("infoModalIcon"),mt=document.getElementById("infoModalTitle"),mx=document.getElementById("infoModalText"),mo=document.getElementById("infoModal");
-  if(mi)mi.innerHTML=wxSVG(d.weather_code[i],false,64);
-  if(mt)mt.textContent="📅 "+weekdayName(i);
-  if(mx)mx.textContent=txt;
-  if(mo)mo.classList.add("show");
+var c=e.target.closest?e.target.closest(".day"):null;
+if(!c||!data||!data.daily)return;
+var i=+c.getAttribute("data-idx");
+var d=data.daily;
+var txt="🌤️ "+code(d.weather_code[i])[0]+"\n🌡️ "+T(d.temperature_2m_min[i])+D()+" تا "+T(d.temperature_2m_max[i])+D()+"\n🌧️ "+(d.precipitation_probability_max?d.precipitation_probability_max[i]||0:0)+"٪\n🌅 طلوع "+fmtDT(d.sunrise[i])+" | غروب "+fmtDT(d.sunset[i]);
+var mi=document.getElementById("infoModalIcon"),mt=document.getElementById("infoModalTitle"),mx=document.getElementById("infoModalText"),mo=document.getElementById("infoModal");
+if(mi)mi.innerHTML=wxSVG(d.weather_code[i],false,64);
+if(mt)mt.textContent="📅 "+weekdayName(i);
+if(mx)mx.textContent=txt;
+if(mo)mo.classList.add("show");
 });
-
 function cleanTime(t){if(!t)return"--:--";return t.split("(")[0].trim();}
 function computeShariaMidnight(){if(!prayerData)return null;var s=cleanTime(prayerData.Sunset),f=cleanTime(prayerData.Fajr);if(!s||!f||s==="--:--"||f==="--:--")return null;var sp=s.split(":"),fp=f.split(":");var sm=(+sp[0])*60+(+sp[1]);var fm=(+fp[0])*60+(+fp[1])+1440;var mid=Math.round((sm+fm)/2)%1440;return(mid<60?"0":"")+Math.floor(mid/60)+":"+(mid%60<10?"0":"")+(mid%60);}
 function loadPrayerTimes(){
-  var n=new Date();
-  var dd=(n.getDate()<10?"0":"")+n.getDate();
-  var mm=(n.getMonth()+1<10?"0":"")+(n.getMonth()+1);
-  var u=new URL(API.prayer+"/"+dd+"-"+mm+"-"+n.getFullYear());
-  u.searchParams.set("latitude",city.latitude);
-  u.searchParams.set("longitude",city.longitude);
-  u.searchParams.set("method","7");
-  u.searchParams.set("midnightMode","1");
-  fetch(u).then(function(r){return r.json();}).then(function(j){if(j&&j.data&&j.data.timings){prayerData=j.data.timings;renderPrayer();}}).catch(function(){});
+var n=new Date();
+var dd=(n.getDate()<10?"0":"")+n.getDate();
+var mm=(n.getMonth()+1<10?"0":"")+(n.getMonth()+1);
+var u=new URL(API.prayer+"/"+dd+"-"+mm+"-"+n.getFullYear());
+u.searchParams.set("latitude",city.latitude);
+u.searchParams.set("longitude",city.longitude);
+u.searchParams.set("method","7");
+u.searchParams.set("midnightMode","1");
+fetch(u).then(function(r){return r.json();}).then(function(j){if(j&&j.data&&j.data.timings){prayerData=j.data.timings;renderPrayer();}}).catch(function(){});
 }
 function renderPrayer(){
-  if(!prayerData)return;
-  var mid=computeShariaMidnight();
-  var times={Fajr:cleanTime(prayerData.Fajr),Sunrise:cleanTime(prayerData.Sunrise),Dhuhr:cleanTime(prayerData.Dhuhr),Sunset:cleanTime(prayerData.Sunset),Maghrib:cleanTime(prayerData.Maghrib),Midnight:mid};
-  var names=[["Fajr","اذان صبح"],["Sunrise","طلوع"],["Dhuhr","اذان ظهر"],["Sunset","غروب"],["Maghrib","اذان مغرب"],["Midnight","نیمه‌شب"]];
-  var el=document.getElementById("prayers");if(!el)return;el.innerHTML="";
-  for(var i=0;i<names.length;i++)el.innerHTML+='<div class="prayer"><div>'+names[i][1]+'</div><b>'+(times[names[i][0]]||"--")+'</b></div>';
-  var cur=cityNowMinutes();
-  var order=["Fajr","Sunrise","Dhuhr","Sunset","Maghrib","Midnight"];
-  var next=null;
-  for(var j=0;j<order.length;j++){var t=times[order[j]];if(t&&t!=="--:--"){var p=t.split(":");var m=(+p[0])*60+(+p[1]);if(m>cur&&!next)next={name:names[j][1],t:t};}}
-  if(!next)next={name:names[0][1],t:times.Fajr};
-  var np=document.getElementById("nextPrayer");
-  if(next&&next.t&&np){np.innerHTML='<span>⏳ '+next.name+'</span><span class="countdown" id="countdown">--:--:--</span>';startCountdown(next.t,next.name);}
+if(!prayerData)return;
+var mid=computeShariaMidnight();
+var times={Fajr:cleanTime(prayerData.Fajr),Sunrise:cleanTime(prayerData.Sunrise),Dhuhr:cleanTime(prayerData.Dhuhr),Sunset:cleanTime(prayerData.Sunset),Maghrib:cleanTime(prayerData.Maghrib),Midnight:mid};
+var names=[["Fajr","اذان صبح"],["Sunrise","طلوع"],["Dhuhr","اذان ظهر"],["Sunset","غروب"],["Maghrib","اذان مغرب"],["Midnight","نیمه‌شب"]];
+var el=document.getElementById("prayers");if(!el)return;el.innerHTML="";
+for(var i=0;i<names.length;i++)el.innerHTML+='<div class="prayer"><div>'+names[i][1]+'</div><b>'+(times[names[i][0]]||"--")+'</b></div>';
+var cur=cityNowMinutes();
+var order=["Fajr","Sunrise","Dhuhr","Sunset","Maghrib","Midnight"];
+var next=null;
+for(var j=0;j<order.length;j++){var t=times[order[j]];if(t&&t!=="--:--"){var p=t.split(":");var m=(+p[0])*60+(+p[1]);if(m>cur&&!next)next={name:names[j][1],t:t};}}
+if(!next)next={name:names[0][1],t:times.Fajr};
+var np=document.getElementById("nextPrayer");
+if(next&&next.t&&np){np.innerHTML='<span>⏳ '+next.name+'</span><span class="countdown" id="countdown">--:--:--</span>';startCountdown(next.t,next.name);}
 }
 function startCountdown(target){
-  if(cdInterval)clearInterval(cdInterval);
-  function tick(){var cur=cityNowMinutes();var p=target.split(":");var tm=(+p[0])*60+(+p[1]);var diff=(tm-cur+1440)%1440;var h=Math.floor(diff/60),m=diff%60;var c=document.getElementById("countdown");if(c)c.textContent=(h<10?"0":"")+h+":"+(m<10?"0":"")+m+":00";}
-  tick();cdInterval=setInterval(tick,1000);
+if(cdInterval)clearInterval(cdInterval);
+function tick(){var cur=cityNowMinutes();var p=target.split(":");var tm=(+p[0])*60+(+p[1]);var diff=(tm-cur+1440)%1440;var h=Math.floor(diff/60),m=diff%60;var c=document.getElementById("countdown");if(c)c.textContent=(h<10?"0":"")+h+":"+(m<10?"0":"")+m+":00";}
+tick();cdInterval=setInterval(tick,1000);
 }
-
 var prayerToggle=document.getElementById("prayerToggle");
 if(prayerToggle)prayerToggle.addEventListener("click",function(){
-  var b=document.getElementById("prayerBody");
-  if(b)b.classList.toggle("collapsed");
+var b=document.getElementById("prayerBody");
+if(b)b.classList.toggle("collapsed");
 });
-
 function renderToday(){var n=new Date();var j=document.getElementById("jalali");if(j){try{j.textContent=new Intl.DateTimeFormat("fa-IR-u-ca-persian",{weekday:"long",day:"numeric",month:"long",year:"numeric"}).format(n);}catch(e){}}var g=document.getElementById("greg");if(g)g.textContent="میلادی: "+new Intl.DateTimeFormat("en-GB",{day:"numeric",month:"long",year:"numeric"}).format(n);var h=document.getElementById("hijri");if(h){try{h.textContent="قمری: "+new Intl.DateTimeFormat("fa-IR-u-ca-islamic-umalqura",{day:"numeric",month:"long",year:"numeric"}).format(n);}catch(e){}}}
-
 function savePins(){lsSet("pins",JSON.stringify(pins));}
 function fetchPinTemp(pin){var k="pt_"+pin.id;var c=getFromCache(k,600000);if(c!=null)return Promise.resolve(c);var u=new URL(API.weather);u.searchParams.set("latitude",pin.latitude);u.searchParams.set("longitude",pin.longitude);u.searchParams.set("current","temperature_2m");u.searchParams.set("timezone","auto");return fetch(u).then(function(r){return r.json();}).then(function(j){var t=j&&j.current?j.current.temperature_2m:null;saveToCache(k,t);return t;}).catch(function(){return null;});}
 function updatePinTemps(){for(var i=0;i<pins.length;i++)(function(pin,idx){fetchPinTemp(pin).then(function(t){var c=document.querySelector('.pinchip[data-idx="'+idx+'"] .ptemp');if(c&&t!=null)c.textContent=T(t)+"°";});})(pins[i],i);}
 function renderPins(){
-  var el=document.getElementById("pins");if(!el)return;
-  var html="";
-  for(var i=0;i<pins.length;i++){
-    var lk=pins[i].locked?'<span>🔒</span>':"";
-    var del=pins[i].locked?"":' <button data-del="'+i+'">×</button>';
-    html+='<div class="pinchip'+(String(pins[i].id)===String(city.id)?" active":"")+'" data-idx="'+i+'">'+safe(pins[i].name)+lk+'<span class="ptemp">--</span>'+del+'</div>';
-  }
-  el.innerHTML=html;
-  var chips=el.querySelectorAll(".pinchip");
-  for(var j=0;j<chips.length;j++)(function(ch){ch.addEventListener("click",function(e){if(e.target.getAttribute&&e.target.getAttribute("data-del")!=null)return;manualCity=true;city=pins[+ch.getAttribute("data-idx")];lsSet("city",JSON.stringify(city));refreshAll();});})(chips[j]);
-  var dels=el.querySelectorAll("button[data-del]");
-  for(var k=0;k<dels.length;k++)(function(b){b.addEventListener("click",function(e){e.stopPropagation();var idx=+b.getAttribute("data-del");if(pins[idx]&&pins[idx].locked){show("قفل است","info");return;}pins.splice(idx,1);savePins();updatePinBtn();});})(dels[k]);
-  updatePinTemps();
+var el=document.getElementById("pins");if(!el)return;
+var html="";
+for(var i=0;i<pins.length;i++){
+var lk=pins[i].locked?'<span>🔒</span>':"";
+var del=pins[i].locked?"":' <button data-del="'+i+'">×</button>';
+html+='<div class="pinchip'+(String(pins[i].id)===String(city.id)?" active":"")+'" data-idx="'+i+'">'+safe(pins[i].name)+lk+'<span class="ptemp">--</span>'+del+'</div>';
+}
+el.innerHTML=html;
+var chips=el.querySelectorAll(".pinchip");
+for(var j=0;j<chips.length;j++)(function(ch){ch.addEventListener("click",function(e){if(e.target.getAttribute&&e.target.getAttribute("data-del")!=null)return;manualCity=true;city=pins[+ch.getAttribute("data-idx")];lsSet("city",JSON.stringify(city));refreshAll();});})(chips[j]);
+var dels=el.querySelectorAll("button[data-del]");
+for(var k=0;k<dels.length;k++)(function(b){b.addEventListener("click",function(e){e.stopPropagation();var idx=+b.getAttribute("data-del");if(pins[idx]&&pins[idx].locked){show("قفل است","info");return;}pins.splice(idx,1);savePins();updatePinBtn();});})(dels[k]);
+updatePinTemps();
 }
 function updatePinBtn(){var on=false;for(var i=0;i<pins.length;i++)if(String(pins[i].id)===String(city.id)){on=true;break;}var b=document.getElementById("pin");if(b){b.textContent=on?"★":"☆";if(on)b.classList.add("active");else b.classList.remove("active");}renderPins();}
-
 function saveToCache(k,o){try{localStorage.setItem(k,JSON.stringify({data:o,time:Date.now()}));}catch(e){}}
 function getFromCache(k,mx){try{var r=localStorage.getItem(k);if(!r)return null;var c=JSON.parse(r);if(Date.now()-c.time>mx)return null;return c.data;}catch(e){return null;}}
 var CACHE_AGE=3600000;
-
 function loadBias(){var k="bias_"+city.latitude.toFixed(2)+"_"+city.longitude.toFixed(2);var c=getFromCache(k,7*86400000);if(c!=null){biasInfo=c;return Promise.resolve(c);}var e=new Date();e.setDate(e.getDate()-8);var s=new Date(e);s.setDate(s.getDate()-13);var p="latitude="+city.latitude+"&longitude="+city.longitude+"&start_date="+fmtDate(s)+"&end_date="+fmtDate(e)+"&daily=temperature_2m_max,temperature_2m_min&timezone=auto";return Promise.all([fetch(API.hforecast+"?"+p).then(function(r){return r.json();}).catch(function(){return null;}),fetch(API.archive+"?"+p).then(function(r){return r.json();}).catch(function(){return null;})]).then(function(res){var fc=res[0],ob=res[1];if(!fc||!ob||!fc.daily||!ob.daily){biasInfo={b:0,mae:0,n:0};return biasInfo;}var se=0,sa=0,n=0;for(var i=0;i<fc.daily.time.length;i++){var fm=fc.daily.temperature_2m_max?fc.daily.temperature_2m_max[i]:null,om=ob.daily.temperature_2m_max?ob.daily.temperature_2m_max[i]:null;if(fm!=null&&om!=null){se+=(fm-om);sa+=Math.abs(fm-om);n++;}}biasInfo=n?{b:se/n,mae:sa/n,n:n}:{b:0,mae:0,n:0};saveToCache(k,biasInfo);return biasInfo;}).catch(function(){biasInfo={b:0,mae:0,n:0};return biasInfo;});}
 function loadClimateNormal(){var k="cl_"+city.latitude.toFixed(2)+"_"+city.longitude.toFixed(2);var c=getFromCache(k,30*86400000);if(c!=null){climateNormal=c;return Promise.resolve(c);}var n=new Date();var sy=n.getFullYear()-30;return fetch(API.archive+"?latitude="+city.latitude+"&longitude="+city.longitude+"&start_date="+sy+"-01-01&end_date="+(n.getFullYear()-1)+"-12-31&daily=temperature_2m_mean&timezone=auto").then(function(r){return r.json();}).then(function(j){if(!j||!j.daily||!j.daily.time)return null;var mm=n.getMonth()+1,dd=n.getDate(),sum=0,cnt=0;for(var i=0;i<j.daily.time.length;i++){var p=j.daily.time[i].split("-");if(+p[1]===mm&&+p[2]===dd&&j.daily.temperature_2m_mean[i]!=null){sum+=j.daily.temperature_2m_mean[i];cnt++;}}climateNormal=cnt?sum/cnt:null;if(climateNormal!=null)saveToCache(k,climateNormal);return climateNormal;}).catch(function(){return null;});}
 function loadEnsembleConf(){var k="cf_"+city.latitude.toFixed(2);var c=getFromCache(k,3*3600000);if(c!=null){confInfo=c;return Promise.resolve(c);}return fetch(API.ensemble+"?latitude="+city.latitude+"&longitude="+city.longitude+"&daily=precipitation_sum&models=ecmwf_ifs025_ensemble&forecast_days=1&timezone=auto").then(function(r){return r.json();}).then(function(j){if(!j||!j.daily)return null;var wet=0,tot=0;for(var k2 in j.daily)if(k2.indexOf("precipitation_sum_member")===0){var v=j.daily[k2][0];if(v!=null){tot++;if(v>=.1)wet++;}}confInfo=tot?{prob:Math.round(wet/tot*100),n:tot}:null;if(confInfo)saveToCache(k,confInfo);return confInfo;}).catch(function(){return null;});}
@@ -1049,197 +1012,197 @@ function loadPrecision(){return Promise.all([fetchMultiModel(city.latitude,city.
 function fetchClimateProfile(lat,lon){var k="cp_"+lat.toFixed(2)+"_"+lon.toFixed(2);var c=getFromCache(k,30*86400000);if(c)return Promise.resolve(c);var e=new Date();e.setDate(e.getDate()-1);var s=new Date(e);s.setDate(s.getDate()-364);return fetch(API.archive+"?latitude="+lat+"&longitude="+lon+"&start_date="+fmtDate(s)+"&end_date="+fmtDate(e)+"&daily=temperature_2m_mean,precipitation_sum&timezone=auto").then(function(r){return r.json();}).then(function(j){if(!j||!j.daily||!j.daily.time)return null;var mo={};for(var i=0;i<j.daily.time.length;i++){var mm=+j.daily.time[i].slice(5,7);if(!mo[mm])mo[mm]={t:0,n:0,p:0};if(j.daily.temperature_2m_mean[i]!=null){mo[mm].t+=j.daily.temperature_2m_mean[i];mo[mm].n++;}if(j.daily.precipitation_sum[i]!=null)mo[mm].p+=j.daily.precipitation_sum[i];}var ap=0,cold=null,warm=null;for(var m=1;m<=12;m++)if(mo[m]){ap+=mo[m].p;var mn=mo[m].n?mo[m].t/mo[m].n:null;if(mn!=null){if(cold==null||mn<cold)cold=mn;if(warm==null||mn>warm)warm=mn;}}var p={annualP:Math.round(ap),coldest:cold,warmest:warm};saveToCache(k,p);return p;}).catch(function(){return null;});}
 function climateZone(p,el){var band="motadel";if(p&&p.coldest!=null){if(p.coldest<=-3)band="sard";else if(p.coldest<=8)band="motadel";else band="garm";}if(el!=null&&el>1800&&band==="garm")band="motadel";var hum="nim";if(p&&p.annualP!=null){if(p.annualP>=600)hum="martoub";else if(p.annualP>=250)hum="nim";else hum="khoshk";}return band+"-"+hum;}
 function loadClimateZone(){return fetchClimateProfile(city.latitude,city.longitude).then(function(p){return fetchElevation(city.latitude,city.longitude).then(function(el){climateZoneCur=climateZone(p,el);renderExtraSections();renderDetails();});}).catch(function(){climateZoneCur="motadel-nim";renderExtraSections();});}
-
 function fetchWeather(lat,lon,el){var u=new URL(API.weather);u.searchParams.set("latitude",lat);u.searchParams.set("longitude",lon);if(el!=null)u.searchParams.set("elevation",Math.round(el));u.searchParams.set("current","temperature_2m,relative_humidity_2m,apparent_temperature,precipitation,weather_code,wind_speed_10m,wind_direction_10m,surface_pressure,dew_point_2m,cloud_cover,is_day");u.searchParams.set("hourly","temperature_2m,precipitation_probability,weather_code,visibility,relative_humidity_2m,dew_point_2m,surface_pressure,wind_speed_10m,cloud_cover");u.searchParams.set("daily","weather_code,temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max,uv_index_max,wind_speed_10m_max,sunrise,sunset");u.searchParams.set("timezone","auto");u.searchParams.set("forecast_days","9");u.searchParams.set("past_days","1");return fetch(u).then(function(r){if(!r.ok)throw new Error();return r.json();});}
 var STATIONS=[{name:"تهران",lat:35.6892,lon:51.389},{name:"مشهد",lat:36.2605,lon:59.6168},{name:"اصفهان",lat:32.6546,lon:51.668},{name:"شیراز",lat:29.5918,lon:52.5837},{name:"تبریز",lat:38.0962,lon:46.2738},{name:"اراک",lat:34.0917,lon:49.6892}];
 function loadWeather(){var ck="w_"+city.id;var c=getFromCache(ck,CACHE_AGE);if(c&&!navigator.onLine){data=c;renderWeather();return Promise.resolve(true);}if(c){data=c;renderWeather();}if(!navigator.onLine)return Promise.resolve(false);return fetchElevation(city.latitude,city.longitude).then(function(el){return fetchWeather(city.latitude,city.longitude,el);}).then(function(j){data=j;saveToCache(ck,j);renderWeather();return true;}).catch(function(){var best=null;for(var i=0;i<STATIONS.length;i++){var dd=haversine(city.latitude,city.longitude,STATIONS[i].lat,STATIONS[i].lon);if(!best||dd<best.d)best=STATIONS[i];}if(best)return fetchWeather(best.lat,best.lon,null).then(function(j){data=j;renderWeather();pendingNotice="📡 ایستگاه: "+best.name;return true;}).catch(function(){show("خطا","err");return false;});show("خطا","err");return false;});}
-
 function refreshAll(msg){
-  precision=null;
-  renderToday();
-  updatePinBtn();
-  loadPrayerTimes();
-  return Promise.all([loadWeather(),loadAir(),loadBias(),loadEnsembleConf(),loadClimateNormal()]).then(function(r){
-    var ok=r[0]||r[1];
-    var m=msg||((ok&&navigator.onLine)?"به‌روزرسانی شد":null);
-    if(pendingNotice){m=(m?m+" ":"")+pendingNotice;pendingNotice=null;}
-    if(m)show(m,ok?"ok":"info");
-    renderWeather();renderDetails();loadPrecision();loadClimateZone();
-  });
+precision=null;
+renderToday();
+updatePinBtn();
+loadPrayerTimes();
+return Promise.all([loadWeather(),loadAir(),loadBias(),loadEnsembleConf(),loadClimateNormal()]).then(function(r){
+var ok=r[0]||r[1];
+var m=msg||((ok&&navigator.onLine)?"به‌روزرسانی شد":null);
+if(pendingNotice){m=(m?m+" ":"")+pendingNotice;pendingNotice=null;}
+if(m)show(m,ok?"ok":"info");
+renderWeather();renderDetails();loadPrecision();loadClimateZone();
+});
 }
 var pullStart=null,pulling=false;var pullInd=document.getElementById("pullInd");
 function pullRefreshAll(){if(!appBooted)return;show("🔄 در حال به‌روزرسانی...","info");refreshAll();}
 window.addEventListener("touchstart",function(e){if(window.scrollY<=0){pullStart=e.touches[0].clientY;pulling=true;}},{passive:true});
 window.addEventListener("touchmove",function(e){if(!pulling||pullStart==null)return;var dy=e.touches[0].clientY-pullStart;if(dy>0&&pullInd){pullInd.style.opacity=1;pullInd.textContent=dy>80?"رها کنید تا به‌روزرسانی شود":"برای به‌روزرسانی بکشید";}},{passive:true});
 window.addEventListener("touchend",function(e){if(!pulling||pullStart==null)return;pulling=false;if(pullInd)pullInd.style.opacity=0;var dy=e.changedTouches[0].clientY-pullStart;if(dy>80)pullRefreshAll();pullStart=null;});
-
 var PLACE_WHITELIST=["village","hamlet","suburb","quarter","neighbourhood","city","town","municipality","urban_area","county","state","province","country"];
 function nomOk(n){var at=(n.addresstype||n.type||"").toLowerCase();var cat=n.category||"";if(cat==="place"||cat==="boundary"||cat==="administrative")return PLACE_WHITELIST.indexOf(at)!==-1||at==="";return PLACE_WHITELIST.indexOf(at)!==-1;}
 var searchInput=document.getElementById("search");
 function doSearch(qRaw){
-  var q=qRaw.trim();var latin=isLatin(q);
-  var localMap={},local=[];
-  for(var i=0;i<LOCAL_AREAS.length;i++){var nn=normName(LOCAL_AREAS[i].n);if((LOCAL_AREAS[i].n.indexOf(q)!==-1||q.indexOf(LOCAL_AREAS[i].n)!==-1)&&!localMap[nn]){localMap[nn]=1;local.push(LOCAL_AREAS[i]);}}
-  for(var c0=0;c0<COUNTRIES.length;c0++){var cn=normName(COUNTRIES[c0].name);if((COUNTRIES[c0].name.indexOf(q)!==-1||q.indexOf(COUNTRIES[c0].name)!==-1)&&!localMap[cn]){localMap[cn]=1;local.push({province:"",parent:COUNTRIES[c0].parent,n:COUNTRIES[c0].name,lat:null,lon:null,type:"country"});}}
-  var jobs=[fetch(API.geo+"?name="+encodeURIComponent(q)+"&count=15&language=fa&format=json").then(function(r){return r.json();}).then(function(j){return j.results||[];}).catch(function(){return[];}),fetch(API.nom+"?format=jsonv2&addressdetails=1&limit=15&countrycodes=ir&accept-language=fa&q="+encodeURIComponent(q)).then(function(r){return r.json();}).then(function(j){return (j||[]).filter(nomOk);}).catch(function(){return[];})];
-  if(latin)jobs.push(fetch(API.geo+"?name="+encodeURIComponent(q)+"&count=15&language=en&format=json").then(function(r){return r.json();}).then(function(j){return j.results||[];}).catch(function(){return[];}));
-  Promise.all(jobs).then(function(res){
-    var geo=res[0]||[],geoEn=(res[2]||[]);
-    var b=document.getElementById("results");if(!b)return;
-    var html="";
-    for(var L=0;L<local.length;L++){var a=local[L];var o;if(a.type==="village")o={type:"village",name:a.n,county:a.parent,province:a.province};else if(a.type==="district")o={type:"district",name:a.n,city:a.parent,province:a.province};else if(a.type==="country")o={type:"country",name:a.n,parent:a.parent};else o={type:"city",name:a.n,province:a.province,country:"ایران"};html+='<div class="result" data-local="'+L+'"><div><b>'+safe(a.n)+'</b><small>'+safe(formatSub(o))+'</small></div>📍</div>';}
-    var merged=[],mn2={};for(var k=0;k<local.length;k++)mn2[normName(local[k].n)]=1;
-    function pushGeo(list){for(var i=0;i<list.length;i++){var x=list[i];var nm=normName(x.name);if(mn2[nm])continue;mn2[nm]=1;merged.push({o:{type:"city",name:x.name,province:x.admin1||"",country:x.country||""},lat:x.latitude,lon:x.longitude});}}
-    pushGeo(geo);if(latin)pushGeo(geoEn);
-    for(var m2=0;m2<merged.length;m2++){var mm=merged[m2];html+='<div class="result" data-merged="'+m2+'"><div><b>'+safe(mm.o.name)+'</b><small>'+safe(formatSub(mm.o))+'</small></div>📍</div>';}
-    if(!html)html='<div class="muted" style="padding:15px;color:#555">یافت نشد</div>';
-    b.innerHTML=html;b.style.display="block";
-    var locs=b.querySelectorAll("[data-local]");
-    for(var L3=0;L3<locs.length;L3++)(function(el){el.addEventListener("click",function(){var a=local[+el.getAttribute("data-local")];manualCity=true;if(a.type==="country")city={id:"c-"+a.n,name:a.n,country:a.n,continent:a.parent,admin1:"",county:"",type:"country",latitude:32,longitude:53};else city={id:"a-"+a.n,name:a.n,country:"ایران",admin1:a.province,county:(a.type==="village"?a.parent:(a.type==="district"?a.parent:a.n)),type:a.type,latitude:a.lat,longitude:a.lon};searchInput.value="";b.style.display="none";lsSet("city",JSON.stringify(city));refreshAll();});})(locs[L3]);
-    var megs=b.querySelectorAll("[data-merged]");
-    for(var M=0;M<megs.length;M++)(function(el){el.addEventListener("click",function(){var mm=merged[+el.getAttribute("data-merged")];manualCity=true;var o=mm.o;city={id:("g"+Math.round(mm.lat*1e4)),name:o.name,country:(o.country||"ایران"),admin1:(o.province||""),county:o.name,type:o.type,continent:(o.parent||""),latitude:mm.lat,longitude:mm.lon};searchInput.value="";b.style.display="none";lsSet("city",JSON.stringify(city));refreshAll();});})(megs[M]);
-  });
+var q=qRaw.trim();var latin=isLatin(q);
+var localMap={},local=[];
+for(var i=0;i<LOCAL_AREAS.length;i++){var nn=normName(LOCAL_AREAS[i].n);if((LOCAL_AREAS[i].n.indexOf(q)!==-1||q.indexOf(LOCAL_AREAS[i].n)!==-1)&&!localMap[nn]){localMap[nn]=1;local.push(LOCAL_AREAS[i]);}}
+for(var c0=0;c0<COUNTRIES.length;c0++){var cn=normName(COUNTRIES[c0].name);if((COUNTRIES[c0].name.indexOf(q)!==-1||q.indexOf(COUNTRIES[c0].name)!==-1)&&!localMap[cn]){localMap[cn]=1;local.push({province:"",parent:COUNTRIES[c0].parent,n:COUNTRIES[c0].name,lat:null,lon:null,type:"country"});}}
+var jobs=[fetch(API.geo+"?name="+encodeURIComponent(q)+"&count=15&language=fa&format=json").then(function(r){return r.json();}).then(function(j){return j.results||[];}).catch(function(){return[];}),fetch(API.nom+"?format=jsonv2&addressdetails=1&limit=15&countrycodes=ir&accept-language=fa&q="+encodeURIComponent(q)).then(function(r){return r.json();}).then(function(j){return (j||[]).filter(nomOk);}).catch(function(){return[];})];
+if(latin)jobs.push(fetch(API.geo+"?name="+encodeURIComponent(q)+"&count=15&language=en&format=json").then(function(r){return r.json();}).then(function(j){return j.results||[];}).catch(function(){return[];}));
+Promise.all(jobs).then(function(res){
+var geo=res[0]||[],geoEn=(res[2]||[]);
+var b=document.getElementById("results");if(!b)return;
+var html="";
+for(var L=0;L<local.length;L++){var a=local[L];var o;if(a.type==="village")o={type:"village",name:a.n,county:a.parent,province:a.province};else if(a.type==="district")o={type:"district",name:a.n,city:a.parent,province:a.province};else if(a.type==="country")o={type:"country",name:a.n,parent:a.parent};else o={type:"city",name:a.n,province:a.province,country:"ایران"};html+='<div class="result" data-local="'+L+'"><div><b>'+safe(a.n)+'</b><small>'+safe(formatSub(o))+'</small></div>📍</div>';}
+var merged=[],mn2={};for(var k=0;k<local.length;k++)mn2[normName(local[k].n)]=1;
+function pushGeo(list){for(var i=0;i<list.length;i++){var x=list[i];var nm=normName(x.name);if(mn2[nm])continue;mn2[nm]=1;merged.push({o:{type:"city",name:x.name,province:x.admin1||"",country:x.country||""},lat:x.latitude,lon:x.longitude});}}
+pushGeo(geo);if(latin)pushGeo(geoEn);
+for(var m2=0;m2<merged.length;m2++){var mm=merged[m2];html+='<div class="result" data-merged="'+m2+'"><div><b>'+safe(mm.o.name)+'</b><small>'+safe(formatSub(mm.o))+'</small></div>📍</div>';}
+if(!html)html='<div class="muted" style="padding:15px;color:#555">یافت نشد</div>';
+b.innerHTML=html;b.style.display="block";
+var locs=b.querySelectorAll("[data-local]");
+for(var L3=0;L3<locs.length;L3++)(function(el){el.addEventListener("click",function(){var a=local[+el.getAttribute("data-local")];manualCity=true;if(a.type==="country")city={id:"c-"+a.n,name:a.n,country:a.n,continent:a.parent,admin1:"",county:"",type:"country",latitude:32,longitude:53};else city={id:"a-"+a.n,name:a.n,country:"ایران",admin1:a.province,county:(a.type==="village"?a.parent:(a.type==="district"?a.parent:a.n)),type:a.type,latitude:a.lat,longitude:a.lon};searchInput.value="";b.style.display="none";lsSet("city",JSON.stringify(city));refreshAll();});})(locs[L3]);
+var megs=b.querySelectorAll("[data-merged]");
+for(var M=0;M<megs.length;M++)(function(el){el.addEventListener("click",function(){var mm=merged[+el.getAttribute("data-merged")];manualCity=true;var o=mm.o;city={id:("g"+Math.round(mm.lat*1e4)),name:o.name,country:(o.country||"ایران"),admin1:(o.province||""),county:o.name,type:o.type,continent:(o.parent||""),latitude:mm.lat,longitude:mm.lon};searchInput.value="";b.style.display="none";lsSet("city",JSON.stringify(city));refreshAll();});})(megs[M]);
+});
 }
 if(searchInput)searchInput.addEventListener("input",function(){clearTimeout(searchInput._t);var q=searchInput.value.trim();if(q.length<2){var r=document.getElementById("results");if(r)r.style.display="none";return;}searchInput._t=setTimeout(function(){doSearch(q);},400);});
 document.addEventListener("click",function(e){if(!e.target.closest||!e.target.closest(".search")){var r=document.getElementById("results");if(r)r.style.display="none";}});
-
 var pinBtn=document.getElementById("pin");if(pinBtn)pinBtn.addEventListener("click",function(){var f=-1;for(var i=0;i<pins.length;i++)if(String(pins[i].id)===String(city.id)){f=i;break;}if(f>=0){if(pins[f].locked){show("قفل است","info");return;}pins.splice(f,1);show("حذف شد");}else{pins.push({id:city.id,name:city.name,country:city.country,admin1:city.admin1,county:city.county,type:city.type,latitude:city.latitude,longitude:city.longitude});show("پین شد","ok");}savePins();updatePinBtn();});
-
 /* ===== GPS ===== */
 function resolvePlace(lat,lon){var k="rg_"+lat.toFixed(3)+"_"+lon.toFixed(3);var c=getFromCache(k,30*86400000);if(c)return Promise.resolve(c);return fetch("https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat="+lat+"&lon="+lon+"&zoom=17&addressdetails=1&accept-language=fa").then(function(r){return r.json();}).then(function(j){var a=j.address||{};var out={village:a.village||a.hamlet||"",district:a.neighbourhood||a.quarter||a.suburb||a.city_district||"",name:a.city||a.town||a.village||a.municipality||a.county||j.name||"",county:a.county||"",admin1:a.state||"",country:a.country||""};saveToCache(k,out);return out;}).catch(function(){return fetch("https://api.bigdatacloud.net/data/reverse-geocode-client?latitude="+lat+"&longitude="+lon+"&localityLanguage=fa").then(function(r){return r.json();}).then(function(j){var out={village:j.locality||"",district:"",name:j.city||j.locality||"",county:"",admin1:j.principalSubdivision||"",country:j.countryName||""};saveToCache(k,out);return out;}).catch(function(){return{village:"",district:"",name:"",county:"",admin1:"",country:""};});});}
 function adoptGPS(lat,lon,force){
-  lastAdopted={lat:lat,lon:lon};
-  resolvePlace(lat,lon).then(function(g){
-    var name=g.village||g.district||g.name||"موقعیت فعلی";
-    var type=g.village?"village":(g.district?"district":"city");
-    var id="gps"+Math.round(lat*1000)+"_"+Math.round(lon*1000);
-    var ch=(city.id!==id);
-    city={id:id,name:name,country:g.country||"ایران",admin1:g.admin1||"",county:g.county||"",type:type,latitude:lat,longitude:lon};
-    lsSet("city",JSON.stringify(city));
-    if(ch||force)refreshAll("📍 مکان دقیق: "+name);
-  }).catch(function(){
-    var id="gps"+Math.round(lat*1000)+"_"+Math.round(lon*1000);
-    city={id:id,name:"موقعیت فعلی",country:"ایران",admin1:"",county:"",type:"city",latitude:lat,longitude:lon};
-    lsSet("city",JSON.stringify(city));
-    refreshAll("📍 مکان فعلی");
-  });
+lastAdopted={lat:lat,lon:lon};
+resolvePlace(lat,lon).then(function(g){
+var name=g.village||g.district||g.name||"موقعیت فعلی";
+var type=g.village?"village":(g.district?"district":"city");
+var id="gps"+Math.round(lat*1000)+"_"+Math.round(lon*1000);
+var ch=(city.id!==id);
+city={id:id,name:name,country:g.country||"ایران",admin1:g.admin1||"",county:g.county||"",type:type,latitude:lat,longitude:lon};
+lsSet("city",JSON.stringify(city));
+if(ch||force)refreshAll("📍 مکان دقیق: "+name);
+}).catch(function(){
+var id="gps"+Math.round(lat*1000)+"_"+Math.round(lon*1000);
+city={id:id,name:"موقعیت فعلی",country:"ایران",admin1:"",county:"",type:"city",latitude:lat,longitude:lon};
+lsSet("city",JSON.stringify(city));
+refreshAll("📍 مکان فعلی");
+});
 }
 /* ✅ محافظ: تا زمانی که مودال تأیید نشده، GPS چیزی را رفرش نمی‌کند */
 function onGPSFix(p){
-  if(!appBooted)return;
-  var pos={lat:p.coords.latitude,lon:p.coords.longitude};
-  lastGPS=pos;
-  setGps("ok");
-  if(!manualCity&&(!lastAdopted||haversine(lastAdopted.lat,lastAdopted.lon,pos.lat,pos.lon)>0.3))adoptGPS(pos.lat,pos.lon,false);
+if(!appBooted)return;
+if(!gpsEnabled)return;
+var pos={lat:p.coords.latitude,lon:p.coords.longitude};
+lastGPS=pos;
+setGps("ok");
+if(!manualCity&&(!lastAdopted||haversine(lastAdopted.lat,lastAdopted.lon,pos.lat,pos.lon)>0.3))adoptGPS(pos.lat,pos.lon,false);
 }
 function onGPSErr(){setGps("off");}
-function startGPSWatch(){if(!navigator.geolocation){setGps("off");return;}if(gpsWatchId!=null)return;gpsWatchId=navigator.geolocation.watchPosition(onGPSFix,onGPSErr,{enableHighAccuracy:true,timeout:20000,maximumAge:0});}
+/* ✅ FIX: اضافه کردن چک appBooted و gpsEnabled */
+function startGPSWatch(){
+if(!appBooted)return;
+if(!gpsEnabled){setGps("off");return;}
+if(!navigator.geolocation){setGps("off");return;}
+if(gpsWatchId!=null)return;
+gpsWatchId=navigator.geolocation.watchPosition(onGPSFix,onGPSErr,{enableHighAccuracy:true,timeout:20000,maximumAge:0});
+}
 function tryGPSOnce(high){return new Promise(function(res,rej){if(!navigator.geolocation){rej({code:-1});return;}navigator.geolocation.getCurrentPosition(function(p){res({lat:p.coords.latitude,lon:p.coords.longitude});},function(err){rej(err);},{enableHighAccuracy:high,timeout:high?15000:10000,maximumAge:high?0:60000});});}
 var IP_PROVIDERS=[function(){return fetch("https://ipapi.co/json/").then(function(r){return r.json();}).then(function(j){if(j.latitude==null)throw 0;return{lat:j.latitude,lon:j.longitude};});},function(){return fetch("https://ipwho.is/").then(function(r){return r.json();}).then(function(j){if(j.latitude==null)throw 0;return{lat:j.latitude,lon:j.longitude};});},function(){return fetch("https://freeipapi.com/api/json/").then(function(r){return r.json();}).then(function(j){if(j.latitude==null)throw 0;return{lat:j.latitude,lon:j.longitude};});},function(){return fetch("https://ipinfo.io/json").then(function(r){return r.json();}).then(function(j){var loc=(j.loc||"").split(",");if(!loc[0])throw 0;return{lat:parseFloat(loc[0]),lon:parseFloat(loc[1])};});}];
 function ipLocate(){return IP_PROVIDERS.reduce(function(chain,fn){return chain.catch(function(){return fn();});},Promise.reject(new Error("start")));}
 function locateUser(){
-  show("در حال تشخیص مکان فعلی...","info");
-  manualCity=false;
-  if(lastGPS){setGps("ok");adoptGPS(lastGPS.lat,lastGPS.lon,true);return;}
-  tryGPSOnce(true).then(function(p){setGps("ok");lastGPS=p;adoptGPS(p.lat,p.lon,true);}).catch(function(){return tryGPSOnce(false).then(function(p){setGps("ok");lastGPS=p;adoptGPS(p.lat,p.lon,true);});}).catch(function(){return ipLocate().then(function(p){setGps("ok");adoptGPS(p.lat,p.lon,true);show("📍 منطقهٔ فعلی از طریق شبکه تشخیص داده شد","ok");}).catch(function(){show("⚠️ تشخیص مکان ممکن نشد","err");});});
+if(!appBooted){show("⚠️ لطفاً ابتدا مودال نصب را تأیید کنید","info");return;}
+if(!gpsEnabled){show("⚠️ دسترسی به موقعیت مکانی غیرفعال است","err");return;}
+show("در حال تشخیص مکان فعلی...","info");
+manualCity=false;
+if(lastGPS){setGps("ok");adoptGPS(lastGPS.lat,lastGPS.lon,true);return;}
+tryGPSOnce(true).then(function(p){setGps("ok");lastGPS=p;adoptGPS(p.lat,p.lon,true);}).catch(function(){return tryGPSOnce(false).then(function(p){setGps("ok");lastGPS=p;adoptGPS(p.lat,p.lon,true);});}).catch(function(){return ipLocate().then(function(p){setGps("ok");adoptGPS(p.lat,p.lon,true);show("📍 منطقهٔ فعلی از طریق شبکه تشخیص داده شد","ok");}).catch(function(){show("⚠️ تشخیص مکان ممکن نشد","err");});});
 }
 var locBtn=document.getElementById("loc");if(locBtn)locBtn.addEventListener("click",locateUser);
-
 /* ✅ فقط وضعیت GPS را نشان بده؛ خودِ watch بعد از تأیید مودال فعال می‌شود */
 if(navigator.geolocation){
-  setGps("ok");
+setGps("ok");
 }else setGps("off");
-
 /* ===== Detail modal ===== */
 function getInfoContent(key){
-  var s=getDayStats(detailDay);if(!s)return{icon:"❓",title:"--",text:"--"};
-  var L=s.label;
-  var icons={temp:"🌡️",humidity:"💧",wind:"💨",uv:"☀️",aqi:"🌫️",precip:"🌧️",visibility:"👁️",pressure:"🌡️",dewpoint:"💦",us_aqi:"🌐",pm25:"🔬",pm10:"🌪️",ozone:"☁️",dust:"🏜️",pollen:"🌼",cloud:"☁️"};
-  var icon=icons[key]||"📊";
-  var title="",text="";
-  if(key==="temp"){var tv=s.temp;var st=tv==null?"--":tv<=-5?"🔴 یخبندان":tv<=0?"🔴 بسیار سرد":tv<=10?"🟡 سرد":tv<=18?"🟢 خنک":tv<=27?"🟢 مطلوب":tv<=32?"🟡 گرم":"🔴 بسیار گرم";title="دما ("+L+")";text="📊 "+(tv!=null?T1(tv)+D():"--")+"\n📈 بازه: "+T(s.tempMin)+D()+" تا "+T(s.tempMax)+D()+"\n🚦 "+st;}
-  else if(key==="humidity"){title="رطوبت هوا";var h=s.hum;var status=h==null?"--":h<30?"🔴 خشک":h<50?"🟡 مناسب":h<70?"🟢 خوب":h<85?"🟡 شرجی":"🔴 بسیار شرجی";text="📊 "+(h!=null?Math.round(h)+"٪":"--")+"\n🚦 وضعیت: "+status+"\n💡 رطوبت مطلوب بین ۴۰ تا ۶۰٪ است.";}
-  else if(key==="wind"){title="سرعت و جهت باد";var w=s.wind;var status=w==null?"--":w<10?"🟢 ملایم":w<25?"🟢 متوسط":w<40?"🟡 شدید":w<60?"🔴 تند":"🔴 طوفانی";text="📊 "+(w!=null?Math.round(w)+" km/h":"--")+(s.windDir?" از "+dirFa(s.windDir):"")+"\n🚦 وضعیت: "+status;}
-  else if(key==="uv"){title="شاخص فرابنفش";var uv=s.uv;var status=uv==null?"--":uv<3?"🟢 کم":uv<6?"🟡 متوسط":uv<8?"🟡 بالا":uv<11?"🔴 بسیار بالا":"🔴 خطرناک";text="📊 شاخص: "+(uv!=null?uv:"--")+"\n🚦 وضعیت: "+status;}
-  else if(key==="aqi"){title="کیفیت هوا (EAQI)";var a=s.aqi;text="📊 EAQI: "+(a!=null?Math.round(a):"--")+" ("+aqiLabel(a)+")\n💡 PM2.5: "+(s.pm25!=null?Math.round(s.pm25):"--")+"\n💡 PM10: "+(s.pm10!=null?Math.round(s.pm10):"--")+"\n💡 ازن: "+(s.ozone!=null?Math.round(s.ozone):"--");}
-  else if(key==="precip"){title="بارش";var p=s.precip;var prob=s.precipProb;text="📊 مقدار: "+(p!=null?p+" mm":"--")+"\n🌧️ احتمال: "+(prob!=null?prob+"٪":"--");}
-  else if(key==="visibility"){title="دید افقی";var v=s.vis;var status=v==null?"--":v>=10?"🟢 عالی":v>=5?"🟢 خوب":v>=2?"🟡 متوسط":v>=1?"🔴 ضعیف":"🔴 بسیار ضعیف";text="📊 دید: "+(v!=null?Math.round(v)+" km":"--")+"\n🚦 وضعیت: "+status;}
-  else if(key==="pressure"){title="فشار هوا";var pr=s.pres;var tr=pressureTrend();var trend=tr==null?"--":tr<-3?"📉 در حال کاهش":tr>3?"📈 در حال افزایش":"➡️ پایدار";text="📊 فشار: "+(pr!=null?Math.round(pr)+" hPa":"--")+"\n🚦 روند: "+trend;}
-  else if(key==="dewpoint"){title="نقطهٔ شبنم";var d=s.dew;var status=d==null?"--":d<10?"🟢 خشک":d<16?"🟢 مطلوب":d<18?"🟡 شرجی":"🔴 آزاردهنده";text="📊 شبنم: "+(d!=null?T(d)+D():"--")+"\n🚦 وضعیت: "+status;}
-  else if(key==="us_aqi"){title="کیفیت هوا (EPA)";var a=s.us;text="📊 US AQI: "+(a!=null?Math.round(a):"--")+" ("+aqiLabel(a)+")";}
-  else if(key==="pm25"){title="ذرات ریز PM2.5";var p=s.pm25;var status=p==null?"--":p<12?"🟢 خوب":p<35?"🟡 متوسط":p<55?"🔴 بد":"🔴 بسیار بد";text="📊 PM2.5: "+(p!=null?Math.round(p):"--")+" µg/m³\n🚦 وضعیت: "+status;}
-  else if(key==="pm10"){title="ذرات درشت PM10";var p=s.pm10;var status=p==null?"--":p<54?"🟢 خوب":p<154?"🟡 متوسط":p<254?"🔴 بد":"🔴 بسیار بد";text="📊 PM10: "+(p!=null?Math.round(p):"--")+" µg/m³\n🚦 وضعیت: "+status;}
-  else if(key==="ozone"){title="ازن سطح زمین";var o=s.ozone;var status=o==null?"--":o<100?"🟢 خوب":o<160?"🟡 متوسط":"🔴 بد";text="📊 ازن: "+(o!=null?Math.round(o):"--")+" µg/m³\n🚦 وضعیت: "+status;}
-  else if(key==="dust"){title="ریزگرد";var d=s.dust;var status=d==null?"--":d<50?"🟢 ناچیز":d<100?"🟡 متوسط":d<200?"🔴 قابل توجه":"🔴 شدید";text="📊 ریزگرد: "+(d!=null?Math.round(d):"--")+" µg/m³\n🚦 وضعیت: "+status;}
-  else if(key==="pollen"){title="گردهٔ گیاهان";var p=(s.pollen!=null)?Math.round(s.pollen):seasonalPollen(new Date().getMonth()+1);var status=p<30?"🟢 کم":p<60?"🟡 متوسط":"🔴 بالا";text="📊 گرده: "+p+"/100 ("+status+")";}
-  else if(key==="cloud"){title="پوشش ابر";var c=s.cloud;var status=c==null?"--":c<20?"🟢 آسمان صاف":c<50?"🟢 کمی ابری":c<80?"🟡 ابری":"🔴 کاملاً ابری";text="📊 پوشش: "+(c!=null?Math.round(c)+"٪":"--")+"\n🚦 وضعیت: "+status;}
-  else{title=key;text="داده نیست";}
-  return{icon:icon,title:title,text:text};
+var s=getDayStats(detailDay);if(!s)return{icon:"❓",title:"--",text:"--"};
+var L=s.label;
+var icons={temp:"🌡️",humidity:"💧",wind:"💨",uv:"☀️",aqi:"🌫️",precip:"🌧️",visibility:"👁️",pressure:"🌡️",dewpoint:"💦",us_aqi:"🌐",pm25:"🔬",pm10:"🌪️",ozone:"☁️",dust:"🏜️",pollen:"🌼",cloud:"☁️"};
+var icon=icons[key]||"📊";
+var title="",text="";
+if(key==="temp"){var tv=s.temp;var st=tv==null?"--":tv<=-5?"🔴 یخبندان":tv<=0?"🔴 بسیار سرد":tv<=10?"🟡 سرد":tv<=18?"🟢 خنک":tv<=27?"🟢 مطلوب":tv<=32?"🟡 گرم":"🔴 بسیار گرم";title="دما ("+L+")";text="📊 "+(tv!=null?T1(tv)+D():"--")+"\n📈 بازه: "+T(s.tempMin)+D()+" تا "+T(s.tempMax)+D()+"\n🚦 "+st;}
+else if(key==="humidity"){title="رطوبت هوا";var h=s.hum;var status=h==null?"--":h<30?"🔴 خشک":h<50?"🟡 مناسب":h<70?"🟢 خوب":h<85?"🟡 شرجی":"🔴 بسیار شرجی";text="📊 "+(h!=null?Math.round(h)+"٪":"--")+"\n🚦 وضعیت: "+status+"\n💡 رطوبت مطلوب بین ۴۰ تا ۶۰٪ است.";}
+else if(key==="wind"){title="سرعت و جهت باد";var w=s.wind;var status=w==null?"--":w<10?"🟢 ملایم":w<25?"🟢 متوسط":w<40?"🟡 شدید":w<60?"🔴 تند":"🔴 طوفانی";text="📊 "+(w!=null?Math.round(w)+" km/h":"--")+(s.windDir?" از "+dirFa(s.windDir):"")+"\n🚦 وضعیت: "+status;}
+else if(key==="uv"){title="شاخص فرابنفش";var uv=s.uv;var status=uv==null?"--":uv<3?"🟢 کم":uv<6?"🟡 متوسط":uv<8?"🟡 بالا":uv<11?"🔴 بسیار بالا":"🔴 خطرناک";text="📊 شاخص: "+(uv!=null?uv:"--")+"\n🚦 وضعیت: "+status;}
+else if(key==="aqi"){title="کیفیت هوا (EAQI)";var a=s.aqi;text="📊 EAQI: "+(a!=null?Math.round(a):"--")+" ("+aqiLabel(a)+")\n💡 PM2.5: "+(s.pm25!=null?Math.round(s.pm25):"--")+"\n💡 PM10: "+(s.pm10!=null?Math.round(s.pm10):"--")+"\n💡 ازن: "+(s.ozone!=null?Math.round(s.ozone):"--");}
+else if(key==="precip"){title="بارش";var p=s.precip;var prob=s.precipProb;text="📊 مقدار: "+(p!=null?p+" mm":"--")+"\n🌧️ احتمال: "+(prob!=null?prob+"٪":"--");}
+else if(key==="visibility"){title="دید افقی";var v=s.vis;var status=v==null?"--":v>=10?"🟢 عالی":v>=5?"🟢 خوب":v>=2?"🟡 متوسط":v>=1?"🔴 ضعیف":"🔴 بسیار ضعیف";text="📊 دید: "+(v!=null?Math.round(v)+" km":"--")+"\n🚦 وضعیت: "+status;}
+else if(key==="pressure"){title="فشار هوا";var pr=s.pres;var tr=pressureTrend();var trend=tr==null?"--":tr<-3?"📉 در حال کاهش":tr>3?"📈 در حال افزایش":"➡️ پایدار";text="📊 فشار: "+(pr!=null?Math.round(pr)+" hPa":"--")+"\n🚦 روند: "+trend;}
+else if(key==="dewpoint"){title="نقطهٔ شبنم";var d=s.dew;var status=d==null?"--":d<10?"🟢 خشک":d<16?"🟢 مطلوب":d<18?"🟡 شرجی":"🔴 آزاردهنده";text="📊 شبنم: "+(d!=null?T(d)+D():"--")+"\n🚦 وضعیت: "+status;}
+else if(key==="us_aqi"){title="کیفیت هوا (EPA)";var a=s.us;text="📊 US AQI: "+(a!=null?Math.round(a):"--")+" ("+aqiLabel(a)+")";}
+else if(key==="pm25"){title="ذرات ریز PM2.5";var p=s.pm25;var status=p==null?"--":p<12?"🟢 خوب":p<35?"🟡 متوسط":p<55?"🔴 بد":"🔴 بسیار بد";text="📊 PM2.5: "+(p!=null?Math.round(p):"--")+" µg/m³\n🚦 وضعیت: "+status;}
+else if(key==="pm10"){title="ذرات درشت PM10";var p=s.pm10;var status=p==null?"--":p<54?"🟢 خوب":p<154?"🟡 متوسط":p<254?"🔴 بد":"🔴 بسیار بد";text="📊 PM10: "+(p!=null?Math.round(p):"--")+" µg/m³\n🚦 وضعیت: "+status;}
+else if(key==="ozone"){title="ازن سطح زمین";var o=s.ozone;var status=o==null?"--":o<100?"🟢 خوب":o<160?"🟡 متوسط":"🔴 بد";text="📊 ازن: "+(o!=null?Math.round(o):"--")+" µg/m³\n🚦 وضعیت: "+status;}
+else if(key==="dust"){title="ریزگرد";var d=s.dust;var status=d==null?"--":d<50?"🟢 ناچیز":d<100?"🟡 متوسط":d<200?"🔴 قابل توجه":"🔴 شدید";text="📊 ریزگرد: "+(d!=null?Math.round(d):"--")+" µg/m³\n🚦 وضعیت: "+status;}
+else if(key==="pollen"){title="گردهٔ گیاهان";var p=(s.pollen!=null)?Math.round(s.pollen):seasonalPollen(new Date().getMonth()+1);var status=p<30?"🟢 کم":p<60?"🟡 متوسط":"🔴 بالا";text="📊 گرده: "+p+"/100 ("+status+")";}
+else if(key==="cloud"){title="پوشش ابر";var c=s.cloud;var status=c==null?"--":c<20?"🟢 آسمان صاف":c<50?"🟢 کمی ابری":c<80?"🟡 ابری":"🔴 کاملاً ابری";text="📊 پوشش: "+(c!=null?Math.round(c)+"٪":"--")+"\n🚦 وضعیت: "+status;}
+else{title=key;text="داده نیست";}
+return{icon:icon,title:title,text:text};
 }
 var dBtns=document.querySelectorAll(".detail-btn");
 for(var i6=0;i6<dBtns.length;i6++)(function(btn){btn.addEventListener("click",function(){var c=getInfoContent(btn.getAttribute("data-info"));var mi=document.getElementById("infoModalIcon"),mt=document.getElementById("infoModalTitle"),mx=document.getElementById("infoModalText"),mo=document.getElementById("infoModal");if(mi)mi.textContent=c.icon;if(mt)mt.textContent=c.title;if(mx)mx.textContent=c.text;if(mo)mo.classList.add("show");});})(dBtns[i6]);
 var infoClose=document.getElementById("infoModalClose");if(infoClose)infoClose.addEventListener("click",function(){var m=document.getElementById("infoModal");if(m)m.classList.remove("show");});
 var infoOverlay=document.getElementById("infoModal");if(infoOverlay)infoOverlay.addEventListener("click",function(e){if(e.target===this)this.classList.remove("show");});
 var unitSel=document.getElementById("unit");if(unitSel){unitSel.value=unit;unitSel.addEventListener("change",function(){unit=this.value;lsSet("unit",unit);if(data){renderWeather();renderDetails();}});}
-
 /* ===== Sport ===== */
 var SPORT_TABS=[{id:"football",icon:"⚽",label:"فوتبال"},{id:"futsal",icon:"🥅",label:"فوتسال"},{id:"basketball",icon:"🏀",label:"بسکتبال"},{id:"volleyball",icon:"🏐",label:"والیبال"},{id:"beach",icon:"🏖️",label:"ساحلی"},{id:"handball",icon:"🤾",label:"هندبال"},{id:"broadcast",icon:"📺",label:"پخش"},{id:"video",icon:"🎬",label:"ویدئو"},{id:"livescore",icon:"⚡",label:"زنده"},{id:"olympic",icon:"🏅",label:"المپیک"}];
 var SPORT_LINKS={
- football:[{title:"🔻 فوتبال باشگاهی ایران",items:[
-  {url:"https://www.varzesh3.com/football/league/6/%D9%84%DB%8C%DA%AF-%D8%A8%D8%B1%D8%AA%D8%B1-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86/%D8%A8%D8%A7%D8%B2%DB%8C-%D9%87%D8%A7",title:"بازی‌های لیگ برتر",desc:"نتایج و برنامه",icon:"🇮🇷"},
-  {url:"https://www.varzesh3.com/football/league/6/%D9%84%DB%8C%DA%AF-%D8%A8%D8%B1%D8%AA%D8%B1-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86",title:"جدول لیگ برتر",desc:"رده‌بندی و آمار",icon:"📊"},
-  {url:"https://www.varzesh3.com/football/league/24/%D9%84%DB%8C%DA%AF-%D8%A7%D9%93%D8%B2%D8%A7%D8%AF%DA%AF%D8%A7%D9%86",title:"لیگ آزادگان",desc:"دسته دوم ایران",icon:"🇮🇷"},
-  {url:"https://www.varzesh3.com/football/league/22/%D8%AC%D8%A7%D9%85-%D8%AD%D8%B0%D9%81%DB%8C-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86/%D8%A8%D8%A7%D8%B2%DB%8C-%D9%87%D8%A7",title:"جام حذفی ایران",desc:"بازی‌های جام حذفی",icon:"🏆"}
- ]},{title:"🔻 فوتبال باشگاهی خارجی",items:[
-  {url:"https://www.varzesh3.com/football/league/3/%D9%84%DB%8C%DA%AF-%D8%A8%D8%B1%D8%AA%D8%B1-%D8%A7%D9%86%DA%AF%D9%84%DB%8C%D8%B3",title:"لیگ برتر انگلیس",desc:"پریمیرلیگ",icon:"🏴"},
-  {url:"https://www.varzesh3.com/football/league/2/%D9%84%D8%A7%D9%84%DB%8C%DA%AF%D8%A7-%D8%A7%D8%B3%D9%BE%D8%A7%D9%86%DB%8C%D8%A7",title:"لالیگا",desc:"اسپانیا",icon:"🇪🇸"},
-  {url:"https://www.varzesh3.com/football/league/4/%D8%B3%D8%B1%DB%8C-%D8%A7%D9%93-%D8%A7%DB%8C%D8%AA%D8%A7%D9%84%DB%8C%D8%A7",title:"سری آ",desc:"ایتالیا",icon:"🇮🇹"},
-  {url:"https://www.varzesh3.com/football/league/1/%D8%A8%D9%88%D9%86%D8%AF%D8%B3%D9%84%DB%8C%DA%AF%D8%A7-%D8%A7%D9%93%D9%84%D9%85%D8%A7%D9%86",title:"بوندسلیگا",desc:"آلمان",icon:"🇩🇪"}
- ]},{title:"🔻 بین‌المللی باشگاهی",items:[
-  {url:"https://www.varzesh3.com/football/league/25/%D9%84%DB%8C%DA%AF-%D9%82%D9%87%D8%B1%D9%85%D8%A7%D9%86%D8%A7%D9%86-%D8%A7%D8%B1%D9%88%D9%BE%D8%A7",title:"لیگ قهرمانان اروپا",desc:"UCL",icon:"🇪🇺"},
-  {url:"https://www.varzesh3.com/football/league/29/%D9%84%DB%8C%DA%AF-%D8%A7%D8%B1%D9%88%D9%BE%D8%A7/%D8%A8%D8%A7%D8%B2%DB%8C-%D9%87%D8%A7",title:"لیگ اروپا",desc:"Europa League",icon:"🇪🇺"},
-  {url:"https://www.varzesh3.com/football/league/26/%D9%84%DB%8C%DA%AF-%D9%86%D8%AE%D8%A8%DA%AF%D8%A7%D9%86-%D8%A7%D9%93%D8%B3%DB%8C%D8%A7",title:"لیگ نخبگان آسیا",desc:"سطح یک آسیا",icon:"🌏"}
- ]},{title:"🔻 فوتبال ملی",items:[
-  {url:"https://www.varzesh3.com/football/league/28/%D8%AC%D8%A7%D9%85-%D8%AC%D9%87%D8%A7%D9%86%DB%8C",title:"جام جهانی فیفا",desc:"بزرگ‌ترین رویداد",icon:"🌍"},
-  {url:"https://www.varzesh3.com/football/league/31/%D8%AC%D8%A7%D9%85-%D9%85%D9%84%D8%AA-%D9%87%D8%A7%DB%8C-%D8%A7%D9%93%D8%B3%DB%8C%D8%A7",title:"جام ملت‌های آسیا",desc:"قهرمانی آسیا",icon:"🏆"}
- ]}],
- futsal:[{url:"https://www.varzesh3.com/futsal/league/27/%D9%84%DB%8C%DA%AF-%D8%A8%D8%B1%D8%AA%D8%B1-%D9%81%D9%88%D8%AA%D8%B3%D8%A7%D9%84",title:"لیگ برتر فوتسال",desc:"باشگاهی ایران",icon:"🇮🇷"},{url:"https://www.varzesh3.com/futsal/league/701/%D8%AC%D8%A7%D9%85-%D8%AC%D9%87%D8%A7%D9%86%DB%8C-%D9%81%D9%88%D8%AA%D8%B3%D8%A7%D9%84",title:"جام جهانی فوتسال",desc:"FIFA",icon:"🌍"}],
- basketball:[{url:"https://www.varzesh3.com/basketball/league/32/%D9%84%DB%8C%DA%AF-%D8%A8%D8%B1%D8%AA%D8%B1-%D8%A8%D8%B3%DA%A9%D8%AA%D8%A8%D8%A7%D9%84",title:"لیگ برتر بسکتبال",desc:"باشگاهی ایران",icon:"🇮🇷"},{url:"https://www.varzesh3.com/basketball/league/204/%D8%AC%D8%A7%D9%85-%D8%AC%D9%87%D8%A7%D9%86%DB%8C-%D8%A8%D8%B3%DA%A9%D8%AA%D8%A8%D8%A7%D9%84",title:"جام جهانی بسکتبال",desc:"FIBA",icon:"🌍"}],
- volleyball:[{url:"https://www.varzesh3.com/volleyball/league/33/%D9%84%DB%8C%DA%AF-%D8%A8%D8%B1%D8%AA%D8%B1-%D9%88%D8%A7%D9%84%DB%8C%D8%A8%D8%A7%D9%84",title:"لیگ برتر والیبال",desc:"باشگاهی ایران",icon:"🇮🇷"},{url:"https://www.varzesh3.com/volleyball/league/30/%D9%84%DB%8C%DA%AF-%D9%85%D9%84%D8%AA-%D9%87%D8%A7%DB%8C-%D9%88%D8%A7%D9%84%DB%8C%D8%A8%D8%A7%D9%84",title:"لیگ ملت‌ها",desc:"VNL",icon:"🏆"}],
- beach:[{url:"https://www.varzesh3.com/beach-soccer",title:"فوتبال ساحلی",desc:"آسیا و جهان",icon:"🏖️"}],
- handball:[{url:"https://www.varzesh3.com/handball/league/4/%D9%84%DB%8C%DA%AF-%D8%A8%D8%B1%D8%AA%D8%B1-%D9%87%D9%86%D8%AF%D8%A8%D8%A7%D9%84",title:"لیگ برتر هندبال",desc:"باشگاهی ایران",icon:"🇮🇷"}],
- broadcast:[{url:"https://www.varzesh3.com/%D9%BE%D8%AE%D8%B4-%D8%B2%D9%86%D8%AF%D9%87",title:"پخش زنده",desc:"جدول پخش زنده",icon:"📺"}],
- video:[{url:"https://video.varzesh3.com/",title:"ویدئوها",desc:"خلاصه و مصاحبه",icon:"🎥"}],
- livescore:[{url:"https://www.varzesh3.com/livescore",title:"نتایج زنده",desc:"اسکور لایو",icon:"⚡"}],
- olympic:[]
+football:[{title:"🔻 فوتبال باشگاهی ایران",items:[
+{url:"https://www.varzesh3.com/football/league/6/%D9%84%DB%8C%DA%AF-%D8%A8%D8%B1%D8%AA%D8%B1-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86/%D8%A8%D8%A7%D8%B2%DB%8C-%D9%87%D8%A7",title:"بازی‌های لیگ برتر",desc:"نتایج و برنامه",icon:"🇮🇷"},
+{url:"https://www.varzesh3.com/football/league/6/%D9%84%DB%8C%DA%AF-%D8%A8%D8%B1%D8%AA%D8%B1-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86",title:"جدول لیگ برتر",desc:"رده‌بندی و آمار",icon:"📊"},
+{url:"https://www.varzesh3.com/football/league/24/%D9%84%DB%8C%DA%AF-%D8%A2%D8%B2%D8%A7%D8%AF%DA%AF%D8%A7%D9%86",title:"لیگ آزادگان",desc:"دسته دوم ایران",icon:"🇮🇷"},
+{url:"https://www.varzesh3.com/football/league/22/%D8%AC%D8%A7%D9%85-%D8%AD%D8%B0%D9%81%DB%8C-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86/%D8%A8%D8%A7%D8%B2%DB%8C-%D9%87%D8%A7",title:"جام حذفی ایران",desc:"بازی‌های جام حذفی",icon:"🏆"}
+]},{title:"🔻 فوتبال باشگاهی خارجی",items:[
+{url:"https://www.varzesh3.com/football/league/3/%D9%84%DB%8C%DA%AF-%D8%A8%D8%B1%D8%AA%D8%B1-%D8%A7%D9%86%DA%AF%D9%84%DB%8C%D8%B3",title:"لیگ برتر انگلیس",desc:"پریمیرلیگ",icon:"🏴"},
+{url:"https://www.varzesh3.com/football/league/2/%D9%84%D8%A7%D9%84%DB%8C%DA%AF%D8%A7-%D8%A7%D8%B3%D9%BE%D8%A7%D9%86%DB%8C%D8%A7",title:"لالیگا",desc:"اسپانیا",icon:"🇪🇸"},
+{url:"https://www.varzesh3.com/football/league/4/%D8%B3%D8%B1%DB%8C-%D8%A7%D9%93-%D8%A7%DB%8C%D8%AA%D8%A7%D9%84%DB%8C%D8%A7",title:"سری آ",desc:"ایتالیا",icon:"🇮🇹"},
+{url:"https://www.varzesh3.com/football/league/1/%D8%A8%D9%88%D9%86%D8%AF%D8%B3%D9%84%DB%8C%DA%AF%D8%A7-%D8%A7%D9%93%D9%84%D9%85%D8%A7%D9%86",title:"بوندسلیگا",desc:"آلمان",icon:"🇩🇪"}
+]},{title:"🔻 بین‌المللی باشگاهی",items:[
+{url:"https://www.varzesh3.com/football/league/25/%D9%84%DB%8C%DA%AF-%D9%82%D9%87%D8%B1%D9%85%D8%A7%D9%86%D8%A7%D9%86-%D8%A7%D8%B1%D9%88%D9%BE%D8%A7",title:"لیگ قهرمانان اروپا",desc:"UCL",icon:"🇪🇺"},
+{url:"https://www.varzesh3.com/football/league/29/%D9%84%DB%8C%DA%AF-%D8%A7%D8%B1%D9%88%D9%BE%D8%A7/%D8%A8%D8%A7%D8%B2%DB%8C-%D9%87%D8%A7",title:"لیگ اروپا",desc:"Europa League",icon:"🇪🇺"},
+{url:"https://www.varzesh3.com/football/league/26/%D9%84%DB%8C%DA%AF-%D9%86%D8%AE%D8%A8%DA%AF%D8%A7%D9%86-%D8%A7%D9%93%D8%B3%DB%8C%D8%A7",title:"لیگ نخبگان آسیا",desc:"سطح یک آسیا",icon:"🌏"}
+]},{title:"🔻 فوتبال ملی",items:[
+{url:"https://www.varzesh3.com/football/league/28/%D8%AC%D8%A7%D9%85-%D8%AC%D9%87%D8%A7%D9%86%DB%8C",title:"جام جهانی فیفا",desc:"بزرگ‌ترین رویداد",icon:"🌍"},
+{url:"https://www.varzesh3.com/football/league/31/%D8%AC%D8%A7%D9%85-%D9%85%D9%84%D8%AA-%D9%87%D8%A7%DB%8C-%D8%A2%D8%B3%DB%8C%D8%A7",title:"جام ملت‌های آسیا",desc:"قهرمانی آسیا",icon:"🏆"}
+]}],
+futsal:[{url:"https://www.varzesh3.com/futsal/league/27/%D9%84%DB%8C%DA%AF-%D8%A8%D8%B1%D8%AA%D8%B1-%D9%81%D9%88%D8%AA%D8%B3%D8%A7%D9%84",title:"لیگ برتر فوتسال",desc:"باشگاهی ایران",icon:"🇮🇷"},{url:"https://www.varzesh3.com/futsal/league/701/%D8%AC%D8%A7%D9%85-%D8%AC%D9%87%D8%A7%D9%86%DB%8C-%D9%81%D9%88%D8%AA%D8%B3%D8%A7%D9%84",title:"جام جهانی فوتسال",desc:"FIFA",icon:"🌍"}],
+basketball:[{url:"https://www.varzesh3.com/basketball/league/32/%D9%84%DB%8C%DA%AF-%D8%A8%D8%B1%D8%AA%D8%B1-%D8%A8%D8%B3%DA%A9%D8%AA%D8%A8%D8%A7%D9%84",title:"لیگ برتر بسکتبال",desc:"باشگاهی ایران",icon:"🇮🇷"},{url:"https://www.varzesh3.com/basketball/league/204/%D8%AC%D8%A7%D9%85-%D8%AC%D9%87%D8%A7%D9%86%DB%8C-%D8%A8%D8%B3%DA%A9%D8%AA%D8%A8%D8%A7%D9%84",title:"جام جهانی بسکتبال",desc:"FIBA",icon:"🌍"}],
+volleyball:[{url:"https://www.varzesh3.com/volleyball/league/33/%D9%84%DB%8C%DA%AF-%D8%A8%D8%B1%D8%AA%D8%B1-%D9%88%D8%A7%D9%84%DB%8C%D8%A8%D8%A7%D9%84",title:"لیگ برتر والیبال",desc:"باشگاهی ایران",icon:"🇮🇷"},{url:"https://www.varzesh3.com/volleyball/league/30/%D9%84%DB%8C%DA%AF-%D9%85%D9%84%D8%AA-%D9%87%D8%A7%DB%8C-%D9%88%D8%A7%D9%84%DB%8C%D8%A8%D8%A7%D9%84",title:"لیگ ملت‌ها",desc:"VNL",icon:"🏆"}],
+beach:[{url:"https://www.varzesh3.com/beach-soccer",title:"فوتبال ساحلی",desc:"آسیا و جهان",icon:"🏖️"}],
+handball:[{url:"https://www.varzesh3.com/handball/league/4/%D9%84%DB%8C%DA%AF-%D8%A8%D8%B1%D8%AA%D8%B1-%D9%87%D9%86%D8%AF%D8%A8%D8%A7%D9%84",title:"لیگ برتر هندبال",desc:"باشگاهی ایران",icon:"🇮🇷"}],
+broadcast:[{url:"https://www.varzesh3.com/%D9%BE%D8%AE%D8%B4-%D8%B2%D9%86%D8%AF%D9%87",title:"پخش زنده",desc:"جدول پخش زنده",icon:"📺"}],
+video:[{url:"https://video.varzesh3.com/",title:"ویدئوها",desc:"خلاصه و مصاحبه",icon:"🎥"}],
+livescore:[{url:"https://www.varzesh3.com/livescore",title:"نتایج زنده",desc:"اسکور لایو",icon:"⚡"}],
+olympic:[]
 };
 var curSportTab="football";
 function renderSportGrid(){var g=document.getElementById("sportGrid");if(!g)return;var html="";for(var i=0;i<SPORT_TABS.length;i++){var t=SPORT_TABS[i];html+='<div class="sport-card'+(t.id===curSportTab?" active":"")+'" data-tab="'+t.id+'"><div class="sc-icon">'+t.icon+'</div><div class="sc-title">'+safe(t.label)+'</div></div>';}g.innerHTML=html;var cards=g.querySelectorAll(".sport-card");for(var j=0;j<cards.length;j++)(function(c){c.addEventListener("click",function(){curSportTab=c.getAttribute("data-tab");renderSportGrid();renderSportContent();});})(cards[j]);}
 function renderSportContent(){
-  var el=document.getElementById("sportContentArea");if(!el)return;
-  var tab=SPORT_TABS.filter(function(t){return t.id===curSportTab;})[0]||{};
-  if(curSportTab==="olympic"){el.innerHTML='<section class="panel section"><div class="muted">🏅 جدول مدال‌های المپیک به‌زودی در دسترس قرار می‌گیرد.</div></section>';return;}
-  var links=SPORT_LINKS[curSportTab]||[];
-  var html='<section class="panel section"><div class="sectionhead"><div class="title">'+(tab.icon||"")+" "+safe(tab.label||"")+'</div></div>';
-  if(curSportTab==="football"){
-    html+='<div class="sport-accordion">';
-    for(var i=0;i<links.length;i++){var g=links[i];html+='<div class="sport-acc-group"><div class="sport-acc-h"><span>'+safe(g.title)+'</span><span class="arrow-r">⌄</span></div><div class="sport-acc-body"><div class="sport-links">';
-    for(var j=0;j<g.items.length;j++){var L=g.items[j];html+='<a class="sport-link" href="'+safe(L.url)+'" target="_blank" rel="noopener"><div class="sl-icon">'+L.icon+'</div><div class="sl-title">'+safe(L.title)+'</div><div class="sl-desc">'+safe(L.desc)+'</div></a>';}
-    html+='</div></div></div>';}
-    html+='</div>';
-  }else{
-    html+='<div class="sport-links">';
-    for(var k=0;k<links.length;k++){var L2=links[k];html+='<a class="sport-link" href="'+safe(L2.url)+'" target="_blank" rel="noopener"><div class="sl-icon">'+L2.icon+'</div><div class="sl-title">'+safe(L2.title)+'</div><div class="sl-desc">'+safe(L2.desc)+'</div></a>';}
-    html+='</div>';
-  }
-  html+='</section>';el.innerHTML=html;
-  var hs=el.querySelectorAll(".sport-acc-h");
-  for(var h=0;h<hs.length;h++){(function(x){x.addEventListener("click",function(){var g=x.closest(".sport-acc-group");if(g)g.classList.toggle("open");});})(hs[h]);}
+var el=document.getElementById("sportContentArea");if(!el)return;
+var tab=SPORT_TABS.filter(function(t){return t.id===curSportTab;})[0]||{};
+if(curSportTab==="olympic"){el.innerHTML='<section class="panel section"><div class="muted">🏅 جدول مدال‌های المپیک به‌زودی در دسترس قرار می‌گیرد.</div></section>';return;}
+var links=SPORT_LINKS[curSportTab]||[];
+var html='<section class="panel section"><div class="sectionhead"><div class="title">'+(tab.icon||"")+" "+safe(tab.label||"")+'</div></div>';
+if(curSportTab==="football"){
+html+='<div class="sport-accordion">';
+for(var i=0;i<links.length;i++){var g=links[i];html+='<div class="sport-acc-group"><div class="sport-acc-h"><span>'+safe(g.title)+'</span><span class="arrow-r">⌄</span></div><div class="sport-acc-body"><div class="sport-links">';
+for(var j=0;j<g.items.length;j++){var L=g.items[j];html+='<a class="sport-link" href="'+safe(L.url)+'" target="_blank" rel="noopener"><div class="sl-icon">'+L.icon+'</div><div class="sl-title">'+safe(L.title)+'</div><div class="sl-desc">'+safe(L.desc)+'</div></a>';}
+html+='</div></div></div>';}
+html+='</div>';
+}else{
+html+='<div class="sport-links">';
+for(var k=0;k<links.length;k++){var L2=links[k];html+='<a class="sport-link" href="'+safe(L2.url)+'" target="_blank" rel="noopener"><div class="sl-icon">'+L2.icon+'</div><div class="sl-title">'+safe(L2.title)+'</div><div class="sl-desc">'+safe(L2.desc)+'</div></a>';}
+html+='</div>';
 }
-
+html+='</section>';el.innerHTML=html;
+var hs=el.querySelectorAll(".sport-acc-h");
+for(var h=0;h<hs.length;h++){(function(x){x.addEventListener("click",function(){var g=x.closest(".sport-acc-group");if(g)g.classList.toggle("open");});})(hs[h]);}
+}
 /* ===== Science ===== */
 var SCIENCE_FACTS_POOL=[{icon:"🌞",title:"نور خورشید",text:"نور خورشید حدود ۸ دقیقه و ۲۰ ثانیه طول می‌کشد تا به زمین برسد. این یعنی اگر خورشید ناگهان خاموش شود، ما ۸ دقیقه بعد متوجه می‌شویم!"},{icon:"🏔️",title:"دماوند",text:"بلندترین قلهٔ ایران دماوند با ارتفاع حدود ۵٬۶۱۰ متر است. این آتشفشان خاموش، بلندترین قلهٔ خاورمیانه نیز محسوب می‌شود."},{icon:"🏜️",title:"کویر لوت",text:"کویر لوت در ایران یکی از گرم‌ترین نقاط سطح زمین ثبت شده است."},{icon:"🌊",title:"دریای خزر",text:"دریای خزر با مساحت ۳۷۱ هزار کیلومتر مربع، بزرگ‌ترین دریاچهٔ جهان است."},{icon:"🌿",title:"زعفران ایران",text:"ایران با تولید سالانه حدود ۴۰۰ تن، بیش از ۹۰٪ زعفران جهان را تأمین می‌کند."},{icon:"💡",title:"سرعت نور",text:"سرعت نور در خلأ حدود ۳۰۰٬۰۰۰ کیلومتر بر ثانیه است."},{icon:"🌙",title:"دور شدن ماه",text:"ماه هر سال حدود ۳٫۸ سانتی‌متر از زمین دور می‌شود."},{icon:"🌠",title:"بارش برساووشی",text:"بارش شهابی برساووشی هر سال در مرداد دیده می‌شود."},{icon:"⚛️",title:"اتم‌های بدن",text:"در بدن انسان بالغ حدود ۷ اکتیلیون اتم وجود دارد."},{icon:"🧬",title:"DNA",text:"اگر DNA یک سلول را باز کنیم، طول آن حدود ۲ متر می‌شود."},{icon:"🦠",title:"باکتری‌های بدن",text:"در بدن انسان حدود ۳۸ تریلیون باکتری زندگی می‌کند."},{icon:"🐙",title:"قلب هشت‌پا",text:"هشت‌پا ۳ قلب دارد و خونش آبی‌رنگ است."},{icon:"🌍",title:"سن زمین",text:"زمین حدود ۴٫۵۴ میلیارد سال قدمت دارد."},{icon:"🪐",title:"مشتری",text:"سیارهٔ مشتری می‌تواند بیش از ۱٬۳۰۰ زمین را در خود جای دهد."},{icon:"🐝",title:"زنبور عسل",text:"برای یک قاشق چای‌خوری عسل، زنبور روی ۲ میلیون گل می‌نشیند."},{icon:"⚡",title:"رعد و برق",text:"رعد و برق تا ۳۰٬۰۰۰ کلوین داغ می‌شود؛ ۵ برابر سطح خورشید."},{icon:"🧠",title:"مغز انسان",text:"مغز انسان حدود ۸۶ میلیارد نورون دارد."}];
-
 var HAFEZ_POEMS=[
 "الا یا ایها الساقی ادر کأساً و ناولها\nکه عشق آسان نمود اول ولی افتاد مشکل‌ها",
 "رسید مژده که ایام غم نخواهد ماند\nچنان نماند چنین نیز هم نخواهد ماند",
@@ -1276,29 +1239,27 @@ var KHAYYAM_POEMS=[
 "از دی که گذشت هیچ از او یاد مکن\nفردا که نیامده‌ست فریاد مکن",
 "ای چرخ فلک خرابی از کینه توست\nبیدادگری پیشه و دیرینه توست"
 ];
-
 function renderPoetry(){
-  var el=document.getElementById("poetryMiniArea");if(!el)return;
-  var seed=Math.floor(Date.now()/(2*3600*1000));
-  function rand(arr,offset){var h=seed+offset;h=((h*2654435761)>>>0);return arr[h%arr.length];}
-  function card(cls,label,poem,name){return '<div class="poetry-mini '+cls+'"><div class="poet-label">'+label+'</div><div class="poem-text">'+safe(poem)+'</div><div class="poet-name">'+name+'</div></div>';}
-  el.innerHTML=
-    card("hafez","✦ حافظ شیرازی",rand(HAFEZ_POEMS,1),"— خواجه شمس‌الدین محمد حافظ")+
-    card("saadi","✦ سعدی شیرازی",rand(SAADI_POEMS,7),"— شیخ مصلح‌الدین سعدی")+
-    card("rumi","✦ مولانا",rand(RUMI_POEMS,13),"— جلال‌الدین محمد بلخی")+
-    card("ferdowsi","✦ فردوسی",rand(FERDOWSI_POEMS,23),"— ابوالقاسم فردوسی")+
-    card("khayyam","✦ خیام",rand(KHAYYAM_POEMS,31),"— عمر خیام نیشابوری");
+var el=document.getElementById("poetryMiniArea");if(!el)return;
+var seed=Math.floor(Date.now()/(2*3600*1000));
+function rand(arr,offset){var h=seed+offset;h=((h*2654435761)>>>0);return arr[h%arr.length];}
+function card(cls,label,poem,name){return '<div class="poetry-mini '+cls+'"><div class="poet-label">'+label+'</div><div class="poem-text">'+safe(poem)+'</div><div class="poet-name">'+name+'</div></div>';}
+el.innerHTML=
+card("hafez","✦ حافظ شیرازی",rand(HAFEZ_POEMS,1),"— خواجه شمس‌الدین محمد حافظ")+
+card("saadi","✦ سعدی شیرازی",rand(SAADI_POEMS,7),"— شیخ مصلح‌الدین سعدی")+
+card("rumi","✦ مولانا",rand(RUMI_POEMS,13),"— جلال‌الدین محمد بلخی")+
+card("ferdowsi","✦ فردوسی",rand(FERDOWSI_POEMS,23),"— ابوالقاسم فردوسی")+
+card("khayyam","✦ خیام",rand(KHAYYAM_POEMS,31),"— عمر خیام نیشابوری");
 }
 function renderScienceFacts(){
-  var el=document.getElementById("scienceFacts");if(!el)return;
-  var seed=Math.floor(Date.now()/(2*3600*1000));
-  var arr=SCIENCE_FACTS_POOL.slice();var h=seed;
-  for(var i=arr.length-1;i>0;i--){h=((h*1664525+1013904223)>>>0);var j=h%(i+1);var tmp=arr[i];arr[i]=arr[j];arr[j]=tmp;}
-  var top4=arr.slice(0,4);var icons=["①","②","③","④"];var html="";
-  for(var k=0;k<top4.length;k++){var f=top4[k];html+='<div class="fact-card"><div class="fact-num">'+icons[k]+'</div><div class="fact-icon">'+f.icon+'</div><div class="fact-title">'+safe(f.title)+'</div><div class="fact-text">'+safe(f.text)+'</div></div>';}
-  el.innerHTML=html;
+var el=document.getElementById("scienceFacts");if(!el)return;
+var seed=Math.floor(Date.now()/(2*3600*1000));
+var arr=SCIENCE_FACTS_POOL.slice();var h=seed;
+for(var i=arr.length-1;i>0;i--){h=((h*1664525+1013904223)>>>0);var j=h%(i+1);var tmp=arr[i];arr[i]=arr[j];arr[j]=tmp;}
+var top4=arr.slice(0,4);var icons=["①","②","③","④"];var html="";
+for(var k=0;k<top4.length;k++){var f=top4[k];html+='<div class="fact-card"><div class="fact-num">'+icons[k]+'</div><div class="fact-icon">'+f.icon+'</div><div class="fact-title">'+safe(f.title)+'</div><div class="fact-text">'+safe(f.text)+'</div></div>';}
+el.innerHTML=html;
 }
-
 /* ===== Fun ===== */
 var FUN_JOKES=["چرا کامپیوتر به دکتر رفت؟ چون ویروس گرفته بود! 😄","چرا ماهی‌ها در مدرسه باهوشند؟ چون همیشه در مدرسه هستند! 🐟","چرا دوچرخه نمی‌تواند بایستد؟ چون دوچرخه است! 🚲","چرا کتاب ریاضی ناراحت بود؟ چون مسائل زیادی داشت! 📚","چرا ساعت به دکتر رفت؟ چون وقتش گذشته بود! ⏰","چرا مورچه به دکتر رفت؟ چون مورچه‌خوارش بود! 🐜","چرا درخت به دکتر رفت؟ چون برگ‌ریزش داشت! 🌳","چرا خفاش در شب بیدار است؟ چون شب‌کاری می‌کند! 🦇","چرا زنبور به دکتر رفت؟ چون زنبورده داشت! 🐝"];
 var FUN_FACTS=["💡 می‌دانستید؟ زنبور عسل می‌تواند چهره‌های انسانی را تشخیص دهد!","💡 می‌دانستید؟ اختاپوس سه قلب دارد و خونش آبی است!","💡 می‌دانستید؟ دلفین‌ها برای خواب فقط نیمی از مغزشان را خاموش می‌کنند!","💡 می‌دانستید؟ یک روز در زهره از یک سال آن طولانی‌تر است!","💡 می‌دانستید؟ قلب انسان در طول عمر ۲٫۵ میلیارد بار می‌زند!","💡 می‌دانستید؟ برخی درختان بیش از ۵۰۰۰ سال عمر می‌کنند!","💡 می‌دانستید؟ فیل‌ها تنها حیواناتی هستند که نمی‌توانند بپرند!"];
@@ -1309,65 +1270,61 @@ function renderFunPuzzle(p){var el=document.getElementById("funPuzzleArea");if(!
 function renderFunPage(){initFunIndices(false);var jokeEl=document.getElementById("funJokeText");if(jokeEl)jokeEl.textContent=FUN_JOKES[funJokeIdx%FUN_JOKES.length];var factEl=document.getElementById("funFactArea");if(factEl)factEl.textContent=FUN_FACTS[funFactIdx%FUN_FACTS.length];renderFunPuzzle(FUN_PUZZLES[funPuzzleIdx%FUN_PUZZLES.length]);}
 var funJokeBtn=document.getElementById("funJokeBtn");if(funJokeBtn)funJokeBtn.addEventListener("click",function(){funJokeIdx++;var el=document.getElementById("funJokeText");if(el)el.textContent=FUN_JOKES[funJokeIdx%FUN_JOKES.length];});
 setInterval(function(){initFunIndices(true);if(currentPage==="fun")renderFunPage();},60*60*1000);
-
 /* ===== Health ===== */
 function renderHealthPage(){
-  var s=getDayStats(0),an=getAirNow()||airFallback(),m=new Date().getMonth()+1;
-  var cityEl=document.getElementById("healthCity");
-  if(cityEl)cityEl.innerHTML="📍 شهر فعلی: <b>"+safe(city.name)+"</b> ("+(city.admin1||city.country)+")";
-  var tips="💡 نکات سلامت فصل:\n";
-  if(m>=3&&m<=5)tips+="• بهار: گرده بالاست؛ حساس‌ها ماسک و عینک.\n• ضدآفتاب فراموش نشود.\n• پیاده‌روی صبحگاهی مفید است.\n";
-  else if(m>=6&&m<=8)tips+="• تابستان: هیدراتاسیون منظم.\n• از فعالیت در اوج گرما (۱۲-۱۶) پرهیز.\n• ضدآفتاب SPF30+.\n";
-  else if(m>=9&&m<=11)tips+="• پاییز: لباس لایه‌ای.\n• ویتامین D و C را جدی بگیرید.\n• هوای صبح ممکن است مه‌آلود باشد.\n";
-  else tips+="• زمستان: لباس گرم و لایه‌ای.\n• تهویهٔ منزل برای پیشگیری از سرماخوردگی.\n• نوشیدنی گرم مفید است.\n";
-  tips+="\n🌫️ کیفیت هوا: "+Math.round(an.european_aqi)+" ("+aqiLabel(an.european_aqi)+")";
-  if(s&&s.uv!=null)tips+="\n☀️ UV: "+s.uv;
-  setTxt("healthTips",tips);
-  setTxt("healthAir","🫁 کیفیت هوا و تنفس\n• EAQI: "+Math.round(an.european_aqi)+" | EPA: "+Math.round(an.us!=null?an.us:an.european_aqi)+"\n• PM2.5: "+(an.pm25!=null?Math.round(an.pm25):"--")+" µg/m³ | PM10: "+(an.pm10!=null?Math.round(an.pm10):"--")+" µg/m³\n• ازن: "+(an.ozone!=null?Math.round(an.ozone):"--")+" µg/m³\n• توصیه: "+(an.european_aqi>80?"ماندن در خانه، ماسک N95":an.european_aqi>60?"کاهش فعالیت بیرون":"فعالیت عادی"));
-  var tn=tonightStats(),ss=sleepScore();
-  setTxt("healthSleep","😴 خواب و آرامش\n• امتیاز خواب امشب: "+(ss!=null?ss+"/100":"--")+"\n• دمای امشب: "+(tn&&tn.temp!=null?T1(tn.temp)+D():"--")+" | رطوبت: "+(tn&&tn.hum!=null?Math.round(tn.hum)+"٪":"--")+"\n• توصیه: دمای اتاق ۱۸-۲۲° و رطوبت ۴۰-۶۰٪ ایده‌آل است.");
-  var food="🥗 تغذیهٔ فصل:\n";
-  if(m>=3&&m<=5)food+="• سبزیجات تازه بهاره، مرکبات و ماست.\n• مایعات کافی برای مقابله با گرده.";
-  else if(m>=6&&m<=8)food+="• میوه‌های آبدار (هندوانه، خیار).\n• الکترولیت و مایعات خنک.";
-  else if(m>=9&&m<=11)food+="• سوپ و غذاهای گرم.\n• مرکبات غنی از ویتامین C.";
-  else food+="• غذاهای گرم و مقوی (آش، حلیم).\n• ویتامین D و امگا۳.";
-  setTxt("healthFood",food);
+var s=getDayStats(0),an=getAirNow()||airFallback(),m=new Date().getMonth()+1;
+var cityEl=document.getElementById("healthCity");
+if(cityEl)cityEl.innerHTML="📍 شهر فعلی: <b>"+safe(city.name)+"</b> ("+(city.admin1||city.country)+")";
+var tips="💡 نکات سلامت فصل:\n";
+if(m>=3&&m<=5)tips+="• بهار: گرده بالاست؛ حساس‌ها ماسک و عینک.\n• ضدآفتاب فراموش نشود.\n• پیاده‌روی صبحگاهی مفید است.\n";
+else if(m>=6&&m<=8)tips+="• تابستان: هیدراتاسیون منظم.\n• از فعالیت در اوج گرما (۱۲-۱۶) پرهیز.\n• ضدآفتاب SPF30+.\n";
+else if(m>=9&&m<=11)tips+="• پاییز: لباس لایه‌ای.\n• ویتامین D و C را جدی بگیرید.\n• هوای صبح ممکن است مه‌آلود باشد.\n";
+else tips+="• زمستان: لباس گرم و لایه‌ای.\n• تهویهٔ منزل برای پیشگیری از سرماخوردگی.\n• نوشیدنی گرم مفید است.\n";
+tips+="\n🌫️ کیفیت هوا: "+Math.round(an.european_aqi)+" ("+aqiLabel(an.european_aqi)+")";
+if(s&&s.uv!=null)tips+="\n☀️ UV: "+s.uv;
+setTxt("healthTips",tips);
+setTxt("healthAir","🫁 کیفیت هوا و تنفس\n• EAQI: "+Math.round(an.european_aqi)+" | EPA: "+Math.round(an.us!=null?an.us:an.european_aqi)+"\n• PM2.5: "+(an.pm25!=null?Math.round(an.pm25):"--")+" µg/m³ | PM10: "+(an.pm10!=null?Math.round(an.pm10):"--")+" µg/m³\n• ازن: "+(an.ozone!=null?Math.round(an.ozone):"--")+" µg/m³\n• توصیه: "+(an.european_aqi>80?"ماندن در خانه، ماسک N95":an.european_aqi>60?"کاهش فعالیت بیرون":"فعالیت عادی"));
+var tn=tonightStats(),ss=sleepScore();
+setTxt("healthSleep","😴 خواب و آرامش\n• امتیاز خواب امشب: "+(ss!=null?ss+"/100":"--")+"\n• دمای امشب: "+(tn&&tn.temp!=null?T1(tn.temp)+D():"--")+" | رطوبت: "+(tn&&tn.hum!=null?Math.round(tn.hum)+"٪":"--")+"\n• توصیه: دمای اتاق ۱۸-۲۲° و رطوبت ۴۰-۶۰٪ ایده‌آل است.");
+var food="🥗 تغذیهٔ فصل:\n";
+if(m>=3&&m<=5)food+="• سبزیجات تازه بهاره، مرکبات و ماست.\n• مایعات کافی برای مقابله با گرده.";
+else if(m>=6&&m<=8)food+="• میوه‌های آبدار (هندوانه، خیار).\n• الکترولیت و مایعات خنک.";
+else if(m>=9&&m<=11)food+="• سوپ و غذاهای گرم.\n• مرکبات غنی از ویتامین C.";
+else food+="• غذاهای گرم و مقوی (آش، حلیم).\n• ویتامین D و امگا۳.";
+setTxt("healthFood",food);
 }
-
 function renderCulturePage(){setTxt("cultureContent","🎭 فرهنگ امروز: مجموعه‌ای از بهترین منابع ادبیات، هنر، سینما و گردشگری ایران. بیت‌های زیر هر ۲ ساعت تغییر می‌کنند.");renderPoetry();}
 function renderSciencePage(){var mp=moonPhase();var dl=(data&&data.daily&&data.daily.sunrise&&data.daily.sunset)?(fmtDT(data.daily.sunrise[TODAY_IDX])+" تا "+fmtDT(data.daily.sunset[TODAY_IDX])):"--";setTxt("scienceContent","🔭 علم و نجوم\n• فاز ماه: "+mp.name+" | "+mp.illum+"٪\n• روشنایی روز: "+dl+"\n• رویداد این ماه: "+skyEvents(new Date().getMonth()+1));renderScienceFacts();}
 function renderTravelPage(){renderTravelSummary();var s=getDayStats(0),pack=[];if(s&&s.precipProb>=40)pack.push("چتر");if(s&&s.tempMin<=5)pack.push("لباس گرم");if(s&&s.uv>=6)pack.push("ضدآفتاب");setTxt("travelTips","🎒 چک‌لیست و نکات سفر:\n• چک‌لیست: "+(pack.join("، ")||"بدون نیاز خاص")+"\n• پیش از سفر، وضعیت جاده و دید افقی را بررسی کنید.\n• اسناد را در کیف ضدآب نگه دارید.\n• در کوهستان لباس لایه‌ای ببرید.\n• در سفرهای کویری آب کافی و لباس روشن همراه داشته باشید.");}
-
 function bindAccordions(){
-  var accs=document.querySelectorAll(".travel-acc-h,.culture-acc-h,.fun-acc-h");
-  for(var i=0;i<accs.length;i++){
-    (function(h){if(h.getAttribute("data-bound"))return;h.setAttribute("data-bound","1");h.addEventListener("click",function(){var g=h.closest(".travel-acc-group,.culture-acc-group,.fun-acc-group");if(g)g.classList.toggle("open");});})(accs[i]);
-  }
+var accs=document.querySelectorAll(".travel-acc-h,.culture-acc-h,.fun-acc-h");
+for(var i=0;i<accs.length;i++){
+(function(h){if(h.getAttribute("data-bound"))return;h.setAttribute("data-bound","1");h.addEventListener("click",function(){var g=h.closest(".travel-acc-group,.culture-acc-group,.fun-acc-group");if(g)g.classList.toggle("open");});})(accs[i]);
 }
-
+}
 var magLoaded={};
 function showPage(p){
-  currentPage=p;
-  var pages=document.querySelectorAll(".mag-page");
-  for(var i=0;i<pages.length;i++)pages[i].hidden=(pages[i].id!=="page-"+p);
-  var tabs=document.querySelectorAll(".mag-tab");
-  for(var j=0;j<tabs.length;j++)tabs[j].classList.toggle("active",tabs[j].getAttribute("data-page")===p);
-  if(!magLoaded[p]){
-    magLoaded[p]=true;
-    if(p==="sport"){renderSportGrid();renderSportContent();}
-    else if(p==="health")renderHealthPage();
-    else if(p==="culture"){renderCulturePage();bindAccordions();}
-    else if(p==="science")renderSciencePage();
-    else if(p==="travel"){renderTravelPage();bindAccordions();}
-    else if(p==="fun"){initFunIndices(true);renderFunPage();bindAccordions();}
-  }else{
-    if(p==="health")renderHealthPage();
-    else if(p==="travel")renderTravelPage();
-  }
-  window.scrollTo({top:0,behavior:"smooth"});
+currentPage=p;
+var pages=document.querySelectorAll(".mag-page");
+for(var i=0;i<pages.length;i++)pages[i].hidden=(pages[i].id!=="page-"+p);
+var tabs=document.querySelectorAll(".mag-tab");
+for(var j=0;j<tabs.length;j++)tabs[j].classList.toggle("active",tabs[j].getAttribute("data-page")===p);
+if(!magLoaded[p]){
+magLoaded[p]=true;
+if(p==="sport"){renderSportGrid();renderSportContent();}
+else if(p==="health")renderHealthPage();
+else if(p==="culture"){renderCulturePage();bindAccordions();}
+else if(p==="science")renderSciencePage();
+else if(p==="travel"){renderTravelPage();bindAccordions();}
+else if(p==="fun"){initFunIndices(true);renderFunPage();bindAccordions();}
+else if(p==="about"){/* صفحه درباره محتوای پویا ندارد */}
+}else{
+if(p==="health")renderHealthPage();
+else if(p==="travel")renderTravelPage();
+}
+window.scrollTo({top:0,behavior:"smooth"});
 }
 var magNav=document.getElementById("magNav");if(magNav)magNav.addEventListener("click",function(e){var t=e.target.closest(".mag-tab");if(t)showPage(t.getAttribute("data-page"));});
-
 /* ===== Chat ===== */
 var GREET="سلام! 👋 دستیار هوشمند مجلهٔ آسمان هستم.";
 var chatPanel=document.getElementById("chatPanel"),chatMessages=document.getElementById("chatMessages"),chatInput=document.getElementById("chatInput");
@@ -1380,11 +1337,9 @@ addChatMsg(GREET,false);
 function sendChat(){if(!chatInput)return;var t=chatInput.value.trim();if(!t)return;chatInput.value="";addChatMsg(t,true);setTimeout(function(){addChatMsg("سلام! در حال یادگیری هستم.",false);},300);}
 var chatSend=document.getElementById("chatSend");if(chatSend)chatSend.addEventListener("click",sendChat);
 if(chatInput)chatInput.addEventListener("keydown",function(e){if(e.key==="Enter")sendChat();});
-
 /* ===== Init ===== */
 ensureLockedPins();savePins();
-showPage("about");
-/* ✅ حذف شد: updatePinBtn() قبل از تأیید مودال باعث درخواست شبکه می‌شد */
+/* ✅ FIX: حذف showPage("about") از اینجا - این کار در bootApp انجام می‌شود */
 console.log("✅ مجله آسمان v"+APP_VERSION+" — منتظر تأیید مودال");
 })();
 </script>
