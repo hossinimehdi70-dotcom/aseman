@@ -1,5 +1,5 @@
 /* Service Worker مجله آسمان */
-const CACHE_NAME = 'aseman-shell-v12';
+const CACHE_NAME = 'aseman-shell-v1';
 const SHELL = [
   './',
   './index.html',
@@ -7,8 +7,7 @@ const SHELL = [
   './icon.svg',
   './icon-192.png',
   './icon-512.png',
-  './icon-maskable-512.png',
-  './blog/posts.json'
+  './icon-maskable-512.png'
 ];
 
 /* نصب: کش کردن App Shell */
