@@ -51,6 +51,7 @@ button,input,select{font:inherit}button{cursor:pointer;color:inherit;background:
 .brand{display:flex;align-items:center;gap:12px}
 .logo{width:54px;height:54px;border-radius:16px;display:grid;place-items:center;font-size:28px;background:linear-gradient(145deg,var(--accent),var(--accent2));box-shadow:0 10px 30px #39c6ff40}
 .brand-text h1{margin:0;font-size:clamp(24px,4vw,34px);font-weight:900;letter-spacing:.5px;background:linear-gradient(135deg,#fff,#bfe9ff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.brand-sub{margin-top:4px;font-size:13px;color:var(--muted);font-weight:700;letter-spacing:.4px}
 #pullInd{position:fixed;top:0;left:50%;transform:translateX(-50%);background:var(--accent);color:#04101d;font-weight:800;font-size:13px;padding:6px 16px;border-radius:0 0 14px 14px;opacity:0;transition:opacity .2s;z-index:9998;pointer-events:none}
 .mag-nav{display:flex;gap:8px;overflow-x:auto;padding:8px 0;scrollbar-width:none;position:sticky;top:0;z-index:80;background:var(--bg)}
 .mag-nav::-webkit-scrollbar{display:none}
@@ -136,12 +137,13 @@ body[data-theme="light"] .time-city{color:#0a2540}
 .sec-content{padding-top:10px;font-size:15px;line-height:2.2;white-space:pre-line}
 .about-intro{margin:18px 0;padding:16px 22px;border-right:3px solid var(--gold);background:linear-gradient(90deg,rgba(255,209,102,.12),rgba(255,140,66,.06));border-radius:0 14px 14px 0;font-size:16px;line-height:2.3;color:#fff8e8}
 body[data-theme="light"] .about-intro{color:#3a2a10}
-.about-poem{margin:18px 0;padding:18px 22px;border-right:3px solid var(--accent);background:linear-gradient(90deg,rgba(57,198,255,.12),rgba(139,92,246,.06));border-radius:0 14px 14px 0;font-size:16px;line-height:2.3;color:#e8f3ff;font-style:italic;letter-spacing:.3px}
-.about-poem .signature{text-align:center;margin-top:16px;font-style:normal}
-.about-poem .signature .sig-line1{display:block;font-weight:800;color:var(--gold);font-size:17px}
-.about-poem .signature .sig-line2{display:block;font-weight:700;color:#ffd9a0;font-size:15px;margin-top:6px}
-.about-poem .creator-wrap{text-align:center;margin-top:16px}
-.btn-creator{display:inline-block;padding:10px 24px;background:rgba(255,255,255,.08);color:var(--text);text-decoration:none;border-radius:12px;font-family:inherit;font-size:14px;font-weight:800;transition:.3s;cursor:pointer;border:1px solid rgba(255,255,255,.25)}
+.about-poem{margin:18px 0;padding:18px 22px;border-right:3px solid var(--accent);background:linear-gradient(90deg,rgba(57,198,255,.12),rgba(139,92,246,.06));border-radius:0 14px 14px 0;font-size:16px;line-height:2.1;color:#e8f3ff;letter-spacing:.3px;white-space:pre-line}
+.about-poem .about-poem-title{display:block;font-size:22px;font-weight:900;color:var(--gold);text-align:center;margin-bottom:18px;padding-bottom:14px;border-bottom:1px dashed rgba(255,209,102,.35);letter-spacing:1px}
+.about-poem .signature{text-align:center;margin-top:14px}
+.about-poem .signature .sig-line1{display:block;font-weight:800;color:var(--gold);font-size:15px;margin-bottom:4px}
+.about-poem .signature .sig-line2{display:block;font-weight:900;color:#ffd9a0;font-size:16px}
+.about-poem .creator-wrap{text-align:center;margin-top:12px;padding-top:10px;border-top:1px dashed rgba(255,255,255,.1)}
+.btn-creator{display:inline-block;padding:8px 22px;background:rgba(255,255,255,.08);color:var(--text);text-decoration:none;border-radius:12px;font-family:inherit;font-size:13px;font-weight:800;transition:.3s;cursor:pointer;border:1px solid rgba(255,255,255,.25)}
 .btn-creator:hover{background:rgba(255,255,255,.15);transform:translateY(-1px)}
 .about-code-wrap{text-align:center;margin-top:20px;padding-top:14px;border-top:1px dashed rgba(255,255,255,.1)}
 .btn-code{padding:6px 22px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);border-radius:8px;color:var(--muted);font-size:11px;font-weight:700;cursor:pointer;transition:.2s;font-family:inherit;letter-spacing:.5px}
@@ -159,7 +161,50 @@ body[data-theme="light"] .about-intro{color:#3a2a10}
 .dash-card.highlight{background:linear-gradient(145deg,rgba(57,198,255,.15),rgba(139,92,246,.08));border-color:rgba(57,198,255,.35)}
 .dash-card.poem .dc-body{font-style:italic;line-height:2.1;white-space:pre-line;color:var(--text)}
 
-/* نوار سوالات داخل چت‌بات — به‌جای نوارهای قبلی هر صفحه */
+.dash-welcome{padding:20px 22px;border-radius:20px;background:linear-gradient(135deg,rgba(57,198,255,.18),rgba(139,92,246,.12));border:2px solid rgba(57,198,255,.35);margin-bottom:14px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.dash-welcome .dw-text{font-size:16px;font-weight:800;color:var(--text);line-height:1.9;flex:1;min-width:200px}
+.dash-welcome .dw-text b{color:var(--gold);font-size:20px}
+.dash-welcome .dw-edit{padding:8px 16px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);border-radius:10px;color:var(--text);font-weight:800;font-size:13px;font-family:inherit;cursor:pointer;transition:.2s;white-space:nowrap}
+.dash-welcome .dw-edit:hover{background:rgba(255,255,255,.2)}
+
+.dash-manage{border:1px solid rgba(255,255,255,.15);border-radius:20px;background:var(--card-bg2);margin-bottom:14px;overflow:hidden}
+.dash-manage .dm-head{padding:14px 18px;font-weight:900;font-size:15px;display:flex;justify-content:space-between;align-items:center;gap:8px;color:var(--text);cursor:pointer;user-select:none;background:linear-gradient(145deg,rgba(57,198,255,.08),rgba(139,92,246,.04))}
+.dash-manage .dm-head .dm-arrow{font-size:18px;color:var(--muted);transition:transform .35s}
+.dash-manage.open .dm-head .dm-arrow{transform:rotate(180deg);color:var(--text)}
+.dash-manage .dm-body{max-height:0;overflow:hidden;transition:max-height .45s ease}
+.dash-manage.open .dm-body{max-height:1200px;padding:14px 18px 16px}
+.dash-manage .dm-list{display:flex;flex-wrap:wrap;gap:8px}
+.dash-manage .dm-item{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);border-radius:10px;font-size:13px;font-weight:700;color:var(--text);cursor:pointer;transition:.2s;font-family:inherit}
+.dash-manage .dm-item:hover{background:rgba(255,255,255,.12)}
+.dash-manage .dm-item.off{opacity:.45;text-decoration:line-through}
+
+.note-grid{display:grid;grid-template-columns:1fr;gap:18px;margin-top:8px}
+.note-card{background:linear-gradient(145deg,rgba(255,255,255,.09),rgba(255,255,255,.03));border:2px solid rgba(255,255,255,.13);border-radius:22px;overflow:hidden;box-shadow:0 12px 32px rgba(0,0,0,.22);transition:.25s}
+.note-card:hover{border-color:rgba(57,198,255,.4)}
+.note-card.n1{border-color:rgba(255,209,102,.4)}
+.note-card.n2{border-color:rgba(139,92,246,.4)}
+.note-card.n3{border-color:rgba(45,212,161,.4)}
+.note-card.n4{border-color:rgba(236,72,153,.4)}
+.note-head{padding:16px 20px;display:flex;justify-content:space-between;align-items:center;gap:10px;background:linear-gradient(145deg,rgba(57,198,255,.14),rgba(139,92,246,.08));cursor:pointer;user-select:none}
+.note-card.n1 .note-head{background:linear-gradient(145deg,rgba(255,209,102,.18),rgba(255,140,66,.10))}
+.note-card.n2 .note-head{background:linear-gradient(145deg,rgba(139,92,246,.18),rgba(236,72,153,.10))}
+.note-card.n3 .note-head{background:linear-gradient(145deg,rgba(45,212,161,.18),rgba(57,198,255,.10))}
+.note-card.n4 .note-head{background:linear-gradient(145deg,rgba(236,72,153,.18),rgba(255,209,102,.10))}
+.note-head .nh-title{font-size:17px;font-weight:900;color:var(--text);display:flex;align-items:center;gap:10px}
+.note-head .nh-icon{font-size:22px}
+.note-head .nh-arrow{font-size:18px;color:var(--muted);transition:transform .35s}
+.note-card.open .note-head .nh-arrow{transform:rotate(180deg);color:var(--text)}
+.note-preview{padding:16px 22px;font-size:15px;line-height:2.3;color:var(--text);white-space:pre-line;border-bottom:1px dashed rgba(255,255,255,.1)}
+.note-card.open .note-preview{border-bottom:none}
+.note-drawer{max-height:0;overflow:hidden;transition:max-height .55s ease}
+.note-card.open .note-drawer{max-height:4000px}
+.note-drawer-inner{padding:0 22px 20px;font-size:15px;line-height:2.3;color:var(--text);white-space:pre-line}
+.note-drawer-inner .note-sign{display:block;text-align:center;margin-top:14px;font-weight:900;color:var(--gold);font-size:16px}
+.note-drawer-inner .note-soon{text-align:center;padding:24px 0;font-size:16px;font-weight:800;color:var(--muted);letter-spacing:2px}
+.note-toggle-btn{display:block;width:100%;padding:10px;background:rgba(255,255,255,.04);border:none;border-top:1px solid rgba(255,255,255,.08);color:var(--muted);font-weight:800;font-size:13px;font-family:inherit;cursor:pointer;transition:.2s;letter-spacing:.5px}
+.note-toggle-btn:hover{background:rgba(255,255,255,.09);color:var(--text)}
+.note-card.open .note-toggle-btn{color:var(--text)}
+
 .chat-suggestions{display:flex;overflow-x:auto;gap:6px;padding:10px 12px;background:linear-gradient(135deg,#6d28d9,#be185d);scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.3) transparent;direction:ltr}
 .chat-suggestions::-webkit-scrollbar{height:6px}
 .chat-suggestions::-webkit-scrollbar-thumb{background:rgba(255,255,255,.3);border-radius:3px}
@@ -168,7 +213,6 @@ body[data-theme="light"] .about-intro{color:#3a2a10}
 .chat-sug:hover{background:rgba(255,255,255,.28);transform:translateY(-1px)}
 .chat-sug:active{transform:scale(.96)}
 
-/* ساعت محلی اینلاین در عنوان اوقات شرعی */
 .prayer-localtime-inline{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:12px;background:linear-gradient(135deg,rgba(57,198,255,.18),rgba(139,92,246,.12));border:1px solid rgba(57,198,255,.4);font-size:13px;font-weight:700;color:#bfe9ff;white-space:nowrap;flex-wrap:nowrap}
 .prayer-localtime-inline .plt-city{font-size:12px;color:var(--muted);font-weight:800}
 .prayer-localtime-inline .plt-clock-inline{font-size:18px;font-weight:900;color:var(--accent);font-feature-settings:"tnum";letter-spacing:1px;direction:ltr;display:inline-block;min-width:78px;text-align:center}
@@ -455,11 +499,12 @@ footer{text-align:center;color:var(--muted);font-size:11px;line-height:2;padding
 <div class="install-size-note"><span class="isn-head">💾 حجم بسیار کم.</span>تنها چند مگابایت از حافظه گوشی شما را اشغال می‌کند؛ کمتر از یک عکس.</div>
 <button class="install-btn" id="installOk">✓ متوجه شدم</button>
 <div class="install-version">
-<div class="iv-version">📌 نسخهٔ ۳٫۱٫۰</div>
+<div class="iv-version">📌 نسخهٔ ۳٫۳٫۰</div>
 <div class="iv-changelog">
-• ۱۰ سوال نمونه داخل چت‌بات، متناسب با هر صفحه<br>
-• ساعت محلی اینلاین در عنوان اوقات شرعی<br>
-• دستیار هوشمند قوی‌تر و دقیق‌تر<br>
+• کشویی شدن بخش مدیریت کارت‌های داشبورد<br>
+• تیتر «مجله آسمان» در متن خوش‌آمدگویی<br>
+• امضای «م.حسینی» با فاصله‌گذاری استاندارد<br>
+• پاسخ‌های دقیق و اختصاصی برای سوالات نمونه<br>
 • حفظ همهٔ امکانات نسخهٔ قبل
 </div>
 </div>
@@ -468,10 +513,11 @@ footer{text-align:center;color:var(--muted);font-size:11px;line-height:2;padding
 
 <div class="wrap">
 <header class="top">
-<div class="brand"><div class="logo">🌌</div><div class="brand-text"><h1>مجله آسمان</h1></div></div>
+<div class="brand"><div class="logo">🌌</div><div class="brand-text"><h1>مجله آسمان</h1><div class="brand-sub">به آسمان نگاه کن.</div></div></div>
 <nav class="mag-nav" id="magNav">
 <button class="mag-tab" data-page="about">📖 درباره</button>
 <button class="mag-tab" data-page="myday">⭐ صفحه من</button>
+<button class="mag-tab" data-page="notes">📝 یادداشت مجله</button>
 <button class="mag-tab" data-page="home">🏠 آب‌وهوا</button>
 <button class="mag-tab" data-page="prayer">🕌 اوقات شرعی</button>
 <button class="mag-tab" data-page="travel">🧳 سفر</button>
@@ -491,17 +537,33 @@ footer{text-align:center;color:var(--muted);font-size:11px;line-height:2;padding
 <section class="panel section">
 <div class="about-intro">مجلهٔ آسمان یک اپلیکیشن وب چندبخشی و کاملاً رایگان است؛ همهٔ پردازش‌ها سمت مرورگر شما انجام می‌شود و هیچ داده‌ای به سرور ارسال نمی‌گردد. برای به‌روزرسانی اطلاعات، کافی است صفحه را از بالا به پایین بکشید و رها کنید. 💡 می‌توانید با کشیدن انگشت خود از چپ به راست یا راست به چپ، بین صفحات جابجا شوید — مثل ورق زدن کتاب.</div>
 <div class="about-poem">
-مجلهٔ آسمان، همسفر خاموش لحظه‌های توست؛ همراهی آرام که از روشنای صبح آغاز می‌شود و تا سکوت شب ادامه می‌یابد.<br>
-از نسیم صبحگاهی که از پنجره‌ات می‌گذرد، تا سکوت شبی که ماه را به خواب می‌برد.
+<span class="about-poem-title">مجله آسمان</span>
+سلام،  
+به «مجله آسمان» خوش آمدید؛
+جایی برای چند دقیقه مکث، در میان شتاب روزمره.
+«آسمان» یک مجله دیجیتال برای زندگی روزانه است؛ اما تلاش کرده‌ایم فقط مجموعه‌ای از مطالب و اطلاعات نباشد. می‌خواهیم پنجره‌ای باشد رو به چیزهایی که هر روز بخشی از زندگی ما هستند؛ از آب‌وهوا و اوقات شرعی گرفته تا فرهنگ و شعر، علم و سلامت، ورزش، سفر و سرگرمی.
+در آسمان، هر بخش می‌تواند بهانه‌ای باشد برای دانستن، کشف کردن یا حتی کمی آرام‌تر شدن. دستیار هوشمند آسمان هم در کنار شماست تا در میان این محتوا، گفت‌وگویی ساده و صمیمی با مجله داشته باشید؛ بپرسید، جست‌وجو کنید و بیشتر کشف کنید.
+اما «آسمان» برای ما معنای دیگری هم دارد. همه‌ی ما، با همه‌ی تفاوت‌هایمان، زیر یک آسمان زندگی می‌کنیم. شاید همین آسمان مشترک یادآوری ساده‌ای باشد از اینکه در کنار تفاوت‌های بسیار، چیزهای زیادی نیز ما را به یکدیگر پیوند می‌دهد؛ زندگی، خاطره، فرهنگ، پرسش‌ها و امیدهایی که هر کدام به شکلی در دل داریم.
+ما در «مجله آسمان» تلاش می‌کنیم این همراه کوچک را هر دو هفته یک‌بار بهتر، کامل‌تر و نزدیک‌تر به نیازهای شما کنیم. برای این مسیر، بیش از هر چیز به همراهی شما نیاز داریم.
+
+اگر پیشنهادی، انتقادی یا ایده‌ای برای بهتر شدن آسمان دارید، با ما در میان بگذارید. شاید ایده‌ای که امروز با ما مطرح می‌کنید، بخشی از آسمان فردا باشد.
+از اینکه همراه ما هستید، خوشحالیم.
+به آسمان نگاه کن.
 <div class="signature">
 <span class="sig-line1">با سپاس</span>
-<span class="sig-line2">م. حسینی _ 🧑‍🦽 معلول آسیب نخاعی</span>
+<span class="sig-line2">م.حسینی</span>
 </div>
 <div class="creator-wrap"><a href="https://eitaa.com/hossini_96" target="_blank" rel="noopener" class="btn-creator">ارتباط با سازنده</a></div>
 </div>
 <div class="about-help" style="margin-top:20px">
 <div class="ah-sec"><div class="ah-h c1">⭐ صفحه من</div><ul>
 <li>داشبورد یکپارچه که همه چیز را در یک نگاه نشان می‌دهد: آب‌وهوای شهر شما، اذان بعدی، تاریخ، بیت روز، فاز ماه، ذکر روز و...</li>
+<li>💡 با زدن دکمهٔ «ویرایش نام»، می‌توانید نام خود را وارد کنید تا در خوش‌آمدگویی نمایش داده شود (فقط روی دستگاه شما ذخیره می‌شود).</li>
+<li>💡 می‌توانید کارت‌های داشبورد را از بخش «مدیریت کارت‌ها» مخفی یا نمایش دهید.</li>
+</ul></div>
+<div class="ah-sec"><div class="ah-h c1">📝 یادداشت مجله</div><ul>
+<li>یادداشت‌های سردبیر و تیم تحریریه در ۴ بخش کشویی.</li>
+<li>هر یادداشت ۴ خط اول را همیشه نشان می‌دهد و بقیهٔ متن با کشوی عمودی باز می‌شود.</li>
 </ul></div>
 <div class="ah-sec"><div class="ah-h c1">🏠 آب‌وهوا</div><ul>
 <li>پیش‌بینی ۹ روزه و ساعتی، ۱۶ شاخص تخصصی، اوقات شرعی، تقویم سه‌گانه.</li>
@@ -539,7 +601,15 @@ footer{text-align:center;color:var(--muted);font-size:11px;line-height:2;padding
 <!-- ============ صفحه من (داشبورد) ============ -->
 <section class="mag-page" id="page-myday" hidden>
 <div class="page-hero"><div><h2 class="page-title">⭐ صفحه من</h2><div class="page-subtitle">داشبورد یکپارچه — همه چیز در یک نگاه</div></div></div>
+<div id="dashWelcome"></div>
+<div id="dashManage"></div>
 <div class="dash-grid" id="dashGrid"></div>
+</section>
+
+<!-- ============ صفحه یادداشت مجله ============ -->
+<section class="mag-page" id="page-notes" hidden>
+<div class="page-hero"><div><h2 class="page-title">📝 یادداشت مجله</h2><div class="page-subtitle">یادداشت‌های سردبیر و تیم تحریریه</div></div></div>
+<div class="note-grid" id="noteGrid"></div>
 </section>
 
 <!-- ============ صفحه آب‌وهوا ============ -->
@@ -619,7 +689,7 @@ footer{text-align:center;color:var(--muted);font-size:11px;line-height:2;padding
 
 <!-- ============ صفحه اوقات شرعی ============ -->
 <section class="mag-page" id="page-prayer" hidden>
-<div class="page-hero"><div><h2 class="page-title">🕌 اوقات شرعی <span id="prayerCityTitle" style="font-size:18px;color:var(--gold);display:block;margin-top:8px"></span></h2><div class="page-subtitle">بر اساس منطقهٔ انتخابی در آب‌وهوا</div></div></div>
+<div class="page-hero"><div><h2 class="page-title">🕌 اوقات شرعی <span id="prayerCityTitle" style="font-size:18px;color:var(--gold);display:block;margin-top:8px"></span></h2></div></div>
 
 <aside class="panel side" style="margin-bottom:15px">
 <div class="title">📅 تقویم امروز</div>
@@ -955,14 +1025,12 @@ footer{text-align:center;color:var(--muted);font-size:11px;line-height:2;padding
 (function(){
 "use strict";
 
-/* ============ Helpers ============ */
 function lsSet(k,v){try{localStorage.setItem(k,v);}catch(e){}}
 function lsGet(k){try{return localStorage.getItem(k);}catch(e){return null;}}
 function ssSet(k,v){try{sessionStorage.setItem(k,v);}catch(e){}}
 function ssGet(k){try{return sessionStorage.getItem(k);}catch(e){return null;}}
-var APP_VERSION="3.1.0";
+var APP_VERSION="3.3.0";
 
-/* ============ Theme / Font / Color ============ */
 var appTheme=lsGet("appTheme")||"dark";
 var appFont=lsGet("appFont")||"normal";
 var appColor=lsGet("appColor")||"blue";
@@ -982,7 +1050,6 @@ function cycleAutoTheme(){if(appTheme==="auto")applyTheme();}
 setInterval(cycleAutoTheme,60000);
 applyTheme();
 
-/* ============ PWA ============ */
 var installOverlay=document.getElementById("installOverlay");
 var installOk=document.getElementById("installOk");
 var appBooted=false;
@@ -1073,19 +1140,17 @@ if(b3)b3.addEventListener("click",installApp);
   for(var i=0;i<hs.length;i++)(function(h){h.addEventListener("click",function(){var g=h.closest(".install-acc-group");if(g)g.classList.toggle("open");});})(hs[i]);
 })();
 
-/* ============ Audio: click ============ */
 var audioCtx=null;
 function ensureAudio(){if(!audioCtx){try{audioCtx=new(window.AudioContext||window.webkitAudioContext)();}catch(e){return false;}}if(audioCtx.state==="suspended")audioCtx.resume();return true;}
 function clickSound(){if(!ensureAudio())return;var o=audioCtx.createOscillator(),g=audioCtx.createGain();o.type="sine";o.frequency.value=600;g.gain.setValueAtTime(0,audioCtx.currentTime);g.gain.linearRampToValueAtTime(.6,audioCtx.currentTime+.01);g.gain.exponentialRampToValueAtTime(.001,audioCtx.currentTime+.13);o.connect(g).connect(audioCtx.destination);o.start(audioCtx.currentTime);o.stop(audioCtx.currentTime+.15);}
 
-/* ============ Swipe between pages ============ */
-var PAGE_ORDER=["about","myday","home","prayer","travel","culture","sport","health","science","fun","settings"];
+var PAGE_ORDER=["about","myday","notes","home","prayer","travel","culture","sport","health","science","fun","settings"];
 var swipeStartX=0,swipeStartY=0,swipeActive=false;
 document.addEventListener("touchstart",function(e){
   if(!appBooted)return;
   if(e.touches.length!==1)return;
   var t=e.target;
-  if(t.closest&&(t.closest(".sudoku-grid")||t.closest(".scroll")||t.closest(".pins")||t.closest(".chat-suggestions")||t.closest(".mag-nav")||t.closest(".search")||t.closest(".chat-panel")))return;
+  if(t.closest&&(t.closest(".sudoku-grid")||t.closest(".scroll")||t.closest(".pins")||t.closest(".chat-suggestions")||t.closest(".mag-nav")||t.closest(".search")||t.closest(".chat-panel")||t.closest(".note-drawer")))return;
   swipeStartX=e.touches[0].clientX;
   swipeStartY=e.touches[0].clientY;
   swipeActive=true;
@@ -1117,7 +1182,6 @@ document.addEventListener("keydown",function(e){
   else if(e.key==="ArrowRight"&&idx>0)goToPage(idx-1,-1);
 });
 
-/* ============ آمار ============ */
 var COUNTER_NS="aseman-magazine-2026";
 var COUNTER_HOST="https://abacus.jasoncameron.dev";
 function getTehranParts(){try{var p=new Intl.DateTimeFormat("en-US",{timeZone:"Asia/Tehran",year:"numeric",month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit",hour12:false,numberingSystem:"latn"}).formatToParts(new Date());var o={};p.forEach(function(x){if(x.type!=="literal")o[x.type]=x.value;});return o;}catch(e){var d=new Date();return{year:String(d.getFullYear()),month:String(d.getMonth()+1).padStart(2,"0"),day:String(d.getDate()).padStart(2,"0")};}}
@@ -1138,7 +1202,6 @@ function trackVisit(){
   }catch(e){}
 }
 
-/* ============ Code modal ============ */
 var codeModal=document.getElementById("codeModal"),codeModalClose=document.getElementById("codeModalClose"),codeViewEntry=document.getElementById("codeViewEntry"),codeViewStats=document.getElementById("codeViewStats"),codeError=document.getElementById("codeError"),statsContent=document.getElementById("statsContent"),codeDigit1=document.getElementById("codeDigit1"),codeDigit2=document.getElementById("codeDigit2"),codeDigit3=document.getElementById("codeDigit3"),codeSubmitBtn=document.getElementById("codeSubmitBtn"),codeCancelBtn=document.getElementById("codeCancelBtn"),btnCode=document.getElementById("btnCode");
 function resetCodeModal(){if(codeViewEntry)codeViewEntry.style.display="";if(codeViewStats)codeViewStats.style.display="none";if(codeError)codeError.classList.remove("show");if(codeDigit1)codeDigit1.value="";if(codeDigit2)codeDigit2.value="";if(codeDigit3)codeDigit3.value="";}
 function openCodeModal(){resetCodeModal();if(codeModal)codeModal.classList.add("show");setTimeout(function(){if(codeDigit1)codeDigit1.focus();},250);}
@@ -1163,7 +1226,6 @@ function showStats(){
   }).catch(function(){if(statsContent)statsContent.innerHTML='<div class="stats-loading">⚠️ دریافت نشد.</div>';});
 }
 
-/* ============ Auto Update ============ */
 function enableAutoUpdate(){
   if(!("serviceWorker" in navigator))return;
   navigator.serviceWorker.register("sw.js",{updateViaCache:"none"}).catch(function(){});
@@ -1174,7 +1236,6 @@ function enableAutoUpdate(){
 if("serviceWorker" in navigator)window.addEventListener("load",function(){navigator.serviceWorker.register("sw.js",{updateViaCache:"none"}).catch(function(){});});
 setInterval(function(){if(appBooted&&navigator.onLine&&!document.body.classList.contains("install-lock")&&!document.body.classList.contains("chat-lock"))refreshAll();},2*60*60*1000);
 
-/* ============ API & State ============ */
 var API={weather:"https://api.open-meteo.com/v1/forecast",geo:"https://geocoding-api.open-meteo.com/v1/search",air:"https://air-quality-api.open-meteo.com/v1/air-quality",prayer:"https://api.aladhan.com/v1/timings",archive:"https://archive-api.open-meteo.com/v1/archive",hforecast:"https://historical-forecast-api.open-meteo.com/v1/forecast",ensemble:"https://ensemble-api.open-meteo.com/v1/ensemble",elevation:"https://api.open-meteo.com/v1/elevation",yr:"https://api.met.no/weatherapi/locationforecast/2.0/compact",nom:"https://nominatim.openstreetmap.org/search",apod:"https://api.nasa.gov/planetary/apod",translate:"https://api.mymemory.translated.net/get"};
 var NASA_KEY="DEMO_KEY";
 
@@ -1217,8 +1278,7 @@ function isLatin(s){return /[a-zA-Z]/.test(s);}
 function normName(s){return String(s||"").replace(/\s+/g," ").trim();}
 function haversine(a,b,c,d){var R=6371,ra=function(x){return x*Math.PI/180;};var dLat=ra(c-a),dLon=ra(d-b);var s=Math.sin(dLat/2)*Math.sin(dLat/2)+Math.cos(ra(a))*Math.cos(ra(c))*Math.sin(dLon/2)*Math.sin(dLon/2);return R*2*Math.atan2(Math.sqrt(s),Math.sqrt(1-s));}
 
-/* ============ Global click sound & modal close ============ */
-document.addEventListener("click",function(e){if(e.target&&e.target.closest){var c=e.target.closest("button,.btn,.select,.detail-btn,.day-tab,.pin-small,.pinchip,.arrow,.chat-sug,.chat-send,.day,.mag-tab,.sport-card,.sport-link,.culture-card,.sport-acc-h,.travel-acc-h,.culture-acc-h,.fun-acc-h,.btn-creator,.install-btn,.fj-btn,.fp-reveal,.install-share-btn,.install-pwa-btn,.btn-code,.code-submit-btn,.code-cancel-btn,.code-digit,.install-acc-h,.ps-chip,.sudoku-key,.color-dot,.calc-btn");if(c)clickSound();}});
+document.addEventListener("click",function(e){if(e.target&&e.target.closest){var c=e.target.closest("button,.btn,.select,.detail-btn,.day-tab,.pin-small,.pinchip,.arrow,.chat-sug,.chat-send,.day,.mag-tab,.sport-card,.sport-link,.culture-card,.sport-acc-h,.travel-acc-h,.culture-acc-h,.fun-acc-h,.btn-creator,.install-btn,.fj-btn,.fp-reveal,.install-share-btn,.install-pwa-btn,.btn-code,.code-submit-btn,.code-cancel-btn,.code-digit,.install-acc-h,.ps-chip,.sudoku-key,.color-dot,.calc-btn,.note-toggle-btn,.note-head,.dw-edit,.dm-item,.dm-head");if(c)clickSound();}});
 document.addEventListener("click",function(e){if(!e.target||!e.target.closest)return;var mc=e.target.closest(".modal-close");if(mc){var ov=mc.closest(".modal-overlay");if(ov)ov.classList.remove("show");return;}var ov2=e.target.closest(".modal-overlay");if(ov2&&e.target===ov2)ov2.classList.remove("show");var ar=e.target.closest(".arrow[data-collapse]");if(ar){var t=document.getElementById(ar.getAttribute("data-collapse"));if(t)t.classList.toggle("collapsed");}});
 
 function updateNetStatus(){var d=document.getElementById("netDot"),t=document.getElementById("netText");if(!d||!t)return;if(navigator.onLine){d.className="sb-dot on";t.textContent="آنلاین";}else{d.className="sb-dot off";t.textContent="آفلاین";}}
@@ -1241,7 +1301,6 @@ function updateLocalTime(){
     e=document.getElementById("timeTehranP");if(e)e.textContent=tT;
     e=document.getElementById("timeLondonP");if(e)e.textContent=tL;
     e=document.getElementById("timeMeccaP");if(e)e.textContent=tM;
-    /* ساعت محلی اینلاین در عنوان اوقات شرعی */
     var plt=document.getElementById("prayerLocalTime");
     if(plt){
       var cityTz=(data&&data.timezone)?data.timezone:null;
@@ -1515,7 +1574,6 @@ if(searchInput)searchInput.addEventListener("input",function(){clearTimeout(sear
 document.addEventListener("click",function(e){if(!e.target.closest||!e.target.closest(".search")){var r=document.getElementById("results");if(r)r.style.display="none";}});
 var pinBtn=document.getElementById("pin");if(pinBtn)pinBtn.addEventListener("click",function(){var f=-1;for(var i=0;i<pins.length;i++)if(String(pins[i].id)===String(city.id)){f=i;break;}if(f>=0){if(pins[f].locked){show("قفل است","info");return;}pins.splice(f,1);show("حذف شد");}else{pins.push({id:city.id,name:city.name,country:city.country,admin1:city.admin1,county:city.county,type:city.type,latitude:city.latitude,longitude:city.longitude});show("پین شد","ok");}savePins();updatePinBtn();});
 
-/* ============ GPS ============ */
 function resolvePlace(lat,lon){var k="rg_"+lat.toFixed(3)+"_"+lon.toFixed(3);var c=getFromCache(k,30*86400000);if(c)return Promise.resolve(c);return fetch("https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat="+lat+"&lon="+lon+"&zoom=17&addressdetails=1&accept-language=fa").then(function(r){return r.json();}).then(function(j){var a=j.address||{};var out={village:a.village||a.hamlet||"",district:a.neighbourhood||a.quarter||a.suburb||a.city_district||"",name:a.city||a.town||a.village||a.municipality||a.county||j.name||"",county:a.county||"",admin1:a.state||"",country:a.country||""};saveToCache(k,out);return out;}).catch(function(){return fetch("https://api.bigdatacloud.net/data/reverse-geocode-client?latitude="+lat+"&longitude="+lon+"&localityLanguage=fa").then(function(r){return r.json();}).then(function(j){var out={village:j.locality||"",district:"",name:j.city||j.locality||"",county:"",admin1:j.principalSubdivision||"",country:j.countryName||""};saveToCache(k,out);return out;}).catch(function(){return{village:"",district:"",name:"",county:"",admin1:"",country:""};});});}
 function adoptGPS(lat,lon,force){
   lastAdopted={lat:lat,lon:lon};
@@ -1554,7 +1612,6 @@ function locateUser(){
 var locBtn=document.getElementById("loc");if(locBtn)locBtn.addEventListener("click",locateUser);
 if(navigator.geolocation)setGps("ready");else setGps("off");
 
-/* ============ ذکر ایام هفته ============ */
 var DHIKR={
   0:{day:"یکشنبه",text:"یا ذالجلال و الاکرام",note:"ذکر مخصوص روز یکشنبه — برای بزرگی و کرامت"},
   1:{day:"دوشنبه",text:"یا قاضی الحاجات",note:"ذکر مخصوص روز دوشنبه — برای برآورده شدن حاجات"},
@@ -1573,7 +1630,6 @@ function renderDhikr(){
   var en=document.getElementById("dhikrNote");if(en)en.textContent=x.note;
 }
 
-/* ============ BMI / BMR ============ */
 var calcBtn=document.getElementById("calcBtn");
 if(calcBtn)calcBtn.addEventListener("click",function(){
   var age=parseFloat(document.getElementById("calcAge").value);
@@ -1623,7 +1679,6 @@ if(calcBtn)calcBtn.addEventListener("click",function(){
   res.innerHTML=html;
 });
 
-/* ============ APOD (NASA) + 2 Facts روزانه ============ */
 function getTodayTehranKey(){
   try{
     var p=new Intl.DateTimeFormat("en-CA",{timeZone:"Asia/Tehran",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date());
@@ -1742,7 +1797,6 @@ setInterval(function(){
 },30*60*1000);
 lsSet("lastFactDay",getTodayTehranKey());
 
-/* ============ Poetry ============ */
 var HAFEZ_POEMS=["الا یا ایها الساقی ادر کأساً و ناولها\nکه عشق آسان نمود اول ولی افتاد مشکل‌ها","رسید مژده که ایام غم نخواهد ماند\nچنان نماند چنین نیز هم نخواهد ماند","منم که شهرهٔ شهرم به عشق ورزیدن\nبه می فروش و می‌خوارگی و رندی کردن","مرا عهدی است با جانان که تا جان در بدن دارم\nهوای‌دارِ خال و خطِ آن دلبرِ شیرین‌سخن باشم","گفتم غم تو دارم گفتا غمت سر آید\nگفتم که ماه من شو گفتا اگر برآید","ساقی به نور باده برافروز جام ما\nمطرب بگو که کار جهان شد به کام ما","یوسف گم‌گشته باز آید به کنعان غم مخور\nکلبهٔ احزان شود روزی گلستان غم مخور","دلا بسوز که سوز تو کارها بکند\nنیاز نیم‌شبی دفع صد بلا بکند"];
 var SAADI_POEMS=["بنی آدم اعضای یکدیگرند\nکه در آفرینش ز یک گوهرند","تا مرد سخن نگفته باشد\nعیب و هنرش نهفته باشد","هر که آمد نقش خود بنوشت و رفت\nدلم از این قصه خون گشت و رفت","تن آدمی شریف است به جان آدمیت\nنه همین لباس زیباست نشان آدمیت","دو چیز طیره عقل است: دم فروبستن\nبه وقت گفتن و گفتن به وقت خاموشی","سعدیا مرد نکونام نمیرد هرگز\nمرده آن است که نامش به نکویی نبرند"];
 var RUMI_POEMS=["بشنو از نی چون حکایت می‌کند\nاز جدایی‌ها شکایت می‌کند","هر کسی کو دور ماند از اصل خویش\nباز جوید روزگار وصل خویش","آتش است این بانگ نای و نیست باد\nهر که این آتش ندارد نیست باد","ما ز قرآن مغز را برداشتیم\nپوست را بهر خران بگذاشتیم"];
@@ -1761,7 +1815,6 @@ function renderPoetry(){
     card("khayyam","✦ خیام",rand(KHAYYAM_POEMS,31),"— عمر خیام نیشابوری");
 }
 
-/* ============ Sport ============ */
 var SPORT_TABS=[{id:"football",icon:"⚽",label:"فوتبال"},{id:"futsal",icon:"🥅",label:"فوتسال"},{id:"basketball",icon:"🏀",label:"بسکتبال"},{id:"volleyball",icon:"🏐",label:"والیبال"},{id:"beach",icon:"🏖️",label:"ساحلی"},{id:"handball",icon:"🤾",label:"هندبال"},{id:"broadcast",icon:"📺",label:"پخش"},{id:"video",icon:"🎬",label:"ویدئو"},{id:"livescore",icon:"⚡",label:"زنده"},{id:"olympic",icon:"🏅",label:"المپیک"}];
 var SPORT_LINKS={
   football:[{title:"🔻 فوتبال باشگاهی ایران",items:[{url:"https://www.varzesh3.com/football/league/6",title:"لیگ برتر",desc:"نتایج و برنامه",icon:"🇮🇷"},{url:"https://www.varzesh3.com/football/league/24",title:"لیگ آزادگان",desc:"دسته دوم ایران",icon:"🇮🇷"},{url:"https://www.varzesh3.com/football/league/22",title:"جام حذفی ایران",desc:"جام حذفی",icon:"🏆"}]},{title:"🔻 فوتبال باشگاهی خارجی",items:[{url:"https://www.varzesh3.com/football/league/3",title:"لیگ برتر انگلیس",desc:"پریمیرلیگ",icon:"🏴"},{url:"https://www.varzesh3.com/football/league/2",title:"لالیگا",desc:"اسپانیا",icon:"🇪🇸"},{url:"https://www.varzesh3.com/football/league/4",title:"سری آ",desc:"ایتالیا",icon:"🇮🇹"},{url:"https://www.varzesh3.com/football/league/1",title:"بوندسلیگا",desc:"آلمان",icon:"🇩🇪"}]},{title:"🔻 بین‌المللی باشگاهی",items:[{url:"https://www.varzesh3.com/football/league/25",title:"لیگ قهرمانان اروپا",desc:"UCL",icon:"🇪🇺"},{url:"https://www.varzesh3.com/football/league/29",title:"لیگ اروپا",desc:"Europa League",icon:"🇪🇺"},{url:"https://www.varzesh3.com/football/league/26",title:"لیگ نخبگان آسیا",desc:"سطح یک",icon:"🌏"}]},{title:"🔻 فوتبال ملی",items:[{url:"https://www.varzesh3.com/football/league/28",title:"جام جهانی فیفا",desc:"بزرگ‌ترین رویداد",icon:"🌍"},{url:"https://www.varzesh3.com/football/league/31",title:"جام ملت‌های آسیا",desc:"قهرمانی آسیا",icon:"🏆"}]}],
@@ -1793,7 +1846,6 @@ function renderSportContent(){
   for(var h=0;h<hs.length;h++)(function(x){x.addEventListener("click",function(){var g=x.closest(".sport-acc-group");if(g)g.classList.toggle("open");});})(hs[h]);
 }
 
-/* ============ Health ============ */
 function renderHealthPage(){
   var s=getDayStats(0),an=getAirNow()||airFallback(),m=new Date().getMonth()+1;
   var cityEl=document.getElementById("healthCity");if(cityEl)cityEl.innerHTML="📍 شهر فعلی: <b>"+safe(city.name)+"</b> ("+(city.admin1||city.country)+")";
@@ -1816,12 +1868,10 @@ function renderHealthPage(){
   setTxt("healthFood",food);
 }
 
-/* ============ Culture ============ */
 function renderCulturePage(){setTxt("cultureContent","🎭 فرهنگ امروز: مجموعه‌ای از بهترین منابع ادبیات، هنر، سینما و گردشگری ایران. بیت‌ها هر ۲ ساعت تغییر می‌کنند.");renderPoetry();}
 function renderSciencePage(){var mp=moonPhase();var dl=(data&&data.daily&&data.daily.sunrise&&data.daily.sunset)?(fmtDT(data.daily.sunrise[TODAY_IDX])+" تا "+fmtDT(data.daily.sunset[TODAY_IDX])):"--";setTxt("scienceContent","🔭 علم و نجوم\n• فاز ماه: "+mp.name+" | "+mp.illum+"٪\n• روشنایی روز: "+dl+"\n• رویداد این ماه: "+skyEvents(new Date().getMonth()+1));renderScienceFacts();}
 function renderTravelPage(){renderTravelSummary();var s=getDayStats(0),pack=[];if(s&&s.precipProb>=40)pack.push("چتر");if(s&&s.tempMin<=5)pack.push("لباس گرم");if(s&&s.uv>=6)pack.push("ضدآفتاب");setTxt("travelTips","🎒 چک‌لیست و نکات سفر:\n• چک‌لیست: "+(pack.join("، ")||"بدون نیاز خاص")+"\n• پیش از سفر، وضعیت جاده و دید افقی را بررسی کنید.\n• اسناد را در کیف ضدآب نگه دارید.\n• در کوهستان لباس لایه‌ای ببرید.\n• در سفرهای کویری آب کافی و لباس روشن همراه داشته باشید.");}
 
-/* ============ Fun ============ */
 var FUN_JOKES=["چرا کامپیوتر به دکتر رفت؟ چون ویروس گرفته بود! 😄","چرا ماهی‌ها در مدرسه باهوشند؟ چون همیشه در مدرسه هستند! 🐟","چرا دوچرخه نمی‌تواند بایستد؟ چون دوچرخه است! 🚲","چرا کتاب ریاضی ناراحت بود؟ چون مسائل زیادی داشت! 📚","چرا ساعت به دکتر رفت؟ چون وقتش گذشته بود! ⏰","چرا مورچه به دکتر رفت؟ چون مورچه‌خوارش بود! 🐜","چرا درخت به دکتر رفت؟ چون برگ‌ریزش داشت! 🌳","چرا خفاش در شب بیدار است؟ چون شب‌کاری می‌کند! 🦇","چرا زنبور به دکتر رفت؟ چون زنبورده داشت! 🐝","چرا ستاره به دکتر رفت؟ چون ستاره‌بانش بود! ⭐"];
 var FUN_FACTS=["💡 می‌دانستید؟ زنبور عسل می‌تواند چهره‌های انسانی را تشخیص دهد!","💡 می‌دانستید؟ اختاپوس سه قلب دارد و خونش آبی است!","💡 می‌دانستید؟ دلفین‌ها برای خواب فقط نیمی از مغزشان را خاموش می‌کنند!","💡 می‌دانستید؟ یک روز در زهره از یک سال آن طولانی‌تر است!","💡 می‌دانستید؟ قلب انسان در طول عمر ۲٫۵ میلیارد بار می‌زند!","💡 می‌دانستید؟ برخی درختان بیش از ۵۰۰۰ سال عمر می‌کنند!","💡 می‌دانستید؟ فیل‌ها تنها حیواناتی هستند که نمی‌توانند بپرند!"];
 var FUN_PUZZLES=[{q:"🧩 آن چیست که هر چه بیشتر از آن بردارید، بزرگ‌تر می‌شود؟",a:"چاله"},{q:"🧩 آن چیست که وقتی می‌شکنید، بهتر می‌شود؟",a:"رکورد"},{q:"🧩 آن چیست که متعلق به شماست اما دیگران بیشتر از شما از آن استفاده می‌کنند؟",a:"اسم شما"},{q:"🧩 آن چیست که بالا می‌رود اما هرگز پایین نمی‌آید؟",a:"سن"},{q:"🧩 آن چیست که سوراخ‌های زیادی دارد اما آب را نگه می‌دارد؟",a:"اسفنج"},{q:"🧩 آن چیست که همه‌جا هست اما دیده نمی‌شود؟",a:"هوا"},{q:"🧩 هر چه بزرگ‌تر شود، دیدنی‌تر نیست؛ هر چه کوچک‌تر شود، دیدنی‌تر است. چیست؟",a:"تاریکی"}];
@@ -1832,9 +1882,122 @@ function renderFunPage(){initFunIndices(false);var jokeEl=document.getElementByI
 var funJokeBtn=document.getElementById("funJokeBtn");if(funJokeBtn)funJokeBtn.addEventListener("click",function(){funJokeIdx++;var el=document.getElementById("funJokeText");if(el)el.textContent=FUN_JOKES[funJokeIdx%FUN_JOKES.length];});
 setInterval(function(){initFunIndices(true);if(currentPage==="fun")renderFunPage();},60*60*1000);
 
-/* ============ داشبورد صفحهٔ من ============ */
+var NOTE_DATA=[
+  {id:"n1",icon:"🍂",title:"یادداشت ۱ — سخن سردبیر، فصل پاییز",preview:"به نام خداوند آسمان‌ها\nبعضی فصل‌ها فقط در تقویم عوض نمی‌شوند؛ در دل ما هم چیزی را جابه‌جا می‌کنند. پاییز از همان فصل‌هاست.\nبا آمدن مهر، بوی دفتر نو در خانه‌ها می‌پیچد، کیف‌ها از کتاب پر می‌شوند و زنگ مدرسه، خاطره روزهای کودکی را دوباره در ذهنمان زنده می‌کند؛روزهایی که جهان برایمان کوچک و صاف و ساده بود.",drawer:"امروز اما جهان پیچیده‌تر و پرسرعت‌تر شده و ما، روزهایی را تجربه می‌کنیم که خبر‌های تلخ و شیرین، بخشی از زندگی روزمره‌مان شده است.\nدر چنین روزهایی شاید بیش از همیشه لازم باشد هوای یکدیگر را داشته باشیم؛ نه فقط نزدیکان و همفکرانمان، بلکه همه کسانی که زیر همین آسمان زندگی می‌کنند.\nما با همه تفاوت‌هایمان، خاطرات مشترک زیادی داریم؛ از مدرسه و کودکی گرفته تا شعر، عید نوروز، قصه‌های مادربزرگ‌ها و ایران عزیزمان. شاید همین خاطرات، رشته‌هایی باشند که هنوز می‌توانند ما را به هم نزدیک کنند.\nایران، پیش از آنکه مجموعه‌ای از تفاوت‌ها باشد، خانه مشترک ماست؛ و خانه بیش از هر چیز به مهربانی، گفت‌وگو و همدلی نیاز دارد.\nآغاز سال تحصیلی، بیش از هر چیز، آغاز دوباره امید به یادگیری است. دانش فقط آن چیزی نیست که در کتاب‌ها نوشته شده؛ دانش یعنی پرسیدن، جست‌وجو کردن، شنیدن نظر دیگری و تلاش برای فهمیدن و بهتر کردن جهان.\nآرزو کنیم مدرسه‌های ایران فقط محل گرفتن نمره نباشند؛ بلکه جایی برای ساختن انسان‌هایی باشند که علم را دوست دارند، حقیقت را جست‌وجو می‌کنند، تفاوت‌ها را می‌پذیرند و برای آینده‌ای بهتر سهم خود را ادا می‌کنند.\nشاید نتوانیم همه سختی‌های روزگار را یک‌شبه تغییر دهیم، اما می‌توانیم از خودمان شروع کنیم؛ با یک کلمه مهربانانه، کمی بیشتر شنیدن، کمتر قضاوت کردن، کمک به یکدیگر و حفظ امید، حتی در روزهایی که امید داشتن آسان نیست.\nایران برای همه ماست؛ برای دانش‌آموزی که راهی مدرسه می‌شود، معلمی که درس می‌دهد، پدر و مادری که نگران آینده فرزندشان هستند، پیرمردی که خاطرات یک عمر را با خود دارد و جوانی که هنوز رؤیاهای بزرگی در سر می‌پروراند.\nدر آغاز سال تحصیلی جدید، برای کودکان و نوجوانان ایران آرزوی کشف کردن داریم؛ برای معلمانمان توان و صبوری؛ برای خانواده‌ها آرامش؛ برای جوانان آینده‌ای پر امید؛ و برای همه مردم ایران، روزهایی روشن‌تر، آرام‌تر و مهربان‌تر.و آرزو می‌کنیم هیچ خانواده‌ای در آغاز این سال تحصیلی، امیدش را به فردا از دست ندهد.\nباشد که یاد بگیریم کنار هم بودن، به معنای شبیه هم بودن نیست. باشد که تفاوت‌هایمان دیوار نباشند؛ پنجره باشند.\nبه مهر و پاییز خوش آمدید.\nبه فصل مدرسه، به فصل یادگیری،به فصل دوباره آغاز کردن.",sign:"《سردبیر مجله آسمان》",soon:false},
+  {id:"n2",icon:"📝",title:"یادداشت ۲",preview:"",drawer:"",soon:true},
+  {id:"n3",icon:"📝",title:"یادداشت ۳",preview:"",drawer:"",soon:true},
+  {id:"n4",icon:"📝",title:"یادداشت ۴",preview:"",drawer:"",soon:true}
+];
+function renderNotes(){
+  var grid=document.getElementById("noteGrid");if(!grid)return;
+  grid.innerHTML="";
+  for(var i=0;i<NOTE_DATA.length;i++){
+    var n=NOTE_DATA[i];
+    var card=document.createElement("div");
+    card.className="note-card "+(n.id||"");
+    var previewHTML="";
+    if(n.soon){previewHTML="<div class='note-preview'>🔜 این یادداشت به‌زودی منتشر می‌شود...</div>";}
+    else{previewHTML="<div class='note-preview'>"+safe(n.preview)+"</div>";}
+    var drawerHTML="";
+    if(!n.soon){
+      drawerHTML="<div class='note-drawer'><div class='note-drawer-inner'>"+safe(n.drawer)+(n.sign?"<span class='note-sign'>"+safe(n.sign)+"</span>":"")+"</div></div>";
+    }else{
+      drawerHTML="<div class='note-drawer'><div class='note-drawer-inner'><div class='note-soon'>به زودی ...</div></div></div>";
+    }
+    card.innerHTML=
+      "<div class='note-head'><div class='nh-title'><span class='nh-icon'>"+n.icon+"</span><span>"+safe(n.title)+"</span></div><span class='nh-arrow'>⌄</span></div>"+
+      previewHTML+
+      drawerHTML+
+      "<button class='note-toggle-btn' type='button' data-toggle>▼ نمایش بیشتر</button>";
+    grid.appendChild(card);
+  }
+  var cards=grid.querySelectorAll(".note-card");
+  for(var k=0;k<cards.length;k++)(function(card){
+    var head=card.querySelector(".note-head");
+    var btn=card.querySelector("[data-toggle]");
+    function toggle(){
+      card.classList.toggle("open");
+      if(btn)btn.textContent=card.classList.contains("open")?"▲ بستن":"▼ نمایش بیشتر";
+    }
+    if(head)head.addEventListener("click",toggle);
+    if(btn)btn.addEventListener("click",toggle);
+  })(cards[k]);
+}
+
+function getUserName(){return lsGet("userName")||"";}
+function setUserName(n){if(n&&n.trim())lsSet("userName",n.trim());else try{localStorage.removeItem("userName");}catch(e){}}
+function getHiddenCards(){try{var r=lsGet("hiddenCards");if(!r)return {};return JSON.parse(r)||{};}catch(e){return {};}}
+function setHiddenCards(o){lsSet("hiddenCards",JSON.stringify(o||{}));}
+var ALL_CARDS=[
+  {id:"date",icon:"📅",title:"تاریخ امروز"},
+  {id:"weather",icon:"🌤️",title:"هوا"},
+  {id:"prayer",icon:"🕌",title:"اذان بعدی"},
+  {id:"poem",icon:"📜",title:"بیت امروز"},
+  {id:"moon",icon:"🌙",title:"فاز ماه"},
+  {id:"dhikr",icon:"📿",title:"ذکر روز"},
+  {id:"fact",icon:"💡",title:"دانستنی"},
+  {id:"air",icon:"🌫️",title:"کیفیت هوا"},
+  {id:"uv",icon:"☀️",title:"شاخص UV"},
+  {id:"sleep",icon:"😴",title:"خواب امشب"}
+];
+function renderDashWelcome(){
+  var el=document.getElementById("dashWelcome");if(!el)return;
+  var name=getUserName();
+  var html="";
+  if(name){
+    html="<div class='dash-welcome'><div class='dw-text'>👋 خوش آمدی، <b>"+safe(name)+"</b>!<br><small style='color:var(--muted);font-size:13px'>امیدواریم امروز روز خوبی داشته باشی.</small></div><button class='dw-edit' id='dwEditBtn'>✏️ ویرایش نام</button></div>";
+  }else{
+    html="<div class='dash-welcome'><div class='dw-text'>👋 خوش آمدی، مهمان عزیز!<br><small style='color:var(--muted);font-size:13px'>برای شخصی‌سازی، نام خود را وارد کنید.</small></div><button class='dw-edit' id='dwEditBtn'>✏️ وارد کردن نام</button></div>";
+  }
+  el.innerHTML=html;
+  var b=document.getElementById("dwEditBtn");
+  if(b)b.addEventListener("click",function(){
+    var cur=getUserName();
+    var v=prompt("نام شما (فقط روی دستگاه شما ذخیره می‌شود):",cur||"");
+    if(v===null)return;
+    setUserName(v);
+    renderDashWelcome();
+    renderDash();
+    show(v&&v.trim()?"✅ نام ذخیره شد":"🗑️ نام حذف شد","ok");
+  });
+}
+function renderDashManage(){
+  var el=document.getElementById("dashManage");if(!el)return;
+  var hidden=getHiddenCards();
+  var html="<div class='dash-manage' id='dashManageBox'>"+
+    "<div class='dm-head' id='dashManageHead'><span>⚙️ مدیریت کارت‌های داشبورد</span><span class='dm-arrow'>⌄</span></div>"+
+    "<div class='dm-body'><div class='dm-list'>";
+  for(var i=0;i<ALL_CARDS.length;i++){
+    var c=ALL_CARDS[i];
+    var off=hidden[c.id]?"off":"";
+    html+="<button class='dm-item "+off+"' data-card='"+c.id+"'>"+c.icon+" "+safe(c.title)+"</button>";
+  }
+  html+="</div><small style='color:var(--muted);font-size:12px;display:block;margin-top:10px'>روی هر کارت بزنید تا مخفی یا نمایان شود.</small></div></div>";
+  el.innerHTML=html;
+  var head=document.getElementById("dashManageHead");
+  var box=document.getElementById("dashManageBox");
+  if(head&&box){
+    head.addEventListener("click",function(){box.classList.toggle("open");});
+  }
+  var items=el.querySelectorAll(".dm-item");
+  for(var j=0;j<items.length;j++)(function(btn){
+    btn.addEventListener("click",function(){
+      var id=btn.getAttribute("data-card");
+      var h=getHiddenCards();
+      if(h[id])delete h[id];else h[id]=1;
+      setHiddenCards(h);
+      renderDashManage();
+      renderDash();
+      var newBox=document.getElementById("dashManageBox");
+      if(newBox)newBox.classList.add("open");
+    });
+  })(items[j]);
+}
 function renderDash(){
+  renderDashWelcome();
+  renderDashManage();
   var grid=document.getElementById("dashGrid");if(!grid)return;
+  var hidden=getHiddenCards();
   var s=getDayStats(0)||{};
   var an=getAirNow()||airFallback();
   var mp=moonPhase();
@@ -1855,24 +2018,25 @@ function renderDash(){
     if(nextP==="--"){nextP=names2.Fajr;nextT=cleanTime(prayerData.Fajr);}
   }
   var html='';
-  html+='<div class="dash-card highlight"><div class="dc-head"><div class="dc-icon">📅</div><div class="dc-title">تاریخ امروز</div></div><div class="dc-body"><b>'+safe(jalali)+'</b><br><small>'+safe(hijri)+'</small></div></div>';
-  html+='<div class="dash-card"><div class="dc-head"><div class="dc-icon">🌤️</div><div class="dc-title">هوای '+safe(city.name)+'</div></div><div class="dc-body">'+(s.temp!=null?'<b>'+T1(s.temp)+D()+'</b> '+code(s.code)[0]:'<small>در حال دریافت...</small>')+'<br><small>کمینه '+T(s.tempMin)+D()+' | بیشینه '+T(s.tempMax)+D()+'</small></div></div>';
-  html+='<div class="dash-card"><div class="dc-head"><div class="dc-icon">🕌</div><div class="dc-title">اذان بعدی</div></div><div class="dc-body"><b>'+safe(nextP)+'</b><br><small>ساعت '+safe(nextT)+'</small></div></div>';
-  html+='<div class="dash-card poem"><div class="dc-head"><div class="dc-icon">📜</div><div class="dc-title">بیت امروز (حافظ)</div></div><div class="dc-body">«'+safe(hp)+'»</div></div>';
-  html+='<div class="dash-card"><div class="dc-head"><div class="dc-icon">🌙</div><div class="dc-title">فاز ماه</div></div><div class="dc-body"><b>'+safe(mp.name)+'</b><br><small>روشنایی: '+mp.illum+'٪</small></div></div>';
-  html+='<div class="dash-card"><div class="dc-head"><div class="dc-icon">📿</div><div class="dc-title">ذکر روز '+safe(dhikr.day)+'</div></div><div class="dc-body">«'+safe(dhikr.text)+'»</div></div>';
-  html+='<div class="dash-card"><div class="dc-head"><div class="dc-icon">'+fact.icon+'</div><div class="dc-title">'+safe(fact.title)+'</div></div><div class="dc-body">'+safe(fact.text)+'</div></div>';
-  html+='<div class="dash-card"><div class="dc-head"><div class="dc-icon">🌫️</div><div class="dc-title">کیفیت هوا</div></div><div class="dc-body"><b>'+Math.round(an.european_aqi)+'</b> — '+aqiLabel(an.european_aqi)+'<br><small>PM2.5: '+(an.pm25!=null?Math.round(an.pm25):"--")+' µg/m³</small></div></div>';
-  html+='<div class="dash-card"><div class="dc-head"><div class="dc-icon">☀️</div><div class="dc-title">شاخص UV</div></div><div class="dc-body"><b>'+(s.uv!=null?s.uv:"--")+'</b> '+(s.uv>=6?"— بالا ⚠️":s.uv>=3?"— متوسط":"— کم")+'</div></div>';
+  if(!hidden.date)html+='<div class="dash-card highlight"><div class="dc-head"><div class="dc-icon">📅</div><div class="dc-title">تاریخ امروز</div></div><div class="dc-body"><b>'+safe(jalali)+'</b><br><small>'+safe(hijri)+'</small></div></div>';
+  if(!hidden.weather)html+='<div class="dash-card"><div class="dc-head"><div class="dc-icon">🌤️</div><div class="dc-title">هوای '+safe(city.name)+'</div></div><div class="dc-body">'+(s.temp!=null?'<b>'+T1(s.temp)+D()+'</b> '+code(s.code)[0]:'<small>در حال دریافت...</small>')+'<br><small>کمینه '+T(s.tempMin)+D()+' | بیشینه '+T(s.tempMax)+D()+'</small></div></div>';
+  if(!hidden.prayer)html+='<div class="dash-card"><div class="dc-head"><div class="dc-icon">🕌</div><div class="dc-title">اذان بعدی</div></div><div class="dc-body"><b>'+safe(nextP)+'</b><br><small>ساعت '+safe(nextT)+'</small></div></div>';
+  if(!hidden.poem)html+='<div class="dash-card poem"><div class="dc-head"><div class="dc-icon">📜</div><div class="dc-title">بیت امروز (حافظ)</div></div><div class="dc-body">«'+safe(hp)+'»</div></div>';
+  if(!hidden.moon)html+='<div class="dash-card"><div class="dc-head"><div class="dc-icon">🌙</div><div class="dc-title">فاز ماه</div></div><div class="dc-body"><b>'+safe(mp.name)+'</b><br><small>روشنایی: '+mp.illum+'٪</small></div></div>';
+  if(!hidden.dhikr)html+='<div class="dash-card"><div class="dc-head"><div class="dc-icon">📿</div><div class="dc-title">ذکر روز '+safe(dhikr.day)+'</div></div><div class="dc-body">«'+safe(dhikr.text)+'»</div></div>';
+  if(!hidden.fact)html+='<div class="dash-card"><div class="dc-head"><div class="dc-icon">'+fact.icon+'</div><div class="dc-title">'+safe(fact.title)+'</div></div><div class="dc-body">'+safe(fact.text)+'</div></div>';
+  if(!hidden.air)html+='<div class="dash-card"><div class="dc-head"><div class="dc-icon">🌫️</div><div class="dc-title">کیفیت هوا</div></div><div class="dc-body"><b>'+Math.round(an.european_aqi)+'</b> — '+aqiLabel(an.european_aqi)+'<br><small>PM2.5: '+(an.pm25!=null?Math.round(an.pm25):"--")+' µg/m³</small></div></div>';
+  if(!hidden.uv)html+='<div class="dash-card"><div class="dc-head"><div class="dc-icon">☀️</div><div class="dc-title">شاخص UV</div></div><div class="dc-body"><b>'+(s.uv!=null?s.uv:"--")+'</b> '+(s.uv>=6?"— بالا ⚠️":s.uv>=3?"— متوسط":"— کم")+'</div></div>';
   var ss=sleepScore();
-  html+='<div class="dash-card"><div class="dc-head"><div class="dc-icon">😴</div><div class="dc-title">خواب امشب</div></div><div class="dc-body">'+(ss!=null?'<b>'+ss+'/100</b> — '+scoreLabel(ss):'<small>در حال دریافت...</small>')+'</div></div>';
+  if(!hidden.sleep)html+='<div class="dash-card"><div class="dc-head"><div class="dc-icon">😴</div><div class="dc-title">خواب امشب</div></div><div class="dc-body">'+(ss!=null?'<b>'+ss+'/100</b> — '+scoreLabel(ss):'<small>در حال دریافت...</small>')+'</div></div>';
+  if(!html)html='<div class="dash-card"><div class="dc-body">همهٔ کارت‌ها مخفی شده‌اند. از بخش «مدیریت کارت‌ها» آن‌ها را فعال کنید.</div></div>';
   grid.innerHTML=html;
 }
 
-/* ============ ۱۰ سوال نمونه در هر صفحه (برای چت‌بات) ============ */
 var PAGE_SUGS={
   about:["معرفی مجله چیست؟","چه بخش‌هایی دارد؟","مجله آسمان چگونه کار می‌کند؟","آیا رایگان است؟","چطور نصب کنم؟","سازنده کیست؟","تماس با سازنده","نسخه برنامه","آیا اطلاعات من ذخیره می‌شود؟","امکانات جدید چیست؟"],
-  myday:["هوای امروز چطوره؟","اذان بعدی کی است؟","فاز ماه امشب چیه؟","بیت امروز چیه؟","ذکر امروز چیه؟","دانستنی امروز چیه؟","کیفیت هوا امشبه؟","شاخص UV امروز چنده؟","خواب امشب چطوره؟","تاریخ امروز چیه؟"],
+  myday:["هوای امروز چطوره؟","اذان بعدی کی است؟","فاز ماه امشب چیه؟","بیت امروز چیه؟","ذکر امروز چیه؟","دانستنی امروز چیه؟","چطور نامم را وارد کنم؟","چطور کارت‌ها را مدیریت کنم؟","کیفیت هوا امشبه؟","خواب امشب چطوره؟"],
+  notes:["یادداشت ۱ چیه؟","سخن سردبیر","یادداشت‌ها کی به‌روز می‌شن؟","یادداشت ۲ چیست؟","یادداشت ۳ چیست؟","یادداشت ۴ چیست؟","سردبیر کیه؟","متن‌ها رو چطور بخونم؟","کشو چطور کار می‌کنه؟","یادداشت جدید کِیه؟"],
   home:["هوای امروز چطوره؟","فردا باران میاد؟","کیفیت هوا چطوره؟","چی بپوشم؟","طلوع و غروب کی است؟","شاخص UV چند است؟","فشار هوا چطوره؟","سرعت باد چقدره؟","پوشش ابر چیه؟","رطوبت هوا چقدره؟"],
   prayer:["اذان بعدی کی است؟","اوقات شرعی امروز","طلوع آفتاب کی است؟","غروب آفتاب کی است؟","نیمه‌شب شرعی چه زمانی است؟","ذکر امروز چیه؟","ساعت محلی منطقه چنده؟","فردا اذان صبح کی است؟","اوقات شرعی چه ساعتی است؟","اوقات شرعی کدام شهره؟"],
   travel:["پنجره سفر کِیه؟","چک‌لیست سفر","جاده امنه؟","لباس مناسب سفر؟","جاذبه‌های گردشگری","تور مجازی مشهد","تور مجازی قم","تور مجازی شیراز","دانشگاه شریف","سفر به شمال"],
@@ -1884,68 +2048,133 @@ var PAGE_SUGS={
   settings:["تغییر حالت نمایش","تغییر اندازه فونت","تغییر رنگ برنامه","فعال کردن GPS","غیرفعال کردن GPS","تغییر واحد دما","پاک کردن پین‌ها","پاک کردن حافظه","نسخه برنامه","درباره سازنده"]
 };
 
-/* ============ Page management ============ */
-var magLoaded={};
-function showPage(p){
-  currentPage=p;
-  lsSet("lastPage",p);
-  var pages=document.querySelectorAll(".mag-page");
-  for(var i=0;i<pages.length;i++)pages[i].hidden=(pages[i].id!=="page-"+p);
-  var tabs=document.querySelectorAll(".mag-tab");
-  for(var j=0;j<tabs.length;j++){
-    var active=tabs[j].getAttribute("data-page")===p;
-    tabs[j].classList.toggle("active",active);
-    if(active&&tabs[j].scrollIntoView){try{tabs[j].scrollIntoView({behavior:"smooth",block:"nearest",inline:"center"});}catch(e){}}
-  }
-  if(!magLoaded[p]){
-    magLoaded[p]=true;
-    if(p==="sport"){renderSportGrid();renderSportContent();}
-    else if(p==="health")renderHealthPage();
-    else if(p==="culture"){renderCulturePage();bindAccordions();}
-    else if(p==="science"){renderSciencePage();loadAPOD();}
-    else if(p==="travel"){renderTravelPage();bindAccordions();}
-    else if(p==="fun"){initFunIndices(true);renderFunPage();bindAccordions();}
-    else if(p==="prayer"){renderPrayer();renderDhikr();}
-    else if(p==="settings")renderSettingsPage();
-    else if(p==="myday")renderDash();
-  }else{
-    if(p==="health")renderHealthPage();
-    else if(p==="travel")renderTravelPage();
-    else if(p==="prayer"){renderPrayer();renderDhikr();}
-    else if(p==="settings")renderSettingsPage();
-    else if(p==="myday")renderDash();
-    else if(p==="science"){renderSciencePage();loadAPOD();}
-  }
-  /* نوار ۱۰ سوال داخل چت‌بات با هر تغییر صفحه به‌روز می‌شود */
-  renderSuggestions();
-  updateLocalTime();
-  if(appBooted){try{window.scrollTo({top:0,behavior:"smooth"});}catch(e){window.scrollTo(0,0);}}
-}
-var magNav=document.getElementById("magNav");
-if(magNav)magNav.addEventListener("click",function(e){var t=e.target.closest(".mag-tab");if(t){showPage(t.getAttribute("data-page"));}});
-function bindAccordions(){
-  var accs=document.querySelectorAll(".travel-acc-h,.culture-acc-h,.fun-acc-h");
-  for(var i=0;i<accs.length;i++){
-    (function(h){if(h.getAttribute("data-bound"))return;h.setAttribute("data-bound","1");h.addEventListener("click",function(){var g=h.closest(".travel-acc-group,.culture-acc-group,.fun-acc-group");if(g)g.classList.toggle("open");});})(accs[i]);
-  }
-}
+var SUG_ANSWERS={
+  "معرفی مجله چیست؟":"🌌 مجله آسمان یک وب‌اپلیکیشن رایگان، چندبخشی و فارسی است که همهٔ پردازش‌های آن سمت مرورگر شما انجام می‌شود. بخش‌هایی مانند آب‌وهوا، اوقات شرعی، سفر، فرهنگ، ورزش، سلامت، علم و سرگرمی دارد. تنها کافی است صفحه را از بالا به پایین بکشید تا به‌روزرسانی شود.",
+  "چه بخش‌هایی دارد؟":"📚 مجلهٔ آسمان ۱۲ بخش دارد:\n• درباره — معرفی مجله\n• صفحهٔ من — داشبورد شخصی\n• یادداشت مجله — یادداشت‌های سردبیر\n• آب‌وهوا — پیش‌بینی ۹ روزه\n• اوقات شرعی — ۶ زمان شرعی\n• سفر — چک‌لیست و تورهای مجازی\n• فرهنگ — شاعران و کتاب\n• ورزشی — لیگ‌ها و مسابقات\n• سلامت — نکات و BMI/BMR\n• علم — تصویر نجومی ناسا\n• سرگرمی — جوک، معما، سودوکو\n• تنظیمات — شخصی‌سازی",
+  "مجله آسمان چگونه کار می‌کند؟":"⚙️ مجلهٔ آسمان به‌صورت کاملاً سمت کلاینت (Client-Side) کار می‌کند. داده‌های هواشناسی از Open-Meteo و Yr، اوقات شرعی از Aladhan، تصویر نجومی از NASA APOD و جستجوی مکان از Nominatim دریافت می‌شود. هیچ داده‌ای از شما به سرور اختصاصی ارسال نمی‌شود و تنظیمات شما فقط در حافظهٔ محلی (localStorage) ذخیره می‌گردد.",
+  "آیا رایگان است؟":"✅ بله، مجلهٔ آسمان کاملاً رایگان است و هیچ هزینه‌ای برای استفاده از بخش‌های آن وجود ندارد. تمام APIهای استفاده‌شده در نسخه‌های عمومی خود رایگان هستند.",
+  "چطور نصب کنم؟":"📲 برای نصب:\n🤖 اندروید (Chrome): منوی ⋮ ← «نصب برنامه» یا «افزودن به صفحه اصلی»\n🍎 iOS (Safari): دکمهٔ Share ← Add to Home Screen\n🌐 سایر مرورگرها: منوی سه نقطه ← «افزودن صفحه به» ← «صفحه اصلی»\n💡 پس از نصب، برنامه به‌صورت مستقل از مرورگر باز می‌شود.",
+  "سازنده کیست؟":"👤 سازندهٔ مجلهٔ آسمان «م.حسینی» است. برای ارتباط مستقیم می‌توانید از دکمهٔ «ارتباط با سازنده» در صفحهٔ درباره استفاده کنید (پیام‌رسان ایتا).",
+  "تماس با سازنده":"📬 راه ارتباط با سازنده از طریق ایتا است. در صفحهٔ «درباره»، دکمهٔ «ارتباط با سازنده» را بزنید تا به صفحهٔ ایتا هدایت شوید: eitaa.com/hossini_96",
+  "نسخه برنامه":"📌 نسخهٔ فعلی مجلهٔ آسمان ۳٫۳٫۰ است. در این نسخه، صفحهٔ «یادداشت مجله»، شخصی‌سازی صفحهٔ من، پاسخ‌های اختصاصی دستیار هوشمند و بهبودهای ظاهری اضافه شده است.",
+  "آیا اطلاعات من ذخیره می‌شود؟":"🔒 خیر. تمام داده‌های شما (نام، پین‌ها، تنظیمات، یادداشت‌ها) فقط در حافظهٔ محلی مرورگر (localStorage) ذخیره می‌شود و به هیچ سروری ارسال نمی‌گردد. تنها آمار بازدید به‌صورت ناشناس و شمارشی به یک سرویس شمارندهٔ عمومی ارسال می‌شود.",
+  "امکانات جدید چیست؟":"✨ در نسخهٔ ۳٫۳٫۰:\n• کشویی شدن مدیریت کارت‌ها\n• تیتر «مجله آسمان» در متن خوش‌آمد\n• امضای «م.حسینی»\n• پاسخ‌های دقیق برای سوالات نمونه\nدر نسخهٔ ۳٫۲٫۰: صفحهٔ «یادداشت مجله»، شخصی‌سازی صفحهٔ من، زیرتیتر «به آسمان نگاه کن» اضافه شد.",
 
-/* ============ Chat / Assistant ============ */
-var GREET="سلام! 👋 من دستیار هوشمند مجلهٔ آسمان هستم.\nمی‌توانم در هر صفحه به شما کمک کنم. از نمونه سوال‌های پایین همین پنجره استفاده کنید.";
-var chatPanel=document.getElementById("chatPanel"),chatMessages=document.getElementById("chatMessages"),chatInput=document.getElementById("chatInput");
-function setChatOpen(open){if(!chatPanel)return;chatPanel.classList.toggle("show",open);document.body.classList.toggle("chat-lock",open);if(open)renderSuggestions();}
-var chatFab=document.getElementById("chatFab");if(chatFab)chatFab.addEventListener("click",function(){setChatOpen(!chatPanel.classList.contains("show"));});
-var chatClose=document.getElementById("chatClose");if(chatClose)chatClose.addEventListener("click",function(){setChatOpen(false);});
-var chatClear=document.getElementById("chatClear");if(chatClear)chatClear.addEventListener("click",function(){if(chatMessages)chatMessages.innerHTML="";addChatMsg(GREET,false);renderSuggestions();});
-function addChatMsg(text,isUser){
-  if(!chatMessages)return;
-  var n=new Date(),ts=(n.getHours()<10?"0":"")+n.getHours()+":"+(n.getMinutes()<10?"0":"")+n.getMinutes();
-  var d=document.createElement("div");d.className="chat-msg "+(isUser?"user":"bot");d.textContent=text;
-  var t=document.createElement("div");t.className="cm-time";t.textContent=ts;d.appendChild(t);
-  chatMessages.appendChild(d);chatMessages.scrollTop=chatMessages.scrollHeight;
-}
-addChatMsg(GREET,false);
-function normalizeQ(s){return faToEn(s).replace(/\u200c/g," ").replace(/ي/g,"ی").replace(/ك/g,"ک").replace(/[؟?!.]/g," ").replace(/\s+/g," ").trim();}
+  "چطور نامم را وارد کنم؟":"👤 برای وارد کردن نام:\n۱. به صفحهٔ «⭐ صفحه من» بروید.\n۲. روی دکمهٔ «✏️ وارد کردن نام» (یا «ویرایش نام») بزنید.\n۳. نام خود را بنویسید و تأیید کنید.\n💡 نام شما فقط در دستگاه خودتان ذخیره می‌شود و به هیچ سروری ارسال نمی‌گردد.",
+  "چطور کارت‌ها را مدیریت کنم؟":"⚙️ در صفحهٔ «⭐ صفحه من»، بخش «مدیریت کارت‌های داشبورد» قرار دارد. روی هدر آن بزنید تا کشو باز شود، سپس روی هر کارت بزنید تا مخفی یا نمایان شود. تنظیمات به‌صورت خودکار در دستگاه شما ذخیره می‌شود.",
+
+  "یادداشت ۱ چیه؟":"📝 یادداشت ۱ با عنوان «سخن سردبیر، فصل پاییز» است و دربارهٔ آغاز سال تحصیلی، اهمیت آموزش، همدلی و امید صحبت می‌کند. برای خواندن کامل آن، در صفحهٔ «یادداشت مجله»، روی کارت اول بزنید تا کشو باز شود.",
+  "سخن سردبیر":"✍️ سخن سردبیر در یادداشت ۱ صفحهٔ «یادداشت مجله» قرار دارد. این متن با «به نام خداوند آسمان‌ها» شروع می‌شود و به موضوع پاییز، مدرسه، ایران، مهربانی و امید می‌پردازد. برای مطالعهٔ کامل، روی کارت بزنید.",
+  "یادداشت‌ها کی به‌روز می‌شن؟":"🗓️ یادداشت‌های مجله به‌صورت دوره‌ای به‌روزرسانی می‌شوند. یادداشت ۱ (سخن سردبیر) هم‌اکنون منتشر شده. یادداشت‌های ۲، ۳ و ۴ در آیندهٔ نزدیک منتشر خواهند شد.",
+  "یادداشت ۲ چیست؟":"📝 یادداشت ۲ به‌زودی منتشر می‌شود. در صفحهٔ «یادداشت مجله» با برچسب «به زودی...» نمایش داده شده است.",
+  "یادداشت ۳ چیست؟":"📝 یادداشت ۳ به‌زودی منتشر می‌شود. منتظر آن باشید!",
+  "یادداشت ۴ چیست؟":"📝 یادداشت ۴ به‌زودی منتشر می‌شود. منتظر آن باشید!",
+  "سردبیر کیه؟":"✍️ سردبیر مجلهٔ آسمان «م.حسینی» است — همان سازندهٔ برنامه. متن سخن سردبیر در یادداشت ۱ با امضای «《سردبیر مجله آسمان》» منتشر شده است.",
+  "متن‌ها رو چطور بخونم؟":"📖 در صفحهٔ «یادداشت مجله»، هر یادداشت به‌صورت کشویی طراحی شده است:\n• ۴ خط اول همیشه نمایش داده می‌شود.\n• برای دیدن بقیه، روی هدر یا دکمهٔ «▼ نمایش بیشتر» بزنید.\n• برای بستن کشو، دوباره روی همان دکمه یا هدر بزنید.",
+  "کشو چطور کار می‌کنه؟":"🔽 هر یادداشت یا بخش مدیریت کارت‌ها دارای یک کشوی عمودی است. با کلیک روی هدر، کشو باز می‌شود و محتوای پنهان با انیمیشن نرم به سمت پایین ظاهر می‌گردد. برای بستن، دوباره کلیک کنید.",
+  "یادداشت جدید کِیه؟":"🗓️ یادداشت‌های ۲، ۳ و ۴ به‌زودی منتشر می‌شوند. برای اطلاع از انتشار، می‌توانید به‌صورت دوره‌ای به صفحهٔ «یادداشت مجله» سر بزنید.",
+
+  "فردا باران میاد؟":"🌧️ در حال بررسی پیش‌بینی فردا...",
+  "کیفیت هوا چطوره؟":"🌫️ در حال دریافت کیفیت هوا...",
+  "شاخص UV چند است؟":"☀️ در حال بررسی شاخص UV...",
+  "فشار هوا چطوره؟":"🌡️ در حال بررسی فشار هوا...",
+  "سرعت باد چقدره؟":"💨 در حال بررسی سرعت باد...",
+  "پوشش ابر چیه؟":"☁️ در حال بررسی پوشش ابر...",
+  "رطوبت هوا چقدره؟":"💧 در حال بررسی رطوبت...",
+
+  "تور مجازی مشهد":"🕌 تور مجازی حرم امام رضا (ع): در صفحهٔ «سفر»، بخش «زیارتی» را باز کنید و روی «گردشگری مجازی حرم امام رضا» بزنید (irpano.ir/VR).",
+  "تور مجازی قم":"🕌 تور مجازی حرم حضرت معصومه (س): در صفحهٔ «سفر»، بخش «زیارتی» را باز کنید و روی «گردشگری مجازی حرم حضرت معصومه» بزنید (vtour.amfm.ir).",
+  "تور مجازی شیراز":"🌺 تورهای مجازی شیراز: در صفحهٔ «سفر»، بخش «شهرها» یا «شهرها (صوتی)» را باز کنید و روی «شیراز» بزنید.",
+  "دانشگاه شریف":"🎓 تور مجازی دانشگاه شریف: در صفحهٔ «سفر»، بخش «دانشگاهی» را باز کنید و روی «دانشگاه شریف» بزنید.",
+  "سفر به شمال":"🌳 برای سفر به شمال (گیلان و مازندران): در صفحهٔ «سفر» تورهای مجازی صوتی موجود است. همچنین می‌توانید در صفحهٔ «آب‌وهوا» نام شهر مقصد را جستجو کنید و بهترین پنجرهٔ سفر را ببینید.",
+  "جاذبه‌های گردشگری":"🗺️ در صفحهٔ «سفر»، بخش «گردشگری و میراث» شامل لینک‌های ویزیت ایران، کتاب ایران با شکوه و خبرگزاری میراث آریا است.",
+
+  "ساعت بازی‌ها":"⚽ برای دیدن ساعت بازی‌ها: صفحهٔ «ورزشی» ← لیگ مورد نظر ← لینک مربوطه. تمام لینک‌ها به varzesh3.com هدایت می‌شوند.",
+  "نتیجه بازی‌ها":"⚡ نتایج زنده: در صفحهٔ «ورزشی»، تب «زنده» را انتخاب کنید و روی «نتایج زنده» بزنید تا به livescore بروید.",
+  "جدول لیگ برتر":"🏆 جدول لیگ برتر: صفحهٔ «ورزشی» ← فوتبال ← لیگ برتر. برای جدول کامل روی لینک بزنید.",
+  "برنامه امروز":"📅 برنامهٔ امروز بازی‌ها: در صفحهٔ «ورزشی» بخش لایو اسکور را ببینید یا از لینک‌های لیگ‌ها استفاده کنید.",
+  "المپیک ۲۰۲۶":"🏅 جدول مدال‌های المپیک به‌زودی در صفحهٔ «ورزشی» اضافه می‌شود.",
+  "پریمیرلیگ انگلیس":"🏴 پریمیرلیگ: صفحهٔ «ورزشی» ← فوتبال ← «لیگ برتر انگلیس». لینک به varzesh3 هدایت می‌شود.",
+  "لالیگا":"🇪🇸 لالیگا: صفحهٔ «ورزشی» ← فوتبال ← «لالیگا».",
+  "سری آ ایتالیا":"🇮🇹 سری آ: صفحهٔ «ورزشی» ← فوتبال ← «سری آ».",
+  "لیگ قهرمانان اروپا":"🇪🇺 لیگ قهرمانان اروپا: صفحهٔ «ورزشی» ← فوتبال ← «لیگ قهرمانان اروپا».",
+  "پخش زنده":"📺 پخش زنده: صفحهٔ «ورزشی» ← تب «پخش» ← «پخش زنده».",
+
+  "کیفیت هوا امروز":"🌫️ کیفیت هوای امروز در بخش «شاخص امروز» صفحهٔ آب‌وهوا و همچنین در کارت «کیفیت هوا» در صفحهٔ من نمایش داده می‌شود.",
+  "گرده چقدر است؟":"🌼 در حال دریافت سطح گرده...",
+  "خواب امشب چطوره؟":"😴 در حال بررسی امتیاز خواب امشب...",
+  "تغذیه امروز؟":"🥗 در حال دریافت توصیهٔ تغذیه فصلی...",
+  "BMI من چنده؟":"⚖️ برای محاسبهٔ BMI: صفحهٔ «سلامت» ← بخش «محاسبهٔ BMI و BMR». سن، جنسیت، وزن، قد و سطح فعالیت را وارد کنید و روی «محاسبه کن» بزنید.",
+  "BMR من چنده؟":"🔥 برای محاسبهٔ BMR: همان ماشین‌حساب BMI، BMR شما را هم محاسبه می‌کند. اگر BMI را وارد کنید، BMR و TDEE هم نمایش داده می‌شود.",
+  "کالری روزانه‌ام چقدره؟":"🍽️ برای محاسبهٔ TDEE (کالری روزانه): در صفحهٔ «سلامت»، BMI/BMR را محاسبه کنید. TDEE = BMR × ضریب فعالیت.",
+  "کاهش وزن چطوره؟":"📉 برای کاهش وزن: روزانه ۵۰۰ کالری کمتر از TDEE خود مصرف کنید تا هفته‌ای حدود ۰٫۵ کیلوگرم کاهش وزن داشته باشید. جزئیات در صفحهٔ «سلامت».",
+  "افزایش وزن چطوره؟":"📈 برای افزایش وزن: روزانه ۵۰۰ کالری بیشتر از TDEE خود مصرف کنید. جزئیات در صفحهٔ «سلامت».",
+
+  "فاز ماه امروز":"🌙 در حال دریافت فاز ماه...",
+  "تصویر نجومی روز":"🌌 تصویر نجومی روز ناسا (APOD) در صفحهٔ «علم» نمایش داده می‌شود. اگر هنوز بارگذاری نشده، چند لحظه صبر کنید.",
+  "رویداد آسمانی این ماه":"🌠 در حال دریافت رویداد آسمانی این ماه...",
+  "دانستنی امروز چیه؟":"💡 در حال دریافت دانستنی روز...",
+  "ماه کامل کی است؟":"🌕 در حال محاسبهٔ زمان ماه کامل...",
+  "بارش شهابی بعدی":"🌠 در حال بررسی بارش شهابی بعدی...",
+  "کدام قمر داره؟":"🌙 اطلاعات قمر در بخش نجوم صفحهٔ «علم» و کارت فاز ماه در صفحهٔ من نمایش داده می‌شود.",
+  "روشنایی ماه چقدره؟":"🌕 درصد روشنایی ماه در کارت «فاز ماه» صفحهٔ من نمایش داده می‌شود.",
+  "نجوم امشب":"🔭 اطلاعات نجوم امشب: صفحهٔ «علم» ← بخش نجوم و تصویر نجومی روز.",
+
+  "جوک بعدی":"😂 برای دیدن جوک بعدی: صفحهٔ «سرگرمی» ← بخش «جوک روز» ← روی «😂 جوک بعدی» بزنید.",
+  "دانستنی سرگرمی":"💡 دانستنی سرگرمی در صفحهٔ «سرگرمی» ← بخش «دانستنی سرگرمی» نمایش داده می‌شود.",
+  "معما بگو":"🧩 معما در صفحهٔ «سرگرمی» ← بخش «معما» موجود است. روی «🔍 نمایش جواب» بزنید تا جواب را ببینید.",
+  "سودوکو چیه؟":"🎮 سودوکو یک بازی منطقی است که در آن باید اعداد ۱ تا ۹ را طوری در جدول ۹×۹ بچینید که هر عدد در هر سطر، ستون و مربع ۳×۳ فقط یک بار ظاهر شود. سودوکو در صفحهٔ «سرگرمی» موجود است.",
+  "چند مرحله سودوکو داره؟":"🎯 سودوکو در مجلهٔ آسمان دارای ۱۰۰ مرحله با سطوح مختلف است.",
+  "کمک سودوکو":"🆘 برای کمک به سودوکو: از دکمه‌های پایین جدول استفاده کنید یا در صفحهٔ «سرگرمی» راهنمای بازی را ببینید.",
+  "راهنمای سودوکو":"📖 راهنمای سودوکو: با کلیک روی هر خانه، می‌توانید عدد وارد کنید. خانه‌های ثابت قابل تغییر نیستند. اگر عددی اشتباه باشد، با رنگ قرمز مشخص می‌شود.",
+  "سطح بازی چیه؟":"🎯 سودوکو در مجلهٔ آسمان سه سطح آسان، متوسط و سخت دارد. در صفحهٔ «سرگرمی» قابل انتخاب است.",
+  "سوالات دیگر":"💡 می‌توانید هر سوالی دربارهٔ هوا، اذان، سفر، سلامت، فرهنگ، ورزش، علم، سرگرمی، یادداشت‌ها یا تنظیمات بپرسید.",
+  "یک بازی جدید":"🎮 برای شروع سودوکوی جدید: صفحهٔ «سرگرمی» ← سودوکو ← «بازی جدید».",
+
+  "تغییر حالت نمایش":"🎨 برای تغییر حالت نمایش (شب/روز): صفحهٔ «تنظیمات» ← «حالت نمایش» (یا از سیستم خودکار استفاده کنید).",
+  "تغییر اندازه فونت":"🔤 برای تغییر اندازهٔ فونت: صفحهٔ «تنظیمات» ← بخش «اندازهٔ فونت» ← گزینهٔ «پیش‌فرض» یا «بزرگ‌تر».",
+  "تغییر رنگ برنامه":"🎨 برای تغییر رنگ اصلی: صفحهٔ «تنظیمات» ← بخش «رنگ اصلی برنامه». ۷ رنگ آماده در دسترس است.",
+  "فعال کردن GPS":"📍 برای فعال کردن GPS: صفحهٔ «تنظیمات» ← «دسترسی به موقعیت مکانی» ← سوئیچ را روشن کنید.",
+  "غیرفعال کردن GPS":"📍 برای غیرفعال کردن GPS: صفحهٔ «تنظیمات» ← «دسترسی به موقعیت مکانی» ← سوئیچ را خاموش کنید.",
+  "تغییر واحد دما":"🌡️ برای تغییر واحد دما (C/F): صفحهٔ «تنظیمات» ← بخش «واحد اندازه‌گیری دما». یا از منوی کنار صفحهٔ آب‌وهوا.",
+  "پاک کردن پین‌ها":"📌 برای پاک کردن پین‌ها: صفحهٔ «تنظیمات» ← بخش «مدیریت پین‌ها» ← «🗑️ پاک کردن همهٔ پین‌ها». توجه: پین‌های قفل‌شده حذف نمی‌شوند.",
+  "پاک کردن حافظه":"💾 برای پاک کردن حافظهٔ پنهان: صفحهٔ «تنظیمات» ← بخش «حافظه و داده‌ها» ← «🗑️ پاک کردن حافظهٔ پنهان». تنظیمات اصلی (نام، پین‌ها، رنگ) حفظ می‌شود.",
+
+  "هوای امروز چطوره؟":"🌤️ در حال دریافت وضعیت هوا...",
+  "اذان بعدی کی است؟":"🕌 در حال محاسبهٔ اذان بعدی...",
+  "فاز ماه امشب چیه؟":"🌙 در حال دریافت فاز ماه...",
+  "بیت امروز چیه؟":"📜 بیت امروز از حافظ در کارت «بیت امروز» صفحهٔ من نمایش داده می‌شود. هر ۲ ساعت تغییر می‌کند.",
+  "ذکر امروز چیه؟":"📿 در حال دریافت ذکر امروز...",
+  "دانستنی امروز چیه؟":"💡 در حال دریافت دانستنی روز...",
+  "کیفیت هوا امشبه؟":"🌫️ در حال دریافت کیفیت هوا...",
+  "خواب امشب چطوره؟":"😴 در حال محاسبهٔ امتیاز خواب امشب...",
+  "طلوع و غروب کی است؟":"🌅 در حال دریافت زمان طلوع و غروب...",
+  "چی بپوشم؟":"👔 در حال دریافت پیشنهاد پوشاک...",
+  "اوقات شرعی امروز":"🕌 در حال دریافت اوقات شرعی...",
+  "طلوع آفتاب کی است؟":"🌅 در حال دریافت زمان طلوع...",
+  "غروب آفتاب کی است؟":"🌇 در حال دریافت زمان غروب...",
+  "نیمه‌شب شرعی چه زمانی است؟":"🌃 نیمه‌شب شرعی از میانهٔ غروب تا اذان صبح محاسبه می‌شود و در جدول اوقات شرعی نمایش داده می‌شود.",
+  "ساعت محلی منطقه چنده؟":"⏰ ساعت محلی در بالای صفحهٔ اوقات شرعی به‌صورت زنده (ساعت:دقیقه:ثانیه) نمایش داده می‌شود.",
+  "فردا اذان صبح کی است؟":"🌅 برای اطلاع از اذان صبح فردا، کافی است صفحه را به‌روزرسانی کنید تا اوقات شرعی روز جدید دریافت شود.",
+  "اوقات شرعی چه ساعتی است؟":"🕌 ۶ زمان شرعی نمایش داده می‌شود: اذان صبح، طلوع، اذان ظهر، غروب، اذان مغرب و نیمه‌شب.",
+  "اوقات شرعی کدام شهره؟":"📍 اوقات شرعی بر اساس شهری است که در صفحهٔ آب‌وهوا انتخاب کرده‌اید. نام شهر در بالای صفحهٔ اوقات شرعی نمایش داده می‌شود.",
+
+  "پنجره سفر کِیه؟":"🧳 بهترین پنجرهٔ سفر بر اساس دما، باد و احتمال بارش محاسبه می‌شود. برای مشاهده، به صفحهٔ «سفر» بروید یا در صفحهٔ آب‌وهوا بخش شاخص‌ها را باز کنید.",
+  "چک‌لیست سفر":"🎒 در حال آماده‌سازی چک‌لیست سفر...",
+  "جاده امنه؟":"🚗 شاخص جاده در صفحهٔ «سفر» بر اساس دید افقی، دما، بارش و باد محاسبه می‌شود.",
+  "لباس مناسب سفر؟":"👔 پیشنهاد لباس بر اساس دمای مقصد در صفحهٔ آب‌وهوا و سفر نمایش داده می‌شود.",
+
+  "فال حافظ":"🎴 برای فال حافظ: صفحهٔ «فرهنگ» ← بخش «ادبیات و شعر» ← «فال حافظ». لینک به faal.ganjoor.net هدایت می‌شود.",
+  "بیت تصادفی":"📜 برای بیت تصادفی: صفحهٔ «فرهنگ» ← «ادبیات و شعر» ← «بیت تصادفی» (ganjoor.net/random).",
+  "شاعران پارسی":"✒️ شاعران پارسی: صفحهٔ «فرهنگ» ← «ادبیات و شعر» ← «شاعران پارسی». گنجینهٔ گنجور.",
+  "نمایش‌های تئاتر":"🎭 نمایش‌های تئاتر: صفحهٔ «فرهنگ» ← «تئاتر و سینما» ← «نمایش‌ها». لینک به تیوال.",
+  "نمایه موسیقی":"🎵 نمایهٔ موسیقی: صفحهٔ «فرهنگ» ← «ادبیات و شعر» ← «نمایه موسیقی». اشعار آهنگ‌ها در گنجور.",
+  "کتاب فیدیبو":"📕 فیدیبو: صفحهٔ «فرهنگ» ← «کتاب الکترونیک» ← «فیدیبو».",
+  "کتاب طاقچه":"📗 طاقچه: صفحهٔ «فرهنگ» ← «کتاب الکترونیک» ← «طاقچه».",
+  "ایران تئاتر":"🎭 ایران تئاتر: صفحهٔ «فرهنگ» ← «تئاتر و سینما» ← «ایران تئاتر». پایگاه رسمی.",
+  "سامفا سینما":"🎬 سامانه سامفا: صفحهٔ «فرهنگ» ← «تئاتر و سینما» ← «سامانه سامفا». اکران سینما.",
+  "حوزه هنری":"🎨 حوزه هنری: صفحهٔ «فرهنگ» ← «تئاتر و سینما» ← «حوزه هنری»."
+};
 
 function buildBriefing(){
   var s=getDayStats(0);if(!s)return"داده‌ای نیست.";
@@ -1961,9 +2190,9 @@ function chatRespond(q0){
   var q=normalizeQ(q0);
   var s=getDayStats(0),an=getAirNow()||airFallback();
 
-  /* سلام و احوالپرسی */
   if(wakeWordMatch(q,["سلام","درود","وقت بخیر","hi","hello"])){
-    addChatMsg("سلام! 👋 خوش آمدید. در خدمتم — سوال خود را بپرسید یا از نمونه‌های پایین استفاده کنید.",false);return;
+    var nm=getUserName();
+    addChatMsg("سلام"+(nm?(" "+nm):"")+"! 👋 خوش آمدید. در خدمتم — سوال خود را بپرسید.",false);return;
   }
   if(wakeWordMatch(q,["ممنون","مرسی","سپاس","thank"])){
     addChatMsg("خواهش می‌کنم 🌸 هر وقت نیاز بود در خدمتم.",false);return;
@@ -1971,8 +2200,98 @@ function chatRespond(q0){
   if(wakeWordMatch(q,["کی هستی","چه کسی هستی","تو کی"])){
     addChatMsg("🤖 من دستیار هوشمند مجلهٔ آسمان هستم؛ برای راهنمایی سریع در بخش‌های مختلف برنامه ساخته شده‌ام.",false);return;
   }
+  if(wakeWordMatch(q,["نام من","اسم من","نامم","نام کاربری"])){
+    var nm2=getUserName();
+    if(nm2)addChatMsg("👤 نام شما: "+nm2,false);
+    else addChatMsg("👤 هنوز نامی ثبت نکرده‌اید. از صفحهٔ «من» می‌توانید نام خود را وارد کنید.",false);
+    return;
+  }
 
-  /* طلوع و غروب */
+  var originalQ=String(q0).trim();
+  if(SUG_ANSWERS[originalQ]){
+    var ans=SUG_ANSWERS[originalQ];
+    if(ans.indexOf("در حال")!==-1||ans.indexOf("بررسی")!==-1){
+      if(originalQ.indexOf("هوا")!==-1||originalQ.indexOf("باران")!==-1){
+        addChatMsg("🌤️ "+city.name+"\n• وضعیت: "+code(s.code)[0]+"\n• دما: "+(s.temp!=null?T1(s.temp)+D():"--")+"\n• کمینه/بیشینه: "+T(s.tempMin)+D()+"/"+T(s.tempMax)+D()+"\n• احتمال بارش: "+(s.precipProb||0)+"٪",false);return;
+      }
+      if(originalQ.indexOf("کیفیت هوا")!==-1||originalQ.indexOf("آلودگی")!==-1){
+        addChatMsg("🌫️ کیفیت هوا:\n• EAQI: "+Math.round(an.european_aqi)+" ("+aqiLabel(an.european_aqi)+")\n• PM2.5: "+(an.pm25!=null?Math.round(an.pm25):"--")+" µg/m³",false);return;
+      }
+      if(originalQ.indexOf("UV")!==-1||originalQ.indexOf("فرابنفش")!==-1){
+        addChatMsg("☀️ شاخص UV: "+(s.uv!=null?s.uv:"--")+" ("+(s.uv>=6?"بالا ⚠️":s.uv>=3?"متوسط":"کم")+")",false);return;
+      }
+      if(originalQ.indexOf("فشار")!==-1){
+        addChatMsg("🌡️ فشار هوا: "+(s.pres!=null?Math.round(s.pres)+" hPa":"--"),false);return;
+      }
+      if(originalQ.indexOf("باد")!==-1){
+        addChatMsg("💨 سرعت باد: "+(s.wind!=null?Math.round(s.wind)+" km/h":"--")+(s.windDir?" از "+dirFa(s.windDir):""),false);return;
+      }
+      if(originalQ.indexOf("ابر")!==-1){
+        addChatMsg("☁️ پوشش ابر: "+(s.cloud!=null?Math.round(s.cloud)+"٪":"--"),false);return;
+      }
+      if(originalQ.indexOf("رطوبت")!==-1){
+        addChatMsg("💧 رطوبت: "+(s.hum!=null?Math.round(s.hum)+"٪":"--"),false);return;
+      }
+      if(originalQ.indexOf("خواب")!==-1){
+        var ss2=sleepScore(),tn2=tonightStats();
+        addChatMsg("😴 امتیاز خواب امشب: "+(ss2!=null?ss2+"/100":"--")+"\nدمای امشب: "+(tn2&&tn2.temp!=null?T1(tn2.temp)+D():"--"),false);return;
+      }
+      if(originalQ.indexOf("گرده")!==-1){
+        var pol2=(s.pollen!=null)?Math.round(s.pollen):seasonalPollen(new Date().getMonth()+1);
+        addChatMsg("🌼 سطح گرده: "+pol2+"/100",false);return;
+      }
+      if(originalQ.indexOf("تغذیه")!==-1){
+        addChatMsg(foodAdvice(),false);return;
+      }
+      if(originalQ.indexOf("فاز ماه")!==-1||originalQ.indexOf("ماه")!==-1){
+        var mp2=moonPhase();addChatMsg("🌙 "+mp2.name+"\n💡 روشنایی: "+mp2.illum+"٪",false);return;
+      }
+      if(originalQ.indexOf("رویداد آسمانی")!==-1||originalQ.indexOf("شهاب")!==-1){
+        addChatMsg("🌠 رویداد ماه: "+skyEvents(new Date().getMonth()+1),false);return;
+      }
+      if(originalQ.indexOf("دانستنی")!==-1){
+        var seed2=getTodayTehranKey();var h7=0;for(var i7=0;i7<seed2.length;i7++)h7=(h7*31+seed2.charCodeAt(i7))>>>0;
+        var f7=DAILY_FACTS_POOL[h7%DAILY_FACTS_POOL.length];
+        addChatMsg(f7.icon+" "+f7.title+"\n"+f7.text,false);return;
+      }
+      if(originalQ.indexOf("ذکر")!==-1){
+        var d8=new Date().getDay();var x8=DHIKR[d8]||DHIKR[6];
+        addChatMsg("📿 امروز "+x8.day+"\nذکر: «"+x8.text+"»",false);return;
+      }
+      if(originalQ.indexOf("اذان")!==-1||originalQ.indexOf("اوقات شرعی")!==-1){
+        if(!prayerData){addChatMsg("در حال دریافت اوقات شرعی...",false);loadPrayerTimes();return;}
+        var cur8=cityNowMinutes();var order8=[["Fajr","اذان صبح"],["Sunrise","طلوع"],["Dhuhr","اذان ظهر"],["Sunset","غروب"],["Maghrib","اذان مغرب"]];
+        var nx8="--",nt8="--";
+        for(var i8=0;i8<order8.length;i8++){var t8=cleanTime(prayerData[order8[i8][0]]);if(t8&&t8!=="--:--"){var p8=t8.split(":");var m8=(+p8[0])*60+(+p8[1]);if(m8>cur8){nx8=order8[i8][1];nt8=t8;break;}}}
+        if(nx8==="--"){nx8="اذان صبح";nt8=cleanTime(prayerData.Fajr);}
+        addChatMsg("🕌 اذان بعدی: "+nx8+"\n⏰ ساعت: "+nt8,false);return;
+      }
+      if(originalQ.indexOf("طلوع")!==-1){
+        var sr8=(data&&data.daily&&data.daily.sunrise)?fmtDT(data.daily.sunrise[TODAY_IDX]):"--";
+        addChatMsg("🌅 طلوع: "+sr8,false);return;
+      }
+      if(originalQ.indexOf("غروب")!==-1){
+        var ss8=(data&&data.daily&&data.daily.sunset)?fmtDT(data.daily.sunset[TODAY_IDX]):"--";
+        addChatMsg("🌇 غروب: "+ss8,false);return;
+      }
+      if(originalQ.indexOf("لباس")!==-1||originalQ.indexOf("بپوشم")!==-1){
+        addChatMsg("👔 "+clothingAdvice(s),false);return;
+      }
+      if(originalQ.indexOf("چک‌لیست")!==-1||originalQ.indexOf("سفر")!==-1){
+        var pack8=[];if(s&&s.precipProb>=40)pack8.push("چتر");if(s&&s.tempMin<=5)pack8.push("لباس گرم");if(s&&s.uv>=6)pack8.push("ضدآفتاب");
+        addChatMsg("🎒 چک‌لیست سفر: "+(pack8.length?pack8.join("، "):"بدون نیاز خاص"),false);return;
+      }
+      if(originalQ.indexOf("جاده")!==-1){
+        var ri8=roadIndex(s);addChatMsg("🚗 شاخص جاده: "+(ri8!=null?ri8+"/100 ("+scoreLabel(ri8)+")":"--"),false);return;
+      }
+      if(originalQ.indexOf("پنجره")!==-1){
+        var bw8=bestWindow();addChatMsg("🪟 بهترین پنجره: "+(bw8?fmtDT(bw8.from)+" تا "+fmtDT(bw8.to):"یافت نشد"),false);return;
+      }
+      addChatMsg(ans,false);return;
+    }
+    addChatMsg(ans,false);return;
+  }
+
   if(wakeWordMatch(q,["طلوع","غروب","خورشید"])){
     var sr=(data&&data.daily&&data.daily.sunrise)?fmtDT(data.daily.sunrise[TODAY_IDX]):"--";
     var ss=(data&&data.daily&&data.daily.sunset)?fmtDT(data.daily.sunset[TODAY_IDX]):"--";
@@ -2057,14 +2376,17 @@ function chatRespond(q0){
     if(currentPage!=="myday")showPage("myday");
     addChatMsg("⭐ به صفحهٔ «من» رفتم.",false);return;
   }
+  if(wakeWordMatch(q,["یادداشت","سردبیر","سخن سردبیر"])){
+    if(currentPage!=="notes")showPage("notes");
+    addChatMsg("📝 به صفحهٔ «یادداشت مجله» رفتم. یادداشت ۱ سخن سردبیر دربارهٔ پاییز و سال تحصیلی است.",false);return;
+  }
   if(wakeWordMatch(q,["تنظیمات","تم","فونت","رنگ","اندازه"])){
     if(currentPage!=="settings")showPage("settings");
     addChatMsg("⚙️ به صفحهٔ «تنظیمات» رفتم.",false);return;
   }
   if(wakeWordMatch(q,["نصب","اینستال","add to home"])){addChatMsg("📲 برای نصب، دکمهٔ «📲 نصب» در مودال اول را بزنید.",false);return;}
-  if(wakeWordMatch(q,["راهنما","کمک","help"])){addChatMsg("💡 من می‌توانم درباره هوا، اذان، ذکر، فاز ماه، سفر، سلامت، علم، فرهنگ، ورزش، سرگرمی و تنظیمات به شما کمک کنم. از نمونه سوال‌های پایین استفاده کنید.",false);return;}
+  if(wakeWordMatch(q,["راهنما","کمک","help"])){addChatMsg("💡 من می‌توانم درباره هوا، اذان، ذکر، فاز ماه، سفر، سلامت، علم، فرهنگ، ورزش، سرگرمی، یادداشت‌ها و تنظیمات به شما کمک کنم. از نمونه سوال‌های پایین استفاده کنید.",false);return;}
 
-  /* پیش‌فرض */
   addChatMsg("📍 "+city.name+"\n🌤️ "+code(s.code)[0]+"\n🌡️ "+(s.temp!=null?T1(s.temp)+D():"--")+" (کمینه/بیشینه: "+T(s.tempMin)+D()+"/"+T(s.tempMax)+D()+")\n🌧️ "+(s.precipProb||0)+"٪\n👔 "+clothingAdvice(s)+"\n\n💡 می‌توانید سوال دیگری بپرسید یا از نمونه‌های پایین استفاده کنید.",false);
 }
 function sendText(t){addChatMsg(t,true);setTimeout(function(){chatRespond(t);},300);}
@@ -2072,7 +2394,6 @@ function sendChat(){if(!chatInput)return;var t=chatInput.value.trim();if(!t)retu
 var chatSend=document.getElementById("chatSend");if(chatSend)chatSend.addEventListener("click",sendChat);
 if(chatInput)chatInput.addEventListener("keydown",function(e){if(e.key==="Enter")sendChat();});
 
-/* ============ ۱۰ سوال نمونه داخل چت‌بات ============ */
 function renderSuggestions(){
   var sug=document.getElementById("chatSugs");if(!sug)return;
   var list=PAGE_SUGS[currentPage]||PAGE_SUGS.home;
@@ -2087,7 +2408,6 @@ function renderSuggestions(){
   }
 }
 
-/* ============ Info modal ============ */
 function getInfoContent(key){
   var s=getDayStats(detailDay);if(!s)return{icon:"❓",title:"--",text:"--"};
   var L=s.label;var icons={temp:"🌡️",humidity:"💧",wind:"💨",uv:"☀️",aqi:"🌫️",precip:"🌧️",visibility:"👁️",pressure:"🌡️",dewpoint:"💦",us_aqi:"🌐",pm25:"🔬",pm10:"🌪️",ozone:"☁️",dust:"🏜️",pollen:"🌼",cloud:"☁️"};
@@ -2117,7 +2437,6 @@ var infoClose=document.getElementById("infoModalClose");if(infoClose)infoClose.a
 var infoOverlay=document.getElementById("infoModal");if(infoOverlay)infoOverlay.addEventListener("click",function(e){if(e.target===this)this.classList.remove("show");});
 var unitSel=document.getElementById("unit");if(unitSel){unitSel.value=unit;unitSel.addEventListener("change",function(){unit=this.value;lsSet("unit",unit);if(data){renderWeather();renderDetails();}});}
 
-/* ============ Settings Page ============ */
 function renderSettingsPage(){
   var gpsToggle=document.getElementById("gpsToggle");
   if(gpsToggle){
@@ -2172,14 +2491,75 @@ function renderSettingsPage(){
   if(clearCache){
     clearCache.removeEventListener("click",clearCache._h);
     clearCache._h=function(){
-      try{var keys=Object.keys(localStorage);var keep=["gpsEnabled","unit","pins","city","hasOpened","lastPage","aseman_device_seen","appTheme","appFont","appColor"];for(var i=0;i<keys.length;i++)if(keep.indexOf(keys[i])===-1)localStorage.removeItem(keys[i]);show("✅ حافظه پاک شد","ok");setTimeout(function(){location.reload();},1000);}catch(e){show("⚠️ خطا","err");}
+      try{var keys=Object.keys(localStorage);var keep=["gpsEnabled","unit","pins","city","hasOpened","lastPage","aseman_device_seen","appTheme","appFont","appColor","userName","hiddenCards"];for(var i=0;i<keys.length;i++)if(keep.indexOf(keys[i])===-1)localStorage.removeItem(keys[i]);show("✅ حافظه پاک شد","ok");setTimeout(function(){location.reload();},1000);}catch(e){show("⚠️ خطا","err");}
     };
     clearCache.addEventListener("click",clearCache._h);
   }
   var sv=document.getElementById("settingsVersion");if(sv)sv.textContent=APP_VERSION;
 }
 
-/* ============ Init ============ */
+var magLoaded={};
+function showPage(p){
+  currentPage=p;
+  lsSet("lastPage",p);
+  var pages=document.querySelectorAll(".mag-page");
+  for(var i=0;i<pages.length;i++)pages[i].hidden=(pages[i].id!=="page-"+p);
+  var tabs=document.querySelectorAll(".mag-tab");
+  for(var j=0;j<tabs.length;j++){
+    var active=tabs[j].getAttribute("data-page")===p;
+    tabs[j].classList.toggle("active",active);
+    if(active&&tabs[j].scrollIntoView){try{tabs[j].scrollIntoView({behavior:"smooth",block:"nearest",inline:"center"});}catch(e){}}
+  }
+  if(!magLoaded[p]){
+    magLoaded[p]=true;
+    if(p==="sport"){renderSportGrid();renderSportContent();}
+    else if(p==="health")renderHealthPage();
+    else if(p==="culture"){renderCulturePage();bindAccordions();}
+    else if(p==="science"){renderSciencePage();loadAPOD();}
+    else if(p==="travel"){renderTravelPage();bindAccordions();}
+    else if(p==="fun"){initFunIndices(true);renderFunPage();bindAccordions();}
+    else if(p==="prayer"){renderPrayer();renderDhikr();}
+    else if(p==="settings")renderSettingsPage();
+    else if(p==="myday")renderDash();
+    else if(p==="notes")renderNotes();
+  }else{
+    if(p==="health")renderHealthPage();
+    else if(p==="travel")renderTravelPage();
+    else if(p==="prayer"){renderPrayer();renderDhikr();}
+    else if(p==="settings")renderSettingsPage();
+    else if(p==="myday")renderDash();
+    else if(p==="science"){renderSciencePage();loadAPOD();}
+    else if(p==="notes")renderNotes();
+  }
+  renderSuggestions();
+  updateLocalTime();
+  if(appBooted){try{window.scrollTo({top:0,behavior:"smooth"});}catch(e){window.scrollTo(0,0);}}
+}
+var magNav=document.getElementById("magNav");
+if(magNav)magNav.addEventListener("click",function(e){var t=e.target.closest(".mag-tab");if(t){showPage(t.getAttribute("data-page"));}});
+function bindAccordions(){
+  var accs=document.querySelectorAll(".travel-acc-h,.culture-acc-h,.fun-acc-h");
+  for(var i=0;i<accs.length;i++){
+    (function(h){if(h.getAttribute("data-bound"))return;h.setAttribute("data-bound","1");h.addEventListener("click",function(){var g=h.closest(".travel-acc-group,.culture-acc-group,.fun-acc-group");if(g)g.classList.toggle("open");});})(accs[i]);
+  }
+}
+
+var GREET="سلام! 👋 من دستیار هوشمند مجلهٔ آسمان هستم.\nمی‌توانم در هر صفحه به شما کمک کنم. از نمونه سوال‌های پایین همین پنجره استفاده کنید.";
+var chatPanel=document.getElementById("chatPanel"),chatMessages=document.getElementById("chatMessages"),chatInput=document.getElementById("chatInput");
+function setChatOpen(open){if(!chatPanel)return;chatPanel.classList.toggle("show",open);document.body.classList.toggle("chat-lock",open);if(open)renderSuggestions();}
+var chatFab=document.getElementById("chatFab");if(chatFab)chatFab.addEventListener("click",function(){setChatOpen(!chatPanel.classList.contains("show"));});
+var chatClose=document.getElementById("chatClose");if(chatClose)chatClose.addEventListener("click",function(){setChatOpen(false);});
+var chatClear=document.getElementById("chatClear");if(chatClear)chatClear.addEventListener("click",function(){if(chatMessages)chatMessages.innerHTML="";addChatMsg(GREET,false);renderSuggestions();});
+function addChatMsg(text,isUser){
+  if(!chatMessages)return;
+  var n=new Date(),ts=(n.getHours()<10?"0":"")+n.getHours()+":"+(n.getMinutes()<10?"0":"")+n.getMinutes();
+  var d=document.createElement("div");d.className="chat-msg "+(isUser?"user":"bot");d.textContent=text;
+  var t=document.createElement("div");t.className="cm-time";t.textContent=ts;d.appendChild(t);
+  chatMessages.appendChild(d);chatMessages.scrollTop=chatMessages.scrollHeight;
+}
+addChatMsg(GREET,false);
+function normalizeQ(s){return faToEn(s).replace(/\u200c/g," ").replace(/ي/g,"ی").replace(/ك/g,"ک").replace(/[؟?!.]/g," ").replace(/\s+/g," ").trim();}
+
 ensureLockedPins();savePins();
 renderToday();updateLocalTime();
 renderSuggestions();
