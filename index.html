@@ -485,6 +485,14 @@ footer{text-align:center;color:var(--muted);font-size:11px;line-height:2;padding
 .switch input:checked+.slider:before{transform:translateX(-24px)}
 @media(max-width:900px){.scene{grid-template-columns:1fr}.sport-grid{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:560px){.wrap{width:calc(100% - 12px)}.main,.side,.section{padding:16px}.weather-hero{flex-direction:column;text-align:center}.temp{font-size:42px}.prayergrid{grid-template-columns:repeat(2,1fr)}.details{grid-template-columns:repeat(2,1fr)}.sport-grid{grid-template-columns:repeat(2,1fr)}.page-title{font-size:28px}.chat-panel{left:8px;width:calc(100vw - 16px)}.city{font-size:22px}.install-box{padding:18px 14px}.dash-grid{grid-template-columns:1fr}.sudoku-controls button{padding:8px 12px;font-size:12px}.prayer-localtime-inline{padding:5px 10px;font-size:11px}.prayer-localtime-inline .plt-clock-inline{font-size:15px;min-width:65px}.daily-card-head{flex-direction:column;align-items:flex-start}}
+
+/* ====== Accent-driven visual enhancements ====== */
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(ellipse 55% 45% at 12% 8%,var(--accent) 0%,transparent 62%),radial-gradient(ellipse 55% 45% at 88% 92%,var(--accent2) 0%,transparent 62%);opacity:.12;transition:background .6s ease,opacity .6s ease;}
+body[data-theme="light"]::before{opacity:.09;}
+.page-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,var(--accent),var(--accent2));opacity:.22;pointer-events:none;z-index:1;transition:opacity .4s ease,background .6s ease;}
+.page-hero>div{position:relative;z-index:2;}
+.page-hero.weather-bg::after{opacity:.15;}
+.brand-text h1{background:linear-gradient(135deg,#fff 20%,var(--accent) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;transition:background .6s ease;}
 </style>
 </head>
 <body data-theme="dark" data-font="normal" data-color="blue">
@@ -604,10 +612,6 @@ footer{text-align:center;color:var(--muted);font-size:11px;line-height:2;padding
 <li>اگر اینترنت قطع شود، برنامه خراب نمی‌شود. آخرین اطلاعات ذخیره‌شده نمایش داده می‌شود و یک بنر زرد در بالای صفحه ظاهر می‌گردد.</li>
 <li>زنجیرهٔ فالبک: دادهٔ تازه → آخرین کش → دادهٔ جایگزین → پیام مناسب به کاربر.</li>
 <li>آب‌وهوا، اوقات شرعی، اذان، شعر، علم، سرگرمی و تنظیمات همیشه در دسترس هستند.</li>
-</ul></div>
-<div class="ah-sec"><div class="ah-h c4">📊 آمار پیشرفته <span style="background:var(--red);color:#fff;font-size:10px;padding:2px 8px;border-radius:6px;font-weight:900">جدید</span></div><ul>
-<li>ردیابی: نصب‌ها، بازگشت روزانه، صفحات محبوب، سوالات پرتکرار چت، اشتراک‌گذاری‌ها، استفاده از GPS و شهرهای محبوب.</li>
-<li>برای مشاهده، از کد مخفی <b>593</b> در صفحهٔ «درباره» استفاده کنید.</li>
 </ul></div>
 <div class="ah-sec"><div class="ah-h c1">📝 یادداشت مجله</div><ul>
 <li>یادداشت‌های سردبیر و تیم تحریریه در ۴ بخش کشویی.</li>
@@ -1008,7 +1012,7 @@ footer{text-align:center;color:var(--muted);font-size:11px;line-height:2;padding
 
 <div class="ah-sec">
 <div class="ah-h c4">💾 حافظه و داده‌ها</div>
-<div style="font-size:13px;color:var(--muted);margin-top:6px">پاک کردن داده‌های ذخیره‌شده در حافظهٔ پنهان.</div>
+<div style="font-size:13px;color:var(--muted);margin-top:6px">پاک کردن داده‌های ذخیره‌شده در حافظهٔ پنهان. همچنین کش به‌صورت <b>خودکار هر ۴۸ ساعت</b> یک‌بار پاک می‌شود.</div>
 <button class="btn" id="clearCacheBtn" style="margin-top:10px;width:100%">🗑️ پاک کردن حافظهٔ پنهان</button>
 </div>
 
@@ -1119,6 +1123,22 @@ if(!navigator.onLine)setTimeout(function(){setOfflineMode(true);},500);
 var retryBtn=document.getElementById("offlineRetry");
 if(retryBtn)retryBtn.addEventListener("click",function(){if(navigator.onLine){setOfflineMode(false);refreshAll();}else{toast("هنوز آفلاین هستید",true);}});
 
+/* ============ Auto Cache Clean (48h) ============ */
+function autoClearCacheIfNeeded(){
+  try{
+    var last=parseInt(lsGet("lastAutoCacheClear")||"0",10);
+    var now=Date.now();
+    var H48=48*60*60*1000;
+    if(now-last>=H48){
+      var keys=Object.keys(localStorage);
+      var keep=["gpsEnabled","unit","pins","city","hasOpened","lastPage","aseman_device_seen","appTheme","appFont","appColor","userName","hiddenCards","dashOrder","lastAutoCacheClear"];
+      for(var i=0;i<keys.length;i++)if(keep.indexOf(keys[i])===-1)localStorage.removeItem(keys[i]);
+      lsSet("lastAutoCacheClear",String(now));
+      console.log("🧹 کش خودکار ۴۸ ساعته پاک شد");
+    }
+  }catch(e){}
+}
+
 /* ============ Enhanced Analytics ============ */
 function trackEvent(cat,action,label){
   try{
@@ -1191,6 +1211,7 @@ function getInitialPage(){
 function bootApp(){
   if(appBooted)return;
   appBooted=true;
+  try{autoClearCacheIfNeeded();}catch(e){}
   var targetPage=getInitialPage();
   showPage(targetPage);
   try{refreshAll();}catch(e){console.error("refreshAll error:",e);}
@@ -2219,17 +2240,14 @@ function generateDailyCardImage(){
   var ctx=canvas.getContext("2d");
   ctx.textBaseline="top";
 
-  /* پس‌زمینه */
   var bg=ctx.createLinearGradient(0,0,W,H);
   bg.addColorStop(0,"#0e2340");bg.addColorStop(.4,"#1a3a5c");bg.addColorStop(.75,"#3a2d5c");bg.addColorStop(1,"#5b2b6b");
   ctx.fillStyle=bg;ctx.fillRect(0,0,W,H);
 
-  /* ستاره‌ها */
   var seed=0;var tkey=getTodayTehranKey();for(var i=0;i<tkey.length;i++)seed=(seed*31+tkey.charCodeAt(i))>>>0;
   function pr(n){seed=(seed*9301+49297)%233280;return (seed/233280);}
   for(var s=0;s<150;s++){var x=pr()*W,y=pr()*H,r=pr()*1.8+.4;ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.fillStyle="rgba(255,255,255,"+(pr()*.6+.2)+")";ctx.fill();}
 
-  /* هدر */
   ctx.fillStyle="rgba(255,255,255,.13)";
   drawRoundedRect(ctx,50,50,W-100,140,24);ctx.fill();
 
@@ -2242,7 +2260,6 @@ function generateDailyCardImage(){
   ctx.font="700 26px Tahoma,Arial,sans-serif";
   ctx.fillText("به آسمان نگاه کن.",W-80,142);
 
-  /* عنوان اصلی */
   var d=buildDailyCardData();
   var y=250;
   ctx.textAlign="center";
@@ -2254,7 +2271,6 @@ function generateDailyCardImage(){
   ctx.fillText(d.weekday+" · "+d.jalali,W/2,y+76);
   y+=190;
 
-  /* ردیف‌ها */
   var rows=[
     {ic:"🌤️",label:"هوای "+d.city,r:d.weather.desc+" · "+(d.weather.temp!=null?T1(d.weather.temp)+D():"--")},
     {ic:"🕌",label:"اذان بعدی",r:d.prayer.name+" · "+d.prayer.time},
@@ -2275,7 +2291,6 @@ function generateDailyCardImage(){
     y+=130;
   }
 
-  /* بیت */
   ctx.fillStyle="rgba(255,209,102,.14)";
   drawRoundedRect(ctx,70,y,W-140,220,20);ctx.fill();
   ctx.fillStyle="#ffd166";
@@ -2290,7 +2305,6 @@ function generateDailyCardImage(){
   }
   y+=250;
 
-  /* دانستنی */
   ctx.fillStyle="rgba(45,212,161,.14)";
   drawRoundedRect(ctx,70,y,W-140,200,20);ctx.fill();
   ctx.fillStyle="#7fffd4";
@@ -2300,7 +2314,6 @@ function generateDailyCardImage(){
   ctx.font="700 26px Tahoma,Arial,sans-serif";
   wrapTextFa(ctx,d.fact.text,W-100,y+80,W-200,40,3);
 
-  /* فوتر */
   var fy=H-190;
   ctx.fillStyle="rgba(255,255,255,.08)";
   drawRoundedRect(ctx,70,fy,W-140,140,20);ctx.fill();
@@ -2510,12 +2523,12 @@ var SUG_ANSWERS={
 
   "تغییر حالت نمایش":"🎨 صفحهٔ «تنظیمات» ← «حالت نمایش».",
   "تغییر اندازه فونت":"🔤 صفحهٔ «تنظیمات» ← «اندازهٔ فونت».",
-  "تغییر رنگ برنامه":"🎨 صفحهٔ «تنظیمات» ← «رنگ اصلی برنامه».",
+  "تغییر رنگ برنامه":"🎨 صفحهٔ «تنظیمات» ← «رنگ اصلی برنامه». با انتخاب هر رنگ، هاله پس‌زمینه، پوشش صفحه‌های قهرمانانه و عنوان برند هم تغییر می‌کنند.",
   "فعال کردن GPS":"📍 صفحهٔ «تنظیمات» ← «دسترسی به موقعیت مکانی» ← روشن.",
   "غیرفعال کردن GPS":"📍 صفحهٔ «تنظیمات» ← «دسترسی به موقعیت مکانی» ← خاموش.",
   "تغییر واحد دما":"🌡️ صفحهٔ «تنظیمات» ← «واحد دما».",
   "پاک کردن پین‌ها":"📌 صفحهٔ «تنظیمات» ← «مدیریت پین‌ها».",
-  "پاک کردن حافظه":"💾 صفحهٔ «تنظیمات» ← «حافظه و داده‌ها».",
+  "پاک کردن حافظه":"💾 صفحهٔ «تنظیمات» ← «حافظه و داده‌ها». همچنین کش به‌صورت خودکار هر ۴۸ ساعت پاک می‌شود.",
   "درباره سازنده":"👤 سازنده: م.حسینی. ارتباط: eitaa.com/hossini_96"
 };
 
@@ -2673,7 +2686,7 @@ function renderSettingsPage(){
   var clearPins=document.getElementById("clearPinsBtn");
   if(clearPins){clearPins.removeEventListener("click",clearPins._h);clearPins._h=function(){var unlocked=[];for(var i=0;i<pins.length;i++)if(pins[i].locked)unlocked.push(pins[i]);pins=unlocked;savePins();updatePinBtn();var pc=document.getElementById("pinsCount");if(pc)pc.textContent=pins.length;show("✅ پین‌ها پاک شدند","ok");};clearPins.addEventListener("click",clearPins._h);}
   var clearCache=document.getElementById("clearCacheBtn");
-  if(clearCache){clearCache.removeEventListener("click",clearCache._h);clearCache._h=function(){try{var keys=Object.keys(localStorage);var keep=["gpsEnabled","unit","pins","city","hasOpened","lastPage","aseman_device_seen","appTheme","appFont","appColor","userName","hiddenCards","dashOrder"];for(var i=0;i<keys.length;i++)if(keep.indexOf(keys[i])===-1)localStorage.removeItem(keys[i]);show("✅ حافظه پاک شد","ok");setTimeout(function(){location.reload();},1000);}catch(e){show("⚠️ خطا","err");}};clearCache.addEventListener("click",clearCache._h);}
+  if(clearCache){clearCache.removeEventListener("click",clearCache._h);clearCache._h=function(){try{var keys=Object.keys(localStorage);var keep=["gpsEnabled","unit","pins","city","hasOpened","lastPage","aseman_device_seen","appTheme","appFont","appColor","userName","hiddenCards","dashOrder","lastAutoCacheClear"];for(var i=0;i<keys.length;i++)if(keep.indexOf(keys[i])===-1)localStorage.removeItem(keys[i]);lsSet("lastAutoCacheClear",String(Date.now()));show("✅ حافظه پاک شد","ok");setTimeout(function(){location.reload();},1000);}catch(e){show("⚠️ خطا","err");}};clearCache.addEventListener("click",clearCache._h);}
   var sv=document.getElementById("settingsVersion");if(sv)sv.textContent=APP_VERSION;
 }
 
@@ -2816,4 +2829,4 @@ console.log("✅ مجله آسمان v"+APP_VERSION+" — منتظر تأیید 
 })();
 </script>
 </body>
-</html>
+  </html>
