@@ -1,5 +1,5 @@
 /* Service Worker مجله آسمان */
-const CACHE_NAME = 'aseman-shell-v18';
+const CACHE_NAME = 'aseman-shell-v19';
 const SHELL = [
   './',
   './index.html',
