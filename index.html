@@ -66,6 +66,22 @@ button,input,select,textarea{font:inherit}button{cursor:pointer;color:inherit;ba
 .mag-tab[draggable="true"]{cursor:grab}
 .mag-tab[draggable="true"]:active{cursor:grabbing}
 
+/* ===== Version Toast ===== */
+.version-toast{position:fixed;top:16px;left:50%;transform:translateX(-50%) translateY(-40px);width:min(400px,calc(100vw - 24px));padding:16px 18px;background:linear-gradient(165deg,#0e2340,#1a3a5c 60%,#2a1a5c);border:2px solid rgba(57,198,255,.55);border-radius:20px;box-shadow:0 20px 60px rgba(0,0,0,.55),0 0 40px rgba(57,198,255,.25);z-index:99998;opacity:0;pointer-events:none;transition:opacity .45s ease,transform .45s ease;color:#fff;font-family:inherit}
+.version-toast.show{opacity:1;transform:translateX(-50%) translateY(0);pointer-events:auto}
+.vt-head{display:flex;align-items:center;gap:10px;margin-bottom:10px;padding-bottom:10px;border-bottom:1px dashed rgba(255,255,255,.2)}
+.vt-icon{font-size:26px;animation:vtFloat 1.5s ease-in-out infinite}
+@keyframes vtFloat{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-4px) scale(1.05)}}
+.vt-title{flex:1;font-weight:900;font-size:15px;color:#ffd166;line-height:1.5}
+.vt-close{width:28px;height:28px;border-radius:8px;background:rgba(230,57,70,.9);color:#fff;font-size:14px;font-weight:900;border:none;cursor:pointer;display:grid;place-items:center;transition:.2s;flex-shrink:0}
+.vt-close:hover{background:#e63946;transform:scale(1.05)}
+.vt-version{font-size:13px;color:#7fffd4;font-weight:800;margin-bottom:10px}
+.vt-version b{color:#fff;font-size:15px}
+.vt-changes{font-size:12.5px;line-height:1.9;color:#eaf3fb;max-height:160px;overflow-y:auto}
+.vt-changes .vt-line{display:block;padding:4px 0 4px 4px;border-bottom:1px dashed rgba(255,255,255,.1);color:#dbe9f5}
+.vt-changes .vt-line:last-child{border-bottom:none}
+@media(max-width:560px){.version-toast{top:8px;width:calc(100vw - 16px);padding:12px 14px}.vt-title{font-size:13.5px}.vt-changes{font-size:11.5px;max-height:130px}}
+
 /* ===== Bottom Nav ===== */
 .bottom-nav{display:none}
 @media(max-width:900px){
@@ -81,7 +97,6 @@ button,input,select,textarea{font:inherit}button{cursor:pointer;color:inherit;ba
   .chat-fab{bottom:calc(300px + env(safe-area-inset-bottom,0px)) !important}
 }
 
-/* ===== Bottom Nav Sheet ===== */
 .bn-sheet{display:none;position:fixed;inset:0;z-index:9997}
 .bn-sheet.show{display:block}
 .bn-sheet-backdrop{position:absolute;inset:0;background:#000;animation:fadeIn .25s ease-out}
@@ -177,6 +192,9 @@ body[data-theme="light"] .day-tab{color:#0a1628;border-color:#c3ccd6;background:
 .sectionhead{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;background:linear-gradient(145deg,rgba(57,198,255,.10),rgba(139,92,246,.06));border-radius:14px;padding:12px 16px;border:1px solid rgba(255,255,255,.1);cursor:pointer;user-select:none;transition:border-color .2s,background .3s}
 .sectionhead:hover{border-color:rgba(57,198,255,.4)}
 body[data-theme="light"] .sectionhead{background:linear-gradient(145deg,rgba(57,198,255,.16),rgba(139,92,246,.10));border-color:rgba(0,0,0,.08)}
+/* رنگی‌تر شدن هدر «شاخص امروز/فردا» */
+#detailsSectionHead{background:linear-gradient(145deg,rgba(57,198,255,.28),rgba(139,92,246,.18))!important}
+body[data-theme="light"] #detailsSectionHead{background:linear-gradient(145deg,rgba(57,198,255,.32),rgba(139,92,246,.22))!important}
 .weather-section-title{font-size:19px;font-weight:900}
 .arrow{background:rgba(255,255,255,.08);font-size:16px;color:var(--muted);width:34px;height:34px;border-radius:10px;border:1px solid rgba(255,255,255,.15)}
 .collapse{overflow:hidden;max-height:6000px;transition:max-height .4s}.collapsed{max-height:0!important}
@@ -206,34 +224,37 @@ body[data-theme="light"] .about-intro{color:#3a2a10}
 .about-poem .signature{text-align:center;margin-top:14px}
 .about-poem .signature .sig-line1{display:block;font-weight:800;color:var(--gold);font-size:15px;margin-bottom:4px}
 .about-poem .signature .sig-line2{display:block;font-weight:900;color:#ffd9a0;font-size:16px}
-.btn-creator{display:inline-block;padding:8px 22px;background:rgba(255,255,255,.08);color:var(--text);text-decoration:none;border-radius:12px;font-family:inherit;font-size:13px;font-weight:800;transition:.3s;cursor:pointer;border:1px solid rgba(255,255,255,.25)}
-.btn-creator:hover{background:rgba(255,255,255,.15);transform:translateY(-1px)}
+/* دکمهٔ ارتباط با سازنده: هم‌اندازهٔ دکمهٔ نصب خودکار و رنگی */
+.btn-creator{display:block;width:100%;padding:14px;background:linear-gradient(135deg,#8b5cf6,#ec4899);color:#fff;text-decoration:none;border-radius:12px;font-family:inherit;font-size:15px;font-weight:900;transition:.2s;cursor:pointer;border:none;box-shadow:0 6px 18px rgba(139,92,246,.35);margin-top:10px;text-align:center}
+.btn-creator:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(139,92,246,.5)}
 .about-drawers{display:flex;flex-direction:column;gap:14px;margin-top:8px}
-.about-drawer{border:2px solid rgba(255,255,255,.13);border-radius:22px;overflow:hidden;background:linear-gradient(145deg,rgba(255,255,255,.09),rgba(255,255,255,.03));box-shadow:0 12px 32px rgba(0,0,0,.22);transition:.25s}
-.about-drawer:hover{border-color:rgba(57,198,255,.4)}
-.about-drawer.d-intro{border-color:rgba(255,209,102,.4)}
-.about-drawer.d-mag{border-color:rgba(57,198,255,.4)}
-.about-drawer.d-guide{border-color:rgba(45,212,161,.4)}
-.about-drawer.d-settings{border-color:rgba(139,92,246,.4)}
-.about-drawer-head{padding:16px 20px;display:flex;justify-content:space-between;align-items:center;gap:10px;cursor:pointer;user-select:none;background:linear-gradient(145deg,rgba(57,198,255,.14),rgba(139,92,246,.08))}
-.about-drawer.d-intro .about-drawer-head{background:linear-gradient(145deg,rgba(57,198,255,.14),rgba(139,92,246,.08))}
-.about-drawer.d-mag .about-drawer-head{background:linear-gradient(145deg,rgba(57,198,255,.14),rgba(139,92,246,.08))}
-.about-drawer.d-guide .about-drawer-head{background:linear-gradient(145deg,rgba(57,198,255,.14),rgba(139,92,246,.08))}
-.about-drawer.d-settings .about-drawer-head{background:linear-gradient(145deg,rgba(57,198,255,.14),rgba(139,92,246,.08))}
-.about-drawer-head .adh-title{font-size:17px;font-weight:900;color:var(--text);display:flex;align-items:center;gap:10px}
-.about-drawer-head .adh-icon{font-size:22px}
-.about-drawer-head .adh-arrow{font-size:18px;color:var(--muted);transition:transform .35s}
-.about-drawer.open .about-drawer-head .adh-arrow{transform:rotate(180deg);color:var(--text)}
-.about-drawer-body{max-height:0;overflow:hidden;transition:max-height .55s ease}
-.about-drawer.open .about-drawer-body{max-height:8000px}
-.about-drawer-inner{padding:0 22px 20px}
-.about-creator-fixed{text-align:center;margin-top:20px;padding:16px;border-radius:20px;background:linear-gradient(135deg,rgba(57,198,255,.14),rgba(139,92,246,.08));border:1px solid rgba(57,198,255,.35)}
-.about-creator-fixed .acf-title{font-size:13px;font-weight:800;color:var(--muted);margin-bottom:10px}
 .about-help{display:grid;gap:12px;margin-top:14px}
 .ah-sec{border:1px solid var(--line);border-radius:16px;padding:12px 14px;background:var(--card-bg2)}
 .ah-h{font-size:15px;font-weight:900;margin-bottom:6px;display:flex;align-items:center;gap:6px}
 .ah-h.c1{color:var(--accent)}.ah-h.c2{color:#2dd4a3}.ah-h.c3{color:#ff6b7a}.ah-h.c4{color:var(--gold)}.ah-h.c5{color:#b197fc}.ah-h.c6{color:#7ecbff}.ah-h.c7{color:#ec4899}
 .ah-sec ul{margin:0;padding-right:18px;font-size:14px;line-height:1.9;color:var(--muted)}
+
+/* ===== Guide Drawers ===== */
+.guide-drawer{margin-top:14px;border:2px solid rgba(255,255,255,.13);border-radius:20px;overflow:hidden;background:linear-gradient(145deg,rgba(255,255,255,.05),rgba(255,255,255,.02));box-shadow:0 8px 24px rgba(0,0,0,.18);transition:.25s}
+.guide-drawer:hover{border-color:rgba(57,198,255,.35)}
+.guide-drawer-head{padding:16px 20px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:10px;font-weight:900;font-size:16px;color:var(--text);user-select:none;background:linear-gradient(145deg,rgba(57,198,255,.14),rgba(139,92,246,.08))}
+.guide-drawer-head .gd-arrow{font-size:18px;color:var(--muted);transition:transform .35s;flex-shrink:0}
+.guide-drawer.open .guide-drawer-head .gd-arrow{transform:rotate(180deg);color:var(--text)}
+.guide-drawer.open{border-color:rgba(57,198,255,.5)}
+.guide-drawer-body{max-height:0;overflow:hidden;transition:max-height .6s ease;padding:0 18px}
+.guide-drawer.open .guide-drawer-body{max-height:9000px;padding:18px 18px 6px}
+.guide-drawer-inner{padding:0 0 4px}
+.guide-drawer-close{display:block;width:100%;margin:12px 0 8px;padding:12px;background:rgba(255,107,122,.12);border:1px solid rgba(255,107,122,.35);color:#ff9aa8;border-radius:12px;font-weight:900;font-size:14px;font-family:inherit;cursor:pointer;transition:.2s}
+.guide-drawer-close:hover{background:rgba(255,107,122,.25);color:#fff}
+
+.guide-install-section{padding:0;border-radius:0;background:transparent;border:none;margin:0}
+.gis-desc{font-size:13.5px;line-height:2;color:var(--text);margin-bottom:14px;padding:10px 12px;background:rgba(57,198,255,.08);border-right:3px solid var(--accent);border-radius:0 10px 10px 0}
+.gis-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;margin-bottom:4px}
+.gis-item{padding:14px;border-radius:14px;background:var(--card-bg);border:1px solid var(--line)}
+.gis-browser{font-weight:900;font-size:14px;color:var(--accent);margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.gis-steps{font-size:12.5px;line-height:2;color:var(--text)}
+.guide-install-btn{display:block;width:100%;padding:14px;background:linear-gradient(135deg,#ffd166,#ff8c42);color:#3a1a00;border:none;border-radius:12px;font-weight:900;font-size:15px;font-family:inherit;cursor:pointer;transition:.2s;box-shadow:0 6px 18px rgba(255,209,102,.3);margin-top:14px}
+.guide-install-btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(255,209,102,.45)}
 
 .dash-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin-top:8px}
 .dash-card{padding:18px 20px;border-radius:20px;background:linear-gradient(145deg,rgba(255,255,255,.10),rgba(255,255,255,.04));border:1px solid var(--line);box-shadow:0 8px 24px rgba(0,0,0,.2);transition:.25s;position:relative;overflow:hidden;user-select:none}
@@ -276,8 +297,10 @@ body[data-theme="light"] .about-intro{color:#3a2a10}
 .dc-share-btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(255,209,102,.4)}
 .dc-share-btn.ghost{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.25)}
 .dc-share-btn.ghost:hover{background:rgba(255,255,255,.18);box-shadow:none}
+/* رنگی‌تر شدن هدر «مدیریت کارت‌های داشبورد» */
 .dash-manage{border:1px solid rgba(255,255,255,.15);border-radius:20px;background:var(--card-bg2);margin-bottom:14px;overflow:hidden}
-.dash-manage .dm-head{padding:14px 18px;font-weight:900;font-size:15px;display:flex;justify-content:space-between;align-items:center;gap:8px;color:var(--text);cursor:pointer;user-select:none;background:linear-gradient(145deg,rgba(57,198,255,.08),rgba(139,92,246,.04))}
+.dash-manage .dm-head{padding:14px 18px;font-weight:900;font-size:15px;display:flex;justify-content:space-between;align-items:center;gap:8px;color:var(--text);cursor:pointer;user-select:none;background:linear-gradient(145deg,rgba(57,198,255,.28),rgba(139,92,246,.18))}
+body[data-theme="light"] .dash-manage .dm-head{background:linear-gradient(145deg,rgba(57,198,255,.32),rgba(139,92,246,.22))}
 .dash-manage .dm-head .dm-arrow{font-size:18px;color:var(--muted);transition:transform .35s}
 .dash-manage.open .dm-head .dm-arrow{transform:rotate(180deg);color:var(--text)}
 .dash-manage .dm-body{max-height:0;overflow:hidden;transition:max-height .45s ease}
@@ -315,7 +338,6 @@ body[data-theme="light"] .about-intro{color:#3a2a10}
 .note-toggle-btn:hover{background:rgba(255,255,255,.09);color:var(--text)}
 .note-card.open .note-toggle-btn{color:var(--text)}
 
-/* ===== Poetry / Culture ===== */
 .poetry-mini-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;margin-top:14px}
 .poetry-mini{padding:14px 16px;border-radius:14px;position:relative;overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,.2)}
 .poetry-mini::before{content:"";position:absolute;top:0;right:0;width:50px;height:50px;border-radius:0 0 0 50px;opacity:.15}
@@ -340,7 +362,6 @@ body[data-theme="light"] .about-intro{color:#3a2a10}
 .culture-card .cc-title{font-weight:900;font-size:15px;color:var(--text)}
 .culture-card .cc-desc{font-size:13px;color:var(--muted);line-height:1.6}
 
-/* ===== Fact cards ===== */
 .fact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;margin-top:14px}
 .fact-card{padding:16px 18px;border-radius:16px;background:linear-gradient(145deg,rgba(255,255,255,.08),rgba(255,255,255,.03));border:1px solid var(--line);position:relative;overflow:hidden}
 .fact-card .fact-num{position:absolute;top:10px;left:12px;font-size:32px;font-weight:900;color:rgba(57,198,255,.18);line-height:1}
@@ -348,7 +369,6 @@ body[data-theme="light"] .about-intro{color:#3a2a10}
 .fact-card .fact-title{font-weight:900;font-size:16px;color:var(--text);margin-bottom:6px}
 .fact-card .fact-text{font-size:14px;line-height:1.9;color:var(--text)}
 
-/* ===== Fun boxes ===== */
 .fun-joke-box{padding:20px;border-radius:16px;background:linear-gradient(135deg,rgba(255,209,102,.15),rgba(255,140,66,.08));border:2px solid rgba(255,209,102,.3);text-align:center;margin-bottom:14px;position:relative}
 .fun-joke-box .fj-text{font-size:16px;line-height:2;color:var(--text);font-weight:700}
 .fun-joke-box .fj-btn{margin-top:12px;padding:8px 20px;background:rgba(255,209,102,.2);border:1px solid rgba(255,209,102,.4);border-radius:10px;color:#ffd166;font-weight:800;cursor:pointer;font-family:inherit}
@@ -358,7 +378,6 @@ body[data-theme="light"] .about-intro{color:#3a2a10}
 .fun-puzzle-box .fp-answer{margin-top:14px;padding:12px 16px;background:rgba(45,212,161,.15);border:1px solid rgba(45,212,161,.4);border-radius:10px;color:var(--text);font-size:15px;line-height:1.9}
 .fun-puzzle-box .fp-answer b{color:#7fffd4}
 
-/* ===== APOD / Calc ===== */
 .apod-box{margin-top:14px;padding:0;background:var(--card-bg);border:1px solid var(--line);border-radius:20px;overflow:hidden}
 .apod-img{width:100%;display:block;max-height:420px;object-fit:cover;background:#000}
 .apod-body{padding:16px 18px}
@@ -382,7 +401,31 @@ body[data-theme="light"] .about-intro{color:#3a2a10}
 .calc-info{margin-top:14px;padding:14px 16px;background:linear-gradient(135deg,rgba(45,212,161,.1),rgba(57,198,255,.06));border-right:3px solid var(--green);border-radius:0 14px 14px 0;font-size:13px;line-height:2;color:var(--text)}
 .calc-info b{color:var(--green)}
 
-/* ===== Travel ===== */
+.ing-box{margin-top:16px;padding:16px 18px;border-radius:18px;background:linear-gradient(145deg,rgba(45,212,161,.12),rgba(57,198,255,.06));border:2px solid rgba(45,212,161,.35)}
+.ing-box .ing-title{font-size:15px;font-weight:900;color:#7fffd4;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.ing-box .ing-hint{font-size:12.5px;color:var(--muted);line-height:1.9;margin-bottom:10px;padding:8px 10px;background:rgba(0,0,0,.15);border-radius:10px;border-right:3px solid var(--green)}
+.ing-box textarea{width:100%;padding:12px 14px;background:var(--card-bg);border:1px solid var(--line);border-radius:12px;color:var(--text);font-family:inherit;font-size:14px;outline:none;transition:.2s;min-height:70px;resize:vertical}
+.ing-box textarea:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(45,212,161,.15)}
+.ing-box .ing-btn{width:100%;padding:12px;margin-top:10px;background:linear-gradient(135deg,var(--green),var(--accent));border:none;border-radius:12px;color:#04101d;font-weight:900;font-size:14px;font-family:inherit;cursor:pointer;transition:.2s}
+.ing-box .ing-btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(45,212,161,.4)}
+.ing-result{margin-top:12px;display:none}
+.ing-result.show{display:block;animation:fadeIn .35s ease-out}
+.ing-recipe{padding:14px 16px;border-radius:14px;background:var(--card-bg);border:1px solid var(--line);margin-top:8px;position:relative;overflow:hidden}
+.ing-recipe.highlight{border-color:var(--gold);background:linear-gradient(145deg,rgba(255,209,102,.12),rgba(255,140,66,.04))}
+.ing-recipe .ir-name{font-weight:900;font-size:15px;color:var(--text);display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.ing-recipe .ir-emoji{font-size:22px}
+.ing-recipe .ir-meta{font-size:12px;color:var(--muted);margin-bottom:6px;display:flex;flex-wrap:wrap;gap:8px}
+.ing-recipe .ir-meta span{padding:2px 8px;border-radius:6px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1)}
+.ing-recipe .ir-desc{font-size:13px;line-height:1.9;color:var(--text);white-space:pre-line}
+.ing-recipe .ir-badge{display:inline-block;padding:2px 10px;border-radius:6px;font-size:11px;font-weight:900;background:linear-gradient(135deg,#2dd4a3,#39c6ff);color:#04101d;margin-bottom:6px}
+
+.news-item{padding:14px 16px;border-radius:14px;background:var(--card-bg);border:1px solid var(--line);margin-bottom:10px;text-decoration:none;color:var(--text);display:block;transition:.2s}
+.news-item:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:0 8px 20px rgba(57,198,255,.15)}
+.news-item .ni-title{font-weight:900;font-size:15px;line-height:1.7;color:var(--text);margin-bottom:6px}
+.news-item .ni-meta{font-size:11px;color:var(--muted);display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.news-item .ni-desc{font-size:13px;line-height:1.9;color:var(--muted);margin-top:6px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.news-item .ni-source{color:var(--gold);font-weight:800}
+
 .travel-summary{margin:0;padding:4px 0;font-size:15px;line-height:1.9}
 .travel-summary .ts-note{font-size:13px;color:var(--muted);margin-bottom:14px;line-height:1.9}
 .travel-summary .ts-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px dashed rgba(255,255,255,.08);gap:10px}
@@ -453,7 +496,6 @@ body[data-theme="light"] .mini-title{color:#0a2540}
 .travel-acc-group.open .travel-acc-body,.culture-acc-group.open .culture-acc-body,.fun-acc-group.open .fun-acc-body{max-height:3000px;padding:14px 14px 4px}
 .news-group{font-weight:800;margin:12px 0 6px;font-size:16px;color:var(--gold)}
 
-/* ===== SMART SPORT PLANNER ==== */
 .sp-hero{margin:8px 0 4px;padding:18px 20px;border-radius:20px;background:linear-gradient(135deg,rgba(45,212,161,.18),rgba(57,198,255,.1));border:2px solid rgba(45,212,161,.4);display:flex;align-items:center;gap:14px}
 .sp-hero .sph-icon{font-size:40px;flex-shrink:0}
 .sp-hero .sph-txt{flex:1;min-width:0}
@@ -541,7 +583,6 @@ body[data-theme="light"] .mini-title{color:#0a2540}
 .sp-share-btn{width:100%;padding:14px;background:linear-gradient(135deg,var(--accent),var(--accent2));border:none;border-radius:12px;color:#fff;font-weight:900;font-size:15px;font-family:inherit;cursor:pointer;transition:.2s;margin-top:14px}
 .sp-share-btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(57,198,255,.4)}
 
-/* ===== Chat ===== */
 .chat-suggestions{display:flex;overflow-x:auto;gap:6px;padding:10px 12px;background:linear-gradient(135deg,#6d28d9,#be185d);scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.3) transparent;direction:ltr}
 .chat-suggestions::-webkit-scrollbar{height:6px}
 .chat-suggestions::-webkit-scrollbar-thumb{background:rgba(255,255,255,.3);border-radius:3px}
@@ -576,7 +617,6 @@ body[data-theme="light"] .mini-title{color:#0a2540}
 .modal-title{font-size:20px;font-weight:900;margin-bottom:14px;text-align:center;color:#fff}
 .modal-text{line-height:2.2;font-size:15px;color:#eef1ff;text-align:right;white-space:pre-line}
 
-/* ===== Install Modal ===== */
 .install-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(4,6,18,.95);z-index:10000;display:none;align-items:center;justify-content:center;padding:12px;overflow-y:auto}
 .install-overlay.show{display:flex;animation:fadeIn .4s ease-out}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
@@ -606,9 +646,8 @@ body[data-theme="light"] .mini-title{color:#0a2540}
 .install-size-note{margin-top:12px;padding:12px 14px;border-radius:10px;background:linear-gradient(135deg,rgba(45,212,161,.12),rgba(57,198,255,.08));border:1px solid rgba(45,212,161,.3);font-size:12px;line-height:1.9;color:#d4f5e8;text-align:right;word-wrap:break-word;overflow-wrap:anywhere}
 .install-size-note .isn-head{font-weight:900;color:#7fffd4;font-size:13px;display:block;margin-bottom:3px}
 .install-btn{display:block;width:100%;margin-top:14px;padding:14px;background:linear-gradient(135deg,#39c6ff,#4f7cff);color:#fff;border:none;border-radius:12px;font-size:15px;font-weight:900;cursor:pointer;font-family:inherit}
-.install-version{margin-top:14px;padding:10px 12px;border-radius:10px;background:rgba(0,0,0,.22);border:1px dashed rgba(255,255,255,.14);text-align:center}
-.install-version .iv-version{font-size:11px;font-weight:900;color:var(--cyan);margin-bottom:5px}
-.install-version .iv-changelog{font-size:10.5px;line-height:1.8;color:var(--muted);text-align:right;word-wrap:break-word;overflow-wrap:anywhere}
+.install-version{margin-top:14px;padding:12px;border-radius:10px;background:rgba(0,0,0,.22);border:1px dashed rgba(255,255,255,.14);text-align:center}
+.install-version .iv-version{font-size:14px;font-weight:900;color:var(--cyan);letter-spacing:.5px}
 
 footer{text-align:center;color:var(--muted);font-size:11px;line-height:2;padding:25px 0 35px}
 .muted{color:var(--muted);font-size:13px}
@@ -619,19 +658,17 @@ footer{text-align:center;color:var(--muted);font-size:11px;line-height:2;padding
 .switch input:checked+.slider{background:linear-gradient(135deg,var(--accent),var(--accent2))}
 .switch input:checked+.slider:before{transform:translateX(-24px)}
 
-/* ===== Color Picker ===== */
-.color-picker{display:grid;grid-template-columns:repeat(7,1fr);gap:10px;margin-top:12px}
-.color-dot{width:100%;aspect-ratio:1;border-radius:50%;border:3px solid transparent;cursor:pointer;transition:.2s;position:relative;padding:0}
-.color-dot:hover{transform:scale(1.1)}
-.color-dot.active{border-color:#fff;box-shadow:0 0 0 3px rgba(255,255,255,.2),0 6px 16px rgba(0,0,0,.3);transform:scale(1.05)}
-body[data-theme="light"] .color-dot.active{border-color:#0a1628;box-shadow:0 0 0 3px rgba(10,22,40,.15)}
+.color-picker{display:grid;grid-template-columns:repeat(6,32px);gap:10px;margin-top:12px;justify-content:flex-start;padding:0 4px}
+.color-dot{width:32px;height:32px;border-radius:50%;border:3px solid transparent;cursor:pointer;transition:.2s;position:relative;padding:0}
+.color-dot:hover{transform:scale(1.12)}
+.color-dot.active{border-color:#fff;box-shadow:0 0 0 2px rgba(255,255,255,.2),0 4px 10px rgba(0,0,0,.3);transform:scale(1.05)}
+body[data-theme="light"] .color-dot.active{border-color:#0a1628;box-shadow:0 0 0 2px rgba(10,22,40,.15)}
 .color-dot[data-color="blue"]{background:#39c6ff}
 .color-dot[data-color="purple"]{background:#8b5cf6}
 .color-dot[data-color="green"]{background:#2dd4a3}
 .color-dot[data-color="orange"]{background:#ff8c42}
 .color-dot[data-color="pink"]{background:#ec4899}
 .color-dot[data-color="indigo"]{background:#4f46e5}
-.color-dot[data-color="mixed"]{background:linear-gradient(135deg,#39c6ff,#ec4899)}
 
 @media(max-width:900px){.scene{grid-template-columns:1fr}}
 @media(max-width:560px){
@@ -654,11 +691,20 @@ body[data-theme="light"] .color-dot.active{border-color:#0a1628;box-shadow:0 0 0
   .sp-form-grid{grid-template-columns:1fr}
   .sp-week-dots{gap:3px}
   .sp-day-dot{font-size:9px;padding:6px 2px}
-  .color-picker{grid-template-columns:repeat(4,1fr)}
+  .color-picker{grid-template-columns:repeat(6,28px);gap:8px}
+  .color-dot{width:28px;height:28px}
 }
 </style>
 </head>
 <body data-theme="dark" data-font="normal" data-color="blue">
+
+<!-- ===== Version Toast ===== -->
+<div class="version-toast" id="versionToast">
+<div class="vt-head"><span class="vt-icon">🎉</span><span class="vt-title">نسخهٔ جدید نصب شد!</span><button class="vt-close" id="vtClose" aria-label="بستن">✕</button></div>
+<div class="vt-version">📌 نسخهٔ <b id="vtVer">--</b></div>
+<div class="vt-changes" id="vtChanges">--</div>
+</div>
+
 <div id="bgP"></div>
 <div id="pullInd">برای به‌روزرسانی بکشید</div>
 <div class="share-toast" id="shareToast"></div>
@@ -680,8 +726,7 @@ body[data-theme="light"] .color-dot.active{border-color:#0a1628;box-shadow:0 0 0
 <div class="install-size-note"><span class="isn-head">💾 حجم بسیار کم.</span>تنها چند مگابایت از حافظه گوشی شما را اشغال می‌کند.</div>
 <button class="install-btn" id="installOk">✓ متوجه شدم</button>
 <div class="install-version">
-<div class="iv-version">📌 نسخهٔ ۱٫۱٫۰</div>
-<div class="iv-changelog">• صفحهٔ ورزشی به «سلامتی» تبدیل شد<br>• افزودن نوار پایین برای موبایل با شیت «بیشتر»<br>• انتقال BMI/BMR به صفحهٔ سلامتی<br>• اشتراک‌گذاری برنامهٔ ورزشی به‌صورت تصویر<br>• حذف صفحهٔ سلامت و لینک‌های ورزشی<br>• به‌روزرسانی دستیار هوشمند و راهنما</div>
+<div class="iv-version">📌 نسخهٔ ۱٫۱٫۲</div>
 </div>
 </div>
 </div>
@@ -690,7 +735,6 @@ body[data-theme="light"] .color-dot.active{border-color:#0a1628;box-shadow:0 0 0
 <header class="top">
 <div class="brand"><div class="logo">🌌</div><div class="brand-text"><h1>مجله آسمان</h1><div class="brand-sub">به آسمان نگاه کن.</div></div></div>
 <nav class="mag-nav" id="magNav">
-<button class="mag-tab" data-page="about">📖 درباره</button>
 <button class="mag-tab" data-page="myday">⭐ آسمان من</button>
 <button class="mag-tab" data-page="notes">📝 یادداشت مجله</button>
 <button class="mag-tab" data-page="home">⛅ آب‌وهوا</button>
@@ -705,13 +749,13 @@ body[data-theme="light"] .color-dot.active{border-color:#0a1628;box-shadow:0 0 0
 <div id="status" class="status"></div>
 <div id="offlineBanner" class="offline-banner"><span class="ob-icon">📴</span><span class="ob-text">آخرین اطلاعات ذخیره‌شده نمایش داده می‌شود.</span><button class="ob-btn" id="offlineRetry">تلاش مجدد</button></div>
 
-<!-- ============ ABOUT PAGE ============ -->
-<section class="mag-page" id="page-about">
-<div class="page-hero"><div><h2 class="page-title">دربارهٔ مجله و سازنده</h2><div class="page-subtitle">آشنایی با مجلهٔ آسمان و راهنمای کامل بخش‌ها</div></div></div>
-<section class="panel section">
-<div class="about-drawers" id="aboutDrawers">
+<!-- ============ GUIDE PAGE ============ -->
+<section class="mag-page" id="page-guide" hidden>
+<div class="page-hero"><div><h2 class="page-title">📖 راهنمای مجله</h2><div class="page-subtitle">راهنمای نصب و بخش‌های مختلف</div></div></div>
 
-<!-- Note-style: درباره آسمان -->
+<section class="panel section">
+
+<!-- دربارهٔ آسمان -->
 <div class="note-card n1" data-about-card="intro">
 <div class="note-head" data-about-toggle>
 <div class="nh-title"><span class="nh-icon">🌌</span><span>دربارهٔ آسمان</span></div>
@@ -724,41 +768,42 @@ body[data-theme="light"] .color-dot.active{border-color:#0a1628;box-shadow:0 0 0
 <button class="note-toggle-btn" type="button" data-about-toggle>▼ نمایش بیشتر</button>
 </div>
 
-<!-- Note-style: یادداشت سردبیر -->
-<div class="note-card n2" data-about-card="magazine">
-<div class="note-head" data-about-toggle>
-<div class="nh-title"><span class="nh-icon">✍️</span><span>یادداشت سردبیر</span></div>
-<span class="nh-arrow">⌄</span>
+<!-- Drawer 1: راهنمای نصب -->
+<div class="guide-drawer" data-guide="install" style="margin-top:14px">
+<div class="guide-drawer-head" data-guide-toggle="install">
+<span>📲 راهنمای نصب برنامه</span>
+<span class="gd-arrow">⌄</span>
 </div>
-<div class="note-preview">✍️ سخنی از سردبیر مجلهٔ آسمان — «م. حسینی»</div>
-<div class="note-drawer"><div class="note-drawer-inner">سلام،
-به «مجله آسمان» خوش آمدید؛
-جایی برای چند دقیقه مکث، در میان شتاب روزمره.
-
-«آسمان» یک مجله دیجیتال برای زندگی روزانه است؛ اما تلاش کرده‌ایم فقط مجموعه‌ای از مطالب و اطلاعات نباشد. می‌خواهیم پنجره‌ای باشد رو به چیزهایی که هر روز با آن‌ها سروکار داریم؛ از آب‌وهوا و اوقات شرعی گرفته تا فرهنگ و شعر، علم و سلامت، ورزش، سفر و سرگرمی.
-
-در آسمان، هر بخش می‌تواند بهانه‌ای باشد برای دانستن، کشف کردن یا کمی آرام‌تر شدن. دستیار هوشمند آسمان نیز در کنار شماست تا بتوانید درباره مطالب بپرسید، جست‌وجو کنید و بیشتر کشف کنید.
-
-اما «آسمان» برای ما معنای دیگری هم دارد؛
-همه‌ی ما، با تمام تفاوت‌هایمان، زیر یک آسمان زندگی می‌کنیم. همین آسمان مشترک شاید یادآور ساده‌ای باشد از چیزهایی که ما را به یکدیگر پیوند می‌دهند؛ زندگی، خاطره، فرهنگ، پرسش‌ها و امیدها.
-
-ما تلاش می‌کنیم «مجله آسمان» را هر دو هفته یک‌بار بهتر و نزدیک‌تر به نیازهای شما کنیم و در این مسیر، بیش از هر چیز به همراهی شما نیاز داریم.
-
-اگر پیشنهادی، انتقادی یا ایده‌ای برای بهتر شدن آسمان دارید، با ما در میان بگذارید. شاید ایده‌ای که امروز مطرح می‌کنید، بخشی از آسمان فردا باشد.
-
-از اینکه همراه ما هستید، خوشحالیم.
-به آسمان نگاه کن.
-
-                        با سپاس
-                       م. حسینی</div></div>
-<button class="note-toggle-btn" type="button" data-about-toggle>▼ نمایش بیشتر</button>
+<div class="guide-drawer-body">
+<div class="guide-drawer-inner">
+<div class="guide-install-section">
+<div class="gis-desc">🌌 برنامه از PWA پشتیبانی می‌کند و روی صفحهٔ اصلی گوشی نصب می‌شود؛ حجم آن بسیار کم است و تجربه‌ای شبیه اپلیکیشن بومی ارائه می‌دهد.</div>
+<div class="gis-grid">
+<div class="gis-item"><div class="gis-browser">🤖 اندروید (Chrome)</div><div class="gis-steps">۱. منوی «سه نقطه» بالا سمت راست را باز کنید.<br>۲. گزینهٔ «نصب برنامه» یا «افزودن به صفحهٔ اصلی» را انتخاب کنید.<br>۳. روی «نصب» بزنید.</div></div>
+<div class="gis-item"><div class="gis-browser">🍎 iPhone / iPad (Safari)</div><div class="gis-steps">⚠️ حتماً با Safari باز کنید.<br>۱. دکمهٔ Share (مربع با فلش رو به بالا) را بزنید.<br>۲. گزینهٔ «Add to Home Screen» را انتخاب کنید.<br>۳. روی «Add» بزنید.</div></div>
+<div class="gis-item"><div class="gis-browser">🌐 سایر مرورگرها</div><div class="gis-steps">Firefox، Samsung Internet، Opera و ...<br>۱. منوی مرورگر را باز کنید.<br>۲. گزینهٔ «افزودن به صفحهٔ اصلی» یا «نصب» را انتخاب کنید.<br>۳. تأیید کنید.</div></div>
+</div>
+</div>
+</div>
+<button class="guide-drawer-close" data-guide-close="install" type="button">✕ بستن راهنمای نصب</button>
+</div>
 </div>
 
-<!-- Drawer: راهنمای مجله -->
-<div class="about-drawer d-guide" data-drawer="guide">
-<div class="about-drawer-head"><div class="adh-title"><span class="adh-icon">📖</span><span>راهنمای مجله</span></div><span class="adh-arrow">⌄</span></div>
-<div class="about-drawer-body"><div class="about-drawer-inner">
-<div class="about-help" style="margin-top:16px">
+<!-- دکمهٔ نصب خودکار (بیرون از کشو) -->
+<button class="guide-install-btn" id="guideInstallBtn">📲 نصب خودکار برنامه</button>
+
+<!-- دکمهٔ ارتباط با سازنده (هم‌اندازه دکمهٔ نصب) -->
+<a href="https://eitaa.com/hossini_96" target="_blank" rel="noopener" class="btn-creator">📬 ارتباط با سازنده</a>
+
+<!-- Drawer 2: راهنمای بخش‌های مجله -->
+<div class="guide-drawer" data-guide="sections" style="margin-top:14px">
+<div class="guide-drawer-head" data-guide-toggle="sections">
+<span>📚 راهنمای بخش‌های مجله</span>
+<span class="gd-arrow">⌄</span>
+</div>
+<div class="guide-drawer-body">
+<div class="guide-drawer-inner">
+<div class="about-help" style="margin-top:6px">
 <div class="ah-sec"><div class="ah-h c1">⭐ آسمان من</div><ul>
 <li>داشبورد شخصی با کارت‌های قابل جابجایی و مدیریت.</li>
 <li>💡 با <b>کشیدن کارت‌ها</b> (دسکتاپ) یا <b>لمس طولانی</b> (موبایل)، ترتیب را تغییر دهید.</li>
@@ -767,18 +812,20 @@ body[data-theme="light"] .color-dot.active{border-color:#0a1628;box-shadow:0 0 0
 <div class="ah-sec"><div class="ah-h c3">☀️ کارت روز آسمان (کشویی)</div><ul>
 <li>کارت ویژه با خلاصهٔ روز: تاریخ، هوا، اذان، بیت، دانستنی، فاز ماه و ذکر.</li>
 <li>🔽 روی <b>هدر کارت</b> بزنید تا کشو باز/بسته شود.</li>
-<li>📤 دو دکمهٔ اشتراک‌گذاری و ذخیرهٔ عکس در پایین کارت.</li>
+<li>📤 دو دکمهٔ اشتراک‌گذاری (فقط به‌صورت عکس) و ذخیرهٔ عکس در پایین کارت.</li>
 </ul></div>
-<div class="ah-sec"><div class="ah-h c2">🌿 سلامتی (ورزش سابق)</div><ul>
+<div class="ah-sec"><div class="ah-h c2">🌿 سلامتی</div><ul>
 <li>برنامهٔ ورزشی کاملاً شخصی‌سازی‌شده برای <b>خانم/آقا، سنین مختلف</b>.</li>
 <li>تحلیل خودکار هوا و توصیه به <b>ورزش در خانه یا بیرون</b>.</li>
 <li>برنامهٔ هفتگی + ردیاب روزها + تغذیه ورزشی.</li>
+<li><b>🍳 پیشنهاد غذا بر اساس مواد اولیهٔ موجود</b> (در بخش تغذیه).</li>
 <li><b>محاسبه‌گر BMI و BMR</b> در کشوی آخر.</li>
-<li>📤 اشتراک‌گذاری برنامه به‌صورت <b>تصویر</b> یا ذخیره در گالری.</li>
+<li>📤 اشتراک‌گذاری برنامه به‌صورت <b>تصویر</b> (با آدرس سایت).</li>
 </ul></div>
 <div class="ah-sec"><div class="ah-h c5">🌍 سفر هوشمند</div><ul>
 <li>انتخاب <b>مقصد از بین ۵۰ شهر مهم ایران</b> و <b>مدت سفر (۱ تا ۳ روز)</b>.</li>
 <li>برنامهٔ روزانه + چک‌لیست + غذاهای محلی.</li>
+<li>📤 <b>اشتراک‌گذاری برنامه فقط به‌صورت تصویر</b> (با آدرس سایت در فوتر).</li>
 <li>🌐 بخش تورهای مجازی (زیارتی، شهرها، دانشگاهی، جهانی).</li>
 </ul></div>
 <div class="ah-sec"><div class="ah-h c4">🎭 فرهنگ</div><ul>
@@ -787,12 +834,13 @@ body[data-theme="light"] .color-dot.active{border-color:#0a1628;box-shadow:0 0 0
 <li>لینک به فال حافظ، فیدیبو، طاقچه، تئاتر و سینما.</li>
 </ul></div>
 <div class="ah-sec"><div class="ah-h c3">🧬 نکات سلامتی</div><ul>
-<li>اکنون در صفحهٔ «سلامتی» ادغام شده است: نکات فصلی، کیفیت هوا، خواب و تغذیه.</li>
+<li>در صفحهٔ «سلامتی» ادغام شده است: نکات فصلی، کیفیت هوا، خواب و تغذیه.</li>
 <li>در صفحهٔ «آب‌وهوا» به‌صورت کشوی جداگانه نیز نمایش داده می‌شود.</li>
 </ul></div>
 <div class="ah-sec"><div class="ah-h c5">🔭 علم</div><ul>
 <li>تصویر نجومی روز ناسا (APOD) + ۲ دانستنی روزانه.</li>
-<li>💡 برای دریافت بدون محدودیت، کلید NASA را از تنظیمات وارد کنید.</li>
+<li><b>📰 اخبار علمی روز</b> از منابع معتبر بین‌المللی (ScienceDaily، Phys.org).</li>
+<li>💡 برای دریافت بدون محدودیت APOD، کلید NASA را از تنظیمات وارد کنید.</li>
 </ul></div>
 <div class="ah-sec"><div class="ah-h c7">🎉 سرگرمی</div><ul>
 <li>جوک، دانستنی، معما.</li>
@@ -802,28 +850,34 @@ body[data-theme="light"] .color-dot.active{border-color:#0a1628;box-shadow:0 0 0
 <li><b>لایه ۱:</b> پاسخ سریع به سوالات ساده.</li>
 <li><b>لایه ۲:</b> تحلیل ترکیبی برای <b>۹ فعالیت</b>: دوچرخه، پیاده، کوه، پیکنیک، شنا، ماهیگیری، فوتبال، تنیس، عکاسی.</li>
 <li><b>Chat → Action:</b> «کارت شعر را حذف کن»، «تهران را اضافه کن»، «به مشهد برو».</li>
-<li>💡 <b>جابجایی دکمهٔ 🤖:</b> روی آن <b>لمس طولانی</b> کنید (حدود نیم ثانیه) و به دلخواه بکشید. موقعیت ذخیره می‌شود.</li>
+<li>💡 <b>جابجایی دکمهٔ 🤖:</b> روی آن <b>لمس طولانی</b> کنید (حدود نیم ثانیه) و به دلخواه بکشید.</li>
 <li>💡 <b>کلیک کوتاه</b> روی دکمه، پنل چت را باز/بسته می‌کند.</li>
 </ul></div>
 <div class="ah-sec"><div class="ah-h c1">📱 نوار پایین (Bottom Nav)</div><ul>
 <li>در موبایل، نوار پایین با ۴ تب اصلی + دکمهٔ «بیشتر».</li>
 <li>💡 در شیت «بیشتر»، <b>بکشید و رها کنید</b> تا ترتیب را تغییر دهید.</li>
-<li>پیش‌فرض: درباره، آسمان من، آب و هوا، سلامتی.</li>
+<li>💡 ترتیب پیش‌فرض شیت «بیشتر»: یادداشت، آسمان من، آب و هوا، سلامتی، سفر، اوقات شرعی، فرهنگ، علم، سرگرمی، راهنما، تنظیمات.</li>
+<li>💡 <b>تنظیمات</b> و <b>راهنمای مجله</b> در همین شیت «بیشتر» قرار دارند.</li>
 </ul></div>
 <div class="ah-sec"><div class="ah-h c6">🏷️ نوار بالای دسکتاپ (Mag Nav)</div><ul>
-<li>در دسکتاپ، همهٔ ۱۰ صفحه از نوار بالای صفحه قابل دسترسی هستند.</li>
-<li>💡 با <b>کشیدن و رها کردن</b> تب‌ها ترتیب را تغییر دهید (به‌جز «درباره» که همیشه اول است).</li>
+<li>در دسکتاپ، همهٔ ۹ صفحهٔ اصلی از نوار بالای صفحه قابل دسترسی هستند.</li>
+<li>💡 با <b>کشیدن و رها کردن</b> تب‌ها ترتیب را تغییر دهید.</li>
 </ul></div>
 <div class="ah-sec"><div class="ah-h c2">📲 نصب به‌عنوان اپلیکیشن</div><ul>
 <li>برنامه از PWA پشتیبانی می‌کند و روی صفحهٔ اصلی گوشی نصب می‌شود.</li>
-<li>💡 اندروید: منوی Chrome ← «نصب برنامه».</li>
-<li>💡 iOS: Safari ← Share ← Add to Home Screen.</li>
+<li>💡 در <b>بالای همین صفحه</b>، راهنمای نصب برای مرورگرهای مختلف و دکمهٔ نصب خودکار قرار دارد.</li>
+<li>📬 <b>دکمهٔ ارتباط با سازنده</b> نیز در همین صفحه و زیر دکمهٔ نصب قرار دارد.</li>
 </ul></div>
 <div class="ah-sec"><div class="ah-h c1">⚙️ تنظیمات</div><ul>
-<li>در همین صفحه، به‌عنوان <b>کشوی چهارم</b> قرار دارد.</li>
-<li>حالت نمایش، اندازهٔ فونت، ۷ رنگ اصلی.</li>
+<li>در شیت «بیشتر» (نوار پایین موبایل) قرار دارد.</li>
+<li>حالت نمایش، اندازهٔ فونت، ۶ رنگ اصلی.</li>
 <li>مدیریت GPS، واحد دما (C/F)، NASA API key.</li>
-<li>مدیریت پین‌ها، پاک کردن حافظهٔ پنهان، مشاهدهٔ نسخه.</li>
+<li>مدیریت پین‌ها، پاک کردن حافظهٔ پنهان، مشاهدهٔ نسخه و آخرین تغییرات.</li>
+</ul></div>
+<div class="ah-sec"><div class="ah-h c5">🎉 کارت اعلان نسخهٔ جدید</div><ul>
+<li>پس از هر ارتقای نسخه، با اولین ورود به برنامه یک کارت کوچک نمایش داده می‌شود.</li>
+<li>شمارهٔ نسخه و تغییرات را اعلام می‌کند.</li>
+<li>⏱️ به مدت ۸ ثانیه نمایش داده می‌شود و دکمهٔ بستن دارد.</li>
 </ul></div>
 <div class="ah-sec"><div class="ah-h c5">💡 نکات کلی</div><ul>
 <li>🔄 برای به‌روزرسانی داده‌ها، صفحه را از <b>بالا به پایین بکشید</b> و رها کنید.</li>
@@ -832,40 +886,40 @@ body[data-theme="light"] .color-dot.active{border-color:#0a1628;box-shadow:0 0 0
 <li>🗂️ در همهٔ بخش‌ها، اطلاعات به‌صورت کش در حافظهٔ مرورگر ذخیره می‌شود تا سرعت بالا بماند.</li>
 </ul></div>
 </div>
-</div></div>
+</div>
+<button class="guide-drawer-close" data-guide-close="sections" type="button">✕ بستن راهنمای بخش‌ها</button>
+</div>
 </div>
 
-<!-- Drawer: تنظیمات -->
-<div class="about-drawer d-settings" data-drawer="settings">
-<div class="about-drawer-head"><div class="adh-title"><span class="adh-icon">⚙️</span><span>تنظیمات</span></div><span class="adh-arrow">⌄</span></div>
-<div class="about-drawer-body"><div class="about-drawer-inner">
-<div class="about-help" style="margin-top:16px">
+</section>
+</section>
+
+<!-- ============ SETTINGS PAGE ============ -->
+<section class="mag-page" id="page-settings" hidden>
+<div class="page-hero"><div><h2 class="page-title">⚙️ تنظیمات</h2><div class="page-subtitle">شخصی‌سازی برنامه، مدیریت داده‌ها و پیکربندی</div></div></div>
+<section class="panel section">
+<div class="about-help" style="margin-top:0">
 <div class="ah-sec"><div class="ah-h c7">🔤 اندازهٔ فونت</div><div style="margin-top:10px"><select class="select" id="fontSetting" style="width:100%;padding:12px;font-size:14px;border-radius:12px"><option value="normal">پیش‌فرض</option><option value="large">بزرگ‌تر</option></select></div></div>
-<div class="ah-sec"><div class="ah-h c1">🎨 رنگ اصلی برنامه (۷ رنگ)</div><div class="color-picker" id="colorPicker">
+<div class="ah-sec"><div class="ah-h c1">🎨 رنگ اصلی برنامه (۶ رنگ)</div><div class="color-picker" id="colorPicker">
 <button class="color-dot active" data-color="blue" title="آبی"></button>
 <button class="color-dot" data-color="purple" title="بنفش"></button>
 <button class="color-dot" data-color="green" title="سبز"></button>
 <button class="color-dot" data-color="orange" title="نارنجی"></button>
 <button class="color-dot" data-color="pink" title="صورتی"></button>
 <button class="color-dot" data-color="indigo" title="نیلی"></button>
-<button class="color-dot" data-color="mixed" title="ترکیبی"></button>
 </div></div>
 <div class="ah-sec"><div class="ah-h c1">📍 دسترسی به موقعیت مکانی</div><div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px;gap:10px"><span style="font-size:14px;color:var(--muted);line-height:1.8">تشخیص خودکار موقعیت فعلی شما</span><label class="switch"><input type="checkbox" id="gpsToggle"><span class="slider"></span></label></div></div>
 <div class="ah-sec"><div class="ah-h c2">🌡️ واحد اندازه‌گیری دما</div><div style="margin-top:10px"><select class="select" id="unitSetting" style="width:100%;padding:12px;font-size:14px;border-radius:12px"><option value="celsius">سانتی‌گراد (°C)</option><option value="fahrenheit">فارنهایت (°F)</option></select></div></div>
 <div class="ah-sec"><div class="ah-h c4">🛰️ NASA API Key (برای تصویر نجومی)</div><div style="font-size:13px;color:var(--muted);margin-top:6px;line-height:1.9">کلید خود را از <b>api.nasa.gov</b> بگیرید. پیش‌فرض DEMO_KEY است که محدودیت دارد.</div><input type="text" id="nasaKeyInput" placeholder="DEMO_KEY" style="width:100%;margin-top:8px;padding:10px 12px;border-radius:10px;background:var(--card-bg);border:1px solid var(--line);color:var(--text);font-family:inherit;font-size:13px;direction:ltr"><button class="btn" id="saveNasaKeyBtn" style="margin-top:8px;width:100%">💾 ذخیره کلید</button></div>
 <div class="ah-sec"><div class="ah-h c3">📌 مدیریت پین‌ها</div><div style="font-size:14px;color:var(--muted);margin-top:6px">تعداد پین‌های ذخیره‌شده: <b id="pinsCount" style="color:var(--accent)">--</b></div><button class="btn" id="clearPinsBtn" style="margin-top:10px;width:100%;background:rgba(255,107,122,.1);border-color:rgba(255,107,122,.4);color:#ff9aa8">🗑️ پاک کردن همهٔ پین‌ها</button></div>
 <div class="ah-sec"><div class="ah-h c4">💾 حافظه و داده‌ها</div><div style="font-size:13px;color:var(--muted);margin-top:6px">پاک کردن داده‌های ذخیره‌شده در حافظهٔ پنهان. کش به‌صورت <b>خودکار هر ۴۸ ساعت</b> پاک می‌شود.</div><button class="btn" id="clearCacheBtn" style="margin-top:10px;width:100%">🗑️ پاک کردن حافظهٔ پنهان</button></div>
-<div class="ah-sec"><div class="ah-h c5">ℹ️ دربارهٔ برنامه</div><div style="font-size:13px;color:var(--muted);margin-top:6px;line-height:2">نسخه: <b style="color:var(--accent)" id="settingsVersion">--</b><br>سازنده: م. حسینی</div></div>
+<div class="ah-sec"><div class="ah-h c5">ℹ️ دربارهٔ برنامه</div>
+<div style="font-size:13px;color:var(--muted);margin-top:6px;line-height:2">نسخه: <b style="color:var(--accent)" id="settingsVersion">--</b><br>سازنده: م. حسینی</div>
+<div style="font-size:12.5px;color:var(--text);margin-top:10px;padding:10px 12px;background:rgba(57,198,255,.08);border-right:3px solid var(--accent);border-radius:0 10px 10px 0;line-height:2">
+<b style="color:var(--accent);display:block;margin-bottom:6px">🎉 آخرین تغییرات:</b>
+<div id="settingsChangelog" style="color:var(--muted);font-size:12px">--</div>
 </div>
-<button class="sp-coll-close" id="settingsCloseBtn" type="button">✕ بستن تنظیمات</button>
-</div></div>
 </div>
-
-</div>
-
-<div class="about-creator-fixed">
-<div class="acf-title">🌌 سازندهٔ مجلهٔ آسمان: م.حسینی</div>
-<a href="https://eitaa.com/hossini_96" target="_blank" rel="noopener" class="btn-creator">📬 ارتباط با سازنده</a>
 </div>
 </section>
 </section>
@@ -1101,7 +1155,6 @@ body[data-theme="light"] .color-dot.active{border-color:#0a1628;box-shadow:0 0 0
 </div>
 </div>
 
-<!-- Collapsible 1: Profile -->
 <div class="sp-collapsible" data-sp="profile">
 <div class="sp-coll-h profile" data-sp-toggle="profile">
 <div class="spch-title"><span class="spch-icon">🎯</span><span>پروفایل ورزشی من</span></div>
@@ -1130,7 +1183,6 @@ body[data-theme="light"] .color-dot.active{border-color:#0a1628;box-shadow:0 0 0
 </div>
 </div>
 
-<!-- Collapsible 2: Weekly -->
 <div class="sp-collapsible" data-sp="weekly">
 <div class="sp-coll-h weekly" data-sp-toggle="weekly">
 <div class="spch-title"><span class="spch-icon">📅</span><span>برنامهٔ هفتگی ورزش</span></div>
@@ -1145,7 +1197,6 @@ body[data-theme="light"] .color-dot.active{border-color:#0a1628;box-shadow:0 0 0
 </div>
 </div>
 
-<!-- Collapsible 3: Nutrition -->
 <div class="sp-collapsible" data-sp="nutrition">
 <div class="sp-coll-h nutrition" data-sp-toggle="nutrition">
 <div class="spch-title"><span class="spch-icon">🥗</span><span>تغذیهٔ ورزشی</span></div>
@@ -1159,7 +1210,6 @@ body[data-theme="light"] .color-dot.active{border-color:#0a1628;box-shadow:0 0 0
 </div>
 </div>
 
-<!-- Collapsible 4: Tracker -->
 <div class="sp-collapsible" data-sp="tracker">
 <div class="sp-coll-h tracker" data-sp-toggle="tracker">
 <div class="spch-title"><span class="spch-icon">📊</span><span>ردیاب ورزش روزانه</span></div>
@@ -1173,7 +1223,6 @@ body[data-theme="light"] .color-dot.active{border-color:#0a1628;box-shadow:0 0 0
 </div>
 </div>
 
-<!-- Collapsible 5: BMI/BMR -->
 <div class="sp-collapsible" data-sp="bmi">
 <div class="sp-coll-h bmi" data-sp-toggle="bmi">
 <div class="spch-title"><span class="spch-icon">⚖️</span><span>محاسبهٔ BMI و BMR</span></div>
@@ -1196,9 +1245,8 @@ body[data-theme="light"] .color-dot.active{border-color:#0a1628;box-shadow:0 0 0
 </div>
 </div>
 
-<div style="padding:0 19px 0;display:flex;gap:10px;margin-top:14px">
-<button class="sp-share-btn" id="spShareBtn" style="flex:1;margin-top:0">📤 اشتراک برنامه</button>
-<button class="sp-share-btn" id="spSaveBtn" style="flex:1;margin-top:0;background:linear-gradient(135deg,#2dd4a3,#39c6ff)">💾 ذخیره تصویر</button>
+<div style="padding:0 19px 0;margin-top:14px">
+<button class="sp-share-btn" id="spShareBtn">📤 اشتراک برنامه</button>
 </div>
 </section>
 
@@ -1213,6 +1261,10 @@ body[data-theme="light"] .color-dot.active{border-color:#0a1628;box-shadow:0 0 0
 <div id="scienceContent" class="sec-content">--</div>
 <div class="news-group">💡 ۲ دانستنی علمی روز</div>
 <div id="scienceFacts" class="fact-grid"></div>
+</section>
+<section class="panel section">
+<div class="sectionhead"><div class="title">📰 اخبار علمی روز</div></div>
+<div id="scienceNews"><div class="apod-loading">📰 در حال دریافت اخبار علمی...</div></div>
 </section>
 </section>
 
@@ -1240,7 +1292,7 @@ body[data-theme="light"] .color-dot.active{border-color:#0a1628;box-shadow:0 0 0
 <div class="bn-sheet-title">📱 همهٔ بخش‌ها</div>
 <button class="bn-sheet-close" id="bnSheetClose" aria-label="بستن">✕</button>
 </div>
-<div class="bn-sheet-hint">💡 برای جابجایی، هر آیتم را <b>بکشید و رها کنید</b>. چهار مورد اول به‌صورت خودکار در نوار پایین نمایش داده می‌شوند.</div>
+<div class="bn-sheet-hint">💡 برای جابجایی، هر آیتم را <b>بکشید و رها کنید</b>. چهار مورد اول به‌صورت خودکار در نوار پایین نمایش داده می‌شوند.<br>⚙️ تنظیمات و 📖 راهنما در انتهای همین لیست قرار دارند.</div>
 <div class="bn-sheet-items" id="bnSheetItems"></div>
 </div>
 </div>
@@ -1263,10 +1315,29 @@ function lsSet(k,v){try{localStorage.setItem(k,v);}catch(e){}}
 function lsGet(k){try{return localStorage.getItem(k);}catch(e){return null;}}
 function ssSet(k,v){try{sessionStorage.setItem(k,v);}catch(e){}}
 function ssGet(k){try{return sessionStorage.getItem(k);}catch(e){return null;}}
-var APP_VERSION="1.1.0";
-var APP_CHANGELOG="• صفحهٔ ورزشی به «سلامتی» تبدیل شد<br>• افزودن نوار پایین (Bottom Nav) برای موبایل<br>• انتقال محاسبه‌گر BMI/BMR به صفحهٔ سلامتی<br>• اشتراک‌گذاری برنامهٔ ورزشی به‌صورت تصویر<br>• حذف صفحهٔ سلامت و لینک‌های ورزشی<br>• به‌روزرسانی دستیار هوشمند و راهنما";
+var APP_VERSION="1.1.2";
+var APP_CHANGELOG="• حذف صفحهٔ اسپلش<br>• مودال نصب: نمایش فقط شمارهٔ نسخه<br>• حذف دکمهٔ ذخیرهٔ تصویر از سلامتی<br>• کوچک‌سازی دایره‌های رنگ و حذف رنگ ترکیبی<br>• نمایش همیشگی تغییرات در تنظیمات<br>• کشوهای راهنمای نصب و بخش‌ها<br>• انتقال دربارهٔ آسمان و ارتباط با سازنده به راهنما<br>• انتقال یادداشت سردبیر به صفحهٔ یادداشت";
+var APP_CHANGELOG_LINES=[
+  "🎨 حذف صفحهٔ اسپلش حرفه‌ای",
+  "📲 مودال نصب فقط شمارهٔ نسخه را نمایش می‌دهد",
+  "🌿 حذف دکمهٔ ذخیرهٔ تصویر از صفحهٔ سلامتی",
+  "🎨 کوچک‌سازی دایره‌های رنگ و حذف رنگ ترکیبی در تنظیمات",
+  "📋 نمایش همیشگی آخرین تغییرات نسخه در تنظیمات",
+  "📖 کشوهای راهنمای نصب و راهنمای بخش‌ها در صفحهٔ راهنما",
+  "📬 انتقال «دربارهٔ آسمان» و «ارتباط با سازنده» به صفحهٔ راهنما",
+  "📝 انتقال یادداشت سردبیر به صفحهٔ یادداشت مجله",
+  "🗑️ حذف کامل صفحهٔ «درباره»",
+  "🔢 ترتیب جدید پیش‌فرض در شیت «بیشتر»",
+  "🖌️ رنگی‌تر شدن هدر «مدیریت کارت‌ها» و «شاخص امروز/فردا»",
+  "🔘 هم‌اندازه و رنگی شدن دکمهٔ ارتباط با سازنده"
+];
 
-/* ===== Data pools for Fun page & missing-page helpers ===== */
+/* ===== MAGAZINE URL ===== */
+function getMagazineUrl(){
+  return "https://hossinimehdi70-dotcom.github.io/aseman/?utm_source=chatgpt.com";
+}
+var MAGAZINE_URL=getMagazineUrl();
+
 var FUN_JOKES=[
   "به دوستم گفتم چرا اینقدر خسته‌ای؟ گفت دیشب خواب دیدم دارم کار می‌کنم، بیدار شدم دیدم واقعاً دارم کار می‌کنم!",
   "یارو می‌ره دکتر می‌گه: آقای دکتر، هر وقت قهوه می‌خورم چشمم درد می‌گیره. دکتر می‌گه: خب قهوه رو از چشم‌ات دور کن!",
@@ -1283,7 +1354,7 @@ var FUN_PUZZLES=[
 ];
 var FUN_FACTS=[
   {icon:"🍯",title:"عسل",text:"عسل تنها غذایی است که فاسد نمی‌شود."},
-  {icon:"🐘",title:"فیل",text:"فیل‌ها تنها پستانداری هستند که نمی‌توانند بپرند."},
+  {icon:"🐘",title:"فیل",text:"فیل‌ها تنها پستاندارانی هستند که نمی‌توانند بپرند."},
   {icon:"🦒",title:"زرافه",text:"زرافه‌ها همان تعداد مهره گردن دارند که انسان‌ها؛ فقط خیلی بلندتر!"},
   {icon:"🐙",title:"هشت‌پا",text:"هشت‌پا سه قلب دارد و خونش آبی است."},
   {icon:"🌙",title:"ماه",text:"ماه هر سال حدود ۳٫۸ سانتی‌متر از زمین دور می‌شود."}
@@ -1306,18 +1377,17 @@ function cycleAutoTheme(){if(appTheme==="auto")applyTheme();}
 setInterval(cycleAutoTheme,60000);
 applyTheme();
 
-/* ===== LocalStorage size guard ===== */
 function checkLocalStorageSize(){
   try{
     var total=0;
     for(var k in localStorage){if(localStorage.hasOwnProperty(k)){total+=(localStorage[k]||"").length+k.length;}}
     if(total>4*1024*1024){
-      var keep=["gpsEnabled","unit","pins","city","hasOpened","lastPage","aseman_device_seen","appTheme","appFont","appColor","userName","hiddenCards","dashOrder","lastAutoCacheClear","saves","tabOrder","spProfile","spWeekPlan","spWorkoutLog","bnOrder","nasaApiKey","chatFabPosPct"];
+      var keep=["gpsEnabled","unit","pins","city","hasOpened","lastPage","aseman_device_seen","appTheme","appFont","appColor","userName","hiddenCards","dashOrder","lastAutoCacheClear","saves","tabOrder","spProfile","spWeekPlan","spWorkoutLog","bnOrder","nasaApiKey","chatFabPosPct","lastSeenVersion"];
       var candidates=[];
       for(var k2 in localStorage){
         if(!localStorage.hasOwnProperty(k2))continue;
         if(keep.indexOf(k2)!==-1)continue;
-        if(k2.indexOf("apod_")===0||k2.indexOf("w_")===0||k2.indexOf("air_")===0||k2.indexOf("pt_")===0||k2.indexOf("cp_")===0||k2.indexOf("cl_")===0||k2.indexOf("bias_")===0||k2.indexOf("el_")===0||k2.indexOf("rg_")===0||k2.indexOf("ev_")===0){
+        if(k2.indexOf("apod_")===0||k2.indexOf("w_")===0||k2.indexOf("air_")===0||k2.indexOf("pt_")===0||k2.indexOf("cp_")===0||k2.indexOf("cl_")===0||k2.indexOf("bias_")===0||k2.indexOf("el_")===0||k2.indexOf("rg_")===0||k2.indexOf("ev_")===0||k2.indexOf("snews_")===0){
           var e=getCacheEntry(k2);var ts=e?(e.timestamp||0):0;
           candidates.push({k:k2,t:ts});
         }
@@ -1366,7 +1436,7 @@ function autoClearCacheIfNeeded(){
     var H48=48*60*60*1000;
     if(Date.now()-last>=H48){
       var keys=Object.keys(localStorage);
-      var keep=["gpsEnabled","unit","pins","city","hasOpened","lastPage","aseman_device_seen","appTheme","appFont","appColor","userName","hiddenCards","dashOrder","lastAutoCacheClear","saves","tabOrder","spProfile","spWeekPlan","spWorkoutLog","bnOrder","nasaApiKey","chatFabPosPct"];
+      var keep=["gpsEnabled","unit","pins","city","hasOpened","lastPage","aseman_device_seen","appTheme","appFont","appColor","userName","hiddenCards","dashOrder","lastAutoCacheClear","saves","tabOrder","spProfile","spWeekPlan","spWorkoutLog","bnOrder","nasaApiKey","chatFabPosPct","lastSeenVersion"];
       for(var i=0;i<keys.length;i++)if(keep.indexOf(keys[i])===-1)localStorage.removeItem(keys[i]);
       lsSet("lastAutoCacheClear",String(Date.now()));
     }
@@ -1402,7 +1472,7 @@ var gpsEnabled=lsGet("gpsEnabled")==="false"?false:true;
 
 function showInstallModal(){if(!installOverlay)return;installOverlay.classList.add("show");document.body.classList.add("install-lock");}
 function closeInstallModal(){if(!installOverlay)return;installOverlay.classList.remove("show");document.body.classList.remove("install-lock");bootApp();}
-function getInitialPage(){var sessionFlag=ssGet("aseman_session");if(sessionFlag){var lastPage=lsGet("lastPage");if(lastPage)return lastPage;return "about";}ssSet("aseman_session","1");return "about";}
+function getInitialPage(){var sessionFlag=ssGet("aseman_session");if(sessionFlag){var lastPage=lsGet("lastPage");if(lastPage)return lastPage;return "home";}ssSet("aseman_session","1");return "home";}
 
 function bootApp(){
   if(appBooted)return;
@@ -1419,6 +1489,8 @@ function bootApp(){
   if(gpsEnabled){try{startGPSWatch();}catch(e){}}
   setTimeout(function(){try{loadAPOD();}catch(e){}},800);
   setTimeout(function(){try{renderDhikr();}catch(e){}},200);
+  setTimeout(function(){try{loadScienceNews();}catch(e){}},1500);
+  setTimeout(showVersionToast,1200);
 }
 function checkReturnVisit(){
   var last=lsGet("lastVisitDate");
@@ -1428,13 +1500,12 @@ function checkReturnVisit(){
 
 if(installOk)installOk.addEventListener("click",closeInstallModal);
 (function maybeShowInstall(){
-  if(isStandalone()||lsGet("installSeen")==="1"){
+  if(isStandalone()){
     setTimeout(bootApp,0);
     return;
   }
   setTimeout(function(){
     showInstallModal();
-    lsSet("installSeen","1");
   },300);
 })();
 
@@ -1448,11 +1519,11 @@ function copyToClipboard(text){
   if(navigator.clipboard&&navigator.clipboard.writeText)return navigator.clipboard.writeText(text);
   return new Promise(function(res,rej){try{var ta=document.createElement("textarea");ta.value=text;ta.style.position="fixed";ta.style.top="-9999px";ta.style.opacity="0";document.body.appendChild(ta);ta.focus();ta.select();var ok=document.execCommand("copy");document.body.removeChild(ta);ok?res():rej();}catch(err){rej(err);}});
 }
-function getShareUrl(){var u=location.href;if(u.indexOf("index.html")!==-1)u=u.replace(/index\.html.*$/,"");var h=u.indexOf("#");if(h!==-1)u=u.substring(0,h);return u;}
+function getShareUrl(){return MAGAZINE_URL;}
 function shareApp(){
   var url=getShareUrl();
   trackEvent("share","app");
-  var dt={title:"مجله آسمان",text:"🌌 مجله آسمان — اپلیکیشن هواشناسی، ورزش، سلامت، فرهنگ، علم، سفر و سرگرمی.\nهمین حالا امتحان کنید:",url:url};
+  var dt={title:"مجله آسمان",text:"🌌 مجله آسمان — اپلیکیشن هواشناسی، ورزش، سلامت، فرهنگ، علم، سفر و سرگرمی.\n🌐 "+MAGAZINE_URL,url:url};
   if(navigator.share){navigator.share(dt).catch(function(err){if(err&&err.name==="AbortError")return;copyToClipboard(url).then(function(){show("✅ لینک کپی شد","ok");}).catch(function(){alert("لینک:\n"+url);});});return;}
   copyToClipboard(url).then(function(){alert("✅ لینک کپی شد!\n"+url);}).catch(function(){prompt("لینک:",url);});
 }
@@ -1479,24 +1550,63 @@ if(b1)b1.addEventListener("click",shareApp);
 if(b3)b3.addEventListener("click",installApp);
 (function bindInstallAccordion(){var acc=document.getElementById("installAccordion");if(!acc)return;var hs=acc.querySelectorAll(".install-acc-h");for(var i=0;i<hs.length;i++)(function(h){h.addEventListener("click",function(){var g=h.closest(".install-acc-group");if(g)g.classList.toggle("open");});})(hs[i]);})();
 
-/* About page drawers */
-(function bindAboutDrawers(){
-  var draws=document.querySelectorAll(".about-drawer");
-  for(var i=0;i<draws.length;i++)(function(d){
-    var head=d.querySelector(".about-drawer-head");
-    if(head)head.addEventListener("click",function(){d.classList.toggle("open");});
-  })(draws[i]);
+(function bindGuideInstallBtn(){
+  var btn=document.getElementById("guideInstallBtn");
+  if(btn)btn.addEventListener("click",installApp);
 })();
+
+/* ===== Guide Drawers ===== */
+function bindGuideDrawers(){
+  var heads=document.querySelectorAll("[data-guide-toggle]");
+  for(var i=0;i<heads.length;i++)(function(h){
+    if(h.getAttribute("data-bound"))return;
+    h.setAttribute("data-bound","1");
+    h.addEventListener("click",function(){
+      var drawer=h.closest(".guide-drawer");
+      if(drawer)drawer.classList.toggle("open");
+    });
+  })(heads[i]);
+  var closes=document.querySelectorAll("[data-guide-close]");
+  for(var j=0;j<closes.length;j++)(function(b){
+    if(b.getAttribute("data-bound"))return;
+    b.setAttribute("data-bound","1");
+    b.addEventListener("click",function(){
+      var drawer=b.closest(".guide-drawer");
+      if(drawer)drawer.classList.remove("open");
+    });
+  })(closes[j]);
+}
+bindGuideDrawers();
+
+/* ===== Version Toast ===== */
+function showVersionToast(){
+  var toast=document.getElementById("versionToast");
+  if(!toast)return;
+  var lastSeen=lsGet("lastSeenVersion")||"";
+  if(lastSeen===APP_VERSION)return;
+  var ver=document.getElementById("vtVer");
+  var ch=document.getElementById("vtChanges");
+  if(ver)ver.textContent=APP_VERSION;
+  if(ch){
+    var html="";
+    for(var i=0;i<APP_CHANGELOG_LINES.length;i++)html+='<span class="vt-line">'+APP_CHANGELOG_LINES[i]+'</span>';
+    ch.innerHTML=html;
+  }
+  lsSet("lastSeenVersion",APP_VERSION);
+  setTimeout(function(){
+    toast.classList.add("show");
+    var hideTimer=setTimeout(function(){toast.classList.remove("show");},8000);
+    var closeBtn=document.getElementById("vtClose");
+    if(closeBtn)closeBtn.addEventListener("click",function(){clearTimeout(hideTimer);toast.classList.remove("show");});
+  },1200);
+}
+
 (function bindAboutNoteCards(){
   var cards=document.querySelectorAll('[data-about-card]');
   for(var i=0;i<cards.length;i++)(function(card){
     var heads=card.querySelectorAll('[data-about-toggle]');
     for(var j=0;j<heads.length;j++)(function(h){
-      if(h.classList.contains('note-head')){
-        h.addEventListener('click',function(){card.classList.toggle('open');updateAboutBtn(card);});
-      } else {
-        h.addEventListener('click',function(){card.classList.toggle('open');updateAboutBtn(card);});
-      }
+      h.addEventListener('click',function(){card.classList.toggle('open');updateAboutBtn(card);});
     })(heads[j]);
     updateAboutBtn(card);
   })(cards[i]);
@@ -1505,34 +1615,27 @@ if(b3)b3.addEventListener("click",installApp);
     btn.textContent=card.classList.contains('open')?'▲ بستن':'▼ نمایش بیشتر';
   }
 })();
-/* Settings close button */
-(function bindSettingsClose(){
-  var btn=document.getElementById("settingsCloseBtn");if(!btn)return;
-  btn.addEventListener("click",function(){
-    var d=document.querySelector('.about-drawer[data-drawer="settings"]');
-    if(d)d.classList.remove("open");
-  });
-})();
 
 var audioCtx=null;
 function ensureAudio(){if(!audioCtx){try{audioCtx=new(window.AudioContext||window.webkitAudioContext)();}catch(e){return false;}}if(audioCtx.state==="suspended")audioCtx.resume();return true;}
 function clickSound(){if(!ensureAudio())return;var o=audioCtx.createOscillator(),g=audioCtx.createGain();o.type="sine";o.frequency.value=600;g.gain.setValueAtTime(0,audioCtx.currentTime);g.gain.linearRampToValueAtTime(.6,audioCtx.currentTime+.01);g.gain.exponentialRampToValueAtTime(.001,audioCtx.currentTime+.13);o.connect(g).connect(audioCtx.destination);o.start(audioCtx.currentTime);o.stop(audioCtx.currentTime+.15);}
 
-var PAGE_ORDER=["about","myday","notes","home","prayer","travel","culture","sport","science","fun"];
+var PAGE_ORDER=["myday","notes","home","prayer","travel","culture","sport","science","fun"];
 var SWIPE_ORDER=["myday","notes","home","prayer","travel","culture","sport","science","fun"];
 
-/* ===== Bottom Nav ===== */
+/* ترتیب پیش‌فرض شیت «بیشتر» — ۳ ردیف ۴تایی از راست به چپ */
 var BN_PAGES=[
-  {id:"about",icon:"📖",label:"درباره"},
+  {id:"notes",icon:"📝",label:"یادداشت"},
   {id:"myday",icon:"⭐",label:"آسمان من"},
   {id:"home",icon:"⛅",label:"آب و هوا"},
   {id:"sport",icon:"🤾‍♂️",label:"سلامتی"},
-  {id:"notes",icon:"📝",label:"یادداشت"},
-  {id:"prayer",icon:"🕌",label:"اوقات شرعی"},
   {id:"travel",icon:"🧳",label:"سفر"},
+  {id:"prayer",icon:"🕌",label:"اوقات شرعی"},
   {id:"culture",icon:"🎭",label:"فرهنگ"},
   {id:"science",icon:"🔭",label:"علم"},
-  {id:"fun",icon:"🎉",label:"سرگرمی"}
+  {id:"fun",icon:"🎉",label:"سرگرمی"},
+  {id:"guide",icon:"📖",label:"راهنما"},
+  {id:"settings",icon:"⚙️",label:"تنظیمات"}
 ];
 function getBottomNavOrder(){
   var def=BN_PAGES.map(function(p){return p.id;});
@@ -1693,16 +1796,15 @@ function applyTabOrder(){
   if(!saved||!saved.length)return;
   var tabs={};var all=nav.querySelectorAll(".mag-tab");
   for(var i=0;i<all.length;i++)tabs[all[i].getAttribute("data-page")]=all[i];
-  if(tabs.about)nav.appendChild(tabs.about);
-  var used={about:true};
-  for(var j=0;j<saved.length;j++){var pg=saved[j];if(pg==="about"||used[pg])continue;if(tabs[pg]){nav.appendChild(tabs[pg]);used[pg]=true;}}
+  var used={};
+  for(var j=0;j<saved.length;j++){var pg=saved[j];if(used[pg])continue;if(tabs[pg]){nav.appendChild(tabs[pg]);used[pg]=true;}}
   for(var k=0;k<all.length;k++){var pg2=all[k].getAttribute("data-page");if(used[pg2])continue;nav.appendChild(all[k]);used[pg2]=true;}
 }
-function saveTabOrder(){var nav=document.getElementById("magNav");if(!nav)return;var order=[];var tabs=nav.querySelectorAll(".mag-tab");for(var i=0;i<tabs.length;i++){var pg=tabs[i].getAttribute("data-page");if(pg!=="about")order.push(pg);}lsSet("tabOrder",JSON.stringify(order));}
+function saveTabOrder(){var nav=document.getElementById("magNav");if(!nav)return;var order=[];var tabs=nav.querySelectorAll(".mag-tab");for(var i=0;i<tabs.length;i++){var pg=tabs[i].getAttribute("data-page");order.push(pg);}lsSet("tabOrder",JSON.stringify(order));}
 (function setupTabDrag(){
   var nav=document.getElementById("magNav");if(!nav)return;var dragTab=null;
   function bindOne(tab){
-    var page=tab.getAttribute("data-page");if(page==="about")return;
+    var page=tab.getAttribute("data-page");
     tab.setAttribute("draggable","true");
     tab.addEventListener("dragstart",function(e){dragTab=tab;tab.classList.add("dragging");try{e.dataTransfer.effectAllowed="move";e.dataTransfer.setData("text/plain",page);}catch(er){}});
     tab.addEventListener("dragend",function(){tab.classList.remove("dragging");var all=nav.querySelectorAll(".mag-tab");for(var j=0;j<all.length;j++)all[j].classList.remove("drag-over");dragTab=null;});
@@ -1717,7 +1819,7 @@ var swipeStartX=0,swipeStartY=0,swipeActive=false;
 document.addEventListener("touchstart",function(e){
   if(!appBooted)return;if(e.touches.length!==1)return;
   var t=e.target;
-  if(t.closest&&(t.closest(".scroll")||t.closest(".pins")||t.closest(".chat-suggestions")||t.closest(".mag-nav")||t.closest(".search")||t.closest(".chat-panel")||t.closest(".note-drawer")||t.closest(".dash-card")||t.closest(".daily-card")||t.closest(".about-drawer-body")||t.closest(".about-drawer")||t.closest(".sp-collapsible")||t.closest(".sp-coll-body")||t.closest(".sp-week-tabs")||t.closest(".bn-sheet")||t.closest(".bottom-nav")||t.closest(".bn-sheet-item")||t.closest(".chat-fab")))return;
+  if(t.closest&&(t.closest(".scroll")||t.closest(".pins")||t.closest(".chat-suggestions")||t.closest(".mag-nav")||t.closest(".search")||t.closest(".chat-panel")||t.closest(".note-drawer")||t.closest(".dash-card")||t.closest(".daily-card")||t.closest(".sp-collapsible")||t.closest(".sp-coll-body")||t.closest(".sp-week-tabs")||t.closest(".bn-sheet")||t.closest(".bottom-nav")||t.closest(".bn-sheet-item")||t.closest(".chat-fab")||t.closest(".version-toast")||t.closest(".guide-drawer")))return;
   swipeStartX=e.touches[0].clientX;swipeStartY=e.touches[0].clientY;swipeActive=true;
 },{passive:true});
 document.addEventListener("touchend",function(e){
@@ -1738,14 +1840,14 @@ document.addEventListener("keydown",function(e){
   else if(e.key==="ArrowRight"&&idx>0)goToPageByName(SWIPE_ORDER[idx-1],-1);
 });
 
-var API={weather:"https://api.open-meteo.com/v1/forecast",geo:"https://geocoding-api.open-meteo.com/v1/search",air:"https://air-quality-api.open-meteo.com/v1/air-quality",prayer:"https://api.aladhan.com/v1/timings",archive:"https://archive-api.open-meteo.com/v1/archive",hforecast:"https://historical-forecast-api.open-meteo.com/v1/forecast",ensemble:"https://ensemble-api.open-meteo.com/v1/ensemble",elevation:"https://api.open-meteo.com/v1/elevation",yr:"https://api.met.no/weatherapi/locationforecast/2.0/compact",nom:"https://nominatim.openstreetmap.org/search",apod:"https://api.nasa.gov/planetary/apod",translate:"https://api.mymemory.translated.net/get"};
+var API={weather:"https://api.open-meteo.com/v1/forecast",geo:"https://geocoding-api.open-meteo.com/v1/search",air:"https://air-quality-api.open-meteo.com/v1/air-quality",prayer:"https://api.aladhan.com/v1/timings",archive:"https://archive-api.open-meteo.com/v1/archive",hforecast:"https://historical-forecast-api.open-meteo.com/v1/forecast",ensemble:"https://ensemble-api.open-meteo.com/v1/ensemble",elevation:"https://api.open-meteo.com/v1/elevation",yr:"https://api.met.no/weatherapi/locationforecast/2.0/compact",nom:"https://nominatim.openstreetmap.org/search",apod:"https://api.nasa.gov/planetary/apod",translate:"https://api.mymemory.translated.net/get",rss2json:"https://api.rss2json.com/v1/api.json"};
 function getNasaKey(){return lsGet("nasaApiKey")||"DEMO_KEY";}
 
 var city={id:"arak",name:"اراک",country:"ایران",admin1:"مرکزی",county:"اراک",type:"city",latitude:34.0917,longitude:49.6892};
 var data=null,air=null,prayerData=null,precision=null,climateNormal=null,biasInfo={b:0,mae:0,n:0},confInfo=null;
 var unit=lsGet("unit")||"celsius";
 var pins=[];try{pins=JSON.parse(lsGet("pins")||"[]");}catch(e){}
-var cdInterval=null,pendingNotice=null,detailDay=0,currentPage="about",climateZoneCur=null;
+var cdInterval=null,pendingNotice=null,detailDay=0,currentPage="home",climateZoneCur=null;
 var TODAY_IDX=1;
 var gpsWatchId=null,lastGPS=null,lastAdopted=null,manualCity=false;
 var LOCKED_PINS=[{id:"arak",name:"اراک",country:"ایران",admin1:"مرکزی",county:"اراک",type:"city",latitude:34.0917,longitude:49.6892,locked:true},{id:"deh-kosar",name:"ده کوثر",country:"ایران",admin1:"مرکزی",county:"شازند",type:"village",latitude:34.06,longitude:49.60,locked:true}];
@@ -1793,7 +1895,7 @@ function isLatin(s){return /[a-zA-Z]/.test(s);}
 function normName(s){return String(s||"").replace(/\s+/g," ").trim();}
 function haversine(a,b,c,d){var R=6371,ra=function(x){return x*Math.PI/180;};var dLat=ra(c-a),dLon=ra(d-b);var s=Math.sin(dLat/2)*Math.sin(dLat/2)+Math.cos(ra(a))*Math.cos(ra(c))*Math.sin(dLon/2)*Math.sin(dLon/2);return R*2*Math.atan2(Math.sqrt(s),Math.sqrt(1-s));}
 
-document.addEventListener("click",function(e){if(e.target&&e.target.closest){var c=e.target.closest("button,.btn,.select,.detail-btn,.day-tab,.pin-small,.pinchip,.arrow,.chat-sug,.chat-send,.day,.mag-tab,.culture-card,.travel-acc-h,.culture-acc-h,.fun-acc-h,.btn-creator,.install-btn,.fj-btn,.fp-reveal,.install-share-btn,.install-pwa-btn,.install-acc-h,.color-dot,.calc-btn,.note-toggle-btn,.note-head,.dw-edit,.dm-item,.dm-head,.dc-share-btn,.ob-btn,.about-drawer-head,.travel-plan-close,.sectionhead,.sp-btn-main,.sp-btn-ghost,.sp-week-tab,.sp-mark-btn,.sp-share-btn,.sp-coll-h,.sp-coll-close,.bn-item,.bn-sheet-item,.bn-sheet-close,.note-head,[data-about-toggle]");if(c)clickSound();}});
+document.addEventListener("click",function(e){if(e.target&&e.target.closest){var c=e.target.closest("button,.btn,.select,.detail-btn,.day-tab,.pin-small,.pinchip,.arrow,.chat-sug,.chat-send,.day,.mag-tab,.culture-card,.travel-acc-h,.culture-acc-h,.fun-acc-h,.btn-creator,.install-btn,.fj-btn,.fp-reveal,.install-share-btn,.install-pwa-btn,.install-acc-h,.color-dot,.calc-btn,.note-toggle-btn,.note-head,.dw-edit,.dm-item,.dm-head,.dc-share-btn,.ob-btn,.travel-plan-close,.sectionhead,.sp-btn-main,.sp-btn-ghost,.sp-week-tab,.sp-mark-btn,.sp-share-btn,.sp-coll-h,.sp-coll-close,.bn-item,.bn-sheet-item,.bn-sheet-close,.note-head,[data-about-toggle],.guide-install-btn,.ing-btn,.vt-close,.guide-drawer-head,.guide-drawer-close");if(c)clickSound();}});
 
 document.addEventListener("click",function(e){
   if(!e.target||!e.target.closest)return;
@@ -1839,7 +1941,6 @@ window.addEventListener("online",function(){updateNetStatus();if(appBooted&&curr
 window.addEventListener("offline",updateNetStatus);updateNetStatus();
 function setGps(st){var d=document.getElementById("gpsDot"),t=document.getElementById("gpsText");if(!d||!t)return;if(st==="ok"){d.className="sb-dot on";t.textContent="GPS متصل";}else if(st==="ready"){d.className="sb-dot off";t.textContent="GPS آماده";}else{d.className="sb-dot off";t.textContent="GPS قطع";}}
 
-/* ===== Optimized clock update ===== */
 var lastClockMinute=-1;
 function updateLocalTime(){
   var plt=document.getElementById("prayerLocalTime");
@@ -2002,12 +2103,102 @@ function renderTravelPlanContent(cityName,days,dw){
   html+='</div></div>';
   html+='<div style="margin-top:14px"><b style="color:var(--gold);font-size:15px">📅 برنامه روزانه</b></div>';
   for(var i=0;i<itinerary.length;i++){var day=itinerary[i];html+='<div class="plan-day"><div class="pd-head">📅 روز '+day.day+'</div><div class="pd-items">';for(var j=0;j<day.items.length;j++)html+='<div class="pd-item">📍 '+safe(day.items[j])+'</div>';html+='</div></div>';}
-  var shareTxt="🧳 برنامه سفر آسمان\n📍 مقصد: "+cityName+"\n📅 مدت: "+days+" روز\n🌤️ آب‌وهوا: "+weatherStr+"\n\n"+itinerary.map(function(d){return "روز "+d.day+": "+d.items.join("، ");}).join("\n")+"\n\n🌌 مجله آسمان";
   html+='<button class="calc-btn" id="travelPlanShare" style="margin-top:14px">📤 اشتراک‌گذاری برنامه</button>';
   out.innerHTML=html;out.classList.add("show");
-  var sh=document.getElementById("travelPlanShare");if(sh)sh.addEventListener("click",function(){if(navigator.share)navigator.share({title:"برنامه سفر",text:shareTxt}).catch(function(){});else copyToClipboard(shareTxt).then(function(){toast("✅ متن کپی شد");});});
+  var sh=document.getElementById("travelPlanShare");if(sh)sh.addEventListener("click",function(){shareTravelPlanImage(cityName,days,itinerary,checklist,dw,bestSeason,localFood,destInfo);});
   var cls=document.getElementById("travelPlanClose");if(cls)cls.addEventListener("click",function(){out.classList.remove("show");out.innerHTML="";});
   trackEvent("travel","plan",cityName);
+}
+function generateTravelImage(cityName,days,itinerary,checklist,dw,bestSeason,localFood,destInfo){
+  var canvas=document.getElementById("shareCanvas");if(!canvas)return null;
+  var W=1080,H=1620;canvas.width=W;canvas.height=H;
+  var ctx=canvas.getContext("2d");ctx.textBaseline="top";
+  var bg=ctx.createLinearGradient(0,0,W,H);bg.addColorStop(0,"#0e2340");bg.addColorStop(.5,"#1a3a5c");bg.addColorStop(1,"#2a1a5c");
+  ctx.fillStyle=bg;ctx.fillRect(0,0,W,H);
+  var seed=456;function pr(n){seed=(seed*9301+49297)%233280;return (seed/233280);}
+  for(var s=0;s<130;s++){var x=pr()*W,y=pr()*H,r=pr()*1.8+.4;ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.fillStyle="rgba(255,255,255,"+(pr()*.5+.15)+")";ctx.fill();}
+  ctx.fillStyle="rgba(255,255,255,.12)";drawRoundedRect(ctx,50,50,W-100,140,24);ctx.fill();
+  ctx.fillStyle="#7fffd4";ctx.font="900 48px Tahoma,Arial,sans-serif";ctx.textAlign="right";ctx.fillText("🧳 برنامهٔ سفر آسمان",W-80,80);
+  ctx.fillStyle="#bfe9ff";ctx.font="700 26px Tahoma,Arial,sans-serif";ctx.fillText("مجلهٔ آسمان — به آسمان نگاه کن.",W-80,142);
+  var y=230;
+  ctx.textAlign="center";ctx.fillStyle="#ffffff";ctx.font="900 54px Tahoma,Arial,sans-serif";ctx.fillText("📍 "+cityName,W/2,y);
+  ctx.fillStyle="#ffd166";ctx.font="800 30px Tahoma,Arial,sans-serif";ctx.fillText("📅 "+days+" روزه  ·  🌤️ "+((dw&&dw.code!=null)?code(dw.code)[0]:"--"),W/2,y+66);
+  y+=130;
+  var infos=[
+    {ic:"🌡️",l:"دما",v:(dw&&dw.tmin!=null?T(dw.tmin)+D():'--')+" / "+(dw&&dw.tmax!=null?T(dw.tmax)+D():'--')},
+    {ic:"🌧️",l:"بارش",v:(dw&&dw.precipProb!=null?dw.precipProb+"٪":"--")},
+    {ic:"☀️",l:"UV",v:(dw&&dw.uv!=null?String(dw.uv):"--")},
+    {ic:"📅",l:"فصل سفر",v:bestSeason||"--"}
+  ];
+  var cw=(W-140-3*12)/4;
+  for(var ii=0;ii<infos.length;ii++){
+    var cx=W-70-cw*(ii+1)-12*ii;
+    ctx.fillStyle="rgba(255,255,255,.08)";drawRoundedRect(ctx,cx,y,cw,110,16);ctx.fill();
+    ctx.textAlign="center";ctx.fillStyle="#7fffd4";ctx.font="900 28px Tahoma,Arial,sans-serif";ctx.fillText(infos[ii].ic,W-70-cw*(ii+1)-12*ii+cw/2,y+14);
+    ctx.fillStyle="#bfe9ff";ctx.font="700 20px Tahoma,Arial,sans-serif";ctx.fillText(infos[ii].l,W-70-cw*(ii+1)-12*ii+cw/2,y+52);
+    ctx.fillStyle="#ffffff";ctx.font="900 22px Tahoma,Arial,sans-serif";ctx.fillText(infos[ii].v,W-70-cw*(ii+1)-12*ii+cw/2,y+78);
+  }
+  y+=150;
+  ctx.fillStyle="rgba(255,209,102,.14)";drawRoundedRect(ctx,70,y,W-140,80,16);ctx.fill();
+  ctx.textAlign="right";ctx.fillStyle="#ffd166";ctx.font="900 26px Tahoma,Arial,sans-serif";ctx.fillText("🍽️ غذاهای محلی:",W-100,y+16);
+  ctx.fillStyle="#ffffff";ctx.font="700 24px Tahoma,Arial,sans-serif";ctx.fillText(localFood||"--",W-100,y+46);
+  y+=110;
+  ctx.textAlign="right";ctx.fillStyle="#39c6ff";ctx.font="900 30px Tahoma,Arial,sans-serif";ctx.fillText("📅 برنامهٔ روزانه",W-80,y);
+  y+=50;
+  var maxItemsPerDay=4;
+  for(var d=0;d<itinerary.length&&d<3;d++){
+    var day=itinerary[d];
+    var items=day.items.slice(0,maxItemsPerDay);
+    var boxH=48+items.length*38;
+    ctx.fillStyle="rgba(57,198,255,.10)";drawRoundedRect(ctx,70,y,W-140,boxH,14);ctx.fill();
+    ctx.fillStyle="#7fffd4";ctx.font="900 24px Tahoma,Arial,sans-serif";ctx.textAlign="right";ctx.fillText("روز "+day.day,W-90,y+12);
+    for(var k=0;k<items.length;k++){
+      ctx.fillStyle="#ffffff";ctx.font="700 22px Tahoma,Arial,sans-serif";ctx.textAlign="right";
+      var txt="• "+items[k];
+      if(ctx.measureText(txt).width>W-200)txt=txt.substring(0,45)+"…";
+      ctx.fillText(txt,W-100,y+48+k*38);
+    }
+    y+=boxH+14;
+    if(y>H-280)break;
+  }
+  if(y<H-260){
+    ctx.textAlign="right";ctx.fillStyle="#ffd166";ctx.font="900 26px Tahoma,Arial,sans-serif";ctx.fillText("🎒 چک‌لیست",W-80,y);
+    y+=42;
+    ctx.textAlign="center";ctx.fillStyle="#eaf3fb";ctx.font="700 20px Tahoma,Arial,sans-serif";
+    var line="";
+    for(var ci=0;ci<checklist.length;ci++){
+      var t2=(line?line+"  ·  ":"")+checklist[ci];
+      if(ctx.measureText(t2).width>W-180){ctx.fillText(line,W/2,y);y+=30;line=checklist[ci];}
+      else line=t2;
+      if(y>H-140)break;
+    }
+    if(line&&y<H-140){ctx.fillText(line,W/2,y);y+=30;}
+  }
+  var fy=H-140;
+  ctx.fillStyle="rgba(255,255,255,.08)";drawRoundedRect(ctx,70,fy,W-140,110,20);ctx.fill();
+  ctx.textAlign="center";ctx.fillStyle="#bfe9ff";ctx.font="800 24px Tahoma,Arial,sans-serif";ctx.fillText("🌌 مجله آسمان",W/2,fy+14);
+  ctx.fillStyle="#7fffd4";ctx.font="900 24px Tahoma,Arial,sans-serif";ctx.fillText("🌐 "+MAGAZINE_URL,W/2,fy+56);
+  return canvas;
+}
+function shareTravelPlanImage(cityName,days,itinerary,checklist,dw,bestSeason,localFood,destInfo){
+  var canvas;
+  try{canvas=generateTravelImage(cityName,days,itinerary,checklist,dw,bestSeason,localFood,destInfo);}catch(e){toast("خطا در تولید تصویر",true);return;}
+  if(!canvas){toast("خطا",true);return;}
+  canvas.toBlob(function(blob){
+    if(!blob){toast("خطا در ساخت تصویر",true);return;}
+    var file=new File([blob],"aseman-travel.png",{type:"image/png"});
+    var shareText="🧳 برنامهٔ سفر آسمان\n📍 مقصد: "+cityName+"\n📅 مدت: "+days+" روز\n🌐 "+MAGAZINE_URL;
+    if(navigator.canShare&&navigator.canShare({files:[file]})){
+      navigator.share({files:[file],title:"برنامهٔ سفر آسمان",text:shareText}).then(function(){toast("✅ اشتراک‌گذاری شد");trackEvent("travel","share_image");}).catch(function(err){if(err&&err.name==="AbortError")return;toast("اشتراک‌گذاری لغو شد",true);});
+    }
+    else{downloadTravelImage(cityName,days,itinerary,checklist,dw,bestSeason,localFood,destInfo);}
+  },"image/png",.95);
+}
+function downloadTravelImage(cityName,days,itinerary,checklist,dw,bestSeason,localFood,destInfo){
+  var canvas;
+  try{canvas=generateTravelImage(cityName,days,itinerary,checklist,dw,bestSeason,localFood,destInfo);}catch(e){toast("خطا",true);return;}
+  if(!canvas){toast("خطا",true);return;}
+  canvas.toBlob(function(blob){if(!blob){toast("خطا",true);return;}var url=URL.createObjectURL(blob);var a=document.createElement("a");a.href=url;a.download="aseman-travel-"+Date.now()+".png";document.body.appendChild(a);a.click();setTimeout(function(){document.body.removeChild(a);URL.revokeObjectURL(url);},1500);toast("✅ تصویر ذخیره شد");trackEvent("travel","save_image");},"image/png",.95);
 }
 function renderTravelPlan(){
   var dest=document.getElementById("travelDest");var daysSel=document.getElementById("travelDays");var out=document.getElementById("travelPlanOut");
@@ -2073,7 +2264,6 @@ function renderWeather(){
   if(lastRenderWeatherCv!==c.weather_code){lastRenderWeatherCv=c.weather_code;setDynamicBackground(c.weather_code);}
   updateLocalTime();renderHourly();renderForecast();renderSmartAlerts();renderDetails();renderExtraSections();renderFreshness();
   var pcn=document.getElementById("prayerCityName");if(pcn)pcn.textContent=city.name;
-  if(currentPage==="sport"){try{/* no location card anymore */}catch(e){}}
 }
 function renderHourly(){
   if(!data||!data.hourly||!data.hourly.time)return;
@@ -2352,6 +2542,64 @@ function renderAPOD(data){
   if(data.desc){var cachedDesc=lsGet("apodTrD_"+data.date);if(cachedDesc){var e1=document.getElementById("apodDescFa");if(e1)e1.textContent=cachedDesc;}else{translateFa(data.desc.substring(0,480)).then(function(t){if(t){lsSet("apodTrD_"+data.date,t);var e=document.getElementById("apodDescFa");if(e)e.textContent=t;}});}}
 }
 
+var SCIENCE_FEEDS=[
+  {url:"https://www.sciencedaily.com/rss/top/science.xml",name:"ScienceDaily"},
+  {url:"https://phys.org/rss-feed/",name:"Phys.org"}
+];
+function loadScienceNews(){
+  var el=document.getElementById("scienceNews");if(!el)return;
+  var key="snews_"+getTodayTehranKey();
+  var cached=getCacheEntry(key);
+  if(cached&&Date.now()-cached.timestamp<6*3600000){renderScienceNews(cached.data);return;}
+  if(!navigator.onLine){
+    if(cached){renderScienceNews(cached.data);return;}
+    el.innerHTML='<div class="apod-loading">📴 اخبار علمی در حالت آفلاین در دسترس نیست.</div>';
+    return;
+  }
+  var feed=SCIENCE_FEEDS[Math.floor(Date.now()/(6*3600000))%SCIENCE_FEEDS.length];
+  var apiUrl=API.rss2json+"?rss_url="+encodeURIComponent(feed.url)+"&count=6";
+  fetch(apiUrl).then(function(r){return r.json();}).then(function(j){
+    if(!j||j.status!=="ok"||!j.items||!j.items.length)throw 0;
+    var items=[];
+    for(var i=0;i<Math.min(j.items.length,6);i++){
+      var it=j.items[i];
+      var desc=(it.description||"").replace(/<[^>]+>/g,"").substring(0,180);
+      items.push({title:it.title||"",link:it.link||"",pubDate:it.pubDate||"",desc:desc,source:feed.name});
+    }
+    saveCache(key,items,"rss_api",6*3600000);
+    renderScienceNews(items);
+  }).catch(function(){
+    var alt=feed.url===SCIENCE_FEEDS[0].url?SCIENCE_FEEDS[1]:SCIENCE_FEEDS[0];
+    fetch(API.rss2json+"?rss_url="+encodeURIComponent(alt.url)+"&count=6").then(function(r){return r.json();}).then(function(j2){
+      if(!j2||j2.status!=="ok"||!j2.items)throw 0;
+      var items=[];
+      for(var i=0;i<Math.min(j2.items.length,6);i++){
+        var it=j2.items[i];
+        var desc=(it.description||"").replace(/<[^>]+>/g,"").substring(0,180);
+        items.push({title:it.title||"",link:it.link||"",pubDate:it.pubDate||"",desc:desc,source:alt.name});
+      }
+      saveCache(key,items,"rss_api",6*3600000);renderScienceNews(items);
+    }).catch(function(){
+      if(cached){renderScienceNews(cached.data);return;}
+      el.innerHTML='<div class="apod-loading">⚠️ دریافت اخبار علمی ممکن نشد.</div>';
+    });
+  });
+}
+function renderScienceNews(items){
+  var el=document.getElementById("scienceNews");if(!el)return;
+  if(!items||!items.length){el.innerHTML='<div class="apod-loading">خبری یافت نشد.</div>';return;}
+  var html="";
+  for(var i=0;i<items.length;i++){
+    var it=items[i];
+    var d="";
+    try{if(it.pubDate){d=new Intl.DateTimeFormat("fa-IR",{day:"numeric",month:"short"}).format(new Date(it.pubDate));}}catch(e){d="";}
+    html+='<a class="news-item" href="'+safe(it.link)+'" target="_blank" rel="noopener"><div class="ni-title">'+safe(it.title)+'</div>';
+    if(it.desc)html+='<div class="ni-desc">'+safe(it.desc)+'</div>';
+    html+='<div class="ni-meta"><span class="ni-source">📰 '+safe(it.source||"")+'</span><span>'+safe(d)+'</span></div></a>';
+  }
+  el.innerHTML=html;
+}
+
 var DAILY_FACTS_POOL=[
   {icon:"🌌",title:"کهکشان راه شیری",text:"قطر آن حدود ۱۰۰٬۰۰۰ سال نوری و ۲۰۰ میلیارد ستاره دارد."},
   {icon:"⚡",title:"سرعت نور",text:"نور در یک ثانیه ۷٫۵ بار دور زمین می‌چرخد."},
@@ -2389,7 +2637,7 @@ function renderScienceFacts(){
   for(var k=0;k<items.length;k++){var f=items[k];html+='<div class="fact-card"><div class="fact-num">'+nums[k]+'</div><div class="fact-icon">'+f.icon+'</div><div class="fact-title">'+safe(f.title)+'</div><div class="fact-text">'+safe(f.text)+'</div></div>';}
   el.innerHTML=html;
 }
-setInterval(function(){var key=getTodayTehranKey();if(lsGet("lastFactDay")!==key){lsSet("lastFactDay",key);renderScienceFacts();loadAPOD();}},30*60*1000);
+setInterval(function(){var key=getTodayTehranKey();if(lsGet("lastFactDay")!==key){lsSet("lastFactDay",key);renderScienceFacts();loadAPOD();loadScienceNews();}},30*60*1000);
 lsSet("lastFactDay",getTodayTehranKey());
 
 var HAFEZ_POEMS=["الا یا ایها الساقی ادر کأساً و ناولها\nکه عشق آسان نمود اول ولی افتاد مشکل‌ها","رسید مژده که ایام غم نخواهد ماند\nچنان نماند چنین نیز هم نخواهد ماند","منم که شهرهٔ شهرم به عشق ورزیدن\nبه می فروش و می‌خوارگی و رندی کردن","مرا عهدی است با جانان که تا جان در بدن دارم\nهوای‌دارِ خال و خطِ آن دلبرِ شیرین‌سخن باشم","گفتم غم تو دارم گفتا غمت سر آید\nگفتم که ماه من شو گفتا اگر برآید","ساقی به نور باده برافروز جام ما\nمطرب بگو که کار جهان شد به کام ما","یوسف گم‌گشته باز آید به کنعان غم مخور\nکلبهٔ احزان شود روزی گلستان غم مخور","دلا بسوز که سوز تو کارها بکند\nنیاز نیم‌شبی دفع صد بلا بکند"];
@@ -2405,7 +2653,6 @@ function renderPoetry(){
   el.innerHTML=card("hafez","✦ حافظ شیرازی",rand(HAFEZ_POEMS,1),"— خواجه شمس‌الدین محمد حافظ")+card("saadi","✦ سعدی شیرازی",rand(SAADI_POEMS,7),"— شیخ مصلح‌الدین سعدی")+card("rumi","✦ مولانا",rand(RUMI_POEMS,13),"— جلال‌الدین محمد بلخی")+card("ferdowsi","✦ فردوسی",rand(FERDOWSI_POEMS,23),"— ابوالقاسم فردوسی")+card("khayyam","✦ خیام",rand(KHAYYAM_POEMS,31),"— عمر خیام نیشابوری");
 }
 
-/* ===== Missing-page render helpers ===== */
 function renderCulturePage(){
   var cc=document.getElementById("cultureContent");
   if(cc)cc.textContent="🎭 فرهنگ امروز — بیت‌ها هر ۲ ساعت تغییر می‌کنند.";
@@ -2415,6 +2662,7 @@ function renderSciencePage(){
   var sc=document.getElementById("scienceContent");
   if(sc)sc.textContent="🔭 علم امروز — آخرین یافته‌ها و دانستنی‌های علمی.";
   renderScienceFacts();
+  loadScienceNews();
 }
 function renderTravelPage(){
   renderTravelSummary();
@@ -2458,7 +2706,7 @@ function renderFunPage(){
 
 var NOTE_DATA=[
   {id:"n1",icon:"🍂",title:"یادداشت ۱ — سخن سردبیر، فصل پاییز",preview:"به نام خداوند آسمان‌ها\nبعضی فصل‌ها فقط در تقویم عوض نمی‌شوند؛ در دل ما هم چیزی را جابه‌جا می‌کنند. پاییز از همان فصل‌هاست.\nبا آمدن مهر، بوی دفتر نو در خانه‌ها می‌پیچد، کیف‌ها از کتاب پر می‌شوند و زنگ مدرسه، خاطره روزهای کودکی را دوباره در ذهنمان زنده می‌کند؛روزهایی که جهان برایمان کوچک و صاف و ساده بود.",drawer:"امروز اما جهان پیچیده‌تر و پرسرعت‌تر شده و ما، روزهایی را تجربه می‌کنیم که خبر‌های تلخ و شیرین، بخشی از زندگی روزمره‌مان شده است.\nدر چنین روزهایی شاید بیش از همیشه لازم باشد هوای یکدیگر را داشته باشیم؛ نه فقط نزدیکان و همفکرانمان، بلکه همه کسانی که زیر همین آسمان زندگی می‌کنند.\nما با همه تفاوت‌هایمان، خاطرات مشترک زیادی داریم؛ از مدرسه و کودکی گرفته تا شعر، عید نوروز، قصه‌های مادربزرگ‌ها و ایران عزیزمان.\nایران، پیش از آنکه مجموعه‌ای از تفاوت‌ها باشد، خانه مشترک ماست.\nآغاز سال تحصیلی، بیش از هر چیز، آغاز دوباره امید به یادگیری است.\nآرزو کنیم مدرسه‌های ایران فقط محل گرفتن نمره نباشند؛ بلکه جایی برای ساختن انسان‌هایی باشند که علم را دوست دارند.\nشاید نتوانیم همه سختی‌های روزگار را یک‌شبه تغییر دهیم، اما می‌توانیم از خودمان شروع کنیم؛ با یک کلمه مهربانانه، کمی بیشتر شنیدن، کمتر قضاوت کردن.\nایران برای همه ماست؛ برای دانش‌آموزی که راهی مدرسه می‌شود، معلمی که درس می‌دهد، پدر و مادری که نگران آینده فرزندشان هستند.\nبه مهر و پاییز خوش آمدید.\nبه فصل مدرسه، به فصل یادگیری،به فصل دوباره آغاز کردن.",sign:"《سردبیر مجله آسمان》",soon:false},
-  {id:"n2",icon:"📝",title:"یادداشت ۲",preview:"",drawer:"",soon:true},
+  {id:"n2",icon:"✍️",title:"یادداشت ۲ — یادداشت سردبیر",preview:"سلام، به «مجله آسمان» خوش آمدید؛ جایی برای چند دقیقه مکث، در میان شتاب روزمره.",drawer:"«آسمان» یک مجله دیجیتال برای زندگی روزانه است؛ اما تلاش کرده‌ایم فقط مجموعه‌ای از مطالب و اطلاعات نباشد. می‌خواهیم پنجره‌ای باشد رو به چیزهایی که هر روز با آن‌ها سروکار داریم؛ از آب‌وهوا و اوقات شرعی گرفته تا فرهنگ و شعر، علم و سلامت، ورزش، سفر و سرگرمی.\n\nدر آسمان، هر بخش می‌تواند بهانه‌ای باشد برای دانستن، کشف کردن یا کمی آرام‌تر شدن. دستیار هوشمند آسمان نیز در کنار شماست تا بتوانید درباره مطالب بپرسید، جست‌وجو کنید و بیشتر کشف کنید.\n\nاما «آسمان» برای ما معنای دیگری هم دارد؛\nهمه‌ی ما، با تمام تفاوت‌هایمان، زیر یک آسمان زندگی می‌کنیم. همین آسمان مشترک شاید یادآور ساده‌ای باشد از چیزهایی که ما را به یکدیگر پیوند می‌دهند؛ زندگی، خاطره، فرهنگ، پرسش‌ها و امیدها.\n\nما تلاش می‌کنیم «مجله آسمان» را هر دو هفته یک‌بار بهتر و نزدیک‌تر به نیازهای شما کنیم و در این مسیر، بیش از هر چیز به همراهی شما نیاز داریم.\n\nاگر پیشنهادی، انتقادی یا ایده‌ای برای بهتر شدن آسمان دارید، با ما در میان بگذارید. شاید ایده‌ای که امروز مطرح می‌کنید، بخشی از آسمان فردا باشد.\n\nاز اینکه همراه ما هستید، خوشحالیم.\nبه آسمان نگاه کن.",sign:"با سپاس — م. حسینی",soon:false},
   {id:"n3",icon:"📝",title:"یادداشت ۳",preview:"",drawer:"",soon:true},
   {id:"n4",icon:"📝",title:"یادداشت ۴",preview:"",drawer:"",soon:true}
 ];
@@ -2624,19 +2872,22 @@ function generateDailyCardImage(){
   ctx.fillStyle="rgba(45,212,161,.14)";drawRoundedRect(ctx,70,y,W-140,200,20);ctx.fill();
   ctx.fillStyle="#7fffd4";ctx.font="800 30px Tahoma,Arial,sans-serif";ctx.fillText(d.fact.icon+" "+d.fact.title,W-100,y+26);
   ctx.fillStyle="#eafff6";ctx.font="700 26px Tahoma,Arial,sans-serif";wrapTextFa(ctx,d.fact.text,W-100,y+80,W-200,40,3);
-  var fy=H-190;ctx.fillStyle="rgba(255,255,255,.08)";drawRoundedRect(ctx,70,fy,W-140,140,20);ctx.fill();
-  ctx.textAlign="center";ctx.fillStyle="#bfe9ff";ctx.font="800 28px Tahoma,Arial,sans-serif";ctx.fillText("🌌 مجله آسمان — مجله‌ای برای هر روز",W/2,fy+26);
-  ctx.fillStyle="#ffd166";ctx.font="700 22px Tahoma,Arial,sans-serif";ctx.fillText("به آسمان نگاه کن.",W/2,fy+78);
+  var fy=H-220;ctx.fillStyle="rgba(255,255,255,.08)";drawRoundedRect(ctx,70,fy,W-140,180,20);ctx.fill();
+  ctx.textAlign="center";ctx.fillStyle="#bfe9ff";ctx.font="800 28px Tahoma,Arial,sans-serif";ctx.fillText("🌌 مجله آسمان — مجله‌ای برای هر روز",W/2,fy+16);
+  ctx.fillStyle="#7fffd4";ctx.font="900 26px Tahoma,Arial,sans-serif";ctx.fillText("🌐 "+MAGAZINE_URL,W/2,fy+66);
+  ctx.fillStyle="#ffd166";ctx.font="700 22px Tahoma,Arial,sans-serif";ctx.fillText("به آسمان نگاه کن.",W/2,fy+120);
 }
-var SHARE_TEXT="☀️ کارت امروز آسمان \n🌌 مجله آسمان — اپلیکیشن هواشناسی، ورزش، سلامت، فرهنگ، علم، سفر و سرگرمی.\nبه آسمان نگاه کن.";
+function getDailyShareText(){return "☀️ کارت امروز آسمان\n🌌 مجله آسمان — اپلیکیشن هواشناسی، ورزش، سلامت، فرهنگ، علم، سفر و سرگرمی.\n🌐 "+MAGAZINE_URL+"\nبه آسمان نگاه کن.";}
 function shareDailyCardImage(){
   try{generateDailyCardImage();}catch(e){toast("خطا در تولید تصویر",true);return;}
   var canvas=document.getElementById("shareCanvas");if(!canvas)return;
   canvas.toBlob(function(blob){
     if(!blob){toast("خطا در ساخت تصویر",true);return;}
     var file=new File([blob],"aseman-card.png",{type:"image/png"});
-    if(navigator.canShare&&navigator.canShare({files:[file]})){navigator.share({files:[file],title:"مجله آسمان",text:SHARE_TEXT}).then(function(){toast("✅ اشتراک‌گذاری شد");trackEvent("share","daily_native");}).catch(function(err){if(err&&err.name==="AbortError")return;toast("اشتراک‌گذاری لغو شد",true);});}
-    else if(navigator.share){navigator.share({title:"مجله آسمان",text:SHARE_TEXT}).then(function(){toast("✅ اشتراک‌گذاری شد");trackEvent("share","daily_text");}).catch(function(err){if(err&&err.name==="AbortError")return;toast("اشتراک‌گذاری لغو شد",true);});}
+    var shareText=getDailyShareText();
+    if(navigator.canShare&&navigator.canShare({files:[file]})){
+      navigator.share({files:[file],title:"مجله آسمان",text:shareText}).then(function(){toast("✅ اشتراک‌گذاری شد");trackEvent("share","daily_native");}).catch(function(err){if(err&&err.name==="AbortError")return;toast("اشتراک‌گذاری لغو شد",true);});
+    }
     else{downloadDailyCardImage();}
   },"image/png",.95);
 }
@@ -2684,10 +2935,6 @@ function renderDash(){
   var cardEls=grid.querySelectorAll(".dash-card[data-card-id]");
   for(var ci=0;ci<cardEls.length;ci++)attachDragHandlers(cardEls[ci],cardEls[ci].getAttribute("data-card-id"));
 }
-
-/* =========================================================
-   === SMART SPORT (SALAMATI) PLANNER ===
-   ========================================================= */
 
 var EXERCISES = {
   warmup: [
@@ -2855,6 +3102,98 @@ function renderSportDayCard(){
   html+='</div>';el.innerHTML=html;
 }
 
+var RECIPES=[
+  {name:"املت گوجه",emoji:"🍳",ing:["تخم مرغ","تخم‌مرغ","گوجه","روغن","نمک"],time:"۱۰ دقیقه",desc:"گوجه را تفت دهید، تخم‌مرغ را اضافه کنید و نمک بزنید.",tags:["صبحانه","سریع"]},
+  {name:"املت ساده",emoji:"🍳",ing:["تخم مرغ","تخم‌مرغ","روغن","نمک","فلفل"],time:"۵ دقیقه",desc:"تخم‌مرغ را با ادویه مخلوط و در تابه سرخ کنید.",tags:["صبحانه"]},
+  {name:"نان و پنیر و گردو",emoji:"🧀",ing:["نان","پنیر","گردو"],time:"۲ دقیقه",desc:"یک صبحانهٔ کلاسیک و مغذی ایرانی.",tags:["صبحانه"]},
+  {name:"آبگوشت",emoji:"🥘",ing:["گوشت","نخود","لوبیا سفید","سیب زمینی","سیب‌زمینی","پیاز","رب گوجه"],time:"۲ ساعت",desc:"گوشت و حبوبات را با پیاز و رب بپزید.",tags:["ناهار","سنتی"]},
+  {name:"قیمه",emoji:"🍲",ing:["گوشت","لپه","پیاز","رب گوجه","سیب زمینی","سیب‌زمینی","لیمو"],time:"۱.۵ ساعت",desc:"گوشت خردشده را با لپه و رب بپزید.",tags:["ناهار","سنتی"]},
+  {name:"خورش کرفس",emoji:"🥬",ing:["کرفس","گوشت","پیاز","رب گوجه","لیمو"],time:"۱.۵ ساعت",desc:"کرفس را با گوشت و رب بپزید.",tags:["ناهار","سنتی"]},
+  {name:"عدس‌پلو",emoji:"🍚",ing:["عدس","برنج","پیاز","کشمش","خرما"],time:"۱ ساعت",desc:"عدس و برنج را با هم بپزید و با کشمش تزئین کنید.",tags:["ناهار","گیاهی"]},
+  {name:"کلم‌پلو",emoji:"🍚",ing:["کلم","برنج","گوشت چرخ کرده","پیاز"],time:"۱ ساعت",desc:"کلم تفت داده را با برنج و گوشت مخلوط کنید.",tags:["ناهار"]},
+  {name:"ماکارونی",emoji:"🍝",ing:["ماکارونی","گوشت چرخ کرده","پیاز","رب گوجه","پنیر پیتزا"],time:"۴۵ دقیقه",desc:"ماکارونی را با سس گوشت و پنیر آماده کنید.",tags:["ناهار","سریع"]},
+  {name:"کوکو سبزی",emoji:"🥬",ing:["سبزی","تخم مرغ","تخم‌مرغ","پیاز","آرد","زردچوبه"],time:"۳۰ دقیقه",desc:"سبزی را با تخم‌مرغ و ادویه مخلوط و سرخ کنید.",tags:["شام","سنتی"]},
+  {name:"کتلت",emoji:"🍖",ing:["گوشت چرخ کرده","سیب زمینی","سیب‌زمینی","تخم مرغ","تخم‌مرغ","پیاز","آرد"],time:"۴۰ دقیقه",desc:"گوشت و سیب‌زمینی را با تخم‌مرغ ورز دهید و سرخ کنید.",tags:["شام"]},
+  {name:"سالاد شیرازی",emoji:"🥗",ing:["خیار","گوجه","پیاز","آب لیمو","نمک","نعنا خشک"],time:"۱۰ دقیقه",desc:"همه را خرد کنید و با آبلیمو مخلوط کنید.",tags:["سالاد","تابستان"]},
+  {name:"سالاد فصل",emoji:"🥗",ing:["کاهو","گوجه","خیار","هویج","ذرت"],time:"۵ دقیقه",desc:"سبزیجات را خرد کنید و با سس دلخواه مخلوط کنید.",tags:["سالاد"]},
+  {name:"میرزاقاسمی",emoji:"🍆",ing:["بادمجان","گوجه","سیر","تخم مرغ","تخم‌مرغ","روغن"],time:"۴۵ دقیقه",desc:"بادمجان کبابی را با گوجه و سیر و تخم‌مرغ ترکیب کنید.",tags:["شام","شمالی"]},
+  {name:"قورمه سبزی",emoji:"🍲",ing:["سبزی قورمه","گوشت","لوبیا قرمز","پیاز","لیمو عمانی"],time:"۲ ساعت",desc:"سبزی را با گوشت و لوبیا بپزید.",tags:["ناهار","سنتی"]},
+  {name:"آش رشته",emoji:"🍜",ing:["رشته","نخود","لوبیا","عدس","سبزی","پیاز","کشک"],time:"۱ ساعت",desc:"حبوبات و سبزی را بپزید و رشته را اضافه کنید.",tags:["شام","سنتی"]},
+  {name:"خوراک لوبیا",emoji:"🍲",ing:["لوبیا چیتی","پیاز","رب گوجه","روغن","نمک"],time:"۱ ساعت",desc:"لوبیا را با سس گوجه بپزید.",tags:["شام","گیاهی"]},
+  {name:"تخم‌مرغ آب‌پز",emoji:"🥚",ing:["تخم مرغ","تخم‌مرغ","آب","نمک"],time:"۱۰ دقیقه",desc:"تخم‌مرغ را ۷ دقیقه بجوشانید.",tags:["صبحانه","سریع"]},
+  {name:"پنیر و گردو",emoji:"🧀",ing:["پنیر","گردو","نان"],time:"۲ دقیقه",desc:"یک میان‌وعدهٔ انرژی‌بخش.",tags:["صبحانه","میان‌وعده"]},
+  {name:"آب‌میوه طبیعی",emoji:"🥤",ing:["پرتقال","سیب","هویج"],time:"۵ دقیقه",desc:"میوه‌ها را در آبمیوه‌گیری بریزید.",tags:["نوشیدنی"]},
+  {name:"کوکو سیب زمینی",emoji:"🥔",ing:["سیب زمینی","سیب‌زمینی","تخم مرغ","تخم‌مرغ","پیاز","آرد"],time:"۳۰ دقیقه",desc:"سیب‌زمینی رنده‌شده را با تخم‌مرغ مخلوط و سرخ کنید.",tags:["شام"]},
+  {name:"دلمه برگ مو",emoji:"🍃",ing:["برگ مو","گوشت چرخ کرده","برنج","لپه","سبزی","لیمو"],time:"۱.۵ ساعت",desc:"مخلوط گوشت و برنج را در برگ مو بپیچید و بپزید.",tags:["ناهار","سنتی"]},
+  {name:"کتلت لوبیا",emoji:"🫘",ing:["لوبیا چیتی","پیاز","تخم مرغ","تخم‌مرغ","آرد"],time:"۳۰ دقیقه",desc:"لوبیا را له کنید و با تخم‌مرغ سرخ کنید.",tags:["شام","گیاهی"]},
+  {name:"ماهی سرخ‌شده",emoji:"🐟",ing:["ماهی","آرد","زردچوبه","لیمو","روغن"],time:"۲۰ دقیقه",desc:"ماهی را آردی کنید و سرخ کنید.",tags:["شام","دریایی"]},
+  {name:"قلیه ماهی",emoji:"🐟",ing:["ماهی","تمرهندی","سبزی","پیاز","سیر"],time:"۱ ساعت",desc:"ماهی را با سس تمرهندی و سبزی بپزید.",tags:["ناهار","جنوبی"]},
+  {name:"کتلت مرغ",emoji:"🍗",ing:["مرغ","سیب زمینی","سیب‌زمینی","تخم مرغ","تخم‌مرغ","آرد","پیاز"],time:"۴۵ دقیقه",desc:"مرغ را با سیب‌زمینی و تخم‌مرغ مخلوط کنید.",tags:["شام"]},
+  {name:"خوراک مرغ",emoji:"🍗",ing:["مرغ","پیاز","رب گوجه","سیب زمینی","سیب‌زمینی","روغن"],time:"۱ ساعت",desc:"مرغ را با پیاز و رب بپزید.",tags:["ناهار"]},
+  {name:"شله‌زرد",emoji:"🍮",ing:["برنج","زعفران","شکر","گلاب","دارچین"],time:"۱ ساعت",desc:"برنج را با شکر و زعفران بپزید تا غلیظ شود.",tags:["دسر"]},
+  {name:"فرنی",emoji:"🍮",ing:["شیر","آرد برنج","شکر","گلاب"],time:"۲۰ دقیقه",desc:"شیر را با آرد برنج و شکر بپزید.",tags:["دسر"]},
+  {name:"سالاد ماکارونی",emoji:"🥗",ing:["ماکارونی","ذرت","خیارشور","سس مایونز","خامه"],time:"۲۰ دقیقه",desc:"ماکارونی سرد را با سبزیجات مخلوط کنید.",tags:["سالاد"]}
+];
+function normalizeIngredient(s){
+  return String(s||"").replace(/[\s،,]+/g," ").trim().toLowerCase().replace(/ي/g,"ی").replace(/ك/g,"ک");
+}
+function suggestRecipes(inputText){
+  var raw=String(inputText||"").split(/[,،\n]+/).map(function(x){return normalizeIngredient(x);}).filter(Boolean);
+  if(!raw.length)return [];
+  var found=[];
+  for(var i=0;i<RECIPES.length;i++){
+    var r=RECIPES[i];
+    var rIngNorm=r.ing.map(normalizeIngredient);
+    var matchCount=0;
+    for(var j=0;j<raw.length;j++){
+      for(var k=0;k<rIngNorm.length;k++){
+        if(rIngNorm[k].indexOf(raw[j])!==-1||raw[j].indexOf(rIngNorm[k])!==-1){matchCount++;break;}
+      }
+    }
+    if(matchCount>0){
+      var score=matchCount/Math.max(1,rIngNorm.length);
+      found.push({recipe:r,score:score,matched:matchCount,total:rIngNorm.length});
+    }
+  }
+  found.sort(function(a,b){return b.score-a.score||b.matched-a.matched;});
+  return found.slice(0,3);
+}
+function renderIngredientsUI(){
+  var el=document.getElementById("spNutritionArea");if(!el)return;
+  var existing=document.getElementById("ingBox");
+  if(existing)return;
+  var html='<div class="ing-box" id="ingBox">'+
+    '<div class="ing-title">🍳 پیشنهاد غذا بر اساس مواد اولیهٔ موجود</div>'+
+    '<div class="ing-hint">مواد اولیه‌ای که در خانه دارید را با ویرگول جدا کنید (مثال: تخم مرغ، گوجه، پیاز). برنامه ۳ غذای پیشنهادی بر اساس مواد شما ارائه می‌دهد.</div>'+
+    '<textarea id="ingInput" placeholder="مثال: تخم مرغ، گوجه، پیاز، نان"></textarea>'+
+    '<button class="ing-btn" id="ingBtn" type="button">🍽️ پیشنهاد غذا</button>'+
+    '<div class="ing-result" id="ingResult"></div>'+
+    '</div>';
+  el.insertAdjacentHTML("beforeend",html);
+  var btn=document.getElementById("ingBtn");
+  if(btn)btn.addEventListener("click",function(){
+    var inp=document.getElementById("ingInput");
+    var res=document.getElementById("ingResult");
+    if(!inp||!res)return;
+    var items=suggestRecipes(inp.value);
+    if(!items.length){res.innerHTML='<div class="ing-recipe">مواد کافی وارد نشد یا غذایی یافت نشد. لطفاً چند مادهٔ دیگر وارد کنید.</div>';res.classList.add("show");return;}
+    var h="";
+    for(var i=0;i<items.length;i++){
+      var it=items[i];
+      var hl=(i===0)?" highlight":"";
+      h+='<div class="ing-recipe'+hl+'">';
+      if(i===0)h+='<span class="ir-badge">✨ پیشنهاد اول</span>';
+      h+='<div class="ir-name"><span class="ir-emoji">'+it.recipe.emoji+'</span>'+safe(it.recipe.name)+'</div>';
+      h+='<div class="ir-meta"><span>⏱️ '+safe(it.recipe.time)+'</span><span>✅ '+it.matched+' از '+it.total+' ماده</span>';
+      var tags=it.recipe.tags||[];for(var t=0;t<tags.length;t++)h+='<span>#'+safe(tags[t])+'</span>';
+      h+='</div>';
+      h+='<div class="ir-desc">'+safe(it.recipe.desc)+'</div>';
+      h+='</div>';
+    }
+    res.innerHTML=h;res.classList.add("show");
+    trackEvent("sport","ingredients_suggest");
+  });
+}
 function renderSportNutrition(){
   var el=document.getElementById("spNutritionArea");if(!el)return;
   var profile=getSportProfile();var goal=profile?profile.goal:"fit";
@@ -2864,7 +3203,9 @@ function renderSportNutrition(){
   else if(goal==="muscle"){html+='• 🍳 صبحانه: ۳ تخم‌مرغ + جو دوسر + موز<br>• 🥩 ناهار: گوشت/مرغ + برنج + سبزیجات<br>• 🥜 میان‌وعده: آجیل + پنیر<br>• 🐟 شام: ماهی + سیب‌زمینی شیرین<br>• 💧 آب: ۳ لیتر روزانه<br>• ⏰ قبل ورزش: کربوهیدرات (نان/برنج)<br>• ⏰ بعد ورزش: ۲۰-۳۰ گرم پروتئین';}
   else if(goal==="health"){html+='• 🍎 میوه و سبزیجات فراوان<br>• 🥜 مغزها و دانه‌ها<br>• 🐟 ماهی ۲ بار در هفته<br>• 💧 آب کافی: ۲ لیتر<br>• 🧂 کاهش نمک و قند<br>• 🚫 پرهیز از غذاهای فرآوری‌شده';}
   else{html+='• 🍳 صبحانه: پروتئین + کربوهیدرات کامل<br>• 🥗 ناهار: پروتئین + سبزیجات + برنج/نان<br>• 🍎 میان‌وعده: میوه + آجیل<br>• 🍲 شام: سبک و مقوی<br>• 💧 آب کافی در طول روز<br>• ⏰ قبل و بعد ورزش: تغذیهٔ متعادل';}
-  html+='</div></div>';el.innerHTML=html;
+  html+='</div></div>';
+  el.innerHTML=html;
+  renderIngredientsUI();
 }
 
 function getPersianWeekDates(){var today=new Date();var persianDay=(today.getDay()+1)%7;var dates=[];for(var i=0;i<7;i++){var d=new Date(today);d.setDate(today.getDate()-(persianDay-i));dates.push(d);}return dates;}
@@ -2925,7 +3266,6 @@ function renderSportTracker(){
   var b=document.getElementById("spMarkBtn");if(b)b.addEventListener("click",markTodayWorkout);
 }
 
-/* ===== Share workout as image ===== */
 function generateWorkoutImage(){
   var canvas=document.getElementById("shareCanvas");if(!canvas)return null;
   var W=1080,H=1620;canvas.width=W;canvas.height=H;
@@ -2965,11 +3305,13 @@ function generateWorkoutImage(){
   drawPhase("🔥 گرم‌کردن",day.warmup,"#ffd166");
   drawPhase("💪 حرکات اصلی",day.main,"#39c6ff");
   drawPhase("🧘 سردکردن",day.cooldown,"#2dd4a3");
-  var fy=H-140;
-  ctx.fillStyle="rgba(255,255,255,.08)";drawRoundedRect(ctx,70,fy,W-140,100,20);ctx.fill();
-  ctx.textAlign="center";ctx.fillStyle="#bfe9ff";ctx.font="800 26px Tahoma,Arial,sans-serif";ctx.fillText("🌌 مجله آسمان — به آسمان نگاه کن",W/2,fy+30);
+  var fy=H-150;
+  ctx.fillStyle="rgba(255,255,255,.08)";drawRoundedRect(ctx,70,fy,W-140,120,20);ctx.fill();
+  ctx.textAlign="center";ctx.fillStyle="#bfe9ff";ctx.font="800 26px Tahoma,Arial,sans-serif";ctx.fillText("🌌 مجله آسمان — به آسمان نگاه کن",W/2,fy+16);
+  ctx.fillStyle="#7fffd4";ctx.font="900 26px Tahoma,Arial,sans-serif";ctx.fillText("🌐 "+MAGAZINE_URL,W/2,fy+62);
   return canvas;
 }
+function getWorkoutShareText(){return "🌿 برنامهٔ ورزشی من در مجلهٔ آسمان\n🌐 "+MAGAZINE_URL+"\nبه آسمان نگاه کن.";}
 function shareWorkoutImage(){
   var profile=getSportProfile();if(!profile){toast("ابتدا برنامه را بسازید",true);return;}
   var canvas;
@@ -2978,8 +3320,10 @@ function shareWorkoutImage(){
   canvas.toBlob(function(blob){
     if(!blob){toast("خطا در ساخت تصویر",true);return;}
     var file=new File([blob],"aseman-workout.png",{type:"image/png"});
-    if(navigator.canShare&&navigator.canShare({files:[file]})){navigator.share({files:[file],title:"برنامهٔ ورزشی آسمان",text:"🌿 برنامهٔ ورزشی من در مجلهٔ آسمان"}).then(function(){toast("✅ اشتراک‌گذاری شد");trackEvent("sport","share_image");}).catch(function(err){if(err&&err.name==="AbortError")return;toast("اشتراک‌گذاری لغو شد",true);});}
-    else if(navigator.share){navigator.share({title:"برنامهٔ ورزشی آسمان",text:"🌿 برنامهٔ ورزشی من در مجلهٔ آسمان"}).then(function(){toast("✅ اشتراک‌گذاری شد");}).catch(function(err){if(err&&err.name==="AbortError")return;});}
+    var shareText=getWorkoutShareText();
+    if(navigator.canShare&&navigator.canShare({files:[file]})){
+      navigator.share({files:[file],title:"برنامهٔ ورزشی آسمان",text:shareText}).then(function(){toast("✅ اشتراک‌گذاری شد");trackEvent("sport","share_image");}).catch(function(err){if(err&&err.name==="AbortError")return;toast("اشتراک‌گذاری لغو شد",true);});
+    }
     else{downloadWorkoutImage();}
   },"image/png",.95);
 }
@@ -3036,7 +3380,6 @@ function initSportPlanner(){
   var btn=document.getElementById("spBuildBtn");if(btn&&!btn.getAttribute("data-bound")){btn.setAttribute("data-bound","1");btn.addEventListener("click",buildSportPlan);}
   var rst=document.getElementById("spResetBtn");if(rst&&!rst.getAttribute("data-bound")){rst.setAttribute("data-bound","1");rst.addEventListener("click",resetSportPlan);}
   var sh=document.getElementById("spShareBtn");if(sh&&!sh.getAttribute("data-bound")){sh.setAttribute("data-bound","1");sh.addEventListener("click",shareWorkoutImage);}
-  var sv=document.getElementById("spSaveBtn");if(sv&&!sv.getAttribute("data-bound")){sv.setAttribute("data-bound","1");sv.addEventListener("click",downloadWorkoutImage);}
   var p=getSportProfile();
   if(p){
     var today=new Date().getDay();
@@ -3066,8 +3409,14 @@ function renderSettingsPage(){
   var clearPins=document.getElementById("clearPinsBtn");
   if(clearPins){clearPins.removeEventListener("click",clearPins._h);clearPins._h=function(){var unlocked=[];for(var i=0;i<pins.length;i++)if(pins[i].locked)unlocked.push(pins[i]);pins=unlocked;savePins();updatePinBtn();var pc=document.getElementById("pinsCount");if(pc)pc.textContent=pins.length;show("✅ پین‌ها پاک شدند","ok");};clearPins.addEventListener("click",clearPins._h);}
   var clearCache=document.getElementById("clearCacheBtn");
-  if(clearCache){clearCache.removeEventListener("click",clearCache._h);clearCache._h=function(){try{var keys=Object.keys(localStorage);var keep=["gpsEnabled","unit","pins","city","hasOpened","lastPage","aseman_device_seen","appTheme","appFont","appColor","userName","hiddenCards","dashOrder","lastAutoCacheClear","saves","tabOrder","spProfile","spWeekPlan","spWorkoutLog","bnOrder","nasaApiKey","chatFabPosPct"];for(var i=0;i<keys.length;i++)if(keep.indexOf(keys[i])===-1)localStorage.removeItem(keys[i]);lsSet("lastAutoCacheClear",String(Date.now()));show("✅ حافظه پاک شد","ok");setTimeout(function(){location.reload();},1000);}catch(e){show("⚠️ خطا","err");}};clearCache.addEventListener("click",clearCache._h);}
+  if(clearCache){clearCache.removeEventListener("click",clearCache._h);clearCache._h=function(){try{var keys=Object.keys(localStorage);var keep=["gpsEnabled","unit","pins","city","hasOpened","lastPage","aseman_device_seen","appTheme","appFont","appColor","userName","hiddenCards","dashOrder","lastAutoCacheClear","saves","tabOrder","spProfile","spWeekPlan","spWorkoutLog","bnOrder","nasaApiKey","chatFabPosPct","lastSeenVersion"];for(var i=0;i<keys.length;i++)if(keep.indexOf(keys[i])===-1)localStorage.removeItem(keys[i]);lsSet("lastAutoCacheClear",String(Date.now()));show("✅ حافظه پاک شد","ok");setTimeout(function(){location.reload();},1000);}catch(e){show("⚠️ خطا","err");}};clearCache.addEventListener("click",clearCache._h);}
   var sv=document.getElementById("settingsVersion");if(sv)sv.textContent=APP_VERSION;
+  var sc=document.getElementById("settingsChangelog");
+  if(sc){
+    var h="";
+    for(var ci=0;ci<APP_CHANGELOG_LINES.length;ci++)h+='<div style="padding:3px 0;border-bottom:1px dashed rgba(255,255,255,.08)">'+APP_CHANGELOG_LINES[ci]+'</div>';
+    sc.innerHTML=h;
+  }
 }
 
 var magLoaded={};
@@ -3093,14 +3442,14 @@ function showPage(p){
     else if(p==="travel"){renderTravelPage();bindAccordions();}
     else if(p==="fun"){initFunIndices(true);renderFunPage();bindAccordions();}
     else if(p==="prayer"){renderPrayer();renderDhikr();}
-    else if(p==="about"){renderSettingsPage();}
+    else if(p==="settings"){renderSettingsPage();}
     else if(p==="myday")renderDash();
     else if(p==="notes")renderNotes();
   }else{
     if(p==="sport"){initSportPlanner();}
     else if(p==="travel")renderTravelPage();
     else if(p==="prayer"){renderPrayer();renderDhikr();}
-    else if(p==="about"){renderSettingsPage();}
+    else if(p==="settings"){renderSettingsPage();}
     else if(p==="myday")renderDash();
     else if(p==="science"){renderSciencePage();loadAPOD();}
     else if(p==="culture"){renderCulturePage();}
@@ -3118,12 +3467,10 @@ function bindAccordions(){
   for(var i=0;i<accs.length;i++){(function(h){if(h.getAttribute("data-bound"))return;h.setAttribute("data-bound","1");h.addEventListener("click",function(){var g=h.closest(".travel-acc-group,.culture-acc-group,.fun-acc-group");if(g)g.classList.toggle("open");});})(accs[i]);}
 }
 
-/* ===== Chat Assistant ===== */
 var GREET="سلام! 👋 من دستیار هوشمند مجلهٔ آسمان هستم.\n\n🔹 لایه ۱: پاسخ سریع به سوالات ساده.\n🔹 لایه ۲: تحلیل ترکیبی برای ۹ فعالیت: دوچرخه، پیاده‌روی، کوهنوردی، پیکنیک، شنا، ماهیگیری، فوتبال، تنیس، عکاسی.\n🔹 Chat → Action: می‌توانم کارهایی انجام دهم (مثل «کارت شعر را حذف کن» یا «تهران را اضافه کن»).\n\n💡 نکته: برای تغییر مکان دکمهٔ 🤖، لمس طولانی کنید.\n\nاز نمونه سوال‌های پایین استفاده کنید یا آزاد بپرسید.";
 var chatPanel=document.getElementById("chatPanel"),chatMessages=document.getElementById("chatMessages"),chatInput=document.getElementById("chatInput");
 function setChatOpen(open){if(!chatPanel)return;chatPanel.classList.toggle("show",open);document.body.classList.toggle("chat-lock",open);if(open)renderSuggestions();}
 
-/* ===== Draggable Chat FAB ===== */
 (function setupFabDrag(){
   var fab=document.getElementById("chatFab");
   if(!fab)return;
@@ -3343,7 +3690,6 @@ function tryChatAction(q){
   }
   return false;
 }
-/* ===== Expanded activity analysis with 9 activities ===== */
 function analyzeActivity(q){
   var s=getDayStats(0),an=getAirNow()||airFallback();
   if(!s)return null;
@@ -3377,35 +3723,37 @@ function analyzeActivity(q){
   return out;
 }
 var PAGE_SUGS={
-  about:["معرفی مجله چیست؟","چه بخش‌هایی دارد؟","آیا رایگان است؟","چطور نصب کنم؟","سازنده کیست؟","نسخه برنامه"],
   myday:["هوای امروز چطوره؟","اذان بعدی کی است؟","فاز ماه امشب چیه؟","کارت شعر را حذف کن","فقط علم و ورزش را نشان بده","همه را نشان بده"],
-  notes:["یادداشت ۱ چیه؟","سخن سردبیر","سردبیر کیه؟","یادداشت ۲ چیست؟"],
+  notes:["یادداشت ۱ چیه؟","یادداشت ۲ چیه؟","سخن سردبیر","سردبیر کیه؟"],
   home:["هوای امروز چطوره؟","فردا باران میاد؟","کیفیت هوا چطوره؟","چی بپوشم؟","امروز برای دوچرخه‌سواری خوبه؟"],
   prayer:["اذان بعدی کی است؟","طلوع آفتاب کی است؟","غروب آفتاب کی است؟","ذکر امروز چیه؟"],
   travel:["پنجره سفر کِیه؟","برنامه سفر بساز","شیراز ۳ روز","مشهد ۱ روز"],
   culture:["فال حافظ","بیت تصادفی","شاعران پارسی","نمایش‌های تئاتر"],
   sport:["برنامه ورزشی من","تغذیه ورزشی","محاسبه BMI","امروز برای ورزش خوبه؟"],
-  science:["فاز ماه امروز","تصویر نجومی روز","رویداد آسمانی این ماه","دانستنی امروز چیه؟"],
-  fun:["جوک بعدی","دانستنی سرگرمی","معما بگو"]
+  science:["فاز ماه امروز","تصویر نجومی روز","اخبار علمی روز","دانستنی امروز چیه؟"],
+  fun:["جوک بعدی","دانستنی سرگرمی","معما بگو"],
+  guide:["چطور نصب کنم؟","راهنما چیست؟"],
+  settings:["نسخه برنامه","چطور GPS را فعال کنم؟"]
 };
 var SUG_ANSWERS={
   "معرفی مجله چیست؟":"🌌 مجله آسمان یک وب‌اپلیکیشن رایگان، چندبخشی و فارسی است که همهٔ پردازش‌های آن سمت مرورگر شما انجام می‌شود.",
-  "چه بخش‌هایی دارد؟":"📚 ۱۰ بخش اصلی: درباره، آسمان من، یادداشت مجله، آب‌وهوا، اوقات شرعی، سفر، فرهنگ، سلامتی، علم، سرگرمی. (تنظیمات در صفحهٔ درباره)",
+  "چه بخش‌هایی دارد؟":"📚 ۹ بخش اصلی: آسمان من، یادداشت مجله، آب‌وهوا، اوقات شرعی، سفر، فرهنگ، سلامتی، علم، سرگرمی. تنظیمات و راهنما در شیت «بیشتر».",
   "آیا رایگان است؟":"✅ بله، کاملاً رایگان است.",
-  "چطور نصب کنم؟":"📲 اندروید: منوی ⋮ ← «نصب برنامه»\n🍎 iOS: Share ← Add to Home Screen",
-  "سازنده کیست؟":"👤 سازنده: «م.حسینی». ارتباط: eitaa.com/hossini_96",
-  "نسخه برنامه":"📌 نسخهٔ فعلی: ۱٫۱٫۰",
+  "چطور نصب کنم؟":"📲 به شیت «بیشتر» بروید و روی «📖 راهنما» بزنید — راهنمای نصب کامل با دکمهٔ نصب خودکار آنجا است.\n🤖 اندروید: منوی Chrome ← «نصب برنامه»\n🍎 iOS: Safari ← Share ← Add to Home Screen",
+  "سازنده کیست؟":"👤 سازنده: «م.حسینی». ارتباط: eitaa.com/hossini_96 — در صفحهٔ راهنما دکمهٔ ارتباط با سازنده موجود است.",
+  "نسخه برنامه":"📌 نسخهٔ فعلی: ۱٫۱٫۲",
   "سردبیر کیه؟":"✍️ سردبیر مجلهٔ آسمان «م.حسینی» است.",
   "یادداشت ۱ چیه؟":"📝 «سخن سردبیر، فصل پاییز» دربارهٔ آغاز سال تحصیلی، آموزش، همدلی و امید.",
-  "سخن سردبیر":"✍️ در یادداشت ۱ صفحهٔ «یادداشت مجله».",
-  "یادداشت ۲ چیست؟":"📝 به‌زودی منتشر می‌شود.",
+  "یادداشت ۲ چیه؟":"✍️ «یادداشت سردبیر» — متن کامل در صفحهٔ یادداشت مجله، یادداشت ۲.",
+  "سخن سردبیر":"✍️ در یادداشت ۱ و ۲ صفحهٔ «یادداشت مجله».",
   "کارت شعر را حذف کن":"انجام شد. ✅ کارت شعر از صفحهٔ آسمان من حذف شد.",
   "فقط علم و ورزش را نشان بده":"انجام شد. ✅ فقط کارت‌های علم و ورزش نمایش داده می‌شوند.",
   "همه را نشان بده":"انجام شد. ✅ همهٔ کارت‌ها نمایش داده شدند.",
   "برنامه ورزشی من":"🌿 صفحهٔ «سلامتی» ← کشوی «برنامهٔ هفتگی ورزش».",
-  "تغذیه ورزشی":"🥗 صفحهٔ «سلامتی» ← کشوی «تغذیهٔ ورزشی».",
+  "تغذیه ورزشی":"🥗 صفحهٔ «سلامتی» ← کشوی «تغذیهٔ ورزشی». بخش «🍳 پیشنهاد غذا بر اساس مواد اولیه» هم آنجاست.",
   "محاسبه BMI":"⚖️ صفحهٔ «سلامتی» ← کشوی «محاسبهٔ BMI و BMR».",
-  "امروز برای ورزش خوبه؟":"🏃 به صفحهٔ «سلامتی» بروید — تحلیل خودکار هوا آنجا نمایش داده می‌شود."
+  "امروز برای ورزش خوبه؟":"🏃 به صفحهٔ «سلامتی» بروید — تحلیل خودکار هوا آنجا نمایش داده می‌شود.",
+  "راهنما چیست؟":"📖 در صفحهٔ راهنما، دو کشوی «راهنمای نصب» و «راهنمای بخش‌ها» قرار دارد. دربارهٔ آسمان، دکمهٔ نصب خودکار و ارتباط با سازنده هم بالای صفحه هستند."
 };
 function buildBriefing(){var s=getDayStats(0);if(!s)return"داده‌ای نیست.";var l=["📋 گزارش — "+city.name,"🌤️ "+code(s.code)[0],"🌡️ "+(s.temp!=null?T1(s.temp)+D():"--"),"🌧️ بارش: "+(s.precipProb||0)+"٪"];var al=getActiveAlerts();if(al.length)l.push("⚠️ "+al.map(function(a){return a.title;}).join("، "));return l.join("\n");}
 function foodAdvice(){var m=new Date().getMonth()+1;if(m>=3&&m<=5)return"🥗 بهار: سبزیجات تازه، مرکبات و ماست.";if(m>=6&&m<=8)return"🍉 تابستان: میوه‌های آبدار و الکترولیت.";if(m>=9&&m<=11)return"🍲 پاییز: سوپ گرم و مرکبات.";return"🍜 زمستان: غذاهای گرم و مقوی.";}
@@ -3434,6 +3782,9 @@ function chatRespond(q0){
   if(wakeWordMatch(q,["ورزش","فوتبال"])){if(currentPage!=="sport")showPage("sport");addChatMsg("🌿 به صفحهٔ سلامتی رفتم.",false);return;}
   if(wakeWordMatch(q,["فرهنگ","شعر"])){if(currentPage!=="culture")showPage("culture");addChatMsg("🎭 به صفحهٔ فرهنگ رفتم.",false);return;}
   if(wakeWordMatch(q,["سفر"])){if(currentPage!=="travel")showPage("travel");addChatMsg("🧳 به صفحهٔ سفر رفتم.",false);return;}
+  if(wakeWordMatch(q,["تنظیمات","settings"])){if(currentPage!=="settings")showPage("settings");addChatMsg("⚙️ به صفحهٔ تنظیمات رفتم.",false);return;}
+  if(wakeWordMatch(q,["راهنما","help"])){if(currentPage!=="guide")showPage("guide");addChatMsg("📖 به صفحهٔ راهنما رفتم.",false);return;}
+  if(wakeWordMatch(q,["اخبار","خبر"])){if(currentPage!=="science")showPage("science");addChatMsg("📰 به صفحهٔ علم رفتم.",false);return;}
   addChatMsg("📍 "+city.name+"\n🌤️ "+code(s.code)[0]+"\n🌡️ "+(s.temp!=null?T1(s.temp)+D():"--")+"\n\n💡 می‌توانید سوال یا فرمان بدهید.",false);
 }
 function sendText(t){addChatMsg(t,true);setTimeout(function(){chatRespond(t);},300);}
@@ -3488,6 +3839,7 @@ function enableAutoUpdate(){
 }
 if("serviceWorker" in navigator)window.addEventListener("load",function(){navigator.serviceWorker.register("sw.js",{updateViaCache:"none"}).catch(function(){});});
 setInterval(function(){if(appBooted&&navigator.onLine&&!document.body.classList.contains("install-lock")&&!document.body.classList.contains("chat-lock"))refreshAll();},2*60*60*1000);
+setInterval(function(){if(appBooted&&navigator.onLine)try{loadScienceNews();}catch(e){}},2*60*60*1000);
 
 ensureLockedPins();savePins();
 renderToday();updateLocalTime();
