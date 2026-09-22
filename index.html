@@ -4,6 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#07111f">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: blob: https:; connect-src 'self' https://api.open-meteo.com https://geocoding-api.open-meteo.com https://air-quality-api.open-meteo.com https://api.aladhan.com https://archive-api.open-meteo.com https://historical-forecast-api.open-meteo.com https://api.met.no https://nominatim.openstreetmap.org https://api.nasa.gov https://api.mymemory.translated.net https://ipapi.co https://ipwho.is https://freeipapi.com https://api.bigdatacloud.net; font-src 'self' data: https://fonts.gstatic.com; media-src 'self' blob:; worker-src 'self' blob:; child-src 'self' blob:;">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800;900&display=swap">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" type="image/svg+xml" href="icon.svg">
 <link rel="apple-touch-icon" href="icon-192.png">
@@ -12,7 +17,7 @@
 <meta name="apple-mobile-web-app-title" content="مجله آسمان">
 <title>مجله آسمان | هواشناسی، ورزش، سلامت، فرهنگ، علم، سفر</title>
 <style>
-:root{--bg:#07111f;--bg2:#0a1828;--text:#f8fbff;--muted:#9db0c6;--line:rgba(255,255,255,.11);--accent:#39c6ff;--accent2:#4f7cff;--cyan:#39c6ff;--gold:#ffd166;--green:#2dd4a3;--red:#ff6b7a;--card-bg:rgba(255,255,255,.06);--card-bg2:rgba(255,255,255,.03)}
+:root{--bg:#07111f;--bg2:#0a1828;--text:#f8fbff;--muted:#9db0c6;--line:rgba(255,255,255,.11);--accent:#39c6ff;--accent2:#4f7cff;--cyan:#39c6ff;--gold:#ffd166;--green:#2dd4a3;--red:#ff6b7a;--card-bg:rgba(255,255,255,.06);--card-bg2:rgba(255,255,255,.03);--chat-fab-bottom-mobile:300px}
 body[data-color="purple"]{--accent:#8b5cf6;--accent2:#ec4899}
 body[data-color="green"]{--accent:#2dd4a3;--accent2:#39c6ff}
 body[data-color="orange"]{--accent:#ff8c42;--accent2:#ffd166}
@@ -21,7 +26,7 @@ body[data-color="indigo"]{--accent:#4f46e5;--accent2:#8b5cf6}
 body[data-color="mixed"]{--accent:#39c6ff;--accent2:#ec4899}
 body[data-theme="light"]{--bg:#eef2f7;--bg2:#f8fafc;--text:#0a1628;--muted:#5a6f84;--line:rgba(0,0,0,.1);--card-bg:rgba(255,255,255,.75);--card-bg2:rgba(255,255,255,.6);background:linear-gradient(145deg,#e6edf5,#eef2f7)}
 body[data-theme="light"] .panel{background:linear-gradient(145deg,rgba(255,255,255,.9),rgba(255,255,255,.75));border-color:rgba(0,0,0,.08);box-shadow:0 10px 30px rgba(0,20,50,.08)}
-body[data-theme="light"] .mag-nav{background:var(--bg)}
+body[data-theme="light"] .mag-nav{background:transparent}
 body[data-theme="light"] .mag-tab{color:#0a1628}
 body[data-theme="light"] .mag-tab.active{color:#fff}
 body[data-theme="light"] .sec-content{color:#0a1628}
@@ -36,7 +41,7 @@ body[data-font="large"] .mag-tab{font-size:16px}
 body[data-font="large"] .sec-content{font-size:17px}
 body[data-font="large"] .title{font-size:20px}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;color:var(--text);font-family:Tahoma,"Vazirmatn",Arial,sans-serif;background:linear-gradient(145deg,#06101d,var(--bg2) 50%,var(--bg));min-height:100vh;overflow-x:hidden;font-size:15px;transition:background .3s,color .3s}
+body{margin:0;color:var(--text);font-family:"Vazirmatn",Tahoma,Arial,sans-serif;font-weight:400;background:linear-gradient(145deg,#06101d,var(--bg2) 50%,var(--bg));min-height:100vh;overflow-x:hidden;font-size:15px;transition:background .3s,color .3s}
 body.chat-lock,body.install-lock{overflow:hidden}
 #bgP{position:fixed;inset:0;pointer-events:none;z-index:1;overflow:hidden}
 .p-rain{position:absolute;width:3px;background:linear-gradient(to bottom,transparent,#5fd4ff 40%,#2aa7e8);animation:pR linear infinite}
@@ -47,18 +52,20 @@ body.chat-lock,body.install-lock{overflow:hidden}
 @keyframes pSt{50%{opacity:.9}}
 button,input,select,textarea{font:inherit}button{cursor:pointer;color:inherit;background:none;border:none}
 .wrap{width:min(1320px,calc(100% - 24px));margin:auto;position:relative;z-index:2}
-.top{padding:14px 0 0}
+/* هدر ثابت (Sticky) */
+.top{position:sticky;top:0;z-index:90;padding:14px 12px 8px;margin:0 -12px;background:var(--bg);border-bottom:1px solid var(--line);box-shadow:0 4px 16px rgba(0,0,0,.15);transition:box-shadow .3s ease,background .3s ease}
+body[data-theme="light"] .top{box-shadow:0 4px 16px rgba(0,20,50,.08)}
 .brand{display:flex;align-items:center;gap:12px}
 .logo{width:54px;height:54px;border-radius:16px;display:grid;place-items:center;font-size:28px;background:linear-gradient(145deg,var(--accent),var(--accent2));box-shadow:0 10px 30px #39c6ff40}
-.brand-text h1{margin:0;font-size:clamp(24px,4vw,34px);font-weight:900;letter-spacing:.5px;background:linear-gradient(135deg,#fff,var(--accent));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.brand-text h1{margin:0;font-size:clamp(24px,4vw,34px);font-weight:800;letter-spacing:.5px;background:linear-gradient(135deg,#fff,var(--accent));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 .brand-sub{margin-top:4px;font-size:13px;color:var(--muted);font-weight:700;letter-spacing:.4px}
 #pullInd{position:fixed;top:0;left:50%;transform:translateX(-50%);background:var(--accent);color:#04101d;font-weight:800;font-size:13px;padding:6px 16px;border-radius:0 0 14px 14px;opacity:0;transition:opacity .2s;z-index:9998;pointer-events:none}
 .share-toast{position:fixed;bottom:90px;left:50%;transform:translateX(-50%) translateY(20px);padding:12px 24px;background:linear-gradient(135deg,#2dd4a3,#39c6ff);color:#04101d;font-weight:800;font-size:14px;border-radius:14px;box-shadow:0 8px 24px rgba(0,0,0,.35);opacity:0;pointer-events:none;transition:.3s;z-index:99999;max-width:calc(100vw - 32px);text-align:center;line-height:1.6;word-wrap:break-word;overflow-wrap:break-word}
 .share-toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 .share-toast.err{background:linear-gradient(135deg,#ff6b7a,#e63946);color:#fff}
-.mag-nav{display:flex;gap:8px;overflow-x:auto;padding:8px 0;scrollbar-width:none;position:sticky;top:0;z-index:80;background:var(--bg)}
+.mag-nav{display:flex;gap:8px;overflow-x:auto;padding:8px 0;scrollbar-width:none;position:static;background:transparent}
 .mag-nav::-webkit-scrollbar{display:none}
-.mag-tab{flex:0 0 auto;padding:10px 18px;border-radius:12px;font-size:14px;font-weight:900;cursor:pointer;transition:.2s;white-space:nowrap;color:var(--text);background:linear-gradient(145deg,rgba(255,255,255,.10),rgba(255,255,255,.04));border:2px solid rgba(255,255,255,.12);box-shadow:0 3px 0 rgba(5,12,22,.7),inset 0 2px 0 rgba(255,255,255,.1)}
+.mag-tab{flex:0 0 auto;padding:10px 18px;border-radius:12px;font-size:14px;font-weight:800;cursor:pointer;transition:.2s;white-space:nowrap;color:var(--text);background:linear-gradient(145deg,rgba(255,255,255,.10),rgba(255,255,255,.04));border:2px solid rgba(255,255,255,.12);box-shadow:0 3px 0 rgba(5,12,22,.7),inset 0 2px 0 rgba(255,255,255,.1)}
 .mag-tab:hover{transform:translateY(-1px)}
 .mag-tab.active{background:linear-gradient(145deg,var(--accent),var(--accent2));color:#04101d;border-color:transparent}
 .mag-tab.dragging{opacity:.35;transform:scale(.96)}
@@ -71,8 +78,8 @@ button,input,select,textarea{font:inherit}button{cursor:pointer;color:inherit;ba
 .vt-head{display:flex;align-items:center;gap:10px;margin-bottom:10px;padding-bottom:10px;border-bottom:1px dashed rgba(255,255,255,.2)}
 .vt-icon{font-size:26px;animation:vtFloat 1.5s ease-in-out infinite}
 @keyframes vtFloat{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-4px) scale(1.05)}}
-.vt-title{flex:1;font-weight:900;font-size:15px;color:#ffd166;line-height:1.5}
-.vt-close{width:28px;height:28px;border-radius:8px;background:rgba(230,57,70,.9);color:#fff;font-size:14px;font-weight:900;border:none;cursor:pointer;display:grid;place-items:center;transition:.2s;flex-shrink:0}
+.vt-title{flex:1;font-weight:800;font-size:15px;color:#ffd166;line-height:1.5}
+.vt-close{width:28px;height:28px;border-radius:8px;background:rgba(230,57,70,.9);color:#fff;font-size:14px;font-weight:800;border:none;cursor:pointer;display:grid;place-items:center;transition:.2s;flex-shrink:0}
 .vt-close:hover{background:#e63946;transform:scale(1.05)}
 .vt-version{font-size:13px;color:#7fffd4;font-weight:800;margin-bottom:10px}
 .vt-version b{color:#fff;font-size:15px}
@@ -81,25 +88,24 @@ button,input,select,textarea{font:inherit}button{cursor:pointer;color:inherit;ba
 .vt-changes .vt-line:last-child{border-bottom:none}
 @media(max-width:560px){.version-toast{top:8px;width:calc(100vw - 16px);padding:12px 14px}.vt-title{font-size:13.5px}.vt-changes{font-size:11.5px;max-height:130px}}
 
-.browser-banner{position:fixed;top:12px;left:50%;transform:translateX(-50%) translateY(-60px);width:min(420px,calc(100vw - 24px));padding:12px 20px;background:linear-gradient(135deg,#4285f4,#34a853);color:#fff;font-weight:900;font-size:13.5px;border-radius:14px;box-shadow:0 12px 32px rgba(66,133,244,.45);z-index:9997;opacity:0;transition:opacity .35s ease,transform .35s ease;text-align:center;line-height:1.8;pointer-events:none}
+.browser-banner{position:fixed;top:12px;left:50%;transform:translateX(-50%) translateY(-60px);width:min(420px,calc(100vw - 24px));padding:12px 20px;background:linear-gradient(135deg,#4285f4,#34a853);color:#fff;font-weight:800;font-size:13.5px;border-radius:14px;box-shadow:0 12px 32px rgba(66,133,244,.45);z-index:9997;opacity:0;transition:opacity .35s ease,transform .35s ease;text-align:center;line-height:1.8;pointer-events:none}
 .browser-banner.show{opacity:1;transform:translateX(-50%) translateY(0)}
 
-/* 🆕 AR Qibla Modal */
 .ar-modal{position:fixed;inset:0;background:#000;z-index:10001;display:none;overflow:hidden}
 .ar-modal.show{display:block;animation:fadeIn .3s ease-out}
 .ar-modal video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#000}
 .ar-overlay{position:absolute;inset:0;pointer-events:none;display:flex;flex-direction:column;align-items:center;justify-content:center}
 .ar-compass{position:relative;width:min(70vw,320px);height:min(70vw,320px);border-radius:50%;border:3px solid rgba(255,255,255,.35);background:rgba(0,0,0,.25);backdrop-filter:blur(2px);display:grid;place-items:center;box-shadow:0 0 40px rgba(57,198,255,.35)}
 .ar-compass::before{content:"";position:absolute;inset:14px;border-radius:50%;border:1px dashed rgba(255,255,255,.25)}
-.ar-compass .ar-tick{position:absolute;top:6px;left:50%;transform:translateX(-50%);color:#fff;font-weight:900;font-size:12px;text-shadow:0 2px 6px #000}
+.ar-compass .ar-tick{position:absolute;top:6px;left:50%;transform:translateX(-50%);color:#fff;font-weight:800;font-size:12px;text-shadow:0 2px 6px #000}
 .ar-arrow{position:absolute;top:50%;left:50%;width:0;height:0;transform-origin:50% 100%;transition:transform .12s linear}
 .ar-arrow .ar-head{position:absolute;top:-50%;left:-22px;width:44px;height:90px;background:linear-gradient(180deg,#ffd166,#ff8c42);clip-path:polygon(50% 0%,100% 100%,50% 82%,0% 100%);filter:drop-shadow(0 6px 14px rgba(255,140,66,.6))}
 .ar-kaaba{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:36px;filter:drop-shadow(0 4px 10px rgba(0,0,0,.6))}
 .ar-info{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);padding:10px 20px;background:rgba(0,0,0,.65);color:#fff;font-weight:800;font-size:14px;border-radius:14px;border:1px solid rgba(255,255,255,.25);text-align:center;line-height:1.7;max-width:calc(100vw - 30px);backdrop-filter:blur(8px)}
 .ar-info b{color:#ffd166}
-.ar-close{position:absolute;top:16px;left:16px;width:46px;height:46px;border-radius:50%;background:rgba(230,57,70,.92);color:#fff;font-size:20px;font-weight:900;border:none;cursor:pointer;display:grid;place-items:center;z-index:2;box-shadow:0 8px 20px rgba(0,0,0,.5)}
+.ar-close{position:absolute;top:16px;left:16px;width:46px;height:46px;border-radius:50%;background:rgba(230,57,70,.92);color:#fff;font-size:20px;font-weight:800;border:none;cursor:pointer;display:grid;place-items:center;z-index:2;box-shadow:0 8px 20px rgba(0,0,0,.5)}
 .ar-help{position:absolute;top:16px;right:16px;padding:8px 14px;background:rgba(0,0,0,.6);color:#fff;font-size:11.5px;font-weight:700;border-radius:12px;border:1px solid rgba(255,255,255,.2);max-width:200px;line-height:1.7;z-index:2}
-.ar-qibla-btn{margin-top:14px;width:100%;padding:14px;background:linear-gradient(135deg,#2dd4a3,#39c6ff);color:#04101d;border:none;border-radius:14px;font-weight:900;font-size:15px;font-family:inherit;cursor:pointer;transition:.2s;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 8px 20px rgba(45,212,161,.35)}
+.ar-qibla-btn{margin-top:14px;width:100%;padding:14px;background:linear-gradient(135deg,#2dd4a3,#39c6ff);color:#04101d;border:none;border-radius:14px;font-weight:800;font-size:15px;font-family:inherit;cursor:pointer;transition:.2s;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 8px 20px rgba(45,212,161,.35)}
 .ar-qibla-btn:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(45,212,161,.5)}
 
 .bottom-nav{display:none}
@@ -113,7 +119,7 @@ button,input,select,textarea{font:inherit}button{cursor:pointer;color:inherit;ba
   .bn-item .bn-label{font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
   .mag-nav{display:none}
   body{padding-bottom:80px}
-  .chat-fab{bottom:calc(300px + env(safe-area-inset-bottom,0px)) !important}
+  .chat-fab{bottom:calc(var(--chat-fab-bottom-mobile) + env(safe-area-inset-bottom,0px)) !important}
 }
 
 .bn-sheet{display:none;position:fixed;inset:0;z-index:9997}
@@ -122,10 +128,10 @@ button,input,select,textarea{font:inherit}button{cursor:pointer;color:inherit;ba
 .bn-sheet-content{position:absolute;bottom:0;left:0;right:0;max-height:82vh;overflow-y:auto;background:linear-gradient(165deg,#0e2340,#1a3a5c 60%,#2a1a5c);border-radius:24px 24px 0 0;padding:18px 16px calc(20px + env(safe-area-inset-bottom,0px));animation:slideUpSheet .35s cubic-bezier(.2,.8,.2,1);box-shadow:0 -20px 60px rgba(0,0,0,.5)}
 @keyframes slideUpSheet{from{transform:translateY(100%)}to{transform:translateY(0)}}
 .bn-sheet-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;padding-bottom:12px;border-bottom:1px dashed rgba(255,255,255,.15)}
-.bn-sheet-title{font-size:18px;font-weight:900;color:#fff}
-.bn-sheet-close{width:36px;height:36px;border-radius:12px;background:rgba(230,57,70,.85);color:#fff;font-size:18px;font-weight:900;border:none;cursor:pointer;display:grid;place-items:center;transition:.2s}
+.bn-sheet-title{font-size:18px;font-weight:800;color:#fff}
+.bn-sheet-close{width:36px;height:36px;border-radius:12px;background:rgba(230,57,70,.85);color:#fff;font-size:18px;font-weight:800;border:none;cursor:pointer;display:grid;place-items:center;transition:.2s}
 .bn-sheet-close:hover{background:rgba(230,57,70,1)}
-.bn-sheet-hint{font-size:12px;color:#9db0c6;margin:10px 0 14px;line-height:1.7;padding:8px 12px;background:rgba(57,198,255,.08);border-right:3px solid var(--accent);border-radius:0 10px 10px 0}
+.bn-sheet-hint{font-size:12px;color:#9db0c6;margin:10px 0 14px;line-height:1.8;padding:8px 12px;background:rgba(57,198,255,.08);border-right:3px solid var(--accent);border-radius:0 10px 10px 0}
 .bn-sheet-items{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
 .bn-sheet-item{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:14px 6px;border-radius:16px;background:linear-gradient(145deg,rgba(255,255,255,.09),rgba(255,255,255,.04));border:1px solid rgba(255,255,255,.12);cursor:grab;user-select:none;transition:.2s;-webkit-user-select:none;touch-action:none;text-align:center;position:relative;min-height:78px}
 .bn-sheet-item:hover{background:linear-gradient(145deg,rgba(57,198,255,.16),rgba(139,92,246,.10));border-color:rgba(57,198,255,.4);transform:translateY(-2px)}
@@ -133,7 +139,7 @@ button,input,select,textarea{font:inherit}button{cursor:pointer;color:inherit;ba
 .bn-sheet-item.dragging{opacity:.35;transform:scale(.95)}
 .bn-sheet-item.drag-over{border-color:var(--accent);border-style:dashed;background:rgba(57,198,255,.15);transform:scale(1.02)}
 .bn-sheet-item .bnsi-icon{font-size:30px;line-height:1;pointer-events:none;filter:drop-shadow(0 3px 6px rgba(0,0,0,.3))}
-.bn-sheet-item .bnsi-label{font-weight:900;color:#fff;font-size:12px;pointer-events:none;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:100%;width:100%;letter-spacing:.2px}
+.bn-sheet-item .bnsi-label{font-weight:800;color:#fff;font-size:12px;pointer-events:none;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:100%;width:100%;letter-spacing:.2px}
 body[data-theme="light"] .bn-sheet-content{background:linear-gradient(165deg,#eef2f7,#e0e8f0 60%,#dcd5f0)}
 body[data-theme="light"] .bn-sheet-title{color:#0a1628}
 body[data-theme="light"] .bn-sheet-item{background:linear-gradient(145deg,rgba(255,255,255,.75),rgba(255,255,255,.55));border-color:rgba(0,0,0,.08)}
@@ -145,8 +151,8 @@ body[data-theme="light"] .bn-sheet-item .bnsi-label{color:#0a1628}
 @keyframes pageIn{from{opacity:0;transform:translateX(var(--slide-dir,20px))}to{opacity:1;transform:translateX(0)}}
 .page-hero{position:relative;height:100px;margin-top:18px;margin-bottom:16px;border-radius:22px;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center;background:linear-gradient(135deg,#1a3a5c,#3a2d5c 50%,#1a4a5c);box-shadow:0 8px 24px rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.08)}
 .page-hero.weather-bg{background:radial-gradient(ellipse at 20% 30%,rgba(57,198,255,.3),transparent 50%),radial-gradient(ellipse at 80% 70%,rgba(139,92,246,.25),transparent 50%),linear-gradient(135deg,#0a2540,#1a3a5c 50%,#2d1b4d)}
-.page-title{font-size:clamp(28px,5vw,44px);font-weight:900;color:#fff;margin:0;text-shadow:0 4px 12px rgba(0,0,0,.5)}
-.page-subtitle{font-size:14px;color:#bfe9ff;margin-top:4px}
+.page-title{font-size:clamp(28px,5vw,44px);font-weight:800;color:#fff;margin:0;text-shadow:0 4px 12px rgba(0,0,0,.5)}
+.page-subtitle{font-size:14px;color:#bfe9ff;margin-top:4px;font-weight:400}
 .page-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,var(--accent),var(--accent2));opacity:.22;pointer-events:none;z-index:1;transition:opacity .4s ease,background .6s ease}
 .page-hero>div{position:relative;z-index:2}
 .page-hero.weather-bg::after{opacity:.15}
@@ -186,17 +192,21 @@ body[data-theme="light"]::before{opacity:.09}
 .city-line{display:flex;align-items:center;gap:6px;min-width:0;flex:1}
 .pin-small{width:28px;height:28px;border-radius:8px;font-size:14px;border:1px solid var(--line);background:#ffffff09;color:var(--muted);flex-shrink:0}
 .pin-small.active{color:#fff;background:linear-gradient(145deg,#ffd166,#ff8c42)}
-.city{font-size:26px;font-weight:900;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.city{font-size:26px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .city-info{font-size:12px;color:var(--muted);margin-right:4px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .localtime-btn{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:10px;background:linear-gradient(135deg,rgba(57,198,255,.2),rgba(139,92,246,.2));border:1px solid rgba(57,198,255,.4);color:#bfe9ff;font-size:14px;font-weight:700;flex-shrink:0}
-.localtime-btn .lt-clock{font-weight:900;font-size:16px;color:#fff}
+.localtime-btn .lt-clock{font-weight:800;font-size:16px;color:#fff}
 .weather-hero{display:flex;align-items:center;gap:16px;margin:8px 0 0;background:var(--card-bg);border:1px solid var(--line);border-radius:18px;padding:18px 16px}
 .weather-anim{width:100px;height:100px;border-radius:50%;position:relative;display:grid;place-items:center;flex-shrink:0;background:radial-gradient(circle at 30% 30%,rgba(255,255,255,.1),transparent 70%)}
 .weather-anim .layer{position:absolute;inset:0;display:none}
 .weather-anim .layer span{position:absolute}
-.temp{font-size:clamp(42px,6vw,64px);font-weight:900;line-height:.85}
-.cond{font-weight:900;margin-top:10px;font-size:18px}.feels{font-size:14px;color:var(--muted);margin-top:6px}
+.temp{font-size:clamp(42px,6vw,64px);font-weight:800;line-height:.85}
+.cond{font-weight:800;margin-top:10px;font-size:18px}.feels{font-size:14px;color:var(--muted);margin-top:6px;font-weight:400}
 .minmax{display:flex;gap:10px;margin-top:8px;font-weight:700}.minmax span{background:#ffffff10;padding:3px 8px;border-radius:8px;font-size:14px}.minmax .min{color:#7ecbff}.minmax .max{color:#ffb37e}
+/* 🆕 مقایسهٔ دیروز و امروز */
+.day-compare{display:inline-block;margin-top:10px;padding:5px 12px;font-size:13px;font-weight:800;color:var(--gold);background:rgba(255,209,102,.10);border:1px solid rgba(255,209,102,.28);border-radius:10px;line-height:1.7}
+.day-compare.warm{color:#ffb37e;background:rgba(255,140,66,.12);border-color:rgba(255,140,66,.32)}
+.day-compare.cold{color:#7ecbff;background:rgba(57,198,255,.12);border-color:rgba(57,198,255,.32)}
 .freshness{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:10px;font-size:12px;font-weight:800;margin-top:10px}
 .freshness.fresh{background:rgba(45,212,161,.15);border:1px solid rgba(45,212,161,.4);color:#7fffd4}
 .freshness.stale{background:rgba(255,209,102,.15);border:1px solid rgba(255,209,102,.4);color:#ffe29a}
@@ -204,6 +214,7 @@ body[data-theme="light"]::before{opacity:.09}
 .smart-alerts{display:grid;gap:8px;margin:14px 0 4px}
 .smart-alert{display:flex;align-items:center;gap:12px;padding:12px 16px;border-radius:14px;background:var(--card-bg);border:1px solid var(--line);font-size:15px}
 .smart-alert .sa-icon{font-size:26px}.smart-alert .sa-text b{display:block}
+.smart-alert.aqi-high{border-color:rgba(255,107,122,.5);background:linear-gradient(145deg,rgba(255,107,122,.12),rgba(230,57,70,.06))}
 .day-tabs{display:flex;gap:10px;margin:14px 0 10px}
 .day-tab{flex:1;padding:13px 10px;border-radius:14px;font-weight:800;font-size:14px;color:#eaf3fb;text-align:center;border:1px solid #465c74;background:linear-gradient(145deg,#2b3d52,#22303f)}
 body[data-theme="light"] .day-tab{color:#0a1628;border-color:#c3ccd6;background:linear-gradient(145deg,#e8eef5,#dde5ed)}
@@ -213,63 +224,66 @@ body[data-theme="light"] .day-tab{color:#0a1628;border-color:#c3ccd6;background:
 body[data-theme="light"] .sectionhead{background:linear-gradient(145deg,rgba(57,198,255,.16),rgba(139,92,246,.10));border-color:rgba(0,0,0,.08)}
 #detailsSectionHead{background:linear-gradient(145deg,rgba(57,198,255,.28),rgba(139,92,246,.18))!important}
 body[data-theme="light"] #detailsSectionHead{background:linear-gradient(145deg,rgba(57,198,255,.32),rgba(139,92,246,.22))!important}
-.weather-section-title{font-size:19px;font-weight:900}
+.weather-section-title{font-size:19px;font-weight:800}
 .arrow{background:rgba(255,255,255,.08);font-size:16px;color:var(--muted);width:34px;height:34px;border-radius:10px;border:1px solid rgba(255,255,255,.15)}
 .collapse{overflow:hidden;max-height:6000px;transition:max-height .4s}.collapsed{max-height:0!important}
 .details{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-top:10px}
 .detail-btn{padding:14px 6px;border-radius:14px;background:#ffffff07;border:1px solid var(--line);text-align:center;width:100%;color:var(--text)}
-.detail-btn span{font-size:13px}
+.detail-btn .dt-label{display:inline-flex;align-items:center;justify-content:center;gap:5px;font-size:13px;font-weight:700}
+.detail-btn .dt-label svg{width:18px;height:18px;flex-shrink:0;color:var(--accent);transition:color .2s}
+.detail-btn:hover .dt-label svg{color:var(--text)}
 .detail-btn .val{display:block;margin-top:6px;font-size:18px;font-weight:800;color:var(--text)}
-.side{padding:20px}.title{font-weight:900;margin-bottom:12px;font-size:18px}
+.detail-btn .val.aqi-high{color:var(--red);font-weight:900;text-shadow:0 0 10px rgba(255,107,122,.35)}
+.side{padding:20px}.title{font-weight:800;margin-bottom:12px;font-size:18px}
 .datebox{padding:16px;border-radius:16px;background:linear-gradient(135deg,#1a4d6b55,#4d3a6d55);border:1px solid var(--line);display:flex;flex-direction:column;gap:10px}
 body[data-theme="light"] .datebox{background:linear-gradient(135deg,rgba(200,225,245,.6),rgba(220,215,245,.6))}
 .date-row{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:6px 0;border-bottom:1px dashed rgba(255,255,255,.08)}
 body[data-theme="light"] .date-row{border-color:rgba(0,0,0,.08)}
 .date-row:last-child{border-bottom:none}
 .date-main{flex:1;font-weight:800}
-.jalali{font-size:18px;font-weight:900;color:var(--text)}
+.jalali{font-size:18px;font-weight:800;color:var(--text)}
 .greg,.hijri{font-size:14px;color:var(--text)}
 .time-city{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:8px;background:rgba(57,198,255,.15);border:1px solid rgba(57,198,255,.3);font-size:13px;font-weight:800;color:#bfe9ff;white-space:nowrap}
 body[data-theme="light"] .time-city{color:#0a2540}
 .time-city .tc-label{font-size:10px;color:var(--muted);font-weight:700}
-.time-city .tc-val{color:var(--text);font-weight:900}
+.time-city .tc-val{color:var(--text);font-weight:800}
 .section{padding:19px;margin-top:15px}
-.sec-content{padding-top:10px;font-size:15px;line-height:2.2;white-space:pre-line}
-.about-intro{margin:18px 0;padding:16px 22px;background:linear-gradient(90deg,rgba(255,209,102,.12),rgba(255,140,66,.06));border-radius:14px;font-size:16px;line-height:2.3;color:#fff8e8}
+.sec-content{padding-top:10px;font-size:15px;line-height:1.9;font-weight:400;white-space:pre-line}
+.about-intro{margin:18px 0;padding:16px 22px;background:linear-gradient(90deg,rgba(255,209,102,.12),rgba(255,140,66,.06));border-radius:14px;font-size:16px;line-height:1.9;color:#fff8e8;font-weight:400}
 body[data-theme="light"] .about-intro{color:#3a2a10}
-.about-poem{margin:18px 0;padding:18px 22px;background:linear-gradient(90deg,rgba(57,198,255,.12),rgba(139,92,246,.06));border-radius:14px;font-size:16px;line-height:2.1;color:#e8f3ff;letter-spacing:.3px;white-space:pre-line}
-.about-poem .about-poem-title{display:block;font-size:22px;font-weight:900;color:var(--gold);text-align:center;margin-bottom:18px;padding-bottom:14px;border-bottom:1px dashed rgba(255,209,102,.35);letter-spacing:1px}
+.about-poem{margin:18px 0;padding:18px 22px;background:linear-gradient(90deg,rgba(57,198,255,.12),rgba(139,92,246,.06));border-radius:14px;font-size:16px;line-height:1.9;color:#e8f3ff;letter-spacing:.3px;white-space:pre-line;text-align:justify;font-weight:400}
+.about-poem .about-poem-title{display:block;font-size:22px;font-weight:800;color:var(--gold);text-align:center;margin-bottom:18px;padding-bottom:14px;border-bottom:1px dashed rgba(255,209,102,.35);letter-spacing:1px}
 .about-poem .signature{text-align:center;margin-top:14px}
 .about-poem .signature .sig-line1{display:block;font-weight:800;color:var(--gold);font-size:15px;margin-bottom:4px}
-.about-poem .signature .sig-line2{display:block;font-weight:900;color:#ffd9a0;font-size:16px}
-.btn-creator{display:block;width:100%;padding:14px;background:linear-gradient(135deg,#8b5cf6,#ec4899);color:#fff;text-decoration:none;border-radius:12px;font-family:inherit;font-size:15px;font-weight:900;transition:.2s;cursor:pointer;border:none;box-shadow:0 6px 18px rgba(139,92,246,.35);margin-top:10px;text-align:center}
+.about-poem .signature .sig-line2{display:block;font-weight:800;color:#ffd9a0;font-size:16px}
+.btn-creator{display:block;width:100%;padding:14px;background:linear-gradient(135deg,#8b5cf6,#ec4899);color:#fff;text-decoration:none;border-radius:12px;font-family:inherit;font-size:15px;font-weight:800;transition:.2s;cursor:pointer;border:none;box-shadow:0 6px 18px rgba(139,92,246,.35);margin-top:10px;text-align:center}
 .btn-creator:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(139,92,246,.5)}
 .about-drawers{display:flex;flex-direction:column;gap:14px;margin-top:8px}
 .about-help{display:grid;gap:12px;margin-top:14px}
 .ah-sec{border:1px solid var(--line);border-radius:16px;padding:12px 14px;background:var(--card-bg2)}
-.ah-h{font-size:15px;font-weight:900;margin-bottom:6px;display:flex;align-items:center;gap:6px}
+.ah-h{font-size:15px;font-weight:800;margin-bottom:6px;display:flex;align-items:center;gap:6px}
 .ah-h.c1{color:var(--accent)}.ah-h.c2{color:#2dd4a3}.ah-h.c3{color:#ff6b7a}.ah-h.c4{color:var(--gold)}.ah-h.c5{color:#b197fc}.ah-h.c6{color:#7ecbff}.ah-h.c7{color:#ec4899}
-.ah-sec ul{margin:0;padding-right:18px;font-size:14px;line-height:1.9;color:var(--muted)}
+.ah-sec ul{margin:0;padding-right:18px;font-size:14px;line-height:1.9;color:var(--muted);font-weight:400}
 
 .guide-drawer{margin-top:14px;border:2px solid rgba(255,255,255,.13);border-radius:20px;overflow:hidden;background:linear-gradient(145deg,rgba(255,255,255,.05),rgba(255,255,255,.02));box-shadow:0 8px 24px rgba(0,0,0,.18);transition:.25s}
 .guide-drawer:hover{border-color:rgba(57,198,255,.35)}
-.guide-drawer-head{padding:16px 20px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:10px;font-weight:900;font-size:16px;color:var(--text);user-select:none;background:linear-gradient(145deg,rgba(57,198,255,.14),rgba(139,92,246,.08))}
+.guide-drawer-head{padding:16px 20px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:10px;font-weight:800;font-size:16px;color:var(--text);user-select:none;background:linear-gradient(145deg,rgba(57,198,255,.14),rgba(139,92,246,.08))}
 .guide-drawer-head .gd-arrow{font-size:18px;color:var(--muted);transition:transform .35s;flex-shrink:0}
 .guide-drawer.open .guide-drawer-head .gd-arrow{transform:rotate(180deg);color:var(--text)}
 .guide-drawer.open{border-color:rgba(57,198,255,.5)}
 .guide-drawer-body{max-height:0;overflow:hidden;transition:max-height .6s ease;padding:0 18px}
 .guide-drawer.open .guide-drawer-body{max-height:9000px;padding:18px 18px 6px}
 .guide-drawer-inner{padding:0 0 4px}
-.guide-drawer-close{display:block;width:100%;margin:12px 0 8px;padding:12px;background:rgba(255,107,122,.12);border:1px solid rgba(255,107,122,.35);color:#ff9aa8;border-radius:12px;font-weight:900;font-size:14px;font-family:inherit;cursor:pointer;transition:.2s}
+.guide-drawer-close{display:block;width:100%;margin:12px 0 8px;padding:12px;background:rgba(255,107,122,.12);border:1px solid rgba(255,107,122,.35);color:#ff9aa8;border-radius:12px;font-weight:800;font-size:14px;font-family:inherit;cursor:pointer;transition:.2s}
 .guide-drawer-close:hover{background:rgba(255,107,122,.25);color:#fff}
 
 .guide-install-section{padding:0;border-radius:0;background:transparent;border:none;margin:0}
-.gis-desc{font-size:13.5px;line-height:2;color:var(--text);margin-bottom:14px;padding:10px 12px;background:rgba(57,198,255,.08);border-right:3px solid var(--accent);border-radius:0 10px 10px 0}
+.gis-desc{font-size:13.5px;line-height:1.9;color:var(--text);margin-bottom:14px;padding:10px 12px;background:rgba(57,198,255,.08);border-right:3px solid var(--accent);border-radius:0 10px 10px 0}
 .gis-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;margin-bottom:4px}
 .gis-item{padding:14px;border-radius:14px;background:var(--card-bg);border:1px solid var(--line)}
-.gis-browser{font-weight:900;font-size:14px;color:var(--accent);margin-bottom:8px;display:flex;align-items:center;gap:6px}
-.gis-steps{font-size:12.5px;line-height:2;color:var(--text)}
-.guide-install-btn{display:block;width:100%;padding:14px;background:linear-gradient(135deg,#ffd166,#ff8c42);color:#3a1a00;border:none;border-radius:12px;font-weight:900;font-size:15px;font-family:inherit;cursor:pointer;transition:.2s;box-shadow:0 6px 18px rgba(255,209,102,.3);margin-top:14px}
+.gis-browser{font-weight:800;font-size:14px;color:var(--accent);margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.gis-steps{font-size:12.5px;line-height:1.9;color:var(--text)}
+.guide-install-btn{display:block;width:100%;padding:14px;background:linear-gradient(135deg,#ffd166,#ff8c42);color:#3a1a00;border:none;border-radius:12px;font-weight:800;font-size:15px;font-family:inherit;cursor:pointer;transition:.2s;box-shadow:0 6px 18px rgba(255,209,102,.3);margin-top:14px}
 .guide-install-btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(255,209,102,.45)}
 
 .dash-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin-top:8px}
@@ -281,12 +295,12 @@ body[data-theme="light"] .about-intro{color:#3a2a10}
 .dash-card .dc-head:active{cursor:grabbing}
 .dash-card .dc-grip{color:var(--muted);font-size:16px;letter-spacing:-1px;opacity:.6;padding:2px 4px;flex-shrink:0}
 .dash-card .dc-icon{font-size:26px}
-.dash-card .dc-title{font-size:15px;font-weight:900;color:var(--text);flex:1}
-.dash-card .dc-body{font-size:14px;line-height:2;color:var(--text)}
-.dash-card .dc-body b{color:var(--accent);font-weight:900}
+.dash-card .dc-title{font-size:15px;font-weight:800;color:var(--text);flex:1}
+.dash-card .dc-body{font-size:14px;line-height:1.9;color:var(--text);font-weight:400}
+.dash-card .dc-body b{color:var(--accent);font-weight:800}
 .dash-card .dc-body small{color:var(--muted);font-size:12px}
 .dash-card.highlight{background:linear-gradient(145deg,rgba(57,198,255,.15),rgba(139,92,246,.08));border-color:rgba(57,198,255,.35)}
-.dash-card.poem .dc-body{font-style:italic;line-height:2.1;white-space:pre-line;color:var(--text)}
+.dash-card.poem .dc-body{font-style:italic;line-height:1.9;white-space:pre-line;color:var(--text)}
 .dash-welcome{padding:20px 22px;border-radius:20px;background:linear-gradient(135deg,rgba(57,198,255,.18),rgba(139,92,246,.12));border:2px solid rgba(57,198,255,.35);margin-bottom:14px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
 .dash-welcome .dw-text{font-size:16px;font-weight:800;color:var(--text);line-height:1.9;flex:1;min-width:200px}
 .dash-welcome .dw-text b{color:var(--gold);font-size:20px}
@@ -296,7 +310,7 @@ body[data-theme="light"] .about-intro{color:#3a2a10}
 .daily-card::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 20% 15%,rgba(57,198,255,.25),transparent 45%),radial-gradient(circle at 85% 80%,rgba(255,209,102,.2),transparent 50%),radial-gradient(circle at 70% 20%,rgba(236,72,153,.15),transparent 40%);pointer-events:none}
 .daily-card-inner{position:relative;padding:22px 22px 20px;z-index:1}
 .daily-card-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:14px;padding-bottom:12px;border-bottom:1px dashed rgba(255,209,102,.35);cursor:pointer;user-select:none}
-.daily-card-head .dch-title{font-size:18px;font-weight:900;color:#ffd166;display:flex;align-items:center;gap:8px;text-shadow:0 2px 8px rgba(0,0,0,.4)}
+.daily-card-head .dch-title{font-size:18px;font-weight:800;color:#ffd166;display:flex;align-items:center;gap:8px;text-shadow:0 2px 8px rgba(0,0,0,.4)}
 .daily-card-head .dch-date{font-size:12px;color:#bfe9ff;font-weight:800;background:rgba(255,255,255,.08);padding:4px 10px;border-radius:8px;border:1px solid rgba(255,255,255,.15)}
 .daily-card-head .dch-arrow{font-size:18px;color:#ffd166;transition:transform .35s;margin-right:4px}
 .daily-card.open .daily-card-head .dch-arrow{transform:rotate(180deg)}
@@ -306,24 +320,22 @@ body[data-theme="light"] .about-intro{color:#3a2a10}
 .daily-row{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1)}
 .daily-row .dr-icon{font-size:22px;flex-shrink:0}
 .daily-row .dr-label{font-size:12px;color:#9db0c6;font-weight:800;display:block;margin-bottom:2px}
-.daily-row .dr-value{font-size:14px;font-weight:800;color:#fff;line-height:1.8}
-.daily-row .dr-value.poem{font-style:italic;white-space:pre-line;font-size:13px}
-/* 🆕 ردیف‌های همهٔ اذان‌ها در کارت روز */
+.daily-row .dr-value{font-size:14px;font-weight:800;color:#fff;line-height:1.9}
+.daily-row .dr-value.poem{font-style:italic;white-space:pre-line;font-size:13px;text-align:justify}
 .prayer-rows-box{display:flex;flex-direction:column;gap:6px}
 .prayer-mini-row{display:flex;justify-content:space-between;align-items:center;padding:6px 10px;border-radius:10px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);font-size:13px}
 .prayer-mini-row.next{background:linear-gradient(135deg,rgba(255,209,102,.25),rgba(255,140,66,.15));border-color:rgba(255,209,102,.5)}
 .prayer-mini-row .pmr-name{font-weight:800;color:#eaf3fb}
 .prayer-mini-row.next .pmr-name{color:#ffd166}
-.prayer-mini-row .pmr-time{font-weight:900;direction:ltr;color:#7fffd4;font-feature-settings:"tnum"}
+.prayer-mini-row .pmr-time{font-weight:800;direction:ltr;color:#7fffd4;font-feature-settings:"tnum"}
 .prayer-mini-row.next .pmr-time{color:#fff;text-shadow:0 2px 6px rgba(0,0,0,.4)}
-
-.daily-card-actions{display:flex;gap:8px;margin-top:16px}
-.dc-share-btn{flex:1;padding:12px 16px;background:linear-gradient(135deg,#ffd166,#ff8c42);border:none;border-radius:14px;color:#3a1a00;font-weight:900;font-size:14px;font-family:inherit;cursor:pointer;transition:.2s;display:inline-flex;align-items:center;justify-content:center;gap:6px}
+.daily-card-actions{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap}
+.dc-share-btn{flex:1 1 calc(33% - 6px);min-width:100px;padding:12px 12px;background:linear-gradient(135deg,#ffd166,#ff8c42);border:none;border-radius:14px;color:#3a1a00;font-weight:800;font-size:13.5px;font-family:inherit;cursor:pointer;transition:.2s;display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap}
 .dc-share-btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(255,209,102,.4)}
 .dc-share-btn.ghost{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.25)}
 .dc-share-btn.ghost:hover{background:rgba(255,255,255,.18);box-shadow:none}
 .dash-manage{border:1px solid rgba(255,255,255,.15);border-radius:20px;background:var(--card-bg2);margin-bottom:14px;overflow:hidden}
-.dash-manage .dm-head{padding:14px 18px;font-weight:900;font-size:15px;display:flex;justify-content:space-between;align-items:center;gap:8px;color:var(--text);cursor:pointer;user-select:none;background:linear-gradient(145deg,rgba(57,198,255,.28),rgba(139,92,246,.18))}
+.dash-manage .dm-head{padding:14px 18px;font-weight:800;font-size:15px;display:flex;justify-content:space-between;align-items:center;gap:8px;color:var(--text);cursor:pointer;user-select:none;background:linear-gradient(145deg,rgba(57,198,255,.28),rgba(139,92,246,.18))}
 body[data-theme="light"] .dash-manage .dm-head{background:linear-gradient(145deg,rgba(57,198,255,.32),rgba(139,92,246,.22))}
 .dash-manage .dm-head .dm-arrow{font-size:18px;color:var(--muted);transition:transform .35s}
 .dash-manage.open .dm-head .dm-arrow{transform:rotate(180deg);color:var(--text)}
@@ -347,16 +359,16 @@ body[data-theme="light"] .dash-manage .dm-head{background:linear-gradient(145deg
 .note-card.n2 .note-head{background:linear-gradient(145deg,rgba(139,92,246,.18),rgba(236,72,153,.10))}
 .note-card.n3 .note-head{background:linear-gradient(145deg,rgba(45,212,161,.18),rgba(57,198,255,.10))}
 .note-card.n4 .note-head{background:linear-gradient(145deg,rgba(236,72,153,.18),rgba(255,209,102,.10))}
-.note-head .nh-title{font-size:17px;font-weight:900;color:var(--text);display:flex;align-items:center;gap:10px}
+.note-head .nh-title{font-size:17px;font-weight:800;color:var(--text);display:flex;align-items:center;gap:10px}
 .note-head .nh-icon{font-size:22px}
 .note-head .nh-arrow{font-size:18px;color:var(--muted);transition:transform .35s}
 .note-card.open .note-head .nh-arrow{transform:rotate(180deg);color:var(--text)}
-.note-preview{padding:16px 22px;font-size:15px;line-height:2.3;color:var(--text);white-space:pre-line;border-bottom:1px dashed rgba(255,255,255,.1)}
+.note-preview{padding:16px 22px;font-size:15px;line-height:1.9;color:var(--text);white-space:pre-line;border-bottom:1px dashed rgba(255,255,255,.1);text-align:justify;font-weight:400}
 .note-card.open .note-preview{border-bottom:none}
 .note-drawer{max-height:0;overflow:hidden;transition:max-height .55s ease}
 .note-card.open .note-drawer{max-height:4000px}
-.note-drawer-inner{padding:0 22px 20px;font-size:15px;line-height:2.3;color:var(--text);white-space:pre-line}
-.note-drawer-inner .note-sign{display:block;text-align:center;margin-top:14px;font-weight:900;color:var(--gold);font-size:16px}
+.note-drawer-inner{padding:0 22px 20px;font-size:15px;line-height:1.9;color:var(--text);white-space:pre-line;text-align:justify;font-weight:400}
+.note-drawer-inner .note-sign{display:block;text-align:center;margin-top:14px;font-weight:800;color:var(--gold);font-size:16px}
 .note-drawer-inner .note-soon{text-align:center;padding:24px 0;font-size:16px;font-weight:800;color:var(--muted);letter-spacing:2px}
 .note-toggle-btn{display:block;width:100%;padding:10px;background:rgba(255,255,255,.04);border:none;border-top:1px solid rgba(255,255,255,.08);color:var(--muted);font-weight:800;font-size:13px;font-family:inherit;cursor:pointer;transition:.2s;letter-spacing:.5px}
 .note-toggle-btn:hover{background:rgba(255,255,255,.09);color:var(--text)}
@@ -371,36 +383,36 @@ body[data-theme="light"] .dash-manage .dm-head{background:linear-gradient(145deg
 .poetry-mini.ferdowsi{background:linear-gradient(135deg,rgba(255,107,122,.18),rgba(255,140,66,.08));border:2px solid rgba(255,107,122,.4)}
 .poetry-mini.khayyam{background:linear-gradient(135deg,rgba(126,203,255,.18),rgba(57,198,255,.08));border:2px solid rgba(126,203,255,.4)}
 .poetry-mini.hafez::before{background:var(--gold)}.poetry-mini.saadi::before{background:#b197fc}.poetry-mini.rumi::before{background:var(--green)}.poetry-mini.ferdowsi::before{background:var(--red)}.poetry-mini.khayyam::before{background:#7ecbff}
-.poetry-mini .poet-label{display:inline-block;font-size:10px;font-weight:900;padding:3px 8px;border-radius:6px;margin-bottom:8px;letter-spacing:.4px}
+.poetry-mini .poet-label{display:inline-block;font-size:10px;font-weight:800;padding:3px 8px;border-radius:6px;margin-bottom:8px;letter-spacing:.4px}
 .poetry-mini.hafez .poet-label{background:rgba(255,209,102,.25);color:#ffd166;border:1px solid rgba(255,209,102,.4)}
 .poetry-mini.saadi .poet-label{background:rgba(177,151,252,.25);color:#c4b5fd;border:1px solid rgba(177,151,252,.4)}
 .poetry-mini.rumi .poet-label{background:rgba(45,212,161,.25);color:#7fffd4;border:1px solid rgba(45,212,161,.4)}
 .poetry-mini.ferdowsi .poet-label{background:rgba(255,107,122,.25);color:#ffb3bf;border:1px solid rgba(255,107,122,.4)}
 .poetry-mini.khayyam .poet-label{background:rgba(126,203,255,.25);color:#bfe9ff;border:1px solid rgba(126,203,255,.4)}
-.poetry-mini .poem-text{font-size:14px;line-height:2;color:var(--text);font-style:italic;letter-spacing:.3px;white-space:pre-line;font-weight:600}
+.poetry-mini .poem-text{font-size:14px;line-height:1.9;color:var(--text);font-style:italic;letter-spacing:.3px;white-space:pre-line;font-weight:400;text-align:justify}
 .poetry-mini .poet-name{margin-top:10px;font-size:11px;color:var(--muted);font-weight:700;text-align:left}
 .culture-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px;margin-top:14px}
 .culture-card{display:flex;flex-direction:column;gap:6px;padding:16px;border-radius:16px;background:linear-gradient(145deg,rgba(255,255,255,.08),rgba(255,255,255,.03));border:2px solid rgba(255,255,255,.12);text-decoration:none;color:var(--text);transition:.2s}
 .culture-card:hover{transform:translateY(-2px);border-color:rgba(255,209,102,.5)}
 .culture-card .cc-icon{font-size:32px}
-.culture-card .cc-title{font-weight:900;font-size:15px;color:var(--text)}
-.culture-card .cc-desc{font-size:13px;color:var(--muted);line-height:1.6}
+.culture-card .cc-title{font-weight:800;font-size:15px;color:var(--text)}
+.culture-card .cc-desc{font-size:13px;color:var(--muted);line-height:1.8}
 
 .fact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;margin-top:14px}
 .fact-card{padding:16px 18px;border-radius:16px;background:linear-gradient(145deg,rgba(255,255,255,.08),rgba(255,255,255,.03));border:1px solid var(--line);position:relative;overflow:hidden}
-.fact-card .fact-num{position:absolute;top:10px;left:12px;font-size:32px;font-weight:900;color:rgba(57,198,255,.18);line-height:1}
+.fact-card .fact-num{position:absolute;top:10px;left:12px;font-size:32px;font-weight:800;color:rgba(57,198,255,.18);line-height:1}
 .fact-card .fact-icon{font-size:28px;margin-bottom:8px}
-.fact-card .fact-title{font-weight:900;font-size:16px;color:var(--text);margin-bottom:6px}
-.fact-card .fact-text{font-size:14px;line-height:1.9;color:var(--text)}
+.fact-card .fact-title{font-weight:800;font-size:16px;color:var(--text);margin-bottom:6px}
+.fact-card .fact-text{font-size:14px;line-height:1.9;color:var(--text);font-weight:400}
 
 .fun-joke-box{padding:20px;border-radius:16px;background:linear-gradient(135deg,rgba(255,209,102,.15),rgba(255,140,66,.08));border:2px solid rgba(255,209,102,.3);text-align:center;margin-bottom:14px;position:relative}
-.fun-joke-box .fj-text{font-size:16px;line-height:2;color:var(--text);font-weight:700}
+.fun-joke-box .fj-text{font-size:16px;line-height:1.9;color:var(--text);font-weight:700}
 .fun-joke-box .fj-btn{margin-top:12px;padding:8px 20px;background:rgba(255,209,102,.2);border:1px solid rgba(255,209,102,.4);border-radius:10px;color:#ffd166;font-weight:800;cursor:pointer;font-family:inherit}
 .fj-reactions{display:flex;justify-content:center;gap:10px;margin-top:14px;padding-top:12px;border-top:1px dashed rgba(255,209,102,.35)}
 .fj-react{display:inline-flex;align-items:center;gap:4px;padding:6px 14px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);font-size:16px;cursor:pointer;transition:.2s;font-family:inherit}
 .fj-react:hover{background:rgba(255,255,255,.15);transform:translateY(-1px)}
 .fj-react.active{background:linear-gradient(135deg,var(--gold),#ff8c42);border-color:transparent;color:#3a1a00}
-.fj-count{font-size:12px;font-weight:900;color:var(--text)}
+.fj-count{font-size:12px;font-weight:800;color:var(--text)}
 .fj-react.active .fj-count{color:#3a1a00}
 .rps-area{margin-top:12px;padding:18px;border-radius:16px;background:linear-gradient(135deg,rgba(57,198,255,.12),rgba(139,92,246,.08));border:2px solid rgba(57,198,255,.3);text-align:center}
 .rps-choices{display:flex;justify-content:center;gap:10px;margin:12px 0}
@@ -411,26 +423,26 @@ body[data-theme="light"] .dash-manage .dm-head{background:linear-gradient(145deg
 .rps-score{display:flex;justify-content:center;gap:16px;margin-top:10px;font-size:13px;font-weight:800}
 .rps-score span{padding:4px 12px;border-radius:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12)}
 .fun-puzzle-box{padding:18px;border-radius:16px;background:linear-gradient(135deg,rgba(177,151,252,.15),rgba(236,72,153,.08));border:2px solid rgba(177,151,252,.3);text-align:center;position:relative}
-.fun-puzzle-box .fp-question{font-size:16px;line-height:2;color:var(--text);font-weight:700;margin-bottom:14px;white-space:pre-line}
-.fun-puzzle-box .fp-reveal{padding:11px 24px;background:linear-gradient(135deg,rgba(177,151,252,.35),rgba(236,72,153,.25));border:1px solid rgba(177,151,252,.6);border-radius:10px;color:#e8ddff;font-weight:900;cursor:pointer;transition:.3s;font-size:14px;font-family:inherit}
+.fun-puzzle-box .fp-question{font-size:16px;line-height:1.9;color:var(--text);font-weight:700;margin-bottom:14px;white-space:pre-line}
+.fun-puzzle-box .fp-reveal{padding:11px 24px;background:linear-gradient(135deg,rgba(177,151,252,.35),rgba(236,72,153,.25));border:1px solid rgba(177,151,252,.6);border-radius:10px;color:#e8ddff;font-weight:800;cursor:pointer;transition:.3s;font-size:14px;font-family:inherit}
 .fun-puzzle-box .fp-answer{margin-top:14px;padding:12px 16px;background:rgba(45,212,161,.15);border:1px solid rgba(45,212,161,.4);border-radius:10px;color:var(--text);font-size:15px;line-height:1.9}
 .fun-puzzle-box .fp-answer b{color:#7fffd4}
 .proverb-box{padding:16px 18px;border-radius:16px;background:linear-gradient(135deg,rgba(45,212,161,.12),rgba(57,198,255,.06));border:2px solid rgba(45,212,161,.3)}
-.proverb-box .pv-text{font-size:16px;font-weight:900;color:var(--text);line-height:2;margin-bottom:10px}
-.proverb-box .pv-mean{font-size:13.5px;line-height:2;color:var(--muted);padding:10px 14px;background:rgba(255,255,255,.05);border-radius:12px;border-right:3px solid var(--green)}
-.proverb-box .pv-btn{margin-top:12px;width:100%;padding:10px;background:rgba(45,212,161,.15);border:1px solid rgba(45,212,161,.35);color:#7fffd4;border-radius:10px;font-weight:900;font-family:inherit;cursor:pointer;font-size:13px}
+.proverb-box .pv-text{font-size:16px;font-weight:800;color:var(--text);line-height:1.9;margin-bottom:10px}
+.proverb-box .pv-mean{font-size:13.5px;line-height:1.9;color:var(--muted);padding:10px 14px;background:rgba(255,255,255,.05);border-radius:12px;border-right:3px solid var(--green)}
+.proverb-box .pv-btn{margin-top:12px;width:100%;padding:10px;background:rgba(45,212,161,.15);border:1px solid rgba(45,212,161,.35);color:#7fffd4;border-radius:10px;font-weight:800;font-family:inherit;cursor:pointer;font-size:13px}
 
 .apod-box{margin-top:14px;padding:0;background:var(--card-bg);border:1px solid var(--line);border-radius:20px;overflow:hidden}
 .apod-img{width:100%;display:block;max-height:420px;object-fit:cover;background:#000}
 .apod-body{padding:16px 18px}
-.apod-title{font-size:16px;font-weight:900;color:var(--text);margin-bottom:6px;line-height:1.6}
+.apod-title{font-size:16px;font-weight:800;color:var(--text);margin-bottom:6px;line-height:1.8}
 .apod-date{font-size:12px;color:var(--gold);font-weight:800;margin-bottom:10px}
-.apod-desc{font-size:13px;line-height:2;color:var(--text);white-space:pre-line}
+.apod-desc{font-size:13px;line-height:1.9;color:var(--text);white-space:pre-line;text-align:justify}
 .apod-credit{font-size:11px;color:var(--muted);margin-top:10px;text-align:left}
 .apod-loading{padding:30px;text-align:center;color:var(--muted);font-size:14px}
 
 .moon-phase-box{display:flex;flex-direction:column;align-items:center;gap:12px;padding:20px 12px}
-.moon-phase-box .mp-name{font-weight:900;font-size:17px;color:var(--text);text-align:center}
+.moon-phase-box .mp-name{font-weight:800;font-size:17px;color:var(--text);text-align:center}
 .moon-phase-box .mp-info{font-size:13px;color:var(--muted);text-align:center;line-height:1.9}
 .moon-phase-box .mp-svg-wrap{filter:drop-shadow(0 8px 20px rgba(57,198,255,.25))}
 
@@ -438,38 +450,38 @@ body[data-theme="light"] .dash-manage .dm-head{background:linear-gradient(145deg
 .calc-form input,.calc-form select,.calc-form textarea{width:100%;padding:12px 14px;background:var(--card-bg);border:1px solid var(--line);border-radius:12px;color:var(--text);font-family:inherit;font-size:14px;outline:none;transition:.2s}
 .calc-form input:focus,.calc-form select:focus,.calc-form textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(57,198,255,.15)}
 .calc-form select option{background:#fff;color:#0a1628}
-.calc-form .calc-btn{grid-column:1/-1;padding:14px;background:linear-gradient(135deg,var(--accent),var(--accent2));border:none;border-radius:12px;color:#fff;font-weight:900;font-size:15px;font-family:inherit;cursor:pointer;transition:.2s}
+.calc-form .calc-btn{grid-column:1/-1;padding:14px;background:linear-gradient(135deg,var(--accent),var(--accent2));border:none;border-radius:12px;color:#fff;font-weight:800;font-size:15px;font-family:inherit;cursor:pointer;transition:.2s}
 .calc-form .calc-btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(57,198,255,.4)}
 .calc-result{margin-top:16px;padding:16px 18px;border-radius:16px;background:var(--card-bg);border:1px solid var(--line);display:none}
 .calc-result.show{display:block;animation:fadeIn .3s ease-out}
 .calc-result .cr-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px dashed rgba(255,255,255,.08);gap:12px}
 .calc-result .cr-row:last-child{border-bottom:none}
 .calc-result .cr-label{color:var(--muted);font-weight:700;font-size:13px}
-.calc-result .cr-val{font-weight:900;font-size:16px;color:var(--accent)}
-.calc-info{margin-top:14px;padding:14px 16px;background:linear-gradient(135deg,rgba(45,212,161,.1),rgba(57,198,255,.06));border-right:3px solid var(--green);border-radius:0 14px 14px 0;font-size:13px;line-height:2;color:var(--text)}
+.calc-result .cr-val{font-weight:800;font-size:16px;color:var(--accent)}
+.calc-info{margin-top:14px;padding:14px 16px;background:linear-gradient(135deg,rgba(45,212,161,.1),rgba(57,198,255,.06));border-right:3px solid var(--green);border-radius:0 14px 14px 0;font-size:13px;line-height:1.9;color:var(--text)}
 .calc-info b{color:var(--green)}
 
 .ing-box{margin-top:16px;padding:16px 18px;border-radius:18px;background:linear-gradient(145deg,rgba(45,212,161,.12),rgba(57,198,255,.06));border:2px solid rgba(45,212,161,.35)}
-.ing-box .ing-title{font-size:15px;font-weight:900;color:#7fffd4;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.ing-box .ing-title{font-size:15px;font-weight:800;color:#7fffd4;margin-bottom:8px;display:flex;align-items:center;gap:8px}
 .ing-box .ing-hint{font-size:12.5px;color:var(--muted);line-height:1.9;margin-bottom:10px;padding:8px 10px;background:rgba(0,0,0,.15);border-radius:10px;border-right:3px solid var(--green)}
 .ing-box textarea{width:100%;padding:12px 14px;background:var(--card-bg);border:1px solid var(--line);border-radius:12px;color:var(--text);font-family:inherit;font-size:14px;outline:none;transition:.2s;min-height:70px;resize:vertical}
 .ing-box textarea:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(45,212,161,.15)}
-.ing-box .ing-btn{width:100%;padding:12px;margin-top:10px;background:linear-gradient(135deg,var(--green),var(--accent));border:none;border-radius:12px;color:#04101d;font-weight:900;font-size:14px;font-family:inherit;cursor:pointer;transition:.2s}
+.ing-box .ing-btn{width:100%;padding:12px;margin-top:10px;background:linear-gradient(135deg,var(--green),var(--accent));border:none;border-radius:12px;color:#04101d;font-weight:800;font-size:14px;font-family:inherit;cursor:pointer;transition:.2s}
 .ing-box .ing-btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(45,212,161,.4)}
 .ing-result{margin-top:12px;display:none}
 .ing-result.show{display:block;animation:fadeIn .35s ease-out}
 .ing-recipe{padding:14px 16px;border-radius:14px;background:var(--card-bg);border:1px solid var(--line);margin-top:8px;position:relative;overflow:hidden}
 .ing-recipe.highlight{border-color:var(--gold);background:linear-gradient(145deg,rgba(255,209,102,.12),rgba(255,140,66,.04))}
-.ing-recipe .ir-name{font-weight:900;font-size:15px;color:var(--text);display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.ing-recipe .ir-name{font-weight:800;font-size:15px;color:var(--text);display:flex;align-items:center;gap:8px;margin-bottom:6px}
 .ing-recipe .ir-emoji{font-size:22px}
 .ing-recipe .ir-meta{font-size:12px;color:var(--muted);margin-bottom:6px;display:flex;flex-wrap:wrap;gap:8px}
 .ing-recipe .ir-meta span{padding:2px 8px;border-radius:6px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1)}
 .ing-recipe .ir-desc{font-size:13px;line-height:1.9;color:var(--text);white-space:pre-line}
-.ing-recipe .ir-badge{display:inline-block;padding:2px 10px;border-radius:6px;font-size:11px;font-weight:900;background:linear-gradient(135deg,#2dd4a3,#39c6ff);color:#04101d;margin-bottom:6px}
+.ing-recipe .ir-badge{display:inline-block;padding:2px 10px;border-radius:6px;font-size:11px;font-weight:800;background:linear-gradient(135deg,#2dd4a3,#39c6ff);color:#04101d;margin-bottom:6px}
 
 .news-item{padding:14px 16px;border-radius:14px;background:var(--card-bg);border:1px solid var(--line);margin-bottom:10px;text-decoration:none;color:var(--text);display:block;transition:.2s}
 .news-item:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:0 8px 20px rgba(57,198,255,.15)}
-.news-item .ni-title{font-weight:900;font-size:15px;line-height:1.7;color:var(--text);margin-bottom:6px}
+.news-item .ni-title{font-weight:800;font-size:15px;line-height:1.8;color:var(--text);margin-bottom:6px}
 .news-item .ni-meta{font-size:11px;color:var(--muted);display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap}
 .news-item .ni-desc{font-size:13px;line-height:1.9;color:var(--muted);margin-top:6px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .news-item .ni-source{color:var(--gold);font-weight:800}
@@ -481,13 +493,13 @@ body[data-theme="light"] .dash-manage .dm-head{background:linear-gradient(145deg
 .travel-summary .ts-label{color:var(--muted);font-size:13px;font-weight:700}
 .travel-summary .ts-val{font-weight:800;font-size:14px;color:var(--text)}
 .travel-form-card{margin-top:14px;padding:18px 20px;border-radius:20px;background:linear-gradient(145deg,rgba(57,198,255,.12),rgba(139,92,246,.06));border:2px solid rgba(57,198,255,.35)}
-.travel-form-card .tfc-title{font-size:17px;font-weight:900;color:var(--text);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.travel-form-card .tfc-title{font-size:17px;font-weight:800;color:var(--text);margin-bottom:12px;display:flex;align-items:center;gap:8px}
 .travel-plan-out{margin-top:16px;display:none}
 .travel-plan-out.show{display:block;animation:fadeIn .35s ease-out}
 .travel-plan-close{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;background:rgba(255,107,122,.15);border:1px solid rgba(255,107,122,.4);color:#ff9aa8;border-radius:10px;font-weight:800;font-size:13px;font-family:inherit;cursor:pointer;margin-bottom:12px;transition:.2s}
 .travel-plan-close:hover{background:rgba(255,107,122,.25)}
 .plan-day{padding:14px 16px;border-radius:16px;background:var(--card-bg);border:1px solid var(--line);margin-bottom:10px;border-right:4px solid var(--accent)}
-.plan-day .pd-head{font-weight:900;font-size:15px;color:var(--accent);margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.plan-day .pd-head{font-weight:800;font-size:15px;color:var(--accent);margin-bottom:8px;display:flex;align-items:center;gap:6px}
 .plan-day .pd-items{display:flex;flex-direction:column;gap:6px}
 .plan-day .pd-item{display:flex;align-items:center;gap:8px;padding:6px 10px;border-radius:10px;background:rgba(255,255,255,.05);font-size:13px}
 .plan-meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin-top:14px}
@@ -495,23 +507,23 @@ body[data-theme="light"] .dash-manage .dm-head{background:linear-gradient(145deg
 .plan-meta-card .pmc-label{color:var(--muted);font-weight:700;font-size:12px;margin-bottom:4px}
 .plan-meta-card .pmc-val{font-weight:800;color:var(--text)}
 .plan-checklist{margin-top:14px;padding:14px 16px;border-radius:16px;background:linear-gradient(135deg,rgba(45,212,161,.12),rgba(57,198,255,.06));border:1px solid rgba(45,212,161,.3)}
-.plan-checklist .pc-title{font-weight:900;font-size:14px;color:#7fffd4;margin-bottom:10px}
+.plan-checklist .pc-title{font-weight:800;font-size:14px;color:#7fffd4;margin-bottom:10px}
 .plan-checklist .pc-items{display:flex;flex-wrap:wrap;gap:6px}
 .plan-checklist .pc-item{padding:5px 12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);border-radius:999px;font-size:12px;color:var(--text)}
 
 .prayergrid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:14px}
 .prayer{padding:14px;border-radius:16px;background:var(--card-bg);border:1px solid var(--line);text-align:center}
-.prayer b{font-size:20px;color:var(--text)}.prayer small{display:block;color:var(--muted);margin-top:5px;font-size:13px}
+.prayer b{font-size:20px;color:var(--text);font-weight:800}.prayer small{display:block;color:var(--muted);margin-top:5px;font-size:13px}
 .nextprayer{margin-top:14px;padding:13px;border-radius:13px;background:#ffd16612;border:1px solid #ffd16622;color:#ffe29a;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:14px}
-.countdown{font-size:22px;font-weight:900}
+.countdown{font-size:22px;font-weight:800}
 .dhikr-box{margin-top:14px;padding:20px 22px;background:linear-gradient(135deg,rgba(255,209,102,.14),rgba(255,140,66,.06));border-right:4px solid var(--gold);border-radius:0 18px 18px 0;position:relative;overflow:hidden}
 .dhikr-box::before{content:"﷽";position:absolute;top:10px;left:14px;font-size:34px;color:rgba(255,209,102,.15)}
-.dhikr-box .dh-day{font-size:15px;font-weight:900;color:var(--gold);margin-bottom:6px}
-.dhikr-box .dh-text{font-size:22px;font-weight:900;color:var(--text);line-height:1.9;letter-spacing:.5px}
+.dhikr-box .dh-day{font-size:15px;font-weight:800;color:var(--gold);margin-bottom:6px}
+.dhikr-box .dh-text{font-size:22px;font-weight:800;color:var(--text);line-height:1.9;letter-spacing:.5px}
 .dhikr-box .dh-note{font-size:12px;color:var(--muted);margin-top:8px;line-height:1.9}
 .prayer-localtime-inline{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:12px;background:linear-gradient(135deg,rgba(57,198,255,.18),rgba(139,92,246,.12));border:1px solid rgba(57,198,255,.4);font-size:13px;font-weight:700;color:#bfe9ff;white-space:nowrap;flex-wrap:nowrap}
 .prayer-localtime-inline .plt-city{font-size:12px;color:var(--muted);font-weight:800}
-.prayer-localtime-inline .plt-clock-inline{font-size:18px;font-weight:900;color:var(--accent);font-feature-settings:"tnum";letter-spacing:1px;direction:ltr;display:inline-block;min-width:78px;text-align:center}
+.prayer-localtime-inline .plt-clock-inline{font-size:18px;font-weight:800;color:var(--accent);font-feature-settings:"tnum";letter-spacing:1px;direction:ltr;display:inline-block;min-width:78px;text-align:center}
 body[data-theme="light"] .prayer-localtime-inline{color:#0a2540}
 body[data-theme="light"] .prayer-localtime-inline .plt-city{color:#5a6f84}
 
@@ -527,7 +539,7 @@ body[data-theme="light"] .mini-title{color:#0a2540}
 
 .sport-accordion,.travel-accordion,.culture-accordion,.fun-accordion{display:flex;flex-direction:column;gap:10px;margin-top:10px}
 .travel-acc-group,.culture-acc-group,.fun-acc-group{border:2px solid rgba(255,255,255,.12);border-radius:14px;overflow:hidden;background:var(--card-bg2);transition:border-color .2s}
-.travel-acc-h,.culture-acc-h,.fun-acc-h{padding:14px 16px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:900;font-size:15px;color:var(--text);user-select:none;background:linear-gradient(145deg,rgba(57,198,255,.10),rgba(139,92,246,.06))}
+.travel-acc-h,.culture-acc-h,.fun-acc-h{padding:14px 16px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:800;font-size:15px;color:var(--text);user-select:none;background:linear-gradient(145deg,rgba(57,198,255,.10),rgba(139,92,246,.06))}
 .travel-acc-h.ziarti{background:linear-gradient(145deg,rgba(255,209,102,.15),rgba(255,140,66,.10))}
 .travel-acc-h.shahr{background:linear-gradient(145deg,rgba(57,198,255,.12),rgba(139,92,246,.08))}
 .travel-acc-h.danesh{background:linear-gradient(145deg,rgba(177,151,252,.15),rgba(236,72,153,.10))}
@@ -547,12 +559,12 @@ body[data-theme="light"] .mini-title{color:#0a2540}
 .sp-hero{margin:8px 0 4px;padding:18px 20px;border-radius:20px;background:linear-gradient(135deg,rgba(45,212,161,.18),rgba(57,198,255,.1));border:2px solid rgba(45,212,161,.4);display:flex;align-items:center;gap:14px}
 .sp-hero .sph-icon{font-size:40px;flex-shrink:0}
 .sp-hero .sph-txt{flex:1;min-width:0}
-.sp-hero .sph-txt b{display:block;font-size:16px;color:var(--text);margin-bottom:4px}
-.sp-hero .sph-txt small{color:var(--muted);font-size:13px;line-height:1.7}
+.sp-hero .sph-txt b{display:block;font-size:16px;color:var(--text);margin-bottom:4px;font-weight:800}
+.sp-hero .sph-txt small{color:var(--muted);font-size:13px;line-height:1.8}
 
 .sp-collapsible{margin-top:15px;border:2px solid rgba(255,255,255,.13);border-radius:20px;overflow:hidden;background:linear-gradient(145deg,rgba(255,255,255,.05),rgba(255,255,255,.02));box-shadow:0 8px 24px rgba(0,0,0,.18);transition:.25s}
 .sp-collapsible:hover{border-color:rgba(57,198,255,.35)}
-.sp-coll-h{padding:16px 20px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:10px;font-weight:900;font-size:16px;color:var(--text);user-select:none;background:linear-gradient(145deg,rgba(57,198,255,.14),rgba(139,92,246,.08))}
+.sp-coll-h{padding:16px 20px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:10px;font-weight:800;font-size:16px;color:var(--text);user-select:none;background:linear-gradient(145deg,rgba(57,198,255,.14),rgba(139,92,246,.08))}
 .sp-coll-h.profile{background:linear-gradient(145deg,rgba(255,209,102,.18),rgba(255,140,66,.10))}
 .sp-coll-h.weekly{background:linear-gradient(145deg,rgba(57,198,255,.18),rgba(139,92,246,.10))}
 .sp-coll-h.nutrition{background:linear-gradient(145deg,rgba(45,212,161,.18),rgba(57,198,255,.10))}
@@ -567,53 +579,53 @@ body[data-theme="light"] .mini-title{color:#0a2540}
 .sp-coll-body{max-height:0;overflow:hidden;transition:max-height .6s ease;padding:0 18px}
 .sp-collapsible.open .sp-coll-body{max-height:12000px;padding:18px 18px 6px}
 .sp-coll-inner{padding:0 0 12px}
-.sp-coll-close{display:block;width:100%;margin:12px 0 8px;padding:12px;background:rgba(255,107,122,.12);border:1px solid rgba(255,107,122,.35);color:#ff9aa8;border-radius:12px;font-weight:900;font-size:14px;font-family:inherit;cursor:pointer;transition:.2s}
+.sp-coll-close{display:block;width:100%;margin:12px 0 8px;padding:12px;background:rgba(255,107,122,.12);border:1px solid rgba(255,107,122,.35);color:#ff9aa8;border-radius:12px;font-weight:800;font-size:14px;font-family:inherit;cursor:pointer;transition:.2s}
 .sp-coll-close:hover{background:rgba(255,107,122,.25);color:#fff}
 
 .sp-form-card{margin-top:14px;padding:18px 20px;border-radius:20px;background:linear-gradient(145deg,rgba(139,92,246,.14),rgba(57,198,255,.08));border:2px solid rgba(139,92,246,.35)}
-.sp-form-card .spfc-title{font-size:17px;font-weight:900;color:var(--text);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.sp-form-card .spfc-title{font-size:17px;font-weight:800;color:var(--text);margin-bottom:12px;display:flex;align-items:center;gap:8px}
 .sp-form-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin-top:6px}
 .sp-form-grid select,.sp-form-grid input{width:100%;padding:12px 14px;background:var(--card-bg);border:1px solid var(--line);border-radius:12px;color:var(--text);font-family:inherit;font-size:14px;outline:none;transition:.2s}
 .sp-form-grid select:focus,.sp-form-grid input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(57,198,255,.15)}
 .sp-form-grid label.sp-lbl{display:block;font-size:12px;color:var(--muted);font-weight:800;margin-bottom:5px;padding-right:4px}
 .sp-form-grid select option{background:#fff;color:#0a1628}
 .sp-form-btns{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
-.sp-btn-main{flex:1 1 60%;padding:14px;background:linear-gradient(135deg,var(--accent),var(--accent2));border:none;border-radius:12px;color:#fff;font-weight:900;font-size:15px;font-family:inherit;cursor:pointer;transition:.2s;min-width:180px}
+.sp-btn-main{flex:1 1 60%;padding:14px;background:linear-gradient(135deg,var(--accent),var(--accent2));border:none;border-radius:12px;color:#fff;font-weight:800;font-size:15px;font-family:inherit;cursor:pointer;transition:.2s;min-width:180px}
 .sp-btn-main:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(57,198,255,.4)}
 .sp-btn-ghost{flex:1 1 30%;padding:14px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:12px;color:var(--text);font-weight:800;font-size:14px;font-family:inherit;cursor:pointer;transition:.2s;min-width:120px}
 .sp-btn-ghost:hover{background:rgba(255,255,255,.15)}
 
 .sp-week-tabs{display:flex;gap:6px;overflow-x:auto;padding:6px 0;margin-top:10px;scrollbar-width:none}
 .sp-week-tabs::-webkit-scrollbar{display:none}
-.sp-week-tab{flex:0 0 auto;padding:10px 16px;border-radius:12px;font-size:13px;font-weight:900;cursor:pointer;color:var(--text);background:linear-gradient(145deg,rgba(255,255,255,.08),rgba(255,255,255,.03));border:2px solid rgba(255,255,255,.12);white-space:nowrap;transition:.2s}
+.sp-week-tab{flex:0 0 auto;padding:10px 16px;border-radius:12px;font-size:13px;font-weight:800;cursor:pointer;color:var(--text);background:linear-gradient(145deg,rgba(255,255,255,.08),rgba(255,255,255,.03));border:2px solid rgba(255,255,255,.12);white-space:nowrap;transition:.2s}
 .sp-week-tab:hover{transform:translateY(-1px)}
 .sp-week-tab.active{background:linear-gradient(145deg,var(--accent),var(--accent2));color:#04101d;border-color:transparent}
 
 .sp-day-card{margin-top:12px;padding:18px 20px;border-radius:20px;background:var(--card-bg);border:2px solid rgba(57,198,255,.3);animation:fadeIn .35s ease-out}
 .sp-day-head{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:14px;padding-bottom:12px;border-bottom:1px dashed rgba(255,255,255,.15)}
-.sp-day-head .spdh-title{font-size:18px;font-weight:900;color:var(--accent);display:flex;align-items:center;gap:8px}
+.sp-day-head .spdh-title{font-size:18px;font-weight:800;color:var(--accent);display:flex;align-items:center;gap:8px}
 .sp-day-head .spdh-meta{display:flex;gap:6px;flex-wrap:wrap}
 .sp-day-head .spdh-chip{padding:4px 10px;border-radius:8px;background:rgba(57,198,255,.15);border:1px solid rgba(57,198,255,.35);font-size:11px;font-weight:800;color:var(--accent)}
 .sp-phase{margin-top:14px}
-.sp-phase-head{font-size:14px;font-weight:900;color:var(--gold);margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.sp-phase-head{font-size:14px;font-weight:800;color:var(--gold);margin-bottom:8px;display:flex;align-items:center;gap:6px}
 .sp-phase-head .spph-badge{padding:3px 8px;border-radius:6px;background:rgba(255,209,102,.2);font-size:11px;color:var(--gold);font-weight:800}
 .sp-ex-row{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:12px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);margin-bottom:6px;transition:.2s}
 .sp-ex-row:hover{background:rgba(255,255,255,.09);transform:translateX(-2px)}
 .sp-ex-row .sper-icon{font-size:24px;flex-shrink:0;width:32px;text-align:center}
 .sp-ex-row .sper-body{flex:1;min-width:0}
-.sp-ex-row .sper-name{font-size:14px;font-weight:900;color:var(--text)}
-.sp-ex-row .sper-detail{font-size:12px;color:var(--muted);margin-top:2px;line-height:1.7}
+.sp-ex-row .sper-name{font-size:14px;font-weight:800;color:var(--text)}
+.sp-ex-row .sper-detail{font-size:12px;color:var(--muted);margin-top:2px;line-height:1.8}
 .sp-ex-row .sper-alt{font-size:11px;color:var(--gold);margin-top:2px}
-.sp-ex-row .sper-reps{flex-shrink:0;text-align:left;font-size:13px;font-weight:900;color:var(--accent);padding:4px 10px;border-radius:8px;background:rgba(57,198,255,.12);direction:ltr}
+.sp-ex-row .sper-reps{flex-shrink:0;text-align:left;font-size:13px;font-weight:800;color:var(--accent);padding:4px 10px;border-radius:8px;background:rgba(57,198,255,.12);direction:ltr}
 
 .sp-nutrition{margin-top:14px;padding:14px 18px;border-radius:16px;background:linear-gradient(135deg,rgba(255,209,102,.14),rgba(255,140,66,.06));border-right:4px solid var(--gold)}
-.sp-nutrition .spn-title{font-size:14px;font-weight:900;color:var(--gold);margin-bottom:8px}
-.sp-nutrition .spn-row{font-size:13px;line-height:2;color:var(--text)}
+.sp-nutrition .spn-title{font-size:14px;font-weight:800;color:var(--gold);margin-bottom:8px}
+.sp-nutrition .spn-row{font-size:13px;line-height:1.9;color:var(--text)}
 
 .sp-tracker{margin-top:14px;padding:18px 20px;border-radius:20px;background:linear-gradient(135deg,rgba(45,212,161,.15),rgba(57,198,255,.08));border:2px solid rgba(45,212,161,.4)}
 .sp-tracker .spt-head{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}
-.sp-tracker .spt-title{font-size:16px;font-weight:900;color:var(--text);display:flex;align-items:center;gap:8px}
-.sp-streak{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:12px;background:linear-gradient(135deg,#ffd166,#ff8c42);color:#3a1a00;font-weight:900;font-size:14px}
+.sp-tracker .spt-title{font-size:16px;font-weight:800;color:var(--text);display:flex;align-items:center;gap:8px}
+.sp-streak{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:12px;background:linear-gradient(135deg,#ffd166,#ff8c42);color:#3a1a00;font-weight:800;font-size:14px}
 .sp-week-dots{display:flex;gap:6px;justify-content:space-between;margin:12px 0}
 .sp-day-dot{flex:1;text-align:center;padding:8px 4px;border-radius:10px;background:rgba(255,255,255,.06);border:2px solid rgba(255,255,255,.1);font-size:11px;font-weight:800;color:var(--muted);transition:.2s}
 .sp-day-dot.done{background:linear-gradient(145deg,var(--green),var(--accent));color:#04101d;border-color:transparent}
@@ -621,15 +633,15 @@ body[data-theme="light"] .mini-title{color:#0a2540}
 .sp-day-dot.today.done{color:#3a1a00;background:linear-gradient(145deg,#ffd166,#ff8c42);border-color:transparent}
 .sp-day-dot .spdd-lbl{display:block;margin-bottom:3px;opacity:.85}
 .sp-day-dot .spdd-icon{font-size:15px}
-.sp-mark-btn{width:100%;padding:12px;background:linear-gradient(135deg,var(--green),var(--accent));border:none;border-radius:12px;color:#04101d;font-weight:900;font-size:14px;font-family:inherit;cursor:pointer;transition:.2s;margin-top:6px}
+.sp-mark-btn{width:100%;padding:12px;background:linear-gradient(135deg,var(--green),var(--accent));border:none;border-radius:12px;color:#04101d;font-weight:800;font-size:14px;font-family:inherit;cursor:pointer;transition:.2s;margin-top:6px}
 .sp-mark-btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(45,212,161,.4)}
 .sp-mark-btn.undone{background:rgba(255,107,122,.15);border:1px solid rgba(255,107,122,.4);color:#ff9aa8}
 .sp-mark-btn.undone:hover{background:rgba(255,107,122,.25)}
 
 .sp-medical-tip{margin-top:12px;padding:12px 14px;border-radius:12px;background:linear-gradient(135deg,rgba(255,107,122,.14),rgba(236,72,153,.06));border-right:3px solid var(--red);font-size:13px;line-height:1.9;color:var(--text)}
 .sp-medical-tip b{color:var(--red)}
-.sp-empty{padding:30px 20px;text-align:center;color:var(--muted);font-size:14px;line-height:2}
-.sp-share-btn{width:100%;padding:14px;background:linear-gradient(135deg,var(--accent),var(--accent2));border:none;border-radius:12px;color:#fff;font-weight:900;font-size:15px;font-family:inherit;cursor:pointer;transition:.2s;margin-top:14px}
+.sp-empty{padding:30px 20px;text-align:center;color:var(--muted);font-size:14px;line-height:1.9}
+.sp-share-btn{width:100%;padding:14px;background:linear-gradient(135deg,var(--accent),var(--accent2));border:none;border-radius:12px;color:#fff;font-weight:800;font-size:15px;font-family:inherit;cursor:pointer;transition:.2s;margin-top:14px}
 .sp-share-btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(57,198,255,.4)}
 
 .chat-suggestions{display:flex;overflow-x:auto;gap:6px;padding:10px 12px;background:linear-gradient(135deg,#6d28d9,#be185d);scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.3) transparent;direction:ltr}
@@ -639,7 +651,7 @@ body[data-theme="light"] .mini-title{color:#0a2540}
 .chat-sug{flex:0 0 auto;padding:8px 14px;border-radius:999px;font-size:12px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.4);color:#fff;white-space:nowrap;cursor:pointer;transition:.2s;font-family:inherit;direction:rtl}
 .chat-sug:hover{background:rgba(255,255,255,.28);transform:translateY(-1px)}
 .chat-sug:active{transform:scale(.96)}
-.chat-action-badge{display:inline-block;background:linear-gradient(135deg,#2dd4a3,#39c6ff);color:#04101d;padding:2px 10px;border-radius:8px;font-size:11px;font-weight:900;margin-bottom:6px}
+.chat-action-badge{display:inline-block;background:linear-gradient(135deg,#2dd4a3,#39c6ff);color:#04101d;padding:2px 10px;border-radius:8px;font-size:11px;font-weight:800;margin-bottom:6px}
 .chat-fab{position:fixed;bottom:16px;left:16px;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#8b5cf6,#ec4899);color:#fff;font-size:26px;display:grid;place-items:center;z-index:9996;box-shadow:0 10px 30px rgba(139,92,246,.4);transition:transform .2s,box-shadow .2s;touch-action:manipulation;user-select:none;-webkit-user-select:none;-webkit-tap-highlight-color:transparent}
 .chat-fab.dragging{transform:scale(1.15);box-shadow:0 20px 45px rgba(139,92,246,.7);cursor:grabbing;transition:none}
 .chat-panel{position:fixed;bottom:84px;left:12px;width:min(380px,calc(100vw - 24px));height:min(520px,72vh);background:#131a2e;border:1px solid #2a3654;border-radius:20px;z-index:9996;display:none;flex-direction:column;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.5)}
@@ -649,7 +661,7 @@ body[data-theme="light"] .mini-title{color:#0a2540}
 .chat-header .ch-btn{width:30px;height:30px;border-radius:9px;border:1px solid #ffffff33;font-family:inherit}
 .chat-header .ch-btn.clear{background:#e63946;color:#fff}.chat-header .ch-btn.close{background:#4f7cff;color:#fff}
 .chat-messages{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:8px;background:#dfe3e8}
-.chat-msg{max-width:88%;padding:9px 12px;border-radius:12px;font-size:14px;line-height:1.8;white-space:pre-line}
+.chat-msg{max-width:88%;padding:9px 12px;border-radius:12px;font-size:14px;line-height:1.9;white-space:pre-line}
 .chat-msg.bot{background:#fff;color:#202a36;border:1px solid #c3ccd6;align-self:flex-start}
 .chat-msg.user{background:#5b6672;color:#fff;align-self:flex-end}
 .chat-msg.action{background:linear-gradient(135deg,#0d392e,#0f4a3a);color:#8ff0d1;border:1px solid rgba(45,212,161,.4);align-self:flex-start}
@@ -661,10 +673,10 @@ body[data-theme="light"] .mini-title{color:#0a2540}
 .modal-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(4,6,18,.85);z-index:9999;display:none;align-items:center;justify-content:center;padding:15px}
 .modal-overlay.show{display:flex}
 .modal-box{width:min(560px,100%);max-height:85vh;overflow-y:auto;background:linear-gradient(165deg,#232a4d,#2b1b47 55%,#1c1436);border:1px solid rgba(139,92,246,.45);border-radius:22px;padding:30px 26px 26px;position:relative}
-.modal-close{position:absolute;top:18px;left:15px;background:#e63946;width:38px;height:38px;border-radius:12px;font-size:20px;color:#fff;font-weight:900;z-index:10}
+.modal-close{position:absolute;top:18px;left:15px;background:#e63946;width:38px;height:38px;border-radius:12px;font-size:20px;color:#fff;font-weight:800;z-index:10}
 .modal-icon{font-size:48px;text-align:center;margin-bottom:10px}
-.modal-title{font-size:20px;font-weight:900;margin-bottom:14px;text-align:center;color:#fff}
-.modal-text{line-height:2.2;font-size:15px;color:#eef1ff;text-align:right;white-space:pre-line}
+.modal-title{font-size:20px;font-weight:800;margin-bottom:14px;text-align:center;color:#fff}
+.modal-text{line-height:1.9;font-size:15px;color:#eef1ff;text-align:right;white-space:pre-line}
 
 .install-overlay{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(4,6,18,.95);z-index:10000;display:none;align-items:center;justify-content:center;padding:12px;overflow-y:auto}
 .install-overlay.show{display:flex;animation:fadeIn .4s ease-out}
@@ -674,31 +686,31 @@ body[data-theme="light"] .mini-title{color:#0a2540}
 .install-header{text-align:center;margin-bottom:16px;width:100%}
 .install-logo{font-size:40px;margin-bottom:8px;display:inline-block;animation:float 3s ease-in-out infinite;line-height:1}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
-.install-header h2{margin:0;font-size:18px;color:#fff;font-weight:900;line-height:1.6;word-wrap:break-word;overflow-wrap:anywhere;padding:0 4px}
-.install-header p{margin:8px 0 0;font-size:12px;color:#bfe9ff;line-height:1.7;word-wrap:break-word;overflow-wrap:anywhere;padding:0 4px}
+.install-header h2{margin:0;font-size:18px;color:#fff;font-weight:800;line-height:1.6;word-wrap:break-word;overflow-wrap:anywhere;padding:0 4px}
+.install-header p{margin:8px 0 0;font-size:12px;color:#bfe9ff;line-height:1.8;word-wrap:break-word;overflow-wrap:anywhere;padding:0 4px}
 .install-accordion{display:flex;flex-direction:column;gap:8px}
 .install-acc-group{border:1px solid rgba(255,255,255,.14);border-radius:12px;overflow:hidden;background:rgba(255,255,255,.04);transition:border-color .2s}
-.install-acc-h{padding:12px 14px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:8px;font-weight:900;font-size:13px;color:#fff;user-select:none;background:linear-gradient(145deg,rgba(57,198,255,.10),rgba(139,92,246,.06));line-height:1.6;word-wrap:break-word;overflow-wrap:anywhere}
+.install-acc-h{padding:12px 14px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:8px;font-weight:800;font-size:13px;color:#fff;user-select:none;background:linear-gradient(145deg,rgba(57,198,255,.10),rgba(139,92,246,.06));line-height:1.6;word-wrap:break-word;overflow-wrap:anywhere}
 .install-acc-h>span:first-child{flex:1;min-width:0}
 .install-acc-group.open{border-color:rgba(57,198,255,.5)}
 .install-acc-h .arrow-r{transition:transform .3s;font-size:16px;color:var(--muted);flex-shrink:0}
 .install-acc-group.open .install-acc-h .arrow-r{transform:rotate(180deg);color:#fff}
 .install-acc-body{max-height:0;overflow:hidden;transition:max-height .45s ease,padding .45s ease;padding:0}
 .install-acc-group.open .install-acc-body{max-height:900px;padding:12px 14px}
-.install-acc-body p,.install-acc-body ol{margin:0;font-size:12.5px;line-height:2;color:#eaf3fb;word-wrap:break-word;overflow-wrap:anywhere}
+.install-acc-body p,.install-acc-body ol{margin:0;font-size:12.5px;line-height:1.9;color:#eaf3fb;word-wrap:break-word;overflow-wrap:anywhere}
 .install-acc-body ol{padding-right:20px}
 .install-acc-body .warn{display:inline-block;background:rgba(255,107,122,.15);color:#ff9aa8;padding:3px 10px;border-radius:6px;font-size:11px;margin-bottom:6px;border:1px solid rgba(255,107,122,.3);line-height:1.6}
 .install-actions{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
-.install-share-btn,.install-pwa-btn{flex:1 1 45%;padding:10px 8px;border-radius:10px;font-size:13px;font-weight:900;cursor:pointer;border:none;display:inline-flex;align-items:center;justify-content:center;gap:4px;color:#04101d;font-family:inherit;min-width:110px}
+.install-share-btn,.install-pwa-btn{flex:1 1 45%;padding:10px 8px;border-radius:10px;font-size:13px;font-weight:800;cursor:pointer;border:none;display:inline-flex;align-items:center;justify-content:center;gap:4px;color:#04101d;font-family:inherit;min-width:110px}
 .install-share-btn{background:linear-gradient(135deg,#2dd4a3,#39c6ff)}
 .install-pwa-btn{background:linear-gradient(135deg,#ffd166,#ff8c42)}
 .install-size-note{margin-top:12px;padding:12px 14px;border-radius:10px;background:linear-gradient(135deg,rgba(45,212,161,.12),rgba(57,198,255,.08));border:1px solid rgba(45,212,161,.3);font-size:12px;line-height:1.9;color:#d4f5e8;text-align:right;word-wrap:break-word;overflow-wrap:anywhere}
-.install-size-note .isn-head{font-weight:900;color:#7fffd4;font-size:13px;display:block;margin-bottom:3px}
-.install-btn{display:block;width:100%;margin-top:14px;padding:14px;background:linear-gradient(135deg,#39c6ff,#4f7cff);color:#fff;border:none;border-radius:12px;font-size:15px;font-weight:900;cursor:pointer;font-family:inherit}
+.install-size-note .isn-head{font-weight:800;color:#7fffd4;font-size:13px;display:block;margin-bottom:3px}
+.install-btn{display:block;width:100%;margin-top:14px;padding:14px;background:linear-gradient(135deg,#39c6ff,#4f7cff);color:#fff;border:none;border-radius:12px;font-size:15px;font-weight:800;cursor:pointer;font-family:inherit}
 .install-version{margin-top:14px;padding:12px;border-radius:10px;background:rgba(0,0,0,.22);border:1px dashed rgba(255,255,255,.14);text-align:center}
-.install-version .iv-version{font-size:14px;font-weight:900;color:var(--cyan);letter-spacing:.5px}
+.install-version .iv-version{font-size:14px;font-weight:800;color:var(--cyan);letter-spacing:.5px}
 
-footer{text-align:center;color:var(--muted);font-size:11px;line-height:2;padding:25px 0 35px}
+footer{text-align:center;color:var(--muted);font-size:11px;line-height:1.9;padding:25px 0 35px}
 .muted{color:var(--muted);font-size:13px}
 .switch{position:relative;display:inline-block;width:52px;height:28px;flex-shrink:0}
 .switch input{opacity:0;width:0;height:0}
@@ -722,6 +734,7 @@ body[data-theme="light"] .color-dot.active{border-color:#0a1628;box-shadow:0 0 0
 @media(max-width:900px){.scene{grid-template-columns:1fr}}
 @media(max-width:560px){
   .wrap{width:calc(100% - 12px)}
+  .top{margin:0 -6px;padding:10px 10px 6px}
   .main,.side,.section{padding:16px}
   .weather-hero{flex-direction:column;text-align:center}
   .temp{font-size:42px}
@@ -742,6 +755,7 @@ body[data-theme="light"] .color-dot.active{border-color:#0a1628;box-shadow:0 0 0
   .sp-day-dot{font-size:9px;padding:6px 2px}
   .color-picker{grid-template-columns:repeat(6,28px);gap:8px}
   .color-dot{width:28px;height:28px}
+  .dc-share-btn{font-size:12px;padding:10px 8px;min-width:0}
 }
 </style>
 </head>
@@ -760,7 +774,6 @@ body[data-theme="light"] .color-dot.active{border-color:#0a1628;box-shadow:0 0 0
 <div class="share-toast" id="shareToast"></div>
 <canvas id="shareCanvas" width="1080" height="1620" style="display:none"></canvas>
 
-<!-- 🆕 مودال AR قبله‌نما -->
 <div class="ar-modal" id="arModal">
 <video id="arVideo" autoplay playsinline muted></video>
 <button class="ar-close" id="arClose" aria-label="بستن">✕</button>
@@ -865,17 +878,27 @@ body[data-theme="light"] .color-dot.active{border-color:#0a1628;box-shadow:0 0 0
 <div class="guide-drawer-body">
 <div class="guide-drawer-inner">
 <div class="about-help" style="margin-top:6px">
+<div class="ah-sec"><div class="ah-h c1">🆕 ویژگی‌های اخیر این نسخه</div><ul>
+<li>🔤 <b>فونت فارسی مدرن Vazirmatn</b> با وزن‌های متغیر برای خوانایی بهتر.</li>
+<li>📐 <b>بهبود تایپوگرافی</b>: فاصلهٔ خط ۱٫۹ در متن‌های بلند و حروف‌چینی justify در متن‌های ادبی.</li>
+<li>📌 <b>هدر ثابت (Sticky)</b>: نوار بالا هنگام پیمایش صفحه ثابت می‌ماند تا همیشه به بخش‌ها دسترسی داشته باشید.</li>
+<li>🌡️ <b>مقایسهٔ دمای امروز و دیروز</b> زیر «محسوس» در کارت هوا.</li>
+<li>🌫️ <b>هشدار رنگی AQI</b>: اگر کیفیت هوا نامناسب باشد (EAQI بالای ۶۰)، مقدار عددی قرمز می‌شود و در شاخص‌های هوشمند هشدار می‌آید.</li>
+<li>🎨 <b>آیکون‌های SVG اختصاصی</b> در شبکهٔ شاخص‌های هوا، به‌جای ایموجی.</li>
+<li>🔗 <b>ارسال کارت روز با لینک اختصاصی</b>: دکمهٔ «کپی لینک» در کارت امروز، لینکی می‌سازد که با بازکردن آن، کارت روز همان شهر نمایش داده می‌شود.</li>
+</ul></div>
 <div class="ah-sec"><div class="ah-h c1">⭐ آسمان من</div><ul>
 <li>داشبورد شخصی با کارت‌های قابل جابجایی و مدیریت.</li>
 <li>💡 با <b>کشیدن کارت‌ها</b> (دسکتاپ) یا <b>لمس طولانی</b> (موبایل)، ترتیب را تغییر دهید.</li>
 <li>💡 می‌توانید کارت‌ها را از بخش «مدیریت کارت‌ها» مخفی یا نمایش دهید.</li>
 <li>🌡️ کارت هوای این صفحه، علاوه بر دمای فعلی، <b>بیشینه و کمینهٔ دمای روز</b> را هم نمایش می‌دهد.</li>
 <li>🕌 در کشوی «کارت امروز آسمان»، <b>همهٔ اوقات شرعی روز</b> (اذان صبح، طلوع، اذان ظهر، غروب، اذان مغرب) نمایش داده می‌شود و اذان بعدی به‌صورت هایلایت مشخص است.</li>
+<li>🔗 با دکمهٔ <b>«کپی لینک»</b>، لینک اختصاصی کارت روز را برای دوستان بفرستید.</li>
 </ul></div>
 <div class="ah-sec"><div class="ah-h c3">☀️ کارت روز آسمان (کشویی)</div><ul>
-<li>کارت ویژه با خلاصهٔ روز: تاریخ، هوا، همهٔ اوقات شرعی، بیت، دانستنی، فاز ماه و ذکر.</li>
+<li>کارت ویژه با خلاصهٔ روز: تاریخ، هوا (با بیشینه/کمینه)، همهٔ اوقات شرعی، بیت و ذکر روز.</li>
 <li>🔽 روی <b>هدر کارت</b> بزنید تا کشو باز/بسته شود.</li>
-<li>📤 دو دکمهٔ اشتراک‌گذاری (فقط به‌صورت عکس) و ذخیرهٔ عکس در پایین کارت.</li>
+<li>📤 سه گزینه: اشتراک‌گذاری (تصویر)، ذخیرهٔ عکس، و کپی لینک اختصاصی.</li>
 </ul></div>
 <div class="ah-sec"><div class="ah-h c2">🌿 سلامتی</div><ul>
 <li>برنامهٔ ورزشی کاملاً شخصی‌سازی‌شده برای <b>خانم/آقا، سنین مختلف</b>.</li>
@@ -902,6 +925,7 @@ body[data-theme="light"] .color-dot.active{border-color:#0a1628;box-shadow:0 0 0
 <li>در صفحهٔ «سلامتی» ادغام شده است: نکات فصلی، کیفیت هوا، خواب و تغذیه.</li>
 <li>در صفحهٔ «آب‌وهوا» به‌صورت کشوی جداگانه نیز نمایش داده می‌شود.</li>
 <li><b>🥶 هشدار یخبندان و سرمای شدید</b> در شاخص‌های هوشمند.</li>
+<li><b>🌫️ هشدار کیفیت هوا</b> اگر EAQI بالای ۶۰ باشد (با رنگ قرمز).</li>
 </ul></div>
 <div class="ah-sec"><div class="ah-h c5">🔭 علم</div><ul>
 <li>تصویر نجومی روز ناسا (APOD) + <b>تصویر جایگزین ESA</b> در صورت خطا.</li>
@@ -935,24 +959,17 @@ body[data-theme="light"] .color-dot.active{border-color:#0a1628;box-shadow:0 0 0
 <div class="ah-sec"><div class="ah-h c6">🏷️ نوار بالای دسکتاپ (Mag Nav)</div><ul>
 <li>در دسکتاپ، همهٔ ۹ صفحهٔ اصلی از نوار بالای صفحه قابل دسترسی هستند.</li>
 <li>💡 با <b>کشیدن و رها کردن</b> تب‌ها ترتیب را تغییر دهید.</li>
+<li>📌 این نوار همراه با هدر <b>ثابت (Sticky)</b> است و هنگام پیمایش دیده می‌شود.</li>
 </ul></div>
 <div class="ah-sec"><div class="ah-h c2">📲 نصب به‌عنوان اپلیکیشن</div><ul>
 <li>برنامه از PWA پشتیبانی می‌کند و روی صفحهٔ اصلی گوشی نصب می‌شود.</li>
 <li>💡 <b>مودال نصب در هر ورود به برنامه نمایش داده می‌شود</b> تا همیشه یادآوری باشد.</li>
 <li>📬 <b>دکمهٔ ارتباط با سازنده</b> نیز در همین صفحه و زیر دکمهٔ نصب قرار دارد.</li>
 </ul></div>
-<div class="ah-sec"><div class="ah-h c4">🔔 اعلان‌ها (Push Notification)</div><ul>
-<li>در <b>تنظیمات</b> می‌توانید کلید «اعلان‌ها» را روشن کنید.</li>
-<li>پس از اولین روشن کردن، مرورگر از شما <b>اجازهٔ نمایش اعلان</b> می‌خواهد.</li>
-<li>🔔 اعلان <b>اذان بعدی</b> حدود ۱ دقیقه قبل از هر اذان نمایش داده می‌شود.</li>
-<li>🌤️ اعلان <b>هوای روزانه</b> هر روز صبح ساعت ۷ نمایش داده می‌شود.</li>
-<li>💡 اعلان‌ها فقط زمانی کار می‌کنند که برنامه باز باشد (برای اعلان پس‌زمینه به سرور Push نیاز است).</li>
-</ul></div>
 <div class="ah-sec"><div class="ah-h c1">⚙️ تنظیمات</div><ul>
 <li>در شیت «بیشتر» (نوار پایین موبایل) قرار دارد.</li>
 <li>حالت نمایش، اندازهٔ فونت، ۶ رنگ اصلی.</li>
 <li>مدیریت GPS، واحد دما (C/F)، NASA API key.</li>
-<li><b>🔔 کلید اعلان‌ها</b> برای اذان و هوای روزانه.</li>
 <li>مدیریت پین‌ها، پاک کردن حافظهٔ پنهان، مشاهدهٔ نسخه و <b>فقط آخرین تغییرات نسخه</b>.</li>
 </ul></div>
 <div class="ah-sec"><div class="ah-h c5">🎉 کارت اعلان نسخهٔ جدید</div><ul>
@@ -964,6 +981,7 @@ body[data-theme="light"] .color-dot.active{border-color:#0a1628;box-shadow:0 0 0
 <li>از این نسخه، برنامه <b>هیچ Tracking خارجی</b> ارسال نمی‌کند.</li>
 <li>تمام پردازش‌ها سمت مرورگر شما انجام می‌شود.</li>
 <li>اطلاعات فقط در <b>حافظهٔ محلی مرورگر</b> ذخیره می‌شود.</li>
+<li>💡 در صورت درخواست موقعیت و عدم دسترسی به GPS، برنامه ممکن است از سرویس‌های <b>IP Location</b> برای تخمین موقعیت استفاده کند. این سرویس‌ها IP شما را دریافت می‌کنند.</li>
 </ul></div>
 <div class="ah-sec"><div class="ah-h c3">🌐 هوشمندی مرورگر</div><ul>
 <li>اگر برنامه را با مرورگری غیر از <b>Chrome</b> باز کنید، یک بنر دوستانه برای <b>حدود ۳ ثانیه</b> نمایش داده می‌شود که پیشنهاد می‌کند صفحه را در Chrome باز کنید.</li>
@@ -989,22 +1007,21 @@ body[data-theme="light"] .color-dot.active{border-color:#0a1628;box-shadow:0 0 0
 <div class="about-help" style="margin-top:0">
 <div class="ah-sec"><div class="ah-h c7">🔤 اندازهٔ فونت</div><div style="margin-top:10px"><select class="select" id="fontSetting" style="width:100%;padding:12px;font-size:14px;border-radius:12px"><option value="normal">پیش‌فرض</option><option value="large">بزرگ‌تر</option></select></div></div>
 <div class="ah-sec"><div class="ah-h c1">🎨 رنگ اصلی برنامه (۶ رنگ)</div><div class="color-picker" id="colorPicker">
-<button class="color-dot active" data-color="blue" title="آبی"></button>
-<button class="color-dot" data-color="purple" title="بنفش"></button>
-<button class="color-dot" data-color="green" title="سبز"></button>
-<button class="color-dot" data-color="orange" title="نارنجی"></button>
-<button class="color-dot" data-color="pink" title="صورتی"></button>
-<button class="color-dot" data-color="indigo" title="نیلی"></button>
+<button class="color-dot active" data-color="blue" title="آبی" aria-label="رنگ آبی"></button>
+<button class="color-dot" data-color="purple" title="بنفش" aria-label="رنگ بنفش"></button>
+<button class="color-dot" data-color="green" title="سبز" aria-label="رنگ سبز"></button>
+<button class="color-dot" data-color="orange" title="نارنجی" aria-label="رنگ نارنجی"></button>
+<button class="color-dot" data-color="pink" title="صورتی" aria-label="رنگ صورتی"></button>
+<button class="color-dot" data-color="indigo" title="نیلی" aria-label="رنگ نیلی"></button>
 </div></div>
 <div class="ah-sec"><div class="ah-h c1">📍 دسترسی به موقعیت مکانی</div><div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px;gap:10px"><span style="font-size:14px;color:var(--muted);line-height:1.8">تشخیص خودکار موقعیت فعلی شما</span><label class="switch"><input type="checkbox" id="gpsToggle"><span class="slider"></span></label></div></div>
-<div class="ah-sec"><div class="ah-h c4">🔔 اعلان‌ها (اذان و هوا)</div><div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px;gap:10px"><span style="font-size:14px;color:var(--muted);line-height:1.8">اعلان اذان بعدی و هوای روزانه ساعت ۷ صبح</span><label class="switch"><input type="checkbox" id="notifToggle"><span class="slider"></span></label></div><div style="font-size:12px;color:var(--muted);margin-top:8px;line-height:1.9">💡 هنگام روشن کردن، مرورگر از شما اجازهٔ نمایش اعلان می‌خواهد. اعلان‌ها فقط زمانی که برنامه باز است کار می‌کنند.</div></div>
 <div class="ah-sec"><div class="ah-h c2">🌡️ واحد اندازه‌گیری دما</div><div style="margin-top:10px"><select class="select" id="unitSetting" style="width:100%;padding:12px;font-size:14px;border-radius:12px"><option value="celsius">سانتی‌گراد (°C)</option><option value="fahrenheit">فارنهایت (°F)</option></select></div></div>
 <div class="ah-sec"><div class="ah-h c4">🛰️ NASA API Key (برای تصویر نجومی)</div><div style="font-size:13px;color:var(--muted);margin-top:6px;line-height:1.9">کلید خود را از <b>api.nasa.gov</b> بگیرید. پیش‌فرض DEMO_KEY است که محدودیت دارد.</div><input type="text" id="nasaKeyInput" placeholder="DEMO_KEY" style="width:100%;margin-top:8px;padding:10px 12px;border-radius:10px;background:var(--card-bg);border:1px solid var(--line);color:var(--text);font-family:inherit;font-size:13px;direction:ltr"><button class="btn" id="saveNasaKeyBtn" style="margin-top:8px;width:100%">💾 ذخیره کلید</button></div>
 <div class="ah-sec"><div class="ah-h c3">📌 مدیریت پین‌ها</div><div style="font-size:14px;color:var(--muted);margin-top:6px">تعداد پین‌های ذخیره‌شده: <b id="pinsCount" style="color:var(--accent)">--</b></div><button class="btn" id="clearPinsBtn" style="margin-top:10px;width:100%;background:rgba(255,107,122,.1);border-color:rgba(255,107,122,.4);color:#ff9aa8">🗑️ پاک کردن همهٔ پین‌ها</button></div>
 <div class="ah-sec"><div class="ah-h c4">💾 حافظه و داده‌ها</div><div style="font-size:13px;color:var(--muted);margin-top:6px">پاک کردن داده‌های ذخیره‌شده در حافظهٔ پنهان. کش به‌صورت <b>خودکار هر ۴۸ ساعت</b> پاک می‌شود.</div><button class="btn" id="clearCacheBtn" style="margin-top:10px;width:100%">🗑️ پاک کردن حافظهٔ پنهان</button></div>
 <div class="ah-sec"><div class="ah-h c5">ℹ️ دربارهٔ برنامه</div>
-<div style="font-size:13px;color:var(--muted);margin-top:6px;line-height:2">نسخه: <b style="color:var(--accent)" id="settingsVersion">--</b><br>سازنده: م. حسینی</div>
-<div style="font-size:12.5px;color:var(--text);margin-top:10px;padding:10px 12px;background:rgba(57,198,255,.08);border-right:3px solid var(--accent);border-radius:0 10px 10px 0;line-height:2">
+<div style="font-size:13px;color:var(--muted);margin-top:6px;line-height:1.9">نسخه: <b style="color:var(--accent)" id="settingsVersion">--</b><br>سازنده: م. حسینی</div>
+<div style="font-size:12.5px;color:var(--text);margin-top:10px;padding:10px 12px;background:rgba(57,198,255,.08);border-right:3px solid var(--accent);border-radius:0 10px 10px 0;line-height:1.9">
 <b style="color:var(--accent);display:block;margin-bottom:6px">🎉 تغییرات نسخهٔ جدید:</b>
 <div id="settingsChangelog" style="color:var(--muted);font-size:12px">--</div>
 </div>
@@ -1039,7 +1056,7 @@ body[data-theme="light"] .color-dot.active{border-color:#0a1628;box-shadow:0 0 0
 <div class="scene">
 <section class="panel main">
 <div class="citybar">
-<div class="city-line"><button id="pin" class="pin-small">☆</button><div id="city" class="city">اراک <span id="cityInfo" class="city-info"></span></div></div>
+<div class="city-line"><button id="pin" class="pin-small" aria-label="پین کردن این مکان">☆</button><div id="city" class="city">اراک <span id="cityInfo" class="city-info"></span></div></div>
 <button id="localTime" class="localtime-btn">ساعت: <span class="lt-clock">--:--</span></button>
 </div>
 <div class="weather-hero">
@@ -1049,6 +1066,7 @@ body[data-theme="light"] .color-dot.active{border-color:#0a1628;box-shadow:0 0 0
 <div id="cond" class="cond">در حال دریافت...</div>
 <div id="feels" class="feels"></div>
 <div class="minmax"><span class="min">▼ <span id="minTemp">--</span></span><span class="max">▲ <span id="maxTemp">--</span></span></div>
+<div id="dayCompare" class="day-compare" style="display:none"></div>
 </div>
 </div>
 <div id="freshnessBar"></div>
@@ -1064,22 +1082,22 @@ body[data-theme="light"] .color-dot.active{border-color:#0a1628;box-shadow:0 0 0
 <div class="sectionhead" id="detailsSectionHead"><div class="weather-section-title">📊 شاخص <span id="detailsDayLabel">امروز</span></div><button id="detailsToggle" class="arrow">⌄</button></div>
 <div id="detailsBody" class="collapse collapsed">
 <div class="details" id="detailsGrid">
-<button class="detail-btn" data-info="humidity"><span>💧 رطوبت</span><span class="val" id="hum">--</span></button>
-<button class="detail-btn" data-info="wind"><span>💨 باد</span><span class="val" id="wind">--</span></button>
-<button class="detail-btn" data-info="temp"><span>🌡️ دما</span><span class="val" id="tempVal">--</span></button>
-<button class="detail-btn" data-info="uv"><span>☀️ فرابنفش</span><span class="val" id="uvVal">--</span></button>
-<button class="detail-btn" data-info="precip"><span>🌧️ بارش</span><span class="val" id="precip">--</span></button>
-<button class="detail-btn" data-info="visibility"><span>👁️ دید</span><span class="val" id="visVal">--</span></button>
-<button class="detail-btn" data-info="pressure"><span>🌡️ فشار</span><span class="val" id="pressure">--</span></button>
-<button class="detail-btn" data-info="dewpoint"><span>💦 شبنم</span><span class="val" id="dewpoint">--</span></button>
-<button class="detail-btn" data-info="aqi"><span>🌫️ هوا</span><span class="val" id="aqi">--</span></button>
-<button class="detail-btn" data-info="us_aqi"><span>🌐 EPA</span><span class="val" id="usaqi">--</span></button>
-<button class="detail-btn" data-info="pm25"><span>🔬 PM2.5</span><span class="val" id="pm25">--</span></button>
-<button class="detail-btn" data-info="pm10"><span>🌪️ PM10</span><span class="val" id="pm10">--</span></button>
-<button class="detail-btn" data-info="ozone"><span>☁️ ازن</span><span class="val" id="ozone">--</span></button>
-<button class="detail-btn" data-info="dust"><span>🏜️ ریزگرد</span><span class="val" id="dust">--</span></button>
-<button class="detail-btn" data-info="pollen"><span>🌼 گرده</span><span class="val" id="pollen">--</span></button>
-<button class="detail-btn" data-info="cloud"><span>☁️ ابر</span><span class="val" id="cloud">--</span></button>
+<button class="detail-btn" data-info="humidity"><span class="dt-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5C8 8.5 5 12 5 15.5a7 7 0 0 0 14 0c0-3.5-3-7-7-13z"/></svg>رطوبت</span><span class="val" id="hum">--</span></button>
+<button class="detail-btn" data-info="wind"><span class="dt-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h11a3 3 0 1 0-3-3"/><path d="M3 12h15a3 3 0 1 1-3 3"/><path d="M3 16h9"/></svg>باد</span><span class="val" id="wind">--</span></button>
+<button class="detail-btn" data-info="temp"><span class="dt-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10 14V5a2 2 0 1 1 4 0v9a4 4 0 1 1-4 0z"/></svg>دما</span><span class="val" id="tempVal">--</span></button>
+<button class="detail-btn" data-info="uv"><span class="dt-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>فرابنفش</span><span class="val" id="uvVal">--</span></button>
+<button class="detail-btn" data-info="precip"><span class="dt-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 15a4 4 0 0 0 0-8 6 6 0 0 0-11.6 1.5A4 4 0 0 0 6 16"/><path d="M8 19l-1 2M12 19l-1 2M16 19l-1 2"/></svg>بارش</span><span class="val" id="precip">--</span></button>
+<button class="detail-btn" data-info="visibility"><span class="dt-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>دید</span><span class="val" id="visVal">--</span></button>
+<button class="detail-btn" data-info="pressure"><span class="dt-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 14l4-4"/><path d="M5 20a9 9 0 1 1 14 0"/></svg>فشار</span><span class="val" id="pressure">--</span></button>
+<button class="detail-btn" data-info="dewpoint"><span class="dt-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s-5 6-5 10a5 5 0 0 0 10 0c0-4-5-10-5-10z"/></svg>شبنم</span><span class="val" id="dewpoint">--</span></button>
+<button class="detail-btn" data-info="aqi"><span class="dt-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 10h18M5 14h14M8 18h8M3 6h12"/></svg>هوا</span><span class="val" id="aqi">--</span></button>
+<button class="detail-btn" data-info="us_aqi"><span class="dt-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg>EPA</span><span class="val" id="usaqi">--</span></button>
+<button class="detail-btn" data-info="pm25"><span class="dt-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="12" cy="18" r="3"/><circle cx="18" cy="6" r="3"/><path d="M6 9v6M18 9v6"/></svg>PM2.5</span><span class="val" id="pm25">--</span></button>
+<button class="detail-btn" data-info="pm10"><span class="dt-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 5h15"/><path d="M5 9h14"/><path d="M7 13h10"/><path d="M9 17h6"/><path d="M11 21h3"/></svg>PM10</span><span class="val" id="pm10">--</span></button>
+<button class="detail-btn" data-info="ozone"><span class="dt-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 18a4 4 0 0 0 0-8 6 6 0 0 0-11.6 1.5A4 4 0 0 0 6 19h11z"/></svg>ازن</span><span class="val" id="ozone">--</span></button>
+<button class="detail-btn" data-info="dust"><span class="dt-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 20h18"/><path d="M5 20c1-3 3-5 7-5s6 2 7 5"/><circle cx="18" cy="7" r="2"/></svg>ریزگرد</span><span class="val" id="dust">--</span></button>
+<button class="detail-btn" data-info="pollen"><span class="dt-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="2.5"/><circle cx="12" cy="5" r="2"/><circle cx="19" cy="12" r="2"/><circle cx="12" cy="19" r="2"/><circle cx="5" cy="12" r="2"/></svg>گرده</span><span class="val" id="pollen">--</span></button>
+<button class="detail-btn" data-info="cloud"><span class="dt-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 18a4 4 0 0 0 0-8 6 6 0 0 0-11.6 1.5A4 4 0 0 0 6 19h11z"/></svg>ابر</span><span class="val" id="cloud">--</span></button>
 </div>
 </div>
 <div id="updated" class="muted" style="margin-top:12px"></div>
@@ -1398,15 +1416,15 @@ body[data-theme="light"] .color-dot.active{border-color:#0a1628;box-shadow:0 0 0
 </div>
 </div>
 
-<button class="chat-fab" id="chatFab">🤖</button>
+<button class="chat-fab" id="chatFab" aria-label="باز کردن دستیار هوشمند">🤖</button>
 <div class="chat-panel" id="chatPanel">
-<div class="chat-header"><div class="ch-title">🤖 دستیار هوشمند (۲ لایه)</div><button class="ch-btn clear" id="chatClear">🗑️</button><button class="ch-btn close" id="chatClose">✕</button></div>
+<div class="chat-header"><div class="ch-title">🤖 دستیار هوشمند (۲ لایه)</div><button class="ch-btn clear" id="chatClear" aria-label="پاک کردن گفتگو">🗑️</button><button class="ch-btn close" id="chatClose" aria-label="بستن چت">✕</button></div>
 <div class="chat-messages" id="chatMessages"></div>
 <div class="chat-input-row"><input id="chatInput" placeholder="سوال بپرسید یا فرمان دهید..."><button class="chat-send" id="chatSend">➤</button></div>
 <div class="chat-suggestions" id="chatSugs"></div>
 </div>
 
-<div id="infoModal" class="modal-overlay"><div class="modal-box"><button class="modal-close" id="infoModalClose">×</button><div class="modal-icon" id="infoModalIcon">💧</div><div class="modal-title" id="infoModalTitle">--</div><div class="modal-text" id="infoModalText">--</div></div></div>
+<div id="infoModal" class="modal-overlay"><div class="modal-box"><button class="modal-close" id="infoModalClose" aria-label="بستن پنجره">×</button><div class="modal-icon" id="infoModalIcon">💧</div><div class="modal-title" id="infoModalTitle">--</div><div class="modal-text" id="infoModalText">--</div></div></div>
 
 <script>
 (function(){
@@ -1418,23 +1436,15 @@ function ssSet(k,v){try{sessionStorage.setItem(k,v);}catch(e){}}
 function ssGet(k){try{return sessionStorage.getItem(k);}catch(e){return null;}}
 var APP_VERSION="1.1.2";
 var APP_CHANGELOG_LINES=[
-  "📌 نسخه ۱٫۱٫۲ — به‌روزرسانی",
-  "🧭 افزودن قبله‌نما با دوربین (AR) در صفحهٔ اوقات شرعی",
-  "🕌 نمایش همهٔ اوقات شرعی روز در کشوی «کارت امروز آسمان»",
-  "🔔 افزودن سیستم اعلان‌ها (اذان بعدی + هوای روزانه ساعت ۷ صبح)",
-  "🛡️ حذف کامل Tracking خارجی — حریم خصوصی شما محفوظ است",
-  "🧹 حذف کدهای مرده (بهبود کارایی و حجم برنامه)",
-  "📖 به‌روزرسانی راهنمای برنامه",
-  "🎨 نمایش فقط تغییرات نسخهٔ جدید در تنظیمات",
-  "📲 نمایش مودال نصب در هر ورود به برنامه",
-  "🗑️ حذف پین‌های قفل‌شدهٔ اراک و ده کوثر از آب‌وهوا",
-  "📰 حذف بخش اخبار علمی از صفحهٔ علم",
-  "🥶 هشدار یخبندان و سرمای شدید در شاخص‌های هوشمند",
-  "💧 محاسبه‌گر مصرف آب روزانه در سلامتی",
-  "🎲 حالت تصادفی عمیق در فرهنگ (۵ بیت تازه)",
-  "🌌 تصویر جایگزین ESA برای نجوم در صورت خطا",
-  "📜 ضرب‌المثل‌های ایرانی با معنی در سرگرمی",
-  "✊✋✌️ بازی سنگ کاغذ قیچی با امتیازدهی"
+  "📌 نسخه ۱٫۱٫۲ — آخرین تغییرات",
+  "🔤 فونت فارسی مدرن Vazirmatn با وزن‌های متغیر",
+  "📐 بهبود فاصلهٔ خط (۱٫۹) و حروف‌چینی متن‌های ادبی",
+  "📌 هدر ثابت (Sticky) برای پیمایش بهتر",
+  "🌡️ مقایسهٔ دمای امروز با دیروز در کارت هوا",
+  "🌫️ هشدار رنگی کیفیت هوا در شاخص‌ها",
+  "🎨 آیکون‌های SVG اختصاصی در شبکهٔ شاخص‌های هوا",
+  "🔗 امکان اشتراک‌گذاری کارت روز با لینک اختصاصی",
+  "📖 به‌روزرسانی راهنمای برنامه"
 ];
 
 var FUN_JOKES=[
@@ -1506,7 +1516,7 @@ function checkLocalStorageSize(){
     var total=0;
     for(var k in localStorage){if(localStorage.hasOwnProperty(k)){total+=(localStorage[k]||"").length+k.length;}}
     if(total>4*1024*1024){
-      var keep=["gpsEnabled","unit","pins","city","hasOpened","lastPage","aseman_device_seen","appTheme","appFont","appColor","userName","hiddenCards","dashOrder","lastAutoCacheClear","saves","tabOrder","spProfile","spWeekPlan","spWorkoutLog","bnOrder","nasaApiKey","chatFabPosPct","lastSeenVersion","notifEnabled"];
+      var keep=["gpsEnabled","unit","pins","city","hasOpened","lastPage","aseman_device_seen","appTheme","appFont","appColor","userName","hiddenCards","dashOrder","lastAutoCacheClear","saves","tabOrder","spProfile","spWeekPlan","spWorkoutLog","bnOrder","nasaApiKey","chatFabPosPct","lastSeenVersion"];
       var candidates=[];
       for(var k2 in localStorage){
         if(!localStorage.hasOwnProperty(k2))continue;
@@ -1566,7 +1576,7 @@ function autoClearCacheIfNeeded(){
     var H48=48*60*60*1000;
     if(Date.now()-last>=H48){
       var keys=Object.keys(localStorage);
-      var keep=["gpsEnabled","unit","pins","city","hasOpened","lastPage","aseman_device_seen","appTheme","appFont","appColor","userName","hiddenCards","dashOrder","lastAutoCacheClear","saves","tabOrder","spProfile","spWeekPlan","spWorkoutLog","bnOrder","nasaApiKey","chatFabPosPct","lastSeenVersion","notifEnabled"];
+      var keep=["gpsEnabled","unit","pins","city","hasOpened","lastPage","aseman_device_seen","appTheme","appFont","appColor","userName","hiddenCards","dashOrder","lastAutoCacheClear","saves","tabOrder","spProfile","spWeekPlan","spWorkoutLog","bnOrder","nasaApiKey","chatFabPosPct","lastSeenVersion"];
       var decorative=[],essential=[];
       for(var i=0;i<keys.length;i++){
         var kk=keys[i];
@@ -1601,7 +1611,6 @@ function trackEvent(cat,action,label){
   try{var k="ev_"+cat+"_"+action+(label?("_"+label):"");var cur=parseInt(lsGet(k)||"0",10);lsSet(k,String(cur+1));var allK="evAll";var all=[];try{all=JSON.parse(lsGet(allK)||"[]");}catch(e){all=[];}all.push({c:cat,a:action,l:label||"",t:Date.now()});if(all.length>500)all=all.slice(-300);lsSet(allK,JSON.stringify(all));}catch(e){}
 }
 
-/* 🆕 (۵۳) Tracking خارجی حذف شد — فقط توابع محلی تاریخ برای checkReturnVisit حفظ شدند */
 function getTehranParts(){try{var p=new Intl.DateTimeFormat("en-US",{timeZone:"Asia/Tehran",year:"numeric",month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit",hour12:false,numberingSystem:"latn"}).formatToParts(new Date());var o={};p.forEach(function(x){if(x.type!=="literal")o[x.type]=x.value;});return o;}catch(e){var d=new Date();return{year:String(d.getFullYear()),month:String(d.getMonth()+1).padStart(2,"0"),day:String(d.getDate()).padStart(2,"0")};}}
 function getDayKey(){var p=getTehranParts();return "day-"+p.year+"-"+p.month+"-"+p.day;}
 
@@ -1609,14 +1618,29 @@ var installOverlay=document.getElementById("installOverlay");
 var installOk=document.getElementById("installOk");
 var appBooted=false;
 var gpsEnabled=lsGet("gpsEnabled")==="false"?false:true;
-/* 🆕 (۱۸) اعلان‌ها */
-var notifEnabled=lsGet("notifEnabled")==="true";
-var notifPrayerTimer=null;
-var notifWeatherTimer=null;
 
 function showInstallModal(){if(!installOverlay)return;installOverlay.classList.add("show");document.body.classList.add("install-lock");}
 function closeInstallModal(){if(!installOverlay)return;installOverlay.classList.remove("show");document.body.classList.remove("install-lock");bootApp();}
-function getInitialPage(){var sessionFlag=ssGet("aseman_session");if(sessionFlag){var lastPage=lsGet("lastPage");if(lastPage)return lastPage;return "home";}ssSet("aseman_session","1");return "home";}
+
+/* 🆕 بررسی پارامتر لینک اشتراک‌گذاری کارت */
+function isShareCardUrl(){
+  try{var p=new URLSearchParams(window.location.search);return p.get("card")==="1";}catch(e){return false;}
+}
+function applyShareCardParams(){
+  try{
+    var p=new URLSearchParams(window.location.search);
+    if(p.get("card")!=="1")return false;
+    var cName=p.get("city");
+    var cLat=parseFloat(p.get("lat"));
+    var cLon=parseFloat(p.get("lon"));
+    if(cName&&!isNaN(cLat)&&!isNaN(cLon)){
+      city={id:"shared-card",name:cName,country:"ایران",admin1:"",county:"",type:"city",latitude:cLat,longitude:cLon};
+      lsSet("city",JSON.stringify(city));
+    }
+    return true;
+  }catch(e){return false;}
+}
+function getInitialPage(){if(isShareCardUrl())return "myday";var sessionFlag=ssGet("aseman_session");if(sessionFlag){var lastPage=lsGet("lastPage");if(lastPage)return lastPage;return "home";}ssSet("aseman_session","1");return "home";}
 
 function isChromeBrowser(){
   var ua=(navigator.userAgent||"").toLowerCase();
@@ -1635,101 +1659,10 @@ function showBrowserBanner(){
   setTimeout(function(){b.classList.remove("show");},3000);
 }
 
-/* 🆕 (۱۸) توابع اعلان */
-function requestNotifPermission(){
-  if(!("Notification" in window))return Promise.resolve("unsupported");
-  if(Notification.permission==="granted")return Promise.resolve("granted");
-  if(Notification.permission==="denied")return Promise.resolve("denied");
-  return Notification.requestPermission();
-}
-function showLocalNotification(title,body){
-  if(!("Notification" in window))return;
-  if(Notification.permission!=="granted")return;
-  try{
-    var n=new Notification(title,{body:body,icon:"icon-192.png",badge:"icon-192.png",silent:false});
-    setTimeout(function(){try{n.close();}catch(e){}},9000);
-  }catch(e){}
-}
-function scheduleNextPrayerNotif(){
-  if(notifPrayerTimer){clearTimeout(notifPrayerTimer);notifPrayerTimer=null;}
-  if(!notifEnabled)return;
-  if(!("Notification" in window)||Notification.permission!=="granted")return;
-  if(!prayerData)return;
-  var cur=cityNowMinutes();
-  var order=["Fajr","Sunrise","Dhuhr","Sunset","Maghrib"];
-  var labels={Fajr:"اذان صبح",Sunrise:"طلوع آفتاب",Dhuhr:"اذان ظهر",Sunset:"غروب آفتاب",Maghrib:"اذان مغرب"};
-  var foundNext=false;
-  for(var i=0;i<order.length;i++){
-    var t=cleanTime(prayerData[order[i]]);
-    if(!t||t==="--:--")continue;
-    var p=t.split(":");
-    var m=(+p[0])*60+(+p[1]);
-    if(m>cur){
-      var diffMin=m-cur;
-      var delayMs=(diffMin-1)*60*1000;
-      if(delayMs<0)delayMs=2000;
-      if(delayMs<13*3600*1000){
-        (function(lbl,delay){
-          notifPrayerTimer=setTimeout(function(){
-            showLocalNotification("🕌 "+lbl,"وقت اذان نزدیک است — مجله آسمان");
-            scheduleNextPrayerNotif();
-          },delay);
-        })(labels[order[i]],delayMs);
-        foundNext=true;
-        break;
-      }
-    }
-  }
-  if(!foundNext){
-    var tf=cleanTime(prayerData.Fajr);
-    if(tf&&tf!=="--:--"){
-      var pf=tf.split(":");
-      var mf=(+pf[0])*60+(+pf[1]);
-      var delayTomorrow=(1440-cur+mf-1)*60*1000;
-      if(delayTomorrow>0){
-        notifPrayerTimer=setTimeout(function(){
-          showLocalNotification("🕌 اذان صبح","وقت اذان نزدیک است — مجله آسمان");
-          scheduleNextPrayerNotif();
-        },delayTomorrow);
-      }
-    }
-  }
-}
-function scheduleWeatherNotif(){
-  if(notifWeatherTimer){clearTimeout(notifWeatherTimer);notifWeatherTimer=null;}
-  if(!notifEnabled)return;
-  if(!("Notification" in window)||Notification.permission!=="granted")return;
-  var now=new Date();
-  var target=new Date();
-  target.setHours(7,0,0,0);
-  if(target.getTime()<=now.getTime())target.setDate(target.getDate()+1);
-  var delay=target.getTime()-now.getTime();
-  notifWeatherTimer=setTimeout(function(){
-    try{
-      if(data&&data.current){
-        var c=data.current;
-        showLocalNotification("🌤️ هوای "+city.name,code(c.weather_code)[0]+" — "+T(c.temperature_2m)+D()+" | مجله آسمان");
-      }
-    }catch(e){}
-    scheduleWeatherNotif();
-  },delay);
-}
-function startNotifications(){
-  if(!notifEnabled)return;
-  requestNotifPermission().then(function(p){
-    if(p!=="granted")return;
-    scheduleNextPrayerNotif();
-    scheduleWeatherNotif();
-  });
-}
-function stopNotifications(){
-  if(notifPrayerTimer){clearTimeout(notifPrayerTimer);notifPrayerTimer=null;}
-  if(notifWeatherTimer){clearTimeout(notifWeatherTimer);notifWeatherTimer=null;}
-}
-
 function bootApp(){
   if(appBooted)return;
   appBooted=true;
+  try{applyShareCardParams();}catch(e){}
   try{autoClearCacheIfNeeded();}catch(e){}
   try{applyTabOrder();}catch(e){}
   try{renderBottomNav();}catch(e){}
@@ -1743,8 +1676,14 @@ function bootApp(){
   setTimeout(function(){try{renderDhikr();}catch(e){}},200);
   setTimeout(showVersionToast,1200);
   if(!isChromeBrowser())setTimeout(showBrowserBanner,900);
-  /* 🆕 (۱۸) شروع اعلان‌ها */
-  if(notifEnabled)setTimeout(startNotifications,1500);
+  /* 🆕 اگر با لینک اشتراک‌گذاری کارت آمده، کارت را باز کن */
+  if(isShareCardUrl()){
+    setTimeout(function(){
+      var cardEl=document.querySelector(".daily-card");
+      if(cardEl)cardEl.classList.add("open");
+      try{var el=document.getElementById("dailyCardBox");if(el)el.scrollIntoView({behavior:"smooth",block:"start"});}catch(e){}
+    },1600);
+  }
 }
 function checkReturnVisit(){
   var last=lsGet("lastVisitDate");
@@ -1769,6 +1708,23 @@ function copyToClipboard(text){
 }
 function getShareUrl(){return "https://hossinimehdi70-dotcom.github.io/aseman/?utm_source=chatgpt.com";}
 var MAGAZINE_URL=getShareUrl();
+/* 🆕 لینک اختصاصی کارت روز */
+function getShareCardUrl(){
+  try{
+    var base=window.location.origin+window.location.pathname;
+    var params="?card=1&city="+encodeURIComponent(city.name)+"&lat="+city.latitude+"&lon="+city.longitude;
+    return base+params;
+  }catch(e){return MAGAZINE_URL;}
+}
+function copyShareCardLink(){
+  var url=getShareCardUrl();
+  trackEvent("share","card_link");
+  copyToClipboard(url).then(function(){
+    toast("✅ لینک کارت کپی شد — برای دوستان بفرست");
+  }).catch(function(){
+    prompt("لینک کارت:",url);
+  });
+}
 function shareApp(){
   var url=getShareUrl();
   trackEvent("share","app");
@@ -2087,6 +2043,7 @@ document.addEventListener("keydown",function(e){
 });
 
 var API={weather:"https://api.open-meteo.com/v1/forecast",geo:"https://geocoding-api.open-meteo.com/v1/search",air:"https://air-quality-api.open-meteo.com/v1/air-quality",prayer:"https://api.aladhan.com/v1/timings",archive:"https://archive-api.open-meteo.com/v1/archive",hforecast:"https://historical-forecast-api.open-meteo.com/v1/forecast",elevation:"https://api.open-meteo.com/v1/elevation",yr:"https://api.met.no/weatherapi/locationforecast/2.0/compact",nom:"https://nominatim.openstreetmap.org/search",apod:"https://api.nasa.gov/planetary/apod",translate:"https://api.mymemory.translated.net/get"};
+var NOM_EMAIL="aseman-app%40example.com";
 function getNasaKey(){return lsGet("nasaApiKey")||"DEMO_KEY";}
 
 var city={id:"arak",name:"اراک",country:"ایران",admin1:"مرکزی",county:"اراک",type:"city",latitude:34.0917,longitude:49.6892};
@@ -2196,6 +2153,7 @@ window.addEventListener("offline",updateNetStatus);updateNetStatus();
 function setGps(st){var d=document.getElementById("gpsDot"),t=document.getElementById("gpsText");if(!d||!t)return;if(st==="ok"){d.className="sb-dot on";t.textContent="GPS متصل";}else if(st==="ready"){d.className="sb-dot off";t.textContent="GPS آماده";}else{d.className="sb-dot off";t.textContent="GPS قطع";}}
 
 var lastClockMinute=-1;
+var lastClockSecond=-1;
 function updateLocalTime(){
   var plt=document.getElementById("prayerLocalTime");
   if(plt){
@@ -2212,6 +2170,9 @@ function updateLocalTime(){
   }
   var now=new Date();
   var curMin=now.getMinutes();
+  var curSec=now.getSeconds();
+  if(curSec===lastClockSecond)return;
+  lastClockSecond=curSec;
   if(curMin===lastClockMinute)return;
   lastClockMinute=curMin;
   var el=document.querySelector("#localTime .lt-clock");
@@ -2304,7 +2265,6 @@ function renderScienceMoonPhase(){
     '<div class="mp-info">درصد روشنایی: '+d.illum+'٪<br>به‌روزرسانی خودکار هر ۱ ساعت</div>';
 }
 
-/* 🆕 (۸۱) قبله‌نما با دوربین (AR) */
 function qiblaBearing(lat,lon){
   var kaabaLat=21.4225*Math.PI/180;
   var kaabaLon=39.8262*Math.PI/180;
@@ -2395,6 +2355,8 @@ function bindOrientationForAR(){
 function estUV(){var m=new Date().getMonth();var base=[2,3,5,7,8,9,9,8,6,4,3,2][m];var lat=Math.abs(city.latitude);var f=lat>40?0.8:(lat>25?1:1.1);return Math.max(0,Math.round(base*f));}
 function seasonalPollen(m,z){var z2=z||climateZoneCur||"motadel-nim";var band=z2.split("-")[0]||"motadel";var hum=z2.split("-")[1]||"nim";var P={sard:[5,5,15,35,55,60,55,45,30,15,8,5],motadel:[10,15,45,70,65,55,50,60,45,30,15,10],garm:[15,25,55,75,60,40,35,45,40,25,15,12]};var c=P[band]||P.motadel;var v=c[(m-1+12)%12];if(hum==="khoshk")v=Math.round(v*.7);if(hum==="martoub")v=Math.round(v*1.15);return Math.max(0,Math.min(100,v));}
 function airFallback(){var cv=data&&data.current?data.current.weather_code:0;var aqi=(cv===45||cv===48)?70:(cv>=71&&cv<=77?40:((cv>=51&&cv<=67)||(cv>=80&&cv<=82)?35:50));return{european_aqi:aqi,us:aqi,pm25:Math.round(aqi*0.6),pm10:Math.round(aqi*1.2),ozone:Math.round(40+aqi*0.3),dust:(cv===45?60:20),pollen:seasonalPollen(new Date().getMonth()+1)};}
+/* 🆕 آستانهٔ هشدار AQI */
+var AQI_HIGH_THRESHOLD=60;
 function getActiveAlerts(){
   var a=[];
   var s0=getDayStats(0),t1=getDayStats(1);
@@ -2409,9 +2371,18 @@ function getActiveAlerts(){
     if(t1.tempMin!=null&&t1.tempMin<=-5)a.push({icon:"🥶",title:"سرمای شدید فردا",text:T(t1.tempMin)+D()});
   }
   var an=getAirNow();if(an&&an.dust!=null&&an.dust>100)a.push({icon:"🏜️",title:"ریزگرد!",text:Math.round(an.dust)+" µg/m³"});
+  /* 🆕 هشدار کیفیت هوا */
+  if(an&&an.european_aqi!=null&&an.european_aqi>AQI_HIGH_THRESHOLD)a.push({icon:"🌫️",title:"کیفیت هوا نامناسب",text:"EAQI "+Math.round(an.european_aqi)+" — "+aqiLabel(an.european_aqi),aqi:true});
   return a;
 }
-function renderSmartAlerts(){var a=getActiveAlerts(),el=document.getElementById("smartAlerts");if(!el)return;el.innerHTML="";for(var i=0;i<Math.min(a.length,3);i++)el.innerHTML+='<div class="smart-alert"><span class="sa-icon">'+a[i].icon+'</span><span class="sa-text"><b>'+a[i].title+'</b>'+a[i].text+'</span></div>';}
+function renderSmartAlerts(){
+  var a=getActiveAlerts(),el=document.getElementById("smartAlerts");if(!el)return;
+  el.innerHTML="";
+  for(var i=0;i<Math.min(a.length,4);i++){
+    var cls="smart-alert"+(a[i].aqi?" aqi-high":"");
+    el.innerHTML+='<div class="'+cls+'"><span class="sa-icon">'+a[i].icon+'</span><span class="sa-text"><b>'+a[i].title+'</b>'+a[i].text+'</span></div>';
+  }
+}
 function epaAQI(p25,p10){function bp(c,a){for(var i=0;i<a.length;i++){var b=a[i];if(c>=b.c0&&c<=b.c1)return Math.round((b.i1-b.i0)/(b.c1-b.c0)*(c-b.c0)+b.i0);}return null;}var a=null,b=null;if(p25!=null)a=bp(p25,[{c0:0,c1:12,i0:0,i1:50},{c0:12.1,c1:35.4,i0:51,i1:100},{c0:35.5,c1:55.4,i0:101,i1:150},{c0:55.5,c1:150.4,i0:151,i1:200}]);if(p10!=null)b=bp(p10,[{c0:0,c1:54,i0:0,i1:50},{c0:55,c1:154,i0:51,i1:100},{c0:155,c1:254,i0:101,i1:150}]);if(a!=null&&b!=null)return Math.max(a,b);return a!=null?a:b;}
 function currentHourIndex(){if(!data||!data.hourly||!data.hourly.time)return 0;var n=new Date();for(var i=0;i<data.hourly.time.length;i++)if(new Date(data.hourly.time[i])>=n)return i;return 0;}
 function pollenSum(){if(!air||!air.daily)return null;var k=["pollen_grass","pollen_birch","pollen_olive","pollen_ragweed"],t=0,any=false;for(var i=0;i<k.length;i++){var v=air.daily[k[i]]&&air.daily[k[i]][0];if(v!=null){t+=v;any=true;}}return any?t:null;}
@@ -2433,7 +2404,36 @@ if(biasInfo&&biasInfo.n){
 }
 return s;}
 
-function renderDetails(){var s=getDayStats(detailDay);if(!s)return;function set(id,t){var e=document.getElementById(id);if(e)e.textContent=t;}set("hum",s.hum!=null?Math.round(s.hum)+"٪":"--");set("wind",s.wind!=null?Math.round(s.wind)+" km/h":"--");set("tempVal",s.temp!=null?T1(s.temp)+"°":(s.tempMax!=null?T1(s.tempMax)+"°":"--"));set("uvVal",s.uv!=null?s.uv:"--");set("precip",s.precip!=null?s.precip+" mm":"--");set("visVal",s.vis!=null?Math.round(s.vis)+" km":"--");set("pressure",s.pres!=null?Math.round(s.pres)+" hPa":"--");set("dewpoint",s.dew!=null?T(s.dew)+D():"--");set("aqi",s.aqi!=null?Math.round(s.aqi):"--");set("usaqi",s.us!=null?Math.round(s.us):"--");set("pm25",s.pm25!=null?Math.round(s.pm25):"--");set("pm10",s.pm10!=null?Math.round(s.pm10):"--");set("ozone",s.ozone!=null?Math.round(s.ozone):"--");set("dust",s.dust!=null?Math.round(s.dust):"--");var pol=(s.pollen!=null)?Math.round(s.pollen):seasonalPollen(new Date().getMonth()+1);set("pollen",pol);set("cloud",s.cloud!=null?Math.round(s.cloud)+"٪":"--");var l=document.getElementById("detailsDayLabel");if(l)l.textContent=(detailDay===0?"امروز":"فردا");}
+function renderDetails(){
+  var s=getDayStats(detailDay);if(!s)return;
+  function set(id,t){var e=document.getElementById(id);if(e)e.textContent=t;}
+  set("hum",s.hum!=null?Math.round(s.hum)+"٪":"--");
+  set("wind",s.wind!=null?Math.round(s.wind)+" km/h":"--");
+  set("tempVal",s.temp!=null?T1(s.temp)+"°":(s.tempMax!=null?T1(s.tempMax)+"°":"--"));
+  set("uvVal",s.uv!=null?s.uv:"--");
+  set("precip",s.precip!=null?s.precip+" mm":"--");
+  set("visVal",s.vis!=null?Math.round(s.vis)+" km":"--");
+  set("pressure",s.pres!=null?Math.round(s.pres)+" hPa":"--");
+  set("dewpoint",s.dew!=null?T(s.dew)+D():"--");
+  /* 🆕 رنگ قرمز AQI در صورت بالا بودن */
+  var aqiEl=document.getElementById("aqi");
+  if(aqiEl){
+    if(s.aqi!=null){
+      aqiEl.textContent=Math.round(s.aqi);
+      if(s.aqi>AQI_HIGH_THRESHOLD)aqiEl.classList.add("aqi-high");
+      else aqiEl.classList.remove("aqi-high");
+    } else { aqiEl.textContent="--"; aqiEl.classList.remove("aqi-high"); }
+  }
+  set("usaqi",s.us!=null?Math.round(s.us):"--");
+  set("pm25",s.pm25!=null?Math.round(s.pm25):"--");
+  set("pm10",s.pm10!=null?Math.round(s.pm10):"--");
+  set("ozone",s.ozone!=null?Math.round(s.ozone):"--");
+  set("dust",s.dust!=null?Math.round(s.dust):"--");
+  var pol=(s.pollen!=null)?Math.round(s.pollen):seasonalPollen(new Date().getMonth()+1);
+  set("pollen",pol);
+  set("cloud",s.cloud!=null?Math.round(s.cloud)+"٪":"--");
+  var l=document.getElementById("detailsDayLabel");if(l)l.textContent=(detailDay===0?"امروز":"فردا");
+}
 var tabToday=document.getElementById("tabToday"),tabTom=document.getElementById("tabTomorrow");
 if(tabToday)tabToday.addEventListener("click",function(){detailDay=0;this.classList.add("active");if(tabTom)tabTom.classList.remove("active");renderDetails();});
 if(tabTom)tabTom.addEventListener("click",function(){detailDay=1;this.classList.add("active");if(tabToday)tabToday.classList.remove("active");renderDetails();});
@@ -2524,11 +2524,11 @@ function generateTravelImage(cityName,days,itinerary,checklist,dw,bestSeason,loc
   var seed=456;function pr(n){seed=(seed*9301+49297)%233280;return (seed/233280);}
   for(var s=0;s<130;s++){var x=pr()*W,y=pr()*H,r=pr()*1.8+.4;ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.fillStyle="rgba(255,255,255,"+(pr()*.5+.15)+")";ctx.fill();}
   ctx.fillStyle="rgba(255,255,255,.12)";drawRoundedRect(ctx,50,50,W-100,140,24);ctx.fill();
-  ctx.fillStyle="#7fffd4";ctx.font="900 48px Tahoma,Arial,sans-serif";ctx.textAlign="right";ctx.fillText("🧳 برنامهٔ سفر آسمان",W-80,80);
-  ctx.fillStyle="#bfe9ff";ctx.font="700 26px Tahoma,Arial,sans-serif";ctx.fillText("مجلهٔ آسمان — به آسمان نگاه کن.",W-80,142);
+  ctx.fillStyle="#7fffd4";ctx.font="800 48px Vazirmatn,Tahoma,Arial,sans-serif";ctx.textAlign="right";ctx.fillText("🧳 برنامهٔ سفر آسمان",W-80,80);
+  ctx.fillStyle="#bfe9ff";ctx.font="400 26px Vazirmatn,Tahoma,Arial,sans-serif";ctx.fillText("مجلهٔ آسمان — به آسمان نگاه کن.",W-80,142);
   var y=230;
-  ctx.textAlign="center";ctx.fillStyle="#ffffff";ctx.font="900 54px Tahoma,Arial,sans-serif";ctx.fillText("📍 "+cityName,W/2,y);
-  ctx.fillStyle="#ffd166";ctx.font="800 30px Tahoma,Arial,sans-serif";ctx.fillText("📅 "+days+" روزه  ·  🌤️ "+((dw&&dw.code!=null)?code(dw.code)[0]:"--"),W/2,y+66);
+  ctx.textAlign="center";ctx.fillStyle="#ffffff";ctx.font="800 54px Vazirmatn,Tahoma,Arial,sans-serif";ctx.fillText("📍 "+cityName,W/2,y);
+  ctx.fillStyle="#ffd166";ctx.font="800 30px Vazirmatn,Tahoma,Arial,sans-serif";ctx.fillText("📅 "+days+" روزه  ·  🌤️ "+((dw&&dw.code!=null)?code(dw.code)[0]:"--"),W/2,y+66);
   y+=130;
   var infos=[
     {ic:"🌡️",l:"دما",v:(dw&&dw.tmin!=null?T(dw.tmin)+D():'--')+" / "+(dw&&dw.tmax!=null?T(dw.tmax)+D():'--')},
@@ -2540,16 +2540,16 @@ function generateTravelImage(cityName,days,itinerary,checklist,dw,bestSeason,loc
   for(var ii=0;ii<infos.length;ii++){
     var cx=W-70-cw*(ii+1)-12*ii;
     ctx.fillStyle="rgba(255,255,255,.08)";drawRoundedRect(ctx,cx,y,cw,110,16);ctx.fill();
-    ctx.textAlign="center";ctx.fillStyle="#7fffd4";ctx.font="900 28px Tahoma,Arial,sans-serif";ctx.fillText(infos[ii].ic,W-70-cw*(ii+1)-12*ii+cw/2,y+14);
-    ctx.fillStyle="#bfe9ff";ctx.font="700 20px Tahoma,Arial,sans-serif";ctx.fillText(infos[ii].l,W-70-cw*(ii+1)-12*ii+cw/2,y+52);
-    ctx.fillStyle="#ffffff";ctx.font="900 22px Tahoma,Arial,sans-serif";ctx.fillText(infos[ii].v,W-70-cw*(ii+1)-12*ii+cw/2,y+78);
+    ctx.textAlign="center";ctx.fillStyle="#7fffd4";ctx.font="800 28px Vazirmatn,Tahoma,Arial,sans-serif";ctx.fillText(infos[ii].ic,W-70-cw*(ii+1)-12*ii+cw/2,y+14);
+    ctx.fillStyle="#bfe9ff";ctx.font="400 20px Vazirmatn,Tahoma,Arial,sans-serif";ctx.fillText(infos[ii].l,W-70-cw*(ii+1)-12*ii+cw/2,y+52);
+    ctx.fillStyle="#ffffff";ctx.font="800 22px Vazirmatn,Tahoma,Arial,sans-serif";ctx.fillText(infos[ii].v,W-70-cw*(ii+1)-12*ii+cw/2,y+78);
   }
   y+=150;
   ctx.fillStyle="rgba(255,209,102,.14)";drawRoundedRect(ctx,70,y,W-140,80,16);ctx.fill();
-  ctx.textAlign="right";ctx.fillStyle="#ffd166";ctx.font="900 26px Tahoma,Arial,sans-serif";ctx.fillText("🍽️ غذاهای محلی:",W-100,y+16);
-  ctx.fillStyle="#ffffff";ctx.font="700 24px Tahoma,Arial,sans-serif";ctx.fillText(localFood||"--",W-100,y+46);
+  ctx.textAlign="right";ctx.fillStyle="#ffd166";ctx.font="800 26px Vazirmatn,Tahoma,Arial,sans-serif";ctx.fillText("🍽️ غذاهای محلی:",W-100,y+16);
+  ctx.fillStyle="#ffffff";ctx.font="400 24px Vazirmatn,Tahoma,Arial,sans-serif";ctx.fillText(localFood||"--",W-100,y+46);
   y+=110;
-  ctx.textAlign="right";ctx.fillStyle="#39c6ff";ctx.font="900 30px Tahoma,Arial,sans-serif";ctx.fillText("📅 برنامهٔ روزانه",W-80,y);
+  ctx.textAlign="right";ctx.fillStyle="#39c6ff";ctx.font="800 30px Vazirmatn,Tahoma,Arial,sans-serif";ctx.fillText("📅 برنامهٔ روزانه",W-80,y);
   y+=50;
   var maxItemsPerDay=4;
   for(var d=0;d<itinerary.length&&d<3;d++){
@@ -2557,9 +2557,9 @@ function generateTravelImage(cityName,days,itinerary,checklist,dw,bestSeason,loc
     var items=day.items.slice(0,maxItemsPerDay);
     var boxH=48+items.length*38;
     ctx.fillStyle="rgba(57,198,255,.10)";drawRoundedRect(ctx,70,y,W-140,boxH,14);ctx.fill();
-    ctx.fillStyle="#7fffd4";ctx.font="900 24px Tahoma,Arial,sans-serif";ctx.textAlign="right";ctx.fillText("روز "+day.day,W-90,y+12);
+    ctx.fillStyle="#7fffd4";ctx.font="800 24px Vazirmatn,Tahoma,Arial,sans-serif";ctx.textAlign="right";ctx.fillText("روز "+day.day,W-90,y+12);
     for(var k=0;k<items.length;k++){
-      ctx.fillStyle="#ffffff";ctx.font="700 22px Tahoma,Arial,sans-serif";ctx.textAlign="right";
+      ctx.fillStyle="#ffffff";ctx.font="400 22px Vazirmatn,Tahoma,Arial,sans-serif";ctx.textAlign="right";
       var txt="• "+items[k];
       if(ctx.measureText(txt).width>W-200)txt=txt.substring(0,45)+"…";
       ctx.fillText(txt,W-100,y+48+k*38);
@@ -2568,9 +2568,9 @@ function generateTravelImage(cityName,days,itinerary,checklist,dw,bestSeason,loc
     if(y>H-280)break;
   }
   if(y<H-260){
-    ctx.textAlign="right";ctx.fillStyle="#ffd166";ctx.font="900 26px Tahoma,Arial,sans-serif";ctx.fillText("🎒 چک‌لیست",W-80,y);
+    ctx.textAlign="right";ctx.fillStyle="#ffd166";ctx.font="800 26px Vazirmatn,Tahoma,Arial,sans-serif";ctx.fillText("🎒 چک‌لیست",W-80,y);
     y+=42;
-    ctx.textAlign="center";ctx.fillStyle="#eaf3fb";ctx.font="700 20px Tahoma,Arial,sans-serif";
+    ctx.textAlign="center";ctx.fillStyle="#eaf3fb";ctx.font="400 20px Vazirmatn,Tahoma,Arial,sans-serif";
     var line="";
     for(var ci=0;ci<checklist.length;ci++){
       var t2=(line?line+"  ·  ":"")+checklist[ci];
@@ -2582,8 +2582,8 @@ function generateTravelImage(cityName,days,itinerary,checklist,dw,bestSeason,loc
   }
   var fy=H-140;
   ctx.fillStyle="rgba(255,255,255,.08)";drawRoundedRect(ctx,70,fy,W-140,110,20);ctx.fill();
-  ctx.textAlign="center";ctx.fillStyle="#bfe9ff";ctx.font="800 24px Tahoma,Arial,sans-serif";ctx.fillText("🌌 مجله آسمان",W/2,fy+14);
-  ctx.fillStyle="#7fffd4";ctx.font="900 24px Tahoma,Arial,sans-serif";ctx.fillText("🌐 "+MAGAZINE_URL,W/2,fy+56);
+  ctx.textAlign="center";ctx.fillStyle="#bfe9ff";ctx.font="800 24px Vazirmatn,Tahoma,Arial,sans-serif";ctx.fillText("🌌 مجله آسمان",W/2,fy+14);
+  ctx.fillStyle="#7fffd4";ctx.font="800 24px Vazirmatn,Tahoma,Arial,sans-serif";ctx.fillText("🌐 "+MAGAZINE_URL,W/2,fy+56);
   return canvas;
 }
 function shareTravelPlanImage(cityName,days,itinerary,checklist,dw,bestSeason,localFood,destInfo){
@@ -2652,6 +2652,54 @@ function renderFreshness(){
 }
 
 var lastRenderWeatherCv=null;
+/* 🆕 مقایسهٔ دمای امروز و دیروز */
+function renderDayCompare(){
+  var el=document.getElementById("dayCompare");
+  if(!el)return;
+  if(!data||!data.daily||!data.daily.temperature_2m_max){el.style.display="none";return;}
+  var tmaxArr=data.daily.temperature_2m_max;
+  var tminArr=data.daily.temperature_2m_min;
+  var todayMax=tmaxArr[TODAY_IDX];
+  var yMax=tmaxArr[TODAY_IDX-1];
+  var todayMin=tminArr?tminArr[TODAY_IDX]:null;
+  var yMin=tminArr?tminArr[TODAY_IDX-1]:null;
+  if(todayMax==null||yMax==null){
+    if(todayMin==null||yMin==null){el.style.display="none";return;}
+  }
+  var parts=[];
+  var cls="";
+  if(todayMax!=null&&yMax!=null){
+    var dMax=todayMax-yMax;
+    var dMaxR=Math.round(dMax);
+    if(Math.abs(dMax)<0.5){
+      parts.push("🌡️ بیشینهٔ امروز تقریباً برابر دیروز است");
+    }else if(dMaxR>0){
+      parts.push("🌡️ امروز "+dMaxR+" درجه گرم‌تر از دیروز است");
+      cls="warm";
+    }else{
+      parts.push("🌡️ امروز "+Math.abs(dMaxR)+" درجه سردتر از دیروز است");
+      cls="cold";
+    }
+  }
+  if(todayMin!=null&&yMin!=null){
+    var dMin=todayMin-yMin;
+    var dMinR=Math.round(dMin);
+    if(Math.abs(dMin)<0.5){
+      parts.push("کمینهٔ امشب مانند دیشب است");
+    }else if(dMinR>0){
+      parts.push("کمینهٔ امشب "+dMinR+" درجه گرم‌تر از دیشب");
+      if(!cls)cls="warm";
+    }else{
+      parts.push("کمینهٔ امشب "+Math.abs(dMinR)+" درجه سردتر از دیشب");
+      if(!cls)cls="cold";
+    }
+  }
+  if(!parts.length){el.style.display="none";return;}
+  el.textContent=parts.join(" · ");
+  el.className="day-compare"+(cls?" "+cls:"");
+  el.style.display="inline-block";
+}
+
 function renderWeather(){
   if(!data||!data.current)return;
   var c=data.current,cc=code(c.weather_code);
@@ -2669,6 +2717,7 @@ function renderWeather(){
   setAnim(c.weather_code);
   if(lastRenderWeatherCv!==c.weather_code){lastRenderWeatherCv=c.weather_code;setDynamicBackground(c.weather_code);}
   updateLocalTime();renderHourly();renderForecast();renderSmartAlerts();renderDetails();renderExtraSections();renderFreshness();
+  renderDayCompare();
   var pcn=document.getElementById("prayerCityName");if(pcn)pcn.textContent=city.name;
 }
 function renderHourly(){
@@ -2677,12 +2726,16 @@ function renderHourly(){
   for(var i=0;i<h.time.length;i++)if(new Date(h.time[i])>=n){st=i;break;}
   if(st<0)st=0;
   var el=document.getElementById("hourly");if(!el)return;el.innerHTML="";
-  for(var j=st;j<Math.min(st+12,h.time.length);j++)el.innerHTML+='<div class="hour"><div class="t">'+fmtDT(h.time[j])+'</div><div>'+wxSVG(h.weather_code[j],false,34)+'</div><b>'+T(h.temperature_2m[j])+D()+'</b><div class="precip">💧 '+(h.precipitation_probability&&h.precipitation_probability[j]!=null?h.precipitation_probability[j]:0)+'%</div></div>';
+  for(var j=st;j<Math.min(st+12,h.time.length);j++){
+    var hr=new Date(h.time[j]).getHours();
+    var isNightHr=(hr>=19||hr<6);
+    el.innerHTML+='<div class="hour"><div class="t">'+fmtDT(h.time[j])+'</div><div>'+wxSVG(h.weather_code[j],isNightHr,34)+'</div><b>'+T(h.temperature_2m[j])+D()+'</b><div class="precip">💧 '+(h.precipitation_probability&&h.precipitation_probability[j]!=null?h.precipitation_probability[j]:0)+'%</div></div>';
+  }
 }
 function renderForecast(){
   if(!data||!data.daily||!data.daily.time)return;
   var d=data.daily,el=document.getElementById("forecast");if(!el)return;el.innerHTML="";
-  for(var i=0;i<=8&&i<d.time.length;i++){
+  for(var i=TODAY_IDX;i<=TODAY_IDX+8&&i<d.time.length;i++){
     var dn=weekdayName(i);var cls="day"+(i===TODAY_IDX?" today-hl":"");var pd="";
     try{pd=new Intl.DateTimeFormat("fa-IR-u-ca-persian",{month:"long",day:"numeric"}).format(new Date(d.time[i]+"T12:00:00"));}catch(e){}
     el.innerHTML+='<div class="'+cls+'" data-idx="'+i+'"><b>'+dn+'</b><div class="date">'+pd+'</div><div class="wi">'+wxSVG(d.weather_code[i],false,40)+'</div><div><b>'+T(d.temperature_2m_max[i])+'°</b> <span class="muted">'+T(d.temperature_2m_min[i])+'°</span></div><div class="rain-p">💧 '+(d.precipitation_probability_max?d.precipitation_probability_max[i]||0:0)+'%</div></div>';
@@ -2707,7 +2760,17 @@ function loadPrayerTimes(){
   var u=new URL(API.prayer+"/"+dd+"-"+mm+"-"+n.getFullYear());
   u.searchParams.set("latitude",city.latitude);u.searchParams.set("longitude",city.longitude);
   u.searchParams.set("method","7");u.searchParams.set("midnightMode","1");
-  return fetch(u).then(function(r){return r.json();}).then(function(j){if(j&&j.data&&j.data.timings){prayerData=j.data.timings;saveCache("prayer_"+city.id,j.data.timings,"prayer_api",7*86400000);renderPrayer();scheduleNextPrayerNotif();}}).catch(function(){var e=getCacheEntry("prayer_"+city.id);if(e){prayerData=e.data;renderPrayer();scheduleNextPrayerNotif();}});
+  return fetch(u).then(function(r){return r.json();}).then(function(j){
+    if(j&&j.data&&j.data.timings){
+      prayerData=j.data.timings;
+      saveCache("prayer_"+city.id,j.data.timings,"prayer_api",7*86400000);
+      renderPrayer();
+      if(currentPage==="myday"){try{renderDailyCard();}catch(e){}}
+    }
+  }).catch(function(){
+    var e=getCacheEntry("prayer_"+city.id);
+    if(e){prayerData=e.data;renderPrayer();if(currentPage==="myday"){try{renderDailyCard();}catch(e){};}}
+  });
 }
 function renderPrayer(){
   if(!prayerData)return;
@@ -2738,7 +2801,10 @@ function renderToday(){
   var gP=document.getElementById("gregP");if(gP)gP.textContent="میلادی: "+new Intl.DateTimeFormat("en-GB",{day:"numeric",month:"long",year:"numeric"}).format(n);
   var hP=document.getElementById("hijriP");if(hP){try{hP.textContent="قمری: "+new Intl.DateTimeFormat("fa-IR-u-ca-islamic-umalqura",{day:"numeric",month:"long",year:"numeric"}).format(n);}catch(e){}}
 }
-function savePins(){lsSet("pins",JSON.stringify(pins));}
+function savePins(){
+  lsSet("pins",JSON.stringify(pins));
+  var pc=document.getElementById("pinsCount");if(pc)pc.textContent=pins.length;
+}
 function fetchPinTemp(pin){var k="pt_"+pin.id;var e=getCacheEntry(k);if(e&&Date.now()-e.timestamp<600000)return Promise.resolve(e.data);var u=new URL(API.weather);u.searchParams.set("latitude",pin.latitude);u.searchParams.set("longitude",pin.longitude);u.searchParams.set("current","temperature_2m");u.searchParams.set("timezone","auto");return fetch(u).then(function(r){return r.json();}).then(function(j){var t=j&&j.current?j.current.temperature_2m:null;saveCache(k,t,"pin_api",600000);return t;}).catch(function(){return null;});}
 function updatePinTemps(){for(var i=0;i<pins.length;i++)(function(pin,idx){fetchPinTemp(pin).then(function(t){var c=document.querySelector('.pinchip[data-idx="'+idx+'"] .ptemp');if(c&&t!=null)c.textContent=T(t)+"°";});})(pins[i],i);}
 function renderPins(){
@@ -2803,7 +2869,7 @@ function doSearch(qRaw){
   var localMap={},local=[];
   for(var i=0;i<LOCAL_AREAS.length;i++){var nn=normName(LOCAL_AREAS[i].n);if((LOCAL_AREAS[i].n.indexOf(q)!==-1||q.indexOf(LOCAL_AREAS[i].n)!==-1)&&!localMap[nn]){localMap[nn]=1;local.push(LOCAL_AREAS[i]);}}
   for(var c0=0;c0<COUNTRIES.length;c0++){var cn=normName(COUNTRIES[c0].name);if((COUNTRIES[c0].name.indexOf(q)!==-1||q.indexOf(COUNTRIES[c0].name)!==-1)&&!localMap[cn]){localMap[cn]=1;local.push({province:"",parent:COUNTRIES[c0].parent,n:COUNTRIES[c0].name,lat:null,lon:null,type:"country"});}}
-  var jobs=[fetch(API.geo+"?name="+encodeURIComponent(q)+"&count=15&language=fa&format=json").then(function(r){return r.json();}).then(function(j){return j.results||[];}).catch(function(){return[];}),fetch(API.nom+"?format=jsonv2&addressdetails=1&limit=15&countrycodes=ir&accept-language=fa&q="+encodeURIComponent(q)).then(function(r){return r.json();}).then(function(j){return (j||[]).filter(nomOk);}).catch(function(){return[];})];
+  var jobs=[fetch(API.geo+"?name="+encodeURIComponent(q)+"&count=15&language=fa&format=json").then(function(r){return r.json();}).then(function(j){return j.results||[];}).catch(function(){return[];}),fetch(API.nom+"?format=jsonv2&addressdetails=1&limit=15&countrycodes=ir&accept-language=fa&email="+NOM_EMAIL+"&q="+encodeURIComponent(q)).then(function(r){return r.json();}).then(function(j){return (j||[]).filter(nomOk);}).catch(function(){return[];})];
   if(latin)jobs.push(fetch(API.geo+"?name="+encodeURIComponent(q)+"&count=15&language=en&format=json").then(function(r){return r.json();}).then(function(j){return j.results||[];}).catch(function(){return[];}));
   Promise.all(jobs).then(function(res){
     var geo=res[0]||[],geoEn=(res[2]||[]);
@@ -2825,7 +2891,7 @@ if(searchInput)searchInput.addEventListener("input",function(){clearTimeout(sear
 document.addEventListener("click",function(e){if(!e.target.closest||!e.target.closest(".search")){var r=document.getElementById("results");if(r)r.style.display="none";}});
 var pinBtn=document.getElementById("pin");if(pinBtn)pinBtn.addEventListener("click",function(){var f=-1;for(var i=0;i<pins.length;i++)if(String(pins[i].id)===String(city.id)){f=i;break;}if(f>=0){if(pins[f].locked){show("قفل است","info");return;}pins.splice(f,1);show("حذف شد");}else{pins.push({id:city.id,name:city.name,country:city.country,admin1:city.admin1,county:city.county,type:city.type,latitude:city.latitude,longitude:city.longitude});show("پین شد","ok");}savePins();updatePinBtn();});
 
-function resolvePlace(lat,lon){var k="rg_"+lat.toFixed(3)+"_"+lon.toFixed(3);var e=getCacheEntry(k);if(e&&Date.now()-e.timestamp<30*86400000)return Promise.resolve(e.data);return fetch("https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat="+lat+"&lon="+lon+"&zoom=17&addressdetails=1&accept-language=fa").then(function(r){return r.json();}).then(function(j){var a=j.address||{};var out={village:a.village||a.hamlet||"",district:a.neighbourhood||a.quarter||a.suburb||a.city_district||"",name:a.city||a.town||a.village||a.municipality||a.county||j.name||"",county:a.county||"",admin1:a.state||"",country:a.country||""};saveCache(k,out,"nominatim_reverse",30*86400000);return out;}).catch(function(){return fetch("https://api.bigdatacloud.net/data/reverse-geocode-client?latitude="+lat+"&longitude="+lon+"&localityLanguage=fa").then(function(r){return r.json();}).then(function(j){var out={village:j.locality||"",district:"",name:j.city||j.locality||"",county:"",admin1:j.principalSubdivision||"",country:j.countryName||""};saveCache(k,out,"bigdata_reverse",30*86400000);return out;}).catch(function(){return{village:"",district:"",name:"",county:"",admin1:"",country:""};});});}
+function resolvePlace(lat,lon){var k="rg_"+lat.toFixed(3)+"_"+lon.toFixed(3);var e=getCacheEntry(k);if(e&&Date.now()-e.timestamp<30*86400000)return Promise.resolve(e.data);return fetch("https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat="+lat+"&lon="+lon+"&zoom=17&addressdetails=1&accept-language=fa&email="+NOM_EMAIL).then(function(r){return r.json();}).then(function(j){var a=j.address||{};var out={village:a.village||a.hamlet||"",district:a.neighbourhood||a.quarter||a.suburb||a.city_district||"",name:a.city||a.town||a.village||a.municipality||a.county||j.name||"",county:a.county||"",admin1:a.state||"",country:a.country||""};saveCache(k,out,"nominatim_reverse",30*86400000);return out;}).catch(function(){return fetch("https://api.bigdatacloud.net/data/reverse-geocode-client?latitude="+lat+"&longitude="+lon+"&localityLanguage=fa").then(function(r){return r.json();}).then(function(j){var out={village:j.locality||"",district:"",name:j.city||j.locality||"",county:"",admin1:j.principalSubdivision||"",country:j.countryName||""};saveCache(k,out,"bigdata_reverse",30*86400000);return out;}).catch(function(){return{village:"",district:"",name:"",county:"",admin1:"",country:""};});});}
 function adoptGPS(lat,lon,force){
   lastAdopted={lat:lat,lon:lon};
   trackEvent("gps","fix");
@@ -3004,7 +3070,13 @@ var DAILY_FACTS_POOL=[
   {icon:"🍯",title:"عمر عسل",text:"عسل ۳٬۰۰۰ ساله مصری هنوز سالم مانده."}
 ];
 
-setInterval(function(){var key=getTodayTehranKey();if(lsGet("lastFactDay")!==key){lsSet("lastFactDay",key);loadAPOD();}},30*60*1000);
+setInterval(function(){
+  var key=getTodayTehranKey();
+  if(lsGet("lastFactDay")!==key){
+    lsSet("lastFactDay",key);
+    loadAPOD();
+  }
+},30*60*1000);
 lsSet("lastFactDay",getTodayTehranKey());
 
 var HAFEZ_POEMS=["الا یا ایها الساقی ادر کأساً و ناولها\nکه عشق آسان نمود اول ولی افتاد مشکل‌ها","رسید مژده که ایام غم نخواهد ماند\nچنان نماند چنین نیز هم نخواهد ماند","منم که شهرهٔ شهرم به عشق ورزیدن\nبه می فروش و می‌خوارگی و رندی کردن","مرا عهدی است با جانان که تا جان در بدن دارم\nهوای‌دارِ خال و خطِ آن دلبرِ شیرین‌سخن باشم","گفتم غم تو دارم گفتا غمت سر آید\nگفتم که ماه من شو گفتا اگر برآید","ساقی به نور باده برافروز جام ما\nمطرب بگو که کار جهان شد به کام ما","یوسف گم‌گشته باز آید به کنعان غم مخور\nکلبهٔ احزان شود روزی گلستان غم مخور","دلا بسوز که سوز تو کارها بکند\nنیاز نیم‌شبی دفع صد بلا بکند"];
@@ -3055,7 +3127,7 @@ function renderProverb(){
 }
 function renderRPS(){
   var el=document.getElementById("funRPSArea");if(!el)return;
-  el.innerHTML='<div class="rps-area"><div style="font-weight:900;font-size:15px;color:var(--text)">✊✋✌️ با کامپیوتر بازی کن</div><div class="rps-choices"><button class="rps-btn" data-rps="rock" type="button">✊</button><button class="rps-btn" data-rps="paper" type="button">✋</button><button class="rps-btn" data-rps="scissors" type="button">✌️</button></div><div class="rps-result" id="rpsResult">یک گزینه را انتخاب کن!</div><div class="rps-score"><span>شما: <b id="rpsUser">0</b></span><span>مساوی: <b id="rpsTie">0</b></span><span>کامپیوتر: <b id="rpsComp">0</b></span></div></div>';
+  el.innerHTML='<div class="rps-area"><div style="font-weight:800;font-size:15px;color:var(--text)">✊✋✌️ با کامپیوتر بازی کن</div><div class="rps-choices"><button class="rps-btn" data-rps="rock" type="button">✊</button><button class="rps-btn" data-rps="paper" type="button">✋</button><button class="rps-btn" data-rps="scissors" type="button">✌️</button></div><div class="rps-result" id="rpsResult">یک گزینه را انتخاب کن!</div><div class="rps-score"><span>شما: <b id="rpsUser">0</b></span><span>مساوی: <b id="rpsTie">0</b></span><span>کامپیوتر: <b id="rpsComp">0</b></span></div></div>';
   var btns=el.querySelectorAll(".rps-btn");
   for(var i=0;i<btns.length;i++)(function(btn){
     btn.addEventListener("click",function(){playRPS(btn.getAttribute("data-rps"));});
@@ -3211,7 +3283,6 @@ function attachDragHandlers(cardEl,cardId){
     }
   });
 }
-/* 🆕 همهٔ اذان‌ها در کارت روز */
 function getAllPrayerTimes(){
   var out=[];
   if(!prayerData)return out;
@@ -3232,18 +3303,14 @@ function getAllPrayerTimes(){
   return out;
 }
 function buildDailyCardData(){
-  var s=getDayStats(0)||{};var an=getAirNow()||airFallback();var mp=moonPhase();var now=new Date();
+  var s=getDayStats(0)||{};var an=getAirNow()||airFallback();var now=new Date();
   var weekday="";try{weekday=new Intl.DateTimeFormat("fa-IR",{weekday:"long"}).format(now);}catch(e){}
   var jalali="";try{jalali=new Intl.DateTimeFormat("fa-IR-u-ca-persian",{day:"numeric",month:"long",year:"numeric"}).format(now);}catch(e){}
-  var todayKey=getTodayTehranKey();var fs=0;for(var i=0;i<todayKey.length;i++)fs=(fs*31+todayKey.charCodeAt(i))>>>0;
-  var fact=DAILY_FACTS_POOL[fs%DAILY_FACTS_POOL.length];
   var d=new Date().getDay();var dhikr=DHIKR[d]||DHIKR[6];
   var poemSeed=Math.floor(Date.now()/(2*3600*1000));
   var hp=HAFEZ_POEMS[((poemSeed*2654435761)>>>0)%HAFEZ_POEMS.length];
-  var nextP="--",nextT="--:--";
   var allPrayers=getAllPrayerTimes();
-  for(var ap=0;ap<allPrayers.length;ap++)if(allPrayers[ap].isNext){nextP=allPrayers[ap].name;nextT=allPrayers[ap].time;break;}
-  return {weekday:weekday,jalali:jalali,city:city.name,weather:{code:s.code,desc:code(s.code||0)[0],temp:s.temp,tmin:s.tempMin,tmax:s.tempMax,hum:s.hum,aqi:an.european_aqi},prayer:{name:nextP,time:nextT},allPrayers:allPrayers,poem:hp,fact:fact,dhikr:dhikr,moon:mp};
+  return {weekday:weekday,jalali:jalali,city:city.name,weather:{code:s.code,desc:code(s.code||0)[0],temp:s.temp,tmin:s.tempMin,tmax:s.tempMax,hum:s.hum,aqi:an.european_aqi},allPrayers:allPrayers,poem:hp,dhikr:dhikr};
 }
 function renderDailyCard(){
   var el=document.getElementById("dailyCardBox");if(!el)return;
@@ -3260,19 +3327,26 @@ function renderDailyCard(){
     prayersHTML+='<div class="muted" style="padding:8px;text-align:center">در حال دریافت اوقات شرعی...</div>';
   }
   prayersHTML+='</div>';
+  var minMaxLine='';
+  if(d.weather.tmax!=null||d.weather.tmin!=null){
+    minMaxLine="<div class='dr-value' style='margin-top:6px;font-size:13px'>"+
+      "<span style='color:#ffb37e'>▲ بیشینه: "+(d.weather.tmax!=null?T1(d.weather.tmax)+D():"--")+"</span>"+
+      " &nbsp;·&nbsp; "+
+      "<span style='color:#7ecbff'>▼ کمینه: "+(d.weather.tmin!=null?T1(d.weather.tmin)+D():"--")+"</span>"+
+      "</div>";
+  }
   var html="<div class='daily-card'><div class='daily-card-inner'>"+
     "<div class='daily-card-head' id='dailyCardHead'><div class='dch-title'>☀️ کارت امروز آسمان</div><div class='dch-date'>"+safe(d.weekday)+" · "+safe(d.jalali)+"</div><span class='dch-arrow'>⌄</span></div>"+
     "<div class='daily-card-drawer' id='dailyCardDrawer'><div class='daily-rows'>"+
-      "<div class='daily-row'><span class='dr-icon'>🌤️</span><div><span class='dr-label'>هوای امروز · "+safe(d.city)+"</span><div class='dr-value'>"+safe(d.weather.desc)+" · "+(d.weather.temp!=null?T1(d.weather.temp)+D():"--")+"</div></div></div>"+
+      "<div class='daily-row'><span class='dr-icon'>🌤️</span><div><span class='dr-label'>هوای امروز · "+safe(d.city)+"</span><div class='dr-value'>"+safe(d.weather.desc)+" · "+(d.weather.temp!=null?T1(d.weather.temp)+D():"--")+"</div>"+minMaxLine+"</div></div>"+
       "<div class='daily-row' style='align-items:flex-start'><span class='dr-icon'>🕌</span><div style='flex:1'><span class='dr-label'>اوقات شرعی امروز</span>"+prayersHTML+"</div></div>"+
       "<div class='daily-row'><span class='dr-icon'>📜</span><div><span class='dr-label'>بیت امروز</span><div class='dr-value poem'>«"+safe(d.poem)+"»</div></div></div>"+
-      "<div class='daily-row'><span class='dr-icon'>"+d.fact.icon+"</span><div><span class='dr-label'>دانستنی امروز</span><div class='dr-value'>"+safe(d.fact.title)+" — "+safe(d.fact.text)+"</div></div></div>"+
-      "<div class='daily-row'><span class='dr-icon'>🌙</span><div><span class='dr-label'>فاز ماه</span><div class='dr-value'>"+safe(d.moon.name)+" · "+d.moon.illum+"٪</div></div></div>"+
       "<div class='daily-row'><span class='dr-icon'>📿</span><div><span class='dr-label'>ذکر روز "+safe(d.dhikr.day)+"</span><div class='dr-value'>«"+safe(d.dhikr.text)+"»</div></div></div>"+
     "</div></div>"+
     "<div class='daily-card-actions'>"+
-      "<button class='dc-share-btn' id='dailyCardShare'>📤 اشتراک‌گذاری</button>"+
-      "<button class='dc-share-btn ghost' id='dailyCardSave'>💾 ذخیره عکس</button>"+
+      "<button class='dc-share-btn' id='dailyCardShare' aria-label='اشتراک‌گذاری کارت'>📤 اشتراک‌گذاری</button>"+
+      "<button class='dc-share-btn ghost' id='dailyCardSave' aria-label='ذخیره تصویر کارت'>💾 ذخیره عکس</button>"+
+      "<button class='dc-share-btn ghost' id='dailyCardLink' aria-label='کپی لینک کارت'>🔗 کپی لینک</button>"+
     "</div>"+
   "</div></div>";
   el.innerHTML=html;
@@ -3280,6 +3354,7 @@ function renderDailyCard(){
   if(head&&cardEl)head.addEventListener("click",function(){cardEl.classList.toggle("open");});
   var sh=document.getElementById("dailyCardShare");if(sh)sh.addEventListener("click",function(){shareDailyCardImage();});
   var sv=document.getElementById("dailyCardSave");if(sv)sv.addEventListener("click",function(){downloadDailyCardImage();});
+  var lk=document.getElementById("dailyCardLink");if(lk)lk.addEventListener("click",function(){copyShareCardLink();});
 }
 function drawRoundedRect(ctx,x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);ctx.arcTo(x+w,y,x+w,y+h,r);ctx.arcTo(x+w,y+h,x,y+h,r);ctx.arcTo(x,y+h,x,y,r);ctx.arcTo(x,y,x+w,y,r);ctx.closePath();}
 function wrapTextFa(ctx,text,x,y,maxW,lineH,maxLines){var words=String(text).split(/\s+/);var line="",lines=[];for(var i=0;i<words.length;i++){var test=line?line+" "+words[i]:words[i];if(ctx.measureText(test).width>maxW&&line){lines.push(line);line=words[i];if(maxLines&&lines.length>=maxLines)break;}else line=test;}if(line)lines.push(line);if(maxLines&&lines.length>maxLines)lines=lines.slice(0,maxLines);for(var j=0;j<lines.length;j++)ctx.fillText(lines[j],x,y+j*lineH);return lines.length;}
@@ -3293,26 +3368,48 @@ function generateDailyCardImage(){
   function pr(n){seed=(seed*9301+49297)%233280;return (seed/233280);}
   for(var s=0;s<150;s++){var x=pr()*W,y=pr()*H,r=pr()*1.8+.4;ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.fillStyle="rgba(255,255,255,"+(pr()*.6+.2)+")";ctx.fill();}
   ctx.fillStyle="rgba(255,255,255,.13)";drawRoundedRect(ctx,50,50,W-100,140,24);ctx.fill();
-  ctx.fillStyle="#ffd166";ctx.font="900 50px Tahoma,Arial,sans-serif";ctx.textAlign="right";ctx.fillText("🌌 مجله آسمان",W-80,80);
-  ctx.fillStyle="#bfe9ff";ctx.font="700 26px Tahoma,Arial,sans-serif";ctx.fillText("به آسمان نگاه کن.",W-80,142);
+  ctx.fillStyle="#ffd166";ctx.font="800 50px Vazirmatn,Tahoma,Arial,sans-serif";ctx.textAlign="right";ctx.fillText("🌌 مجله آسمان",W-80,80);
+  ctx.fillStyle="#bfe9ff";ctx.font="400 26px Vazirmatn,Tahoma,Arial,sans-serif";ctx.fillText("به آسمان نگاه کن.",W-80,142);
   var d=buildDailyCardData();var y=250;
-  ctx.textAlign="center";ctx.fillStyle="#ffffff";ctx.font="900 54px Tahoma,Arial,sans-serif";ctx.fillText("☀️ کارت امروز آسمان",W/2,y);
-  ctx.fillStyle="#ffd166";ctx.font="800 30px Tahoma,Arial,sans-serif";ctx.fillText(d.weekday+" · "+d.jalali,W/2,y+76);
+  ctx.textAlign="center";ctx.fillStyle="#ffffff";ctx.font="800 54px Vazirmatn,Tahoma,Arial,sans-serif";ctx.fillText("☀️ کارت امروز آسمان",W/2,y);
+  ctx.fillStyle="#ffd166";ctx.font="800 30px Vazirmatn,Tahoma,Arial,sans-serif";ctx.fillText(d.weekday+" · "+d.jalali,W/2,y+76);
   y+=190;
-  var rows=[{ic:"🌤️",label:"هوای "+d.city,r:d.weather.desc+" · "+(d.weather.temp!=null?T1(d.weather.temp)+D():"--")},{ic:"🕌",label:"اذان بعدی",r:d.prayer.name+" · "+d.prayer.time},{ic:"🌙",label:"فاز ماه",r:d.moon.name+" ("+d.moon.illum+"٪)"},{ic:"📿",label:"ذکر "+d.dhikr.day,r:"«"+d.dhikr.text+"»"}];
-  for(var k=0;k<rows.length;k++){var row=rows[k];ctx.fillStyle="rgba(255,255,255,.08)";drawRoundedRect(ctx,70,y,W-140,115,20);ctx.fill();ctx.textAlign="right";ctx.fillStyle="#ffffff";ctx.font="800 32px Tahoma,Arial,sans-serif";ctx.fillText(row.ic+"  "+row.label+":",W-100,y+22);ctx.fillStyle="#bfe9ff";ctx.font="700 28px Tahoma,Arial,sans-serif";ctx.fillText(row.r,W-100,y+68);y+=130;}
-  ctx.fillStyle="rgba(255,209,102,.14)";drawRoundedRect(ctx,70,y,W-140,220,20);ctx.fill();
-  ctx.fillStyle="#ffd166";ctx.font="800 30px Tahoma,Arial,sans-serif";ctx.textAlign="right";ctx.fillText("📜 بیت امروز",W-100,y+26);
-  ctx.fillStyle="#ffffff";ctx.font="700 26px Tahoma,Arial,sans-serif";
-  var poemLines=d.poem.split("\n");for(var pl=0;pl<Math.min(poemLines.length,3);pl++)ctx.fillText("«"+poemLines[pl]+"»",W-100,y+82+pl*42);
-  y+=250;
-  ctx.fillStyle="rgba(45,212,161,.14)";drawRoundedRect(ctx,70,y,W-140,200,20);ctx.fill();
-  ctx.fillStyle="#7fffd4";ctx.font="800 30px Tahoma,Arial,sans-serif";ctx.fillText(d.fact.icon+" "+d.fact.title,W-100,y+26);
-  ctx.fillStyle="#eafff6";ctx.font="700 26px Tahoma,Arial,sans-serif";wrapTextFa(ctx,d.fact.text,W-100,y+80,W-200,40,3);
+
+  ctx.fillStyle="rgba(255,255,255,.08)";drawRoundedRect(ctx,70,y,W-140,175,20);ctx.fill();
+  ctx.textAlign="right";ctx.fillStyle="#ffffff";ctx.font="800 32px Vazirmatn,Tahoma,Arial,sans-serif";ctx.fillText("🌤️  هوای "+d.city+":",W-100,y+22);
+  ctx.fillStyle="#bfe9ff";ctx.font="400 28px Vazirmatn,Tahoma,Arial,sans-serif";ctx.fillText(d.weather.desc+" · "+(d.weather.temp!=null?T1(d.weather.temp)+D():"--"),W-100,y+68);
+  ctx.fillStyle="#ffb37e";ctx.font="800 26px Vazirmatn,Tahoma,Arial,sans-serif";ctx.fillText("▲ بیشینه: "+(d.weather.tmax!=null?T1(d.weather.tmax)+D():"--"),W-100,y+112);
+  ctx.fillStyle="#7ecbff";ctx.font="800 26px Vazirmatn,Tahoma,Arial,sans-serif";ctx.fillText("▼ کمینه: "+(d.weather.tmin!=null?T1(d.weather.tmin)+D():"--"),W-100,y+146);
+  y+=195;
+
+  var prayerH=90+d.allPrayers.length*38;
+  ctx.fillStyle="rgba(57,198,255,.12)";drawRoundedRect(ctx,70,y,W-140,prayerH,20);ctx.fill();
+  ctx.textAlign="right";ctx.fillStyle="#7fffd4";ctx.font="800 30px Vazirmatn,Tahoma,Arial,sans-serif";ctx.fillText("🕌 اوقات شرعی امروز",W-100,y+18);
+  var py=y+64;
+  for(var pi=0;pi<d.allPrayers.length;pi++){
+    var pp=d.allPrayers[pi];
+    ctx.textAlign="right";ctx.fillStyle=pp.isNext?"#ffd166":"#ffffff";ctx.font="800 24px Vazirmatn,Tahoma,Arial,sans-serif";
+    ctx.fillText(pp.icon+" "+pp.name+(pp.isNext?" (بعدی)":""),W-100,py);
+    ctx.textAlign="left";ctx.fillStyle=pp.isNext?"#ffd166":"#7fffd4";ctx.font="800 24px Vazirmatn,Tahoma,Arial,sans-serif";
+    ctx.fillText(pp.time,100,py);
+    py+=38;
+  }
+  y+=prayerH+20;
+
+  ctx.fillStyle="rgba(255,209,102,.14)";drawRoundedRect(ctx,70,y,W-140,180,20);ctx.fill();
+  ctx.textAlign="right";ctx.fillStyle="#ffd166";ctx.font="800 30px Vazirmatn,Tahoma,Arial,sans-serif";ctx.fillText("📜 بیت امروز",W-100,y+22);
+  ctx.fillStyle="#ffffff";ctx.font="400 26px Vazirmatn,Tahoma,Arial,sans-serif";
+  var poemLines=d.poem.split("\n");for(var pl=0;pl<Math.min(poemLines.length,3);pl++)ctx.fillText("«"+poemLines[pl]+"»",W-100,y+72+pl*42);
+  y+=210;
+
+  ctx.fillStyle="rgba(139,92,246,.15)";drawRoundedRect(ctx,70,y,W-140,140,20);ctx.fill();
+  ctx.textAlign="right";ctx.fillStyle="#b197fc";ctx.font="800 30px Vazirmatn,Tahoma,Arial,sans-serif";ctx.fillText("📿 ذکر روز "+d.dhikr.day,W-100,y+22);
+  ctx.fillStyle="#ffffff";ctx.font="800 30px Vazirmatn,Tahoma,Arial,sans-serif";ctx.fillText("«"+d.dhikr.text+"»",W-100,y+82);
+
   var fy=H-220;ctx.fillStyle="rgba(255,255,255,.08)";drawRoundedRect(ctx,70,fy,W-140,180,20);ctx.fill();
-  ctx.textAlign="center";ctx.fillStyle="#bfe9ff";ctx.font="800 28px Tahoma,Arial,sans-serif";ctx.fillText("🌌 مجله آسمان — مجله‌ای برای هر روز",W/2,fy+16);
-  ctx.fillStyle="#7fffd4";ctx.font="900 26px Tahoma,Arial,sans-serif";ctx.fillText("🌐 "+MAGAZINE_URL,W/2,fy+66);
-  ctx.fillStyle="#ffd166";ctx.font="700 22px Tahoma,Arial,sans-serif";ctx.fillText("به آسمان نگاه کن.",W/2,fy+120);
+  ctx.textAlign="center";ctx.fillStyle="#bfe9ff";ctx.font="800 28px Vazirmatn,Tahoma,Arial,sans-serif";ctx.fillText("🌌 مجله آسمان — مجله‌ای برای هر روز",W/2,fy+16);
+  ctx.fillStyle="#7fffd4";ctx.font="800 26px Vazirmatn,Tahoma,Arial,sans-serif";ctx.fillText("🌐 "+MAGAZINE_URL,W/2,fy+66);
+  ctx.fillStyle="#ffd166";ctx.font="400 22px Vazirmatn,Tahoma,Arial,sans-serif";ctx.fillText("به آسمان نگاه کن.",W/2,fy+120);
 }
 function getDailyShareText(){return "☀️ کارت امروز آسمان\n🌌 مجله آسمان — اپلیکیشن هواشناسی، ورزش، سلامت، فرهنگ، علم، سفر و سرگرمی.\n🌐 "+MAGAZINE_URL+"\nبه آسمان نگاه کن.";}
 function shareDailyCardImage(){
@@ -3360,7 +3457,9 @@ function renderDash(){
   cardsHTML.poem='<div class="dc-head"><span class="dc-grip">⋮⋮</span><span class="dc-icon">📜</span><span class="dc-title">بیت امروز (حافظ)</span></div><div class="dc-body">«'+safe(hp)+'»</div>';
   cardsHTML.moon='<div class="dc-head"><span class="dc-grip">⋮⋮</span><span class="dc-icon">🌙</span><span class="dc-title">فاز ماه</span></div><div class="dc-body"><b>'+safe(mp.name)+'</b><br><small>'+mp.illum+'٪</small></div>';
   cardsHTML.dhikr='<div class="dc-head"><span class="dc-grip">⋮⋮</span><span class="dc-icon">📿</span><span class="dc-title">ذکر روز '+safe(dhikr.day)+'</span></div><div class="dc-body">«'+safe(dhikr.text)+'»</div>';
-  cardsHTML.air='<div class="dc-head"><span class="dc-grip">⋮⋮</span><span class="dc-icon">🌫️</span><span class="dc-title">کیفیت هوا</span></div><div class="dc-body"><b>'+Math.round(an.european_aqi)+'</b> — '+aqiLabel(an.european_aqi)+'</div>';
+  var aqiCardVal=Math.round(an.european_aqi);
+  var aqiCardStyle=(an.european_aqi>AQI_HIGH_THRESHOLD)?' style="color:var(--red)"':'';
+  cardsHTML.air='<div class="dc-head"><span class="dc-grip">⋮⋮</span><span class="dc-icon">🌫️</span><span class="dc-title">کیفیت هوا</span></div><div class="dc-body"><b'+aqiCardStyle+'>'+aqiCardVal+'</b> — '+aqiLabel(an.european_aqi)+'</div>';
   cardsHTML.uv='<div class="dc-head"><span class="dc-grip">⋮⋮</span><span class="dc-icon">☀️</span><span class="dc-title">شاخص UV</span></div><div class="dc-body"><b>'+(s.uv!=null?s.uv:"--")+'</b> '+(s.uv>=6?"— بالا ⚠️":s.uv>=3?"— متوسط":"— کم")+'</div>';
   cardsHTML.sleep='<div class="dc-head"><span class="dc-grip">⋮⋮</span><span class="dc-icon">😴</span><span class="dc-title">خواب امشب</span></div><div class="dc-body">'+(ss!=null?'<b>'+ss+'/100</b> — '+scoreLabel(ss):'<small>در حال دریافت...</small>')+'</div>';
   var html="";var anyVisible=false;
@@ -3695,7 +3794,7 @@ function renderSportTracker(){
   var btnClass="sp-mark-btn"+(done?" undone":"");
   var btnText=done?"↻ حذف علامت امروز":"✅ ورزش امروز را انجام دادم";
   html+='<button class="'+btnClass+'" id="spMarkBtn">'+btnText+'</button>';
-  if(streak>=3)html+='<div style="margin-top:10px;text-align:center;color:var(--gold);font-weight:900;font-size:14px">🎉 آفرین! '+streak+' روز پیوسته ورزش کردی.</div>';
+  if(streak>=3)html+='<div style="margin-top:10px;text-align:center;color:var(--gold);font-weight:800;font-size:14px">🎉 آفرین! '+streak+' روز پیوسته ورزش کردی.</div>';
   else if(streak===0)html+='<div style="margin-top:10px;text-align:center;color:var(--muted);font-size:13px">با یک کلیک، ورزش امروزت رو ثبت کن و زنجیره رو شروع کن 💪</div>';
   html+='</div>';el.innerHTML=html;
   var b=document.getElementById("spMarkBtn");if(b)b.addEventListener("click",markTodayWorkout);
@@ -3710,28 +3809,28 @@ function generateWorkoutImage(){
   var seed=123;function pr(n){seed=(seed*9301+49297)%233280;return (seed/233280);}
   for(var s=0;s<120;s++){var x=pr()*W,y=pr()*H,r=pr()*1.8+.4;ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.fillStyle="rgba(255,255,255,"+(pr()*.5+.15)+")";ctx.fill();}
   ctx.fillStyle="rgba(255,255,255,.13)";drawRoundedRect(ctx,50,50,W-100,140,24);ctx.fill();
-  ctx.fillStyle="#7fffd4";ctx.font="900 50px Tahoma,Arial,sans-serif";ctx.textAlign="right";ctx.fillText("🌿 برنامهٔ سلامت آسمان",W-80,80);
-  ctx.fillStyle="#bfe9ff";ctx.font="700 26px Tahoma,Arial,sans-serif";ctx.fillText("مجلهٔ آسمان",W-80,142);
+  ctx.fillStyle="#7fffd4";ctx.font="800 50px Vazirmatn,Tahoma,Arial,sans-serif";ctx.textAlign="right";ctx.fillText("🌿 برنامهٔ سلامت آسمان",W-80,80);
+  ctx.fillStyle="#bfe9ff";ctx.font="400 26px Vazirmatn,Tahoma,Arial,sans-serif";ctx.fillText("مجلهٔ آسمان",W-80,142);
   var profile=getSportProfile();if(!profile)return null;
   var week=getWeekPlan();if(!week)return null;
   var day=week[spCurrentDay];if(!day)return null;
   var y=250;
-  ctx.textAlign="center";ctx.fillStyle="#ffffff";ctx.font="900 46px Tahoma,Arial,sans-serif";ctx.fillText(SP_DAY_ICONS[spCurrentDay]+" "+SP_DAY_NAMES[spCurrentDay],W/2,y);
+  ctx.textAlign="center";ctx.fillStyle="#ffffff";ctx.font="800 46px Vazirmatn,Tahoma,Arial,sans-serif";ctx.fillText(SP_DAY_ICONS[spCurrentDay]+" "+SP_DAY_NAMES[spCurrentDay],W/2,y);
   y+=70;
-  ctx.fillStyle="#ffd166";ctx.font="800 30px Tahoma,Arial,sans-serif";
+  ctx.fillStyle="#ffd166";ctx.font="800 30px Vazirmatn,Tahoma,Arial,sans-serif";
   var goalTxt=({fit:"تناسب",lose:"کاهش وزن",muscle:"عضله‌سازی",health:"سلامت"}[profile.goal]||"تناسب");
   var lvlTxt=({beginner:"مبتدی",inter:"متوسط",advanced:"پیشرفته"}[profile.level]||"مبتدی");
   ctx.fillText("🎯 "+goalTxt+"  ·  📊 "+lvlTxt+"  ·  ⏱️ "+profile.time+" دقیقه",W/2,y);
   y+=70;
   function drawPhase(title,items,color){
     ctx.fillStyle=color+"33";drawRoundedRect(ctx,70,y,W-140,60+items.length*70,18);ctx.fill();
-    ctx.textAlign="right";ctx.fillStyle=color;ctx.font="900 32px Tahoma,Arial,sans-serif";ctx.fillText(title,W-100,y+16);
+    ctx.textAlign="right";ctx.fillStyle=color;ctx.font="800 32px Vazirmatn,Tahoma,Arial,sans-serif";ctx.fillText(title,W-100,y+16);
     var yy=y+68;
     for(var i=0;i<items.length;i++){
       var ex=items[i];
-      ctx.textAlign="right";ctx.fillStyle="#ffffff";ctx.font="800 26px Tahoma,Arial,sans-serif";
+      ctx.textAlign="right";ctx.fillStyle="#ffffff";ctx.font="800 26px Vazirmatn,Tahoma,Arial,sans-serif";
       ctx.fillText("• "+ex.name,W-100,yy);
-      ctx.fillStyle="#9db0c6";ctx.font="700 22px Tahoma,Arial,sans-serif";
+      ctx.fillStyle="#9db0c6";ctx.font="400 22px Vazirmatn,Tahoma,Arial,sans-serif";
       ctx.fillText(ex.reps,W-100-ctx.measureText("• "+ex.name).width-20,yy+2);
       yy+=70;
     }
@@ -3742,8 +3841,8 @@ function generateWorkoutImage(){
   drawPhase("🧘 سردکردن",day.cooldown,"#2dd4a3");
   var fy=H-150;
   ctx.fillStyle="rgba(255,255,255,.08)";drawRoundedRect(ctx,70,fy,W-140,120,20);ctx.fill();
-  ctx.textAlign="center";ctx.fillStyle="#bfe9ff";ctx.font="800 26px Tahoma,Arial,sans-serif";ctx.fillText("🌌 مجله آسمان — به آسمان نگاه کن",W/2,fy+16);
-  ctx.fillStyle="#7fffd4";ctx.font="900 26px Tahoma,Arial,sans-serif";ctx.fillText("🌐 "+MAGAZINE_URL,W/2,fy+62);
+  ctx.textAlign="center";ctx.fillStyle="#bfe9ff";ctx.font="800 26px Vazirmatn,Tahoma,Arial,sans-serif";ctx.fillText("🌌 مجله آسمان — به آسمان نگاه کن",W/2,fy+16);
+  ctx.fillStyle="#7fffd4";ctx.font="800 26px Vazirmatn,Tahoma,Arial,sans-serif";ctx.fillText("🌐 "+MAGAZINE_URL,W/2,fy+62);
   return canvas;
 }
 function getWorkoutShareText(){return "🌿 برنامهٔ ورزشی من در مجلهٔ آسمان\n🌐 "+MAGAZINE_URL+"\nبه آسمان نگاه کن.";}
@@ -3830,25 +3929,6 @@ function initSportPlanner(){
 function renderSettingsPage(){
   var gpsToggle=document.getElementById("gpsToggle");
   if(gpsToggle){gpsToggle.checked=gpsEnabled;gpsToggle.removeEventListener("change",gpsToggle._h);gpsToggle._h=function(){gpsEnabled=this.checked;lsSet("gpsEnabled",String(gpsEnabled));if(gpsEnabled){startGPSWatch();show("✅ GPS فعال","ok");}else{if(gpsWatchId!=null){navigator.geolocation.clearWatch(gpsWatchId);gpsWatchId=null;}setGps("off");show("❌ GPS غیرفعال","info");}};gpsToggle.addEventListener("change",gpsToggle._h);}
-  /* 🆕 (۱۸) toggle اعلان */
-  var notifToggle=document.getElementById("notifToggle");
-  if(notifToggle){
-    notifToggle.checked=notifEnabled;
-    notifToggle.removeEventListener("change",notifToggle._h);
-    notifToggle._h=function(){
-      var self=this;
-      if(self.checked){
-        requestNotifPermission().then(function(p){
-          if(p==="granted"){notifEnabled=true;lsSet("notifEnabled","true");startNotifications();show("✅ اعلان‌ها فعال شدند","ok");}
-          else if(p==="denied"){notifEnabled=false;lsSet("notifEnabled","false");self.checked=false;show("❌ اجازهٔ اعلان داده نشد","err");}
-          else{notifEnabled=false;lsSet("notifEnabled","false");self.checked=false;show("⚠️ مرورگر شما از اعلان پشتیبانی نمی‌کند","err");}
-        });
-      } else {
-        notifEnabled=false;lsSet("notifEnabled","false");stopNotifications();show("❌ اعلان‌ها غیرفعال شدند","info");
-      }
-    };
-    notifToggle.addEventListener("change",notifToggle._h);
-  }
   var fontSet=document.getElementById("fontSetting");
   if(fontSet){fontSet.value=appFont;fontSet.removeEventListener("change",fontSet._h);fontSet._h=function(){appFont=this.value;lsSet("appFont",appFont);applyTheme();show("✅ فونت تغییر کرد","ok");};fontSet.addEventListener("change",fontSet._h);}
   var cp=document.getElementById("colorPicker");
@@ -3863,7 +3943,7 @@ function renderSettingsPage(){
   var clearPins=document.getElementById("clearPinsBtn");
   if(clearPins){clearPins.removeEventListener("click",clearPins._h);clearPins._h=function(){pins=[];savePins();updatePinBtn();var pc=document.getElementById("pinsCount");if(pc)pc.textContent=pins.length;show("✅ پین‌ها پاک شدند","ok");};clearPins.addEventListener("click",clearPins._h);}
   var clearCache=document.getElementById("clearCacheBtn");
-  if(clearCache){clearCache.removeEventListener("click",clearCache._h);clearCache._h=function(){try{var keys=Object.keys(localStorage);var keep=["gpsEnabled","unit","pins","city","hasOpened","lastPage","aseman_device_seen","appTheme","appFont","appColor","userName","hiddenCards","dashOrder","lastAutoCacheClear","saves","tabOrder","spProfile","spWeekPlan","spWorkoutLog","bnOrder","nasaApiKey","chatFabPosPct","lastSeenVersion","notifEnabled"];for(var i=0;i<keys.length;i++)if(keep.indexOf(keys[i])===-1)localStorage.removeItem(keys[i]);lsSet("lastAutoCacheClear",String(Date.now()));show("✅ حافظه پاک شد","ok");setTimeout(function(){location.reload();},1000);}catch(e){show("⚠️ خطا","err");}};clearCache.addEventListener("click",clearCache._h);}
+  if(clearCache){clearCache.removeEventListener("click",clearCache._h);clearCache._h=function(){try{var keys=Object.keys(localStorage);var keep=["gpsEnabled","unit","pins","city","hasOpened","lastPage","aseman_device_seen","appTheme","appFont","appColor","userName","hiddenCards","dashOrder","lastAutoCacheClear","saves","tabOrder","spProfile","spWeekPlan","spWorkoutLog","bnOrder","nasaApiKey","chatFabPosPct","lastSeenVersion"];for(var i=0;i<keys.length;i++)if(keep.indexOf(keys[i])===-1)localStorage.removeItem(keys[i]);lsSet("lastAutoCacheClear",String(Date.now()));show("✅ حافظه پاک شد","ok");setTimeout(function(){location.reload();},1000);}catch(e){show("⚠️ خطا","err");}};clearCache.addEventListener("click",clearCache._h);}
   var sv=document.getElementById("settingsVersion");if(sv)sv.textContent=APP_VERSION;
   var sc=document.getElementById("settingsChangelog");
   if(sc){
@@ -4130,8 +4210,10 @@ function tryChatAction(q){
       trackEvent("chat","action_only");return true;
     }
   }
-  var goMatch=q.match(/(?:به|برو به|شهر)\s+([^\s]+)/);
-  if(goMatch&&(q.indexOf("برو")!==-1||q.indexOf("عوض")!==-1||q.indexOf("تغییر")!==-1)){
+  var goMatch=q.match(/(?:برو\s+به|برو|شهر)\s+([^\s]+)/);
+  if(!goMatch)goMatch=q.match(/([^\s]+)\s+برو/);
+  if(!goMatch)goMatch=q.match(/^به\s+([^\s]+)/);
+  if(goMatch&&(q.indexOf("برو")!==-1||q.indexOf("عوض")!==-1||q.indexOf("تغییر")!==-1||q.indexOf("بریم")!==-1)){
     var cname3=goMatch[1];
     var found3=null;
     for(var i3=0;i3<LOCAL_AREAS.length;i3++)if(LOCAL_AREAS[i3].n.indexOf(cname3)!==-1||cname3.indexOf(LOCAL_AREAS[i3].n)!==-1){found3=LOCAL_AREAS[i3];break;}
@@ -4291,7 +4373,6 @@ function enableAutoUpdate(){
   var hadCtrl=!!navigator.serviceWorker.controller;
   navigator.serviceWorker.addEventListener("controllerchange",function(){if(hadCtrl&&appBooted)window.location.reload();});
 }
-if("serviceWorker" in navigator)window.addEventListener("load",function(){navigator.serviceWorker.register("sw.js",{updateViaCache:"none"}).catch(function(){});});
 setInterval(function(){if(appBooted&&navigator.onLine&&!document.body.classList.contains("install-lock")&&!document.body.classList.contains("chat-lock"))refreshAll();},2*60*60*1000);
 
 setInterval(function(){
