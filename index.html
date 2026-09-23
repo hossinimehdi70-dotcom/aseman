@@ -24,22 +24,20 @@ body[data-color="orange"]{--accent:#ff8c42;--accent2:#ffd166}
 body[data-color="pink"]{--accent:#ec4899;--accent2:#8b5cf6}
 body[data-color="indigo"]{--accent:#4f46e5;--accent2:#8b5cf6}
 body[data-color="mixed"]{--accent:#39c6ff;--accent2:#ec4899}
-body[data-theme="light"]{--bg:#eef2f7;--bg2:#f8fafc;--text:#0a1628;--muted:#5a6f84;--line:rgba(0,0,0,.1);--card-bg:rgba(255,255,255,.75);--card-bg2:rgba(255,255,255,.6);background:linear-gradient(145deg,#e6edf5,#eef2f7)}
-body[data-theme="light"] .panel{background:linear-gradient(145deg,rgba(255,255,255,.9),rgba(255,255,255,.75));border-color:rgba(0,0,0,.08);box-shadow:0 10px 30px rgba(0,20,50,.08)}
-body[data-theme="light"] .mag-nav{background:transparent}
-body[data-theme="light"] .mag-tab{color:#0a1628}
-body[data-theme="light"] .mag-tab.active{color:#fff}
-body[data-theme="light"] .sec-content{color:#0a1628}
-body[data-theme="light"] .about-poem{color:#0a2540}
-body[data-theme="light"] .poem-text{color:#0a1628}
-body[data-theme="light"] .fact-text{color:#0a2540}
-body[data-theme="light"] .chat-panel{background:#f8fafc}
-body[data-theme="light"] .chat-msg.bot{background:#eef2f7;color:#0a1628;border-color:#c3ccd6}
-body[data-theme="light"] .dash-card{background:linear-gradient(145deg,rgba(255,255,255,.9),rgba(255,255,255,.7));border-color:rgba(0,0,0,.08)}
 body[data-font="large"]{font-size:17px}
 body[data-font="large"] .mag-tab{font-size:16px}
 body[data-font="large"] .sec-content{font-size:17px}
 body[data-font="large"] .title{font-size:20px}
+body[data-font="large"] .city{font-size:30px}
+body[data-font="large"] .cond{font-size:20px}
+body[data-font="large"] .prayer b{font-size:22px}
+body[data-font="large"] .daily-row .dr-value{font-size:15px}
+body[data-font="large"] .note-preview,body[data-font="large"] .note-drawer-inner{font-size:16px}
+body[data-font="large"] .dash-card .dc-body{font-size:15px}
+body[data-font="large"] .dash-card .dc-title{font-size:16px}
+body[data-font="large"] .fact-card .fact-text{font-size:15px}
+body[data-font="large"] .poetry-mini .poem-text{font-size:15px}
+body[data-font="large"] .smart-alert{font-size:16px}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
 body{margin:0;color:var(--text);font-family:"Vazirmatn",Tahoma,Arial,sans-serif;font-weight:400;background:linear-gradient(145deg,#06101d,var(--bg2) 50%,var(--bg));min-height:100vh;overflow-x:hidden;font-size:15px;transition:background .3s,color .3s}
 body.chat-lock,body.install-lock{overflow:hidden}
@@ -52,9 +50,7 @@ body.chat-lock,body.install-lock{overflow:hidden}
 @keyframes pSt{50%{opacity:.9}}
 button,input,select,textarea{font:inherit}button{cursor:pointer;color:inherit;background:none;border:none}
 .wrap{width:min(1320px,calc(100% - 24px));margin:auto;position:relative;z-index:2}
-/* هدر ثابت (Sticky) */
 .top{position:sticky;top:0;z-index:90;padding:14px 12px 8px;margin:0 -12px;background:var(--bg);border-bottom:1px solid var(--line);box-shadow:0 4px 16px rgba(0,0,0,.15);transition:box-shadow .3s ease,background .3s ease}
-body[data-theme="light"] .top{box-shadow:0 4px 16px rgba(0,20,50,.08)}
 .brand{display:flex;align-items:center;gap:12px}
 .logo{width:54px;height:54px;border-radius:16px;display:grid;place-items:center;font-size:28px;background:linear-gradient(145deg,var(--accent),var(--accent2));box-shadow:0 10px 30px #39c6ff40}
 .brand-text h1{margin:0;font-size:clamp(24px,4vw,34px);font-weight:800;letter-spacing:.5px;background:linear-gradient(135deg,#fff,var(--accent));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
@@ -65,13 +61,17 @@ body[data-theme="light"] .top{box-shadow:0 4px 16px rgba(0,20,50,.08)}
 .share-toast.err{background:linear-gradient(135deg,#ff6b7a,#e63946);color:#fff}
 .mag-nav{display:flex;gap:8px;overflow-x:auto;padding:8px 0;scrollbar-width:none;position:static;background:transparent}
 .mag-nav::-webkit-scrollbar{display:none}
-.mag-tab{flex:0 0 auto;padding:10px 18px;border-radius:12px;font-size:14px;font-weight:800;cursor:pointer;transition:.2s;white-space:nowrap;color:var(--text);background:linear-gradient(145deg,rgba(255,255,255,.10),rgba(255,255,255,.04));border:2px solid rgba(255,255,255,.12);box-shadow:0 3px 0 rgba(5,12,22,.7),inset 0 2px 0 rgba(255,255,255,.1)}
+.mag-tab{flex:0 0 auto;padding:10px 16px;border-radius:12px;font-size:14px;font-weight:800;cursor:pointer;transition:.2s;white-space:nowrap;color:var(--text);background:linear-gradient(145deg,rgba(255,255,255,.10),rgba(255,255,255,.04));border:2px solid rgba(255,255,255,.12);box-shadow:0 3px 0 rgba(5,12,22,.7),inset 0 2px 0 rgba(255,255,255,.1);display:inline-flex;align-items:center;gap:6px}
 .mag-tab:hover{transform:translateY(-1px)}
 .mag-tab.active{background:linear-gradient(145deg,var(--accent),var(--accent2));color:#04101d;border-color:transparent}
 .mag-tab.dragging{opacity:.35;transform:scale(.96)}
 .mag-tab.drag-over{border-color:var(--accent);border-style:dashed;background:rgba(57,198,255,.1)}
 .mag-tab[draggable="true"]{cursor:grab}
 .mag-tab[draggable="true"]:active{cursor:grabbing}
+/* 🆕 #5 آیکون SVG در تب‌ها */
+.mag-tab .tab-icon{display:inline-flex;width:18px;height:18px;flex-shrink:0}
+.mag-tab .tab-icon svg{width:100%;height:100%;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.mag-tab.active .tab-icon svg{stroke:currentColor}
 
 .version-toast{position:fixed;top:16px;left:50%;transform:translateX(-50%) translateY(-40px);width:min(400px,calc(100vw - 24px));padding:16px 18px;background:linear-gradient(165deg,#0e2340,#1a3a5c 60%,#2a1a5c);border:2px solid rgba(57,198,255,.55);border-radius:20px;box-shadow:0 20px 60px rgba(0,0,0,.55),0 0 40px rgba(57,198,255,.25);z-index:99998;opacity:0;pointer-events:none;transition:opacity .45s ease,transform .45s ease;color:#fff;font-family:inherit}
 .version-toast.show{opacity:1;transform:translateX(-50%) translateY(0);pointer-events:auto}
@@ -111,7 +111,6 @@ body[data-theme="light"] .top{box-shadow:0 4px 16px rgba(0,20,50,.08)}
 .bottom-nav{display:none}
 @media(max-width:900px){
   .bottom-nav{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:100;background:linear-gradient(180deg,rgba(7,17,31,.96),rgba(7,17,31,.99));backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-top:1px solid rgba(255,255,255,.1);padding:6px 4px calc(6px + env(safe-area-inset-bottom,0px));justify-content:space-around;align-items:center;box-shadow:0 -8px 24px rgba(0,0,0,.3)}
-  body[data-theme="light"] .bottom-nav{background:linear-gradient(180deg,rgba(238,242,247,.96),rgba(238,242,247,.99));border-color:rgba(0,0,0,.1);box-shadow:0 -8px 24px rgba(0,20,50,.08)}
   .bn-item{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;padding:6px 4px;border-radius:12px;background:transparent;border:none;color:var(--muted);font-size:10px;font-weight:800;font-family:inherit;cursor:pointer;transition:.2s;min-width:0;position:relative}
   .bn-item.active{color:var(--accent)}
   .bn-item.active::before{content:"";position:absolute;top:-6px;left:50%;transform:translateX(-50%);width:24px;height:3px;border-radius:0 0 3px 3px;background:var(--accent)}
@@ -140,15 +139,54 @@ body[data-theme="light"] .top{box-shadow:0 4px 16px rgba(0,20,50,.08)}
 .bn-sheet-item.drag-over{border-color:var(--accent);border-style:dashed;background:rgba(57,198,255,.15);transform:scale(1.02)}
 .bn-sheet-item .bnsi-icon{font-size:30px;line-height:1;pointer-events:none;filter:drop-shadow(0 3px 6px rgba(0,0,0,.3))}
 .bn-sheet-item .bnsi-label{font-weight:800;color:#fff;font-size:12px;pointer-events:none;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:100%;width:100%;letter-spacing:.2px}
-body[data-theme="light"] .bn-sheet-content{background:linear-gradient(165deg,#eef2f7,#e0e8f0 60%,#dcd5f0)}
-body[data-theme="light"] .bn-sheet-title{color:#0a1628}
-body[data-theme="light"] .bn-sheet-item{background:linear-gradient(145deg,rgba(255,255,255,.75),rgba(255,255,255,.55));border-color:rgba(0,0,0,.08)}
-body[data-theme="light"] .bn-sheet-item .bnsi-label{color:#0a1628}
 @media(max-width:360px){.bn-sheet-item .bnsi-label{font-size:10.5px}.bn-sheet-item .bnsi-icon{font-size:26px}.bn-sheet-items{gap:8px}}
 
 .mag-page{display:block;animation:pageIn .35s ease-out}
 .mag-page[hidden]{display:none}
 @keyframes pageIn{from{opacity:0;transform:translateX(var(--slide-dir,20px))}to{opacity:1;transform:translateX(0)}}
+/* 🆕 #4: انیمیشن ورود کارت‌ها با تأخیر پله‌ای */
+@keyframes cardIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.mag-page:not([hidden]) > .panel,
+.mag-page:not([hidden]) > section.panel,
+.mag-page:not([hidden]) > .dash-grid > .dash-card,
+.mag-page:not([hidden]) > .note-grid > .note-card{
+  animation:cardIn .38s ease-out both;
+}
+.mag-page:not([hidden]) > .panel:nth-of-type(2),
+.mag-page:not([hidden]) > section.panel:nth-of-type(2){animation-delay:.06s}
+.mag-page:not([hidden]) > .panel:nth-of-type(3),
+.mag-page:not([hidden]) > section.panel:nth-of-type(3){animation-delay:.12s}
+.mag-page:not([hidden]) > .panel:nth-of-type(n+4),
+.mag-page:not([hidden]) > section.panel:nth-of-type(n+4){animation-delay:.18s}
+.mag-page:not([hidden]) > .dash-grid > .dash-card:nth-child(1){animation-delay:0s}
+.mag-page:not([hidden]) > .dash-grid > .dash-card:nth-child(2){animation-delay:.05s}
+.mag-page:not([hidden]) > .dash-grid > .dash-card:nth-child(3){animation-delay:.10s}
+.mag-page:not([hidden]) > .dash-grid > .dash-card:nth-child(n+4){animation-delay:.15s}
+.mag-page:not([hidden]) > .note-grid > .note-card:nth-child(2){animation-delay:.06s}
+.mag-page:not([hidden]) > .note-grid > .note-card:nth-child(3){animation-delay:.12s}
+.mag-page:not([hidden]) > .note-grid > .note-card:nth-child(n+4){animation-delay:.18s}
+
+/* 🆕 #7: نوار پیشرفت روز (طلوع → غروب) */
+.day-progress{margin:14px 0 4px;padding:10px 12px;background:var(--card-bg);border:1px solid var(--line);border-radius:14px}
+.day-progress .dp-labels{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--muted);font-weight:800;margin-bottom:8px}
+.day-progress .dp-labels .dp-mid{color:var(--gold);font-size:13px}
+.day-progress .dp-track{position:relative;height:8px;background:rgba(255,255,255,.08);border-radius:6px;overflow:hidden;border:1px solid var(--line)}
+.day-progress .dp-fill{height:100%;width:0;background:linear-gradient(90deg,var(--gold),var(--accent));border-radius:6px;transition:width .8s ease;position:relative}
+.day-progress .dp-fill::after{content:"";position:absolute;right:-1px;top:-3px;width:12px;height:12px;border-radius:50%;background:#fff;box-shadow:0 0 10px var(--gold)}
+
+/* 🆕 #9: اسکلتون لودینگ */
+@keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
+.skeleton{color:transparent!important;background:linear-gradient(90deg,rgba(255,255,255,.05) 25%,rgba(255,255,255,.13) 50%,rgba(255,255,255,.05) 75%);background-size:200% 100%;animation:shimmer 1.5s infinite linear;border-radius:8px;pointer-events:none;user-select:none}
+.skeleton *{visibility:hidden!important}
+.skeleton::before,.skeleton::after{content:"" !important}
+
+/* 🆕 #6: قطبنمای باد در کارت هوا */
+.wind-hero-compass{display:inline-flex;align-items:center;gap:10px;padding:8px 12px;background:linear-gradient(145deg,rgba(57,198,255,.10),rgba(79,124,255,.06));border:1px solid rgba(57,198,255,.3);border-radius:14px;margin-top:10px}
+.wind-hero-compass .whc-svg{width:38px;height:38px;flex-shrink:0;transition:transform .6s ease;transform-origin:center}
+.wind-hero-compass .whc-info{display:flex;flex-direction:column;gap:2px;line-height:1.3}
+.wind-hero-compass .whc-lbl{font-size:10.5px;color:var(--muted);font-weight:800}
+.wind-hero-compass .whc-val{font-size:13px;color:var(--text);font-weight:800;direction:ltr}
+
 .page-hero{position:relative;height:100px;margin-top:18px;margin-bottom:16px;border-radius:22px;overflow:hidden;display:flex;align-items:center;justify-content:center;text-align:center;background:linear-gradient(135deg,#1a3a5c,#3a2d5c 50%,#1a4a5c);box-shadow:0 8px 24px rgba(0,0,0,.3);border:1px solid rgba(255,255,255,.08)}
 .page-hero.weather-bg{background:radial-gradient(ellipse at 20% 30%,rgba(57,198,255,.3),transparent 50%),radial-gradient(ellipse at 80% 70%,rgba(139,92,246,.25),transparent 50%),linear-gradient(135deg,#0a2540,#1a3a5c 50%,#2d1b4d)}
 .page-title{font-size:clamp(28px,5vw,44px);font-weight:800;color:#fff;margin:0;text-shadow:0 4px 12px rgba(0,0,0,.5)}
@@ -157,7 +195,6 @@ body[data-theme="light"] .bn-sheet-item .bnsi-label{color:#0a1628}
 .page-hero>div{position:relative;z-index:2}
 .page-hero.weather-bg::after{opacity:.15}
 body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(ellipse 55% 45% at 12% 8%,var(--accent) 0%,transparent 62%),radial-gradient(ellipse 55% 45% at 88% 92%,var(--accent2) 0%,transparent 62%);opacity:.12;transition:background .6s ease,opacity .6s ease}
-body[data-theme="light"]::before{opacity:.09}
 .status-bar{display:flex;justify-content:space-between;align-items:center;gap:8px;margin:10px 0;padding:6px 10px;background:var(--card-bg);border:1px solid var(--line);border-radius:14px}
 .status-bar .btn{padding:6px 10px;font-size:12px;width:auto}
 .btn{padding:9px 10px;border-radius:12px;font-weight:800;font-size:13px;background:transparent;border:1px solid rgba(255,255,255,.28);color:var(--text);text-align:center}
@@ -203,10 +240,20 @@ body[data-theme="light"]::before{opacity:.09}
 .temp{font-size:clamp(42px,6vw,64px);font-weight:800;line-height:.85}
 .cond{font-weight:800;margin-top:10px;font-size:18px}.feels{font-size:14px;color:var(--muted);margin-top:6px;font-weight:400}
 .minmax{display:flex;gap:10px;margin-top:8px;font-weight:700}.minmax span{background:#ffffff10;padding:3px 8px;border-radius:8px;font-size:14px}.minmax .min{color:#7ecbff}.minmax .max{color:#ffb37e}
-/* 🆕 مقایسهٔ دیروز و امروز */
 .day-compare{display:inline-block;margin-top:10px;padding:5px 12px;font-size:13px;font-weight:800;color:var(--gold);background:rgba(255,209,102,.10);border:1px solid rgba(255,209,102,.28);border-radius:10px;line-height:1.7}
 .day-compare.warm{color:#ffb37e;background:rgba(255,140,66,.12);border-color:rgba(255,140,66,.32)}
 .day-compare.cold{color:#7ecbff;background:rgba(57,198,255,.12);border-color:rgba(57,198,255,.32)}
+.three-day-compare{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:12px 0;background:var(--card-bg);border:1px solid var(--line);border-radius:14px;padding:10px 8px}
+.tdc-item{text-align:center;padding:8px 4px;border-radius:10px;transition:.2s}
+.tdc-item.today{background:linear-gradient(145deg,rgba(255,209,102,.15),rgba(255,140,66,.06));border:1px solid rgba(255,209,102,.35)}
+.tdc-label{font-size:12px;color:var(--muted);font-weight:800;margin-bottom:4px}
+.tdc-item.today .tdc-label{color:var(--gold)}
+.tdc-icon{display:flex;justify-content:center;margin:4px 0}
+.tdc-temps{font-size:13px;font-weight:800;color:var(--text);direction:ltr;display:flex;justify-content:center;gap:8px;flex-wrap:wrap}
+.tdc-temps .tdc-max{color:#ffb37e}
+.tdc-temps .tdc-min{color:#7ecbff}
+.tdc-date{font-size:10px;color:var(--muted);margin-top:4px}
+@media(max-width:560px){.tdc-temps{font-size:12px;gap:4px}}
 .freshness{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:10px;font-size:12px;font-weight:800;margin-top:10px}
 .freshness.fresh{background:rgba(45,212,161,.15);border:1px solid rgba(45,212,161,.4);color:#7fffd4}
 .freshness.stale{background:rgba(255,209,102,.15);border:1px solid rgba(255,209,102,.4);color:#ffe29a}
@@ -217,13 +264,10 @@ body[data-theme="light"]::before{opacity:.09}
 .smart-alert.aqi-high{border-color:rgba(255,107,122,.5);background:linear-gradient(145deg,rgba(255,107,122,.12),rgba(230,57,70,.06))}
 .day-tabs{display:flex;gap:10px;margin:14px 0 10px}
 .day-tab{flex:1;padding:13px 10px;border-radius:14px;font-weight:800;font-size:14px;color:#eaf3fb;text-align:center;border:1px solid #465c74;background:linear-gradient(145deg,#2b3d52,#22303f)}
-body[data-theme="light"] .day-tab{color:#0a1628;border-color:#c3ccd6;background:linear-gradient(145deg,#e8eef5,#dde5ed)}
 .day-tab.active{background:#fff;color:#0a1628}
 .sectionhead{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;background:linear-gradient(145deg,rgba(57,198,255,.10),rgba(139,92,246,.06));border-radius:14px;padding:12px 16px;border:1px solid rgba(255,255,255,.1);cursor:pointer;user-select:none;transition:border-color .2s,background .3s}
 .sectionhead:hover{border-color:rgba(57,198,255,.4)}
-body[data-theme="light"] .sectionhead{background:linear-gradient(145deg,rgba(57,198,255,.16),rgba(139,92,246,.10));border-color:rgba(0,0,0,.08)}
 #detailsSectionHead{background:linear-gradient(145deg,rgba(57,198,255,.28),rgba(139,92,246,.18))!important}
-body[data-theme="light"] #detailsSectionHead{background:linear-gradient(145deg,rgba(57,198,255,.32),rgba(139,92,246,.22))!important}
 .weather-section-title{font-size:19px;font-weight:800}
 .arrow{background:rgba(255,255,255,.08);font-size:16px;color:var(--muted);width:34px;height:34px;border-radius:10px;border:1px solid rgba(255,255,255,.15)}
 .collapse{overflow:hidden;max-height:6000px;transition:max-height .4s}.collapsed{max-height:0!important}
@@ -234,23 +278,20 @@ body[data-theme="light"] #detailsSectionHead{background:linear-gradient(145deg,r
 .detail-btn:hover .dt-label svg{color:var(--text)}
 .detail-btn .val{display:block;margin-top:6px;font-size:18px;font-weight:800;color:var(--text)}
 .detail-btn .val.aqi-high{color:var(--red);font-weight:900;text-shadow:0 0 10px rgba(255,107,122,.35)}
+.wind-compass{display:inline-block;font-size:14px;color:var(--accent);margin-left:4px;vertical-align:middle;line-height:1;transition:transform .4s ease;transform-origin:center;font-weight:900}
 .side{padding:20px}.title{font-weight:800;margin-bottom:12px;font-size:18px}
 .datebox{padding:16px;border-radius:16px;background:linear-gradient(135deg,#1a4d6b55,#4d3a6d55);border:1px solid var(--line);display:flex;flex-direction:column;gap:10px}
-body[data-theme="light"] .datebox{background:linear-gradient(135deg,rgba(200,225,245,.6),rgba(220,215,245,.6))}
 .date-row{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:6px 0;border-bottom:1px dashed rgba(255,255,255,.08)}
-body[data-theme="light"] .date-row{border-color:rgba(0,0,0,.08)}
 .date-row:last-child{border-bottom:none}
 .date-main{flex:1;font-weight:800}
 .jalali{font-size:18px;font-weight:800;color:var(--text)}
 .greg,.hijri{font-size:14px;color:var(--text)}
 .time-city{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:8px;background:rgba(57,198,255,.15);border:1px solid rgba(57,198,255,.3);font-size:13px;font-weight:800;color:#bfe9ff;white-space:nowrap}
-body[data-theme="light"] .time-city{color:#0a2540}
 .time-city .tc-label{font-size:10px;color:var(--muted);font-weight:700}
 .time-city .tc-val{color:var(--text);font-weight:800}
 .section{padding:19px;margin-top:15px}
 .sec-content{padding-top:10px;font-size:15px;line-height:1.9;font-weight:400;white-space:pre-line}
 .about-intro{margin:18px 0;padding:16px 22px;background:linear-gradient(90deg,rgba(255,209,102,.12),rgba(255,140,66,.06));border-radius:14px;font-size:16px;line-height:1.9;color:#fff8e8;font-weight:400}
-body[data-theme="light"] .about-intro{color:#3a2a10}
 .about-poem{margin:18px 0;padding:18px 22px;background:linear-gradient(90deg,rgba(57,198,255,.12),rgba(139,92,246,.06));border-radius:14px;font-size:16px;line-height:1.9;color:#e8f3ff;letter-spacing:.3px;white-space:pre-line;text-align:justify;font-weight:400}
 .about-poem .about-poem-title{display:block;font-size:22px;font-weight:800;color:var(--gold);text-align:center;margin-bottom:18px;padding-bottom:14px;border-bottom:1px dashed rgba(255,209,102,.35);letter-spacing:1px}
 .about-poem .signature{text-align:center;margin-top:14px}
@@ -330,13 +371,12 @@ body[data-theme="light"] .about-intro{color:#3a2a10}
 .prayer-mini-row .pmr-time{font-weight:800;direction:ltr;color:#7fffd4;font-feature-settings:"tnum"}
 .prayer-mini-row.next .pmr-time{color:#fff;text-shadow:0 2px 6px rgba(0,0,0,.4)}
 .daily-card-actions{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap}
-.dc-share-btn{flex:1 1 calc(33% - 6px);min-width:100px;padding:12px 12px;background:linear-gradient(135deg,#ffd166,#ff8c42);border:none;border-radius:14px;color:#3a1a00;font-weight:800;font-size:13.5px;font-family:inherit;cursor:pointer;transition:.2s;display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap}
+.dc-share-btn{flex:1 1 calc(50% - 6px);min-width:100px;padding:12px 12px;background:linear-gradient(135deg,#ffd166,#ff8c42);border:none;border-radius:14px;color:#3a1a00;font-weight:800;font-size:13.5px;font-family:inherit;cursor:pointer;transition:.2s;display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap}
 .dc-share-btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(255,209,102,.4)}
 .dc-share-btn.ghost{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.25)}
 .dc-share-btn.ghost:hover{background:rgba(255,255,255,.18);box-shadow:none}
 .dash-manage{border:1px solid rgba(255,255,255,.15);border-radius:20px;background:var(--card-bg2);margin-bottom:14px;overflow:hidden}
 .dash-manage .dm-head{padding:14px 18px;font-weight:800;font-size:15px;display:flex;justify-content:space-between;align-items:center;gap:8px;color:var(--text);cursor:pointer;user-select:none;background:linear-gradient(145deg,rgba(57,198,255,.28),rgba(139,92,246,.18))}
-body[data-theme="light"] .dash-manage .dm-head{background:linear-gradient(145deg,rgba(57,198,255,.32),rgba(139,92,246,.22))}
 .dash-manage .dm-head .dm-arrow{font-size:18px;color:var(--muted);transition:transform .35s}
 .dash-manage.open .dm-head .dm-arrow{transform:rotate(180deg);color:var(--text)}
 .dash-manage .dm-body{max-height:0;overflow:hidden;transition:max-height .45s ease}
@@ -524,8 +564,6 @@ body[data-theme="light"] .dash-manage .dm-head{background:linear-gradient(145deg
 .prayer-localtime-inline{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:12px;background:linear-gradient(135deg,rgba(57,198,255,.18),rgba(139,92,246,.12));border:1px solid rgba(57,198,255,.4);font-size:13px;font-weight:700;color:#bfe9ff;white-space:nowrap;flex-wrap:nowrap}
 .prayer-localtime-inline .plt-city{font-size:12px;color:var(--muted);font-weight:800}
 .prayer-localtime-inline .plt-clock-inline{font-size:18px;font-weight:800;color:var(--accent);font-feature-settings:"tnum";letter-spacing:1px;direction:ltr;display:inline-block;min-width:78px;text-align:center}
-body[data-theme="light"] .prayer-localtime-inline{color:#0a2540}
-body[data-theme="light"] .prayer-localtime-inline .plt-city{color:#5a6f84}
 
 .scroll{overflow-x:auto;margin-top:12px;-webkit-overflow-scrolling:touch}
 .forecast{display:grid;grid-template-columns:repeat(9,minmax(96px,1fr));gap:8px;min-width:980px;margin-top:6px}
@@ -535,7 +573,6 @@ body[data-theme="light"] .prayer-localtime-inline .plt-city{color:#5a6f84}
 .hourly{display:grid;grid-template-columns:repeat(12,minmax(80px,1fr));min-width:950px;gap:8px;margin-top:6px}
 .hour .t{font-size:13px;color:var(--muted);font-weight:700}.hour b{font-size:19px}.hour .precip{font-size:11px;color:#73d8ff;margin-top:6px}
 .mini-title{font-size:15px;font-weight:800;margin:14px 0 4px;color:#bfe9ff}
-body[data-theme="light"] .mini-title{color:#0a2540}
 
 .sport-accordion,.travel-accordion,.culture-accordion,.fun-accordion{display:flex;flex-direction:column;gap:10px;margin-top:10px}
 .travel-acc-group,.culture-acc-group,.fun-acc-group{border:2px solid rgba(255,255,255,.12);border-radius:14px;overflow:hidden;background:var(--card-bg2);transition:border-color .2s}
@@ -723,7 +760,6 @@ footer{text-align:center;color:var(--muted);font-size:11px;line-height:1.9;paddi
 .color-dot{width:32px;height:32px;border-radius:50%;border:3px solid transparent;cursor:pointer;transition:.2s;position:relative;padding:0}
 .color-dot:hover{transform:scale(1.12)}
 .color-dot.active{border-color:#fff;box-shadow:0 0 0 2px rgba(255,255,255,.2),0 4px 10px rgba(0,0,0,.3);transform:scale(1.05)}
-body[data-theme="light"] .color-dot.active{border-color:#0a1628;box-shadow:0 0 0 2px rgba(10,22,40,.15)}
 .color-dot[data-color="blue"]{background:#39c6ff}
 .color-dot[data-color="purple"]{background:#8b5cf6}
 .color-dot[data-color="green"]{background:#2dd4a3}
@@ -804,7 +840,7 @@ body[data-theme="light"] .color-dot.active{border-color:#0a1628;box-shadow:0 0 0
 <div class="install-size-note"><span class="isn-head">💾 حجم بسیار کم.</span>تنها چند مگابایت از حافظه گوشی شما را اشغال می‌کند.</div>
 <button class="install-btn" id="installOk">✓ متوجه شدم</button>
 <div class="install-version">
-<div class="iv-version">📌 نسخهٔ ۱٫۱٫۲</div>
+<div class="iv-version">📌 نسخهٔ ۱٫۰٫۰</div>
 </div>
 </div>
 </div>
@@ -813,15 +849,15 @@ body[data-theme="light"] .color-dot.active{border-color:#0a1628;box-shadow:0 0 0
 <header class="top">
 <div class="brand"><div class="logo">🌌</div><div class="brand-text"><h1>مجله آسمان</h1><div class="brand-sub">به آسمان نگاه کن.</div></div></div>
 <nav class="mag-nav" id="magNav">
-<button class="mag-tab" data-page="myday">⭐ آسمان من</button>
-<button class="mag-tab" data-page="notes">📝 یادداشت مجله</button>
-<button class="mag-tab" data-page="home">⛅ آب‌وهوا</button>
-<button class="mag-tab" data-page="prayer">🕌 اوقات شرعی</button>
-<button class="mag-tab" data-page="travel">🧳 سفر</button>
-<button class="mag-tab" data-page="culture">🎭 فرهنگ</button>
-<button class="mag-tab" data-page="sport">🤾‍♂️ سلامتی</button>
-<button class="mag-tab" data-page="science">🔭 علم</button>
-<button class="mag-tab" data-page="fun">🎉 سرگرمی</button>
+<button class="mag-tab" data-page="myday"><span class="tab-icon"><svg viewBox="0 0 24 24"><polygon points="12,2 15,9 22,9 17,14 19,22 12,17 5,22 7,14 2,9 9,9"/></svg></span>آسمان من</button>
+<button class="mag-tab" data-page="notes"><span class="tab-icon"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></span>یادداشت مجله</button>
+<button class="mag-tab" data-page="home"><span class="tab-icon"><svg viewBox="0 0 24 24"><circle cx="16" cy="8" r="3"/><path d="M4 18a4 4 0 014-4 6 6 0 0111.5 1.5A3.5 3.5 0 0118 20H6a2 2 0 01-2-2z"/></svg></span>آب‌وهوا</button>
+<button class="mag-tab" data-page="prayer"><span class="tab-icon"><svg viewBox="0 0 24 24"><path d="M12 2l3 4v2h1v3h2v9h-3v-4h-6v4H6V11h2V8h1V6z"/><path d="M11 13v3M13 13v3"/></svg></span>اوقات شرعی</button>
+<button class="mag-tab" data-page="travel"><span class="tab-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2M2 13h20"/></svg></span>سفر</button>
+<button class="mag-tab" data-page="culture"><span class="tab-icon"><svg viewBox="0 0 24 24"><circle cx="8" cy="14" r="4"/><circle cx="16" cy="14" r="4"/><path d="M4 10h8M12 10h8"/></svg></span>فرهنگ</button>
+<button class="mag-tab" data-page="sport"><span class="tab-icon"><svg viewBox="0 0 24 24"><circle cx="16" cy="6" r="2"/><path d="M14 12l-3 4-3-2M18 22l-2-6 2-3-4-2-3 2-3-1"/></svg></span>سلامتی</button>
+<button class="mag-tab" data-page="science"><span class="tab-icon"><svg viewBox="0 0 24 24"><path d="M4 18l6-10 10 6-6 10z"/><path d="M10 8l3-5"/></svg></span>علم</button>
+<button class="mag-tab" data-page="fun"><span class="tab-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="14" r="6"/><path d="M9 4l1-2M15 3l-1 2M20 7l2-1M2 7l2 1"/></svg></span>سرگرمی</button>
 </nav>
 </header>
 <div id="status" class="status"></div>
@@ -840,9 +876,7 @@ body[data-theme="light"] .color-dot.active{border-color:#0a1628;box-shadow:0 0 0
 <div class="note-preview">🌌 مجلهٔ آسمان — یک اپلیکیشن وب چندبخشی، کاملاً رایگان و فارسی.</div>
 <div class="note-drawer"><div class="note-drawer-inner">مجلهٔ آسمان یک اپلیکیشن وب چندبخشی و کاملاً رایگان است؛ همهٔ پردازش‌ها سمت مرورگر شما انجام می‌شود و هیچ داده‌ای به سرور ارسال نمی‌گردد.
 
-🛡️ این نسخه دیگر از هیچ سیستم Tracking خارجی استفاده نمی‌کند و کل حریم خصوصی شما محفوظ است.
-
-برای به‌روزرسانی اطلاعات، کافی است صفحه را از بالا به پایین بکشید و رها کنید.</div></div>
+🛡️ این نسخه از هیچ سیستم Tracking خارجی استفاده نمی‌کند و کل حریم خصوصی شما محفوظ است.</div></div>
 <button class="note-toggle-btn" type="button" data-about-toggle>▼ نمایش بیشتر</button>
 </div>
 
@@ -856,9 +890,9 @@ body[data-theme="light"] .color-dot.active{border-color:#0a1628;box-shadow:0 0 0
 <div class="guide-install-section">
 <div class="gis-desc">🌌 برنامه از PWA پشتیبانی می‌کند و روی صفحهٔ اصلی گوشی نصب می‌شود؛ حجم آن بسیار کم است و تجربه‌ای شبیه اپلیکیشن بومی ارائه می‌دهد.</div>
 <div class="gis-grid">
-<div class="gis-item"><div class="gis-browser">🤖 اندروید (Chrome)</div><div class="gis-steps">۱. منوی «سه نقطه» بالا سمت راست را باز کنید.<br>۲. گزینهٔ «نصب برنامه» یا «افزودن به صفحهٔ اصلی» را انتخاب کنید.<br>۳. روی «نصب» بزنید.</div></div>
-<div class="gis-item"><div class="gis-browser">🍎 iPhone / iPad (Safari)</div><div class="gis-steps">⚠️ حتماً با Safari باز کنید.<br>۱. دکمهٔ Share (مربع با فلش رو به بالا) را بزنید.<br>۲. گزینهٔ «Add to Home Screen» را انتخاب کنید.<br>۳. روی «Add» بزنید.</div></div>
-<div class="gis-item"><div class="gis-browser">🌐 سایر مرورگرها</div><div class="gis-steps">Firefox، Samsung Internet، Opera و ...<br>۱. منوی مرورگر را باز کنید.<br>۲. گزینهٔ «افزودن به صفحهٔ اصلی» یا «نصب» را انتخاب کنید.<br>۳. تأیید کنید.</div></div>
+<div class="gis-item"><div class="gis-browser">🤖 اندروید (Chrome)</div><div class="gis-steps">منوی «سه نقطه» ← «نصب برنامه» یا «افزودن به صفحهٔ اصلی».</div></div>
+<div class="gis-item"><div class="gis-browser">🍎 iPhone / iPad (Safari)</div><div class="gis-steps">⚠️ حتماً با Safari باز کنید.<br>Share ← Add to Home Screen ← Add.</div></div>
+<div class="gis-item"><div class="gis-browser">🌐 سایر مرورگرها</div><div class="gis-steps">منوی مرورگر ← «افزودن به صفحهٔ اصلی» ← تأیید.</div></div>
 </div>
 </div>
 </div>
@@ -878,119 +912,66 @@ body[data-theme="light"] .color-dot.active{border-color:#0a1628;box-shadow:0 0 0
 <div class="guide-drawer-body">
 <div class="guide-drawer-inner">
 <div class="about-help" style="margin-top:6px">
-<div class="ah-sec"><div class="ah-h c1">🆕 ویژگی‌های اخیر این نسخه</div><ul>
-<li>🔤 <b>فونت فارسی مدرن Vazirmatn</b> با وزن‌های متغیر برای خوانایی بهتر.</li>
-<li>📐 <b>بهبود تایپوگرافی</b>: فاصلهٔ خط ۱٫۹ در متن‌های بلند و حروف‌چینی justify در متن‌های ادبی.</li>
-<li>📌 <b>هدر ثابت (Sticky)</b>: نوار بالا هنگام پیمایش صفحه ثابت می‌ماند تا همیشه به بخش‌ها دسترسی داشته باشید.</li>
-<li>🌡️ <b>مقایسهٔ دمای امروز و دیروز</b> زیر «محسوس» در کارت هوا.</li>
-<li>🌫️ <b>هشدار رنگی AQI</b>: اگر کیفیت هوا نامناسب باشد (EAQI بالای ۶۰)، مقدار عددی قرمز می‌شود و در شاخص‌های هوشمند هشدار می‌آید.</li>
-<li>🎨 <b>آیکون‌های SVG اختصاصی</b> در شبکهٔ شاخص‌های هوا، به‌جای ایموجی.</li>
-<li>🔗 <b>ارسال کارت روز با لینک اختصاصی</b>: دکمهٔ «کپی لینک» در کارت امروز، لینکی می‌سازد که با بازکردن آن، کارت روز همان شهر نمایش داده می‌شود.</li>
+<div class="ah-sec"><div class="ah-h c1">🆕 ویژگی‌های اخیر</div><ul>
+<li>🎨 <b>آیکون‌های SVG</b> در نوار بالا (جای ایموجی).</li>
+<li>✨ <b>انیمیشن ورود کارت‌ها</b> با تأخیر پله‌ای.</li>
+<li>🧭 <b>قطب‌نمای باد</b> در کارت هوای صفحهٔ اصلی.</li>
+<li>📊 <b>نوار پیشرفت روز</b> (از طلوع تا غروب).</li>
+<li>⏳ <b>اسکلتون لودینگ</b> برای کارت هوای اصلی.</li>
+<li>⚡ <b>کش ETag</b> و کاهش ترافیک API.</li>
+<li>🖼️ <b>بارگذاری تنبل APOD</b> (فقط در صفحهٔ علم).</li>
 </ul></div>
 <div class="ah-sec"><div class="ah-h c1">⭐ آسمان من</div><ul>
 <li>داشبورد شخصی با کارت‌های قابل جابجایی و مدیریت.</li>
-<li>💡 با <b>کشیدن کارت‌ها</b> (دسکتاپ) یا <b>لمس طولانی</b> (موبایل)، ترتیب را تغییر دهید.</li>
-<li>💡 می‌توانید کارت‌ها را از بخش «مدیریت کارت‌ها» مخفی یا نمایش دهید.</li>
-<li>🌡️ کارت هوای این صفحه، علاوه بر دمای فعلی، <b>بیشینه و کمینهٔ دمای روز</b> را هم نمایش می‌دهد.</li>
-<li>🕌 در کشوی «کارت امروز آسمان»، <b>همهٔ اوقات شرعی روز</b> (اذان صبح، طلوع، اذان ظهر، غروب، اذان مغرب) نمایش داده می‌شود و اذان بعدی به‌صورت هایلایت مشخص است.</li>
-<li>🔗 با دکمهٔ <b>«کپی لینک»</b>، لینک اختصاصی کارت روز را برای دوستان بفرستید.</li>
-</ul></div>
-<div class="ah-sec"><div class="ah-h c3">☀️ کارت روز آسمان (کشویی)</div><ul>
-<li>کارت ویژه با خلاصهٔ روز: تاریخ، هوا (با بیشینه/کمینه)، همهٔ اوقات شرعی، بیت و ذکر روز.</li>
-<li>🔽 روی <b>هدر کارت</b> بزنید تا کشو باز/بسته شود.</li>
-<li>📤 سه گزینه: اشتراک‌گذاری (تصویر)، ذخیرهٔ عکس، و کپی لینک اختصاصی.</li>
+<li>💡 <b>کشیدن کارت‌ها</b> (دسکتاپ) یا <b>لمس طولانی</b> (موبایل) برای تغییر ترتیب.</li>
+<li>🕌 <b>کارت امروز آسمان</b>: کشوی ویژه با اوقات شرعی، بیت و ذکر روز.</li>
+<li>📤 اشتراک‌گذاری کارت روز به‌صورت تصویر.</li>
 </ul></div>
 <div class="ah-sec"><div class="ah-h c2">🌿 سلامتی</div><ul>
-<li>برنامهٔ ورزشی کاملاً شخصی‌سازی‌شده برای <b>خانم/آقا، سنین مختلف</b>.</li>
-<li>تحلیل خودکار هوا و توصیه به <b>ورزش در خانه یا بیرون</b>.</li>
-<li>برنامهٔ هفتگی + ردیاب روزها + تغذیه ورزشی.</li>
-<li><b>🍳 پیشنهاد غذا بر اساس مواد اولیهٔ موجود</b> (در بخش تغذیه).</li>
-<li><b>💧 محاسبه‌گر مصرف آب روزانه</b> بر اساس وزن، دما و سطح فعالیت.</li>
-<li><b>محاسبه‌گر BMI و BMR</b> در کشوی آخر.</li>
-<li>📤 اشتراک‌گذاری برنامه به‌صورت <b>تصویر</b> (با آدرس سایت).</li>
+<li>برنامهٔ ورزشی شخصی‌سازی‌شده بر اساس جنسیت، سن و هدف.</li>
+<li><b>🍳 پیشنهاد غذا</b> بر اساس مواد اولیهٔ موجود.</li>
+<li><b>💧 محاسبه‌گر آب</b> و <b>BMI/BMR</b>.</li>
+<li>📤 اشتراک‌گذاری برنامه به‌صورت تصویر.</li>
 </ul></div>
-<div class="ah-sec"><div class="ah-h c5">🌍 سفر هوشمند</div><ul>
-<li>انتخاب <b>مقصد از بین ۵۰ شهر مهم ایران</b> و <b>مدت سفر (۱ تا ۳ روز)</b>.</li>
+<div class="ah-sec"><div class="ah-h c5">🌍 سفر</div><ul>
+<li>انتخاب <b>مقصد از بین ۵۰ شهر ایران</b> و <b>مدت ۱ تا ۳ روز</b>.</li>
 <li>برنامهٔ روزانه + چک‌لیست + غذاهای محلی.</li>
-<li>📤 <b>اشتراک‌گذاری برنامه فقط به‌صورت تصویر</b> (با آدرس سایت در فوتر).</li>
 <li>🌐 بخش تورهای مجازی (زیارتی، شهرها، دانشگاهی، جهانی).</li>
 </ul></div>
-<div class="ah-sec"><div class="ah-h c4">🎭 فرهنگ</div><ul>
-<li>۵ شاعر پارسی با قاب‌های رنگی + منابع ادبی.</li>
-<li>💡 بیت‌ها هر ۲ ساعت تغییر می‌کنند.</li>
-<li><b>🎲 حالت تصادفی عمیق:</b> با هر بار کلیک، ۵ بیت تازه از ۵ شاعر نمایش می‌دهد.</li>
-<li>لینک به فال حافظ، فیدیبو، طاقچه، تئاتر و سینما.</li>
-</ul></div>
-<div class="ah-sec"><div class="ah-h c3">🧬 نکات سلامتی</div><ul>
-<li>در صفحهٔ «سلامتی» ادغام شده است: نکات فصلی، کیفیت هوا، خواب و تغذیه.</li>
-<li>در صفحهٔ «آب‌وهوا» به‌صورت کشوی جداگانه نیز نمایش داده می‌شود.</li>
-<li><b>🥶 هشدار یخبندان و سرمای شدید</b> در شاخص‌های هوشمند.</li>
-<li><b>🌫️ هشدار کیفیت هوا</b> اگر EAQI بالای ۶۰ باشد (با رنگ قرمز).</li>
-</ul></div>
-<div class="ah-sec"><div class="ah-h c5">🔭 علم</div><ul>
-<li>تصویر نجومی روز ناسا (APOD) + <b>تصویر جایگزین ESA</b> در صورت خطا.</li>
-<li>🌙 <b>فاز ماه گرافیکی SVG</b> (به‌جای ایموجی) — با باز شدن برنامه و همچنین <b>هر ۱ ساعت</b> به‌روزرسانی می‌شود.</li>
-<li>💡 برای دریافت بدون محدودیت APOD، کلید NASA را از تنظیمات وارد کنید.</li>
-</ul></div>
-<div class="ah-sec"><div class="ah-h c7">🎉 سرگرمی</div><ul>
-<li>جوک، دانستنی، معما.</li>
-<li><b>✊✋✌️ بازی سنگ کاغذ قیچی</b> با امتیازدهی.</li>
-<li><b>📜 ضرب‌المثل‌های ایرانی</b> با معنی.</li>
-<li>💡 با هر بار زدن دکمه، محتوای جدید نمایش داده می‌شود.</li>
+<div class="ah-sec"><div class="ah-h c4">🎭 فرهنگ و علم</div><ul>
+<li>۵ شاعر پارسی با قاب‌های رنگی — هر ۲ ساعت تغییر.</li>
+<li><b>🎲 حالت تصادفی:</b> ۵ بیت تازه از ۵ شاعر.</li>
+<li>🌌 تصویر نجومی روز ناسا + 🌙 فاز ماه گرافیکی.</li>
 </ul></div>
 <div class="ah-sec"><div class="ah-h c6">🕌 اوقات شرعی</div><ul>
-<li>نمایش ۶ وقت شرعی (اذان صبح، طلوع، اذان ظهر، غروب، اذان مغرب، نیمه‌شب) با شمارش معکوس.</li>
-<li><b>🧭 قبله‌نما با دوربین (AR):</b> با زدن دکمهٔ «🧭 قبله‌نما با دوربین»، دوربین گوشی باز می‌شود و فلش نارنجی به سمت کعبه می‌چرخد.</li>
-<li>💡 برای استفاده از AR، به دوربین و سنسور جهت‌یاب گوشی اجازه بدهید.</li>
-<li>💡 گوشی را در دست بگیرید و دور خود بچرخانید تا فلش به سمت کعبه بایستد.</li>
+<li>نمایش ۶ وقت شرعی با شمارش معکوس.</li>
+<li><b>🧭 قبله‌نما با دوربین (AR):</b> فلش نارنجی به سمت کعبه.</li>
 </ul></div>
-<div class="ah-sec"><div class="ah-h c6">🤖 دستیار هوشمند (۲ لایه)</div><ul>
-<li><b>لایه ۱:</b> پاسخ سریع به سوالات ساده.</li>
-<li><b>لایه ۲:</b> تحلیل ترکیبی برای <b>۹ فعالیت</b>: دوچرخه، پیاده، کوه، پیکنیک، شنا، ماهیگیری، فوتبال، تنیس، عکاسی.</li>
-<li><b>Chat → Action:</b> «کارت شعر را حذف کن»، «تهران را اضافه کن»، «به مشهد برو».</li>
-<li>💡 <b>جابجایی دکمهٔ 🤖:</b> روی آن <b>لمس طولانی</b> کنید (حدود نیم ثانیه) و به دلخواه بکشید.</li>
-<li>💡 <b>کلیک کوتاه</b> روی دکمه، پنل چت را باز/بسته می‌کند.</li>
+<div class="ah-sec"><div class="ah-h c6">🤖 دستیار هوشمند</div><ul>
+<li><b>لایه ۱:</b> پاسخ سریع به سوالات.</li>
+<li><b>لایه ۲:</b> تحلیل ۹ فعالیت (دوچرخه، پیاده، کوه، شنا و...).</li>
+<li><b>Chat → Action:</b> «کارت شعر را حذف کن»، «تهران را اضافه کن».</li>
+<li>💡 <b>لمس طولانی</b> روی دکمهٔ 🤖 برای جابجایی.</li>
 </ul></div>
-<div class="ah-sec"><div class="ah-h c1">📱 نوار پایین (Bottom Nav)</div><ul>
-<li>در موبایل، نوار پایین با ۴ تب اصلی + دکمهٔ «بیشتر».</li>
-<li>💡 در شیت «بیشتر»، <b>بکشید و رها کنید</b> تا ترتیب را تغییر دهید.</li>
-<li>💡 <b>تنظیمات</b> و <b>راهنمای مجله</b> در همین شیت «بیشتر» قرار دارند.</li>
-</ul></div>
-<div class="ah-sec"><div class="ah-h c6">🏷️ نوار بالای دسکتاپ (Mag Nav)</div><ul>
-<li>در دسکتاپ، همهٔ ۹ صفحهٔ اصلی از نوار بالای صفحه قابل دسترسی هستند.</li>
-<li>💡 با <b>کشیدن و رها کردن</b> تب‌ها ترتیب را تغییر دهید.</li>
-<li>📌 این نوار همراه با هدر <b>ثابت (Sticky)</b> است و هنگام پیمایش دیده می‌شود.</li>
-</ul></div>
-<div class="ah-sec"><div class="ah-h c2">📲 نصب به‌عنوان اپلیکیشن</div><ul>
-<li>برنامه از PWA پشتیبانی می‌کند و روی صفحهٔ اصلی گوشی نصب می‌شود.</li>
-<li>💡 <b>مودال نصب در هر ورود به برنامه نمایش داده می‌شود</b> تا همیشه یادآوری باشد.</li>
-<li>📬 <b>دکمهٔ ارتباط با سازنده</b> نیز در همین صفحه و زیر دکمهٔ نصب قرار دارد.</li>
+<div class="ah-sec"><div class="ah-h c2">📲 نصب</div><ul>
+<li>برنامه از PWA پشتیبانی می‌کند.</li>
+<li>💡 مودال نصب در هر ورود نمایش داده می‌شود.</li>
+<li>📬 دکمهٔ ارتباط با سازنده در همین صفحه.</li>
 </ul></div>
 <div class="ah-sec"><div class="ah-h c1">⚙️ تنظیمات</div><ul>
-<li>در شیت «بیشتر» (نوار پایین موبایل) قرار دارد.</li>
-<li>حالت نمایش، اندازهٔ فونت، ۶ رنگ اصلی.</li>
-<li>مدیریت GPS، واحد دما (C/F)، NASA API key.</li>
-<li>مدیریت پین‌ها، پاک کردن حافظهٔ پنهان، مشاهدهٔ نسخه و <b>فقط آخرین تغییرات نسخه</b>.</li>
-</ul></div>
-<div class="ah-sec"><div class="ah-h c5">🎉 کارت اعلان نسخهٔ جدید</div><ul>
-<li>پس از هر ارتقای نسخه، با اولین ورود به برنامه یک کارت کوچک نمایش داده می‌شود.</li>
-<li>شمارهٔ نسخه و تغییرات را اعلام می‌کند.</li>
-<li>⏱️ به مدت ۸ ثانیه نمایش داده می‌شود و دکمهٔ بستن دارد.</li>
+<li>در شیت «بیشتر» (نوار پایین موبایل).</li>
+<li>اندازهٔ فونت، ۶ رنگ اصلی، GPS، واحد دما، کلید NASA.</li>
+<li>مدیریت پین‌ها، پاکسازی حافظه، مشاهدهٔ نسخه.</li>
 </ul></div>
 <div class="ah-sec"><div class="ah-h c3">🛡️ حریم خصوصی</div><ul>
-<li>از این نسخه، برنامه <b>هیچ Tracking خارجی</b> ارسال نمی‌کند.</li>
-<li>تمام پردازش‌ها سمت مرورگر شما انجام می‌شود.</li>
+<li>هیچ Tracking خارجی ارسال نمی‌شود.</li>
 <li>اطلاعات فقط در <b>حافظهٔ محلی مرورگر</b> ذخیره می‌شود.</li>
-<li>💡 در صورت درخواست موقعیت و عدم دسترسی به GPS، برنامه ممکن است از سرویس‌های <b>IP Location</b> برای تخمین موقعیت استفاده کند. این سرویس‌ها IP شما را دریافت می‌کنند.</li>
+<li>در صورت نبود GPS، از <b>IP Location</b> برای تخمین موقعیت استفاده می‌شود.</li>
 </ul></div>
-<div class="ah-sec"><div class="ah-h c3">🌐 هوشمندی مرورگر</div><ul>
-<li>اگر برنامه را با مرورگری غیر از <b>Chrome</b> باز کنید، یک بنر دوستانه برای <b>حدود ۳ ثانیه</b> نمایش داده می‌شود که پیشنهاد می‌کند صفحه را در Chrome باز کنید.</li>
-</ul></div>
-<div class="ah-sec"><div class="ah-h c5">💡 نکات کلی</div><ul>
-<li>🔄 برای به‌روزرسانی داده‌ها، صفحه را از <b>بالا به پایین بکشید</b> و رها کنید.</li>
+<div class="ah-sec"><div class="ah-h c5">💡 نکات</div><ul>
+<li>🔄 برای به‌روزرسانی، صفحه را از <b>بالا به پایین بکشید</b>.</li>
 <li>📴 در حالت آفلاین، آخرین داده‌های ذخیره‌شده نمایش داده می‌شوند.</li>
-<li>🌐 جستجوی شهر: نام فارسی یا انگلیسی را وارد کنید.</li>
-<li>🗂️ در همهٔ بخش‌ها، اطلاعات به‌صورت کش در حافظهٔ مرورگر ذخیره می‌شود.</li>
+<li>🌐 جستجوی شهر: نام فارسی یا انگلیسی.</li>
 </ul></div>
 </div>
 </div>
@@ -1061,15 +1042,46 @@ body[data-theme="light"] .color-dot.active{border-color:#0a1628;box-shadow:0 0 0
 </div>
 <div class="weather-hero">
 <div class="weather-anim" id="weatherAnim"><div class="layer" id="lyRain"></div><div class="layer" id="lySnow"></div><div class="layer" id="lyCloud"></div><span id="wicon" style="display:flex;justify-content:center"></span></div>
-<div>
-<div id="temp" class="temp">--°</div>
-<div id="cond" class="cond">در حال دریافت...</div>
-<div id="feels" class="feels"></div>
+<div style="flex:1">
+<div id="temp" class="temp skeleton">--°</div>
+<div id="cond" class="cond skeleton">در حال دریافت...</div>
+<div id="feels" class="feels skeleton">—</div>
 <div class="minmax"><span class="min">▼ <span id="minTemp">--</span></span><span class="max">▲ <span id="maxTemp">--</span></span></div>
 <div id="dayCompare" class="day-compare" style="display:none"></div>
+<!-- 🆕 #6: قطبنمای باد در کارت هوا -->
+<div class="wind-hero-compass" id="windHeroCompass" style="display:none">
+<svg class="whc-svg" id="whcSvg" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="whcGrad" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0%" stop-color="#39c6ff"/>
+<stop offset="100%" stop-color="#4f7cff"/>
+</linearGradient>
+</defs>
+<circle cx="32" cy="32" r="28" fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.15)" stroke-width="1.5"/>
+<text x="32" y="12" text-anchor="middle" font-size="8" fill="#9db0c6" font-weight="800" font-family="Vazirmatn,Tahoma,sans-serif">N</text>
+<text x="32" y="58" text-anchor="middle" font-size="8" fill="#9db0c6" font-weight="800" font-family="Vazirmatn,Tahoma,sans-serif">S</text>
+<g id="whcArrow" style="transform-origin:32px 32px;transition:transform .6s ease">
+<polygon points="32,10 25,36 32,31 39,36" fill="url(#whcGrad)" stroke="rgba(255,255,255,.4)" stroke-width="1"/>
+</g>
+</svg>
+<div class="whc-info">
+<div class="whc-lbl">💨 جهت و سرعت باد</div>
+<div class="whc-val" id="whcVal">-- km/h</div>
+</div>
+</div>
 </div>
 </div>
 <div id="freshnessBar"></div>
+<!-- 🆕 #7: نوار پیشرفت روز (طلوع → غروب) -->
+<div class="day-progress" id="dayProgress" style="display:none">
+<div class="dp-labels">
+<span id="dpSunrise">🌅 --:--</span>
+<span class="dp-mid" id="dpNow">⏰ --:--</span>
+<span id="dpSunset">🌇 --:--</span>
+</div>
+<div class="dp-track"><div class="dp-fill" id="dpFill"></div></div>
+</div>
+<div class="three-day-compare" id="threeDayCompare"></div>
 <div class="mini-title">🕒 ساعتی</div>
 <div class="scroll"><div id="hourly" class="hourly"></div></div>
 <div class="mini-title">📅 پیش‌بینی ۹ روزه</div>
@@ -1083,7 +1095,7 @@ body[data-theme="light"] .color-dot.active{border-color:#0a1628;box-shadow:0 0 0
 <div id="detailsBody" class="collapse collapsed">
 <div class="details" id="detailsGrid">
 <button class="detail-btn" data-info="humidity"><span class="dt-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5C8 8.5 5 12 5 15.5a7 7 0 0 0 14 0c0-3.5-3-7-7-13z"/></svg>رطوبت</span><span class="val" id="hum">--</span></button>
-<button class="detail-btn" data-info="wind"><span class="dt-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h11a3 3 0 1 0-3-3"/><path d="M3 12h15a3 3 0 1 1-3 3"/><path d="M3 16h9"/></svg>باد</span><span class="val" id="wind">--</span></button>
+<button class="detail-btn" data-info="wind"><span class="dt-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h11a3 3 0 1 0-3-3"/><path d="M3 12h15a3 3 0 1 1-3 3"/><path d="M3 16h9"/></svg>باد</span><span class="wind-compass" id="windCompass" style="display:none">↑</span><span class="val" id="wind">--</span></button>
 <button class="detail-btn" data-info="temp"><span class="dt-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10 14V5a2 2 0 1 1 4 0v9a4 4 0 1 1-4 0z"/></svg>دما</span><span class="val" id="tempVal">--</span></button>
 <button class="detail-btn" data-info="uv"><span class="dt-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>فرابنفش</span><span class="val" id="uvVal">--</span></button>
 <button class="detail-btn" data-info="precip"><span class="dt-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 15a4 4 0 0 0 0-8 6 6 0 0 0-11.6 1.5A4 4 0 0 0 6 16"/><path d="M8 19l-1 2M12 19l-1 2M16 19l-1 2"/></svg>بارش</span><span class="val" id="precip">--</span></button>
@@ -1434,17 +1446,18 @@ function lsSet(k,v){try{localStorage.setItem(k,v);}catch(e){}}
 function lsGet(k){try{return localStorage.getItem(k);}catch(e){return null;}}
 function ssSet(k,v){try{sessionStorage.setItem(k,v);}catch(e){}}
 function ssGet(k){try{return sessionStorage.getItem(k);}catch(e){return null;}}
-var APP_VERSION="1.1.2";
+var APP_VERSION="1.0.0";
 var APP_CHANGELOG_LINES=[
-  "📌 نسخه ۱٫۱٫۲ — آخرین تغییرات",
-  "🔤 فونت فارسی مدرن Vazirmatn با وزن‌های متغیر",
-  "📐 بهبود فاصلهٔ خط (۱٫۹) و حروف‌چینی متن‌های ادبی",
-  "📌 هدر ثابت (Sticky) برای پیمایش بهتر",
-  "🌡️ مقایسهٔ دمای امروز با دیروز در کارت هوا",
-  "🌫️ هشدار رنگی کیفیت هوا در شاخص‌ها",
-  "🎨 آیکون‌های SVG اختصاصی در شبکهٔ شاخص‌های هوا",
-  "🔗 امکان اشتراک‌گذاری کارت روز با لینک اختصاصی",
-  "📖 به‌روزرسانی راهنمای برنامه"
+  "📌 نسخه ۱٫۰٫۰ — آخرین تغییرات",
+  "🎨 آیکون‌های SVG در نوار بالا (جای ایموجی)",
+  "✨ انیمیشن ورود کارت‌ها با تأخیر پله‌ای",
+  "🧭 قطب‌نمای باد در کارت هوای صفحهٔ اصلی",
+  "📊 نوار پیشرفت روز (طلوع تا غروب)",
+  "⏳ اسکلتون لودینگ برای کارت هوا",
+  "⚡ کش ETag برای کاهش ترافیک API",
+  "🖼️ بارگذاری تنبل تصویر نجومی (فقط در صفحهٔ علم)",
+  "🚦 محدودیت نرخ ترجمهٔ خودکار",
+  "📍 نمایش واضح موقعیت تقریبی از IP"
 ];
 
 var FUN_JOKES=[
@@ -1485,20 +1498,15 @@ var PERSIAN_PROVERBS=[
 var funJokeIndex=0,funPuzzleIndex=0,funFactIndex=0,proverbIndex=0;
 var rpsUserScore=0,rpsCompScore=0,rpsTieScore=0;
 
-var appTheme=lsGet("appTheme")||"dark";
+var appTheme="dark";
 var appFont=lsGet("appFont")||"normal";
 var appColor=lsGet("appColor")||"blue";
-function isNightHour(){var h=new Date().getHours();return h>=19||h<7;}
 function applyTheme(){
-  var t=appTheme;
-  if(t==="auto")t=isNightHour()?"dark":"light";
-  document.body.setAttribute("data-theme",t);
+  document.body.setAttribute("data-theme","dark");
   document.body.setAttribute("data-font",appFont);
   document.body.setAttribute("data-color",appColor);
-  try{var meta=document.querySelector('meta[name="theme-color"]');if(meta)meta.setAttribute("content",t==="light"?"#eef2f7":"#07111f");}catch(e){}
+  try{var meta=document.querySelector('meta[name="theme-color"]');if(meta)meta.setAttribute("content","#07111f");}catch(e){}
 }
-function cycleAutoTheme(){if(appTheme==="auto")applyTheme();}
-setInterval(cycleAutoTheme,60000);
 applyTheme();
 
 var ESSENTIAL_PREFIXES=["w_","air_","prayer_","bias_","el_","cp_"];
@@ -1515,7 +1523,9 @@ function checkLocalStorageSize(){
   try{
     var total=0;
     for(var k in localStorage){if(localStorage.hasOwnProperty(k)){total+=(localStorage[k]||"").length+k.length;}}
-    if(total>4*1024*1024){
+    var LIMIT=4*1024*1024;
+    var TARGET=3*1024*1024;
+    if(total>LIMIT){
       var keep=["gpsEnabled","unit","pins","city","hasOpened","lastPage","aseman_device_seen","appTheme","appFont","appColor","userName","hiddenCards","dashOrder","lastAutoCacheClear","saves","tabOrder","spProfile","spWeekPlan","spWorkoutLog","bnOrder","nasaApiKey","chatFabPosPct","lastSeenVersion"];
       var candidates=[];
       for(var k2 in localStorage){
@@ -1530,9 +1540,11 @@ function checkLocalStorageSize(){
         if(a.essential!==b.essential)return a.essential-b.essential;
         return a.t-b.t;
       });
-      var removed=0;
-      for(var i=0;i<candidates.length&&removed<20;i++){
-        try{localStorage.removeItem(candidates[i].k);removed++;}catch(e){}
+      for(var i=0;i<candidates.length;i++){
+        try{localStorage.removeItem(candidates[i].k);}catch(e){}
+        total=0;
+        for(var k3 in localStorage){if(localStorage.hasOwnProperty(k3)){total+=(localStorage[k3]||"").length+k3.length;}}
+        if(total<TARGET)break;
       }
     }
   }catch(e){}
@@ -1549,6 +1561,43 @@ function saveCache(key,data,source,ttlMs){
 function getCacheEntry(key){try{var r=localStorage.getItem(key);if(!r)return null;return JSON.parse(r);}catch(e){return null;}}
 function getCacheAge(key){var e=getCacheEntry(key);if(!e)return null;var ts=e.timestamp||e.time||0;if(!ts)return null;return Date.now()-ts;}
 function formatAge(ms){if(ms==null)return "---";var s=Math.floor(ms/1000);if(s<60)return "همین حالا";var m=Math.floor(s/60);if(m<60)return m+" دقیقه پیش";var h=Math.floor(m/60);if(h<24)return h+" ساعت پیش";var d=Math.floor(h/24);return d+" روز پیش";}
+
+/* 🆕 #26: کش ETag/Last-Modified برای کاهش ترافیک */
+var ETAG_CACHE_KEY="etagCache";
+function getETagCache(){try{var s=lsGet(ETAG_CACHE_KEY);if(!s)return {};var o=JSON.parse(s);return o&&typeof o==="object"?o:{};}catch(e){return{};}}
+function setETagCache(o){try{lsSet(ETAG_CACHE_KEY,JSON.stringify(o||{}));}catch(e){}}
+function pruneETagCache(cache){
+  try{
+    var keys=Object.keys(cache);
+    if(keys.length>30){
+      keys.sort(function(a,b){return (cache[a].time||0)-(cache[b].time||0);});
+      for(var i=0;i<keys.length-20;i++)delete cache[keys[i]];
+    }
+  }catch(e){}
+}
+function fetchWithETag(url,cacheKey){
+  var cache=getETagCache();
+  var entry=(cacheKey&&cache[cacheKey])||{};
+  var headers={};
+  if(entry.etag)headers["If-None-Match"]=entry.etag;
+  if(entry.lastModified)headers["If-Modified-Since"]=entry.lastModified;
+  return fetch(url,{headers:headers}).then(function(r){
+    if(r.status===304&&entry.body){
+      return entry.body;
+    }
+    if(!r.ok)throw new Error("HTTP "+r.status);
+    var etag=r.headers.get("ETag");
+    var lm=r.headers.get("Last-Modified");
+    return r.json().then(function(j){
+      if(cacheKey){
+        cache[cacheKey]={etag:etag,lastModified:lm,body:j,time:Date.now()};
+        pruneETagCache(cache);
+        setETagCache(cache);
+      }
+      return j;
+    });
+  });
+}
 
 var shareToastEl=document.getElementById("shareToast");
 var toastTimer=null;
@@ -1576,7 +1625,7 @@ function autoClearCacheIfNeeded(){
     var H48=48*60*60*1000;
     if(Date.now()-last>=H48){
       var keys=Object.keys(localStorage);
-      var keep=["gpsEnabled","unit","pins","city","hasOpened","lastPage","aseman_device_seen","appTheme","appFont","appColor","userName","hiddenCards","dashOrder","lastAutoCacheClear","saves","tabOrder","spProfile","spWeekPlan","spWorkoutLog","bnOrder","nasaApiKey","chatFabPosPct","lastSeenVersion"];
+      var keep=["gpsEnabled","unit","pins","city","hasOpened","lastPage","aseman_device_seen","appTheme","appFont","appColor","userName","hiddenCards","dashOrder","lastAutoCacheClear","saves","tabOrder","spProfile","spWeekPlan","spWorkoutLog","bnOrder","nasaApiKey","chatFabPosPct","lastSeenVersion","etagCache"];
       var decorative=[],essential=[];
       for(var i=0;i<keys.length;i++){
         var kk=keys[i];
@@ -1622,7 +1671,6 @@ var gpsEnabled=lsGet("gpsEnabled")==="false"?false:true;
 function showInstallModal(){if(!installOverlay)return;installOverlay.classList.add("show");document.body.classList.add("install-lock");}
 function closeInstallModal(){if(!installOverlay)return;installOverlay.classList.remove("show");document.body.classList.remove("install-lock");bootApp();}
 
-/* 🆕 بررسی پارامتر لینک اشتراک‌گذاری کارت */
 function isShareCardUrl(){
   try{var p=new URLSearchParams(window.location.search);return p.get("card")==="1";}catch(e){return false;}
 }
@@ -1630,10 +1678,10 @@ function applyShareCardParams(){
   try{
     var p=new URLSearchParams(window.location.search);
     if(p.get("card")!=="1")return false;
-    var cName=p.get("city");
+    var cName=(p.get("city")||"").trim().substring(0,60).replace(/[<>&"'`]/g,"");
     var cLat=parseFloat(p.get("lat"));
     var cLon=parseFloat(p.get("lon"));
-    if(cName&&!isNaN(cLat)&&!isNaN(cLon)){
+    if(cName&&isFinite(cLat)&&isFinite(cLon)&&cLat>=-90&&cLat<=90&&cLon>=-180&&cLon<=180){
       city={id:"shared-card",name:cName,country:"ایران",admin1:"",county:"",type:"city",latitude:cLat,longitude:cLon};
       lsSet("city",JSON.stringify(city));
     }
@@ -1672,11 +1720,10 @@ function bootApp(){
   try{checkReturnVisit();}catch(e){}
   enableAutoUpdate();
   if(gpsEnabled){try{startGPSWatch();}catch(e){}}
-  setTimeout(function(){try{loadAPOD();}catch(e){}},800);
+  /* 🆕 #25: APOD دیگر در بوت لود نمی‌شود؛ فقط در صفحهٔ علم */
   setTimeout(function(){try{renderDhikr();}catch(e){}},200);
   setTimeout(showVersionToast,1200);
   if(!isChromeBrowser())setTimeout(showBrowserBanner,900);
-  /* 🆕 اگر با لینک اشتراک‌گذاری کارت آمده، کارت را باز کن */
   if(isShareCardUrl()){
     setTimeout(function(){
       var cardEl=document.querySelector(".daily-card");
@@ -1706,25 +1753,13 @@ function copyToClipboard(text){
   if(navigator.clipboard&&navigator.clipboard.writeText)return navigator.clipboard.writeText(text);
   return new Promise(function(res,rej){try{var ta=document.createElement("textarea");ta.value=text;ta.style.position="fixed";ta.style.top="-9999px";ta.style.opacity="0";document.body.appendChild(ta);ta.focus();ta.select();var ok=document.execCommand("copy");document.body.removeChild(ta);ok?res():rej();}catch(err){rej(err);}});
 }
-function getShareUrl(){return "https://hossinimehdi70-dotcom.github.io/aseman/?utm_source=chatgpt.com";}
-var MAGAZINE_URL=getShareUrl();
-/* 🆕 لینک اختصاصی کارت روز */
-function getShareCardUrl(){
+function getShareUrl(){
   try{
     var base=window.location.origin+window.location.pathname;
-    var params="?card=1&city="+encodeURIComponent(city.name)+"&lat="+city.latitude+"&lon="+city.longitude;
-    return base+params;
-  }catch(e){return MAGAZINE_URL;}
+    return base;
+  }catch(e){return "https://hossinimehdi70-dotcom.github.io/aseman/";}
 }
-function copyShareCardLink(){
-  var url=getShareCardUrl();
-  trackEvent("share","card_link");
-  copyToClipboard(url).then(function(){
-    toast("✅ لینک کارت کپی شد — برای دوستان بفرست");
-  }).catch(function(){
-    prompt("لینک کارت:",url);
-  });
-}
+var MAGAZINE_URL=getShareUrl();
 function shareApp(){
   var url=getShareUrl();
   trackEvent("share","app");
@@ -1795,12 +1830,13 @@ function showVersionToast(){
     for(var i=0;i<APP_CHANGELOG_LINES.length;i++)html+='<span class="vt-line">'+APP_CHANGELOG_LINES[i]+'</span>';
     ch.innerHTML=html;
   }
-  lsSet("lastSeenVersion",APP_VERSION);
+  var saved=false;
+  function markSeen(){if(!saved){saved=true;lsSet("lastSeenVersion",APP_VERSION);}}
   setTimeout(function(){
     toast.classList.add("show");
-    var hideTimer=setTimeout(function(){toast.classList.remove("show");},8000);
+    var hideTimer=setTimeout(function(){toast.classList.remove("show");markSeen();},8000);
     var closeBtn=document.getElementById("vtClose");
-    if(closeBtn)closeBtn.addEventListener("click",function(){clearTimeout(hideTimer);toast.classList.remove("show");});
+    if(closeBtn)closeBtn.addEventListener("click",function(){clearTimeout(hideTimer);toast.classList.remove("show");markSeen();});
   },1200);
 }
 
@@ -1823,7 +1859,6 @@ var audioCtx=null;
 function ensureAudio(){if(!audioCtx){try{audioCtx=new(window.AudioContext||window.webkitAudioContext)();}catch(e){return false;}}if(audioCtx.state==="suspended")audioCtx.resume();return true;}
 function clickSound(){if(!ensureAudio())return;var o=audioCtx.createOscillator(),g=audioCtx.createGain();o.type="sine";o.frequency.value=600;g.gain.setValueAtTime(0,audioCtx.currentTime);g.gain.linearRampToValueAtTime(.6,audioCtx.currentTime+.01);g.gain.exponentialRampToValueAtTime(.001,audioCtx.currentTime+.13);o.connect(g).connect(audioCtx.destination);o.start(audioCtx.currentTime);o.stop(audioCtx.currentTime+.15);}
 
-var PAGE_ORDER=["myday","notes","home","prayer","travel","culture","sport","science","fun"];
 var SWIPE_ORDER=["myday","notes","home","prayer","travel","culture","sport","science","fun"];
 
 var BN_PAGES=[
@@ -2097,7 +2132,23 @@ function D(){return unit==="fahrenheit"?"°F":"°C";}
 function code(c){var m={0:["صاف"],1:["عمدتاً صاف"],2:["کمی ابری"],3:["ابری"],45:["مه خفیف"],48:["مه یخ‌زده"],51:["نم‌نم خفیف"],53:["نم‌نم متوسط"],55:["نم‌نم شدید"],61:["باران خفیف"],63:["باران متوسط"],65:["باران شدید"],66:["باران یخ‌زده"],67:["باران یخ‌زده شدید"],71:["برف خفیف"],73:["برف متوسط"],75:["برف شدید"],77:["دانه‌های برف"],80:["رگبار خفیف"],81:["رگبار متوسط"],82:["رگبار شدید"],85:["رگبار برف خفیف"],86:["رگبار برف شدید"],95:["رعدوبرق"],96:["رعد و تگرگ"],99:["رعد و تگرگ شدید"]};return m[c]||["نامشخص"];}
 function show(msg,t){var s=document.getElementById("status");if(!s)return;s.textContent=msg;s.className="status show "+(t||"info");clearTimeout(s._h);s._h=setTimeout(function(){s.className="status";},6000);}
 function faToEn(s){return String(s).replace(/[۰-۹]/g,function(d){return "۰۱۲۳۴۵۶۷۸۹".indexOf(d);});}
-function fmtDT(v){try{return new Intl.DateTimeFormat("fa-IR",{hour:"2-digit",minute:"2-digit"}).format(new Date(v));}catch(e){return "--:--";}}
+function toFaDigits(s){var fa="۰۱۲۳۴۵۶۷۸۹";var out="";for(var i=0;i<s.length;i++){var ch=s[i];if(ch>="0"&&ch<="9")out+=fa[parseInt(ch,10)];else out+=ch;}return out;}
+function fmtDT(v,tz){
+  if(typeof v==="string"){
+    var m=v.match(/(\d{1,2}):(\d{2})/);
+    if(m){
+      var h=parseInt(m[1],10), mn=parseInt(m[2],10);
+      var hs=h<10?("0"+h):String(h);
+      var ms=mn<10?("0"+mn):String(mn);
+      return toFaDigits(hs)+":"+toFaDigits(ms);
+    }
+  }
+  try{
+    var opts={hour:"2-digit",minute:"2-digit"};
+    if(tz)opts.timeZone=tz;
+    return new Intl.DateTimeFormat("fa-IR",opts).format(new Date(v));
+  }catch(e){return "--:--";}
+}
 function meanArr(a){if(!a||!a.length)return null;var s=0;for(var i=0;i<a.length;i++)s+=a[i];return s/a.length;}
 function avg2(a,b){if(a==null)return b;if(b==null)return a;return(a+b)/2;}
 function fmtDate(d){return d.getFullYear()+"-"+(d.getMonth()+1<10?"0":"")+(d.getMonth()+1)+"-"+(d.getDate()<10?"0":"")+d.getDate();}
@@ -2150,19 +2201,29 @@ document.addEventListener("click",function(e){
 function updateNetStatus(){var d=document.getElementById("netDot"),t=document.getElementById("netText");if(!d||!t)return;if(navigator.onLine){d.className="sb-dot on";t.textContent="آنلاین";}else{d.className="sb-dot off";t.textContent="آفلاین";}}
 window.addEventListener("online",function(){updateNetStatus();if(appBooted&&currentPage==="home")refreshAll();});
 window.addEventListener("offline",updateNetStatus);updateNetStatus();
-function setGps(st){var d=document.getElementById("gpsDot"),t=document.getElementById("gpsText");if(!d||!t)return;if(st==="ok"){d.className="sb-dot on";t.textContent="GPS متصل";}else if(st==="ready"){d.className="sb-dot off";t.textContent="GPS آماده";}else{d.className="sb-dot off";t.textContent="GPS قطع";}}
+function setGps(st,msg){var d=document.getElementById("gpsDot"),t=document.getElementById("gpsText");if(!d||!t)return;if(st==="ok"){d.className="sb-dot on";t.textContent=msg||"GPS متصل";}else if(st==="ip"){d.className="sb-dot on";d.style.background="var(--gold)";t.textContent=msg||"موقعیت تقریبی (IP)";}else if(st==="ready"){d.className="sb-dot off";t.textContent="GPS آماده";}else{d.className="sb-dot off";t.textContent="GPS قطع";}}
 
+var _fmtCache={};
+function _getFmt(tz,withSec){
+  var key=(tz||"local")+"_"+(withSec?1:0);
+  if(!_fmtCache[key]){
+    var opts={hour:"2-digit",minute:"2-digit",hour12:false};
+    if(withSec)opts.second="2-digit";
+    if(tz)opts.timeZone=tz;
+    try{_fmtCache[key]=new Intl.DateTimeFormat("en-GB",opts);}catch(e){_fmtCache[key]=null;}
+  }
+  return _fmtCache[key];
+}
 var lastClockMinute=-1;
 var lastClockSecond=-1;
 function updateLocalTime(){
   var plt=document.getElementById("prayerLocalTime");
   if(plt){
-    var cityTz=(data&&data.timezone)?data.timezone:null;
+    var cityTz=(data&&data.timezone)?data.timezone:(city.country==="ایران"?"Asia/Tehran":null);
     var locTime="--:--:--";
     try{
-      var opts={hour:"2-digit",minute:"2-digit",second:"2-digit",hour12:false};
-      if(cityTz)opts.timeZone=cityTz;
-      locTime=new Date().toLocaleTimeString("en-GB",opts);
+      var fmt=_getFmt(cityTz,true);
+      if(fmt)locTime=fmt.format(new Date());
     }catch(e2){
       try{locTime=new Date().toLocaleTimeString("en-GB",{hour:"2-digit",minute:"2-digit",second:"2-digit",hour12:false});}catch(e3){}
     }
@@ -2177,7 +2238,7 @@ function updateLocalTime(){
   lastClockMinute=curMin;
   var el=document.querySelector("#localTime .lt-clock");
   if(el){
-    var tz=(data&&data.timezone)?data.timezone:null;
+    var tz=(data&&data.timezone)?data.timezone:(city.country==="ایران"?"Asia/Tehran":null);
     var o={hour:"2-digit",minute:"2-digit",hour12:false};if(tz)o.timeZone=tz;
     try{el.textContent=now.toLocaleTimeString("fa-IR",o);}catch(e){el.textContent="--:--";}
   }
@@ -2193,22 +2254,42 @@ function updateLocalTime(){
     e=document.getElementById("timeMeccaP");if(e)e.textContent=tM;
     var pcn=document.getElementById("prayerCityName");if(pcn)pcn.textContent=city.name;
   }catch(e){}
+  try{renderDayProgress();}catch(e){}
 }
 setInterval(updateLocalTime,1000);
-function cityNowMinutes(){var tz=(data&&data.timezone)?data.timezone:null;if(tz){try{var s=new Date().toLocaleTimeString("en-GB",{timeZone:tz,hour12:false});var p=s.split(":");return(+p[0])*60+(+p[1]);}catch(e){}}var off=Math.round(city.longitude/15)*60;var n=new Date();return(n.getUTCHours()*60+n.getUTCMinutes()+off+1440)%1440;}
+function cityNowMinutes(){
+  var tz=(data&&data.timezone)?data.timezone:null;
+  if(!tz){
+    if(city.country==="ایران"||city.country==="Iran")tz="Asia/Tehran";
+  }
+  if(tz){
+    try{
+      var s=new Date().toLocaleTimeString("en-GB",{timeZone:tz,hour12:false,hour:"2-digit",minute:"2-digit"});
+      var p=s.split(":");
+      return (+p[0])*60+(+p[1]);
+    }catch(e){}
+  }
+  var off=Math.round(city.longitude/15)*60;
+  var n=new Date();
+  return(n.getUTCHours()*60+n.getUTCMinutes()+off+1440)%1440;
+}
 
+var _wxSvgCounter=0;
 function wxSVG(cd,night,size){
   size=size||80;
-  var defs='<defs><radialGradient id="sunGrad" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#fff9c4"/><stop offset="50%" stop-color="#ffd166"/><stop offset="100%" stop-color="#ff8c42"/></radialGradient><radialGradient id="moonGrad" cx="30%" cy="30%" r="70%"><stop offset="0%" stop-color="#f8f9fa"/><stop offset="100%" stop-color="#cbd5e1"/></radialGradient><radialGradient id="cloudGrad" cx="30%" cy="30%" r="70%"><stop offset="0%" stop-color="#f1f5f9"/><stop offset="100%" stop-color="#94a3b8"/></radialGradient></defs>';
+  _wxSvgCounter++;
+  var uid="w"+_wxSvgCounter;
+  var sunGrad="sunGrad"+uid, moonGrad="moonGrad"+uid, cloudGrad="cloudGrad"+uid;
+  var defs='<defs><radialGradient id="'+sunGrad+'" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#fff9c4"/><stop offset="50%" stop-color="#ffd166"/><stop offset="100%" stop-color="#ff8c42"/></radialGradient><radialGradient id="'+moonGrad+'" cx="30%" cy="30%" r="70%"><stop offset="0%" stop-color="#f8f9fa"/><stop offset="100%" stop-color="#cbd5e1"/></radialGradient><radialGradient id="'+cloudGrad+'" cx="30%" cy="30%" r="70%"><stop offset="0%" stop-color="#f1f5f9"/><stop offset="100%" stop-color="#94a3b8"/></radialGradient></defs>';
   var inner="";
-  if(cd<=1){if(night)inner='<circle cx="32" cy="32" r="14" fill="url(#moonGrad)"/>';else inner='<circle cx="32" cy="32" r="12" fill="url(#sunGrad)"/>';}
-  else if(cd===2)inner='<circle cx="28" cy="28" r="10" fill="url(#sunGrad)"/><ellipse cx="20" cy="32" rx="14" ry="8" fill="url(#cloudGrad)"/>';
-  else if(cd===3)inner='<ellipse cx="32" cy="32" rx="16" ry="10" fill="url(#cloudGrad)"/>';
+  if(cd<=1){if(night)inner='<circle cx="32" cy="32" r="14" fill="url(#'+moonGrad+')"/>';else inner='<circle cx="32" cy="32" r="12" fill="url(#'+sunGrad+')"/>';}
+  else if(cd===2)inner='<circle cx="28" cy="28" r="10" fill="url(#'+sunGrad+')"/><ellipse cx="20" cy="32" rx="14" ry="8" fill="url(#'+cloudGrad+')"/>';
+  else if(cd===3)inner='<ellipse cx="32" cy="32" rx="16" ry="10" fill="url(#'+cloudGrad+')"/>';
   else if(cd===45||cd===48)inner='<ellipse cx="32" cy="32" rx="18" ry="6" fill="#cbd5e1"/>';
-  else if((cd>=51&&cd<=67)||(cd>=80&&cd<=82))inner='<ellipse cx="32" cy="24" rx="14" ry="8" fill="url(#cloudGrad)"/>';
-  else if((cd>=71&&cd<=77)||(cd>=85&&cd<=86))inner='<ellipse cx="32" cy="24" rx="14" ry="8" fill="url(#cloudGrad)"/>';
-  else if(cd>=95)inner='<ellipse cx="32" cy="24" rx="14" ry="8" fill="url(#cloudGrad)"/>';
-  else inner='<circle cx="32" cy="32" r="12" fill="url(#sunGrad)"/>';
+  else if((cd>=51&&cd<=67)||(cd>=80&&cd<=82))inner='<ellipse cx="32" cy="24" rx="14" ry="8" fill="url(#'+cloudGrad+')"/>';
+  else if((cd>=71&&cd<=77)||(cd>=85&&cd<=86))inner='<ellipse cx="32" cy="24" rx="14" ry="8" fill="url(#'+cloudGrad+')"/>';
+  else if(cd>=95)inner='<ellipse cx="32" cy="24" rx="14" ry="8" fill="url(#'+cloudGrad+')"/>';
+  else inner='<circle cx="32" cy="32" r="12" fill="url(#'+sunGrad+')"/>';
   return '<svg viewBox="0 0 64 64" width="'+size+'" height="'+size+'">'+defs+inner+'</svg>';
 }
 function rnd(a,b){return a+Math.random()*(b-a);}
@@ -2355,7 +2436,6 @@ function bindOrientationForAR(){
 function estUV(){var m=new Date().getMonth();var base=[2,3,5,7,8,9,9,8,6,4,3,2][m];var lat=Math.abs(city.latitude);var f=lat>40?0.8:(lat>25?1:1.1);return Math.max(0,Math.round(base*f));}
 function seasonalPollen(m,z){var z2=z||climateZoneCur||"motadel-nim";var band=z2.split("-")[0]||"motadel";var hum=z2.split("-")[1]||"nim";var P={sard:[5,5,15,35,55,60,55,45,30,15,8,5],motadel:[10,15,45,70,65,55,50,60,45,30,15,10],garm:[15,25,55,75,60,40,35,45,40,25,15,12]};var c=P[band]||P.motadel;var v=c[(m-1+12)%12];if(hum==="khoshk")v=Math.round(v*.7);if(hum==="martoub")v=Math.round(v*1.15);return Math.max(0,Math.min(100,v));}
 function airFallback(){var cv=data&&data.current?data.current.weather_code:0;var aqi=(cv===45||cv===48)?70:(cv>=71&&cv<=77?40:((cv>=51&&cv<=67)||(cv>=80&&cv<=82)?35:50));return{european_aqi:aqi,us:aqi,pm25:Math.round(aqi*0.6),pm10:Math.round(aqi*1.2),ozone:Math.round(40+aqi*0.3),dust:(cv===45?60:20),pollen:seasonalPollen(new Date().getMonth()+1)};}
-/* 🆕 آستانهٔ هشدار AQI */
 var AQI_HIGH_THRESHOLD=60;
 function getActiveAlerts(){
   var a=[];
@@ -2371,7 +2451,6 @@ function getActiveAlerts(){
     if(t1.tempMin!=null&&t1.tempMin<=-5)a.push({icon:"🥶",title:"سرمای شدید فردا",text:T(t1.tempMin)+D()});
   }
   var an=getAirNow();if(an&&an.dust!=null&&an.dust>100)a.push({icon:"🏜️",title:"ریزگرد!",text:Math.round(an.dust)+" µg/m³"});
-  /* 🆕 هشدار کیفیت هوا */
   if(an&&an.european_aqi!=null&&an.european_aqi>AQI_HIGH_THRESHOLD)a.push({icon:"🌫️",title:"کیفیت هوا نامناسب",text:"EAQI "+Math.round(an.european_aqi)+" — "+aqiLabel(an.european_aqi),aqi:true});
   return a;
 }
@@ -2408,14 +2487,23 @@ function renderDetails(){
   var s=getDayStats(detailDay);if(!s)return;
   function set(id,t){var e=document.getElementById(id);if(e)e.textContent=t;}
   set("hum",s.hum!=null?Math.round(s.hum)+"٪":"--");
-  set("wind",s.wind!=null?Math.round(s.wind)+" km/h":"--");
+  var windEl=document.getElementById("wind");
+  if(windEl)windEl.textContent=(s.wind!=null?Math.round(s.wind)+" km/h":"--");
+  var wc=document.getElementById("windCompass");
+  if(wc){
+    if(s.windDir!=null){
+      wc.style.display="inline-block";
+      wc.style.transform="rotate("+((s.windDir+180)%360)+"deg)";
+    }else{
+      wc.style.display="none";
+    }
+  }
   set("tempVal",s.temp!=null?T1(s.temp)+"°":(s.tempMax!=null?T1(s.tempMax)+"°":"--"));
   set("uvVal",s.uv!=null?s.uv:"--");
   set("precip",s.precip!=null?s.precip+" mm":"--");
   set("visVal",s.vis!=null?Math.round(s.vis)+" km":"--");
   set("pressure",s.pres!=null?Math.round(s.pres)+" hPa":"--");
   set("dewpoint",s.dew!=null?T(s.dew)+D():"--");
-  /* 🆕 رنگ قرمز AQI در صورت بالا بودن */
   var aqiEl=document.getElementById("aqi");
   if(aqiEl){
     if(s.aqi!=null){
@@ -2651,8 +2739,54 @@ function renderFreshness(){
   else{el.innerHTML='<div class="freshness stale"><span class="fr-dot"></span>🟡 اطلاعات ذخیره‌شده — مربوط به '+formatAge(age)+'</div>';}
 }
 
+/* 🆕 #7: نوار پیشرفت روز */
+function renderDayProgress(){
+  var el=document.getElementById("dayProgress");
+  if(!el||!data||!data.daily)return;
+  var sr=data.daily.sunrise?data.daily.sunrise[TODAY_IDX]:null;
+  var ss=data.daily.sunset?data.daily.sunset[TODAY_IDX]:null;
+  if(!sr||!ss){el.style.display="none";return;}
+  var srDate=new Date(sr);
+  var ssDate=new Date(ss);
+  if(isNaN(srDate.getTime())||isNaN(ssDate.getTime())){el.style.display="none";return;}
+  var now=new Date();
+  var total=ssDate.getTime()-srDate.getTime();
+  if(total<=0){el.style.display="none";return;}
+  var elapsed=now.getTime()-srDate.getTime();
+  var pct=Math.max(0,Math.min(100,(elapsed/total)*100));
+  var fill=document.getElementById("dpFill");
+  if(fill)fill.style.width=pct+"%";
+  var dS=document.getElementById("dpSunrise");
+  if(dS)dS.textContent="🌅 "+fmtDT(sr);
+  var dN=document.getElementById("dpNow");
+  if(dN)dN.textContent="⏰ "+now.toLocaleTimeString("fa-IR",{hour:"2-digit",minute:"2-digit"});
+  var dE=document.getElementById("dpSunset");
+  if(dE)dE.textContent="🌇 "+fmtDT(ss);
+  el.style.display="block";
+}
+
+/* 🆕 #6: رندر قطب‌نمای باد در کارت هوا */
+function renderWindHeroCompass(){
+  var wch=document.getElementById("windHeroCompass");
+  if(!wch)return;
+  var s0=getDayStats(0);
+  if(!s0||s0.windDir==null||s0.wind==null){wch.style.display="none";return;}
+  wch.style.display="inline-flex";
+  var arrow=document.getElementById("whcArrow");
+  if(arrow)arrow.style.transform="rotate("+((s0.windDir+180)%360)+"deg)";
+  var v=document.getElementById("whcVal");
+  if(v)v.textContent=Math.round(s0.wind)+" km/h";
+}
+
+/* 🆕 #9: حذف کلاس اسکلتون بعد از دریافت داده */
+function clearWeatherSkeletons(){
+  ["temp","cond","feels"].forEach(function(id){
+    var el=document.getElementById(id);
+    if(el)el.classList.remove("skeleton");
+  });
+}
+
 var lastRenderWeatherCv=null;
-/* 🆕 مقایسهٔ دمای امروز و دیروز */
 function renderDayCompare(){
   var el=document.getElementById("dayCompare");
   if(!el)return;
@@ -2700,8 +2834,32 @@ function renderDayCompare(){
   el.style.display="inline-block";
 }
 
-function renderWeather(){
+function renderThreeDayCompare(){
+  var el=document.getElementById("threeDayCompare");
+  if(!el||!data||!data.daily||!data.daily.time)return;
+  var labels=["دیروز","امروز","فردا"];
+  var idxs=[TODAY_IDX-1,TODAY_IDX,TODAY_IDX+1];
+  var html="";
+  for(var i=0;i<3;i++){
+    var di=idxs[i];
+    if(di<0||di>=data.daily.time.length)continue;
+    var isToday=(i===1);
+    var cls="tdc-item"+(isToday?" today":"");
+    var icon=wxSVG(data.daily.weather_code[di],false,40);
+    var tmax=data.daily.temperature_2m_max?data.daily.temperature_2m_max[di]:null;
+    var tmin=data.daily.temperature_2m_min?data.daily.temperature_2m_min[di]:null;
+    var dateStr="";
+    try{dateStr=new Intl.DateTimeFormat("fa-IR-u-ca-persian",{month:"short",day:"numeric"}).format(new Date(data.daily.time[di]+"T12:00:00"));}catch(e){}
+    html+='<div class="'+cls+'"><div class="tdc-label">'+labels[i]+'</div><div class="tdc-icon">'+icon+'</div><div class="tdc-temps"><span class="tdc-max">▲'+T(tmax)+'°</span> <span class="tdc-min">▼'+T(tmin)+'°</span></div><div class="tdc-date">'+dateStr+'</div></div>';
+  }
+  el.innerHTML=html;
+}
+
+var _rwTimer=null;
+function renderWeather(){if(_rwTimer)clearTimeout(_rwTimer);_rwTimer=setTimeout(_renderWeatherImpl,80);}
+function _renderWeatherImpl(){
   if(!data||!data.current)return;
+  clearWeatherSkeletons();
   var c=data.current,cc=code(c.weather_code);
   var night=(c.is_day!=null)?(c.is_day===0):(new Date().getHours()>=19||new Date().getHours()<6);
   var nn=normName(city.name);var suf=citySuffixParts(city).filter(function(p){return p&&normName(p)!==nn;});
@@ -2718,6 +2876,9 @@ function renderWeather(){
   if(lastRenderWeatherCv!==c.weather_code){lastRenderWeatherCv=c.weather_code;setDynamicBackground(c.weather_code);}
   updateLocalTime();renderHourly();renderForecast();renderSmartAlerts();renderDetails();renderExtraSections();renderFreshness();
   renderDayCompare();
+  renderThreeDayCompare();
+  renderDayProgress();
+  renderWindHeroCompass();
   var pcn=document.getElementById("prayerCityName");if(pcn)pcn.textContent=city.name;
 }
 function renderHourly(){
@@ -2826,7 +2987,21 @@ function loadPrecision(){return Promise.all([fetchMultiModel(city.latitude,city.
 function fetchClimateProfile(lat,lon){var k="cp_"+lat.toFixed(2)+"_"+lon.toFixed(2);var e=getCacheEntry(k);if(e&&Date.now()-e.timestamp<30*86400000)return Promise.resolve(e.data);var ed=new Date();ed.setDate(ed.getDate()-1);var s=new Date(ed);s.setDate(s.getDate()-364);return fetch(API.archive+"?latitude="+lat+"&longitude="+lon+"&start_date="+fmtDate(s)+"&end_date="+fmtDate(ed)+"&daily=temperature_2m_mean,precipitation_sum&timezone=auto").then(function(r){return r.json();}).then(function(j){if(!j||!j.daily||!j.daily.time)return null;var mo={};for(var i=0;i<j.daily.time.length;i++){var mm=+j.daily.time[i].slice(5,7);if(!mo[mm])mo[mm]={t:0,n:0,p:0};if(j.daily.temperature_2m_mean[i]!=null){mo[mm].t+=j.daily.temperature_2m_mean[i];mo[mm].n++;}if(j.daily.precipitation_sum[i]!=null)mo[mm].p+=j.daily.precipitation_sum[i];}var ap=0,cold=null,warm=null;for(var m=1;m<=12;m++)if(mo[m]){ap+=mo[m].p;var mn=mo[m].n?mo[m].t/mo[m].n:null;if(mn!=null){if(cold==null||mn<cold)cold=mn;if(warm==null||mn>warm)warm=mn;}}var p={annualP:Math.round(ap),coldest:cold,warmest:warm};saveCache(k,p,"climate_profile",30*86400000);return p;}).catch(function(){return null;});}
 function climateZone(p,el){var band="motadel";if(p&&p.coldest!=null){if(p.coldest<=-3)band="sard";else if(p.coldest<=8)band="motadel";else band="garm";}if(el!=null&&el>1800&&band==="garm")band="motadel";var hum="nim";if(p&&p.annualP!=null){if(p.annualP>=600)hum="martoub";else if(p.annualP>=250)hum="nim";else hum="khoshk";}return band+"-"+hum;}
 function loadClimateZone(){return fetchClimateProfile(city.latitude,city.longitude).then(function(p){return fetchElevation(city.latitude,city.longitude).then(function(el){climateZoneCur=climateZone(p,el);renderExtraSections();renderDetails();});}).catch(function(){climateZoneCur="motadel-nim";renderExtraSections();});}
-function fetchWeather(lat,lon,el){var u=new URL(API.weather);u.searchParams.set("latitude",lat);u.searchParams.set("longitude",lon);if(el!=null)u.searchParams.set("elevation",Math.round(el));u.searchParams.set("current","temperature_2m,relative_humidity_2m,apparent_temperature,precipitation,weather_code,wind_speed_10m,wind_direction_10m,surface_pressure,dew_point_2m,cloud_cover,is_day");u.searchParams.set("hourly","temperature_2m,precipitation_probability,weather_code,visibility,relative_humidity_2m,dew_point_2m,surface_pressure,wind_speed_10m,cloud_cover");u.searchParams.set("daily","weather_code,temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max,uv_index_max,wind_speed_10m_max,sunrise,sunset");u.searchParams.set("timezone","auto");u.searchParams.set("forecast_days","9");u.searchParams.set("past_days","1");return fetch(u).then(function(r){if(!r.ok)throw new Error();return r.json();});}
+function fetchWeather(lat,lon,el){
+  var u=new URL(API.weather);
+  u.searchParams.set("latitude",lat);
+  u.searchParams.set("longitude",lon);
+  if(el!=null)u.searchParams.set("elevation",Math.round(el));
+  u.searchParams.set("current","temperature_2m,relative_humidity_2m,apparent_temperature,precipitation,weather_code,wind_speed_10m,wind_direction_10m,surface_pressure,dew_point_2m,cloud_cover,is_day");
+  u.searchParams.set("hourly","temperature_2m,precipitation_probability,weather_code,visibility,relative_humidity_2m,dew_point_2m,surface_pressure,wind_speed_10m,cloud_cover");
+  u.searchParams.set("daily","weather_code,temperature_2m_max,temperature_2m_min,precipitation_sum,precipitation_probability_max,uv_index_max,wind_speed_10m_max,sunrise,sunset");
+  u.searchParams.set("timezone","auto");
+  u.searchParams.set("forecast_days","9");
+  u.searchParams.set("past_days","1");
+  /* 🆕 #26: استفاده از ETag برای کاهش ترافیک */
+  var cacheKey="wf_"+lat.toFixed(3)+"_"+lon.toFixed(3);
+  return fetchWithETag(u.toString(),cacheKey);
+}
 var STATIONS=[{name:"تهران",lat:35.6892,lon:51.389},{name:"مشهد",lat:36.2605,lon:59.6168},{name:"اصفهان",lat:32.6546,lon:51.668},{name:"شیراز",lat:29.5918,lon:52.5837},{name:"تبریز",lat:38.0962,lon:46.2738},{name:"اراک",lat:34.0917,lon:49.6892}];
 function loadWeather(){
   var ck="w_"+city.id;
@@ -2840,7 +3015,13 @@ function loadWeather(){
     var eOld=getCacheEntry(ck);
     if(eOld&&Date.now()-eOld.timestamp<7*86400000){data=eOld.data;renderWeather();pendingNotice="📴 آخرین داده معتبر";return true;}
     var best=null;for(var i=0;i<STATIONS.length;i++){var dd=haversine(city.latitude,city.longitude,STATIONS[i].lat,STATIONS[i].lon);if(!best||dd<best.d)best=STATIONS[i];}
-    if(best)return fetchWeather(best.lat,best.lon,null).then(function(j){data=j;renderWeather();pendingNotice="📡 ایستگاه: "+best.name;return true;}).catch(function(){show("خطا","err");return false;});
+    if(best)return fetchWeather(best.lat,best.lon,null).then(function(j){
+      data=j;
+      saveCache(ck,j,"weather_api_fallback",1800000);
+      renderWeather();
+      pendingNotice="📡 ایستگاه: "+best.name;
+      return true;
+    }).catch(function(){show("خطا","err");return false;});
     show("خطا","err");return false;
   });
 }
@@ -2892,9 +3073,9 @@ document.addEventListener("click",function(e){if(!e.target.closest||!e.target.cl
 var pinBtn=document.getElementById("pin");if(pinBtn)pinBtn.addEventListener("click",function(){var f=-1;for(var i=0;i<pins.length;i++)if(String(pins[i].id)===String(city.id)){f=i;break;}if(f>=0){if(pins[f].locked){show("قفل است","info");return;}pins.splice(f,1);show("حذف شد");}else{pins.push({id:city.id,name:city.name,country:city.country,admin1:city.admin1,county:city.county,type:city.type,latitude:city.latitude,longitude:city.longitude});show("پین شد","ok");}savePins();updatePinBtn();});
 
 function resolvePlace(lat,lon){var k="rg_"+lat.toFixed(3)+"_"+lon.toFixed(3);var e=getCacheEntry(k);if(e&&Date.now()-e.timestamp<30*86400000)return Promise.resolve(e.data);return fetch("https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat="+lat+"&lon="+lon+"&zoom=17&addressdetails=1&accept-language=fa&email="+NOM_EMAIL).then(function(r){return r.json();}).then(function(j){var a=j.address||{};var out={village:a.village||a.hamlet||"",district:a.neighbourhood||a.quarter||a.suburb||a.city_district||"",name:a.city||a.town||a.village||a.municipality||a.county||j.name||"",county:a.county||"",admin1:a.state||"",country:a.country||""};saveCache(k,out,"nominatim_reverse",30*86400000);return out;}).catch(function(){return fetch("https://api.bigdatacloud.net/data/reverse-geocode-client?latitude="+lat+"&longitude="+lon+"&localityLanguage=fa").then(function(r){return r.json();}).then(function(j){var out={village:j.locality||"",district:"",name:j.city||j.locality||"",county:"",admin1:j.principalSubdivision||"",country:j.countryName||""};saveCache(k,out,"bigdata_reverse",30*86400000);return out;}).catch(function(){return{village:"",district:"",name:"",county:"",admin1:"",country:""};});});}
-function adoptGPS(lat,lon,force){
+function adoptGPS(lat,lon,force,fromIP){
   lastAdopted={lat:lat,lon:lon};
-  trackEvent("gps","fix");
+  trackEvent("gps",fromIP?"ip_fix":"fix");
   resolvePlace(lat,lon).then(function(g){
     var name=g.village||g.district||g.name||"موقعیت فعلی";
     var type=g.village?"village":(g.district?"district":"city");
@@ -2902,14 +3083,17 @@ function adoptGPS(lat,lon,force){
     var ch=(city.id!==id);
     city={id:id,name:name,country:g.country||"ایران",admin1:g.admin1||"",county:g.county||"",type:type,latitude:lat,longitude:lon};
     lsSet("city",JSON.stringify(city));
-    if(ch||force){trackEvent("city","gps",name);refreshAll("📍 مکان دقیق: "+name);}
+    if(fromIP)setGps("ip","موقعیت تقریبی (IP)");
+    if(ch||force){trackEvent("city",fromIP?"ip":"gps",name);refreshAll(fromIP?("📍 موقعیت تقریبی از IP: "+name):("📍 مکان دقیق: "+name));}
   }).catch(function(){
     var id="gps"+Math.round(lat*1000)+"_"+Math.round(lon*1000);
     city={id:id,name:"موقعیت فعلی",country:"ایران",admin1:"",county:"",type:"city",latitude:lat,longitude:lon};
-    lsSet("city",JSON.stringify(city));refreshAll("📍 مکان فعلی");
+    lsSet("city",JSON.stringify(city));
+    if(fromIP)setGps("ip","موقعیت تقریبی (IP)");
+    refreshAll(fromIP?"📍 موقعیت تقریبی از IP":"📍 مکان فعلی");
   });
 }
-function onGPSFix(p){if(!appBooted)return;if(!gpsEnabled)return;var pos={lat:p.coords.latitude,lon:p.coords.longitude};lastGPS=pos;setGps("ok");if(!manualCity&&(!lastAdopted||haversine(lastAdopted.lat,lastAdopted.lon,pos.lat,pos.lon)>0.3))adoptGPS(pos.lat,pos.lon,false);}
+function onGPSFix(p){if(!appBooted)return;if(!gpsEnabled)return;var pos={lat:p.coords.latitude,lon:p.coords.longitude};lastGPS=pos;setGps("ok");if(!manualCity&&(!lastAdopted||haversine(lastAdopted.lat,lastAdopted.lon,pos.lat,pos.lon)>0.3))adoptGPS(pos.lat,pos.lon,false,false);}
 function onGPSErr(){if(!appBooted)return;setGps("off");}
 function startGPSWatch(){if(!appBooted)return;if(!gpsEnabled){setGps("off");return;}if(!navigator.geolocation){setGps("off");return;}if(gpsWatchId!=null)return;gpsWatchId=navigator.geolocation.watchPosition(onGPSFix,onGPSErr,{enableHighAccuracy:true,timeout:20000,maximumAge:0});}
 function tryGPSOnce(high){return new Promise(function(res,rej){if(!navigator.geolocation){rej({code:-1});return;}navigator.geolocation.getCurrentPosition(function(p){res({lat:p.coords.latitude,lon:p.coords.longitude});},function(err){rej(err);},{enableHighAccuracy:high,timeout:high?15000:10000,maximumAge:high?0:60000});});}
@@ -2920,8 +3104,14 @@ function locateUser(){
   if(!gpsEnabled){show("⚠️ GPS غیرفعال است","err");return;}
   show("در حال تشخیص مکان...","info");manualCity=false;
   trackEvent("gps","locate_btn");
-  if(lastGPS){setGps("ok");adoptGPS(lastGPS.lat,lastGPS.lon,true);return;}
-  tryGPSOnce(true).then(function(p){setGps("ok");lastGPS=p;adoptGPS(p.lat,p.lon,true);}).catch(function(){return tryGPSOnce(false).then(function(p){setGps("ok");lastGPS=p;adoptGPS(p.lat,p.lon,true);});}).catch(function(){return ipLocate().then(function(p){setGps("ok");adoptGPS(p.lat,p.lon,true);show("📍 از شبکه تشخیص داده شد","ok");}).catch(function(){show("⚠️ تشخیص ممکن نشد","err");});});
+  if(lastGPS){setGps("ok");adoptGPS(lastGPS.lat,lastGPS.lon,true,false);return;}
+  tryGPSOnce(true).then(function(p){setGps("ok");lastGPS=p;adoptGPS(p.lat,p.lon,true,false);}).catch(function(){return tryGPSOnce(false).then(function(p){setGps("ok");lastGPS=p;adoptGPS(p.lat,p.lon,true,false);});}).catch(function(){
+    /* 🆕 #64: نمایش واضح استفاده از IP */
+    return ipLocate().then(function(p){
+      setGps("ip","موقعیت تقریبی (IP)");
+      adoptGPS(p.lat,p.lon,true,true);
+    }).catch(function(){show("⚠️ تشخیص ممکن نشد","err");});
+  });
 }
 var locBtn=document.getElementById("loc");if(locBtn)locBtn.addEventListener("click",locateUser);
 if(navigator.geolocation)setGps("ready");else setGps("off");
@@ -2996,14 +3186,38 @@ if(waterCalcBtn)waterCalcBtn.addEventListener("click",function(){
 });
 
 function getTodayTehranKey(){try{return new Intl.DateTimeFormat("en-CA",{timeZone:"Asia/Tehran",year:"numeric",month:"2-digit",day:"2-digit"}).format(new Date());}catch(e){var d=new Date();return d.getFullYear()+"-"+(d.getMonth()+1<10?"0":"")+(d.getMonth()+1)+"-"+(d.getDate()<10?"0":"")+d.getDate();}}
+
+/* 🆕 #48: محدودیت نرخ درخواست برای MyMemory Translation */
+var _translateLastReq=0;
+var _translateMinInterval=1600;
+var _translateQueue=Promise.resolve();
 function translateFa(text){
   if(!text)return Promise.resolve("");
   if(text.length>480)text=text.substring(0,480)+"...";
-  return fetch(API.translate+"?q="+encodeURIComponent(text)+"&langpair=en|fa").then(function(r){return r.json();}).then(function(j){
-    if(j&&j.responseData&&j.responseData.translatedText){var t=j.responseData.translatedText;if(t.indexOf("MYMEMORY WARNING")!==-1||t.indexOf("YOU USED ALL")!==-1)return null;return t;}
-    return null;
-  }).catch(function(){return null;});
+  var job=function(){
+    var now=Date.now();
+    var wait=Math.max(0,_translateMinInterval-(now-_translateLastReq));
+    return new Promise(function(resolve){
+      setTimeout(function(){
+        _translateLastReq=Date.now();
+        fetch(API.translate+"?q="+encodeURIComponent(text)+"&langpair=en|fa")
+          .then(function(r){return r.json();})
+          .then(function(j){
+            if(j&&j.responseData&&j.responseData.translatedText){
+              var t=j.responseData.translatedText;
+              if(t.indexOf("MYMEMORY WARNING")!==-1||t.indexOf("YOU USED ALL")!==-1){resolve(null);return;}
+              resolve(t);return;
+            }
+            resolve(null);
+          }).catch(function(){resolve(null);});
+      },wait);
+    });
+  };
+  var chained=_translateQueue.then(job,job);
+  _translateQueue=chained.catch(function(){});
+  return chained;
 }
+
 function loadAPOD(){
   var box=document.getElementById("apodBox");if(!box)return;
   var key=getTodayTehranKey();
@@ -3043,38 +3257,12 @@ function renderAPOD(data){
   if(data.desc){var cachedDesc=lsGet("apodTrD_"+data.date);if(cachedDesc){var e1=document.getElementById("apodDescFa");if(e1)e1.textContent=cachedDesc;}else{translateFa(data.desc.substring(0,480)).then(function(t){if(t){lsSet("apodTrD_"+data.date,t);var e=document.getElementById("apodDescFa");if(e)e.textContent=t;}});}}
 }
 
-var DAILY_FACTS_POOL=[
-  {icon:"🌌",title:"کهکشان راه شیری",text:"قطر آن حدود ۱۰۰٬۰۰۰ سال نوری و ۲۰۰ میلیارد ستاره دارد."},
-  {icon:"⚡",title:"سرعت نور",text:"نور در یک ثانیه ۷٫۵ بار دور زمین می‌چرخد."},
-  {icon:"🧬",title:"DNA",text:"اگر DNA تمام سلول‌ها باز شود، ۲۰۰ میلیارد کیلومتر می‌شود."},
-  {icon:"🌍",title:"وزن زمین",text:"جرم زمین حدود ۵٫۹۷ × ۱۰²⁴ کیلوگرم است."},
-  {icon:"☀️",title:"دمای خورشید",text:"سطح ۵٬۵۰۰°C و مرکز ۱۵ میلیون درجه."},
-  {icon:"🪐",title:"حلقه‌های زحل",text:"از میلیاردها ذرهٔ یخ و سنگ ساخته شده‌اند."},
-  {icon:"🐘",title:"قلب نهنگ آبی",text:"به اندازه یک ماشین کوچک است و ۲ بار در دقیقه می‌زند."},
-  {icon:"❄️",title:"کریستال‌های برف",text:"هیچ دو دانه برفی شبیه هم نیستند."},
-  {icon:"🌳",title:"اکسیژن درخت",text:"یک درخت بالغ سالانه برای دو انسان اکسیژن تولید می‌کند."},
-  {icon:"🦈",title:"عمر کوسه‌ها",text:"کوسه‌های گرینلند بیش از ۴۰۰ سال عمر می‌کنند."},
-  {icon:"🌡️",title:"صفر مطلق",text:"−۲۷۳٫۱۵°C سردترین دمای ممکن است."},
-  {icon:"💧",title:"آب منجمد",text:"یخ سبک‌تر از آب مایع است و شنا می‌کند."},
-  {icon:"🦋",title:"پروانه‌ها",text:"با پاهایشان مزه می‌کنند."},
-  {icon:"🐙",title:"قلب هشت‌پا",text:"۳ قلب دارد و خونش آبی است."},
-  {icon:"🌊",title:"عمق اقیانوس",text:"گودال ماریانا ۱۱ کیلومتر عمق دارد."},
-  {icon:"🔥",title:"آتشفشان‌ها",text:"حدود ۱٬۵۰۰ آتشفشان فعال روی زمین وجود دارد."},
-  {icon:"🌟",title:"ستاره‌های نوترونی",text:"یک قاشق چای‌خوری میلیاردها تن وزن دارد."},
-  {icon:"🦴",title:"استخوان‌های بدن",text:"بالغ ۲۰۶ استخوان، نوزاد ۳۰۰ استخوان دارد."},
-  {icon:"🌱",title:"سرعت رشد بامبو",text:"روزانه تا ۹۱ سانتی‌متر رشد می‌کند."},
-  {icon:"🌐",title:"قطب‌نما در زنبور",text:"با میدان مغناطیسی زمین جهت‌یابی می‌کند."},
-  {icon:"🧠",title:"نورون‌های مغز",text:"۸۶ میلیارد نورون دارد."},
-  {icon:"🌋",title:"کوه المپوس مریخ",text:"۲۱ کیلومتر ارتفاع دارد."},
-  {icon:"🐜",title:"قدرت مورچه",text:"تا ۵۰ برابر وزن خودش را بلند می‌کند."},
-  {icon:"🍯",title:"عمر عسل",text:"عسل ۳٬۰۰۰ ساله مصری هنوز سالم مانده."}
-];
-
 setInterval(function(){
   var key=getTodayTehranKey();
   if(lsGet("lastFactDay")!==key){
     lsSet("lastFactDay",key);
-    loadAPOD();
+    /* فقط اگر در صفحهٔ علم هستیم، APOD را دوباره لود کن */
+    if(currentPage==="science"){try{loadAPOD();}catch(e){}}
   }
 },30*60*1000);
 lsSet("lastFactDay",getTodayTehranKey());
@@ -3346,7 +3534,6 @@ function renderDailyCard(){
     "<div class='daily-card-actions'>"+
       "<button class='dc-share-btn' id='dailyCardShare' aria-label='اشتراک‌گذاری کارت'>📤 اشتراک‌گذاری</button>"+
       "<button class='dc-share-btn ghost' id='dailyCardSave' aria-label='ذخیره تصویر کارت'>💾 ذخیره عکس</button>"+
-      "<button class='dc-share-btn ghost' id='dailyCardLink' aria-label='کپی لینک کارت'>🔗 کپی لینک</button>"+
     "</div>"+
   "</div></div>";
   el.innerHTML=html;
@@ -3354,10 +3541,8 @@ function renderDailyCard(){
   if(head&&cardEl)head.addEventListener("click",function(){cardEl.classList.toggle("open");});
   var sh=document.getElementById("dailyCardShare");if(sh)sh.addEventListener("click",function(){shareDailyCardImage();});
   var sv=document.getElementById("dailyCardSave");if(sv)sv.addEventListener("click",function(){downloadDailyCardImage();});
-  var lk=document.getElementById("dailyCardLink");if(lk)lk.addEventListener("click",function(){copyShareCardLink();});
 }
 function drawRoundedRect(ctx,x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);ctx.arcTo(x+w,y,x+w,y+h,r);ctx.arcTo(x+w,y+h,x,y+h,r);ctx.arcTo(x,y+h,x,y,r);ctx.arcTo(x,y,x+w,y,r);ctx.closePath();}
-function wrapTextFa(ctx,text,x,y,maxW,lineH,maxLines){var words=String(text).split(/\s+/);var line="",lines=[];for(var i=0;i<words.length;i++){var test=line?line+" "+words[i]:words[i];if(ctx.measureText(test).width>maxW&&line){lines.push(line);line=words[i];if(maxLines&&lines.length>=maxLines)break;}else line=test;}if(line)lines.push(line);if(maxLines&&lines.length>maxLines)lines=lines.slice(0,maxLines);for(var j=0;j<lines.length;j++)ctx.fillText(lines[j],x,y+j*lineH);return lines.length;}
 function generateDailyCardImage(){
   var canvas=document.getElementById("shareCanvas");if(!canvas)return;
   var W=1080,H=1620;canvas.width=W;canvas.height=H;
@@ -3757,14 +3942,14 @@ function getStreak(){
   return streak;
 }
 function isTodayWorkoutDone(){
-  var log=getWorkoutLog();var today=new Date();
-  var key=today.getFullYear()+"-"+(today.getMonth()+1<10?"0":"")+(today.getMonth()+1)+"-"+(today.getDate()<10?"0":"")+today.getDate();
+  var log=getWorkoutLog();
+  var key=getTodayTehranKey();
   for(var i=0;i<log.length;i++)if(log[i].d===key)return true;
   return false;
 }
 function markTodayWorkout(){
-  var log=getWorkoutLog();var today=new Date();
-  var key=today.getFullYear()+"-"+(today.getMonth()+1<10?"0":"")+(today.getMonth()+1)+"-"+(today.getDate()<10?"0":"")+today.getDate();
+  var log=getWorkoutLog();
+  var key=getTodayTehranKey();
   var found=-1;for(var i=0;i<log.length;i++)if(log[i].d===key){found=i;break;}
   if(found>=0)log.splice(found,1);
   else log.push({d:key,t:Date.now()});
@@ -4163,12 +4348,16 @@ function addChatMsg(text,isUser,cls){
   chatMessages.appendChild(d);chatMessages.scrollTop=chatMessages.scrollHeight;
 }
 addChatMsg(GREET,false);
-function normalizeQ(s){return faToEn(s).replace(/\u200c/g," ").replace(/ي/g,"ی").replace(/ك/g,"ک").replace(/[؟?!.]/g," ").replace(/\s+/g," ").trim();}
+function normalizeQ(s){return faToEn(s).toLowerCase().replace(/\u200c/g," ").replace(/ي/g,"ی").replace(/ك/g,"ک").replace(/[؟?!.]/g," ").replace(/\s+/g," ").trim();}
 
 function tryChatAction(q){
-  var addPinMatch=q.match(/([^\s]+)\s*ر[اa]?\s*به\s*(مکان|پین|لیست)/);
-  if(addPinMatch||(q.indexOf("اضافه کن")!==-1&&(q.indexOf("مکان")!==-1||q.indexOf("پین")!==-1))){
-    var cname=q.replace(/را|به|مکان‌های من|مکان‌ها|پین|اضافه کن|لیست|اضافه/g," ").trim().split(/\s+/)[0];
+  var addPinMatch = q.match(/^(.+?)\s+را\s+به\s+(?:مکان‌های\s+من|مکان‌ها|پین|لیست)\s+اضافه\s+کن\s*$/);
+  if(!addPinMatch){
+    var m2 = q.match(/^اضافه\s+کن\s+(.+?)\s+به\s+(?:مکان‌های\s+من|مکان‌ها|پین|لیست)\s*$/);
+    if(m2) addPinMatch = [null, m2[1]];
+  }
+  if(addPinMatch){
+    var cname=String(addPinMatch[1]||"").trim();
     if(cname){
       var found=null;
       for(var i=0;i<LOCAL_AREAS.length;i++)if(LOCAL_AREAS[i].n.indexOf(cname)!==-1||cname.indexOf(LOCAL_AREAS[i].n)!==-1){found=LOCAL_AREAS[i];break;}
@@ -4277,7 +4466,7 @@ var SUG_ANSWERS={
   "آیا رایگان است؟":"✅ بله، کاملاً رایگان است.",
   "چطور نصب کنم؟":"📲 به شیت «بیشتر» بروید و روی «📖 راهنما» بزنید — راهنمای نصب کامل با دکمهٔ نصب خودکار آنجا است.\n🤖 اندروید: منوی Chrome ← «نصب برنامه»\n🍎 iOS: Safari ← Share ← Add to Home Screen",
   "سازنده کیست؟":"👤 سازنده: «م.حسینی». ارتباط: eitaa.com/hossini_96 — در صفحهٔ راهنما دکمهٔ ارتباط با سازنده موجود است.",
-  "نسخه برنامه":"📌 نسخهٔ فعلی: ۱٫۱٫۲",
+  "نسخه برنامه":"📌 نسخهٔ فعلی: ۱٫۰٫۰",
   "سردبیر کیه؟":"✍️ سردبیر مجلهٔ آسمان «م.حسینی» است.",
   "یادداشت ۱ چیه؟":"📝 «سخن سردبیر، فصل پاییز» دربارهٔ آغاز سال تحصیلی، آموزش، همدلی و امید.",
   "یادداشت ۲ چیه؟":"✍️ «یادداشت سردبیر» — متن کامل در صفحهٔ یادداشت مجله، یادداشت ۲.",
@@ -4292,6 +4481,14 @@ var SUG_ANSWERS={
   "امروز برای ورزش خوبه؟":"🏃 به صفحهٔ «سلامتی» بروید — تحلیل خودکار هوا آنجا نمایش داده می‌شود.",
   "راهنما چیست؟":"📖 در صفحهٔ راهنما، دو کشوی «راهنمای نصب» و «راهنمای بخش‌ها» قرار دارد."
 };
+var SUG_ANSWERS_NORM=null;
+function ensureSugNorm(){
+  if(SUG_ANSWERS_NORM)return;
+  SUG_ANSWERS_NORM={};
+  for(var k in SUG_ANSWERS)if(SUG_ANSWERS.hasOwnProperty(k))SUG_ANSWERS_NORM[normalizeQ(k)]=SUG_ANSWERS[k];
+}
+var chatPrayerRetries=0;
+
 function buildBriefing(){var s=getDayStats(0);if(!s)return"داده‌ای نیست.";var l=["📋 گزارش — "+city.name,"🌤️ "+code(s.code)[0],"🌡️ "+(s.temp!=null?T1(s.temp)+D():"--"),"🌧️ بارش: "+(s.precipProb||0)+"٪"];var al=getActiveAlerts();if(al.length)l.push("⚠️ "+al.map(function(a){return a.title;}).join("، "));return l.join("\n");}
 function foodAdvice(){var m=new Date().getMonth()+1;if(m>=3&&m<=5)return"🥗 بهار: سبزیجات تازه، مرکبات و ماست.";if(m>=6&&m<=8)return"🍉 تابستان: میوه‌های آبدار و الکترولیت.";if(m>=9&&m<=11)return"🍲 پاییز: سوپ گرم و مرکبات.";return"🍜 زمستان: غذاهای گرم و مقوی.";}
 function wakeWordMatch(q,kw){for(var i=0;i<kw.length;i++)if(q.indexOf(kw[i])!==-1)return true;return false;}
@@ -4305,7 +4502,8 @@ function chatRespond(q0){
   var analysis=analyzeActivity(q);
   if(analysis){addChatMsg(analysis,false);return;}
   if(tryChatAction(q))return;
-  if(SUG_ANSWERS[originalQ]){addChatMsg(SUG_ANSWERS[originalQ],false);return;}
+  ensureSugNorm();
+  if(SUG_ANSWERS_NORM&&SUG_ANSWERS_NORM[q]){addChatMsg(SUG_ANSWERS_NORM[q],false);return;}
   if(wakeWordMatch(q,["طلوع","غروب"])){var sr=(data&&data.daily&&data.daily.sunrise)?fmtDT(data.daily.sunrise[TODAY_IDX]):"--";var ss=(data&&data.daily&&data.daily.sunset)?fmtDT(data.daily.sunset[TODAY_IDX]):"--";addChatMsg("🌅 طلوع: "+sr+"\n🌇 غروب: "+ss,false);return;}
   if(wakeWordMatch(q,["چی بپوشم","لباس"])){addChatMsg("👔 "+clothingAdvice(s),false);return;}
   if(wakeWordMatch(q,["گزارش","خلاصه"])){addChatMsg(buildBriefing(),false);return;}
@@ -4313,7 +4511,17 @@ function chatRespond(q0){
   if(wakeWordMatch(q,["کیفیت هوا","آلودگی"])){addChatMsg("🌫️ EAQI "+Math.round(an.european_aqi)+" ("+aqiLabel(an.european_aqi)+")",false);return;}
   if(wakeWordMatch(q,["خواب"])){var ss2=sleepScore();addChatMsg("😴 امتیاز: "+(ss2!=null?ss2+"/100":"--"),false);return;}
   if(wakeWordMatch(q,["تغذیه","غذا"])){addChatMsg(foodAdvice(),false);return;}
-  if(wakeWordMatch(q,["اذان"])){if(!prayerData){loadPrayerTimes();setTimeout(function(){chatRespond("اذان");},1500);return;}addChatMsg("🕌 اذان صبح: "+cleanTime(prayerData.Fajr),false);return;}
+  if(wakeWordMatch(q,["اذان"])){
+    if(!prayerData){
+      if(chatPrayerRetries>=3){addChatMsg("⚠️ دریافت اوقات شرعی ممکن نشد. لطفاً بعداً تلاش کنید.",false);chatPrayerRetries=0;return;}
+      chatPrayerRetries++;
+      loadPrayerTimes();
+      setTimeout(function(){chatRespond("اذان");},1500);
+      return;
+    }
+    chatPrayerRetries=0;
+    addChatMsg("🕌 اذان صبح: "+cleanTime(prayerData.Fajr),false);return;
+  }
   if(wakeWordMatch(q,["ذکر"])){var d4=new Date().getDay();var x4=DHIKR[d4]||DHIKR[6];addChatMsg("📿 "+x4.day+": «"+x4.text+"»",false);return;}
   if(wakeWordMatch(q,["جوک","معما","ضرب"])){if(currentPage!=="fun")showPage("fun");addChatMsg("🎉 به صفحهٔ سرگرمی رفتم.",false);return;}
   if(wakeWordMatch(q,["ورزش","فوتبال"])){if(currentPage!=="sport")showPage("sport");addChatMsg("🌿 به صفحهٔ سلامتی رفتم.",false);return;}
@@ -4346,7 +4554,16 @@ function getInfoContent(key){
   var icon=icons[key]||"📊";var title="",text="";
   if(key==="temp"){title="دما";text="📊 "+(s.temp!=null?T1(s.temp)+D():"--");}
   else if(key==="humidity"){title="رطوبت";text="📊 "+(s.hum!=null?Math.round(s.hum)+"٪":"--");}
-  else if(key==="wind"){title="باد";text="📊 "+(s.wind!=null?Math.round(s.wind)+" km/h":"--");}
+  else if(key==="wind"){
+    title="باد";
+    var dirText="";
+    if(s.windDir!=null){
+      var dirs=["شمال","شمال‌شرق","شرق","جنوب‌شرق","جنوب","جنوب‌غرب","غرب","شمال‌غرب"];
+      var di=Math.round(s.windDir/45)%8;
+      dirText="\n🧭 جهت: "+dirs[di]+" ("+Math.round(s.windDir)+"°)";
+    }
+    text="📊 "+(s.wind!=null?Math.round(s.wind)+" km/h":"--")+dirText;
+  }
   else if(key==="uv"){title="فرابنفش";text="📊 "+(s.uv!=null?s.uv:"--");}
   else if(key==="aqi"){title="کیفیت هوا";text="📊 EAQI: "+(s.aqi!=null?Math.round(s.aqi):"--");}
   else if(key==="precip"){title="بارش";text="📊 "+(s.precip!=null?s.precip+" mm":"--");}
@@ -4386,4 +4603,4 @@ renderSuggestions();
 })();
 </script>
 </body>
-  </html>
+              </html>
