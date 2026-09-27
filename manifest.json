@@ -21,9 +21,31 @@
   ],
   "shortcuts": [
     {
+      "name": "اوقات شرعی",
+      "short_name": "اذان",
+      "description": "مشاهدهٔ اوقات شرعی، اذان بعدی و ذکر روز",
+      "url": "./index.html?page=prayer",
+      "icons": [{ "src": "icon-192.png", "sizes": "192x192" }]
+    },
+    {
       "name": "آب‌وهوا",
-      "short_name": "آب‌وهوا",
-      "url": "./index.html",
+      "short_name": "هوا",
+      "description": "پیش‌بینی دقیق آب‌وهوا و شاخص‌های کامل",
+      "url": "./index.html?page=home",
+      "icons": [{ "src": "icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "آسمان من",
+      "short_name": "داشبورد",
+      "description": "داشبورد شخصی و کارت روز",
+      "url": "./index.html?page=myday",
+      "icons": [{ "src": "icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "سلامتی و ورزش",
+      "short_name": "ورزش",
+      "description": "برنامهٔ ورزشی، تغذیه و محاسبه‌گرهای بدنی",
+      "url": "./index.html?page=sport",
       "icons": [{ "src": "icon-192.png", "sizes": "192x192" }]
     }
   ]
