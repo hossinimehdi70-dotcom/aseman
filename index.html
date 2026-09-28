@@ -15,6 +15,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="مجله آسمان">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <title>مجله آسمان | هواشناسی، ورزش، سلامت، فرهنگ، علم، سفر</title>
 <style>
 :root{--bg:#07111f;--bg2:#0a1828;--text:#f8fbff;--muted:#9db0c6;--line:rgba(255,255,255,.11);--accent:#39c6ff;--accent2:#4f7cff;--cyan:#39c6ff;--gold:#ffd166;--green:#2dd4a3;--red:#ff6b7a;--card-bg:rgba(255,255,255,.06);--card-bg2:rgba(255,255,255,.03);--chat-fab-bottom-mobile:80px}
@@ -332,22 +333,35 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;bac
 .dash-welcome .dw-text b{color:var(--gold);font-size:20px}
 .dash-welcome .dw-edit{padding:8px 16px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);border-radius:10px;color:var(--text);font-weight:800;font-size:13px;font-family:inherit;cursor:pointer;transition:.2s;white-space:nowrap}
 .dash-welcome .dw-edit:hover{background:rgba(255,255,255,.2)}
-.daily-card{position:relative;margin-bottom:16px;padding:0;border-radius:24px;overflow:hidden;background:linear-gradient(160deg,#0e2340 0%,#1a3a5c 40%,#3a2d5c 75%,#5b2b6b 100%);border:2px solid rgba(255,209,102,.4);box-shadow:0 18px 45px rgba(0,0,0,.35),0 0 0 1px rgba(255,255,255,.05) inset;color:#fff}
+
+.daily-card{position:relative;margin-bottom:16px;padding:0;border-radius:24px;overflow:hidden;background:linear-gradient(160deg,#0e2340 0%,#1a3a5c 40%,#3a2d5c 75%,#5b2b6b 100%);border:2px solid rgba(255,209,102,.4);box-shadow:0 18px 45px rgba(0,0,0,.35),0 0 0 1px rgba(255,255,255,.05) inset;color:#fff;transition:background .8s ease,border-color .8s ease}
+.daily-card.dc-sunny{background:linear-gradient(160deg,#3a1a0a 0%,#6a3a1a 40%,#8a5a2a 75%,#5a2a1a 100%);border-color:rgba(255,209,102,.55)}
+.daily-card.dc-cloudy{background:linear-gradient(160deg,#1a2a3a 0%,#2a3a4a 40%,#3a4a5a 75%,#2a3a4a 100%);border-color:rgba(150,170,190,.45)}
+.daily-card.dc-rainy{background:linear-gradient(160deg,#0a1f3a 0%,#1a3a5c 40%,#2a4a6c 75%,#1a2a4a 100%);border-color:rgba(120,180,255,.55)}
+.daily-card.dc-snowy{background:linear-gradient(160deg,#1a2a4a 0%,#2a4a6c 40%,#3a5a7c 75%,#4a6a8c 100%);border-color:rgba(200,220,255,.55)}
+.daily-card.dc-thunder{background:linear-gradient(160deg,#1a0a2a 0%,#2a1a4a 40%,#3a2a5a 75%,#1a0a3a 100%);border-color:rgba(180,140,255,.55)}
+.daily-card.dc-morning{box-shadow:0 18px 45px rgba(255,179,126,.25),0 0 0 1px rgba(255,255,255,.05) inset}
+.daily-card.dc-evening{box-shadow:0 18px 45px rgba(236,72,153,.25),0 0 0 1px rgba(255,255,255,.05) inset}
+.daily-card.dc-night{box-shadow:0 18px 45px rgba(139,92,246,.28),0 0 0 1px rgba(255,255,255,.05) inset}
 .daily-card::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 20% 15%,rgba(57,198,255,.25),transparent 45%),radial-gradient(circle at 85% 80%,rgba(255,209,102,.2),transparent 50%),radial-gradient(circle at 70% 20%,rgba(236,72,153,.15),transparent 40%);pointer-events:none}
 .daily-card-inner{position:relative;padding:22px 22px 20px;z-index:1}
-.daily-card-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:14px;padding-bottom:12px;border-bottom:1px dashed rgba(255,209,102,.35);cursor:pointer;user-select:none}
+.daily-card-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:14px;padding-bottom:12px;border-bottom:1px dashed rgba(255,209,102,.35);cursor:pointer;user-select:none;flex-wrap:wrap}
 .daily-card-head .dch-title{font-size:18px;font-weight:800;color:#ffd166;display:flex;align-items:center;gap:8px;text-shadow:0 2px 8px rgba(0,0,0,.4)}
+.daily-card-head .dch-logo{width:28px;height:28px;border-radius:9px;display:inline-flex;align-items:center;justify-content:center;font-size:15px;background:linear-gradient(145deg,#ffd166,#ff8c42);color:#3a1a00;font-weight:800;flex-shrink:0;box-shadow:0 4px 10px rgba(255,209,102,.4)}
 .daily-card-head .dch-date{font-size:12px;color:#bfe9ff;font-weight:800;background:rgba(255,255,255,.08);padding:4px 10px;border-radius:8px;border:1px solid rgba(255,255,255,.15)}
 .daily-card-head .dch-arrow{font-size:18px;color:#ffd166;transition:transform .35s;margin-right:4px}
 .daily-card.open .daily-card-head .dch-arrow{transform:rotate(180deg)}
 .daily-card-drawer{max-height:0;overflow:hidden;transition:max-height .5s ease}
-.daily-card.open .daily-card-drawer{max-height:3600px;padding-bottom:4px}
+.daily-card.open .daily-card-drawer{max-height:4200px;padding-bottom:4px}
 .daily-rows{display:flex;flex-direction:column;gap:10px}
 .daily-row{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1)}
 .daily-row .dr-icon{font-size:22px;flex-shrink:0}
 .daily-row .dr-label{font-size:12px;color:#9db0c6;font-weight:800;display:block;margin-bottom:2px}
 .daily-row .dr-value{font-size:14px;font-weight:800;color:#fff;line-height:1.9}
 .daily-row .dr-value.poem{font-style:italic;white-space:pre-line;font-size:13px;text-align:justify}
+.daily-row .dr-poet-name{margin-top:6px;font-size:11px;color:#ffd166;font-weight:700;text-align:left;display:block}
+.daily-row.wisdom{background:linear-gradient(135deg,rgba(45,212,161,.12),rgba(57,198,255,.06));border-color:rgba(45,212,161,.3)}
+.daily-row.tomorrow{background:linear-gradient(135deg,rgba(139,92,246,.12),rgba(236,72,153,.06));border-color:rgba(139,92,246,.3)}
 .prayer-rows-box{display:flex;flex-direction:column;gap:6px}
 .prayer-mini-row{display:flex;justify-content:space-between;align-items:center;padding:6px 10px;border-radius:10px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);font-size:13px}
 .prayer-mini-row.next{background:linear-gradient(135deg,rgba(255,209,102,.25),rgba(255,140,66,.15));border-color:rgba(255,209,102,.5)}
@@ -360,6 +374,32 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;bac
 .dc-share-btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(255,209,102,.4)}
 .dc-share-btn.ghost{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.25)}
 .dc-share-btn.ghost:hover{background:rgba(255,255,255,.18);box-shadow:none}
+
+.share-preview-overlay{position:fixed;inset:0;background:rgba(4,6,18,.94);z-index:10002;display:none;align-items:center;justify-content:center;padding:12px;flex-direction:column;gap:12px;overflow-y:auto}
+.share-preview-overlay.show{display:flex;animation:fadeIn .25s ease-out}
+.share-preview-box{background:linear-gradient(165deg,#0e2340,#1a3a5c 60%,#2a1a5c);border:2px solid rgba(57,198,255,.4);border-radius:20px;padding:14px;max-width:min(420px,100%);width:100%;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.share-preview-title{font-weight:800;font-size:15px;margin-bottom:10px;text-align:center;color:#ffd166}
+.share-preview-img-wrap{width:100%;max-height:56vh;overflow-y:auto;border-radius:14px;background:#000;display:flex;justify-content:center;padding:6px}
+.share-preview-img{width:100%;max-width:340px;display:block;border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.5)}
+.share-theme-label{font-size:12px;font-weight:800;color:#bfe9ff;text-align:center;margin:12px 0 6px}
+.theme-picker{display:flex;gap:10px;justify-content:center;margin-bottom:10px;flex-wrap:wrap}
+.theme-dot{width:38px;height:38px;border-radius:50%;border:3px solid transparent;cursor:pointer;transition:.2s;padding:0;position:relative;font-family:inherit}
+.theme-dot:hover{transform:scale(1.12)}
+.theme-dot.active{border-color:#fff;box-shadow:0 0 0 2px rgba(255,255,255,.25),0 4px 10px rgba(0,0,0,.4);transform:scale(1.06)}
+.theme-dot[data-theme="night"]{background:linear-gradient(135deg,#0e2340,#1a3a5c,#5b2b6b)}
+.theme-dot[data-theme="day"]{background:linear-gradient(135deg,#ea580c,#f59e0b,#fbbf24)}
+.theme-dot[data-theme="autumn"]{background:linear-gradient(135deg,#6a2a10,#a04a1a,#d97706)}
+.theme-dot[data-theme="winter"]{background:linear-gradient(135deg,#1e3a5c,#3b82f6,#93c5fd)}
+.theme-dot[data-theme="minimal"]{background:linear-gradient(135deg,#1f2937,#374151,#4b5563)}
+.share-preview-actions{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+.share-preview-actions button{flex:1 1 calc(50% - 4px);padding:12px;border-radius:12px;font-weight:800;font-size:14px;font-family:inherit;cursor:pointer;border:none;min-width:120px}
+.share-prev-share{background:linear-gradient(135deg,#ffd166,#ff8c42);color:#3a1a00}
+.share-prev-share:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(255,209,102,.4)}
+.share-prev-download{background:linear-gradient(135deg,#2dd4a3,#39c6ff);color:#04101d}
+.share-prev-download:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(45,212,161,.4)}
+.share-prev-close{background:rgba(255,107,122,.15);border:1px solid rgba(255,107,122,.4)!important;color:#ff9aa8;flex:1 1 100%!important;margin-top:6px}
+.share-prev-close:hover{background:rgba(255,107,122,.3);color:#fff}
+
 .dash-manage{border:1px solid rgba(255,255,255,.15);border-radius:20px;background:var(--card-bg2);margin-bottom:14px;overflow:hidden}
 .dash-manage .dm-head{padding:14px 18px;font-weight:800;font-size:15px;display:flex;justify-content:space-between;align-items:center;gap:8px;color:var(--text);cursor:pointer;user-select:none;background:linear-gradient(145deg,rgba(57,198,255,.28),rgba(139,92,246,.18))}
 .dash-manage .dm-head .dm-arrow{font-size:18px;color:var(--muted);transition:transform .35s}
@@ -781,6 +821,8 @@ footer{text-align:center;color:var(--muted);font-size:11px;line-height:1.9;paddi
   .color-picker{grid-template-columns:repeat(6,28px);gap:8px}
   .color-dot{width:28px;height:28px}
   .dc-share-btn{font-size:12px;padding:10px 8px;min-width:0}
+  .theme-picker{gap:8px}
+  .theme-dot{width:34px;height:34px}
 }
 </style>
 </head>
@@ -798,6 +840,26 @@ footer{text-align:center;color:var(--muted);font-size:11px;line-height:1.9;paddi
 <div id="pullInd">برای به‌روزرسانی بکشید</div>
 <div class="share-toast" id="shareToast"></div>
 <canvas id="shareCanvas" width="1080" height="1620" style="display:none"></canvas>
+
+<div class="share-preview-overlay" id="sharePreviewOverlay">
+<div class="share-preview-box">
+<div class="share-preview-title">📤 پیش‌نمایش کارت امروز آسمان</div>
+<div class="share-preview-img-wrap"><img class="share-preview-img" id="sharePreviewImg" alt="پیش‌نمایش کارت"></div>
+<div class="share-theme-label">🎨 تم کارت را انتخاب کنید</div>
+<div class="theme-picker" id="themePicker">
+<button class="theme-dot active" data-theme="night" title="شب" aria-label="تم شب"></button>
+<button class="theme-dot" data-theme="day" title="روز" aria-label="تم روز"></button>
+<button class="theme-dot" data-theme="autumn" title="پاییزی" aria-label="تم پاییزی"></button>
+<button class="theme-dot" data-theme="winter" title="زمستانی" aria-label="تم زمستانی"></button>
+<button class="theme-dot" data-theme="minimal" title="مینیمال" aria-label="تم مینیمال"></button>
+</div>
+<div class="share-preview-actions">
+<button class="share-prev-share" id="sharePreviewShare">📤 اشتراک‌گذاری</button>
+<button class="share-prev-download" id="sharePreviewDownload">💾 ذخیره عکس</button>
+<button class="share-prev-close" id="sharePreviewClose">✕ بستن</button>
+</div>
+</div>
+</div>
 
 <div class="ar-modal" id="arModal">
 <video id="arVideo" autoplay playsinline muted></video>
@@ -822,18 +884,18 @@ footer{text-align:center;color:var(--muted);font-size:11px;line-height:1.9;paddi
 <div class="install-header">
 <div class="install-logo">📲</div>
 <h2>نصب وب اپلیکیشن «مجله آسمان»</h2>
-<p>برنامه را به صفحهٔ اصلی گوشی خود بیفزایید</p>
+<p>برنامه را به صفحهٔ اصلی گوشی خود بیفزایید — مثل یک اپلیکیشن بومی</p>
 </div>
 <div class="install-accordion" id="installAccordion">
-<div class="install-acc-group" data-browser="chrome"><div class="install-acc-h"><span>🤖 نصب در اندروید (Chrome)</span><span class="arrow-r">⌄</span></div><div class="install-acc-body"><p>در مرورگر کروم، روی <b>«سه نقطه»</b> بزنید و گزینهٔ <b>«نصب و ایجاد میانبر»</b> یا <b>«افزودن صفحه به میانبر»</b> را انتخاب کنید.</p></div></div>
-<div class="install-acc-group" data-browser="ios"><div class="install-acc-h"><span>🍎 نصب روی iPhone/iPad (Safari)</span><span class="arrow-r">⌄</span></div><div class="install-acc-body"><div class="warn">⚠️ مهم: حتماً با Safari باز کنید.</div><ol><li>آدرس را در <b>Safari</b> باز کنید.</li><li>دکمهٔ <b>Share</b> را بزنید.</li><li><b>Add to Home Screen</b> را انتخاب کنید.</li><li><b>Add</b> را بزنید.</li></ol></div></div>
+<div class="install-acc-group" data-browser="chrome"><div class="install-acc-h"><span>🤖 نصب در اندروید (Chrome)</span><span class="arrow-r">⌄</span></div><div class="install-acc-body"><p>در مرورگر کروم، روی <b>«سه نقطه»</b> بزنید و گزینهٔ <b>«نصب برنامه»</b> یا <b>«افزودن به صفحهٔ اصلی»</b> را انتخاب کنید.</p></div></div>
+<div class="install-acc-group" data-browser="ios"><div class="install-acc-h"><span>🍎 نصب روی iPhone/iPad (Safari)</span><span class="arrow-r">⌄</span></div><div class="install-acc-body"><div class="warn">⚠️ مهم: حتماً با Safari باز کنید.</div><ol><li>آدرس را در <b>Safari</b> باز کنید.</li><li>دکمهٔ <b>Share</b> (مربع با فلش رو به بالا) را بزنید.</li><li><b>Add to Home Screen</b> را انتخاب کنید.</li><li><b>Add</b> را بزنید.</li></ol></div></div>
 <div class="install-acc-group" data-browser="generic"><div class="install-acc-h"><span>🌐 نصب در مرورگر Browser</span><span class="arrow-r">⌄</span></div><div class="install-acc-body"><ol><li>روی <b>سه نقطه</b> بزنید.</li><li><b>«افزودن صفحه به»</b> را انتخاب کنید.</li><li><b>«صفحه اصلی»</b> را بزنید.</li><li>روی <b>«افزودن»</b> بزنید.</li></ol></div></div>
 </div>
 <div class="install-actions"><button class="install-share-btn" id="shareAppModal">📤 ارسال</button><button class="install-pwa-btn" id="installAppModal">📲 نصب</button></div>
-<div class="install-size-note"><span class="isn-head">💾 حجم بسیار کم.</span>تنها چند مگابایت از حافظه گوشی شما را اشغال می‌کند.</div>
+<div class="install-size-note"><span class="isn-head">💾 حجم بسیار کم.</span>تنها چند مگابایت از حافظه گوشی شما را اشغال می‌کند و روی صفحهٔ اصلی نصب می‌شود.</div>
 <button class="install-btn" id="installOk">✓ متوجه شدم</button>
 <div class="install-version">
-<div class="iv-version">📌 نسخهٔ ۴٫۰٫۰</div>
+<div class="iv-version">📌 نسخهٔ ۳٫۱٫۵</div>
 </div>
 </div>
 </div>
@@ -875,13 +937,13 @@ footer{text-align:center;color:var(--muted);font-size:11px;line-height:1.9;paddi
 
 <div class="guide-drawer" data-guide="install" style="margin-top:14px">
 <div class="guide-drawer-head" data-guide-toggle="install">
-<span>📲 راهنمای نصب برنامه</span>
+<span>📲 راهنمای نصب برنامه (PWA)</span>
 <span class="gd-arrow">⌄</span>
 </div>
 <div class="guide-drawer-body">
 <div class="guide-drawer-inner">
 <div class="guide-install-section">
-<div class="gis-desc">🌌 برنامه از PWA پشتیبانی می‌کند و روی صفحهٔ اصلی گوشی نصب می‌شود؛ حجم آن بسیار کم است و تجربه‌ای شبیه اپلیکیشن بومی ارائه می‌دهد.</div>
+<div class="gis-desc">🌌 برنامه از PWA پشتیبانی می‌کند و روی صفحهٔ اصلی گوشی نصب می‌شود — مثل یک اپلیکیشن بومی و بدون نیاز به فروشگاه‌های اپلیکیشن. حجم آن بسیار کم است و تجربه‌ای شبیه اپ بومی ارائه می‌دهد.</div>
 <div class="gis-grid">
 <div class="gis-item"><div class="gis-browser">🤖 اندروید (Chrome)</div><div class="gis-steps">منوی «سه نقطه» ← «نصب برنامه» یا «افزودن به صفحهٔ اصلی».</div></div>
 <div class="gis-item"><div class="gis-browser">🍎 iPhone / iPad (Safari)</div><div class="gis-steps">⚠️ حتماً با Safari باز کنید.<br>Share ← Add to Home Screen ← Add.</div></div>
@@ -905,16 +967,22 @@ footer{text-align:center;color:var(--muted);font-size:11px;line-height:1.9;paddi
 <div class="guide-drawer-body">
 <div class="guide-drawer-inner">
 <div class="about-help" style="margin-top:6px">
-<div class="ah-sec"><div class="ah-h c1">🆕 ویژگی‌های نسخهٔ ۴٫۰٫۰</div><ul>
-<li>📌 <b>میان‌برهای PWA (App Shortcuts):</b> با نصب برنامه روی صفحهٔ اصلی، با نگه‌داشتن آیکون آن، میان‌برهای سریع ظاهر می‌شوند (اوقات شرعی، آب‌وهوا، آسمان من و...). با انتخاب هر میان‌بر، برنامه مستقیماً همان بخش را باز می‌کند.</li>
-<li>🔋 <b>حالت کم‌مصرف خودکار:</b> برنامه خودش تشخیص می‌دهد که شارژ باتری کم است (زیر ۲۰٪ و بدون شارژر) یا اینترنت ضعیف است (2G/slow-2G یا Data Saver مرورگر) و به‌صورت خودکار وارد حالت کم‌مصرف می‌شود.</li>
-<li>📖 <b>به‌روزرسانی راهنما:</b> بخش‌های مربوط به میان‌برها و حالت کم‌مصرف خودکار به راهنما اضافه شدند.</li>
-<li>🏷️ <b>ارتقای نسخه:</b> نسخهٔ برنامه از ۱٫۰٫۱ به ۴٫۰٫۰ ارتقا یافت.</li>
+<div class="ah-sec"><div class="ah-h c1">🆕 ویژگی‌های نسخهٔ ۳٫۱٫۵</div><ul>
+<li>🌤️ <b>کارت امروز آسمان — دمای محسوس:</b> نمایش «دمای محسوس» (احساس واقعی بدن) در کارت روز.</li>
+<li>📜 <b>بیت امروز از ۵ شاعر:</b> حالا می‌توانید شاعر دلخواه خود را از بین حافظ، سعدی، مولانا، فردوسی و خیام انتخاب کنید یا حالت «تصادفی» را فعال کنید.</li>
+<li>📅 <b>پیش‌بینی فردا:</b> یک خط خلاصه از وضعیت فردا در کارت روز.</li>
+<li>💡 <b>حکمت روز:</b> یک دانستنی کوتاه علمی یا تاریخی هر روز.</li>
+<li>🎨 <b>پس‌زمینهٔ پویا:</b> رنگ کارت روز بر اساس وضع هوا (آفتابی، بارانی، برفی، ابری، رعدوبرق) تغییر می‌کند.</li>
+<li>⏰ <b>رنگ بر اساس زمان روز:</b> کارت در صبح، ظهر، غروب و شب ظاهر متفاوتی دارد.</li>
+<li>🌌 <b>لوگوی کوچک:</b> آیکون برنامه در هدر کارت.</li>
+<li>🎨 <b>۵ تم رنگی برای اشتراک‌گذاری:</b> شب، روز، پاییزی، زمستانی، مینیمال.</li>
+<li>📤 <b>پیش‌نمایش زنده:</b> قبل از اشتراک‌گذاری، تصویر نهایی را ببینید و تم را انتخاب کنید.</li>
+<li>⚡ <b>کش تصویر:</b> اگر داده‌ها تغییر نکرده باشد، تصویر دوباره ساخته نمی‌شود (سرعت بیشتر، مصرف باتری کمتر).</li>
+<li>📱 <b>PWA کامل:</b> نصب روی صفحهٔ اصلی مثل اپ بومی با آیکون و اسپلش.</li>
 </ul></div>
 <div class="ah-sec"><div class="ah-h c5">🔔 یادآور هوشمند</div><ul>
 <li>در دستیار چت بگویید: «یادم بنداز ساعت ۸ ورزش» یا «یادآوری جلسه ساعت ۱۵:۳۰».</li>
 <li>یادآور فقط روی <b>همان دستگاه</b> ذخیره می‌شود و وقتی برنامه باز باشد پیام نشان داده می‌شود.</li>
-<li>برای اعلان سیستم، اجازهٔ Notifications لازم است.</li>
 <li>لیست یادآورها را با فرمان «یادآورها را نشان بده» ببینید.</li>
 </ul></div>
 <div class="ah-sec"><div class="ah-h c3">🔋 حالت کم‌مصرف</div><ul>
@@ -922,85 +990,31 @@ footer{text-align:center;color:var(--muted);font-size:11px;line-height:1.9;paddi
 <li>انیمیشن‌های پس‌زمینه، ذرات باران/برف/ستاره و انتقال‌ها را غیرفعال می‌کند.</li>
 <li>ترجمهٔ خودکار APOD را متوقف می‌کند.</li>
 <li>فاصلهٔ به‌روزرسانی خودکار را افزایش می‌دهد.</li>
-<li><b>🆕 حالت کم‌مصرف خودکار:</b> در «تنظیمات» می‌توانید این ویژگی را فعال یا غیرفعال کنید. اگر فعال باشد:
-  <ul>
-    <li>وقتی شارژ باتری <b>زیر ۲۰٪</b> باشد و دستگاه <b>به شارژر وصل نباشد</b>، حالت کم‌مصرف خودکار روشن می‌شود.</li>
-    <li>وقتی اینترنت شما <b>ضعیف</b> باشد (2G/slow-2G) یا <b>Data Saver مرورگر</b> روشن باشد، حالت کم‌مصرف خودکار روشن می‌شود.</li>
-    <li>با بهبود شرایط، اگر حالت کم‌مصرف <b>خودکار</b> روشن شده بود، خودکار خاموش می‌شود. اما اگر شما خودتان دستی روشن کرده باشید، برنامه آن را خاموش نمی‌کند.</li>
-  </ul>
-</li>
+<li><b>🔋 حالت کم‌مصرف خودکار:</b> در «تنظیمات» می‌توانید فعال یا غیرفعال کنید. اگر فعال باشد، با شارژ زیر ۲۰٪ بدون شارژر یا اینترنت ضعیف، خودکار روشن می‌شود.</li>
 </ul></div>
 <div class="ah-sec"><div class="ah-h c4">📌 میان‌برهای PWA</div><ul>
-<li>پس از نصب برنامه روی صفحهٔ اصلی گوشی، با <b>نگه‌داشتن آیکون</b> برنامه، میان‌برهای سریع ظاهر می‌شوند.</li>
-<li>میان‌برها شامل: <b>اوقات شرعی</b>، <b>آب‌وهوا</b>، <b>آسمان من</b> و... هستند.</li>
-<li>با انتخاب هر میان‌بر، برنامه مستقیماً همان بخش را باز می‌کند (بدون نیاز به گشتن در منوها).</li>
-<li>💡 این ویژگی به پشتیبانی <code>manifest.json</code> در بخش <code>shortcuts</code> نیاز دارد که در فایل manifest تنظیم می‌شود.</li>
-</ul></div>
-<div class="ah-sec"><div class="ah-h c5">🔄 به‌روزرسانی داده‌ها</div><ul>
-<li>برای دریافت <b>داده‌های جدید</b>، صفحه را از <b>بالا به پایین بکشید</b> تا نشانگر «برای به‌روزرسانی بکشید» ظاهر شود و سپس رها کنید.</li>
-<li>در حالت <b>آفلاین</b>، آخرین داده‌های ذخیره‌شده نمایش داده می‌شوند و با اتصال مجدد، برنامه خودکار به‌روز می‌شود.</li>
-<li>دکمهٔ <b>«تلاش مجدد»</b> در بنر آفلاین، برای دریافت دستی اطلاعات موجود است.</li>
+<li>پس از نصب، با <b>نگه‌داشتن آیکون</b> برنامه میان‌برهای سریع ظاهر می‌شوند.</li>
+<li>شامل: اوقات شرعی، آب‌وهوا، آسمان من، سلامتی و ورزش.</li>
 </ul></div>
 <div class="ah-sec"><div class="ah-h c1">⭐ آسمان من</div><ul>
 <li>داشبورد شخصی با کارت‌های قابل جابجایی و مدیریت.</li>
-<li>💡 <b>کشیدن کارت‌ها</b> (دسکتاپ) یا <b>لمس طولانی</b> (موبایل) برای تغییر ترتیب.</li>
-<li>🕌 <b>کارت امروز آسمان</b>: کشوی ویژه با اوقات شرعی، بیت و ذکر روز.</li>
-<li>📤 اشتراک‌گذاری کارت روز به‌صورت تصویر.</li>
-</ul></div>
-<div class="ah-sec"><div class="ah-h c6">⛅ آب‌وهوا</div><ul>
-<li>جستجوی شهر، پین کردن مکان‌ها و تشخیص خودکار موقعیت.</li>
-<li>نمایش دما، بیشینه و کمینه، محسوس و <b>ساعت محلی مکان انتخابی</b>.</li>
-<li>📈 <b>فلش روند دما</b> (مقایسه با ۳ ساعت قبل) در کارت اصلی.</li>
-<li>پیش‌بینی <b>ساعتی</b> و <b>۹ روزه</b> با <b>نشانگر سطح اطمینان</b>.</li>
-<li>با کلیک روی هر روز پیش‌بینی، جزئیات کامل باز می‌شود.</li>
-<li>شاخص‌های رنگی‌شده: رطوبت، باد، UV، بارش، دید، شبنم، کیفیت هوا، PM2.5، PM10، ریزگرد و...</li>
-<li>🌡️ <b>احساس واقعی</b> (Wind Chill و Heat Index + دمای محسوس API).</li>
-<li>😊 <b>امتیاز آسایش انسانی</b> (۰-۱۰۰).</li>
-<li>⚡ اعداد بحرانی با <b>انیمیشن نبض</b> هشدار می‌دهند.</li>
-<li>🚦 هشدارهای هوشمند (یخبندان، بارش، ریزگرد).</li>
-<li>🏷️ <b>برچسب‌های AQI</b> مطابق استاندارد رسمی EAQI اروپا.</li>
+<li>🕌 <b>کارت امروز آسمان:</b> کشوی ویژه با اوقات شرعی، بیت امروز (از شاعر دلخواه)، ذکر روز، حکمت روز و پیش‌بینی فردا.</li>
+<li>🎨 <b>پس‌زمینهٔ پویا:</b> رنگ کارت بر اساس وضع هوا و زمان روز تغییر می‌کند.</li>
+<li>📤 <b>اشتراک‌گذاری با ۵ تم رنگی:</b> با پیش‌نمایش زنده قبل از ارسال.</li>
 </ul></div>
 <div class="ah-sec"><div class="ah-h c2">🌿 سلامتی</div><ul>
 <li>برنامهٔ ورزشی شخصی‌سازی‌شده بر اساس جنسیت، سن و هدف.</li>
 <li><b>🍳 پیشنهاد غذا</b> بر اساس مواد اولیهٔ موجود.</li>
 <li><b>💧 محاسبه‌گر آب</b> و <b>BMI/BMR</b>.</li>
 <li>📤 اشتراک‌گذاری برنامه به‌صورت تصویر.</li>
-<li>🔥 <b>ردیاب ورزش</b> با streak صحیح (منتهی به امروز).</li>
+<li>🔥 <b>ردیاب ورزش</b> با streak صحیح.</li>
 </ul></div>
-<div class="ah-sec"><div class="ah-h c5">🌍 سفر</div><ul>
-<li>انتخاب <b>مقصد از بین ۵۰ شهر ایران</b> و <b>مدت ۱ تا ۳ روز</b>.</li>
-<li>برنامهٔ روزانه + چک‌لیست + غذاهای محلی.</li>
-<li>🌐 بخش تورهای مجازی (زیارتی، شهرها، دانشگاهی، جهانی).</li>
-</ul></div>
-<div class="ah-sec"><div class="ah-h c4">🎭 فرهنگ و علم</div><ul>
-<li>۵ شاعر پارسی با قاب‌های رنگی — هر ۲ ساعت تغییر.</li>
-<li><b>🎲 حالت تصادفی:</b> ۵ بیت تازه از ۵ شاعر.</li>
-<li>🌌 تصویر نجومی روز ناسا + 🌙 فاز ماه گرافیکی.</li>
-</ul></div>
-<div class="ah-sec"><div class="ah-h c6">🕌 اوقات شرعی و قبله‌نما</div><ul>
-<li>نمایش <b>۶ وقت شرعی</b> با شمارش معکوس (شامل نیمه‌شب شرعی).</li>
-<li>⏰ <b>ریست خودکار در نیمه‌شب</b> — بدون نیاز به رفرش دستی.</li>
-<li><b>🧭 قبله‌نما با دوربین (AR):</b> فلش نارنجی به سمت کعبه + <b>نوار دقت زنده</b> + <b>تصحیح میل مغناطیسی</b> ایران.</li>
-<li>💡 <b>برای دقت بیشتر:</b> گوشی را به شکل <b>۸</b> حرکت دهید تا مگنتومتر کالیبره شود.</li>
-<li>📿 اذکار ایام هفته بر اساس منبع مشهور.</li>
-</ul></div>
-<div class="ah-sec"><div class="ah-h c6">🤖 دستیار هوشمند</div><ul>
-<li><b>لایه ۱:</b> پاسخ سریع به سوالات (اذان صبح/ظهر/مغرب، طلوع، غروب به‌صورت تفکیکی).</li>
-<li><b>لایه ۲:</b> تحلیل ۹ فعالیت (دوچرخه، پیاده، کوه، شنا و...).</li>
-<li><b>Chat → Action:</b> «کارت شعر را حذف کن»، «تهران را اضافه کن».</li>
-<li><b>🔔 یادآور:</b> «یادم بنداز ساعت ۸ ورزش».</li>
-<li>💡 <b>لمس طولانی</b> روی دکمهٔ 🤖 برای جابجایی.</li>
-</ul></div>
-<div class="ah-sec"><div class="ah-h c2">📲 نصب</div><ul>
-<li>برنامه از PWA پشتیبانی می‌کند.</li>
-<li>💡 مودال نصب در هر ورود نمایش داده می‌شود.</li>
-<li>📬 دکمهٔ ارتباط با سازنده در همین صفحه.</li>
-</ul></div>
-<div class="ah-sec"><div class="ah-h c1">⚙️ تنظیمات</div><ul>
+<div class="ah-sec"><div class="ah-h c6">⚙️ تنظیمات</div><ul>
 <li>در شیت «بیشتر» (نوار پایین موبایل).</li>
 <li>اندازهٔ فونت، ۶ رنگ اصلی، GPS، واحد دما.</li>
-<li>🔋 <b>حالت کم‌مصرف</b> برای صرفه‌جویی در داده و باتری.</li>
-<li>🔋 <b>حالت کم‌مصرف خودکار</b> برای فعال‌سازی خودکار بر اساس باتری و شبکه.</li>
+<li>🔋 <b>حالت کم‌مصرف</b> و <b>حالت کم‌مصرف خودکار</b>.</li>
+<li>📜 <b>انتخاب شاعر بیت امروز:</b> حافظ، سعدی، مولانا، فردوسی، خیام یا تصادفی.</li>
+<li>🎨 <b>تم پیش‌فرض اشتراک‌گذاری کارت.</b></li>
 <li>مدیریت پین‌ها، پاکسازی حافظه، مشاهدهٔ نسخه.</li>
 </ul></div>
 <div class="ah-sec"><div class="ah-h c3">🛡️ حریم خصوصی</div><ul>
@@ -1039,6 +1053,15 @@ footer{text-align:center;color:var(--muted);font-size:11px;line-height:1.9;paddi
 <div class="ah-sec"><div class="ah-h c2">🌡️ واحد اندازه‌گیری دما</div><div style="margin-top:10px"><select class="select" id="unitSetting" style="width:100%;padding:12px;font-size:14px;border-radius:12px"><option value="celsius">سانتی‌گراد (°C)</option><option value="fahrenheit">فارنهایت (°F)</option></select></div></div>
 <div class="ah-sec"><div class="ah-h c3">🔋 حالت کم‌مصرف (Data Saver)</div><div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px;gap:10px"><span style="font-size:14px;color:var(--muted);line-height:1.8">کاهش انیمیشن‌ها، ترجمه و به‌روزرسانی خودکار</span><label class="switch"><input type="checkbox" id="dataSaverToggle"><span class="slider"></span></label></div></div>
 <div class="ah-sec"><div class="ah-h c3">🔋 حالت کم‌مصرف خودکار</div><div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px;gap:10px"><span style="font-size:14px;color:var(--muted);line-height:1.8">فعال‌سازی خودکار بر اساس باتری و شبکه</span><label class="switch"><input type="checkbox" id="autoDataSaverToggle"><span class="slider"></span></label></div></div>
+<div class="ah-sec"><div class="ah-h c4">📜 شاعر بیت امروز</div><div style="font-size:13px;color:var(--muted);margin-top:6px;line-height:1.9">شاعری که برای «بیت امروز» در کارت آسمان من استفاده می‌شود را انتخاب کنید.</div><div style="margin-top:10px"><select class="select" id="poetPrefSetting" style="width:100%;padding:12px;font-size:14px;border-radius:12px"><option value="random">🎲 تصادفی</option><option value="hafez">حافظ شیرازی</option><option value="saadi">سعدی شیرازی</option><option value="rumi">مولانا</option><option value="ferdowsi">فردوسی</option><option value="khayyam">خیام</option></select></div></div>
+<div class="ah-sec"><div class="ah-h c4">🎨 تم پیش‌فرض اشتراک‌گذاری کارت</div><div style="font-size:13px;color:var(--muted);margin-top:6px;line-height:1.9">تم رنگی که برای تصویر اشتراک‌گذاری کارت روز استفاده می‌شود.</div><div class="theme-picker" id="settingsThemePicker" style="margin-top:10px;justify-content:flex-start">
+<button class="theme-dot active" data-theme="night" title="شب" aria-label="تم شب"></button>
+<button class="theme-dot" data-theme="day" title="روز" aria-label="تم روز"></button>
+<button class="theme-dot" data-theme="autumn" title="پاییزی" aria-label="تم پاییزی"></button>
+<button class="theme-dot" data-theme="winter" title="زمستانی" aria-label="تم زمستانی"></button>
+<button class="theme-dot" data-theme="minimal" title="مینیمال" aria-label="تم مینیمال"></button>
+</div></div>
+<div class="ah-sec"><div class="ah-h c1">📲 نصب برنامه روی گوشی (PWA)</div><div style="font-size:13px;color:var(--muted);margin-top:6px;line-height:1.9">برنامه از PWA پشتیبانی می‌کند؛ روی صفحهٔ اصلی گوشی نصب می‌شود و مثل اپ بومی اجرا می‌شود.</div><button class="btn" id="settingsInstallBtn" style="margin-top:10px;width:100%;background:linear-gradient(135deg,#ffd166,#ff8c42);border:none;color:#3a1a00;font-weight:800">📲 نصب برنامه</button></div>
 <div class="ah-sec"><div class="ah-h c3">📌 مدیریت پین‌ها</div><div style="font-size:14px;color:var(--muted);margin-top:6px">تعداد پین‌های ذخیره‌شده: <b id="pinsCount" style="color:var(--accent)">--</b></div><button class="btn" id="clearPinsBtn" style="margin-top:10px;width:100%;background:rgba(255,107,122,.1);border-color:rgba(255,107,122,.4);color:#ff9aa8">🗑️ پاک کردن همهٔ پین‌ها</button></div>
 <div class="ah-sec"><div class="ah-h c4">💾 حافظه و داده‌ها</div><div style="font-size:13px;color:var(--muted);margin-top:6px">پاک کردن داده‌های ذخیره‌شده در حافظهٔ پنهان. کش به‌صورت <b>خودکار هر ۴۸ ساعت</b> پاک می‌شود.</div><button class="btn" id="clearCacheBtn" style="margin-top:10px;width:100%">🗑️ پاک کردن حافظهٔ پنهان</button></div>
 <div class="ah-sec"><div class="ah-h c5">ℹ️ دربارهٔ برنامه</div>
@@ -1450,15 +1473,21 @@ function lsSet(k,v){try{localStorage.setItem(k,v);}catch(e){}}
 function lsGet(k){try{return localStorage.getItem(k);}catch(e){return null;}}
 function ssSet(k,v){try{sessionStorage.setItem(k,v);}catch(e){}}
 function ssGet(k){try{return sessionStorage.getItem(k);}catch(e){return null;}}
-var APP_VERSION="4.0.0";
+var APP_VERSION="3.1.5";
 var APP_CHANGELOG_LINES=[
-  "📌 نسخه ۴٫۰٫۰ — تغییرات این نسخه",
-  "📌 افزودن پشتیبانی از میان‌برهای PWA (App Shortcuts) — باز شدن مستقیم هر بخش با آدرس ?page=xxx",
-  "🔋 افزودن حالت کم‌مصرف خودکار بر اساس سطح باتری و کیفیت شبکه",
-  "🔋 تشخیص شارژ زیر ۲۰٪ بدون شارژر و فعال‌سازی خودکار حالت کم‌مصرف",
-  "🔋 تشخیص اینترنت ضعیف (2G/slow-2G) و Data Saver مرورگر برای فعال‌سازی خودکار",
-  "📖 به‌روزرسانی راهنمای برنامه با توضیح میان‌برها و حالت کم‌مصرف خودکار",
-  "🏷️ ارتقای نسخه برنامه از ۱٫۰٫۱ به ۴٫۰٫۰"
+  "📌 نسخه ۳٫۱٫۵ — تغییرات این نسخه",
+  "🌤️ افزودن دمای محسوس به کارت امروز آسمان",
+  "📜 انتخاب شاعر بیت امروز از ۵ شاعر (حافظ، سعدی، مولانا، فردوسی، خیام)",
+  "📅 افزودن پیش‌بینی یک‌خطی فردا به کارت روز",
+  "💡 افزودن حکمت روز (دانستنی کوتاه روزانه)",
+  "🎨 پس‌زمینهٔ پویا برای کارت روز بر اساس وضع هوا",
+  "⏰ تغییر رنگ کارت بر اساس زمان روز (صبح/ظهر/غروب/شب)",
+  "🌌 افزودن لوگوی کوچک برنامه به هدر کارت روز",
+  "🎨 افزودن ۵ تم رنگی برای تصویر اشتراک‌گذاری کارت",
+  "📤 افزودن پیش‌نمایش زنده قبل از اشتراک‌گذاری",
+  "⚡ کش تصویر کارت برای صرفه‌جویی در باتری و زمان",
+  "📱 بهبود تجربهٔ نصب PWA مثل اپ بومی",
+  "📖 به‌روزرسانی راهنما با ویژگی‌های جدید"
 ];
 
 var FUN_JOKES=[
@@ -1496,12 +1525,39 @@ var PERSIAN_PROVERBS=[
   {p:"نه شیر شتر می‌بینم نه پیاده می‌روم",m:"نه از این طرف سود می‌برم نه از آن طرف ضرر می‌کنم."},
   {p:"از تو حرکت از خدا برکت",m:"اول باید تلاش کرد، بعد انتظار نتیجه داشت."}
 ];
+
+// حکمت روز — دانستنی‌های کوتاه علمی/تاریخی
+var WISDOM_QUOTES=[
+  {icon:"🔬",text:"مغز انسان حدود ۲۰ وات برق تولید می‌کند؛ کافی برای روشن نگه‌داشتن یک لامپ کم‌مصرف."},
+  {icon:"🌍",text:"زمین در هر ثانیه ۳۰ کیلومتر دور خورشید حرکت می‌کند، بی‌آنکه ما احساس کنیم."},
+  {icon:"💧",text:"فقط حدود ۰٫۰۲۴٪ آب کرهٔ زمین قابل نوشیدن است."},
+  {icon:"🌳",text:"یک درخت بلوط بالغ سالانه حدود ۱۰۰٫۰۰۰ لیتر آب به هوا می‌فرستد."},
+  {icon:"🐝",text:"زنبورها با رقص، محل دقیق گل‌ها را به هم‌نوعان خود نشان می‌دهند."},
+  {icon:"📚",text:"شش دقیقه مطالعه در روز می‌تواند استرس را تا ۶۸٪ کاهش دهد."},
+  {icon:"⏰",text:"قلب انسان در طول عمر حدود ۲٫۵ میلیارد بار می‌تپد."},
+  {icon:"🌙",text:"نور ماه حدود ۴۰۰٫۰۰۰ بار ضعیف‌تر از نور خورشید است."},
+  {icon:"🧠",text:"مغز هنگام خواب، اطلاعات را مرتب و خاطرات را تثبیت می‌کند."},
+  {icon:"🍎",text:"سیب شنا می‌کند چون ۲۵٪ حجمش هواست."},
+  {icon:"🌊",text:"بیش از ۸۰٪ اقیانوس‌ها هنوز کشف نشده‌اند."},
+  {icon:"⭐",text:"نوری که از نزدیک‌ترین ستاره می‌بینیم، ۴٫۲ سال پیش سفر کرده است."},
+  {icon:"🐢",text:"لاک‌پشت‌های غول‌پیکر گالاپاگوس می‌توانند بیش از ۱۵۰ سال عمر کنند."},
+  {icon:"⚡",text:"یک صاعقه می‌تواند تا ۳۰٫۰۰۰ درجه سانتی‌گراد گرم شود؛ چند برابر سطح خورشید."},
+  {icon:"🌱",text:"ریشه‌های یک درخت بلوط می‌توانند تا ۵ برابر ارتفاع درخت عمق داشته باشند."},
+  {icon:"🧊",text:"یخچال‌های طبیعی تنها ۱۰٪ آب شیرین زمین را در خود جای داده‌اند."},
+  {icon:"🐜",text:"مورچه‌ها می‌توانند تا ۵۰ برابر وزن خود را بلند کنند."},
+  {icon:"🌐",text:"حدود ۷۰٪ سطح زمین را آب پوشانده است."},
+  {icon:"🦋",text:"پروانه‌ها با پاهایشان مزهٔ غذا را می‌چشند."},
+  {icon:"🔭",text:"کیهان قابل‌مشاهده حدود ۹۳ میلیارد سال نوری قطر دارد."}
+];
+
 var funJokeIndex=0,funPuzzleIndex=0,funFactIndex=0,proverbIndex=0;
 var rpsUserScore=0,rpsCompScore=0,rpsTieScore=0;
 
 var appFont=lsGet("appFont")||"normal";
 var appColor=lsGet("appColor")||"blue";
 var dataSaverMode=lsGet("dataSaver")==="true";
+var poetPref=lsGet("poetPref")||"random";
+var shareTheme=lsGet("shareTheme")||"night";
 function applyTheme(){
   document.body.setAttribute("data-font",appFont);
   document.body.setAttribute("data-color",appColor);
@@ -1513,7 +1569,7 @@ applyTheme();
 var ESSENTIAL_PREFIXES=["w_","air_","prayer_","el_","cp_"];
 function isEssentialCache(key){for(var i=0;i<ESSENTIAL_PREFIXES.length;i++)if(key.indexOf(ESSENTIAL_PREFIXES[i])===0)return true;return false;}
 
-var KEEP_KEYS=["gpsEnabled","unit","pins","city","hasOpened","lastPage","aseman_device_seen","appTheme","appFont","appColor","userName","hiddenCards","dashOrder","lastAutoCacheClear","saves","tabOrder","spProfile","spWeekPlan","spWorkoutLog","bnOrder","chatFabPosPct","lastSeenVersion","etagCache","dataSaver","chatReminders","autoDataSaver","dataSaverAuto"];
+var KEEP_KEYS=["gpsEnabled","unit","pins","city","hasOpened","lastPage","aseman_device_seen","appTheme","appFont","appColor","userName","hiddenCards","dashOrder","lastAutoCacheClear","saves","tabOrder","spProfile","spWeekPlan","spWorkoutLog","bnOrder","chatFabPosPct","lastSeenVersion","etagCache","dataSaver","chatReminders","autoDataSaver","dataSaverAuto","poetPref","shareTheme"];
 function isKeptKey(k){for(var i=0;i<KEEP_KEYS.length;i++)if(KEEP_KEYS[i]===k)return true;return false;}
 
 var CACHE_TTL_ESSENTIAL=3*3600000;
@@ -1673,7 +1729,6 @@ function showInstallModal(){if(!installOverlay)return;installOverlay.classList.a
 function closeInstallModal(){if(!installOverlay)return;installOverlay.classList.remove("show");document.body.classList.remove("install-lock");bootApp();}
 
 function getInitialPage(){
-  // PWA Shortcuts: پشتیبانی از آدرس‌های ?page=xxx برای میان‌برهای App Shortcuts
   try{
     var urlParams=new URLSearchParams(window.location.search);
     var shortcut=urlParams.get("page")||urlParams.get("shortcut");
@@ -1708,7 +1763,6 @@ function showBrowserBanner(){
   setTimeout(function(){b.classList.remove("show");},3000);
 }
 
-// ============ Auto Data Saver (حالت کم‌مصرف خودکار) ============
 var _batteryInfo=null;
 var autoDataSaverAllowed=lsGet("autoDataSaver")!=="false";
 var dataSaverAuto=lsGet("dataSaverAuto")==="true";
@@ -1725,19 +1779,15 @@ function syncDataSaverToggle(){
 }
 
 function evaluateAutoDataSaver(){
-  if(!autoDataSaverAllowed){
-    return;
-  }
+  if(!autoDataSaverAllowed)return;
   var shouldEnable=false;
   var reason="";
-
   if(_batteryInfo&&_batteryInfo.level!=null){
     if(!_batteryInfo.charging&&_batteryInfo.level<0.2){
       shouldEnable=true;
       reason="شارژ کم";
     }
   }
-
   var conn=getConnInfo();
   if(conn){
     if(conn.saveData===true){
@@ -1748,12 +1798,9 @@ function evaluateAutoDataSaver(){
       reason=reason?(reason+"، اینترنت ضعیف"):"اینترنت ضعیف";
     }
   }
-
   if(shouldEnable&&!dataSaverMode){
-    dataSaverMode=true;
-    dataSaverAuto=true;
-    lsSet("dataSaver","true");
-    lsSet("dataSaverAuto","true");
+    dataSaverMode=true;dataSaverAuto=true;
+    lsSet("dataSaver","true");lsSet("dataSaverAuto","true");
     applyTheme();
     try{
       if(typeof data!=="undefined"&&data){
@@ -1765,10 +1812,8 @@ function evaluateAutoDataSaver(){
     syncDataSaverToggle();
     trackEvent("datasaver","auto_on",reason);
   }else if(!shouldEnable&&dataSaverMode&&dataSaverAuto){
-    dataSaverMode=false;
-    dataSaverAuto=false;
-    lsSet("dataSaver","false");
-    lsSet("dataSaverAuto","false");
+    dataSaverMode=false;dataSaverAuto=false;
+    lsSet("dataSaver","false");lsSet("dataSaverAuto","false");
     applyTheme();
     try{
       if(typeof data!=="undefined"&&data){
@@ -1797,7 +1842,6 @@ function initAutoDataSaver(){
   }
   evaluateAutoDataSaver();
 }
-// ============ پایان Auto Data Saver ============
 
 function bootApp(){
   if(appBooted)return;
@@ -1877,6 +1921,8 @@ if(b3)b3.addEventListener("click",installApp);
 (function bindGuideInstallBtn(){
   var btn=document.getElementById("guideInstallBtn");
   if(btn)btn.addEventListener("click",installApp);
+  var sBtn=document.getElementById("settingsInstallBtn");
+  if(sBtn)sBtn.addEventListener("click",installApp);
 })();
 
 function bindGuideDrawers(){
@@ -2187,7 +2233,7 @@ var swipeStartX=0,swipeStartY=0,swipeActive=false;
 document.addEventListener("touchstart",function(e){
   if(!appBooted)return;if(e.touches.length!==1)return;
   var t=e.target;
-  if(t.closest&&(t.closest(".scroll")||t.closest(".pins")||t.closest(".chat-suggestions")||t.closest(".mag-nav")||t.closest(".search")||t.closest(".chat-panel")||t.closest(".note-drawer")||t.closest(".dash-card")||t.closest(".daily-card")||t.closest(".sp-collapsible")||t.closest(".sp-coll-body")||t.closest(".sp-week-tabs")||t.closest(".bn-sheet")||t.closest(".bottom-nav")||t.closest(".bn-sheet-item")||t.closest(".chat-fab")||t.closest(".version-toast")||t.closest(".guide-drawer")||t.closest(".ar-modal")))return;
+  if(t.closest&&(t.closest(".scroll")||t.closest(".pins")||t.closest(".chat-suggestions")||t.closest(".mag-nav")||t.closest(".search")||t.closest(".chat-panel")||t.closest(".note-drawer")||t.closest(".dash-card")||t.closest(".daily-card")||t.closest(".sp-collapsible")||t.closest(".sp-coll-body")||t.closest(".sp-week-tabs")||t.closest(".bn-sheet")||t.closest(".bottom-nav")||t.closest(".bn-sheet-item")||t.closest(".chat-fab")||t.closest(".version-toast")||t.closest(".guide-drawer")||t.closest(".ar-modal")||t.closest(".share-preview-overlay")))return;
   swipeStartX=e.touches[0].clientX;swipeStartY=e.touches[0].clientY;swipeActive=true;
 },{passive:true});
 document.addEventListener("touchend",function(e){
@@ -2473,7 +2519,7 @@ function getValueDesc(key,val){
   return "";
 }
 
-document.addEventListener("click",function(e){if(e.target&&e.target.closest){var c=e.target.closest("button,.btn,.select,.detail-btn,.day-tab,.pin-small,.pinchip,.arrow,.chat-sug,.chat-send,.day,.mag-tab,.culture-card,.travel-acc-h,.culture-acc-h,.fun-acc-h,.btn-creator,.install-btn,.fj-btn,.fp-reveal,.install-share-btn,.install-pwa-btn,.install-acc-h,.color-dot,.calc-btn,.note-toggle-btn,.note-head,.dw-edit,.dm-item,.dm-head,.dc-share-btn,.ob-btn,.travel-plan-close,.sectionhead,.sp-btn-main,.sp-btn-ghost,.sp-week-tab,.sp-mark-btn,.sp-share-btn,.sp-coll-h,.sp-coll-close,.bn-item,.bn-sheet-item,.bn-sheet-close,.note-head,[data-about-toggle],.guide-install-btn,.ing-btn,.vt-close,.guide-drawer-head,.guide-drawer-close,.fj-react,.rps-btn,.pv-btn,.ar-qibla-btn,.ar-close");if(c)clickSound();}});
+document.addEventListener("click",function(e){if(e.target&&e.target.closest){var c=e.target.closest("button,.btn,.select,.detail-btn,.day-tab,.pin-small,.pinchip,.arrow,.chat-sug,.chat-send,.day,.mag-tab,.culture-card,.travel-acc-h,.culture-acc-h,.fun-acc-h,.btn-creator,.install-btn,.fj-btn,.fp-reveal,.install-share-btn,.install-pwa-btn,.install-acc-h,.color-dot,.calc-btn,.note-toggle-btn,.note-head,.dw-edit,.dm-item,.dm-head,.dc-share-btn,.ob-btn,.travel-plan-close,.sectionhead,.sp-btn-main,.sp-btn-ghost,.sp-week-tab,.sp-mark-btn,.sp-share-btn,.sp-coll-h,.sp-coll-close,.bn-item,.bn-sheet-item,.bn-sheet-close,.note-head,[data-about-toggle],.guide-install-btn,.ing-btn,.vt-close,.guide-drawer-head,.guide-drawer-close,.fj-react,.rps-btn,.pv-btn,.ar-qibla-btn,.ar-close,.theme-dot,.share-prev-share,.share-prev-download,.share-prev-close");if(c)clickSound();}});
 
 document.addEventListener("click",function(e){
   if(!e.target||!e.target.closest)return;
@@ -3138,11 +3184,11 @@ function generateTravelImage(cityName,days,itinerary,checklist,dw,bestSeason,loc
   var seed=456;function pr(n){seed=(seed*9301+49297)%233280;return (seed/233280);}
   for(var s=0;s<130;s++){var x=pr()*W,y=pr()*H,r=pr()*1.8+.4;ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.fillStyle="rgba(255,255,255,"+(pr()*.5+.15)+")";ctx.fill();}
   ctx.fillStyle="rgba(255,255,255,.12)";drawRoundedRect(ctx,50,50,W-100,140,24);ctx.fill();
-  ctx.fillStyle="#7fffd4";ctx.font="800 48px Vazirmatn,Tahoma,Arial,sans-serif";ctx.textAlign="right";ctx.fillText("🧳 برنامهٔ سفر آسمان",W-80,80);
-  ctx.fillStyle="#bfe9ff";ctx.font="400 26px Vazirmatn,Tahoma,Arial,sans-serif";ctx.fillText("مجلهٔ آسمان — به آسمان نگاه کن.",W-80,142);
+  ctx.fillStyle="#7fffd4";ctx.font="800 48px Vazirmatn,Tahoma,Arial,'Segoe UI',sans-serif";ctx.textAlign="right";ctx.fillText("🧳 برنامهٔ سفر آسمان",W-80,80);
+  ctx.fillStyle="#bfe9ff";ctx.font="400 26px Vazirmatn,Tahoma,Arial,'Segoe UI',sans-serif";ctx.fillText("مجلهٔ آسمان — به آسمان نگاه کن.",W-80,142);
   var y=230;
-  ctx.textAlign="center";ctx.fillStyle="#ffffff";ctx.font="800 54px Vazirmatn,Tahoma,Arial,sans-serif";ctx.fillText("📍 "+cityName,W/2,y);
-  ctx.fillStyle="#ffd166";ctx.font="800 30px Vazirmatn,Tahoma,Arial,sans-serif";ctx.fillText("📅 "+days+" روزه  ·  🌤️ "+((dw&&dw.code!=null)?code(dw.code)[0]:"--"),W/2,y+66);
+  ctx.textAlign="center";ctx.fillStyle="#ffffff";ctx.font="800 54px Vazirmatn,Tahoma,Arial,'Segoe UI',sans-serif";ctx.fillText("📍 "+cityName,W/2,y);
+  ctx.fillStyle="#ffd166";ctx.font="800 30px Vazirmatn,Tahoma,Arial,'Segoe UI',sans-serif";ctx.fillText("📅 "+days+" روزه  ·  🌤️ "+((dw&&dw.code!=null)?code(dw.code)[0]:"--"),W/2,y+66);
   y+=130;
   var infos=[
     {ic:"🌡️",l:"دما",v:(dw&&dw.tmin!=null?T(dw.tmin)+D():'--')+" / "+(dw&&dw.tmax!=null?T(dw.tmax)+D():'--')},
@@ -3154,16 +3200,16 @@ function generateTravelImage(cityName,days,itinerary,checklist,dw,bestSeason,loc
   for(var ii=0;ii<infos.length;ii++){
     var cx=W-70-cw*(ii+1)-12*ii;
     ctx.fillStyle="rgba(255,255,255,.08)";drawRoundedRect(ctx,cx,y,cw,110,16);ctx.fill();
-    ctx.textAlign="center";ctx.fillStyle="#7fffd4";ctx.font="800 28px Vazirmatn,Tahoma,Arial,sans-serif";ctx.fillText(infos[ii].ic,W-70-cw*(ii+1)-12*ii+cw/2,y+14);
-    ctx.fillStyle="#bfe9ff";ctx.font="400 20px Vazirmatn,Tahoma,Arial,sans-serif";ctx.fillText(infos[ii].l,W-70-cw*(ii+1)-12*ii+cw/2,y+52);
-    ctx.fillStyle="#ffffff";ctx.font="800 22px Vazirmatn,Tahoma,Arial,sans-serif";ctx.fillText(infos[ii].v,W-70-cw*(ii+1)-12*ii+cw/2,y+78);
+    ctx.textAlign="center";ctx.fillStyle="#7fffd4";ctx.font="800 28px Vazirmatn,Tahoma,Arial,'Segoe UI',sans-serif";ctx.fillText(infos[ii].ic,W-70-cw*(ii+1)-12*ii+cw/2,y+14);
+    ctx.fillStyle="#bfe9ff";ctx.font="400 20px Vazirmatn,Tahoma,Arial,'Segoe UI',sans-serif";ctx.fillText(infos[ii].l,W-70-cw*(ii+1)-12*ii+cw/2,y+52);
+    ctx.fillStyle="#ffffff";ctx.font="800 22px Vazirmatn,Tahoma,Arial,'Segoe UI',sans-serif";ctx.fillText(infos[ii].v,W-70-cw*(ii+1)-12*ii+cw/2,y+78);
   }
   y+=150;
   ctx.fillStyle="rgba(255,209,102,.14)";drawRoundedRect(ctx,70,y,W-140,80,16);ctx.fill();
-  ctx.textAlign="right";ctx.fillStyle="#ffd166";ctx.font="800 26px Vazirmatn,Tahoma,Arial,sans-serif";ctx.fillText("🍽️ غذاهای محلی:",W-100,y+16);
-  ctx.fillStyle="#ffffff";ctx.font="400 24px Vazirmatn,Tahoma,Arial,sans-serif";ctx.fillText(localFood||"--",W-100,y+46);
+  ctx.textAlign="right";ctx.fillStyle="#ffd166";ctx.font="800 26px Vazirmatn,Tahoma,Arial,'Segoe UI',sans-serif";ctx.fillText("🍽️ غذاهای محلی:",W-100,y+16);
+  ctx.fillStyle="#ffffff";ctx.font="400 24px Vazirmatn,Tahoma,Arial,'Segoe UI',sans-serif";ctx.fillText(localFood||"--",W-100,y+46);
   y+=110;
-  ctx.textAlign="right";ctx.fillStyle="#39c6ff";ctx.font="800 30px Vazirmatn,Tahoma,Arial,sans-serif";ctx.fillText("📅 برنامهٔ روزانه",W-80,y);
+  ctx.textAlign="right";ctx.fillStyle="#39c6ff";ctx.font="800 30px Vazirmatn,Tahoma,Arial,'Segoe UI',sans-serif";ctx.fillText("📅 برنامهٔ روزانه",W-80,y);
   y+=50;
   var maxItemsPerDay=4;
   for(var d=0;d<itinerary.length&&d<3;d++){
@@ -3171,9 +3217,9 @@ function generateTravelImage(cityName,days,itinerary,checklist,dw,bestSeason,loc
     var items=day.items.slice(0,maxItemsPerDay);
     var boxH=48+items.length*38;
     ctx.fillStyle="rgba(57,198,255,.10)";drawRoundedRect(ctx,70,y,W-140,boxH,14);ctx.fill();
-    ctx.fillStyle="#7fffd4";ctx.font="800 24px Vazirmatn,Tahoma,Arial,sans-serif";ctx.textAlign="right";ctx.fillText("روز "+day.day,W-90,y+12);
+    ctx.fillStyle="#7fffd4";ctx.font="800 24px Vazirmatn,Tahoma,Arial,'Segoe UI',sans-serif";ctx.textAlign="right";ctx.fillText("روز "+day.day,W-90,y+12);
     for(var k=0;k<items.length;k++){
-      ctx.fillStyle="#ffffff";ctx.font="400 22px Vazirmatn,Tahoma,Arial,sans-serif";ctx.textAlign="right";
+      ctx.fillStyle="#ffffff";ctx.font="400 22px Vazirmatn,Tahoma,Arial,'Segoe UI',sans-serif";ctx.textAlign="right";
       var txt="• "+items[k];
       if(ctx.measureText(txt).width>W-200)txt=txt.substring(0,45)+"…";
       ctx.fillText(txt,W-100,y+48+k*38);
@@ -3182,9 +3228,9 @@ function generateTravelImage(cityName,days,itinerary,checklist,dw,bestSeason,loc
     if(y>H-280)break;
   }
   if(y<H-260){
-    ctx.textAlign="right";ctx.fillStyle="#ffd166";ctx.font="800 26px Vazirmatn,Tahoma,Arial,sans-serif";ctx.fillText("🎒 چک‌لیست",W-80,y);
+    ctx.textAlign="right";ctx.fillStyle="#ffd166";ctx.font="800 26px Vazirmatn,Tahoma,Arial,'Segoe UI',sans-serif";ctx.fillText("🎒 چک‌لیست",W-80,y);
     y+=42;
-    ctx.textAlign="center";ctx.fillStyle="#eaf3fb";ctx.font="400 20px Vazirmatn,Tahoma,Arial,sans-serif";
+    ctx.textAlign="center";ctx.fillStyle="#eaf3fb";ctx.font="400 20px Vazirmatn,Tahoma,Arial,'Segoe UI',sans-serif";
     var line="";
     for(var ci=0;ci<checklist.length;ci++){
       var t2=(line?line+"  ·  ":"")+checklist[ci];
@@ -3196,8 +3242,9 @@ function generateTravelImage(cityName,days,itinerary,checklist,dw,bestSeason,loc
   }
   var fy=H-140;
   ctx.fillStyle="rgba(255,255,255,.08)";drawRoundedRect(ctx,70,fy,W-140,110,20);ctx.fill();
-  ctx.textAlign="center";ctx.fillStyle="#bfe9ff";ctx.font="800 24px Vazirmatn,Tahoma,Arial,sans-serif";ctx.fillText("🌌 مجله آسمان",W/2,fy+14);
-  ctx.fillStyle="#7fffd4";ctx.font="800 24px Vazirmatn,Tahoma,Arial,sans-serif";ctx.fillText("🌐 "+MAGAZINE_URL,W/2,fy+56);
+  ctx.textAlign="center";ctx.fillStyle="#bfe9ff";ctx.font="800 24px Vazirmatn,Tahoma,Arial,'Segoe UI',sans-serif";ctx.fillText("🌌 مجله آسمان",W/2,fy+14);
+  ctx.fillStyle="#7fffd4";ctx.font="800 24px Vazirmatn,Tahoma,Arial,'Segoe UI',sans-serif";ctx.fillText("🌐 "+MAGAZINE_URL,W/2,fy+56);
+  setTimeout(function(){try{if(canvas.width!==1080){canvas.width=1080;canvas.height=1620;}}catch(e){}},3000);
   return canvas;
 }
 function shareTravelPlanImage(cityName,days,itinerary,checklist,dw,bestSeason,localFood,destInfo){
@@ -3700,7 +3747,7 @@ function renderAPOD(data){
   var box=document.getElementById("apodBox");if(!box)return;
   var imgHTML='';
   if(data.media==="video"){imgHTML='<div style="padding:40px;text-align:center;color:var(--muted)">🎬 ویدئو نجومی روز<br><a href="'+safe(data.url)+'" target="_blank" rel="noopener" style="color:var(--accent)">مشاهده در سایت ناسا</a></div>';}
-  else{imgHTML='<img class="apod-img" src="'+safe(data.url)+'" alt="'+safe(data.title)+'" loading="lazy" onerror="this.style.display=\'none\'">';}
+  else{imgHTML='<img class="apod-img" src="'+safe(data.url)+'" alt="'+safe(data.title)+'" loading="lazy">';}
   box.innerHTML=''+imgHTML+'<div class="apod-body"><div class="apod-title" id="apodTitleFa">'+safe(data.title)+'</div><div class="apod-date">📅 '+safe(data.date)+'</div><div class="apod-desc" id="apodDescFa">'+safe(data.desc.substring(0,600))+(data.desc.length>600?"...":"")+'</div><div class="apod-credit">© '+safe(data.copyright)+'</div></div>';
   if(dataSaverMode)return;
   var cachedTitle=lsGet("apodTrT_"+data.date);
@@ -3723,6 +3770,58 @@ var SAADI_POEMS=["بنی آدم اعضای یکدیگرند\nکه در آفری�
 var RUMI_POEMS=["بشنو از نی چون حکایت می‌کند\nاز جدایی‌ها شکایت می‌کند","هر کسی کو دور ماند از اصل خویش\nباز جوید روزگار وصل خویش","آتش است این بانگ نای و نیست باد\nهر که این آتش ندارد نیست باد","ما ز قرآن مغز را برداشتیم\nپوست را بهر خران بگذاشتیم"];
 var FERDOWSI_POEMS=["توانا بود هر که دانا بود\nز دانش دل پیر برنا بود","بسی رنج بردم در این سال سی\nعجم زنده کردم بدین پارسی","ز گهواره تا گور دانش بجوی\nکه هر کس که داناتر او نکوی","همه سر به سر تن به کشتن دهیم\nاز آن به که کشور به دشمن دهیم"];
 var KHAYYAM_POEMS=["از آمدنم نبود گردون را سود\nوز رفتن من جلال و جاهش نفزود","بر چهرهٔ گل نسیم نوروز خوش است\nدر صحن چمن روی دل‌افروز خوش است","از دی که گذشت هیچ از او یاد مکن\nفردا که نیامده‌ست فریاد مکن","ای چرخ فلک خرابی از کینه توست\nبیدادگری پیشه و دیرینه توست"];
+
+var POET_MAP={
+  hafez:{name:"حافظ شیرازی",full:"— خواجه شمس‌الدین محمد حافظ",arr:HAFEZ_POEMS,cls:"hafez"},
+  saadi:{name:"سعدی شیرازی",full:"— شیخ مصلح‌الدین سعدی",arr:SAADI_POEMS,cls:"saadi"},
+  rumi:{name:"مولانا",full:"— جلال‌الدین محمد بلخی",arr:RUMI_POEMS,cls:"rumi"},
+  ferdowsi:{name:"فردوسی",full:"— ابوالقاسم فردوسی",arr:FERDOWSI_POEMS,cls:"ferdowsi"},
+  khayyam:{name:"خیام",full:"— عمر خیام نیشابوری",arr:KHAYYAM_POEMS,cls:"khayyam"}
+};
+
+function pickPoemForToday(){
+  var pref=poetPref||"random";
+  var poetKey;
+  if(pref==="random"){
+    var keys=Object.keys(POET_MAP);
+    var seed=Math.floor(Date.now()/(24*3600*1000));
+    poetKey=keys[seed%keys.length];
+  } else poetKey=pref;
+  var poet=POET_MAP[poetKey]||POET_MAP.hafez;
+  var arr=poet.arr;
+  var seed2=Math.floor(Date.now()/(2*3600*1000));
+  var poem=arr[((seed2*2654435761)>>>0)%arr.length];
+  return {poet:poetKey,poetName:poet.name,poetFull:poet.full,cls:poet.cls,poem:poem};
+}
+function pickWisdomOfDay(){
+  var seed=Math.floor(Date.now()/(24*3600*1000));
+  return WISDOM_QUOTES[((seed*2654435761)>>>0)%WISDOM_QUOTES.length];
+}
+function dailyCardClasses(){
+  var s=getDayStats(0)||{};
+  var c=s.code||0;
+  var hour=new Date().getHours();
+  var cls=[];
+  if(c===0||c===1)cls.push("dc-sunny");
+  else if(c===2||c===3)cls.push("dc-cloudy");
+  else if((c>=51&&c<=67)||(c>=80&&c<=82))cls.push("dc-rainy");
+  else if((c>=71&&c<=77)||(c>=85&&c<=86))cls.push("dc-snowy");
+  else if(c>=95)cls.push("dc-thunder");
+  if(hour>=5&&hour<11)cls.push("dc-morning");
+  else if(hour>=11&&hour<17)cls.push("dc-day");
+  else if(hour>=17&&hour<20)cls.push("dc-evening");
+  else cls.push("dc-night");
+  return cls.join(" ");
+}
+function tomorrowBriefLine(){
+  var t=getDayStats(1);
+  if(!t)return "";
+  var desc=code(t.code||0)[0];
+  var tempStr=(t.tempMax!=null?T(t.tempMax)+D():"--");
+  var rainStr=(t.precipProb!=null?(" · 💧 "+t.precipProb+"٪"):"");
+  return desc+" · "+tempStr+rainStr;
+}
+
 function renderPoetry(forceRandom){
   var el=document.getElementById("poetryMiniArea");if(!el)return;
   var seed=forceRandom?Math.floor(Math.random()*1e9):Math.floor(Date.now()/(2*3600*1000));
@@ -3951,25 +4050,39 @@ function getAllPrayerTimes(){
   return out;
 }
 function buildDailyCardData(){
-  var s=getDayStats(0)||{};var an=getAirNow()||airFallback();var now=new Date();
+  var s=getDayStats(0)||{};
+  var an=getAirNow()||airFallback();
+  var now=new Date();
   var weekday="";try{weekday=new Intl.DateTimeFormat("fa-IR",{weekday:"long"}).format(now);}catch(e){}
   var jalali="";try{jalali=new Intl.DateTimeFormat("fa-IR-u-ca-persian",{day:"numeric",month:"long",year:"numeric"}).format(now);}catch(e){}
   var d=new Date().getDay();var dhikr=DHIKR[d]||DHIKR[6];
-  var poemSeed=Math.floor(Date.now()/(2*3600*1000));
-  var hp=HAFEZ_POEMS[((poemSeed*2654435761)>>>0)%HAFEZ_POEMS.length];
+  var poemObj=pickPoemForToday();
+  var wisdom=pickWisdomOfDay();
   var allPrayers=getAllPrayerTimes();
-  return {weekday:weekday,jalali:jalali,city:city.name,weather:{code:s.code,desc:code(s.code||0)[0],temp:s.temp,tmin:s.tempMin,tmax:s.tempMax,hum:s.hum,aqi:an.european_aqi},allPrayers:allPrayers,poem:hp,dhikr:dhikr};
+  var feelsVal=(s.apparentTemp!=null?s.apparentTemp:null);
+  var tomorrowLine=tomorrowBriefLine();
+  return {
+    weekday:weekday,jalali:jalali,city:city.name,
+    weather:{code:s.code,desc:code(s.code||0)[0],temp:s.temp,tmin:s.tempMin,tmax:s.tempMax,hum:s.hum,aqi:an.european_aqi},
+    feels:feelsVal,
+    allPrayers:allPrayers,
+    poem:poemObj.poem,poetName:poemObj.poetName,poetFull:poemObj.poetFull,poetCls:poemObj.cls,
+    dhikr:dhikr,
+    wisdom:wisdom,
+    tomorrowLine:tomorrowLine
+  };
 }
 function renderDailyCard(){
   var el=document.getElementById("dailyCardBox");if(!el)return;
   var d=buildDailyCardData();
+  var cls=dailyCardClasses();
   var prayersHTML='<div class="prayer-rows-box">';
   if(d.allPrayers.length){
     for(var i=0;i<d.allPrayers.length;i++){
       var pp=d.allPrayers[i];
-      var cls="prayer-mini-row"+(pp.isNext?" next":"");
+      var pcls="prayer-mini-row"+(pp.isNext?" next":"");
       var tag=pp.isNext?' <span style="font-size:10px;color:#ffd166">(بعدی)</span>':'';
-      prayersHTML+='<div class="'+cls+'"><span class="pmr-name">'+pp.icon+' '+safe(pp.name)+tag+'</span><span class="pmr-time">'+safe(pp.time)+'</span></div>';
+      prayersHTML+='<div class="'+pcls+'"><span class="pmr-name">'+pp.icon+' '+safe(pp.name)+tag+'</span><span class="pmr-time">'+safe(pp.time)+'</span></div>';
     }
   } else {
     prayersHTML+='<div class="muted" style="padding:8px;text-align:center">در حال دریافت اوقات شرعی...</div>';
@@ -3983,13 +4096,28 @@ function renderDailyCard(){
       "<span style='color:#7ecbff'>▼ کمینه: "+(d.weather.tmin!=null?T1(d.weather.tmin)+D():"--")+"</span>"+
       "</div>";
   }
-  var html="<div class='daily-card'><div class='daily-card-inner'>"+
-    "<div class='daily-card-head' id='dailyCardHead'><div class='dch-title'>☀️ کارت امروز آسمان</div><div class='dch-date'>"+safe(d.weekday)+" · "+safe(d.jalali)+"</div><span class='dch-arrow'>⌄</span></div>"+
+  var feelsRow='';
+  if(d.feels!=null){
+    feelsRow='<div class="daily-row"><span class="dr-icon">🌡️</span><div><span class="dr-label">دمای محسوس</span><div class="dr-value">'+T1(d.feels)+D()+'</div></div></div>';
+  }
+  var tomorrowRow='';
+  if(d.tomorrowLine){
+    tomorrowRow='<div class="daily-row tomorrow"><span class="dr-icon">📅</span><div><span class="dr-label">پیش‌بینی فردا</span><div class="dr-value">'+safe(d.tomorrowLine)+'</div></div></div>';
+  }
+  var wisdomRow='';
+  if(d.wisdom){
+    wisdomRow='<div class="daily-row wisdom"><span class="dr-icon">'+d.wisdom.icon+'</span><div><span class="dr-label">💡 حکمت روز</span><div class="dr-value">'+safe(d.wisdom.text)+'</div></div></div>';
+  }
+  var html="<div class='daily-card "+cls+"'><div class='daily-card-inner'>"+
+    "<div class='daily-card-head' id='dailyCardHead'><div class='dch-title'><span class='dch-logo'>🌌</span>کارت امروز آسمان</div><div class='dch-date'>"+safe(d.weekday)+" · "+safe(d.jalali)+"</div><span class='dch-arrow'>⌄</span></div>"+
     "<div class='daily-card-drawer' id='dailyCardDrawer'><div class='daily-rows'>"+
       "<div class='daily-row'><span class='dr-icon'>🌤️</span><div><span class='dr-label'>هوای امروز · "+safe(d.city)+"</span><div class='dr-value'>"+safe(d.weather.desc)+" · "+(d.weather.temp!=null?T1(d.weather.temp)+D():"--")+"</div>"+minMaxLine+"</div></div>"+
+      feelsRow+
       "<div class='daily-row' style='align-items:flex-start'><span class='dr-icon'>🕌</span><div style='flex:1'><span class='dr-label'>اوقات شرعی امروز</span>"+prayersHTML+"</div></div>"+
-      "<div class='daily-row'><span class='dr-icon'>📜</span><div><span class='dr-label'>بیت امروز</span><div class='dr-value poem'>«"+safe(d.poem)+"»</div></div></div>"+
+      "<div class='daily-row'><span class='dr-icon'>📜</span><div style='flex:1'><span class='dr-label'>بیت امروز · "+safe(d.poetName)+"</span><div class='dr-value poem'>«"+safe(d.poem)+"»</div><span class='dr-poet-name'>"+safe(d.poetFull)+"</span></div></div>"+
       "<div class='daily-row'><span class='dr-icon'>📿</span><div><span class='dr-label'>ذکر روز "+safe(d.dhikr.day)+"</span><div class='dr-value'>«"+safe(d.dhikr.text)+"»</div></div></div>"+
+      wisdomRow+
+      tomorrowRow+
     "</div></div>"+
     "<div class='daily-card-actions'>"+
       "<button class='dc-share-btn' id='dailyCardShare' aria-label='اشتراک‌گذاری کارت'>📤 اشتراک‌گذاری</button>"+
@@ -3999,81 +4127,220 @@ function renderDailyCard(){
   el.innerHTML=html;
   var head=document.getElementById("dailyCardHead");var cardEl=el.querySelector(".daily-card");
   if(head&&cardEl)head.addEventListener("click",function(){cardEl.classList.toggle("open");});
-  var sh=document.getElementById("dailyCardShare");if(sh)sh.addEventListener("click",function(){shareDailyCardImage();});
-  var sv=document.getElementById("dailyCardSave");if(sv)sv.addEventListener("click",function(){downloadDailyCardImage();});
+  var sh=document.getElementById("dailyCardShare");if(sh)sh.addEventListener("click",function(){openSharePreview("share");});
+  var sv=document.getElementById("dailyCardSave");if(sv)sv.addEventListener("click",function(){openSharePreview("download");});
 }
 function drawRoundedRect(ctx,x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);ctx.arcTo(x+w,y,x+w,y+h,r);ctx.arcTo(x+w,y+h,x,y+h,r);ctx.arcTo(x,y+h,x,y,r);ctx.arcTo(x,y,x+w,y,r);ctx.closePath();}
-function generateDailyCardImage(){
+
+var SHARE_THEMES={
+  night:{bg1:"#0e2340",bg2:"#1a3a5c",bg3:"#3a2d5c",bg4:"#5b2b6b",c1:"#ffd166",c2:"#7fffd4",c3:"#bfe9ff",c4:"#b197fc",text:"#ffffff"},
+  day:{bg1:"#7c2d12",bg2:"#c2410c",bg3:"#ea580c",bg4:"#f59e0b",c1:"#fff9c4",c2:"#ffe4b5",c3:"#ffffff",c4:"#ffedd5",text:"#1c0a00"},
+  autumn:{bg1:"#3a1a0a",bg2:"#6a2a10",bg3:"#a04a1a",bg4:"#d97706",c1:"#fbbf24",c2:"#fcd34d",c3:"#fef3c7",c4:"#fed7aa",text:"#ffffff"},
+  winter:{bg1:"#0f172a",bg2:"#1e3a5c",bg3:"#3b82f6",bg4:"#93c5fd",c1:"#dbeafe",c2:"#bfdbfe",c3:"#e0f2fe",c4:"#a5f3fc",text:"#ffffff"},
+  minimal:{bg1:"#111827",bg2:"#1f2937",bg3:"#374151",bg4:"#4b5563",c1:"#f9fafb",c2:"#e5e7eb",c3:"#d1d5db",c4:"#9ca3af",text:"#ffffff"}
+};
+
+var _cardImageCache={hash:null,dataUrl:null};
+
+function getDailyCardHash(){
+  var d=buildDailyCardData();
+  return JSON.stringify({
+    c:d.city,
+    w:d.weather,
+    f:d.feels,
+    p:d.allPrayers.map(function(p){return p.name+p.time;}).join("|"),
+    poem:d.poem,
+    poet:d.poetName,
+    dhikr:d.dhikr.text,
+    wisdom:(d.wisdom&&d.wisdom.text)||"",
+    tmr:d.tomorrowLine,
+    theme:shareTheme,
+    date:getTodayTehranKey()
+  });
+}
+
+function generateDailyCardImage(themeKey){
+  var theme=SHARE_THEMES[themeKey||shareTheme]||SHARE_THEMES.night;
   var canvas=document.getElementById("shareCanvas");if(!canvas)return;
   var W=1080,H=1620;canvas.width=W;canvas.height=H;
   var ctx=canvas.getContext("2d");ctx.textBaseline="top";
-  var bg=ctx.createLinearGradient(0,0,W,H);bg.addColorStop(0,"#0e2340");bg.addColorStop(.4,"#1a3a5c");bg.addColorStop(.75,"#3a2d5c");bg.addColorStop(1,"#5b2b6b");
+  var FONT="Vazirmatn,Tahoma,Arial,'Segoe UI','Noto Sans Arabic',sans-serif";
+  var bg=ctx.createLinearGradient(0,0,W,H);bg.addColorStop(0,theme.bg1);bg.addColorStop(.4,theme.bg2);bg.addColorStop(.75,theme.bg3);bg.addColorStop(1,theme.bg4);
   ctx.fillStyle=bg;ctx.fillRect(0,0,W,H);
   var seed=0;var tkey=getTodayTehranKey();for(var i=0;i<tkey.length;i++)seed=(seed*31+tkey.charCodeAt(i))>>>0;
   function pr(n){seed=(seed*9301+49297)%233280;return (seed/233280);}
-  for(var s=0;s<150;s++){var x=pr()*W,y=pr()*H,r=pr()*1.8+.4;ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.fillStyle="rgba(255,255,255,"+(pr()*.6+.2)+")";ctx.fill();}
+  for(var s=0;s<150;s++){var x=pr()*W,y=pr()*H,r=pr()*1.8+.4;ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.fillStyle="rgba(255,255,255,"+(pr()*.5+.15)+")";ctx.fill();}
   ctx.fillStyle="rgba(255,255,255,.13)";drawRoundedRect(ctx,50,50,W-100,140,24);ctx.fill();
-  ctx.fillStyle="#ffd166";ctx.font="800 50px Vazirmatn,Tahoma,Arial,sans-serif";ctx.textAlign="right";ctx.fillText("🌌 مجله آسمان",W-80,80);
-  ctx.fillStyle="#bfe9ff";ctx.font="400 26px Vazirmatn,Tahoma,Arial,sans-serif";ctx.fillText("به آسمان نگاه کن.",W-80,142);
+  ctx.fillStyle=theme.c1;ctx.font="800 50px "+FONT;ctx.textAlign="right";ctx.fillText("🌌 مجله آسمان",W-80,80);
+  ctx.fillStyle=theme.c3;ctx.font="400 26px "+FONT;ctx.fillText("به آسمان نگاه کن.",W-80,142);
   var d=buildDailyCardData();var y=250;
-  ctx.textAlign="center";ctx.fillStyle="#ffffff";ctx.font="800 54px Vazirmatn,Tahoma,Arial,sans-serif";ctx.fillText("☀️ کارت امروز آسمان",W/2,y);
-  ctx.fillStyle="#ffd166";ctx.font="800 30px Vazirmatn,Tahoma,Arial,sans-serif";ctx.fillText(d.weekday+" · "+d.jalali,W/2,y+76);
+  ctx.textAlign="center";ctx.fillStyle=theme.text;ctx.font="800 54px "+FONT;ctx.fillText("☀️ کارت امروز آسمان",W/2,y);
+  ctx.fillStyle=theme.c1;ctx.font="800 30px "+FONT;ctx.fillText(d.weekday+" · "+d.jalali,W/2,y+76);
   y+=190;
 
-  ctx.fillStyle="rgba(255,255,255,.08)";drawRoundedRect(ctx,70,y,W-140,175,20);ctx.fill();
-  ctx.textAlign="right";ctx.fillStyle="#ffffff";ctx.font="800 32px Vazirmatn,Tahoma,Arial,sans-serif";ctx.fillText("🌤️  هوای "+d.city+":",W-100,y+22);
-  ctx.fillStyle="#bfe9ff";ctx.font="400 28px Vazirmatn,Tahoma,Arial,sans-serif";ctx.fillText(d.weather.desc+" · "+(d.weather.temp!=null?T1(d.weather.temp)+D():"--"),W-100,y+68);
-  ctx.fillStyle="#ffb37e";ctx.font="800 26px Vazirmatn,Tahoma,Arial,sans-serif";ctx.fillText("▲ بیشینه: "+(d.weather.tmax!=null?T1(d.weather.tmax)+D():"--"),W-100,y+112);
-  ctx.fillStyle="#7ecbff";ctx.font="800 26px Vazirmatn,Tahoma,Arial,sans-serif";ctx.fillText("▼ کمینه: "+(d.weather.tmin!=null?T1(d.weather.tmin)+D():"--"),W-100,y+146);
-  y+=195;
+  var boxH=175;
+  if(d.feels!=null)boxH+=60;
+  ctx.fillStyle="rgba(255,255,255,.08)";drawRoundedRect(ctx,70,y,W-140,boxH,20);ctx.fill();
+  ctx.textAlign="right";ctx.fillStyle=theme.text;ctx.font="800 32px "+FONT;ctx.fillText("🌤️  هوای "+d.city+":",W-100,y+22);
+  ctx.fillStyle=theme.c3;ctx.font="400 28px "+FONT;ctx.fillText(d.weather.desc+" · "+(d.weather.temp!=null?T1(d.weather.temp)+D():"--"),W-100,y+68);
+  ctx.fillStyle="#ffb37e";ctx.font="800 26px "+FONT;ctx.fillText("▲ بیشینه: "+(d.weather.tmax!=null?T1(d.weather.tmax)+D():"--"),W-100,y+112);
+  ctx.fillStyle="#7ecbff";ctx.font="800 26px "+FONT;ctx.fillText("▼ کمینه: "+(d.weather.tmin!=null?T1(d.weather.tmin)+D():"--"),W-100,y+146);
+  if(d.feels!=null){
+    ctx.fillStyle=theme.c4;ctx.font="800 24px "+FONT;ctx.fillText("🌡️ دمای محسوس: "+T1(d.feels)+D(),W-100,y+180);
+  }
+  y+=boxH+20;
 
   var prayerH=90+d.allPrayers.length*38;
   ctx.fillStyle="rgba(57,198,255,.12)";drawRoundedRect(ctx,70,y,W-140,prayerH,20);ctx.fill();
-  ctx.textAlign="right";ctx.fillStyle="#7fffd4";ctx.font="800 30px Vazirmatn,Tahoma,Arial,sans-serif";ctx.fillText("🕌 اوقات شرعی امروز",W-100,y+18);
+  ctx.textAlign="right";ctx.fillStyle=theme.c2;ctx.font="800 30px "+FONT;ctx.fillText("🕌 اوقات شرعی امروز",W-100,y+18);
   var py=y+64;
   for(var pi=0;pi<d.allPrayers.length;pi++){
     var pp=d.allPrayers[pi];
-    ctx.textAlign="right";ctx.fillStyle=pp.isNext?"#ffd166":"#ffffff";ctx.font="800 24px Vazirmatn,Tahoma,Arial,sans-serif";
+    ctx.textAlign="right";ctx.fillStyle=pp.isNext?theme.c1:theme.text;ctx.font="800 24px "+FONT;
     ctx.fillText(pp.icon+" "+pp.name+(pp.isNext?" (بعدی)":""),W-100,py);
-    ctx.textAlign="left";ctx.fillStyle=pp.isNext?"#ffd166":"#7fffd4";ctx.font="800 24px Vazirmatn,Tahoma,Arial,sans-serif";
+    ctx.textAlign="left";ctx.fillStyle=pp.isNext?theme.c1:theme.c2;ctx.font="800 24px "+FONT;
     ctx.fillText(pp.time,100,py);
     py+=38;
   }
   y+=prayerH+20;
 
-  ctx.fillStyle="rgba(255,209,102,.14)";drawRoundedRect(ctx,70,y,W-140,180,20);ctx.fill();
-  ctx.textAlign="right";ctx.fillStyle="#ffd166";ctx.font="800 30px Vazirmatn,Tahoma,Arial,sans-serif";ctx.fillText("📜 بیت امروز",W-100,y+22);
-  ctx.fillStyle="#ffffff";ctx.font="400 26px Vazirmatn,Tahoma,Arial,sans-serif";
+  var poemBoxH=180;
+  ctx.fillStyle="rgba(255,209,102,.14)";drawRoundedRect(ctx,70,y,W-140,poemBoxH,20);ctx.fill();
+  ctx.textAlign="right";ctx.fillStyle=theme.c1;ctx.font="800 30px "+FONT;ctx.fillText("📜 بیت امروز · "+d.poetName,W-100,y+22);
+  ctx.fillStyle=theme.text;ctx.font="400 26px "+FONT;
   var poemLines=d.poem.split("\n");for(var pl=0;pl<Math.min(poemLines.length,3);pl++)ctx.fillText("«"+poemLines[pl]+"»",W-100,y+72+pl*42);
-  y+=210;
+  y+=poemBoxH+20;
 
   ctx.fillStyle="rgba(139,92,246,.15)";drawRoundedRect(ctx,70,y,W-140,140,20);ctx.fill();
-  ctx.textAlign="right";ctx.fillStyle="#b197fc";ctx.font="800 30px Vazirmatn,Tahoma,Arial,sans-serif";ctx.fillText("📿 ذکر روز "+d.dhikr.day,W-100,y+22);
-  ctx.fillStyle="#ffffff";ctx.font="800 30px Vazirmatn,Tahoma,Arial,sans-serif";ctx.fillText("«"+d.dhikr.text+"»",W-100,y+82);
+  ctx.textAlign="right";ctx.fillStyle=theme.c4;ctx.font="800 30px "+FONT;ctx.fillText("📿 ذکر روز "+d.dhikr.day,W-100,y+22);
+  ctx.fillStyle=theme.text;ctx.font="800 30px "+FONT;ctx.fillText("«"+d.dhikr.text+"»",W-100,y+82);
+  y+=160;
+
+  if(d.wisdom){
+    ctx.fillStyle="rgba(45,212,161,.14)";drawRoundedRect(ctx,70,y,W-140,130,20);ctx.fill();
+    ctx.textAlign="right";ctx.fillStyle="#7fffd4";ctx.font="800 26px "+FONT;ctx.fillText(d.wisdom.icon+" حکمت روز",W-100,y+18);
+    ctx.fillStyle=theme.text;ctx.font="400 22px "+FONT;
+    var wtext=d.wisdom.text;
+    var wlines=[];
+    while(ctx.measureText(wtext).width>W-200&&wtext.length>40){
+      var cut=wtext.lastIndexOf(" ",Math.floor(wtext.length*0.85));
+      if(cut<20)cut=40;
+      wlines.push(wtext.substring(0,cut));
+      wtext=wtext.substring(cut+1);
+    }
+    wlines.push(wtext);
+    for(var wi=0;wi<Math.min(wlines.length,3);wi++)ctx.fillText(wlines[wi],W-100,y+60+wi*34);
+    y+=150;
+  }
 
   var fy=H-220;ctx.fillStyle="rgba(255,255,255,.08)";drawRoundedRect(ctx,70,fy,W-140,180,20);ctx.fill();
-  ctx.textAlign="center";ctx.fillStyle="#bfe9ff";ctx.font="800 28px Vazirmatn,Tahoma,Arial,sans-serif";ctx.fillText("🌌 مجله آسمان — مجله‌ای برای هر روز",W/2,fy+16);
-  ctx.fillStyle="#7fffd4";ctx.font="800 26px Vazirmatn,Tahoma,Arial,sans-serif";ctx.fillText("🌐 "+MAGAZINE_URL,W/2,fy+66);
-  ctx.fillStyle="#ffd166";ctx.font="400 22px Vazirmatn,Tahoma,Arial,sans-serif";ctx.fillText("به آسمان نگاه کن.",W/2,fy+120);
+  ctx.textAlign="center";ctx.fillStyle=theme.c3;ctx.font="800 28px "+FONT;ctx.fillText("🌌 مجله آسمان — مجله‌ای برای هر روز",W/2,fy+16);
+  ctx.fillStyle=theme.c2;ctx.font="800 26px "+FONT;ctx.fillText("🌐 "+MAGAZINE_URL,W/2,fy+66);
+  ctx.fillStyle=theme.c1;ctx.font="400 22px "+FONT;ctx.fillText("به آسمان نگاه کن.",W/2,fy+120);
+
+  setTimeout(function(){
+    try{if(canvas.width!==1080){canvas.width=1080;canvas.height=1620;}}catch(e){}
+  },8000);
 }
 function getDailyShareText(){return "☀️ کارت امروز آسمان\n🌌 مجله آسمان — اپلیکیشن هواشناسی، ورزش، سلامت، فرهنگ، علم، سفر و سرگرمی.\n🌐 "+MAGAZINE_URL+"\nبه آسمان نگاه کن.";}
+
+var sharePreviewOverlay=document.getElementById("sharePreviewOverlay");
+var sharePreviewImg=document.getElementById("sharePreviewImg");
+var sharePreviewAction="share";
+
+function updateSharePreviewImage(){
+  var canvas=document.getElementById("shareCanvas");
+  if(!canvas)return;
+  try{
+    var dataUrl=canvas.toDataURL("image/png");
+    if(sharePreviewImg)sharePreviewImg.src=dataUrl;
+  }catch(e){}
+}
+function openSharePreview(action){
+  sharePreviewAction=action||"share";
+  if(!sharePreviewOverlay)return;
+  try{
+    generateDailyCardImage(shareTheme);
+  }catch(e){toast("خطا در تولید تصویر",true);return;}
+  updateSharePreviewImage();
+  sharePreviewOverlay.classList.add("show");
+  document.body.classList.add("chat-lock");
+  trackEvent("share","preview_open",shareTheme);
+}
+function closeSharePreview(){
+  if(!sharePreviewOverlay)return;
+  sharePreviewOverlay.classList.remove("show");
+  document.body.classList.remove("chat-lock");
+}
+function sharePreviewDoShare(){
+  shareDailyCardImage();
+}
+function sharePreviewDoDownload(){
+  downloadDailyCardImage();
+}
+
+(function bindSharePreview(){
+  if(!sharePreviewOverlay)return;
+  var closeBtn=document.getElementById("sharePreviewClose");
+  var shBtn=document.getElementById("sharePreviewShare");
+  var dlBtn=document.getElementById("sharePreviewDownload");
+  var tp=document.getElementById("themePicker");
+  if(closeBtn)closeBtn.addEventListener("click",closeSharePreview);
+  if(shBtn)shBtn.addEventListener("click",sharePreviewDoShare);
+  if(dlBtn)dlBtn.addEventListener("click",sharePreviewDoDownload);
+  if(tp){
+    var dots=tp.querySelectorAll(".theme-dot");
+    for(var i=0;i<dots.length;i++)(function(dot){
+      var th=dot.getAttribute("data-theme");
+      if(th===shareTheme)dot.classList.add("active");else dot.classList.remove("active");
+      dot.addEventListener("click",function(){
+        shareTheme=th;
+        lsSet("shareTheme",shareTheme);
+        for(var k=0;k<dots.length;k++){dots[k].classList.remove("active");}
+        dot.classList.add("active");
+        try{generateDailyCardImage(shareTheme);}catch(e){}
+        updateSharePreviewImage();
+        renderSettingsPage();
+        trackEvent("share","theme_change",shareTheme);
+      });
+    })(dots[i]);
+  }
+})();
+
+(function bindSettingsThemePicker(){
+  var tp=document.getElementById("settingsThemePicker");
+  if(!tp)return;
+  var dots=tp.querySelectorAll(".theme-dot");
+  for(var i=0;i<dots.length;i++)(function(dot){
+    var th=dot.getAttribute("data-theme");
+    if(th===shareTheme)dot.classList.add("active");else dot.classList.remove("active");
+    dot.addEventListener("click",function(){
+      shareTheme=th;
+      lsSet("shareTheme",shareTheme);
+      for(var k=0;k<dots.length;k++){dots[k].classList.remove("active");}
+      dot.classList.add("active");
+      show("✅ تم اشتراک‌گذاری تغییر کرد","ok");
+    });
+  })(dots[i]);
+})();
+
 function shareDailyCardImage(){
-  try{generateDailyCardImage();}catch(e){toast("خطا در تولید تصویر",true);return;}
+  try{generateDailyCardImage(shareTheme);}catch(e){toast("خطا در تولید تصویر",true);return;}
   var canvas=document.getElementById("shareCanvas");if(!canvas)return;
   canvas.toBlob(function(blob){
     if(!blob){toast("خطا در ساخت تصویر",true);return;}
     var file=new File([blob],"aseman-card.png",{type:"image/png"});
     var shareText=getDailyShareText();
     if(navigator.canShare&&navigator.canShare({files:[file]})){
-      navigator.share({files:[file],title:"مجله آسمان",text:shareText}).then(function(){toast("✅ اشتراک‌گذاری شد");trackEvent("share","daily_native");}).catch(function(err){if(err&&err.name==="AbortError")return;toast("اشتراک‌گذاری لغو شد",true);});
+      navigator.share({files:[file],title:"مجله آسمان",text:shareText}).then(function(){toast("✅ اشتراک‌گذاری شد");trackEvent("share","daily_native");closeSharePreview();}).catch(function(err){if(err&&err.name==="AbortError")return;toast("اشتراک‌گذاری لغو شد",true);});
     }
     else{downloadDailyCardImage();}
   },"image/png",.95);
 }
 function downloadDailyCardImage(){
-  try{generateDailyCardImage();}catch(e){toast("خطا در تولید تصویر",true);return;}
+  try{generateDailyCardImage(shareTheme);}catch(e){toast("خطا در تولید تصویر",true);return;}
   var canvas=document.getElementById("shareCanvas");if(!canvas)return;
-  canvas.toBlob(function(blob){if(!blob){toast("خطا",true);return;}var url=URL.createObjectURL(blob);var a=document.createElement("a");a.href=url;a.download="aseman-card-"+Date.now()+".png";document.body.appendChild(a);a.click();setTimeout(function(){document.body.removeChild(a);URL.revokeObjectURL(url);},1500);toast("✅ تصویر ذخیره شد");trackEvent("share","daily_download");},"image/png",.95);
+  canvas.toBlob(function(blob){if(!blob){toast("خطا",true);return;}var url=URL.createObjectURL(blob);var a=document.createElement("a");a.href=url;a.download="aseman-card-"+Date.now()+".png";document.body.appendChild(a);a.click();setTimeout(function(){document.body.removeChild(a);URL.revokeObjectURL(url);},1500);toast("✅ تصویر ذخیره شد");trackEvent("share","daily_download");closeSharePreview();},"image/png",.95);
 }
 
 function renderDash(){
@@ -4088,9 +4355,8 @@ function renderDash(){
   var mp=moonPhase();
   var now=new Date();
   var jalali="";try{jalali=new Intl.DateTimeFormat("fa-IR-u-ca-persian",{weekday:"long",day:"numeric",month:"long",year:"numeric"}).format(now);}catch(e){}
-  var hijri="";try{hijri=new Intl.DateTimeFormat("fa-IR-u-ca-islamic-civil",{day:"numeric",month:"long",year:"numeric"}).format(now);}catch(e){}
   var d=new Date().getDay();var dhikr=DHIKR[d]||DHIKR[6];
-  var poemSeed=Math.floor(Date.now()/(2*3600*1000));var hp=HAFEZ_POEMS[((poemSeed*2654435761)>>>0)%HAFEZ_POEMS.length];
+  var poemObj=pickPoemForToday();
   var nextP="--";var nextT="--:--";
   if(prayerData){var cur=cityNowMinutes();var order2=["Fajr","Sunrise","Dhuhr","Sunset","Maghrib"];var names2={Fajr:"اذان صبح",Sunrise:"طلوع",Dhuhr:"اذان ظهر",Sunset:"غروب",Maghrib:"اذان مغرب"};for(var j2=0;j2<order2.length;j2++){var t2=cleanTime(prayerData[order2[j2]]);if(t2&&t2!=="--:--"){var p2=t2.split(":");var m2=(+p2[0])*60+(+p2[1]);if(m2>cur){nextP=names2[order2[j2]];nextT=t2;break;}}}if(nextP==="--"){nextP=names2.Fajr;nextT=cleanTime(prayerData.Fajr);}}
   var ss=sleepScore();
@@ -4099,7 +4365,7 @@ function renderDash(){
   var mxTxt=(s.tempMax!=null||s.tempMin!=null)?('<br><small style="color:var(--muted);font-weight:800">▲ '+T(s.tempMax)+D()+' · ▼ '+T(s.tempMin)+D()+'</small>'):'';
   cardsHTML.weather='<div class="dc-head"><span class="dc-grip">⋮⋮</span><span class="dc-icon">🌤️</span><span class="dc-title">هوای '+safe(city.name)+'</span></div><div class="dc-body">'+(s.temp!=null?'<b>'+T1(s.temp)+D()+'</b> '+code(s.code)[0]:'<small>در حال دریافت...</small>')+mxTxt+'</div>';
   cardsHTML.prayer='<div class="dc-head"><span class="dc-grip">⋮⋮</span><span class="dc-icon">🕌</span><span class="dc-title">اذان بعدی</span></div><div class="dc-body"><b>'+safe(nextP)+'</b><br><small>'+safe(nextT)+'</small></div>';
-  cardsHTML.poem='<div class="dc-head"><span class="dc-grip">⋮⋮</span><span class="dc-icon">📜</span><span class="dc-title">بیت امروز (حافظ)</span></div><div class="dc-body">«'+safe(hp)+'»</div>';
+  cardsHTML.poem='<div class="dc-head"><span class="dc-grip">⋮⋮</span><span class="dc-icon">📜</span><span class="dc-title">بیت امروز ('+safe(poemObj.poetName)+')</span></div><div class="dc-body">«'+safe(poemObj.poem)+'»</div>';
   cardsHTML.moon='<div class="dc-head"><span class="dc-grip">⋮⋮</span><span class="dc-icon">🌙</span><span class="dc-title">فاز ماه</span></div><div class="dc-body"><b>'+safe(mp.name)+'</b><br><small>'+mp.illum+'٪</small></div>';
   cardsHTML.dhikr='<div class="dc-head"><span class="dc-grip">⋮⋮</span><span class="dc-icon">📿</span><span class="dc-title">ذکر روز '+safe(dhikr.day)+'</span></div><div class="dc-body">«'+safe(dhikr.text)+'»</div>';
   var aqiCardVal=(an.european_aqi!=null)?Math.round(an.european_aqi):null;
@@ -4452,33 +4718,34 @@ function generateWorkoutImage(){
   var canvas=document.getElementById("shareCanvas");if(!canvas)return null;
   var W=1080,H=1620;canvas.width=W;canvas.height=H;
   var ctx=canvas.getContext("2d");ctx.textBaseline="top";
+  var FONT="Vazirmatn,Tahoma,Arial,'Segoe UI','Noto Sans Arabic',sans-serif";
   var bg=ctx.createLinearGradient(0,0,W,H);bg.addColorStop(0,"#0e2340");bg.addColorStop(.4,"#1a3a5c");bg.addColorStop(.75,"#2d4a5c");bg.addColorStop(1,"#1a6b5c");
   ctx.fillStyle=bg;ctx.fillRect(0,0,W,H);
   var seed=123;function pr(n){seed=(seed*9301+49297)%233280;return (seed/233280);}
   for(var s=0;s<120;s++){var x=pr()*W,y=pr()*H,r=pr()*1.8+.4;ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.fillStyle="rgba(255,255,255,"+(pr()*.5+.15)+")";ctx.fill();}
   ctx.fillStyle="rgba(255,255,255,.13)";drawRoundedRect(ctx,50,50,W-100,140,24);ctx.fill();
-  ctx.fillStyle="#7fffd4";ctx.font="800 50px Vazirmatn,Tahoma,Arial,sans-serif";ctx.textAlign="right";ctx.fillText("🌿 برنامهٔ سلامت آسمان",W-80,80);
-  ctx.fillStyle="#bfe9ff";ctx.font="400 26px Vazirmatn,Tahoma,Arial,sans-serif";ctx.fillText("مجلهٔ آسمان",W-80,142);
+  ctx.fillStyle="#7fffd4";ctx.font="800 50px "+FONT;ctx.textAlign="right";ctx.fillText("🌿 برنامهٔ سلامت آسمان",W-80,80);
+  ctx.fillStyle="#bfe9ff";ctx.font="400 26px "+FONT;ctx.fillText("مجلهٔ آسمان",W-80,142);
   var profile=getSportProfile();if(!profile)return null;
   var week=getWeekPlan();if(!week)return null;
   var day=week[spCurrentDay];if(!day)return null;
   var y=250;
-  ctx.textAlign="center";ctx.fillStyle="#ffffff";ctx.font="800 46px Vazirmatn,Tahoma,Arial,sans-serif";ctx.fillText(SP_DAY_ICONS[spCurrentDay]+" "+SP_DAY_NAMES[spCurrentDay],W/2,y);
+  ctx.textAlign="center";ctx.fillStyle="#ffffff";ctx.font="800 46px "+FONT;ctx.fillText(SP_DAY_ICONS[spCurrentDay]+" "+SP_DAY_NAMES[spCurrentDay],W/2,y);
   y+=70;
-  ctx.fillStyle="#ffd166";ctx.font="800 30px Vazirmatn,Tahoma,Arial,sans-serif";
+  ctx.fillStyle="#ffd166";ctx.font="800 30px "+FONT;
   var goalTxt=({fit:"تناسب",lose:"کاهش وزن",muscle:"عضله‌سازی",health:"سلامت"}[profile.goal]||"تناسب");
   var lvlTxt=({beginner:"مبتدی",inter:"متوسط",advanced:"پیشرفته"}[profile.level]||"مبتدی");
   ctx.fillText("🎯 "+goalTxt+"  ·  📊 "+lvlTxt+"  ·  ⏱️ "+profile.time+" دقیقه",W/2,y);
   y+=70;
   function drawPhase(title,items,color){
     ctx.fillStyle=color+"33";drawRoundedRect(ctx,70,y,W-140,60+items.length*70,18);ctx.fill();
-    ctx.textAlign="right";ctx.fillStyle=color;ctx.font="800 32px Vazirmatn,Tahoma,Arial,sans-serif";ctx.fillText(title,W-100,y+16);
+    ctx.textAlign="right";ctx.fillStyle=color;ctx.font="800 32px "+FONT;ctx.fillText(title,W-100,y+16);
     var yy=y+68;
     for(var i=0;i<items.length;i++){
       var ex=items[i];
-      ctx.textAlign="right";ctx.fillStyle="#ffffff";ctx.font="800 26px Vazirmatn,Tahoma,Arial,sans-serif";
+      ctx.textAlign="right";ctx.fillStyle="#ffffff";ctx.font="800 26px "+FONT;
       ctx.fillText("• "+ex.name,W-100,yy);
-      ctx.fillStyle="#9db0c6";ctx.font="400 22px Vazirmatn,Tahoma,Arial,sans-serif";
+      ctx.fillStyle="#9db0c6";ctx.font="400 22px "+FONT;
       ctx.fillText(ex.reps,W-100-ctx.measureText("• "+ex.name).width-20,yy+2);
       yy+=70;
     }
@@ -4489,8 +4756,9 @@ function generateWorkoutImage(){
   drawPhase("🧘 سردکردن",day.cooldown,"#2dd4a3");
   var fy=H-150;
   ctx.fillStyle="rgba(255,255,255,.08)";drawRoundedRect(ctx,70,fy,W-140,120,20);ctx.fill();
-  ctx.textAlign="center";ctx.fillStyle="#bfe9ff";ctx.font="800 26px Vazirmatn,Tahoma,Arial,sans-serif";ctx.fillText("🌌 مجله آسمان — به آسمان نگاه کن",W/2,fy+16);
-  ctx.fillStyle="#7fffd4";ctx.font="800 26px Vazirmatn,Tahoma,Arial,sans-serif";ctx.fillText("🌐 "+MAGAZINE_URL,W/2,fy+62);
+  ctx.textAlign="center";ctx.fillStyle="#bfe9ff";ctx.font="800 26px "+FONT;ctx.fillText("🌌 مجله آسمان — به آسمان نگاه کن",W/2,fy+16);
+  ctx.fillStyle="#7fffd4";ctx.font="800 26px "+FONT;ctx.fillText("🌐 "+MAGAZINE_URL,W/2,fy+62);
+  setTimeout(function(){try{if(canvas.width!==1080){canvas.width=1080;canvas.height=1620;}}catch(e){}},3000);
   return canvas;
 }
 function getWorkoutShareText(){return "🌿 برنامهٔ ورزشی من در مجلهٔ آسمان\n🌐 "+MAGAZINE_URL+"\nبه آسمان نگاه کن.";}
@@ -4591,6 +4859,10 @@ function renderSettingsPage(){
   if(dsToggle){dsToggle.checked=dataSaverMode;dsToggle.removeEventListener("change",dsToggle._h);dsToggle._h=function(){dataSaverMode=this.checked;dataSaverAuto=false;lsSet("dataSaver",String(dataSaverMode));lsSet("dataSaverAuto","false");applyTheme();if(data){setDynamicBackground((data.current&&data.current.weather_code)||0);setAnim((data.current&&data.current.weather_code)||0);}show(dataSaverMode?"🔋 حالت کم‌مصرف فعال شد":"🔋 حالت کم‌مصرف غیرفعال شد","ok");};dsToggle.addEventListener("change",dsToggle._h);}
   var autoDsToggle=document.getElementById("autoDataSaverToggle");
   if(autoDsToggle){autoDsToggle.checked=autoDataSaverAllowed;autoDsToggle.removeEventListener("change",autoDsToggle._h);autoDsToggle._h=function(){autoDataSaverAllowed=this.checked;lsSet("autoDataSaver",String(autoDataSaverAllowed));if(autoDataSaverAllowed){evaluateAutoDataSaver();show("✅ حالت کم‌مصرف خودکار فعال شد","ok");}else{show("🔋 حالت کم‌مصرف خودکار غیرفعال شد","info");}};autoDsToggle.addEventListener("change",autoDsToggle._h);}
+  var poetSel=document.getElementById("poetPrefSetting");
+  if(poetSel){poetSel.value=poetPref;poetSel.removeEventListener("change",poetSel._h);poetSel._h=function(){poetPref=this.value;lsSet("poetPref",poetPref);if(currentPage==="myday")renderDash();show("✅ شاعر بیت امروز تغییر کرد","ok");};poetSel.addEventListener("change",poetSel._h);}
+  var tp=document.getElementById("settingsThemePicker");
+  if(tp){var tdots=tp.querySelectorAll(".theme-dot");for(var ti=0;ti<tdots.length;ti++)(function(dot){var th=dot.getAttribute("data-theme");if(th===shareTheme)dot.classList.add("active");else dot.classList.remove("active");dot.removeEventListener("click",dot._h);dot._h=function(){shareTheme=th;lsSet("shareTheme",shareTheme);for(var k=0;k<tdots.length;k++)tdots[k].classList.remove("active");dot.classList.add("active");show("✅ تم اشتراک‌گذاری تغییر کرد","ok");};dot.addEventListener("click",dot._h);})(tdots[ti]);}
   var pinsCount=document.getElementById("pinsCount");if(pinsCount)pinsCount.textContent=pins.length;
   var clearPins=document.getElementById("clearPinsBtn");
   if(clearPins){clearPins.removeEventListener("click",clearPins._h);clearPins._h=function(){pins=[];savePins();updatePinBtn();var pc=document.getElementById("pinsCount");if(pc)pc.textContent=pins.length;show("✅ پین‌ها پاک شدند","ok");};clearPins.addEventListener("click",clearPins._h);}
@@ -4659,7 +4931,7 @@ function bindAccordions(){
   for(var i=0;i<accs.length;i++){(function(h){if(h.getAttribute("data-bound"))return;h.setAttribute("data-bound","1");h.addEventListener("click",function(){var g=h.closest(".travel-acc-group,.culture-acc-group,.fun-acc-group");if(g)g.classList.toggle("open");});})(accs[i]);}
 }
 
-var GREET="سلام! 👋 من دستیار هوشمند مجلهٔ آسمان هستم (نسخهٔ ۴٫۰٫۰).\n\n🔹 لایه ۱: پاسخ سریع به سوالات ساده — از جمله:\n   • «اذان صبح» / «اذان ظهر» / «اذان مغرب»\n   • «طلوع» / «غروب»\n   • «اذان» (به‌تنهایی) → نمایش همهٔ اوقات + اذان بعدی\n🔹 لایه ۲: تحلیل ترکیبی برای ۹ فعالیت: دوچرخه، پیاده‌روی، کوهنوردی، پیک‌نیک، شنا، ماهیگیری، فوتبال، تنیس، عکاسی.\n🔹 Chat → Action: می‌توانم کارهایی انجام دهم (مثل «کارت شعر را حذف کن» یا «تهران را اضافه کن»).\n🔹 🔔 یادآور: «یادم بنداز ساعت ۸ ورزش» یا «یادآوری جلسه ساعت ۱۵:۳۰».\n\n💡 نکات:\n   • برای تغییر مکان دکمهٔ 🤖، لمس طولانی کنید.\n   • برای به‌روزرسانی داده‌ها، صفحه را از بالا به پایین بکشید.\n   • قبله‌نما حالا کالیبراسیون هوشمند دارد — گوشی را به شکل ۸ بچرخانید.\n   • شاخص‌های آب‌وهوا حالا با رنگ و توضیح نمایش داده می‌شوند.\n   • 🆕 نسخهٔ ۴٫۰٫۰: میان‌برهای PWA و حالت کم‌مصرف خودکار اضافه شدند.\n\nاز نمونه سوال‌های پایین استفاده کنید یا آزاد بپرسید.";
+var GREET="سلام! 👋 من دستیار هوشمند مجلهٔ آسمان هستم (نسخهٔ ۳٫۱٫۵).\n\n🔹 لایه ۱: پاسخ سریع به سوالات ساده — از جمله:\n   • «اذان صبح» / «اذان ظهر» / «اذان مغرب»\n   • «طلوع» / «غروب»\n   • «اذان» (به‌تنهایی) → نمایش همهٔ اوقات + اذان بعدی\n🔹 لایه ۲: تحلیل ترکیبی برای ۹ فعالیت: دوچرخه، پیاده‌روی، کوهنوردی، پیک‌نیک، شنا، ماهیگیری، فوتبال، تنیس، عکاسی.\n🔹 Chat → Action: می‌توانم کارهایی انجام دهم (مثل «کارت شعر را حذف کن» یا «تهران را اضافه کن»).\n🔹 🔔 یادآور: «یادم بنداز ساعت ۸ ورزش» یا «یادآوری جلسه ساعت ۱۵:۳۰».\n\n💡 نکات:\n   • برای تغییر مکان دکمهٔ 🤖، لمس طولانی کنید.\n   • برای به‌روزرسانی داده‌ها، صفحه را از بالا به پایین بکشید.\n   • قبله‌نما حالا کالیبراسیون هوشمند دارد — گوشی را به شکل ۸ بچرخانید.\n   • 🆕 نسخهٔ ۳٫۱٫۵: کارت امروز آسمان با دمای محسوس، بیت شاعر دلخواه، حکمت روز، پس‌زمینهٔ پویا و اشتراک‌گذاری با ۵ تم رنگی + پیش‌نمایش زنده.\n\nاز نمونه سوال‌های پایین استفاده کنید یا آزاد بپرسید.";
 var chatPanel=document.getElementById("chatPanel"),chatMessages=document.getElementById("chatMessages"),chatInput=document.getElementById("chatInput");
 function setChatOpen(open){if(!chatPanel)return;chatPanel.classList.toggle("show",open);document.body.classList.toggle("chat-lock",open);if(open)renderSuggestions();}
 
@@ -5013,7 +5285,7 @@ var SUG_ANSWERS={
   "آیا رایگان است؟":"✅ بله، کاملاً رایگان است.",
   "چطور نصب کنم؟":"📲 به شیت «بیشتر» بروید و روی «📖 راهنما» بزنید — راهنمای نصب کامل با دکمهٔ نصب خودکار آنجا است.\n🤖 اندروید: منوی Chrome ← «نصب برنامه»\n🍎 iOS: Safari ← Share ← Add to Home Screen",
   "سازنده کیست؟":"👤 سازنده: «م.حسینی». ارتباط: eitaa.com/hossini_96 — در صفحهٔ راهنما دکمهٔ ارتباط با سازنده موجود است.",
-  "نسخه برنامه":"📌 نسخهٔ فعلی: ۴٫۰٫۰ — با میان‌برهای PWA و حالت کم‌مصرف خودکار.",
+  "نسخه برنامه":"📌 نسخهٔ فعلی: ۳٫۱٫۵ — با کارت روز پیشرفته، بیت شاعر دلخواه، حکمت روز، پس‌زمینهٔ پویا و اشتراک‌گذاری با ۵ تم رنگی.",
   "سردبیر کیه؟":"✍️ سردبیر مجلهٔ آسمان «م.حسینی» است.",
   "یادداشت ۱ چیه؟":"📝 «سخن سردبیر، فصل پاییز» دربارهٔ آغاز سال تحصیلی، آموزش، همدلی و امید.",
   "یادداشت ۲ چیه؟":"✍️ «یادداشت سردبیر» — متن کامل در صفحهٔ یادداشت مجله، یادداشت ۲.",
@@ -5120,6 +5392,7 @@ function chatRespond(q0){
     }
     addChatMsg("امتیاز آسایش در دسترس نیست.",false);return;
   }
+  if(wakeWordMatch(q,["حکمت"])){var w=pickWisdomOfDay();addChatMsg(w.icon+" حکمت روز:\n"+w.text,false);return;}
 
   if(wakeWordMatch(q,["اذان","نماز"])){
     if(!prayerData){
