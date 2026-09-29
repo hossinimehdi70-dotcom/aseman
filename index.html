@@ -344,24 +344,48 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;bac
 .daily-card.dc-evening{box-shadow:0 18px 45px rgba(236,72,153,.25),0 0 0 1px rgba(255,255,255,.05) inset}
 .daily-card.dc-night{box-shadow:0 18px 45px rgba(139,92,246,.28),0 0 0 1px rgba(255,255,255,.05) inset}
 .daily-card::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 20% 15%,rgba(57,198,255,.25),transparent 45%),radial-gradient(circle at 85% 80%,rgba(255,209,102,.2),transparent 50%),radial-gradient(circle at 70% 20%,rgba(236,72,153,.15),transparent 40%);pointer-events:none}
-.daily-card-inner{position:relative;padding:22px 22px 20px;z-index:1}
-.daily-card-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:14px;padding-bottom:12px;border-bottom:1px dashed rgba(255,209,102,.35);cursor:pointer;user-select:none;flex-wrap:wrap}
-.daily-card-head .dch-title{font-size:18px;font-weight:800;color:#ffd166;display:flex;align-items:center;gap:8px;text-shadow:0 2px 8px rgba(0,0,0,.4)}
-.daily-card-head .dch-logo{width:28px;height:28px;border-radius:9px;display:inline-flex;align-items:center;justify-content:center;font-size:15px;background:linear-gradient(145deg,#ffd166,#ff8c42);color:#3a1a00;font-weight:800;flex-shrink:0;box-shadow:0 4px 10px rgba(255,209,102,.4)}
+.daily-card-inner{position:relative;padding:18px 20px 16px;z-index:1}
+.daily-card-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:12px;padding-bottom:10px;border-bottom:1px dashed rgba(255,209,102,.35);cursor:pointer;user-select:none;flex-wrap:wrap}
+.daily-card-head .dch-title{font-size:17px;font-weight:800;color:#ffd166;display:flex;align-items:center;gap:8px;text-shadow:0 2px 8px rgba(0,0,0,.4)}
+.daily-card-head .dch-logo{width:26px;height:26px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;font-size:14px;background:linear-gradient(145deg,#ffd166,#ff8c42);color:#3a1a00;font-weight:800;flex-shrink:0;box-shadow:0 4px 10px rgba(255,209,102,.4)}
 .daily-card-head .dch-date{font-size:12px;color:#bfe9ff;font-weight:800;background:rgba(255,255,255,.08);padding:4px 10px;border-radius:8px;border:1px solid rgba(255,255,255,.15)}
 .daily-card-head .dch-arrow{font-size:18px;color:#ffd166;transition:transform .35s;margin-right:4px}
 .daily-card.open .daily-card-head .dch-arrow{transform:rotate(180deg)}
 .daily-card-drawer{max-height:0;overflow:hidden;transition:max-height .5s ease}
 .daily-card.open .daily-card-drawer{max-height:4200px;padding-bottom:4px}
-.daily-rows{display:flex;flex-direction:column;gap:10px}
-.daily-row{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1)}
-.daily-row .dr-icon{font-size:22px;flex-shrink:0}
-.daily-row .dr-label{font-size:12px;color:#9db0c6;font-weight:800;display:block;margin-bottom:2px}
-.daily-row .dr-value{font-size:14px;font-weight:800;color:#fff;line-height:1.9}
-.daily-row .dr-value.poem{font-style:italic;white-space:pre-line;font-size:13px;text-align:justify}
-.daily-row .dr-poet-name{margin-top:6px;font-size:11px;color:#ffd166;font-weight:700;text-align:left;display:block}
+.daily-rows{display:flex;flex-direction:column;gap:8px}
+.daily-row{display:flex;align-items:center;gap:10px;padding:9px 11px;border-radius:12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1)}
+.daily-row .dr-icon{font-size:20px;flex-shrink:0}
+.daily-row .dr-label{font-size:11.5px;color:#9db0c6;font-weight:800;display:block;margin-bottom:2px}
+.daily-row .dr-value{font-size:13.5px;font-weight:800;color:#fff;line-height:1.85}
+.daily-row .dr-value.poem{font-style:italic;white-space:pre-line;font-size:12.5px;text-align:justify}
+.daily-row .dr-poet-name{margin-top:5px;font-size:10.5px;color:#ffd166;font-weight:700;text-align:left;display:block}
 .daily-row.wisdom{background:linear-gradient(135deg,rgba(45,212,161,.12),rgba(57,198,255,.06));border-color:rgba(45,212,161,.3)}
 .daily-row.tomorrow{background:linear-gradient(135deg,rgba(139,92,246,.12),rgba(236,72,153,.06));border-color:rgba(139,92,246,.3)}
+
+.daily-weather-row{display:flex;align-items:center;gap:10px;padding:9px 11px;border-radius:12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);flex-wrap:wrap}
+.daily-weather-row .dwr-icon{font-size:20px;flex-shrink:0}
+.daily-weather-row .dwr-main{flex:1;min-width:140px}
+.daily-weather-row .dwr-label{font-size:11.5px;color:#9db0c6;font-weight:800;display:block;margin-bottom:2px}
+.daily-weather-row .dwr-value{font-size:13.5px;font-weight:800;color:#fff;line-height:1.85}
+.daily-chips{display:flex;flex-wrap:wrap;gap:5px;margin-top:5px}
+.daily-chip{display:inline-flex;align-items:center;gap:3px;padding:3px 9px;border-radius:8px;font-size:11px;font-weight:800;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);white-space:nowrap}
+.daily-chip.c-max{color:#ffb37e;border-color:rgba(255,179,126,.3);background:rgba(255,179,126,.1)}
+.daily-chip.c-min{color:#7ecbff;border-color:rgba(126,203,255,.3);background:rgba(126,203,255,.1)}
+.daily-chip.c-feels{color:#b197fc;border-color:rgba(177,151,252,.3);background:rgba(177,151,252,.1)}
+
+.daily-prayer-block{display:flex;align-items:flex-start;gap:10px;padding:9px 11px;border-radius:12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1)}
+.daily-prayer-block .dpb-icon{font-size:20px;flex-shrink:0;line-height:1.4}
+.daily-prayer-block .dpb-body{flex:1;min-width:0}
+.daily-prayer-block .dpb-label{font-size:11.5px;color:#9db0c6;font-weight:800;display:block;margin-bottom:5px}
+.daily-prayer-grid{display:grid;grid-template-columns:1fr 1fr;gap:5px}
+.prayer-compact-row{display:flex;justify-content:space-between;align-items:center;gap:4px;padding:5px 8px;border-radius:8px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);font-size:11.5px;min-width:0}
+.prayer-compact-row.next{background:linear-gradient(135deg,rgba(255,209,102,.28),rgba(255,140,66,.18));border-color:rgba(255,209,102,.55);box-shadow:0 2px 8px rgba(255,209,102,.2)}
+.prayer-compact-row .pcr-name{font-weight:800;color:#eaf3fb;font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.prayer-compact-row.next .pcr-name{color:#ffd166}
+.prayer-compact-row .pcr-time{font-weight:800;direction:ltr;color:#7fffd4;font-size:11.5px;font-feature-settings:"tnum";flex-shrink:0;letter-spacing:.3px}
+.prayer-compact-row.next .pcr-time{color:#fff;text-shadow:0 2px 6px rgba(0,0,0,.4)}
+
 .prayer-rows-box{display:flex;flex-direction:column;gap:6px}
 .prayer-mini-row{display:flex;justify-content:space-between;align-items:center;padding:6px 10px;border-radius:10px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);font-size:13px}
 .prayer-mini-row.next{background:linear-gradient(135deg,rgba(255,209,102,.25),rgba(255,140,66,.15));border-color:rgba(255,209,102,.5)}
@@ -369,8 +393,8 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;bac
 .prayer-mini-row.next .pmr-name{color:#ffd166}
 .prayer-mini-row .pmr-time{font-weight:800;direction:ltr;color:#7fffd4;font-feature-settings:"tnum"}
 .prayer-mini-row.next .pmr-time{color:#fff;text-shadow:0 2px 6px rgba(0,0,0,.4)}
-.daily-card-actions{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap}
-.dc-share-btn{flex:1 1 calc(50% - 6px);min-width:100px;padding:12px 12px;background:linear-gradient(135deg,#ffd166,#ff8c42);border:none;border-radius:14px;color:#3a1a00;font-weight:800;font-size:13.5px;font-family:inherit;cursor:pointer;transition:.2s;display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap}
+.daily-card-actions{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+.dc-share-btn{flex:1 1 calc(50% - 6px);min-width:100px;padding:11px 12px;background:linear-gradient(135deg,#ffd166,#ff8c42);border:none;border-radius:12px;color:#3a1a00;font-weight:800;font-size:13.5px;font-family:inherit;cursor:pointer;transition:.2s;display:inline-flex;align-items:center;justify-content:center;gap:6px;white-space:nowrap}
 .dc-share-btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(255,209,102,.4)}
 .dc-share-btn.ghost{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.25)}
 .dc-share-btn.ghost:hover{background:rgba(255,255,255,.18);box-shadow:none}
@@ -823,6 +847,12 @@ footer{text-align:center;color:var(--muted);font-size:11px;line-height:1.9;paddi
   .dc-share-btn{font-size:12px;padding:10px 8px;min-width:0}
   .theme-picker{gap:8px}
   .theme-dot{width:34px;height:34px}
+  .daily-card-inner{padding:15px 14px 14px}
+  .daily-prayer-grid{gap:4px}
+  .prayer-compact-row{padding:4px 6px;font-size:11px}
+  .prayer-compact-row .pcr-name{font-size:10.5px}
+  .prayer-compact-row .pcr-time{font-size:11px}
+  .daily-chip{font-size:10.5px;padding:2px 7px}
 }
 </style>
 </head>
@@ -895,7 +925,7 @@ footer{text-align:center;color:var(--muted);font-size:11px;line-height:1.9;paddi
 <div class="install-size-note"><span class="isn-head">💾 حجم بسیار کم.</span>تنها چند مگابایت از حافظه گوشی شما را اشغال می‌کند و روی صفحهٔ اصلی نصب می‌شود.</div>
 <button class="install-btn" id="installOk">✓ متوجه شدم</button>
 <div class="install-version">
-<div class="iv-version">📌 نسخهٔ ۳٫۱٫۵</div>
+<div class="iv-version">📌 نسخهٔ ۱٫۲٫۳</div>
 </div>
 </div>
 </div>
@@ -967,18 +997,12 @@ footer{text-align:center;color:var(--muted);font-size:11px;line-height:1.9;paddi
 <div class="guide-drawer-body">
 <div class="guide-drawer-inner">
 <div class="about-help" style="margin-top:6px">
-<div class="ah-sec"><div class="ah-h c1">🆕 ویژگی‌های نسخهٔ ۳٫۱٫۵</div><ul>
-<li>🌤️ <b>کارت امروز آسمان — دمای محسوس:</b> نمایش «دمای محسوس» (احساس واقعی بدن) در کارت روز.</li>
-<li>📜 <b>بیت امروز از ۵ شاعر:</b> حالا می‌توانید شاعر دلخواه خود را از بین حافظ، سعدی، مولانا، فردوسی و خیام انتخاب کنید یا حالت «تصادفی» را فعال کنید.</li>
-<li>📅 <b>پیش‌بینی فردا:</b> یک خط خلاصه از وضعیت فردا در کارت روز.</li>
-<li>💡 <b>حکمت روز:</b> یک دانستنی کوتاه علمی یا تاریخی هر روز.</li>
-<li>🎨 <b>پس‌زمینهٔ پویا:</b> رنگ کارت روز بر اساس وضع هوا (آفتابی، بارانی، برفی، ابری، رعدوبرق) تغییر می‌کند.</li>
-<li>⏰ <b>رنگ بر اساس زمان روز:</b> کارت در صبح، ظهر، غروب و شب ظاهر متفاوتی دارد.</li>
-<li>🌌 <b>لوگوی کوچک:</b> آیکون برنامه در هدر کارت.</li>
-<li>🎨 <b>۵ تم رنگی برای اشتراک‌گذاری:</b> شب، روز، پاییزی، زمستانی، مینیمال.</li>
-<li>📤 <b>پیش‌نمایش زنده:</b> قبل از اشتراک‌گذاری، تصویر نهایی را ببینید و تم را انتخاب کنید.</li>
-<li>⚡ <b>کش تصویر:</b> اگر داده‌ها تغییر نکرده باشد، تصویر دوباره ساخته نمی‌شود (سرعت بیشتر، مصرف باتری کمتر).</li>
-<li>📱 <b>PWA کامل:</b> نصب روی صفحهٔ اصلی مثل اپ بومی با آیکون و اسپلش.</li>
+<div class="ah-sec"><div class="ah-h c1">🆕 ویژگی‌های نسخهٔ ۱٫۲٫۳</div><ul>
+<li>🎨 <b>فشرده‌سازی کارت امروز آسمان:</b> بخش آب‌وهوا و اوقات شرعی بازطراحی شدند تا فضای کمتری بگیرند و همهٔ موضوعات در یک صفحه جا شوند.</li>
+<li>🌤️ <b>آب‌وهوای فشرده:</b> بیشینه، کمینه و محسوس در یک ردیف چیپ‌های افقی قرار گرفتند.</li>
+<li>🕌 <b>اوقات شرعی فشرده:</b> ۶ وقت شرعی در یک گرید ۲ ستونی جای گرفتند (به‌جای ۶ ردیف عمودی).</li>
+<li>💡 <b>تغییر نام:</b> «حکمت امروز» به «دانستنی امروز» تغییر یافت.</li>
+<li>🏷️ <b>ارتقای نسخه:</b> نسخهٔ برنامه به ۱٫۲٫۳ ارتقا یافت.</li>
 </ul></div>
 <div class="ah-sec"><div class="ah-h c5">🔔 یادآور هوشمند</div><ul>
 <li>در دستیار چت بگویید: «یادم بنداز ساعت ۸ ورزش» یا «یادآوری جلسه ساعت ۱۵:۳۰».</li>
@@ -989,7 +1013,6 @@ footer{text-align:center;color:var(--muted);font-size:11px;line-height:1.9;paddi
 <li>در «تنظیمات» قابل روشن/خاموش شدن است.</li>
 <li>انیمیشن‌های پس‌زمینه، ذرات باران/برف/ستاره و انتقال‌ها را غیرفعال می‌کند.</li>
 <li>ترجمهٔ خودکار APOD را متوقف می‌کند.</li>
-<li>فاصلهٔ به‌روزرسانی خودکار را افزایش می‌دهد.</li>
 <li><b>🔋 حالت کم‌مصرف خودکار:</b> در «تنظیمات» می‌توانید فعال یا غیرفعال کنید. اگر فعال باشد، با شارژ زیر ۲۰٪ بدون شارژر یا اینترنت ضعیف، خودکار روشن می‌شود.</li>
 </ul></div>
 <div class="ah-sec"><div class="ah-h c4">📌 میان‌برهای PWA</div><ul>
@@ -998,7 +1021,7 @@ footer{text-align:center;color:var(--muted);font-size:11px;line-height:1.9;paddi
 </ul></div>
 <div class="ah-sec"><div class="ah-h c1">⭐ آسمان من</div><ul>
 <li>داشبورد شخصی با کارت‌های قابل جابجایی و مدیریت.</li>
-<li>🕌 <b>کارت امروز آسمان:</b> کشوی ویژه با اوقات شرعی، بیت امروز (از شاعر دلخواه)، ذکر روز، حکمت روز و پیش‌بینی فردا.</li>
+<li>🕌 <b>کارت امروز آسمان:</b> کشوی ویژه با اوقات شرعی (فشرده)، بیت امروز (از شاعر دلخواه)، ذکر روز، دانستنی امروز و پیش‌بینی فردا.</li>
 <li>🎨 <b>پس‌زمینهٔ پویا:</b> رنگ کارت بر اساس وضع هوا و زمان روز تغییر می‌کند.</li>
 <li>📤 <b>اشتراک‌گذاری با ۵ تم رنگی:</b> با پیش‌نمایش زنده قبل از ارسال.</li>
 </ul></div>
@@ -1473,21 +1496,13 @@ function lsSet(k,v){try{localStorage.setItem(k,v);}catch(e){}}
 function lsGet(k){try{return localStorage.getItem(k);}catch(e){return null;}}
 function ssSet(k,v){try{sessionStorage.setItem(k,v);}catch(e){}}
 function ssGet(k){try{return sessionStorage.getItem(k);}catch(e){return null;}}
-var APP_VERSION="3.1.5";
+var APP_VERSION="1.2.3";
 var APP_CHANGELOG_LINES=[
-  "📌 نسخه ۳٫۱٫۵ — تغییرات این نسخه",
-  "🌤️ افزودن دمای محسوس به کارت امروز آسمان",
-  "📜 انتخاب شاعر بیت امروز از ۵ شاعر (حافظ، سعدی، مولانا، فردوسی، خیام)",
-  "📅 افزودن پیش‌بینی یک‌خطی فردا به کارت روز",
-  "💡 افزودن حکمت روز (دانستنی کوتاه روزانه)",
-  "🎨 پس‌زمینهٔ پویا برای کارت روز بر اساس وضع هوا",
-  "⏰ تغییر رنگ کارت بر اساس زمان روز (صبح/ظهر/غروب/شب)",
-  "🌌 افزودن لوگوی کوچک برنامه به هدر کارت روز",
-  "🎨 افزودن ۵ تم رنگی برای تصویر اشتراک‌گذاری کارت",
-  "📤 افزودن پیش‌نمایش زنده قبل از اشتراک‌گذاری",
-  "⚡ کش تصویر کارت برای صرفه‌جویی در باتری و زمان",
-  "📱 بهبود تجربهٔ نصب PWA مثل اپ بومی",
-  "📖 به‌روزرسانی راهنما با ویژگی‌های جدید"
+  "📌 نسخه ۱٫۲٫۳ — تغییرات این نسخه",
+  "🎨 فشرده‌سازی بخش آب‌وهوا در کارت امروز آسمان (بیشینه، کمینه و محسوس در یک ردیف)",
+  "🕌 فشرده‌سازی اوقات شرعی در کارت (گرید ۲ ستونی به‌جای ۶ ردیف عمودی)",
+  "💡 تغییر «حکمت امروز» به «دانستنی امروز»",
+  "🏷️ ارتقای نسخه برنامه از ۳٫۱٫۵ به ۱٫۲٫۳"
 ];
 
 var FUN_JOKES=[
@@ -1526,7 +1541,6 @@ var PERSIAN_PROVERBS=[
   {p:"از تو حرکت از خدا برکت",m:"اول باید تلاش کرد، بعد انتظار نتیجه داشت."}
 ];
 
-// حکمت روز — دانستنی‌های کوتاه علمی/تاریخی
 var WISDOM_QUOTES=[
   {icon:"🔬",text:"مغز انسان حدود ۲۰ وات برق تولید می‌کند؛ کافی برای روشن نگه‌داشتن یک لامپ کم‌مصرف."},
   {icon:"🌍",text:"زمین در هر ثانیه ۳۰ کیلومتر دور خورشید حرکت می‌کند، بی‌آنکه ما احساس کنیم."},
@@ -3179,16 +3193,17 @@ function generateTravelImage(cityName,days,itinerary,checklist,dw,bestSeason,loc
   var canvas=document.getElementById("shareCanvas");if(!canvas)return null;
   var W=1080,H=1620;canvas.width=W;canvas.height=H;
   var ctx=canvas.getContext("2d");ctx.textBaseline="top";
+  var FONT="Vazirmatn,Tahoma,Arial,'Segoe UI','Noto Sans Arabic',sans-serif";
   var bg=ctx.createLinearGradient(0,0,W,H);bg.addColorStop(0,"#0e2340");bg.addColorStop(.5,"#1a3a5c");bg.addColorStop(1,"#2a1a5c");
   ctx.fillStyle=bg;ctx.fillRect(0,0,W,H);
   var seed=456;function pr(n){seed=(seed*9301+49297)%233280;return (seed/233280);}
   for(var s=0;s<130;s++){var x=pr()*W,y=pr()*H,r=pr()*1.8+.4;ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.fillStyle="rgba(255,255,255,"+(pr()*.5+.15)+")";ctx.fill();}
   ctx.fillStyle="rgba(255,255,255,.12)";drawRoundedRect(ctx,50,50,W-100,140,24);ctx.fill();
-  ctx.fillStyle="#7fffd4";ctx.font="800 48px Vazirmatn,Tahoma,Arial,'Segoe UI',sans-serif";ctx.textAlign="right";ctx.fillText("🧳 برنامهٔ سفر آسمان",W-80,80);
-  ctx.fillStyle="#bfe9ff";ctx.font="400 26px Vazirmatn,Tahoma,Arial,'Segoe UI',sans-serif";ctx.fillText("مجلهٔ آسمان — به آسمان نگاه کن.",W-80,142);
+  ctx.fillStyle="#7fffd4";ctx.font="800 48px "+FONT;ctx.textAlign="right";ctx.fillText("🧳 برنامهٔ سفر آسمان",W-80,80);
+  ctx.fillStyle="#bfe9ff";ctx.font="400 26px "+FONT;ctx.fillText("مجلهٔ آسمان — به آسمان نگاه کن.",W-80,142);
   var y=230;
-  ctx.textAlign="center";ctx.fillStyle="#ffffff";ctx.font="800 54px Vazirmatn,Tahoma,Arial,'Segoe UI',sans-serif";ctx.fillText("📍 "+cityName,W/2,y);
-  ctx.fillStyle="#ffd166";ctx.font="800 30px Vazirmatn,Tahoma,Arial,'Segoe UI',sans-serif";ctx.fillText("📅 "+days+" روزه  ·  🌤️ "+((dw&&dw.code!=null)?code(dw.code)[0]:"--"),W/2,y+66);
+  ctx.textAlign="center";ctx.fillStyle="#ffffff";ctx.font="800 54px "+FONT;ctx.fillText("📍 "+cityName,W/2,y);
+  ctx.fillStyle="#ffd166";ctx.font="800 30px "+FONT;ctx.fillText("📅 "+days+" روزه  ·  🌤️ "+((dw&&dw.code!=null)?code(dw.code)[0]:"--"),W/2,y+66);
   y+=130;
   var infos=[
     {ic:"🌡️",l:"دما",v:(dw&&dw.tmin!=null?T(dw.tmin)+D():'--')+" / "+(dw&&dw.tmax!=null?T(dw.tmax)+D():'--')},
@@ -3200,16 +3215,16 @@ function generateTravelImage(cityName,days,itinerary,checklist,dw,bestSeason,loc
   for(var ii=0;ii<infos.length;ii++){
     var cx=W-70-cw*(ii+1)-12*ii;
     ctx.fillStyle="rgba(255,255,255,.08)";drawRoundedRect(ctx,cx,y,cw,110,16);ctx.fill();
-    ctx.textAlign="center";ctx.fillStyle="#7fffd4";ctx.font="800 28px Vazirmatn,Tahoma,Arial,'Segoe UI',sans-serif";ctx.fillText(infos[ii].ic,W-70-cw*(ii+1)-12*ii+cw/2,y+14);
-    ctx.fillStyle="#bfe9ff";ctx.font="400 20px Vazirmatn,Tahoma,Arial,'Segoe UI',sans-serif";ctx.fillText(infos[ii].l,W-70-cw*(ii+1)-12*ii+cw/2,y+52);
-    ctx.fillStyle="#ffffff";ctx.font="800 22px Vazirmatn,Tahoma,Arial,'Segoe UI',sans-serif";ctx.fillText(infos[ii].v,W-70-cw*(ii+1)-12*ii+cw/2,y+78);
+    ctx.textAlign="center";ctx.fillStyle="#7fffd4";ctx.font="800 28px "+FONT;ctx.fillText(infos[ii].ic,W-70-cw*(ii+1)-12*ii+cw/2,y+14);
+    ctx.fillStyle="#bfe9ff";ctx.font="400 20px "+FONT;ctx.fillText(infos[ii].l,W-70-cw*(ii+1)-12*ii+cw/2,y+52);
+    ctx.fillStyle="#ffffff";ctx.font="800 22px "+FONT;ctx.fillText(infos[ii].v,W-70-cw*(ii+1)-12*ii+cw/2,y+78);
   }
   y+=150;
   ctx.fillStyle="rgba(255,209,102,.14)";drawRoundedRect(ctx,70,y,W-140,80,16);ctx.fill();
-  ctx.textAlign="right";ctx.fillStyle="#ffd166";ctx.font="800 26px Vazirmatn,Tahoma,Arial,'Segoe UI',sans-serif";ctx.fillText("🍽️ غذاهای محلی:",W-100,y+16);
-  ctx.fillStyle="#ffffff";ctx.font="400 24px Vazirmatn,Tahoma,Arial,'Segoe UI',sans-serif";ctx.fillText(localFood||"--",W-100,y+46);
+  ctx.textAlign="right";ctx.fillStyle="#ffd166";ctx.font="800 26px "+FONT;ctx.fillText("🍽️ غذاهای محلی:",W-100,y+16);
+  ctx.fillStyle="#ffffff";ctx.font="400 24px "+FONT;ctx.fillText(localFood||"--",W-100,y+46);
   y+=110;
-  ctx.textAlign="right";ctx.fillStyle="#39c6ff";ctx.font="800 30px Vazirmatn,Tahoma,Arial,'Segoe UI',sans-serif";ctx.fillText("📅 برنامهٔ روزانه",W-80,y);
+  ctx.textAlign="right";ctx.fillStyle="#39c6ff";ctx.font="800 30px "+FONT;ctx.fillText("📅 برنامهٔ روزانه",W-80,y);
   y+=50;
   var maxItemsPerDay=4;
   for(var d=0;d<itinerary.length&&d<3;d++){
@@ -3217,9 +3232,9 @@ function generateTravelImage(cityName,days,itinerary,checklist,dw,bestSeason,loc
     var items=day.items.slice(0,maxItemsPerDay);
     var boxH=48+items.length*38;
     ctx.fillStyle="rgba(57,198,255,.10)";drawRoundedRect(ctx,70,y,W-140,boxH,14);ctx.fill();
-    ctx.fillStyle="#7fffd4";ctx.font="800 24px Vazirmatn,Tahoma,Arial,'Segoe UI',sans-serif";ctx.textAlign="right";ctx.fillText("روز "+day.day,W-90,y+12);
+    ctx.fillStyle="#7fffd4";ctx.font="800 24px "+FONT;ctx.textAlign="right";ctx.fillText("روز "+day.day,W-90,y+12);
     for(var k=0;k<items.length;k++){
-      ctx.fillStyle="#ffffff";ctx.font="400 22px Vazirmatn,Tahoma,Arial,'Segoe UI',sans-serif";ctx.textAlign="right";
+      ctx.fillStyle="#ffffff";ctx.font="400 22px "+FONT;ctx.textAlign="right";
       var txt="• "+items[k];
       if(ctx.measureText(txt).width>W-200)txt=txt.substring(0,45)+"…";
       ctx.fillText(txt,W-100,y+48+k*38);
@@ -3228,9 +3243,9 @@ function generateTravelImage(cityName,days,itinerary,checklist,dw,bestSeason,loc
     if(y>H-280)break;
   }
   if(y<H-260){
-    ctx.textAlign="right";ctx.fillStyle="#ffd166";ctx.font="800 26px Vazirmatn,Tahoma,Arial,'Segoe UI',sans-serif";ctx.fillText("🎒 چک‌لیست",W-80,y);
+    ctx.textAlign="right";ctx.fillStyle="#ffd166";ctx.font="800 26px "+FONT;ctx.fillText("🎒 چک‌لیست",W-80,y);
     y+=42;
-    ctx.textAlign="center";ctx.fillStyle="#eaf3fb";ctx.font="400 20px Vazirmatn,Tahoma,Arial,'Segoe UI',sans-serif";
+    ctx.textAlign="center";ctx.fillStyle="#eaf3fb";ctx.font="400 20px "+FONT;
     var line="";
     for(var ci=0;ci<checklist.length;ci++){
       var t2=(line?line+"  ·  ":"")+checklist[ci];
@@ -3242,8 +3257,8 @@ function generateTravelImage(cityName,days,itinerary,checklist,dw,bestSeason,loc
   }
   var fy=H-140;
   ctx.fillStyle="rgba(255,255,255,.08)";drawRoundedRect(ctx,70,fy,W-140,110,20);ctx.fill();
-  ctx.textAlign="center";ctx.fillStyle="#bfe9ff";ctx.font="800 24px Vazirmatn,Tahoma,Arial,'Segoe UI',sans-serif";ctx.fillText("🌌 مجله آسمان",W/2,fy+14);
-  ctx.fillStyle="#7fffd4";ctx.font="800 24px Vazirmatn,Tahoma,Arial,'Segoe UI',sans-serif";ctx.fillText("🌐 "+MAGAZINE_URL,W/2,fy+56);
+  ctx.textAlign="center";ctx.fillStyle="#bfe9ff";ctx.font="800 24px "+FONT;ctx.fillText("🌌 مجله آسمان",W/2,fy+14);
+  ctx.fillStyle="#7fffd4";ctx.font="800 24px "+FONT;ctx.fillText("🌐 "+MAGAZINE_URL,W/2,fy+56);
   setTimeout(function(){try{if(canvas.width!==1080){canvas.width=1080;canvas.height=1620;}}catch(e){}},3000);
   return canvas;
 }
@@ -4076,44 +4091,43 @@ function renderDailyCard(){
   var el=document.getElementById("dailyCardBox");if(!el)return;
   var d=buildDailyCardData();
   var cls=dailyCardClasses();
-  var prayersHTML='<div class="prayer-rows-box">';
+
+  // === بخش آب‌وهوا (فشرده با چیپ‌ها) ===
+  var chips="";
+  if(d.weather.tmax!=null)chips+='<span class="daily-chip c-max">▲ '+T1(d.weather.tmax)+D()+'</span>';
+  if(d.weather.tmin!=null)chips+='<span class="daily-chip c-min">▼ '+T1(d.weather.tmin)+D()+'</span>';
+  if(d.feels!=null)chips+='<span class="daily-chip c-feels">🌡️ '+T1(d.feels)+D()+'</span>';
+  var weatherRow='<div class="daily-weather-row"><span class="dwr-icon">🌤️</span><div class="dwr-main"><span class="dwr-label">هوای امروز · '+safe(d.city)+'</span><div class="dwr-value">'+safe(d.weather.desc)+' · '+(d.weather.temp!=null?T1(d.weather.temp)+D():"--")+'</div>'+(chips?('<div class="daily-chips">'+chips+'</div>'):'')+'</div></div>';
+
+  // === بخش اوقات شرعی (فشرده در گرید ۲ ستونی) ===
+  var prayerGrid='<div class="daily-prayer-grid">';
   if(d.allPrayers.length){
     for(var i=0;i<d.allPrayers.length;i++){
       var pp=d.allPrayers[i];
-      var pcls="prayer-mini-row"+(pp.isNext?" next":"");
-      var tag=pp.isNext?' <span style="font-size:10px;color:#ffd166">(بعدی)</span>':'';
-      prayersHTML+='<div class="'+pcls+'"><span class="pmr-name">'+pp.icon+' '+safe(pp.name)+tag+'</span><span class="pmr-time">'+safe(pp.time)+'</span></div>';
+      var pcls="prayer-compact-row"+(pp.isNext?" next":"");
+      prayerGrid+='<div class="'+pcls+'"><span class="pcr-name">'+pp.icon+' '+safe(pp.name)+'</span><span class="pcr-time">'+safe(pp.time)+'</span></div>';
     }
   } else {
-    prayersHTML+='<div class="muted" style="padding:8px;text-align:center">در حال دریافت اوقات شرعی...</div>';
+    prayerGrid+='<div class="muted" style="grid-column:1/-1;padding:8px;text-align:center;font-size:12px">در حال دریافت اوقات شرعی...</div>';
   }
-  prayersHTML+='</div>';
-  var minMaxLine='';
-  if(d.weather.tmax!=null||d.weather.tmin!=null){
-    minMaxLine="<div class='dr-value' style='margin-top:6px;font-size:13px'>"+
-      "<span style='color:#ffb37e'>▲ بیشینه: "+(d.weather.tmax!=null?T1(d.weather.tmax)+D():"--")+"</span>"+
-      " &nbsp;·&nbsp; "+
-      "<span style='color:#7ecbff'>▼ کمینه: "+(d.weather.tmin!=null?T1(d.weather.tmin)+D():"--")+"</span>"+
-      "</div>";
+  prayerGrid+='</div>';
+  var prayerBlock='<div class="daily-prayer-block"><span class="dpb-icon">🕌</span><div class="dpb-body"><span class="dpb-label">اوقات شرعی امروز</span>'+prayerGrid+'</div></div>';
+
+  // === بخش دانستنی امروز ===
+  var wisdomRow='';
+  if(d.wisdom){
+    wisdomRow='<div class="daily-row wisdom"><span class="dr-icon">'+d.wisdom.icon+'</span><div><span class="dr-label">💡 دانستنی امروز</span><div class="dr-value">'+safe(d.wisdom.text)+'</div></div></div>';
   }
-  var feelsRow='';
-  if(d.feels!=null){
-    feelsRow='<div class="daily-row"><span class="dr-icon">🌡️</span><div><span class="dr-label">دمای محسوس</span><div class="dr-value">'+T1(d.feels)+D()+'</div></div></div>';
-  }
+  // === بخش پیش‌بینی فردا ===
   var tomorrowRow='';
   if(d.tomorrowLine){
     tomorrowRow='<div class="daily-row tomorrow"><span class="dr-icon">📅</span><div><span class="dr-label">پیش‌بینی فردا</span><div class="dr-value">'+safe(d.tomorrowLine)+'</div></div></div>';
   }
-  var wisdomRow='';
-  if(d.wisdom){
-    wisdomRow='<div class="daily-row wisdom"><span class="dr-icon">'+d.wisdom.icon+'</span><div><span class="dr-label">💡 حکمت روز</span><div class="dr-value">'+safe(d.wisdom.text)+'</div></div></div>';
-  }
   var html="<div class='daily-card "+cls+"'><div class='daily-card-inner'>"+
     "<div class='daily-card-head' id='dailyCardHead'><div class='dch-title'><span class='dch-logo'>🌌</span>کارت امروز آسمان</div><div class='dch-date'>"+safe(d.weekday)+" · "+safe(d.jalali)+"</div><span class='dch-arrow'>⌄</span></div>"+
     "<div class='daily-card-drawer' id='dailyCardDrawer'><div class='daily-rows'>"+
-      "<div class='daily-row'><span class='dr-icon'>🌤️</span><div><span class='dr-label'>هوای امروز · "+safe(d.city)+"</span><div class='dr-value'>"+safe(d.weather.desc)+" · "+(d.weather.temp!=null?T1(d.weather.temp)+D():"--")+"</div>"+minMaxLine+"</div></div>"+
-      feelsRow+
-      "<div class='daily-row' style='align-items:flex-start'><span class='dr-icon'>🕌</span><div style='flex:1'><span class='dr-label'>اوقات شرعی امروز</span>"+prayersHTML+"</div></div>"+
+      weatherRow+
+      prayerBlock+
       "<div class='daily-row'><span class='dr-icon'>📜</span><div style='flex:1'><span class='dr-label'>بیت امروز · "+safe(d.poetName)+"</span><div class='dr-value poem'>«"+safe(d.poem)+"»</div><span class='dr-poet-name'>"+safe(d.poetFull)+"</span></div></div>"+
       "<div class='daily-row'><span class='dr-icon'>📿</span><div><span class='dr-label'>ذکر روز "+safe(d.dhikr.day)+"</span><div class='dr-value'>«"+safe(d.dhikr.text)+"»</div></div></div>"+
       wisdomRow+
@@ -4178,47 +4192,83 @@ function generateDailyCardImage(themeKey){
   ctx.fillStyle=theme.c1;ctx.font="800 30px "+FONT;ctx.fillText(d.weekday+" · "+d.jalali,W/2,y+76);
   y+=190;
 
-  var boxH=175;
-  if(d.feels!=null)boxH+=60;
-  ctx.fillStyle="rgba(255,255,255,.08)";drawRoundedRect(ctx,70,y,W-140,boxH,20);ctx.fill();
-  ctx.textAlign="right";ctx.fillStyle=theme.text;ctx.font="800 32px "+FONT;ctx.fillText("🌤️  هوای "+d.city+":",W-100,y+22);
-  ctx.fillStyle=theme.c3;ctx.font="400 28px "+FONT;ctx.fillText(d.weather.desc+" · "+(d.weather.temp!=null?T1(d.weather.temp)+D():"--"),W-100,y+68);
-  ctx.fillStyle="#ffb37e";ctx.font="800 26px "+FONT;ctx.fillText("▲ بیشینه: "+(d.weather.tmax!=null?T1(d.weather.tmax)+D():"--"),W-100,y+112);
-  ctx.fillStyle="#7ecbff";ctx.font="800 26px "+FONT;ctx.fillText("▼ کمینه: "+(d.weather.tmin!=null?T1(d.weather.tmin)+D():"--"),W-100,y+146);
-  if(d.feels!=null){
-    ctx.fillStyle=theme.c4;ctx.font="800 24px "+FONT;ctx.fillText("🌡️ دمای محسوس: "+T1(d.feels)+D(),W-100,y+180);
+  // === آب‌وهوا (فشرده) ===
+  ctx.fillStyle="rgba(255,255,255,.08)";drawRoundedRect(ctx,70,y,W-140,140,20);ctx.fill();
+  ctx.textAlign="right";ctx.fillStyle=theme.text;ctx.font="800 30px "+FONT;ctx.fillText("🌤️  هوای "+d.city+":",W-100,y+18);
+  ctx.fillStyle=theme.c3;ctx.font="400 26px "+FONT;ctx.fillText(d.weather.desc+" · "+(d.weather.temp!=null?T1(d.weather.temp)+D():"--"),W-100,y+58);
+  // چیپ‌های افقی
+  var chipX=W-100;
+  var chipY=y+96;
+  function drawChip(text,color,border,fill){
+    ctx.font="800 20px "+FONT;
+    var tw=ctx.measureText(text).width;
+    var chipW=tw+26;
+    var chipH=34;
+    chipX-=chipW;
+    ctx.fillStyle=fill;drawRoundedRect(ctx,chipX,chipY,chipW,chipH,8);ctx.fill();
+    ctx.strokeStyle=border;ctx.lineWidth=1.5;drawRoundedRect(ctx,chipX,chipY,chipW,chipH,8);ctx.stroke();
+    ctx.textAlign="center";ctx.fillStyle=color;ctx.fillText(text,chipX+chipW/2,chipY+8);
+    chipX-=8;
   }
-  y+=boxH+20;
+  if(d.weather.tmax!=null)drawChip("▲ "+T1(d.weather.tmax)+D(),"#ffb37e","rgba(255,179,126,.4)","rgba(255,179,126,.1)");
+  if(d.weather.tmin!=null)drawChip("▼ "+T1(d.weather.tmin)+D(),"#7ecbff","rgba(126,203,255,.4)","rgba(126,203,255,.1)");
+  if(d.feels!=null)drawChip("🌡️ "+T1(d.feels)+D(),"#b197fc","rgba(177,151,252,.4)","rgba(177,151,252,.1)");
+  y+=160;
 
-  var prayerH=90+d.allPrayers.length*38;
+  // === اوقات شرعی (فشرده در گرید ۲ ستونی) ===
+  var rowCount=Math.ceil(d.allPrayers.length/2);
+  var prayerH=70+rowCount*46;
   ctx.fillStyle="rgba(57,198,255,.12)";drawRoundedRect(ctx,70,y,W-140,prayerH,20);ctx.fill();
-  ctx.textAlign="right";ctx.fillStyle=theme.c2;ctx.font="800 30px "+FONT;ctx.fillText("🕌 اوقات شرعی امروز",W-100,y+18);
-  var py=y+64;
+  ctx.textAlign="right";ctx.fillStyle=theme.c2;ctx.font="800 28px "+FONT;ctx.fillText("🕌 اوقات شرعی امروز",W-100,y+18);
+  var gridTop=y+62;
+  var rowH=46;
+  var colW=(W-200)/2;
   for(var pi=0;pi<d.allPrayers.length;pi++){
     var pp=d.allPrayers[pi];
-    ctx.textAlign="right";ctx.fillStyle=pp.isNext?theme.c1:theme.text;ctx.font="800 24px "+FONT;
-    ctx.fillText(pp.icon+" "+pp.name+(pp.isNext?" (بعدی)":""),W-100,py);
-    ctx.textAlign="left";ctx.fillStyle=pp.isNext?theme.c1:theme.c2;ctx.font="800 24px "+FONT;
-    ctx.fillText(pp.time,100,py);
-    py+=38;
+    var row=Math.floor(pi/2);
+    var col=pi%2;
+    var cellX=W-100-col*colW;
+    var cellY=gridTop+row*rowH;
+    var cellW=colW-14;
+    if(pp.isNext){
+      ctx.fillStyle="rgba(255,209,102,.25)";
+      drawRoundedRect(ctx,cellX-cellW,cellY+3,cellW,rowH-8,8);ctx.fill();
+      ctx.strokeStyle="rgba(255,209,102,.6)";ctx.lineWidth=1.5;
+      drawRoundedRect(ctx,cellX-cellW,cellY+3,cellW,rowH-8,8);ctx.stroke();
+    }else{
+      ctx.fillStyle="rgba(255,255,255,.06)";
+      drawRoundedRect(ctx,cellX-cellW,cellY+3,cellW,rowH-8,8);ctx.fill();
+    }
+    ctx.textAlign="right";
+    ctx.fillStyle=pp.isNext?theme.c1:theme.text;
+    ctx.font="800 20px "+FONT;
+    var nameStr=pp.icon+" "+pp.name;
+    ctx.fillText(nameStr,cellX-10,cellY+13);
+    ctx.textAlign="left";
+    ctx.fillStyle=pp.isNext?theme.c1:theme.c2;
+    ctx.font="800 20px "+FONT;
+    ctx.fillText(pp.time,cellX-cellW+12,cellY+13);
   }
   y+=prayerH+20;
 
+  // === بیت امروز ===
   var poemBoxH=180;
   ctx.fillStyle="rgba(255,209,102,.14)";drawRoundedRect(ctx,70,y,W-140,poemBoxH,20);ctx.fill();
-  ctx.textAlign="right";ctx.fillStyle=theme.c1;ctx.font="800 30px "+FONT;ctx.fillText("📜 بیت امروز · "+d.poetName,W-100,y+22);
+  ctx.textAlign="right";ctx.fillStyle=theme.c1;ctx.font="800 28px "+FONT;ctx.fillText("📜 بیت امروز · "+d.poetName,W-100,y+18);
   ctx.fillStyle=theme.text;ctx.font="400 26px "+FONT;
-  var poemLines=d.poem.split("\n");for(var pl=0;pl<Math.min(poemLines.length,3);pl++)ctx.fillText("«"+poemLines[pl]+"»",W-100,y+72+pl*42);
+  var poemLines=d.poem.split("\n");for(var pl=0;pl<Math.min(poemLines.length,3);pl++)ctx.fillText("«"+poemLines[pl]+"»",W-100,y+66+pl*40);
   y+=poemBoxH+20;
 
-  ctx.fillStyle="rgba(139,92,246,.15)";drawRoundedRect(ctx,70,y,W-140,140,20);ctx.fill();
-  ctx.textAlign="right";ctx.fillStyle=theme.c4;ctx.font="800 30px "+FONT;ctx.fillText("📿 ذکر روز "+d.dhikr.day,W-100,y+22);
-  ctx.fillStyle=theme.text;ctx.font="800 30px "+FONT;ctx.fillText("«"+d.dhikr.text+"»",W-100,y+82);
-  y+=160;
+  // === ذکر روز ===
+  ctx.fillStyle="rgba(139,92,246,.15)";drawRoundedRect(ctx,70,y,W-140,130,20);ctx.fill();
+  ctx.textAlign="right";ctx.fillStyle=theme.c4;ctx.font="800 28px "+FONT;ctx.fillText("📿 ذکر روز "+d.dhikr.day,W-100,y+18);
+  ctx.fillStyle=theme.text;ctx.font="800 28px "+FONT;ctx.fillText("«"+d.dhikr.text+"»",W-100,y+72);
+  y+=150;
 
+  // === دانستنی امروز ===
   if(d.wisdom){
     ctx.fillStyle="rgba(45,212,161,.14)";drawRoundedRect(ctx,70,y,W-140,130,20);ctx.fill();
-    ctx.textAlign="right";ctx.fillStyle="#7fffd4";ctx.font="800 26px "+FONT;ctx.fillText(d.wisdom.icon+" حکمت روز",W-100,y+18);
+    ctx.textAlign="right";ctx.fillStyle="#7fffd4";ctx.font="800 24px "+FONT;ctx.fillText(d.wisdom.icon+" دانستنی امروز",W-100,y+16);
     ctx.fillStyle=theme.text;ctx.font="400 22px "+FONT;
     var wtext=d.wisdom.text;
     var wlines=[];
@@ -4229,7 +4279,7 @@ function generateDailyCardImage(themeKey){
       wtext=wtext.substring(cut+1);
     }
     wlines.push(wtext);
-    for(var wi=0;wi<Math.min(wlines.length,3);wi++)ctx.fillText(wlines[wi],W-100,y+60+wi*34);
+    for(var wi=0;wi<Math.min(wlines.length,3);wi++)ctx.fillText(wlines[wi],W-100,y+56+wi*32);
     y+=150;
   }
 
@@ -4931,7 +4981,7 @@ function bindAccordions(){
   for(var i=0;i<accs.length;i++){(function(h){if(h.getAttribute("data-bound"))return;h.setAttribute("data-bound","1");h.addEventListener("click",function(){var g=h.closest(".travel-acc-group,.culture-acc-group,.fun-acc-group");if(g)g.classList.toggle("open");});})(accs[i]);}
 }
 
-var GREET="سلام! 👋 من دستیار هوشمند مجلهٔ آسمان هستم (نسخهٔ ۳٫۱٫۵).\n\n🔹 لایه ۱: پاسخ سریع به سوالات ساده — از جمله:\n   • «اذان صبح» / «اذان ظهر» / «اذان مغرب»\n   • «طلوع» / «غروب»\n   • «اذان» (به‌تنهایی) → نمایش همهٔ اوقات + اذان بعدی\n🔹 لایه ۲: تحلیل ترکیبی برای ۹ فعالیت: دوچرخه، پیاده‌روی، کوهنوردی، پیک‌نیک، شنا، ماهیگیری، فوتبال، تنیس، عکاسی.\n🔹 Chat → Action: می‌توانم کارهایی انجام دهم (مثل «کارت شعر را حذف کن» یا «تهران را اضافه کن»).\n🔹 🔔 یادآور: «یادم بنداز ساعت ۸ ورزش» یا «یادآوری جلسه ساعت ۱۵:۳۰».\n\n💡 نکات:\n   • برای تغییر مکان دکمهٔ 🤖، لمس طولانی کنید.\n   • برای به‌روزرسانی داده‌ها، صفحه را از بالا به پایین بکشید.\n   • قبله‌نما حالا کالیبراسیون هوشمند دارد — گوشی را به شکل ۸ بچرخانید.\n   • 🆕 نسخهٔ ۳٫۱٫۵: کارت امروز آسمان با دمای محسوس، بیت شاعر دلخواه، حکمت روز، پس‌زمینهٔ پویا و اشتراک‌گذاری با ۵ تم رنگی + پیش‌نمایش زنده.\n\nاز نمونه سوال‌های پایین استفاده کنید یا آزاد بپرسید.";
+var GREET="سلام! 👋 من دستیار هوشمند مجلهٔ آسمان هستم (نسخهٔ ۱٫۲٫۳).\n\n🔹 لایه ۱: پاسخ سریع به سوالات ساده — از جمله:\n   • «اذان صبح» / «اذان ظهر» / «اذان مغرب»\n   • «طلوع» / «غروب»\n   • «اذان» (به‌تنهایی) → نمایش همهٔ اوقات + اذان بعدی\n🔹 لایه ۲: تحلیل ترکیبی برای ۹ فعالیت: دوچرخه، پیاده‌روی، کوهنوردی، پیک‌نیک، شنا، ماهیگیری، فوتبال، تنیس، عکاسی.\n🔹 Chat → Action: می‌توانم کارهایی انجام دهم (مثل «کارت شعر را حذف کن» یا «تهران را اضافه کن»).\n🔹 🔔 یادآور: «یادم بنداز ساعت ۸ ورزش» یا «یادآوری جلسه ساعت ۱۵:۳۰».\n\n💡 نکات:\n   • برای تغییر مکان دکمهٔ 🤖، لمس طولانی کنید.\n   • برای به‌روزرسانی داده‌ها، صفحه را از بالا به پایین بکشید.\n   • 🆕 نسخهٔ ۱٫۲٫۳: کارت امروز آسمان فشرده‌تر شد و «حکمت امروز» به «دانستنی امروز» تغییر یافت.\n\nاز نمونه سوال‌های پایین استفاده کنید یا آزاد بپرسید.";
 var chatPanel=document.getElementById("chatPanel"),chatMessages=document.getElementById("chatMessages"),chatInput=document.getElementById("chatInput");
 function setChatOpen(open){if(!chatPanel)return;chatPanel.classList.toggle("show",open);document.body.classList.toggle("chat-lock",open);if(open)renderSuggestions();}
 
@@ -5285,7 +5335,7 @@ var SUG_ANSWERS={
   "آیا رایگان است؟":"✅ بله، کاملاً رایگان است.",
   "چطور نصب کنم؟":"📲 به شیت «بیشتر» بروید و روی «📖 راهنما» بزنید — راهنمای نصب کامل با دکمهٔ نصب خودکار آنجا است.\n🤖 اندروید: منوی Chrome ← «نصب برنامه»\n🍎 iOS: Safari ← Share ← Add to Home Screen",
   "سازنده کیست؟":"👤 سازنده: «م.حسینی». ارتباط: eitaa.com/hossini_96 — در صفحهٔ راهنما دکمهٔ ارتباط با سازنده موجود است.",
-  "نسخه برنامه":"📌 نسخهٔ فعلی: ۳٫۱٫۵ — با کارت روز پیشرفته، بیت شاعر دلخواه، حکمت روز، پس‌زمینهٔ پویا و اشتراک‌گذاری با ۵ تم رنگی.",
+  "نسخه برنامه":"📌 نسخهٔ فعلی: ۱٫۲٫۳ — با کارت امروز آسمان فشرده، بیت شاعر دلخواه، دانستنی امروز، پس‌زمینهٔ پویا و اشتراک‌گذاری با ۵ تم رنگی.",
   "سردبیر کیه؟":"✍️ سردبیر مجلهٔ آسمان «م.حسینی» است.",
   "یادداشت ۱ چیه؟":"📝 «سخن سردبیر، فصل پاییز» دربارهٔ آغاز سال تحصیلی، آموزش، همدلی و امید.",
   "یادداشت ۲ چیه؟":"✍️ «یادداشت سردبیر» — متن کامل در صفحهٔ یادداشت مجله، یادداشت ۲.",
@@ -5392,7 +5442,7 @@ function chatRespond(q0){
     }
     addChatMsg("امتیاز آسایش در دسترس نیست.",false);return;
   }
-  if(wakeWordMatch(q,["حکمت"])){var w=pickWisdomOfDay();addChatMsg(w.icon+" حکمت روز:\n"+w.text,false);return;}
+  if(wakeWordMatch(q,["دانستنی","حکمت"])){var w=pickWisdomOfDay();addChatMsg(w.icon+" دانستنی امروز:\n"+w.text,false);return;}
 
   if(wakeWordMatch(q,["اذان","نماز"])){
     if(!prayerData){
